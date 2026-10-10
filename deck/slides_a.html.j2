@@ -10,7 +10,7 @@
     <span class="pill">Global Online Track</span>
   </div>
   <div style="position:absolute;left:80px;bottom:64px;font-size:17px;color:#dbe4ff">
-    {% for p in cfg.team %}<b>{{ p.name }}</b> &middot; {{ p.student_id }} &middot; {{ p.affiliation }}<br>{% endfor %}
+    {% for p in cfg.team %}<b>{{ p.name }}</b>{% if p.student_id %} &middot; {{ p.student_id }}{% endif %} &middot; {{ p.affiliation }}<br>{% endfor %}
   </div>
   <svg style="position:absolute;right:80px;top:150px" width="300" height="360" viewBox="0 0 300 360">
     <rect x="20" y="10" width="240" height="320" rx="14" fill="#fff" opacity=".96"/>

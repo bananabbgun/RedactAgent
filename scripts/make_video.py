@@ -3,7 +3,7 @@
 Inputs: the deck PDF, demo_raw.webm + marks.json from record_demo.py, eval metrics.
 Narration: Kokoro-82M (Apache-2.0) via kokoro-onnx, with burned-in captions; editing uses ffmpeg.
 
-    python scripts/make_video.py --deck ../deliverables/B12902026_CN_league.pdf --work ../deliverables/video_work \
+    python scripts/make_video.py --deck ../deliverables/RedactAgent_proposal.pdf --work ../deliverables/video_work \
         --out ../deliverables/RedactAgent_demo.mp4
 """
 
@@ -206,9 +206,9 @@ def end_card(out: Path, github: str, team: list[dict]):
         d.text((150, y), github, font=ImageFont.truetype(reg, 44), fill=(143, 179, 255))
         y += 80
     for p in team:
-        d.text((150, y), f"{p['name']}  \u00b7  {p['student_id']}", font=ImageFont.truetype(reg, 40), fill="white")
+        d.text((150, y), p["name"] + (f"  \u00b7  {p['student_id']}" if p.get("student_id") else ""), font=ImageFont.truetype(reg, 40), fill="white")
         y += 60
-    d.text((150, 940), "2026 ASUS UGen AI League  \u00b7  Battlefield Thunderstorm  \u00b7  Workplace AI",
+    d.text((150, 780), "2026 ASUS UGen AI League  \u00b7  Battlefield Thunderstorm  \u00b7  Workplace AI",
            font=ImageFont.truetype(reg, 32), fill=(160, 175, 220))
     im.save(out)
 

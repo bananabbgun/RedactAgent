@@ -5,7 +5,7 @@ law firms and government agencies can share records without the records ever lea
 
 Entry for the **2026 ASUS UGen AI League** · Battlefield **Thunderstorm** (ASUS UGen Intel Arc Pro B70 32GB) ·
 Theme **Workplace AI** · Global Online Track.
-Author: Yu-Tsen Tsai (蔡侑岑), B12902026, CSIE, National Taiwan University.
+Author: Yu-Tsen Tsai (蔡侑岑), CSIE, National Taiwan University.
 
 **Demo video (3 min):** https://www.youtube.com/watch?v=DQx-QkbOOHc
 

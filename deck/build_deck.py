@@ -1,6 +1,6 @@
 """Build the Stage I proposal deck (HTML -> PDF via headless Chrome).
 
-    python deck/build_deck.py [--out ../deliverables/B12902026_CN_league.pdf]
+    python deck/build_deck.py [--out ../deliverables/RedactAgent_proposal.pdf]
 
 Numbers on the results slides come straight from eval/results/metrics.json, and the
 policy triptych is rendered by the real pipeline code from saved findings.
@@ -126,7 +126,7 @@ def build(out_pdf: Path):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("--out", default=str(ROOT.parent / "deliverables" / "B12902026_CN_league.pdf"))
+    ap.add_argument("--out", default=str(ROOT.parent / "deliverables" / "RedactAgent_proposal.pdf"))
     ap.add_argument("--results", default=str(RESULTS))
     a = ap.parse_args()
     RESULTS = Path(a.results)

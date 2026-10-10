@@ -199,7 +199,7 @@
       </div>
       <div class="card" style="margin-top:14px">
         <h3>Team</h3>
-        {% for p in cfg.team %}<p style="font-size:16px"><b>{{ p.name }}</b> &middot; Student ID {{ p.student_id }}<br><span class="note">{{ p.affiliation }}</span></p>{% endfor %}
+        {% for p in cfg.team %}<p style="font-size:16px"><b>{{ p.name }}</b>{% if p.student_id %} &middot; Student ID {{ p.student_id }}{% endif %}<br><span class="note">{{ p.affiliation }}</span></p>{% endfor %}
         <p class="note" style="margin-top:6px">Track: {{ cfg.track }} &middot; Theme: {{ cfg.theme }} &middot; {{ cfg.format }}</p>
       </div>
     </div>
