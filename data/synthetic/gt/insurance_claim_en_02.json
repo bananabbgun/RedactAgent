@@ -1,0 +1,130 @@
+{
+ "id": "insurance_claim_en_02",
+ "template": "insurance_claim_en",
+ "lang": "en",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "HM-1262059",
+   "bbox": [
+    958,
+    113,
+    1094,
+    131
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Liu Kuan-wei",
+   "bbox": [
+    98,
+    266,
+    295,
+    293
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "11/09/1975",
+   "bbox": [
+    627,
+    265,
+    804,
+    296
+   ],
+   "role": null
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "J135250820",
+   "bbox": [
+    85,
+    359,
+    275,
+    387
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0955-267-474",
+   "bbox": [
+    629,
+    354,
+    848,
+    384
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "kuanliu86@mail.example.tw",
+   "bbox": [
+    100,
+    440,
+    502,
+    478
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 67, Guangfu Rd., Zhongshan Dist., Taipei City",
+   "bbox": [
+    101,
+    525,
+    836,
+    568
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-08-23",
+   "bbox": [
+    631,
+    690,
+    804,
+    711
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "4575 9355 8168 0588",
+   "bbox": [
+    105,
+    942,
+    428,
+    973
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Liu Kuan-wei",
+   "bbox": [
+    111,
+    1249,
+    372,
+    1305
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-08-26",
+   "bbox": [
+    636,
+    1246,
+    811,
+    1267
+   ],
+   "role": null
+  }
+ ]
+}

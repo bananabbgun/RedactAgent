@@ -1,0 +1,19 @@
+id: research
+order: 1
+name: "Research extract (IRB / de-identified dataset)"
+description: >
+  For sharing clinical documents with an approved research team. Patients and relatives
+  are replaced by consistent pseudonyms so the record stays readable; dates are reduced to
+  the year (HIPAA Safe-Harbor style); every direct identifier is removed.
+legal_basis: "PDPA Art. 6(1)(4) & 19 (research use of de-identified data); Human Subjects Research Act"
+default: redact
+categories:
+  PERSON_NAME: pseudonymize
+  DATE: generalize_year
+  DATE_OF_BIRTH: generalize_year
+  GOV_ID: redact
+  MEDICAL_RECORD_NO: pseudonymize
+  QUASI_IDENTIFIER: redact
+role_overrides:
+  - when: {category: PERSON_NAME, role: professional}
+    action: pseudonymize

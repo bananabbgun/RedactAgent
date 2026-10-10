@@ -1,0 +1,229 @@
+{
+ "id": "discharge_summary_en_02",
+ "template": "discharge_summary_en",
+ "lang": "en",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Wang Han-pei",
+   "bbox": [
+    292,
+    201,
+    453,
+    226
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "MRN-6433943",
+   "bbox": [
+    751,
+    207,
+    914,
+    227
+   ],
+   "role": null
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "B122838019",
+   "bbox": [
+    263,
+    249,
+    407,
+    268
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "April 6, 1999",
+   "bbox": [
+    853,
+    256,
+    997,
+    281
+   ],
+   "role": null
+  },
+  {
+   "cat": "HEALTH_INSURANCE_NO",
+   "text": "0000 6436 6670",
+   "bbox": [
+    860,
+    304,
+    1042,
+    324
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0976-176-590",
+   "bbox": [
+    201,
+    344,
+    357,
+    364
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "hanpei.wang88@mail.example.tw",
+   "bbox": [
+    760,
+    351,
+    1138,
+    378
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 5, Fuxing S. Rd., Shilin Dist., Taipei City",
+   "bbox": [
+    227,
+    392,
+    723,
+    421
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "May 5, 2025",
+   "bbox": [
+    257,
+    441,
+    396,
+    465
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "May 14, 2025",
+   "bbox": [
+    819,
+    447,
+    972,
+    472
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Cheng Chih-kuan",
+   "bbox": [
+    380,
+    490,
+    617,
+    516
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Huang Ting-wei",
+   "bbox": [
+    372,
+    538,
+    548,
+    563
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0989-300-585",
+   "bbox": [
+    673,
+    542,
+    829,
+    562
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Wang",
+   "bbox": [
+    134,
+    785,
+    200,
+    809
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the head coach of the national women's curling team",
+   "bbox": [
+    90,
+    825,
+    681,
+    855
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "May 5, 2025",
+   "bbox": [
+    90,
+    865,
+    229,
+    889
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Cheng Chih-kuan",
+   "bbox": [
+    256,
+    987,
+    493,
+    1012
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Cheng Chih-kuan",
+   "bbox": [
+    364,
+    1469,
+    675,
+    1532
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "May 14, 2025",
+   "bbox": [
+    852,
+    1488,
+    1006,
+    1513
+   ],
+   "role": null
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "醫專章心",
+   "bbox": [
+    970,
+    1554,
+    1102,
+    1686
+   ],
+   "role": null
+  }
+ ]
+}

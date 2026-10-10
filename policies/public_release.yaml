@@ -1,0 +1,14 @@
+id: public_release
+order: 3
+name: "Public release (Freedom of Government Information)"
+description: >
+  For publishing documents to the public. Private individuals are removed completely;
+  names, seals and signatures of officials acting in their official capacity remain,
+  as public accountability requires.
+legal_basis: "Freedom of Government Information Law Art. 18(1)(6); PDPA Art. 16"
+default: redact
+categories:
+  DATE: generalize_year
+role_overrides:
+  - when: {category: PERSON_NAME, role: professional}
+    action: keep

@@ -1,0 +1,251 @@
+{
+ "id": "accident_report_zh_01",
+ "template": "accident_report_zh",
+ "lang": "zh",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "民國115年12月7日 13時15分",
+   "bbox": [
+    237,
+    206,
+    566,
+    234
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "王秀美",
+   "bbox": [
+    201,
+    390,
+    279,
+    414
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "E245678098",
+   "bbox": [
+    734,
+    400,
+    877,
+    421
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "1965/08/25",
+   "bbox": [
+    253,
+    439,
+    379,
+    460
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0961-211-221",
+   "bbox": [
+    708,
+    445,
+    866,
+    466
+   ],
+   "role": null
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "192-PJN",
+   "bbox": [
+    252,
+    484,
+    352,
+    504
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺南市東區中山路三段28號六樓",
+   "bbox": [
+    199,
+    525,
+    566,
+    555
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "鄭俊宏",
+   "bbox": [
+    198,
+    660,
+    276,
+    685
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "L195758142",
+   "bbox": [
+    731,
+    670,
+    871,
+    691
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "1968/03/13",
+   "bbox": [
+    249,
+    709,
+    375,
+    730
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0959-482-799",
+   "bbox": [
+    704,
+    715,
+    862,
+    736
+   ],
+   "role": null
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "981-FEF",
+   "bbox": [
+    248,
+    754,
+    349,
+    774
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺南市東區和平東路44號二樓",
+   "bbox": [
+    196,
+    795,
+    536,
+    825
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "裴宥廷",
+   "bbox": [
+    232,
+    866,
+    310,
+    891
+   ],
+   "role": "witness"
+  },
+  {
+   "cat": "PHONE",
+   "text": "(02) 2153-5561",
+   "bbox": [
+    440,
+    872,
+    614,
+    898
+   ],
+   "role": null
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "192-PJN",
+   "bbox": [
+    196,
+    988,
+    296,
+    1009
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "王秀美",
+   "bbox": [
+    348,
+    987,
+    426,
+    1011
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "981-FEF",
+   "bbox": [
+    534,
+    1039,
+    634,
+    1059
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "鄭俊宏",
+   "bbox": [
+    221,
+    1078,
+    299,
+    1103
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "伍秀英",
+   "bbox": [
+    223,
+    1491,
+    302,
+    1516
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "伍秀英印",
+   "bbox": [
+    331,
+    1456,
+    442,
+    1568
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國115年12月7日",
+   "bbox": [
+    829,
+    1499,
+    1044,
+    1526
+   ],
+   "role": null
+  }
+ ]
+}

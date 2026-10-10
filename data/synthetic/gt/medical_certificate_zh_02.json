@@ -1,0 +1,163 @@
+{
+ "id": "medical_certificate_zh_02",
+ "template": "medical_certificate_zh",
+ "lang": "zh",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "王永昌",
+   "bbox": [
+    265,
+    229,
+    349,
+    256
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "民國67年3月18日",
+   "bbox": [
+    264,
+    294,
+    484,
+    323
+   ],
+   "role": null
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "B170675420",
+   "bbox": [
+    842,
+    306,
+    1005,
+    328
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "B5551441",
+   "bbox": [
+    263,
+    364,
+    394,
+    386
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0949-240-394",
+   "bbox": [
+    813,
+    371,
+    991,
+    394
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國115年2月17日",
+   "bbox": [
+    262,
+    426,
+    499,
+    455
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "高雄市左營區建國路三段180巷272號三樓",
+   "bbox": [
+    261,
+    492,
+    778,
+    526
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "王永昌",
+   "bbox": [
+    178,
+    716,
+    262,
+    742
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "民國115年2月17日",
+   "bbox": [
+    290,
+    717,
+    526,
+    746
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為綠島唯一領有執照的渡輪船長",
+   "bbox": [
+    429,
+    771,
+    821,
+    803
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "柯麗玲",
+   "bbox": [
+    237,
+    1271,
+    321,
+    1298
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "柯麗玲印",
+   "bbox": [
+    350,
+    1227,
+    470,
+    1346
+   ],
+   "role": null
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "康寧紀念證明專用",
+   "bbox": [
+    913,
+    1214,
+    1116,
+    1416
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115年2月18日",
+   "bbox": [
+    471,
+    1564,
+    651,
+    1592
+   ],
+   "role": null
+  }
+ ]
+}

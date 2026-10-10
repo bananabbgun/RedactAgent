@@ -1,0 +1,251 @@
+{
+ "id": "accident_report_zh_00",
+ "template": "accident_report_zh",
+ "lang": "zh",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "民國115年8月19日 17時33分",
+   "bbox": [
+    228,
+    211,
+    557,
+    235
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "何惠珍",
+   "bbox": [
+    195,
+    396,
+    273,
+    420
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "E281459428",
+   "bbox": [
+    728,
+    399,
+    871,
+    418
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "1989/07/02",
+   "bbox": [
+    247,
+    444,
+    373,
+    463
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0916-791-163",
+   "bbox": [
+    702,
+    444,
+    860,
+    463
+   ],
+   "role": null
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "704-EZM",
+   "bbox": [
+    247,
+    489,
+    353,
+    508
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "新北市三重區光復路一段122號一樓",
+   "bbox": [
+    195,
+    531,
+    601,
+    556
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "李冠宏",
+   "bbox": [
+    195,
+    666,
+    273,
+    690
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "A103646312",
+   "bbox": [
+    727,
+    669,
+    871,
+    688
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "1998/01/02",
+   "bbox": [
+    247,
+    714,
+    373,
+    733
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0929-968-555",
+   "bbox": [
+    702,
+    714,
+    860,
+    733
+   ],
+   "role": null
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "167-WLW",
+   "bbox": [
+    247,
+    759,
+    362,
+    778
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺中市北區建國路82號八樓",
+   "bbox": [
+    195,
+    801,
+    509,
+    826
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "莊苡安",
+   "bbox": [
+    232,
+    871,
+    310,
+    895
+   ],
+   "role": "witness"
+  },
+  {
+   "cat": "PHONE",
+   "text": "(03) 2656-5082",
+   "bbox": [
+    440,
+    874,
+    614,
+    898
+   ],
+   "role": null
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "704-EZM",
+   "bbox": [
+    198,
+    994,
+    304,
+    1013
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "何惠珍",
+   "bbox": [
+    356,
+    991,
+    434,
+    1015
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "167-WLW",
+   "bbox": [
+    536,
+    1040,
+    651,
+    1059
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "李冠宏",
+   "bbox": [
+    224,
+    1083,
+    302,
+    1107
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "廖哲瑋",
+   "bbox": [
+    232,
+    1496,
+    310,
+    1520
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "廖哲瑋印",
+   "bbox": [
+    340,
+    1460,
+    450,
+    1570
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國115年8月19日",
+   "bbox": [
+    838,
+    1496,
+    1052,
+    1520
+   ],
+   "role": null
+  }
+ ]
+}

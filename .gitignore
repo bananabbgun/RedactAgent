@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+runs/
+runs_server.log
+*.pyc
+.DS_Store
+deploy/b70/.env
+eval_run.log
+eval/results_run1/
+eval/results_run2/

@@ -1,0 +1,251 @@
+{
+ "id": "accident_report_zh_03",
+ "template": "accident_report_zh",
+ "lang": "zh",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "民國115年3月16日 20時46分",
+   "bbox": [
+    221,
+    212,
+    550,
+    239
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林志強",
+   "bbox": [
+    190,
+    400,
+    268,
+    425
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "J109812514",
+   "bbox": [
+    723,
+    396,
+    862,
+    417
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "1990/06/18",
+   "bbox": [
+    242,
+    447,
+    369,
+    467
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0918-816-706",
+   "bbox": [
+    697,
+    441,
+    856,
+    462
+   ],
+   "role": null
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "587-UZA",
+   "bbox": [
+    243,
+    492,
+    347,
+    512
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺北市大安區文化路三段352號六樓",
+   "bbox": [
+    191,
+    531,
+    598,
+    561
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "蘇國榮",
+   "bbox": [
+    193,
+    671,
+    271,
+    696
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "P109940491",
+   "bbox": [
+    726,
+    666,
+    869,
+    687
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "1982/01/21",
+   "bbox": [
+    245,
+    717,
+    371,
+    737
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0919-983-551",
+   "bbox": [
+    700,
+    711,
+    858,
+    732
+   ],
+   "role": null
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "WHQ-8427",
+   "bbox": [
+    246,
+    762,
+    375,
+    783
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "新竹市北區文化路二段197巷187號",
+   "bbox": [
+    194,
+    801,
+    590,
+    831
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳心怡",
+   "bbox": [
+    232,
+    874,
+    310,
+    899
+   ],
+   "role": "witness"
+  },
+  {
+   "cat": "PHONE",
+   "text": "(02) 2627-7913",
+   "bbox": [
+    440,
+    874,
+    614,
+    900
+   ],
+   "role": null
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "587-UZA",
+   "bbox": [
+    199,
+    997,
+    303,
+    1017
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林志強",
+   "bbox": [
+    354,
+    993,
+    432,
+    1018
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "WHQ-8427",
+   "bbox": [
+    538,
+    1040,
+    667,
+    1061
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "蘇國榮",
+   "bbox": [
+    226,
+    1087,
+    304,
+    1112
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "賴嘉宏",
+   "bbox": [
+    239,
+    1499,
+    317,
+    1524
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "賴嘉宏印",
+   "bbox": [
+    346,
+    1462,
+    457,
+    1573
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國115年3月16日",
+   "bbox": [
+    845,
+    1491,
+    1059,
+    1518
+   ],
+   "role": null
+  }
+ ]
+}

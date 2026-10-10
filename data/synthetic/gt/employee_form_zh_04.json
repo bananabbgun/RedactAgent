@@ -1,0 +1,174 @@
+{
+ "id": "employee_form_zh_04",
+ "template": "employee_form_zh",
+ "lang": "zh",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "FACE_PHOTO",
+   "text": "portrait",
+   "bbox": [
+    934,
+    223,
+    1147,
+    495
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "何麗玉",
+   "bbox": [
+    238,
+    232,
+    320,
+    258
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lee Ming-ting",
+   "bbox": [
+    238,
+    294,
+    402,
+    320
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "H279223582",
+   "bbox": [
+    263,
+    352,
+    418,
+    373
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "1987/11/16",
+   "bbox": [
+    237,
+    410,
+    373,
+    430
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0961-173-131",
+   "bbox": [
+    236,
+    468,
+    404,
+    489
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "mingting.lee@mail.example.tw",
+   "bbox": [
+    235,
+    526,
+    604,
+    555
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "高雄市左營區復興南路二段55巷355號八樓",
+   "bbox": [
+    235,
+    610,
+    742,
+    641
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "高雄市苓雅區中正路二段136號四樓",
+   "bbox": [
+    234,
+    668,
+    657,
+    698
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(700) 4435-133-981207",
+   "bbox": [
+    285,
+    730,
+    570,
+    757
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "曾子晴",
+   "bbox": [
+    259,
+    784,
+    340,
+    810
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0928-448-956",
+   "bbox": [
+    634,
+    792,
+    802,
+    813
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026/04/08",
+   "bbox": [
+    232,
+    846,
+    368,
+    866
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Lee Ming-ting",
+   "bbox": [
+    234,
+    1225,
+    496,
+    1287
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026/04/08",
+   "bbox": [
+    834,
+    1254,
+    970,
+    1275
+   ],
+   "role": null
+  }
+ ]
+}

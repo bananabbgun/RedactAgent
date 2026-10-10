@@ -1,0 +1,130 @@
+{
+ "id": "insurance_claim_en_03",
+ "template": "insurance_claim_en",
+ "lang": "en",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "HM-9533069",
+   "bbox": [
+    974,
+    121,
+    1110,
+    140
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lai Hao-po",
+   "bbox": [
+    111,
+    257,
+    260,
+    293
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "06/11/1968",
+   "bbox": [
+    641,
+    267,
+    812,
+    298
+   ],
+   "role": null
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "A146615786",
+   "bbox": [
+    108,
+    350,
+    306,
+    376
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0957-570-132",
+   "bbox": [
+    640,
+    356,
+    851,
+    387
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "haolai87@mail.example.tw",
+   "bbox": [
+    109,
+    433,
+    479,
+    471
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 165, Wenhua Rd., Lingya Dist., Kaohsiung City",
+   "bbox": [
+    108,
+    521,
+    852,
+    566
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-12-26",
+   "bbox": [
+    635,
+    694,
+    811,
+    713
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "4533 6357 4695 4131",
+   "bbox": [
+    103,
+    934,
+    433,
+    966
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Lai Hao-po",
+   "bbox": [
+    103,
+    1241,
+    326,
+    1304
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-12-28",
+   "bbox": [
+    629,
+    1248,
+    803,
+    1269
+   ],
+   "role": null
+  }
+ ]
+}

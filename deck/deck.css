@@ -1,0 +1,52 @@
+@page { size: 1280px 720px; margin: 0; }
+:root { --navy:#0b1d4d; --brand:#1f3a8a; --acc:#3b5bdb; --cyan:#0ea5c6; --red:#e4572e; --ink:#14213d; --mut:#5b6478;
+  --line:#dde3ee; --soft:#f3f6fb; --green:#12805c; --rule:#0e7490; --llm:#7c3aed; --vlm:#c2410c; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: "Helvetica Neue", -apple-system, "PingFang TC", "Noto Sans TC", Arial, sans-serif; color: var(--ink);
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.slide { width: 1280px; height: 720px; position: relative; overflow: hidden; page-break-after: always; background: #fff;
+  padding: 54px 64px 40px; }
+.slide .kicker { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: var(--acc); font-weight: 700; }
+.slide h1 { font-size: 36px; line-height: 1.15; margin: 6px 0 6px; color: var(--navy); letter-spacing: -0.3px; }
+.slide .lead { font-size: 18px; color: var(--mut); margin: 0 0 22px; max-width: 1050px; line-height: 1.4; }
+.foot { position: absolute; left: 64px; right: 64px; bottom: 18px; display: flex; justify-content: space-between;
+  font-size: 11px; color: #9aa3b5; }
+.src { position: absolute; left: 64px; bottom: 36px; font-size: 10.5px; color: #8a93a6; max-width: 1100px; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.card { background: var(--soft); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; }
+.card h3 { margin: 0 0 6px; font-size: 18px; color: var(--navy); }
+.card p, .card li { font-size: 14.5px; line-height: 1.45; color: #2d3650; margin: 0; }
+.card ul { margin: 6px 0 0; padding-left: 18px; }
+.card li { margin-bottom: 4px; }
+.tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 999px; color: #fff;
+  background: var(--acc); letter-spacing: .4px; }
+.big { font-size: 46px; font-weight: 800; color: var(--brand); line-height: 1; }
+.bigl { font-size: 13px; color: var(--mut); margin-top: 6px; }
+table.t { width: 100%; border-collapse: collapse; font-size: 14px; }
+table.t th { text-align: left; background: var(--navy); color: #fff; padding: 9px 10px; font-weight: 600; }
+table.t td { padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.t tr:nth-child(even) td { background: #f8fafd; }
+.yes { color: var(--green); font-weight: 700; } .no { color: #b91c1c; font-weight: 700; } .part { color: #b45309; font-weight: 700; }
+.hl { background: #eef2ff; }
+.badge { font-size: 11px; font-weight: 800; padding: 2px 7px; border-radius: 5px; color: #fff; }
+.b-rule { background: var(--rule); } .b-llm { background: var(--llm); } .b-vlm { background: var(--vlm); }
+img.shot { border: 1px solid #c9d3ea; border-radius: 10px; }
+.flow { display: flex; align-items: stretch; gap: 10px; }
+.flow .step { flex: 1; background: #fff; border: 2px solid var(--line); border-radius: 12px; padding: 14px; }
+.flow .step b { display: block; color: var(--brand); font-size: 15px; margin-bottom: 4px; }
+.flow .step span { font-size: 13px; color: #3c4560; line-height: 1.4; }
+.flow .arr { align-self: center; color: var(--acc); font-size: 22px; font-weight: 800; }
+.bar { height: 22px; border-radius: 4px; display: inline-block; vertical-align: middle; }
+.cover { background: linear-gradient(135deg, #07133a 0%, #0b1d4d 45%, #1f3a8a 100%); color: #fff; padding: 70px 80px; }
+.cover h1 { color: #fff; font-size: 64px; margin: 18px 0 8px; letter-spacing: -1px; }
+.cover .lead { color: #c8d3f5; font-size: 24px; max-width: 780px; }
+.pill { display: inline-block; border: 1px solid rgba(255,255,255,.35); border-radius: 999px; padding: 6px 14px; margin: 0 8px 8px 0;
+  font-size: 14px; color: #e6ecff; }
+.note { font-size: 12px; color: var(--mut); }
+.quote { border-left: 4px solid var(--acc); padding: 6px 14px; font-size: 16px; color: #26304a; background: #f5f7ff; border-radius: 0 8px 8px 0; }
+.mono { font-family: Menlo, ui-monospace, monospace; font-size: 12px; }
+
+.flow .step span.badge { color: #fff; font-size: 11px; }

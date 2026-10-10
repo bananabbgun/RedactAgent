@@ -1,0 +1,130 @@
+{
+ "id": "insurance_claim_en_01",
+ "template": "insurance_claim_en",
+ "lang": "en",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "HM-9375765",
+   "bbox": [
+    961,
+    114,
+    1097,
+    132
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Hsu Jung-tzu",
+   "bbox": [
+    101,
+    270,
+    297,
+    298
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "03/01/1991",
+   "bbox": [
+    631,
+    266,
+    797,
+    296
+   ],
+   "role": null
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "F176485942",
+   "bbox": [
+    101,
+    358,
+    292,
+    387
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0970-935-828",
+   "bbox": [
+    631,
+    355,
+    837,
+    384
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "junghsu22@mail.example.tw",
+   "bbox": [
+    95,
+    439,
+    509,
+    477
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "7F., No. 344, Zhongshan Rd., Sec. 1, Nantun Dist., Taichung City",
+   "bbox": [
+    100,
+    525,
+    1051,
+    566
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-04-04",
+   "bbox": [
+    632,
+    693,
+    805,
+    712
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "4704 7029 1022 4403",
+   "bbox": [
+    104,
+    941,
+    434,
+    971
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Hsu Jung-tzu",
+   "bbox": [
+    114,
+    1248,
+    372,
+    1309
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-04-07",
+   "bbox": [
+    635,
+    1248,
+    811,
+    1272
+   ],
+   "role": null
+  }
+ ]
+}

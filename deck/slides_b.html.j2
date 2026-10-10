@@ -1,0 +1,146 @@
+<!-- 7 Architecture -->
+<section class="slide">
+  <div class="kicker">Software &amp; hardware architecture</div>
+  <h1>System architecture</h1>
+  <svg width="1150" height="500" viewBox="0 0 1150 500" style="margin-top:6px" font-family="Helvetica Neue, Arial" font-size="13">
+    <defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3b5bdb"/></marker></defs>
+    <!-- LAN boundary -->
+    <rect x="160" y="8" width="985" height="484" rx="18" fill="#f7f9fd" stroke="#1f3a8a" stroke-dasharray="8 6" stroke-width="2"/>
+    <text x="180" y="34" fill="#1f3a8a" font-weight="700" font-size="14">On-premises network &mdash; no outbound traffic</text>
+    <!-- user -->
+    <rect x="10" y="190" width="125" height="110" rx="12" fill="#fff" stroke="#c9d3ea" stroke-width="2"/>
+    <text x="72" y="228" text-anchor="middle" font-weight="700">Reviewer</text>
+    <text x="72" y="248" text-anchor="middle" fill="#5b6478">browser on</text><text x="72" y="264" text-anchor="middle" fill="#5b6478">the LAN</text>
+    <line x1="135" y1="245" x2="190" y2="245" stroke="#3b5bdb" stroke-width="2.5" marker-end="url(#a)"/>
+    <!-- web app -->
+    <rect x="195" y="60" width="200" height="400" rx="14" fill="#fff" stroke="#1f3a8a" stroke-width="2"/>
+    <text x="295" y="88" text-anchor="middle" font-weight="700" fill="#0b1d4d" font-size="15">RedactAgent server</text>
+    <text x="295" y="106" text-anchor="middle" fill="#5b6478">FastAPI &middot; Python 3.12</text>
+    <g font-size="12.5">
+      <rect x="215" y="124" width="160" height="40" rx="8" fill="#eef2ff"/><text x="295" y="149" text-anchor="middle">Review UI &amp; job queue</text>
+      <rect x="215" y="174" width="160" height="40" rx="8" fill="#eef2ff"/><text x="295" y="199" text-anchor="middle">Ingest (pypdfium2)</text>
+      <rect x="215" y="224" width="160" height="40" rx="8" fill="#eef2ff"/><text x="295" y="249" text-anchor="middle">Policy engine (YAML)</text>
+      <rect x="215" y="274" width="160" height="40" rx="8" fill="#eef2ff"/><text x="295" y="299" text-anchor="middle">Pixel redaction &amp; PDF</text>
+      <rect x="215" y="324" width="160" height="40" rx="8" fill="#eef2ff"/><text x="295" y="349" text-anchor="middle">Hash-chained audit log</text>
+      <rect x="215" y="374" width="160" height="40" rx="8" fill="#eef2ff"/><text x="295" y="399" text-anchor="middle">De-identified text export</text>
+    </g>
+    <line x1="395" y1="245" x2="450" y2="245" stroke="#3b5bdb" stroke-width="2.5" marker-end="url(#a)"/>
+    <!-- detection pipeline -->
+    <rect x="455" y="60" width="300" height="400" rx="14" fill="#fff" stroke="#1f3a8a" stroke-width="2"/>
+    <text x="605" y="88" text-anchor="middle" font-weight="700" fill="#0b1d4d" font-size="15">Detection pipeline</text>
+    <rect x="475" y="104" width="260" height="56" rx="8" fill="#e6f6fa"/><text x="490" y="126" font-weight="700" fill="#0e7490">OCR &middot; PP-OCR (RapidOCR)</text><text x="490" y="146" fill="#3c4560">ONNX Runtime / OpenVINO, per-char boxes</text>
+    <rect x="475" y="170" width="260" height="56" rx="8" fill="#e6f6fa"/><text x="490" y="192" font-weight="700" fill="#0e7490">Rules &middot; regex + checksums</text><text x="490" y="212" fill="#3c4560">ID, phone, card (Luhn), form fields</text>
+    <rect x="475" y="236" width="260" height="56" rx="8" fill="#f2ecff"/><text x="490" y="258" font-weight="700" fill="#7c3aed">Contextual LLM</text><text x="490" y="278" fill="#3c4560">names, roles, addresses, quasi-IDs</text>
+    <rect x="475" y="302" width="260" height="56" rx="8" fill="#fff1e8"/><text x="490" y="324" font-weight="700" fill="#c2410c">Vision: VLM + colour check</text><text x="490" y="344" fill="#3c4560">signatures, ID photos, seals</text>
+    <rect x="475" y="368" width="260" height="70" rx="8" fill="#eef2ff"/><text x="490" y="390" font-weight="700" fill="#1f3a8a">Merge &amp; cross-validate</text><text x="490" y="410" fill="#3c4560">span union, LLM upgrades DATE&rarr;DOB,</text><text x="490" y="427" fill="#3c4560">VLM box snapped to colour mask</text>
+    <line x1="755" y1="264" x2="810" y2="264" stroke="#3b5bdb" stroke-width="2.5" marker-end="url(#a)"/>
+    <line x1="755" y1="330" x2="810" y2="330" stroke="#3b5bdb" stroke-width="2.5" marker-end="url(#a)"/>
+    <!-- B70 -->
+    <rect x="815" y="60" width="315" height="400" rx="14" fill="#0b1d4d"/>
+    <text x="972" y="90" text-anchor="middle" font-weight="700" fill="#fff" font-size="15">ASUS UGen Intel Arc Pro B70</text>
+    <text x="972" y="109" text-anchor="middle" fill="#9fb4ff">32 GB GDDR6 ECC &middot; 367 INT8 TOPS &middot; PCIe 5.0</text>
+    <rect x="835" y="128" width="275" height="120" rx="10" fill="#1f3a8a"/>
+    <text x="850" y="152" fill="#fff" font-weight="700">vLLM XPU &middot; text model</text>
+    <text x="850" y="174" fill="#c8d3f5">Qwen3-30B-A3B (INT4) &middot; ~19 GB</text>
+    <text x="850" y="194" fill="#c8d3f5">OpenAI-compatible API, JSON schema</text>
+    <text x="850" y="214" fill="#c8d3f5">continuous batching across pages</text>
+    <text x="850" y="234" fill="#8fb3ff" font-size="11.5">prototype: Qwen3-8B via Ollama</text>
+    <rect x="835" y="260" width="275" height="120" rx="10" fill="#1f3a8a"/>
+    <text x="850" y="284" fill="#fff" font-weight="700">vLLM XPU &middot; vision model</text>
+    <text x="850" y="306" fill="#c8d3f5">Qwen2.5-VL-7B (FP8) &middot; ~11 GB</text>
+    <text x="850" y="326" fill="#c8d3f5">grounding: bbox_2d per object</text>
+    <text x="850" y="346" fill="#c8d3f5">resident together &mdash; no model swap</text>
+    <text x="850" y="366" fill="#8fb3ff" font-size="11.5">prototype: Qwen2.5-VL-7B via Ollama</text>
+    <text x="972" y="412" text-anchor="middle" fill="#c8d3f5">ECC for long unattended batches</text>
+    <text x="972" y="432" text-anchor="middle" fill="#c8d3f5">2nd card &rarr; 64 GB pool, 2&times; throughput</text>
+  </svg>
+  <div class="foot"><span>Same code on laptop and B70: switch RA_BACKEND=ollama &rarr; openai (vLLM). VRAM figures are planning estimates for Stage II.</span><span>7</span></div>
+</section>
+
+<!-- 8 Detection layers -->
+<section class="slide">
+  <div class="kicker">Solution &middot; methodology</div>
+  <h1>Hybrid detection: each layer covers the others' blind spots</h1>
+  <div class="grid3" style="margin-top:16px">
+    <div class="card" style="border-top:5px solid var(--rule)">
+      <span class="badge b-rule">RULE</span><h3 style="margin-top:8px">Deterministic</h3>
+      <ul><li>Taiwan national ID with <b>checksum</b> (flags OCR-damaged IDs too)</li>
+        <li>Luhn-valid card numbers, bank accounts, NHI, MRN, plates, e-mail, phones</li>
+        <li>ROC (民國) and Western dates; date-of-birth from nearby labels</li>
+        <li><b>Form-field anchoring</b>: value after 姓名 / 住址 / Name / Address</li></ul>
+      <p style="margin-top:8px" class="note">&lt; 5 ms per page &middot; explainable &middot; highest precision</p>
+    </div>
+    <div class="card" style="border-top:5px solid var(--llm)">
+      <span class="badge b-llm">LLM</span><h3 style="margin-top:8px">Contextual</h3>
+      <ul><li>Reads numbered OCR lines, quotes each entity exactly &rarr; mapped back to pixels</li>
+        <li>Names in narrative, full addresses, quasi-identifiers</li>
+        <li>Assigns a <b>role</b>: subject, professional, party, witness, family &mdash; policies act on roles</li>
+        <li>Compact line output (3&times; fewer tokens than JSON); entity propagated to every repeat mention</li></ul>
+      <p style="margin-top:8px" class="note">Qwen3 (Apache-2.0) &middot; local, temperature 0</p>
+    </div>
+    <div class="card" style="border-top:5px solid var(--vlm)">
+      <span class="badge b-vlm">VLM</span><h3 style="margin-top:8px">Visual</h3>
+      <ul><li>Grounded detection of handwritten signatures, portrait photos and seals</li>
+        <li>Red-ink colour segmentation finds seals deterministically and <b>snaps</b> VLM boxes to the ink</li>
+        <li>Input sized to the model's 28-px patch grid so coordinates map back 1:1</li></ul>
+      <p style="margin-top:8px" class="note">Qwen2.5-VL (Apache-2.0) + OpenCV</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:18px;background:#fff">
+    <h3>Example from the evaluation corpus &mdash; one sentence, three detections</h3>
+    <p class="mono" style="font-size:14px;margin-top:6px">{{ ex.title }} <span style="background:#e4572e;color:#fff;padding:0 4px">{{ ex.name }}</span> is a patient who works as
+      <span style="background:#ff006e;color:#fff;padding:0 4px">{{ ex.quasi }}</span>. The patient was admitted on
+      <span style="background:#c99700;color:#fff;padding:0 4px">{{ ex.date }}</span> ...</p>
+    <p class="note" style="margin-top:6px">rule: title + surname &middot; LLM: quasi-identifier (no regex can express "unique job in a small place") &middot; rule: calendar date &middot; all three removed in <span class="mono">{{ ex.doc }}</span></p>
+  </div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026</span><span>8</span></div>
+</section>
+
+<!-- 9 Policies triptych -->
+<section class="slide" style="padding-top:42px">
+  <div class="kicker">Solution &middot; purpose-based policies</div>
+  <h1 style="font-size:30px">One document, three lawful outputs</h1>
+  <div class="grid3" style="gap:18px;margin-top:6px">
+    {% for t in triptych %}
+    <div>
+      <div style="font-weight:700;color:var(--navy);font-size:15px">{{ t.title }}</div>
+      <div class="note" style="height:34px">{{ t.desc }}</div>
+      <img class="shot" src="{{ t.img }}" style="width:100%">
+    </div>
+    {% endfor %}
+  </div>
+  <div class="foot"><span>Real output of the prototype on a synthetic discharge summary (crop). Policies are YAML files a compliance officer can edit; legal basis is shown in the UI.</span><span>9</span></div>
+</section>
+
+<!-- 10 Trust -->
+<section class="slide">
+  <div class="kicker">Solution &middot; trust &amp; compliance</div>
+  <h1>Designed for auditors, not just for demos</h1>
+  <div class="grid2" style="margin-top:16px">
+    <div>
+      <div class="card"><h3>Irreversible redaction</h3><p>Boxes are burned into the page pixels and the exported PDF has no text layer &mdash;
+        nothing to copy-paste from under a black rectangle, the most common real-world redaction failure.</p></div>
+      <div class="card" style="margin-top:12px"><h3>Human in the loop &mdash; and a safety net</h3><p>Every finding shows its source (RULE / LLM / VLM), confidence, role and reason;
+        the reviewer accepts or rejects each box. An <b>unread-ink check</b> flags any text-like region the OCR did not read, so a page never passes silently.</p></div>
+      <div class="card" style="margin-top:12px"><h3>Tamper-evident audit</h3><p>Ingest, detection, review, policy change and export events are appended to a SHA-256
+        hash chain. Editing or deleting any record breaks verification. Documents themselves are never logged &mdash; only their hashes.</p></div>
+    </div>
+    <div>
+      <div class="card" style="background:#fff"><h3>Open, commercially usable components</h3>
+        <table class="t" style="margin-top:8px;font-size:13px">
+          <tr><th>Component</th><th>Role</th><th>License</th></tr>
+          <tr><td>Qwen3 (8B / 30B-A3B)</td><td>contextual LLM</td><td>Apache-2.0</td></tr>
+          <tr><td>Qwen2.5-VL-7B</td><td>vision-language</td><td>Apache-2.0</td></tr>
+          <tr><td>PP-OCR via RapidOCR</td><td>OCR</td><td>Apache-2.0</td></tr>
+          <tr><td>FastAPI, pypdfium2, OpenCV</td><td>server, PDF, vision</td><td>MIT / Apache / BSD</td></tr>
+          <tr><td>vLLM (XPU)</td><td>B70 serving</td><td>Apache-2.0</td></tr>
+          <tr><td>RedactAgent (this work)</td><td>&mdash;</td><td>MIT</td></tr>
+        </table>
+        <p class="note" style="margin-top:8px">No AGPL detectors (e.g. Ultralytics YOLO) &mdash; deliberately chosen so the
+          organisers and customers can use the work commercially.</p></div>
+      <div class="card" style="margin-top:12px"><h3>All test data is synthetic</h3><p>Every name, ID and address in this proposal was generated
+        (with valid checksums) &mdash; no real personal data was used to build or evaluate RedactAgent.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026</span><span>10</span></div>
+</section>

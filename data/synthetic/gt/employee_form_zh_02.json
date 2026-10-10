@@ -1,0 +1,174 @@
+{
+ "id": "employee_form_zh_02",
+ "template": "employee_form_zh",
+ "lang": "zh",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "FACE_PHOTO",
+   "text": "portrait",
+   "bbox": [
+    924,
+    215,
+    1136,
+    487
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "柯淑敏",
+   "bbox": [
+    226,
+    239,
+    307,
+    265
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Huang Wei-wei",
+   "bbox": [
+    226,
+    300,
+    411,
+    326
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "L235796315",
+   "bbox": [
+    253,
+    358,
+    403,
+    379
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "1992/01/12",
+   "bbox": [
+    228,
+    416,
+    364,
+    437
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0920-664-309",
+   "bbox": [
+    228,
+    474,
+    396,
+    495
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "weiwei.huang@mail.example.tw",
+   "bbox": [
+    229,
+    530,
+    616,
+    559
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "新竹市北區民生東路二段342號",
+   "bbox": [
+    229,
+    614,
+    599,
+    644
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺中市西屯區民生東路三段325號二樓",
+   "bbox": [
+    230,
+    671,
+    680,
+    702
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(822) 9769-446-201481",
+   "bbox": [
+    283,
+    735,
+    567,
+    761
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "李淑貞",
+   "bbox": [
+    257,
+    791,
+    338,
+    816
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0930-731-228",
+   "bbox": [
+    632,
+    790,
+    800,
+    811
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025/05/02",
+   "bbox": [
+    232,
+    852,
+    368,
+    873
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Huang Wei-wei",
+   "bbox": [
+    245,
+    1230,
+    531,
+    1292
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "2025/05/02",
+   "bbox": [
+    842,
+    1249,
+    978,
+    1269
+   ],
+   "role": null
+  }
+ ]
+}

@@ -1,0 +1,218 @@
+[
+ {
+  "id": "discharge_summary_en_00",
+  "template": "discharge_summary_en",
+  "lang": "en",
+  "n_pii": 20
+ },
+ {
+  "id": "discharge_summary_en_01",
+  "template": "discharge_summary_en",
+  "lang": "en",
+  "n_pii": 20
+ },
+ {
+  "id": "discharge_summary_en_02",
+  "template": "discharge_summary_en",
+  "lang": "en",
+  "n_pii": 20
+ },
+ {
+  "id": "discharge_summary_en_03",
+  "template": "discharge_summary_en",
+  "lang": "en",
+  "n_pii": 20
+ },
+ {
+  "id": "discharge_summary_en_04",
+  "template": "discharge_summary_en",
+  "lang": "en",
+  "n_pii": 20
+ },
+ {
+  "id": "discharge_summary_en_05",
+  "template": "discharge_summary_en",
+  "lang": "en",
+  "n_pii": 20
+ },
+ {
+  "id": "medical_certificate_zh_00",
+  "template": "medical_certificate_zh",
+  "lang": "zh",
+  "n_pii": 14
+ },
+ {
+  "id": "medical_certificate_zh_01",
+  "template": "medical_certificate_zh",
+  "lang": "zh",
+  "n_pii": 14
+ },
+ {
+  "id": "medical_certificate_zh_02",
+  "template": "medical_certificate_zh",
+  "lang": "zh",
+  "n_pii": 14
+ },
+ {
+  "id": "medical_certificate_zh_03",
+  "template": "medical_certificate_zh",
+  "lang": "zh",
+  "n_pii": 14
+ },
+ {
+  "id": "medical_certificate_zh_04",
+  "template": "medical_certificate_zh",
+  "lang": "zh",
+  "n_pii": 14
+ },
+ {
+  "id": "medical_certificate_zh_05",
+  "template": "medical_certificate_zh",
+  "lang": "zh",
+  "n_pii": 14
+ },
+ {
+  "id": "lease_agreement_en_00",
+  "template": "lease_agreement_en",
+  "lang": "en",
+  "n_pii": 15
+ },
+ {
+  "id": "lease_agreement_en_01",
+  "template": "lease_agreement_en",
+  "lang": "en",
+  "n_pii": 15
+ },
+ {
+  "id": "lease_agreement_en_02",
+  "template": "lease_agreement_en",
+  "lang": "en",
+  "n_pii": 15
+ },
+ {
+  "id": "lease_agreement_en_03",
+  "template": "lease_agreement_en",
+  "lang": "en",
+  "n_pii": 15
+ },
+ {
+  "id": "lease_agreement_en_04",
+  "template": "lease_agreement_en",
+  "lang": "en",
+  "n_pii": 15
+ },
+ {
+  "id": "lease_agreement_en_05",
+  "template": "lease_agreement_en",
+  "lang": "en",
+  "n_pii": 15
+ },
+ {
+  "id": "accident_report_zh_00",
+  "template": "accident_report_zh",
+  "lang": "zh",
+  "n_pii": 22
+ },
+ {
+  "id": "accident_report_zh_01",
+  "template": "accident_report_zh",
+  "lang": "zh",
+  "n_pii": 22
+ },
+ {
+  "id": "accident_report_zh_02",
+  "template": "accident_report_zh",
+  "lang": "zh",
+  "n_pii": 22
+ },
+ {
+  "id": "accident_report_zh_03",
+  "template": "accident_report_zh",
+  "lang": "zh",
+  "n_pii": 22
+ },
+ {
+  "id": "accident_report_zh_04",
+  "template": "accident_report_zh",
+  "lang": "zh",
+  "n_pii": 22
+ },
+ {
+  "id": "accident_report_zh_05",
+  "template": "accident_report_zh",
+  "lang": "zh",
+  "n_pii": 22
+ },
+ {
+  "id": "insurance_claim_en_00",
+  "template": "insurance_claim_en",
+  "lang": "en",
+  "n_pii": 11
+ },
+ {
+  "id": "insurance_claim_en_01",
+  "template": "insurance_claim_en",
+  "lang": "en",
+  "n_pii": 11
+ },
+ {
+  "id": "insurance_claim_en_02",
+  "template": "insurance_claim_en",
+  "lang": "en",
+  "n_pii": 11
+ },
+ {
+  "id": "insurance_claim_en_03",
+  "template": "insurance_claim_en",
+  "lang": "en",
+  "n_pii": 11
+ },
+ {
+  "id": "insurance_claim_en_04",
+  "template": "insurance_claim_en",
+  "lang": "en",
+  "n_pii": 11
+ },
+ {
+  "id": "insurance_claim_en_05",
+  "template": "insurance_claim_en",
+  "lang": "en",
+  "n_pii": 11
+ },
+ {
+  "id": "employee_form_zh_00",
+  "template": "employee_form_zh",
+  "lang": "zh",
+  "n_pii": 15
+ },
+ {
+  "id": "employee_form_zh_01",
+  "template": "employee_form_zh",
+  "lang": "zh",
+  "n_pii": 15
+ },
+ {
+  "id": "employee_form_zh_02",
+  "template": "employee_form_zh",
+  "lang": "zh",
+  "n_pii": 15
+ },
+ {
+  "id": "employee_form_zh_03",
+  "template": "employee_form_zh",
+  "lang": "zh",
+  "n_pii": 15
+ },
+ {
+  "id": "employee_form_zh_04",
+  "template": "employee_form_zh",
+  "lang": "zh",
+  "n_pii": 15
+ },
+ {
+  "id": "employee_form_zh_05",
+  "template": "employee_form_zh",
+  "lang": "zh",
+  "n_pii": 15
+ }
+]

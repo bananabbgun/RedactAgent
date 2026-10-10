@@ -1,0 +1,163 @@
+{
+ "id": "medical_certificate_zh_03",
+ "template": "medical_certificate_zh",
+ "lang": "zh",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "林素卿",
+   "bbox": [
+    258,
+    232,
+    342,
+    258
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "民國51年6月27日",
+   "bbox": [
+    258,
+    298,
+    478,
+    325
+   ],
+   "role": null
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "O248083643",
+   "bbox": [
+    836,
+    303,
+    1002,
+    324
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "B7237518",
+   "bbox": [
+    258,
+    368,
+    389,
+    388
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0978-401-745",
+   "bbox": [
+    808,
+    369,
+    986,
+    390
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國114年11月26日",
+   "bbox": [
+    258,
+    430,
+    510,
+    457
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "新竹市北區忠孝東路334號八樓",
+   "bbox": [
+    258,
+    496,
+    642,
+    524
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林素卿",
+   "bbox": [
+    176,
+    720,
+    260,
+    746
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "民國114年11月26日",
+   "bbox": [
+    288,
+    720,
+    540,
+    747
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "是蘭嶼唯一的牙醫師",
+   "bbox": [
+    428,
+    773,
+    680,
+    799
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "簡秀琴",
+   "bbox": [
+    241,
+    1276,
+    325,
+    1302
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "簡秀琴印",
+   "bbox": [
+    355,
+    1229,
+    473,
+    1348
+   ],
+   "role": null
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "仁和綜合證明專用",
+   "bbox": [
+    919,
+    1211,
+    1119,
+    1411
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "114年11月27日",
+   "bbox": [
+    478,
+    1566,
+    674,
+    1592
+   ],
+   "role": null
+  }
+ ]
+}

@@ -1,0 +1,174 @@
+{
+ "id": "lease_agreement_en_03",
+ "template": "lease_agreement_en",
+ "lang": "en",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "10/07/2026",
+   "bbox": [
+    469,
+    181,
+    597,
+    201
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Wu Ting-chia",
+   "bbox": [
+    252,
+    229,
+    406,
+    255
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "O179886010",
+   "bbox": [
+    607,
+    227,
+    753,
+    246
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "14F., No. 79, Zhongshan Rd., Nantun Dist., Taichung City",
+   "bbox": [
+    209,
+    271,
+    865,
+    301
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Daniel Haley",
+   "bbox": [
+    212,
+    321,
+    359,
+    347
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "C78670496",
+   "bbox": [
+    522,
+    320,
+    652,
+    339
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0912-867-652",
+   "bbox": [
+    161,
+    368,
+    319,
+    387
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "daniel.haley@example.com",
+   "bbox": [
+    410,
+    364,
+    717,
+    393
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 202, Wenhua Rd., Banqiao Dist., New Taipei City",
+   "bbox": [
+    116,
+    512,
+    724,
+    542
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "10/01/2026",
+   "bbox": [
+    345,
+    610,
+    473,
+    630
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "10/01/2027",
+   "bbox": [
+    620,
+    608,
+    748,
+    628
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(808) 7842-993-208921",
+   "bbox": [
+    589,
+    743,
+    856,
+    769
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Wu Ting-chia",
+   "bbox": [
+    86,
+    1414,
+    344,
+    1475
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Daniel Haley",
+   "bbox": [
+    656,
+    1409,
+    906,
+    1471
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Hsieh Yi-jung",
+   "bbox": [
+    243,
+    1568,
+    402,
+    1594
+   ],
+   "role": "witness"
+  }
+ ]
+}

@@ -1,0 +1,251 @@
+{
+ "id": "accident_report_zh_02",
+ "template": "accident_report_zh",
+ "lang": "zh",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "民國115年2月3日 17時27分",
+   "bbox": [
+    231,
+    209,
+    546,
+    235
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林金蓮",
+   "bbox": [
+    197,
+    394,
+    275,
+    418
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "E266288067",
+   "bbox": [
+    730,
+    400,
+    873,
+    419
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "1990/03/21",
+   "bbox": [
+    249,
+    442,
+    375,
+    462
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0924-867-736",
+   "bbox": [
+    704,
+    444,
+    862,
+    464
+   ],
+   "role": null
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "123-JDA",
+   "bbox": [
+    249,
+    487,
+    350,
+    507
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "新竹市北區中正路一段37號二樓",
+   "bbox": [
+    197,
+    529,
+    563,
+    556
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "李宗憲",
+   "bbox": [
+    196,
+    664,
+    274,
+    688
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "J192089185",
+   "bbox": [
+    729,
+    670,
+    868,
+    689
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "1970/09/02",
+   "bbox": [
+    248,
+    712,
+    374,
+    732
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0920-835-106",
+   "bbox": [
+    703,
+    714,
+    861,
+    734
+   ],
+   "role": null
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "688-GWD",
+   "bbox": [
+    247,
+    757,
+    363,
+    777
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺北市中山區復興南路二段109巷254號",
+   "bbox": [
+    195,
+    799,
+    643,
+    826
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳文賢",
+   "bbox": [
+    232,
+    870,
+    310,
+    893
+   ],
+   "role": "witness"
+  },
+  {
+   "cat": "PHONE",
+   "text": "(03) 2498-1330",
+   "bbox": [
+    440,
+    873,
+    614,
+    898
+   ],
+   "role": null
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "123-JDA",
+   "bbox": [
+    197,
+    992,
+    298,
+    1011
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林金蓮",
+   "bbox": [
+    349,
+    990,
+    427,
+    1014
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "688-GWD",
+   "bbox": [
+    535,
+    1040,
+    650,
+    1059
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "李宗憲",
+   "bbox": [
+    223,
+    1081,
+    301,
+    1105
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "邱麗卿",
+   "bbox": [
+    229,
+    1495,
+    307,
+    1518
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "邱麗卿印",
+   "bbox": [
+    337,
+    1459,
+    447,
+    1569
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國115年2月3日",
+   "bbox": [
+    835,
+    1497,
+    1035,
+    1522
+   ],
+   "role": null
+  }
+ ]
+}

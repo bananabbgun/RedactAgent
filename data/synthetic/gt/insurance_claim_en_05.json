@@ -1,0 +1,130 @@
+{
+ "id": "insurance_claim_en_05",
+ "template": "insurance_claim_en",
+ "lang": "en",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "HM-3702267",
+   "bbox": [
+    964,
+    117,
+    1100,
+    134
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Yang Han-han",
+   "bbox": [
+    103,
+    266,
+    316,
+    297
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "13/09/1957",
+   "bbox": [
+    632,
+    267,
+    807,
+    296
+   ],
+   "role": null
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "K217829277",
+   "bbox": [
+    104,
+    356,
+    307,
+    384
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0928-942-869",
+   "bbox": [
+    634,
+    356,
+    840,
+    384
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "hanyang57@mail.example.tw",
+   "bbox": [
+    104,
+    439,
+    522,
+    475
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "10F., No. 161, Wenhua Rd., Xindian Dist., New Taipei City",
+   "bbox": [
+    103,
+    527,
+    928,
+    563
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-02-26",
+   "bbox": [
+    633,
+    694,
+    809,
+    711
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "4984 5549 8488 4625",
+   "bbox": [
+    104,
+    940,
+    435,
+    968
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Yang Han-han",
+   "bbox": [
+    111,
+    1247,
+    393,
+    1306
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-02-28",
+   "bbox": [
+    633,
+    1248,
+    807,
+    1267
+   ],
+   "role": null
+  }
+ ]
+}

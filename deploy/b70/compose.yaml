@@ -1,0 +1,35 @@
+# RedactAgent on ASUS UGen Intel Arc Pro B70 32GB (Stage II plan - validate on the SDV host)
+# Two vLLM XPU servers share one B70; memory split via --gpu-memory-utilization.
+services:
+  vllm-text:
+    image: ${VLLM_XPU_IMAGE}
+    devices: ["/dev/dri:/dev/dri"]
+    shm_size: 16g
+    volumes: ["${HF_HOME:-~/.cache/huggingface}:/root/.cache/huggingface"]
+    command: >
+      vllm serve ${TEXT_MODEL:-Qwen/Qwen3-30B-A3B}
+      --port 8000 --device xpu --quantization ${TEXT_QUANT:-awq}
+      --max-model-len 16384 --gpu-memory-utilization 0.58
+    ports: ["8000:8000"]
+
+  vllm-vision:
+    image: ${VLLM_XPU_IMAGE}
+    devices: ["/dev/dri:/dev/dri"]
+    shm_size: 8g
+    volumes: ["${HF_HOME:-~/.cache/huggingface}:/root/.cache/huggingface"]
+    command: >
+      vllm serve ${VISION_MODEL:-Qwen/Qwen2.5-VL-7B-Instruct}
+      --port 8001 --device xpu --quantization ${VISION_QUANT:-fp8}
+      --max-model-len 8192 --gpu-memory-utilization 0.34 --limit-mm-per-prompt image=1
+    ports: ["8001:8001"]
+
+  redactagent:
+    build: ../..
+    environment:
+      RA_BACKEND: openai
+      RA_BASE_URL: http://vllm-text:8000
+      RA_VISION_BASE_URL: http://vllm-vision:8001
+      RA_TEXT_MODEL: ${TEXT_MODEL:-Qwen/Qwen3-30B-A3B}
+      RA_VISION_MODEL: ${VISION_MODEL:-Qwen/Qwen2.5-VL-7B-Instruct}
+    ports: ["8080:8080"]
+    depends_on: [vllm-text, vllm-vision]

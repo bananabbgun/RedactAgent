@@ -1,0 +1,130 @@
+{
+ "id": "insurance_claim_en_04",
+ "template": "insurance_claim_en",
+ "lang": "en",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "HM-1140540",
+   "bbox": [
+    971,
+    120,
+    1107,
+    138
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lee Tzu-chih",
+   "bbox": [
+    109,
+    259,
+    289,
+    285
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "11/06/1995",
+   "bbox": [
+    638,
+    267,
+    812,
+    298
+   ],
+   "role": null
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "J233912589",
+   "bbox": [
+    94,
+    352,
+    283,
+    381
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0915-274-262",
+   "bbox": [
+    638,
+    356,
+    852,
+    386
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "tzulee31@mail.example.tw",
+   "bbox": [
+    106,
+    435,
+    473,
+    472
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "13F., No. 22, Zhongxiao E. Rd., Xitun Dist., Taichung City",
+   "bbox": [
+    106,
+    523,
+    945,
+    566
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-11-27",
+   "bbox": [
+    634,
+    693,
+    811,
+    718
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "4475 2931 8359 1824",
+   "bbox": [
+    103,
+    936,
+    429,
+    966
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Lee Tzu-chih",
+   "bbox": [
+    105,
+    1243,
+    351,
+    1298
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-11-28",
+   "bbox": [
+    630,
+    1248,
+    802,
+    1268
+   ],
+   "role": null
+  }
+ ]
+}

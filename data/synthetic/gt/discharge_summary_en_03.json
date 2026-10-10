@@ -1,0 +1,229 @@
+{
+ "id": "discharge_summary_en_03",
+ "template": "discharge_summary_en",
+ "lang": "en",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Tsai Po-jung",
+   "bbox": [
+    277,
+    207,
+    419,
+    231
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "MRN-5486779",
+   "bbox": [
+    736,
+    202,
+    899,
+    222
+   ],
+   "role": null
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "O134424269",
+   "bbox": [
+    250,
+    255,
+    395,
+    275
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "March 5, 1961",
+   "bbox": [
+    841,
+    249,
+    1002,
+    273
+   ],
+   "role": null
+  },
+  {
+   "cat": "HEALTH_INSURANCE_NO",
+   "text": "0000 6948 8475",
+   "bbox": [
+    847,
+    297,
+    1029,
+    317
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0973-535-270",
+   "bbox": [
+    190,
+    352,
+    346,
+    371
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "pojung.tsai48@mail.example.tw",
+   "bbox": [
+    749,
+    344,
+    1107,
+    371
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "4F., No. 260, Heping E. Rd., Sec. 3, Nantun Dist., Taichung City",
+   "bbox": [
+    216,
+    394,
+    933,
+    424
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "October 19, 2026",
+   "bbox": [
+    248,
+    447,
+    442,
+    471
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "October 22, 2026",
+   "bbox": [
+    810,
+    441,
+    1004,
+    465
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Huang Ming-yu",
+   "bbox": [
+    372,
+    493,
+    583,
+    519
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Wu Shu-chih",
+   "bbox": [
+    365,
+    542,
+    510,
+    562
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0911-467-687",
+   "bbox": [
+    614,
+    539,
+    770,
+    559
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Tsai",
+   "bbox": [
+    132,
+    796,
+    180,
+    814
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the head coach of the national women's curling team",
+   "bbox": [
+    90,
+    830,
+    680,
+    859
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "October 19, 2026",
+   "bbox": [
+    90,
+    874,
+    284,
+    898
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Huang Ming-yu",
+   "bbox": [
+    259,
+    993,
+    470,
+    1018
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Huang Ming-yu",
+   "bbox": [
+    378,
+    1471,
+    676,
+    1534
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "October 22, 2026",
+   "bbox": [
+    866,
+    1480,
+    1060,
+    1504
+   ],
+   "role": null
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "章心用仁",
+   "bbox": [
+    987,
+    1545,
+    1118,
+    1676
+   ],
+   "role": null
+  }
+ ]
+}

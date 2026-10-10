@@ -1,0 +1,229 @@
+{
+ "id": "discharge_summary_en_05",
+ "template": "discharge_summary_en",
+ "lang": "en",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lai Kuan-shu",
+   "bbox": [
+    291,
+    201,
+    441,
+    221
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "MRN-3031869",
+   "bbox": [
+    750,
+    206,
+    914,
+    226
+   ],
+   "role": null
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "H150257904",
+   "bbox": [
+    263,
+    249,
+    407,
+    269
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "1996-03-03",
+   "bbox": [
+    854,
+    256,
+    982,
+    275
+   ],
+   "role": null
+  },
+  {
+   "cat": "HEALTH_INSURANCE_NO",
+   "text": "0000 4047 5566",
+   "bbox": [
+    859,
+    304,
+    1042,
+    324
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0985-981-691",
+   "bbox": [
+    201,
+    344,
+    357,
+    364
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "kuanshu.lai36@mail.example.tw",
+   "bbox": [
+    760,
+    351,
+    1124,
+    378
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 31, Fuxing S. Rd., Sec. 4, Nantun Dist., Taichung City",
+   "bbox": [
+    226,
+    393,
+    875,
+    423
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2024-04-07",
+   "bbox": [
+    257,
+    441,
+    385,
+    460
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2024-04-16",
+   "bbox": [
+    819,
+    447,
+    947,
+    467
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Yang Tzu-ming",
+   "bbox": [
+    380,
+    490,
+    591,
+    516
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Wang Yi-chia",
+   "bbox": [
+    372,
+    538,
+    523,
+    563
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0971-409-108",
+   "bbox": [
+    665,
+    541,
+    821,
+    561
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lai",
+   "bbox": [
+    134,
+    785,
+    168,
+    804
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the only female lighthouse keeper in Penghu",
+   "bbox": [
+    90,
+    825,
+    591,
+    854
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "2024-04-07",
+   "bbox": [
+    90,
+    865,
+    218,
+    884
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Yang Tzu-ming",
+   "bbox": [
+    256,
+    987,
+    468,
+    1012
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Yang Tzu-ming",
+   "bbox": [
+    364,
+    1469,
+    659,
+    1531
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "2024-04-16",
+   "bbox": [
+    853,
+    1488,
+    981,
+    1507
+   ],
+   "role": null
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "院醫章心",
+   "bbox": [
+    971,
+    1554,
+    1102,
+    1686
+   ],
+   "role": null
+  }
+ ]
+}

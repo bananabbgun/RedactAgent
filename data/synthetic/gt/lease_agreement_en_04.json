@@ -1,0 +1,174 @@
+{
+ "id": "lease_agreement_en_04",
+ "template": "lease_agreement_en",
+ "lang": "en",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "2025-04-24",
+   "bbox": [
+    479,
+    181,
+    609,
+    200
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lai Chia-jung",
+   "bbox": [
+    261,
+    224,
+    417,
+    251
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "F114722079",
+   "bbox": [
+    617,
+    228,
+    759,
+    247
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "4F., No. 33, Fuxing S. Rd., Sec. 3, Lingya Dist., Kaohsiung City",
+   "bbox": [
+    218,
+    270,
+    937,
+    300
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Summer Berry",
+   "bbox": [
+    220,
+    317,
+    381,
+    342
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "X30323811",
+   "bbox": [
+    544,
+    319,
+    676,
+    338
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0953-178-876",
+   "bbox": [
+    168,
+    363,
+    327,
+    382
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "summer.berry@example.com",
+   "bbox": [
+    417,
+    364,
+    743,
+    392
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 333, Guangfu Rd., Sec. 2, Zuoying Dist., Kaohsiung City",
+   "bbox": [
+    121,
+    509,
+    811,
+    539
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-04-01",
+   "bbox": [
+    349,
+    608,
+    479,
+    627
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-04-01",
+   "bbox": [
+    626,
+    610,
+    756,
+    629
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(812) 1046-694-181235",
+   "bbox": [
+    591,
+    745,
+    858,
+    771
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Lai Chia-jung",
+   "bbox": [
+    74,
+    1408,
+    332,
+    1469
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Summer Berry",
+   "bbox": [
+    646,
+    1412,
+    928,
+    1473
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Yang Jung-chih",
+   "bbox": [
+    233,
+    1563,
+    410,
+    1590
+   ],
+   "role": "witness"
+  }
+ ]
+}

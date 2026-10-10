@@ -1,0 +1,174 @@
+{
+ "id": "lease_agreement_en_01",
+ "template": "lease_agreement_en",
+ "lang": "en",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "09/03/2025",
+   "bbox": [
+    470,
+    181,
+    598,
+    201
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lee Wei-chih",
+   "bbox": [
+    253,
+    228,
+    403,
+    248
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "B106046137",
+   "bbox": [
+    604,
+    227,
+    748,
+    246
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "6F., No. 98, Guangfu Rd., Sec. 2, Banqiao Dist., New Taipei City",
+   "bbox": [
+    210,
+    271,
+    940,
+    301
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Christian Allen",
+   "bbox": [
+    212,
+    320,
+    384,
+    341
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "B47450750",
+   "bbox": [
+    546,
+    320,
+    677,
+    338
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0974-685-134",
+   "bbox": [
+    162,
+    368,
+    320,
+    387
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "christian.allen@example.com",
+   "bbox": [
+    411,
+    364,
+    740,
+    392
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 233, Ziyou Rd., Banqiao Dist., New Taipei City",
+   "bbox": [
+    117,
+    512,
+    701,
+    541
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "09/01/2025",
+   "bbox": [
+    345,
+    610,
+    473,
+    630
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "09/01/2026",
+   "bbox": [
+    620,
+    608,
+    748,
+    628
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(808) 4369-942-150392",
+   "bbox": [
+    589,
+    744,
+    856,
+    769
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Lee Wei-chih",
+   "bbox": [
+    81,
+    1414,
+    318,
+    1468
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Christian Allen",
+   "bbox": [
+    655,
+    1410,
+    939,
+    1457
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Hsieh Hao-hao",
+   "bbox": [
+    242,
+    1567,
+    409,
+    1587
+   ],
+   "role": "witness"
+  }
+ ]
+}

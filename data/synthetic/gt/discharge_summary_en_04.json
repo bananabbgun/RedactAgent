@@ -1,0 +1,229 @@
+{
+ "id": "discharge_summary_en_04",
+ "template": "discharge_summary_en",
+ "lang": "en",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lee Hao-chih",
+   "bbox": [
+    275,
+    208,
+    425,
+    227
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "MRN-1070558",
+   "bbox": [
+    734,
+    201,
+    897,
+    221
+   ],
+   "role": null
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "J120377467",
+   "bbox": [
+    248,
+    256,
+    387,
+    276
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "August 16, 2000",
+   "bbox": [
+    838,
+    248,
+    1023,
+    273
+   ],
+   "role": null
+  },
+  {
+   "cat": "HEALTH_INSURANCE_NO",
+   "text": "0000 5875 7421",
+   "bbox": [
+    845,
+    296,
+    1028,
+    316
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0932-956-187",
+   "bbox": [
+    188,
+    353,
+    344,
+    373
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "haochih.lee97@mail.example.tw",
+   "bbox": [
+    747,
+    342,
+    1112,
+    370
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 98, Ziyou Rd., Sec. 3, Zhongshan Dist., Taipei City",
+   "bbox": [
+    215,
+    394,
+    829,
+    425
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "January 16, 2026",
+   "bbox": [
+    246,
+    447,
+    442,
+    473
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "January 21, 2026",
+   "bbox": [
+    808,
+    440,
+    1004,
+    465
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Huang Wei-hao",
+   "bbox": [
+    371,
+    493,
+    586,
+    519
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Chang Pei-yu",
+   "bbox": [
+    364,
+    542,
+    517,
+    567
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0916-767-819",
+   "bbox": [
+    659,
+    538,
+    815,
+    558
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lee",
+   "bbox": [
+    132,
+    797,
+    174,
+    815
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the only female lighthouse keeper in Penghu",
+   "bbox": [
+    89,
+    831,
+    590,
+    861
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "January 16, 2026",
+   "bbox": [
+    90,
+    875,
+    285,
+    901
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Huang Wei-hao",
+   "bbox": [
+    260,
+    993,
+    475,
+    1019
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Huang Wei-hao",
+   "bbox": [
+    380,
+    1471,
+    675,
+    1534
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "January 21, 2026",
+   "bbox": [
+    868,
+    1479,
+    1063,
+    1505
+   ],
+   "role": null
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "醫用專心",
+   "bbox": [
+    989,
+    1543,
+    1121,
+    1675
+   ],
+   "role": null
+  }
+ ]
+}

@@ -1,0 +1,174 @@
+{
+ "id": "employee_form_zh_00",
+ "template": "employee_form_zh",
+ "lang": "zh",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "FACE_PHOTO",
+   "text": "portrait",
+   "bbox": [
+    932,
+    222,
+    1143,
+    493
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "張文龍",
+   "bbox": [
+    235,
+    234,
+    316,
+    259
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lai Jung-pei",
+   "bbox": [
+    235,
+    296,
+    383,
+    321
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "J143048647",
+   "bbox": [
+    261,
+    354,
+    410,
+    374
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "1991/12/02",
+   "bbox": [
+    234,
+    412,
+    370,
+    432
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0912-677-952",
+   "bbox": [
+    234,
+    470,
+    402,
+    490
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "jungpei.lai@mail.example.tw",
+   "bbox": [
+    232,
+    528,
+    578,
+    555
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺北市中山區忠孝東路三段246號",
+   "bbox": [
+    233,
+    612,
+    629,
+    640
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺南市安平區自由路133號",
+   "bbox": [
+    233,
+    670,
+    548,
+    698
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(812) 7961-675-156407",
+   "bbox": [
+    285,
+    732,
+    569,
+    758
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳淑華",
+   "bbox": [
+    258,
+    786,
+    339,
+    812
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0936-959-175",
+   "bbox": [
+    633,
+    792,
+    801,
+    812
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025/04/09",
+   "bbox": [
+    232,
+    848,
+    368,
+    868
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Lai Jung-pei",
+   "bbox": [
+    236,
+    1227,
+    472,
+    1288
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "2025/04/09",
+   "bbox": [
+    836,
+    1253,
+    972,
+    1273
+   ],
+   "role": null
+  }
+ ]
+}

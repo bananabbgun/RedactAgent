@@ -1,0 +1,174 @@
+{
+ "id": "employee_form_zh_03",
+ "template": "employee_form_zh",
+ "lang": "zh",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "FACE_PHOTO",
+   "text": "portrait",
+   "bbox": [
+    932,
+    222,
+    1144,
+    493
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "柯子豪",
+   "bbox": [
+    236,
+    234,
+    317,
+    258
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Kuo Ting-yen",
+   "bbox": [
+    235,
+    296,
+    397,
+    321
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "K135197150",
+   "bbox": [
+    261,
+    354,
+    414,
+    374
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "1997/02/23",
+   "bbox": [
+    235,
+    412,
+    371,
+    432
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0972-490-579",
+   "bbox": [
+    234,
+    470,
+    402,
+    490
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "tingyen.kuo@mail.example.tw",
+   "bbox": [
+    234,
+    528,
+    596,
+    555
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "新北市中和區自由路34號四樓",
+   "bbox": [
+    233,
+    612,
+    588,
+    640
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "新北市中和區中山路202巷320號六樓",
+   "bbox": [
+    233,
+    670,
+    674,
+    698
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(812) 3254-972-612969",
+   "bbox": [
+    285,
+    732,
+    569,
+    758
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "楊淑貞",
+   "bbox": [
+    258,
+    786,
+    340,
+    811
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0910-564-569",
+   "bbox": [
+    633,
+    792,
+    801,
+    812
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025/02/05",
+   "bbox": [
+    232,
+    848,
+    368,
+    868
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Kuo Ting-yen",
+   "bbox": [
+    240,
+    1227,
+    510,
+    1287
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "2025/02/05",
+   "bbox": [
+    836,
+    1253,
+    972,
+    1273
+   ],
+   "role": null
+  }
+ ]
+}

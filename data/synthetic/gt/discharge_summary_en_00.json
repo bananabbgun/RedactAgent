@@ -1,0 +1,229 @@
+{
+ "id": "discharge_summary_en_00",
+ "template": "discharge_summary_en",
+ "lang": "en",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Hsu Chih-wei",
+   "bbox": [
+    281,
+    206,
+    431,
+    224
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "MRN-6016328",
+   "bbox": [
+    740,
+    204,
+    903,
+    223
+   ],
+   "role": null
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "H274867682",
+   "bbox": [
+    254,
+    254,
+    398,
+    272
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "01/11/1969",
+   "bbox": [
+    845,
+    252,
+    971,
+    270
+   ],
+   "role": null
+  },
+  {
+   "cat": "HEALTH_INSURANCE_NO",
+   "text": "0000 1275 6803",
+   "bbox": [
+    851,
+    299,
+    1033,
+    318
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0958-436-719",
+   "bbox": [
+    193,
+    350,
+    349,
+    369
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "chihwei.hsu61@mail.example.tw",
+   "bbox": [
+    752,
+    347,
+    1120,
+    371
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 372, Fuxing S. Rd., Sec. 4, Zuoying Dist., Kaohsiung City",
+   "bbox": [
+    219,
+    396,
+    907,
+    422
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "04/15/2025",
+   "bbox": [
+    250,
+    446,
+    376,
+    464
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "04/22/2025",
+   "bbox": [
+    812,
+    444,
+    938,
+    462
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Chen Han-jung",
+   "bbox": [
+    374,
+    493,
+    584,
+    517
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Yang Tzu-chia",
+   "bbox": [
+    367,
+    541,
+    530,
+    565
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0931-970-474",
+   "bbox": [
+    655,
+    540,
+    811,
+    559
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Hsu",
+   "bbox": [
+    138,
+    793,
+    183,
+    811
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the only licensed ferry captain on Green Island",
+   "bbox": [
+    90,
+    831,
+    612,
+    856
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "04/15/2025",
+   "bbox": [
+    90,
+    873,
+    216,
+    891
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Chen Han-jung",
+   "bbox": [
+    258,
+    992,
+    468,
+    1015
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Chen Han-jung",
+   "bbox": [
+    374,
+    1472,
+    657,
+    1532
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "04/22/2025",
+   "bbox": [
+    862,
+    1484,
+    988,
+    1502
+   ],
+   "role": null
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "醫心用院",
+   "bbox": [
+    983,
+    1548,
+    1113,
+    1679
+   ],
+   "role": null
+  }
+ ]
+}

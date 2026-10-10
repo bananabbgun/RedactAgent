@@ -1,0 +1,174 @@
+{
+ "id": "lease_agreement_en_05",
+ "template": "lease_agreement_en",
+ "lang": "en",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "2026-02-08",
+   "bbox": [
+    466,
+    182,
+    596,
+    202
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Tsai Jung-hao",
+   "bbox": [
+    249,
+    230,
+    407,
+    256
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "H104056613",
+   "bbox": [
+    607,
+    226,
+    753,
+    246
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "14F., No. 39, Zhongxiao E. Rd., Sec. 3, Xindian Dist., New Taipei City",
+   "bbox": [
+    207,
+    268,
+    1004,
+    303
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Donna Lara",
+   "bbox": [
+    209,
+    323,
+    341,
+    343
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "A25190970",
+   "bbox": [
+    503,
+    320,
+    636,
+    339
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0912-799-710",
+   "bbox": [
+    159,
+    370,
+    317,
+    389
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "donna.lara@example.com",
+   "bbox": [
+    408,
+    364,
+    696,
+    394
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 89, Fuxing S. Rd., Lingya Dist., Kaohsiung City",
+   "bbox": [
+    115,
+    512,
+    704,
+    544
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-02-01",
+   "bbox": [
+    344,
+    612,
+    474,
+    631
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2027-02-01",
+   "bbox": [
+    621,
+    608,
+    751,
+    628
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(812) 2976-431-593091",
+   "bbox": [
+    588,
+    742,
+    856,
+    769
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Tsai Jung-hao",
+   "bbox": [
+    88,
+    1416,
+    361,
+    1477
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Donna Lara",
+   "bbox": [
+    658,
+    1408,
+    893,
+    1465
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Hsieh Shu-yi",
+   "bbox": [
+    246,
+    1569,
+    393,
+    1596
+   ],
+   "role": "witness"
+  }
+ ]
+}

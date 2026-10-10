@@ -1,0 +1,251 @@
+{
+ "id": "accident_report_zh_04",
+ "template": "accident_report_zh",
+ "lang": "zh",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "民國114年6月21日 22時11分",
+   "bbox": [
+    233,
+    208,
+    562,
+    235
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "武家豪",
+   "bbox": [
+    199,
+    393,
+    277,
+    417
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "F119125463",
+   "bbox": [
+    732,
+    400,
+    874,
+    420
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "1995/03/03",
+   "bbox": [
+    250,
+    441,
+    376,
+    461
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0942-615-678",
+   "bbox": [
+    705,
+    445,
+    863,
+    465
+   ],
+   "role": null
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "401-SPZ",
+   "bbox": [
+    250,
+    486,
+    351,
+    506
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "新竹市東區光復路二段36巷375號",
+   "bbox": [
+    197,
+    528,
+    580,
+    555
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "李文忠",
+   "bbox": [
+    196,
+    663,
+    275,
+    687
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "O125910681",
+   "bbox": [
+    729,
+    670,
+    876,
+    690
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "1980/12/04",
+   "bbox": [
+    248,
+    711,
+    374,
+    731
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0925-917-235",
+   "bbox": [
+    703,
+    715,
+    861,
+    735
+   ],
+   "role": null
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "587-PLK",
+   "bbox": [
+    248,
+    756,
+    348,
+    776
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺北市士林區民生東路二段176號三樓",
+   "bbox": [
+    195,
+    798,
+    628,
+    826
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "顏秀蘭",
+   "bbox": [
+    232,
+    868,
+    310,
+    893
+   ],
+   "role": "witness"
+  },
+  {
+   "cat": "PHONE",
+   "text": "(02) 2410-5145",
+   "bbox": [
+    440,
+    873,
+    614,
+    898
+   ],
+   "role": null
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "401-SPZ",
+   "bbox": [
+    197,
+    991,
+    298,
+    1011
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "武家豪",
+   "bbox": [
+    350,
+    989,
+    428,
+    1014
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "587-PLK",
+   "bbox": [
+    535,
+    1039,
+    635,
+    1059
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "李文忠",
+   "bbox": [
+    222,
+    1080,
+    300,
+    1105
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "鄭進財",
+   "bbox": [
+    227,
+    1493,
+    305,
+    1519
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "鄭進財印",
+   "bbox": [
+    335,
+    1458,
+    446,
+    1569
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國114年6月21日",
+   "bbox": [
+    833,
+    1498,
+    1047,
+    1523
+   ],
+   "role": null
+  }
+ ]
+}

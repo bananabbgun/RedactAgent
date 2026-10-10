@@ -1,0 +1,141 @@
+<!-- 1 Cover -->
+<section class="slide cover">
+  <div class="kicker" style="color:#8fb3ff">2026 ASUS UGen AI League &middot; Stage I Proposal</div>
+  <h1>RedactAgent</h1>
+  <p class="lead">On-premises AI that finds and removes personal data from scanned documents &mdash;
+    so hospitals, law firms and agencies can share records without the records ever leaving the building.</p>
+  <div style="margin-top:34px">
+    <span class="pill">Battlefield Thunderstorm &middot; ASUS UGen Intel Arc Pro B70 32GB</span>
+    <span class="pill">Theme: Workplace AI</span>
+    <span class="pill">Global Online Track</span>
+  </div>
+  <div style="position:absolute;left:80px;bottom:64px;font-size:17px;color:#dbe4ff">
+    {% for p in cfg.team %}<b>{{ p.name }}</b> &middot; {{ p.student_id }} &middot; {{ p.affiliation }}<br>{% endfor %}
+  </div>
+  <svg style="position:absolute;right:80px;top:150px" width="300" height="360" viewBox="0 0 300 360">
+    <rect x="20" y="10" width="240" height="320" rx="14" fill="#fff" opacity=".96"/>
+    <rect x="44" y="40" width="120" height="14" rx="3" fill="#c9d3ea"/>
+    <rect x="44" y="72" width="70" height="12" rx="3" fill="#c9d3ea"/><rect x="122" y="70" width="110" height="16" rx="2" fill="#0b1d4d"/>
+    <rect x="44" y="102" width="70" height="12" rx="3" fill="#c9d3ea"/><rect x="122" y="100" width="90" height="16" rx="2" fill="#0b1d4d"/>
+    <rect x="44" y="132" width="190" height="10" rx="3" fill="#e2e8f5"/><rect x="44" y="150" width="60" height="10" rx="3" fill="#e2e8f5"/>
+    <rect x="108" y="148" width="80" height="14" rx="2" fill="#0b1d4d"/><rect x="192" y="150" width="42" height="10" rx="3" fill="#e2e8f5"/>
+    <rect x="44" y="172" width="190" height="10" rx="3" fill="#e2e8f5"/><rect x="44" y="192" width="150" height="10" rx="3" fill="#e2e8f5"/>
+    <rect x="44" y="248" width="110" height="34" rx="3" fill="#0b1d4d"/>
+    <rect x="180" y="236" width="56" height="56" rx="4" fill="#0b1d4d"/>
+    <circle cx="250" cy="300" r="40" fill="#22d3ee"/><path d="M232 300 l12 12 l24 -26" stroke="#0b1d4d" stroke-width="8" fill="none" stroke-linecap="round"/>
+  </svg>
+</section>
+
+<!-- 2 Problem -->
+<section class="slide">
+  <div class="kicker">Context &amp; problem</div>
+  <h1>Sensitive documents have to leave the building every day</h1>
+  <p class="lead">Medical records, contracts, police reports and HR files are routinely shared for research, litigation,
+    insurance and public-information requests. Every copy must first be stripped of personal data &mdash; today, by hand.</p>
+  <div class="grid4" style="margin-bottom:22px">
+    <div class="card"><span class="tag">Hospitals</span><h3 style="margin-top:8px">Research &amp; IRB</h3><p>Chart extracts for approved studies must be de-identified before release.</p></div>
+    <div class="card"><span class="tag">Law firms &amp; courts</span><h3 style="margin-top:8px">Litigation</h3><p>Filings keep the parties but mask ID numbers, accounts and witnesses.</p></div>
+    <div class="card"><span class="tag">Government</span><h3 style="margin-top:8px">Public release</h3><p>Freedom-of-information requests require removing private individuals.</p></div>
+    <div class="card"><span class="tag">Insurers &amp; HR</span><h3 style="margin-top:8px">Claims &amp; audits</h3><p>Handwritten forms, ID photos and seals travel to third parties.</p></div>
+  </div>
+  <div class="grid3">
+    <div class="card" style="background:#fff5f2;border-color:#f6c7b8"><h3>Slow &amp; error-prone</h3><p>A reviewer reads every line of every scan, then a second reviewer checks. One missed ID number is a reportable breach.</p></div>
+    <div class="card" style="background:#fff5f2;border-color:#f6c7b8"><h3>Cloud AI is off-limits</h3><p>The documents are exactly the data that policy forbids sending to an external API &mdash; the tool must run on-premises.</p></div>
+    <div class="card" style="background:#fff5f2;border-color:#f6c7b8"><h3>Stakes are rising</h3><p>Taiwan's PDPA amendment (promulgated Nov 2025) creates a dedicated regulator and fines up to NT$15 million per failure to rectify.</p></div>
+  </div>
+  <div class="src">Sources: K&amp;L Gates, "New Developments in the Taiwan Personal Data Protection Act" (Jan 2026); Baker McKenzie InsightPlus on the 2025 PDPA amendment.</div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026</span><span>2</span></div>
+</section>
+
+<!-- 3 Why existing tools fail -->
+<section class="slide">
+  <div class="kicker">Context &amp; problem</div>
+  <h1>Why existing approaches fall short</h1>
+  <p class="lead">Real documents are scanned, bilingual, handwritten and stamped. Identifiers hide in free text, not just in fixed formats.</p>
+  <table class="t">
+    <tr><th style="width:30%">Capability</th><th>Manual review</th><th>Regex / DLP tools</th><th>Cloud AI APIs</th><th class="hl" style="background:#1f3a8a">RedactAgent</th></tr>
+    <tr><td>Scanned / photographed pages (OCR)</td><td class="yes">yes</td><td class="part">add-on</td><td class="yes">yes</td><td class="yes hl">yes &mdash; PP-OCR</td></tr>
+    <tr><td>Names, addresses, roles in free text</td><td class="yes">yes</td><td class="no">no</td><td class="yes">yes</td><td class="yes hl">yes &mdash; local LLM</td></tr>
+    <tr><td>Quasi-identifiers ("the only dentist on Orchid Island")</td><td class="part">if noticed</td><td class="no">no</td><td class="part">partly</td><td class="yes hl">yes</td></tr>
+    <tr><td>Signatures, ID photos, red seals (印章)</td><td class="yes">yes</td><td class="no">no</td><td class="part">partly</td><td class="yes hl">yes &mdash; local VLM + colour</td></tr>
+    <tr><td>Taiwan formats (身分證 checksum, ROC dates, NHI no.)</td><td class="yes">yes</td><td class="part">custom rules</td><td class="part">weak</td><td class="yes hl">built-in</td></tr>
+    <tr><td>Data never leaves the premises</td><td class="yes">yes</td><td class="yes">yes</td><td class="no">no</td><td class="yes hl">yes</td></tr>
+    <tr><td>Purpose-aware (research vs. court vs. public)</td><td class="part">by memory</td><td class="no">no</td><td class="no">no</td><td class="yes hl">policy files</td></tr>
+    <tr><td>Speed &amp; tamper-evident audit trail</td><td class="no">minutes / page</td><td class="yes">fast</td><td class="part">vendor logs</td><td class="yes hl">seconds / page + hash chain</td></tr>
+  </table>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026</span><span>3</span></div>
+</section>
+
+<!-- 4 Users & scenario -->
+<section class="slide">
+  <div class="kicker">Context &amp; problem</div>
+  <h1>Who uses it &mdash; a day in the medical-records office</h1>
+  <div class="grid2" style="margin-top:18px">
+    <div>
+      <div class="quote">"Our IRB-approved study needs 400 discharge summaries. Each one has the patient's name, ID,
+        address, phone, the doctor's signature and the hospital seal &mdash; and sometimes a sentence like
+        <i>'works as the only ferry captain on Green Island'</i>."</div>
+      <p class="note" style="margin-top:6px">Illustrative persona: medical-records officer, regional hospital, Taiwan.</p>
+      <div class="card" style="margin-top:18px">
+        <h3>Today</h3>
+        <ul><li>Print or open each scan, black-out by hand, second reviewer re-checks.</li>
+          <li>Cloud OCR / AI not allowed by hospital information-security policy.</li>
+          <li>No consistent record of what was removed, by whom, under which rule.</li></ul>
+      </div>
+      <div class="card" style="margin-top:12px;background:#eefaf4;border-color:#bfe6d2">
+        <h3>With RedactAgent on an ASUS UGen B70 workstation</h3>
+        <ul><li>Drop the batch into the browser on the hospital LAN; choose <b>Research (IRB)</b> policy.</li>
+          <li>Review the highlighted findings, approve, export burned-in PDFs + de-identified text.</li>
+          <li>Audit log proves which policy was applied to every document.</li></ul>
+      </div>
+    </div>
+    <div>
+      <div class="grid2" style="gap:14px">
+        <div class="card"><div class="big">476</div><div class="bigl">hospitals in Taiwan (end of 2023) &mdash; each with a medical-records office</div></div>
+        <div class="card"><div class="big">4</div><div class="bigl">built-in purpose policies: research, litigation, public release, strict</div></div>
+        <div class="card"><div class="big">15</div><div class="bigl">PII categories incl. Taiwan national ID, NHI card, ROC dates, seals</div></div>
+        <div class="card"><div class="big">0</div><div class="bigl">bytes sent to the internet &mdash; models, OCR and audit all run on the box</div></div>
+      </div>
+      <div class="card" style="margin-top:14px">
+        <h3>Same engine, more buyers</h3>
+        <p>Law firms (discovery &amp; court filings) &middot; government agencies (FOI releases) &middot; insurers (claim files) &middot;
+          HR / shared-service centres (employee records) &middot; universities (research data).</p>
+      </div>
+    </div>
+  </div>
+  <div class="src">Source: Ministry of Health and Welfare, 2024 Taiwan Health and Welfare Report (476 hospitals, 2023).</div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026</span><span>4</span></div>
+</section>
+
+<!-- 5 Solution overview -->
+<section class="slide">
+  <div class="kicker">Solution</div>
+  <h1>RedactAgent: detect, decide, redact, prove &mdash; all on-prem</h1>
+  <p class="lead">A hybrid pipeline: deterministic rules for precision, a local LLM for context, a local VLM for what is not text,
+    and purpose-based policies that decide what to do with each finding.</p>
+  <div class="flow" style="margin:10px 0 26px">
+    <div class="step"><b>1 &middot; Ingest</b><span>PDF, scan or phone photo; pages rendered at 150 dpi; SHA-256 logged.</span></div><div class="arr">&rarr;</div>
+    <div class="step"><b>2 &middot; Read</b><span>PP-OCR (ONNX / OpenVINO) with per-character boxes, EN + 中文.</span></div><div class="arr">&rarr;</div>
+    <div class="step"><b>3 &middot; Detect</b><span><span class="badge b-rule">RULE</span> <span class="badge b-llm">LLM</span> <span class="badge b-vlm">VLM</span> layers, merged and cross-checked.</span></div><div class="arr">&rarr;</div>
+    <div class="step"><b>4 &middot; Decide</b><span>Purpose policy: redact, pseudonymise, keep year only, or keep.</span></div><div class="arr">&rarr;</div>
+    <div class="step"><b>5 &middot; Review</b><span>Human approves or rejects each box in the browser.</span></div><div class="arr">&rarr;</div>
+    <div class="step"><b>6 &middot; Export &amp; prove</b><span>Pixel-burned PDF, de-identified text, hash-chained audit.</span></div>
+  </div>
+  <div class="grid3">
+    <div class="card"><h3>Finds what regex cannot</h3><p>Names in narratives, the role of each person (patient vs. physician vs. witness),
+      quasi-identifiers, handwritten fields, signatures, ID photos and red seals.</p></div>
+    <div class="card"><h3>Redacts for a purpose</h3><p>The same page becomes an IRB extract with consistent pseudonyms, a court exhibit that keeps
+      the parties, or a public release that keeps only officials. Policies are editable YAML.</p></div>
+    <div class="card"><h3>Built to be trusted</h3><p>No hidden text layer to copy-paste, reviewer decisions recorded, every export hashed into a
+      tamper-evident chain. Runs fully offline.</p></div>
+  </div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026</span><span>5</span></div>
+</section>
+
+<!-- 6 Product screenshot -->
+<section class="slide" style="padding-top:40px">
+  <div class="kicker">Solution &middot; working prototype</div>
+  <h1 style="font-size:30px">The reviewer's view</h1>
+  <div style="text-align:center"><img class="shot" src="assets/ui.png" style="height:540px;margin-top:6px"></div>
+  <div class="foot"><span>Prototype running locally (FastAPI + vanilla JS). Left: detections coloured by category &middot; middle: burned-in output &middot; right: findings with source badges and policy action.</span><span>6</span></div>
+</section>

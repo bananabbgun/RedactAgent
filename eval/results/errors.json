@@ -1,0 +1,1262 @@
+{
+ "A_deterministic": {
+  "missed": [
+   {
+    "doc": "discharge_summary_en_00",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the only licensed ferry captain on Green Island"
+   },
+   {
+    "doc": "discharge_summary_en_00",
+    "cat": "SIGNATURE",
+    "text": "Chen Han-jung"
+   },
+   {
+    "doc": "discharge_summary_en_01",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the only licensed ferry captain on Green Island"
+   },
+   {
+    "doc": "discharge_summary_en_01",
+    "cat": "DATE",
+    "text": "2026-04-28"
+   },
+   {
+    "doc": "discharge_summary_en_01",
+    "cat": "SIGNATURE",
+    "text": "Wu Pei-chia"
+   },
+   {
+    "doc": "discharge_summary_en_02",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the head coach of the national women's curling team"
+   },
+   {
+    "doc": "discharge_summary_en_02",
+    "cat": "SIGNATURE",
+    "text": "Cheng Chih-kuan"
+   },
+   {
+    "doc": "discharge_summary_en_03",
+    "cat": "DATE",
+    "text": "October 19, 2026"
+   },
+   {
+    "doc": "discharge_summary_en_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the head coach of the national women's curling team"
+   },
+   {
+    "doc": "discharge_summary_en_03",
+    "cat": "SIGNATURE",
+    "text": "Huang Ming-yu"
+   },
+   {
+    "doc": "discharge_summary_en_04",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the only female lighthouse keeper in Penghu"
+   },
+   {
+    "doc": "discharge_summary_en_04",
+    "cat": "SIGNATURE",
+    "text": "Huang Wei-hao"
+   },
+   {
+    "doc": "discharge_summary_en_05",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the only female lighthouse keeper in Penghu"
+   },
+   {
+    "doc": "discharge_summary_en_05",
+    "cat": "DATE",
+    "text": "2024-04-07"
+   },
+   {
+    "doc": "discharge_summary_en_05",
+    "cat": "SIGNATURE",
+    "text": "Yang Tzu-ming"
+   },
+   {
+    "doc": "medical_certificate_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "蕭素琴"
+   },
+   {
+    "doc": "medical_certificate_zh_00",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "現任國家女子冰壺隊總教練"
+   },
+   {
+    "doc": "medical_certificate_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "潘志銘"
+   },
+   {
+    "doc": "medical_certificate_zh_01",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "為該村唯一的排灣族語教師"
+   },
+   {
+    "doc": "medical_certificate_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "王永昌"
+   },
+   {
+    "doc": "medical_certificate_zh_02",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "為綠島唯一領有執照的渡輪船長"
+   },
+   {
+    "doc": "medical_certificate_zh_03",
+    "cat": "GOV_ID",
+    "text": "O248083643"
+   },
+   {
+    "doc": "medical_certificate_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "林素卿"
+   },
+   {
+    "doc": "medical_certificate_zh_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "是蘭嶼唯一的牙醫師"
+   },
+   {
+    "doc": "medical_certificate_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "黃冠宇"
+   },
+   {
+    "doc": "medical_certificate_zh_04",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "現任國家女子冰壺隊總教練"
+   },
+   {
+    "doc": "medical_certificate_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "卓正雄"
+   },
+   {
+    "doc": "medical_certificate_zh_05",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "為該村唯一的排灣族語教師"
+   },
+   {
+    "doc": "lease_agreement_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Lee Ting-ting"
+   },
+   {
+    "doc": "lease_agreement_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Kyle Cummings"
+   },
+   {
+    "doc": "lease_agreement_en_00",
+    "cat": "ADDRESS",
+    "text": "No. 122, Heping E. Rd., Lingya Dist., Kaohsiung City"
+   },
+   {
+    "doc": "lease_agreement_en_00",
+    "cat": "SIGNATURE",
+    "text": "Lee Ting-ting"
+   },
+   {
+    "doc": "lease_agreement_en_00",
+    "cat": "SIGNATURE",
+    "text": "Kyle Cummings"
+   },
+   {
+    "doc": "lease_agreement_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Lee Wei-chih"
+   },
+   {
+    "doc": "lease_agreement_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Christian Allen"
+   },
+   {
+    "doc": "lease_agreement_en_01",
+    "cat": "ADDRESS",
+    "text": "No. 233, Ziyou Rd., Banqiao Dist., New Taipei City"
+   },
+   {
+    "doc": "lease_agreement_en_01",
+    "cat": "SIGNATURE",
+    "text": "Lee Wei-chih"
+   },
+   {
+    "doc": "lease_agreement_en_01",
+    "cat": "SIGNATURE",
+    "text": "Christian Allen"
+   },
+   {
+    "doc": "lease_agreement_en_02",
+    "cat": "PERSON_NAME",
+    "text": "Lee Yen-po"
+   },
+   {
+    "doc": "lease_agreement_en_02",
+    "cat": "PERSON_NAME",
+    "text": "Michael Ferguson"
+   },
+   {
+    "doc": "lease_agreement_en_02",
+    "cat": "ADDRESS",
+    "text": "5F., No. 54, Ziyou Rd., Nantun Dist., Taichung City"
+   },
+   {
+    "doc": "lease_agreement_en_02",
+    "cat": "SIGNATURE",
+    "text": "Lee Yen-po"
+   },
+   {
+    "doc": "lease_agreement_en_02",
+    "cat": "SIGNATURE",
+    "text": "Michael Ferguson"
+   },
+   {
+    "doc": "lease_agreement_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Wu Ting-chia"
+   },
+   {
+    "doc": "lease_agreement_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Daniel Haley"
+   },
+   {
+    "doc": "lease_agreement_en_03",
+    "cat": "ADDRESS",
+    "text": "No. 202, Wenhua Rd., Banqiao Dist., New Taipei City"
+   },
+   {
+    "doc": "lease_agreement_en_03",
+    "cat": "SIGNATURE",
+    "text": "Wu Ting-chia"
+   },
+   {
+    "doc": "lease_agreement_en_03",
+    "cat": "SIGNATURE",
+    "text": "Daniel Haley"
+   },
+   {
+    "doc": "lease_agreement_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Lai Chia-jung"
+   },
+   {
+    "doc": "lease_agreement_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Summer Berry"
+   },
+   {
+    "doc": "lease_agreement_en_04",
+    "cat": "ADDRESS",
+    "text": "No. 333, Guangfu Rd., Sec. 2, Zuoying Dist., Kaohsiung City"
+   },
+   {
+    "doc": "lease_agreement_en_04",
+    "cat": "SIGNATURE",
+    "text": "Lai Chia-jung"
+   },
+   {
+    "doc": "lease_agreement_en_04",
+    "cat": "SIGNATURE",
+    "text": "Summer Berry"
+   },
+   {
+    "doc": "lease_agreement_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Tsai Jung-hao"
+   },
+   {
+    "doc": "lease_agreement_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Donna Lara"
+   },
+   {
+    "doc": "lease_agreement_en_05",
+    "cat": "ADDRESS",
+    "text": "No. 89, Fuxing S. Rd., Lingya Dist., Kaohsiung City"
+   },
+   {
+    "doc": "lease_agreement_en_05",
+    "cat": "SIGNATURE",
+    "text": "Tsai Jung-hao"
+   },
+   {
+    "doc": "lease_agreement_en_05",
+    "cat": "SIGNATURE",
+    "text": "Donna Lara"
+   },
+   {
+    "doc": "accident_report_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "莊苡安"
+   },
+   {
+    "doc": "accident_report_zh_00",
+    "cat": "PHONE",
+    "text": "(03) 2656-5082"
+   },
+   {
+    "doc": "accident_report_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "何惠珍"
+   },
+   {
+    "doc": "accident_report_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "李冠宏"
+   },
+   {
+    "doc": "accident_report_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "廖哲瑋"
+   },
+   {
+    "doc": "accident_report_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "裴宥廷"
+   },
+   {
+    "doc": "accident_report_zh_01",
+    "cat": "PHONE",
+    "text": "(02) 2153-5561"
+   },
+   {
+    "doc": "accident_report_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "王秀美"
+   },
+   {
+    "doc": "accident_report_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "鄭俊宏"
+   },
+   {
+    "doc": "accident_report_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "伍秀英"
+   },
+   {
+    "doc": "accident_report_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "陳文賢"
+   },
+   {
+    "doc": "accident_report_zh_02",
+    "cat": "PHONE",
+    "text": "(03) 2498-1330"
+   },
+   {
+    "doc": "accident_report_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "林金蓮"
+   },
+   {
+    "doc": "accident_report_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "李宗憲"
+   },
+   {
+    "doc": "accident_report_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "陳心怡"
+   },
+   {
+    "doc": "accident_report_zh_03",
+    "cat": "PHONE",
+    "text": "(02) 2627-7913"
+   },
+   {
+    "doc": "accident_report_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "林志強"
+   },
+   {
+    "doc": "accident_report_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "蘇國榮"
+   },
+   {
+    "doc": "accident_report_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "賴嘉宏"
+   },
+   {
+    "doc": "accident_report_zh_04",
+    "cat": "GOV_ID",
+    "text": "O125910681"
+   },
+   {
+    "doc": "accident_report_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "顏秀蘭"
+   },
+   {
+    "doc": "accident_report_zh_04",
+    "cat": "PHONE",
+    "text": "(02) 2410-5145"
+   },
+   {
+    "doc": "accident_report_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "武家豪"
+   },
+   {
+    "doc": "accident_report_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "李文忠"
+   },
+   {
+    "doc": "accident_report_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "謝淑華"
+   },
+   {
+    "doc": "accident_report_zh_05",
+    "cat": "PHONE",
+    "text": "(06) 2749-8970"
+   },
+   {
+    "doc": "accident_report_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "陳秀蘭"
+   },
+   {
+    "doc": "accident_report_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "陳正義"
+   },
+   {
+    "doc": "insurance_claim_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Lee Wei-jung"
+   },
+   {
+    "doc": "insurance_claim_en_00",
+    "cat": "ADDRESS",
+    "text": "No. 363, Zhongxiao E. Rd., Sec. 1, Da'an Dist., Taipei City"
+   },
+   {
+    "doc": "insurance_claim_en_00",
+    "cat": "SIGNATURE",
+    "text": "Lee Wei-jung"
+   },
+   {
+    "doc": "insurance_claim_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Hsu Jung-tzu"
+   },
+   {
+    "doc": "insurance_claim_en_01",
+    "cat": "ADDRESS",
+    "text": "7F., No. 344, Zhongshan Rd., Sec. 1, Nantun Dist., Taichung City"
+   },
+   {
+    "doc": "insurance_claim_en_01",
+    "cat": "SIGNATURE",
+    "text": "Hsu Jung-tzu"
+   },
+   {
+    "doc": "insurance_claim_en_02",
+    "cat": "PERSON_NAME",
+    "text": "Liu Kuan-wei"
+   },
+   {
+    "doc": "insurance_claim_en_02",
+    "cat": "GOV_ID",
+    "text": "J135250820"
+   },
+   {
+    "doc": "insurance_claim_en_02",
+    "cat": "ADDRESS",
+    "text": "No. 67, Guangfu Rd., Zhongshan Dist., Taipei City"
+   },
+   {
+    "doc": "insurance_claim_en_02",
+    "cat": "SIGNATURE",
+    "text": "Liu Kuan-wei"
+   },
+   {
+    "doc": "insurance_claim_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Lai Hao-po"
+   },
+   {
+    "doc": "insurance_claim_en_03",
+    "cat": "ADDRESS",
+    "text": "No. 165, Wenhua Rd., Lingya Dist., Kaohsiung City"
+   },
+   {
+    "doc": "insurance_claim_en_03",
+    "cat": "SIGNATURE",
+    "text": "Lai Hao-po"
+   },
+   {
+    "doc": "insurance_claim_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Lee Tzu-chih"
+   },
+   {
+    "doc": "insurance_claim_en_04",
+    "cat": "ADDRESS",
+    "text": "13F., No. 22, Zhongxiao E. Rd., Xitun Dist., Taichung City"
+   },
+   {
+    "doc": "insurance_claim_en_04",
+    "cat": "SIGNATURE",
+    "text": "Lee Tzu-chih"
+   },
+   {
+    "doc": "insurance_claim_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Yang Han-han"
+   },
+   {
+    "doc": "insurance_claim_en_05",
+    "cat": "ADDRESS",
+    "text": "10F., No. 161, Wenhua Rd., Xindian Dist., New Taipei City"
+   },
+   {
+    "doc": "insurance_claim_en_05",
+    "cat": "SIGNATURE",
+    "text": "Yang Han-han"
+   },
+   {
+    "doc": "employee_form_zh_00",
+    "cat": "FACE_PHOTO",
+    "text": "portrait"
+   },
+   {
+    "doc": "employee_form_zh_00",
+    "cat": "ADDRESS",
+    "text": "臺南市安平區自由路133號"
+   },
+   {
+    "doc": "employee_form_zh_00",
+    "cat": "FINANCIAL_ACCOUNT",
+    "text": "(812) 7961-675-156407"
+   },
+   {
+    "doc": "employee_form_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "陳淑華"
+   },
+   {
+    "doc": "employee_form_zh_00",
+    "cat": "SIGNATURE",
+    "text": "Lai Jung-pei"
+   },
+   {
+    "doc": "employee_form_zh_01",
+    "cat": "FACE_PHOTO",
+    "text": "portrait"
+   },
+   {
+    "doc": "employee_form_zh_01",
+    "cat": "GOV_ID",
+    "text": "O241447363"
+   },
+   {
+    "doc": "employee_form_zh_01",
+    "cat": "ADDRESS",
+    "text": "臺北市士林區忠孝東路二段355號"
+   },
+   {
+    "doc": "employee_form_zh_01",
+    "cat": "FINANCIAL_ACCOUNT",
+    "text": "(812) 4392-288-211492"
+   },
+   {
+    "doc": "employee_form_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "陳美娟"
+   },
+   {
+    "doc": "employee_form_zh_01",
+    "cat": "SIGNATURE",
+    "text": "Tsai Ming-hao"
+   },
+   {
+    "doc": "employee_form_zh_02",
+    "cat": "FACE_PHOTO",
+    "text": "portrait"
+   },
+   {
+    "doc": "employee_form_zh_02",
+    "cat": "ADDRESS",
+    "text": "臺中市西屯區民生東路三段325號二樓"
+   },
+   {
+    "doc": "employee_form_zh_02",
+    "cat": "FINANCIAL_ACCOUNT",
+    "text": "(822) 9769-446-201481"
+   },
+   {
+    "doc": "employee_form_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "李淑貞"
+   },
+   {
+    "doc": "employee_form_zh_02",
+    "cat": "SIGNATURE",
+    "text": "Huang Wei-wei"
+   },
+   {
+    "doc": "employee_form_zh_03",
+    "cat": "FACE_PHOTO",
+    "text": "portrait"
+   },
+   {
+    "doc": "employee_form_zh_03",
+    "cat": "ADDRESS",
+    "text": "新北市中和區中山路202巷320號六樓"
+   },
+   {
+    "doc": "employee_form_zh_03",
+    "cat": "FINANCIAL_ACCOUNT",
+    "text": "(812) 3254-972-612969"
+   },
+   {
+    "doc": "employee_form_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "楊淑貞"
+   },
+   {
+    "doc": "employee_form_zh_03",
+    "cat": "SIGNATURE",
+    "text": "Kuo Ting-yen"
+   },
+   {
+    "doc": "employee_form_zh_04",
+    "cat": "FACE_PHOTO",
+    "text": "portrait"
+   },
+   {
+    "doc": "employee_form_zh_04",
+    "cat": "ADDRESS",
+    "text": "高雄市苓雅區中正路二段136號四樓"
+   },
+   {
+    "doc": "employee_form_zh_04",
+    "cat": "FINANCIAL_ACCOUNT",
+    "text": "(700) 4435-133-981207"
+   },
+   {
+    "doc": "employee_form_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "曾子晴"
+   },
+   {
+    "doc": "employee_form_zh_04",
+    "cat": "SIGNATURE",
+    "text": "Lee Ming-ting"
+   },
+   {
+    "doc": "employee_form_zh_05",
+    "cat": "FACE_PHOTO",
+    "text": "portrait"
+   },
+   {
+    "doc": "employee_form_zh_05",
+    "cat": "GOV_ID",
+    "text": "O181728667"
+   },
+   {
+    "doc": "employee_form_zh_05",
+    "cat": "ADDRESS",
+    "text": "臺北市大安區民生東路228號"
+   },
+   {
+    "doc": "employee_form_zh_05",
+    "cat": "FINANCIAL_ACCOUNT",
+    "text": "(812) 3286-755-201891"
+   },
+   {
+    "doc": "employee_form_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "陳麗娟"
+   },
+   {
+    "doc": "employee_form_zh_05",
+    "cat": "SIGNATURE",
+    "text": "Chen Jung-hsin"
+   }
+  ],
+  "false_positives": [
+   {
+    "doc": "discharge_summary_en_00",
+    "cat": "PHONE",
+    "text": "(02)2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Ms.Hsu",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_01",
+    "cat": "PHONE",
+    "text": "(02)2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Mr. Tsai",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_02",
+    "cat": "PHONE",
+    "text": "(02)2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_03",
+    "cat": "PHONE",
+    "text": "(02)2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Mr.Tsai",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_04",
+    "cat": "PHONE",
+    "text": "(02)2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Mr.Lee",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_05",
+    "cat": "PHONE",
+    "text": "(02) 2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Mr. Lai",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "medical_certificate_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "診治医師：李明哲",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   }
+  ]
+ },
+ "B_plus_llm": {
+  "missed": [
+   {
+    "doc": "discharge_summary_en_01",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the only licensed ferry captain on Green Island"
+   },
+   {
+    "doc": "discharge_summary_en_01",
+    "cat": "DATE",
+    "text": "2026-04-28"
+   },
+   {
+    "doc": "discharge_summary_en_01",
+    "cat": "SIGNATURE",
+    "text": "Wu Pei-chia"
+   },
+   {
+    "doc": "discharge_summary_en_04",
+    "cat": "SIGNATURE",
+    "text": "Huang Wei-hao"
+   },
+   {
+    "doc": "discharge_summary_en_05",
+    "cat": "DATE",
+    "text": "2024-04-07"
+   },
+   {
+    "doc": "medical_certificate_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "蕭素琴"
+   },
+   {
+    "doc": "medical_certificate_zh_02",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "為綠島唯一領有執照的渡輪船長"
+   },
+   {
+    "doc": "medical_certificate_zh_04",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "現任國家女子冰壺隊總教練"
+   },
+   {
+    "doc": "lease_agreement_en_02",
+    "cat": "PERSON_NAME",
+    "text": "Lee Yen-po"
+   },
+   {
+    "doc": "lease_agreement_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Tsai Jung-hao"
+   },
+   {
+    "doc": "accident_report_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "李宗憲"
+   },
+   {
+    "doc": "accident_report_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "林志強"
+   },
+   {
+    "doc": "accident_report_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "謝淑華"
+   },
+   {
+    "doc": "accident_report_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "陳秀蘭"
+   },
+   {
+    "doc": "accident_report_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "陳正義"
+   },
+   {
+    "doc": "employee_form_zh_00",
+    "cat": "FACE_PHOTO",
+    "text": "portrait"
+   },
+   {
+    "doc": "employee_form_zh_01",
+    "cat": "FACE_PHOTO",
+    "text": "portrait"
+   },
+   {
+    "doc": "employee_form_zh_02",
+    "cat": "FACE_PHOTO",
+    "text": "portrait"
+   },
+   {
+    "doc": "employee_form_zh_03",
+    "cat": "FACE_PHOTO",
+    "text": "portrait"
+   },
+   {
+    "doc": "employee_form_zh_04",
+    "cat": "FACE_PHOTO",
+    "text": "portrait"
+   },
+   {
+    "doc": "employee_form_zh_05",
+    "cat": "FACE_PHOTO",
+    "text": "portrait"
+   }
+  ],
+  "false_positives": [
+   {
+    "doc": "discharge_summary_en_00",
+    "cat": "PHONE",
+    "text": "(02)2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Ms.Hsu",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_01",
+    "cat": "PHONE",
+    "text": "(02)2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Mr. Tsai",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_02",
+    "cat": "PHONE",
+    "text": "(02)2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_03",
+    "cat": "PHONE",
+    "text": "(02)2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Mr.Tsai",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_04",
+    "cat": "PHONE",
+    "text": "(02)2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Mr.Lee",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_05",
+    "cat": "PHONE",
+    "text": "(02) 2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Mr. Lai",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "medical_certificate_zh_01",
+    "cat": "LICENSE_PLATE",
+    "text": "医字第86513号",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "medical_certificate_zh_02",
+    "cat": "LICENSE_PLATE",
+    "text": "医字第30034号",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "medical_certificate_zh_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "腰椎椎間盤突出供坐骨神經痛",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "medical_certificate_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "診治医師：李明哲",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "insurance_claim_en_00",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "physician, hospital or other provider",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "insurance_claim_en_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "physician, hospital or other provider",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "employee_form_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "本人名",
+    "sources": [
+     "llm"
+    ]
+   }
+  ]
+ },
+ "C_full": {
+  "missed": [
+   {
+    "doc": "discharge_summary_en_01",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the only licensed ferry captain on Green Island"
+   },
+   {
+    "doc": "discharge_summary_en_01",
+    "cat": "DATE",
+    "text": "2026-04-28"
+   },
+   {
+    "doc": "discharge_summary_en_05",
+    "cat": "DATE",
+    "text": "2024-04-07"
+   },
+   {
+    "doc": "medical_certificate_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "蕭素琴"
+   },
+   {
+    "doc": "medical_certificate_zh_02",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "為綠島唯一領有執照的渡輪船長"
+   },
+   {
+    "doc": "medical_certificate_zh_04",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "現任國家女子冰壺隊總教練"
+   },
+   {
+    "doc": "lease_agreement_en_02",
+    "cat": "PERSON_NAME",
+    "text": "Lee Yen-po"
+   },
+   {
+    "doc": "lease_agreement_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Tsai Jung-hao"
+   },
+   {
+    "doc": "accident_report_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "李宗憲"
+   },
+   {
+    "doc": "accident_report_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "林志強"
+   },
+   {
+    "doc": "accident_report_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "謝淑華"
+   },
+   {
+    "doc": "accident_report_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "陳秀蘭"
+   },
+   {
+    "doc": "accident_report_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "陳正義"
+   }
+  ],
+  "false_positives": [
+   {
+    "doc": "discharge_summary_en_00",
+    "cat": "PHONE",
+    "text": "(02)2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Ms.Hsu",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_01",
+    "cat": "PHONE",
+    "text": "(02)2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Mr. Tsai",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_02",
+    "cat": "PHONE",
+    "text": "(02)2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_03",
+    "cat": "PHONE",
+    "text": "(02)2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Mr.Tsai",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_04",
+    "cat": "PHONE",
+    "text": "(02)2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Mr.Lee",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_05",
+    "cat": "PHONE",
+    "text": "(02) 2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Mr. Lai",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "medical_certificate_zh_01",
+    "cat": "LICENSE_PLATE",
+    "text": "医字第86513号",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "medical_certificate_zh_02",
+    "cat": "LICENSE_PLATE",
+    "text": "医字第30034号",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "medical_certificate_zh_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "腰椎椎間盤突出供坐骨神經痛",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "medical_certificate_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "診治医師：李明哲",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "insurance_claim_en_00",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "physician, hospital or other provider",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "insurance_claim_en_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "physician, hospital or other provider",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "employee_form_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "本人名",
+    "sources": [
+     "llm"
+    ]
+   }
+  ]
+ }
+}

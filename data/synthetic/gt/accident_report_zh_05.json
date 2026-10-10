@@ -1,0 +1,251 @@
+{
+ "id": "accident_report_zh_05",
+ "template": "accident_report_zh",
+ "lang": "zh",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "民國115年5月12日 13時06分",
+   "bbox": [
+    222,
+    212,
+    551,
+    239
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳秀蘭",
+   "bbox": [
+    191,
+    399,
+    269,
+    424
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "B267448662",
+   "bbox": [
+    724,
+    397,
+    867,
+    417
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "1974/11/23",
+   "bbox": [
+    243,
+    446,
+    369,
+    466
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0976-795-326",
+   "bbox": [
+    698,
+    442,
+    856,
+    462
+   ],
+   "role": null
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "QUZ-3930",
+   "bbox": [
+    243,
+    491,
+    364,
+    512
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺北市中山區和平東路102巷273號一樓",
+   "bbox": [
+    192,
+    531,
+    640,
+    560
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳正義",
+   "bbox": [
+    193,
+    669,
+    271,
+    694
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "J159294557",
+   "bbox": [
+    726,
+    667,
+    865,
+    687
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "2004/01/25",
+   "bbox": [
+    246,
+    716,
+    372,
+    736
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0977-298-294",
+   "bbox": [
+    701,
+    712,
+    859,
+    732
+   ],
+   "role": null
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "689-JJE",
+   "bbox": [
+    246,
+    762,
+    340,
+    781
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺北市北投區和平東路一段73號",
+   "bbox": [
+    194,
+    802,
+    561,
+    829
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "謝淑華",
+   "bbox": [
+    232,
+    874,
+    310,
+    900
+   ],
+   "role": "witness"
+  },
+  {
+   "cat": "PHONE",
+   "text": "(06) 2749-8970",
+   "bbox": [
+    440,
+    874,
+    614,
+    900
+   ],
+   "role": null
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "QUZ-3930",
+   "bbox": [
+    199,
+    997,
+    319,
+    1018
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳秀蘭",
+   "bbox": [
+    371,
+    993,
+    449,
+    1017
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "LICENSE_PLATE",
+   "text": "689-JJE",
+   "bbox": [
+    537,
+    1040,
+    632,
+    1060
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳正義",
+   "bbox": [
+    226,
+    1086,
+    304,
+    1111
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "黃雅惠",
+   "bbox": [
+    238,
+    1499,
+    316,
+    1524
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "黃雅惠印",
+   "bbox": [
+    345,
+    1462,
+    456,
+    1573
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國115年5月12日",
+   "bbox": [
+    844,
+    1492,
+    1058,
+    1518
+   ],
+   "role": null
+  }
+ ]
+}

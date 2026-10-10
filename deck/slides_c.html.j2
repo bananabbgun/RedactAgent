@@ -1,0 +1,239 @@
+<!-- 11 Why B70 -->
+<section class="slide">
+  <div class="kicker">Hardware integration</div>
+  <h1>Why this workload belongs on the Arc Pro B70 32GB</h1>
+  <p class="lead">The laptop prototype proves the pipeline. The B70 is what turns it into a department-wide service.</p>
+  <table class="t">
+    <tr><th style="width:24%">Requirement</th><th style="width:30%">Laptop prototype (measured)</th><th style="width:30%" class="hl">ASUS UGen B70 32GB (Stage II)</th><th>Why it matters</th></tr>
+    <tr><td>Contextual model size</td><td>Qwen3-8B Q4 (5 GB)</td><td class="hl">Qwen3-30B-A3B INT4 (~16 GB)</td><td>Larger model = fewer missed names and quasi-IDs in messy OCR</td></tr>
+    <tr><td>Both models resident</td><td>No &mdash; one at a time (24 GB shared RAM)</td><td class="hl">Yes &mdash; text + vision in 32 GB VRAM</td><td>No reload between pages; steady latency</td></tr>
+    <tr><td>Throughput</td><td>{{ "%.0f"|format(lat.total.mean) }} s / page, single stream</td><td class="hl">vLLM continuous batching, many pages in flight</td><td>Overnight batch of thousands of pages</td></tr>
+    <tr><td>Memory integrity</td><td>non-ECC</td><td class="hl">GDDR6 <b>ECC</b></td><td>Unattended multi-hour jobs on legal evidence</td></tr>
+    <tr><td>Software stack</td><td>Ollama (llama.cpp / Metal)</td><td class="hl">vLLM XPU, OpenVINO, PyTorch XPU</td><td>Same OpenAI-compatible API &mdash; config change only</td></tr>
+    <tr><td>Scale-out</td><td>&mdash;</td><td class="hl">2 &times; B70 = 64 GB pool</td><td>Dedicated card per model, larger VLM</td></tr>
+  </table>
+  <div class="grid4" style="margin-top:22px">
+    <div class="card"><div class="big">32 GB</div><div class="bigl">GDDR6 ECC VRAM</div></div>
+    <div class="card"><div class="big">608</div><div class="bigl">GB/s memory bandwidth &mdash; token generation is bandwidth-bound</div></div>
+    <div class="card"><div class="big">~30 GB</div><div class="bigl">planned budget: 19 GB text + 11 GB vision (estimate)</div></div>
+    <div class="card"><div class="big">0</div><div class="bigl">code changes: <span class="mono">RA_BACKEND=openai</span></div></div>
+  </div>
+  <div class="src">Hardware figures: ASUS UGen Intel Arc Pro B70 32GB datasheet / sales kit. VRAM budget is a planning estimate to be measured on the SDV environment in Stage II.</div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026</span><span>11</span></div>
+</section>
+
+<!-- 12 Results ablation -->
+<section class="slide">
+  <div class="kicker">Validation &middot; measured results</div>
+  <h1>Each layer measurably closes the gap</h1>
+  <p class="lead">{{ m.C_full.docs }} scanned pages &middot; {{ m.C_full.gt_items }} ground-truth PII items &middot; 6 document types in English and
+    Traditional Chinese &middot; pixel-level scoring &middot; strict policy.</p>
+  <div class="grid2" style="grid-template-columns:1.25fr 1fr">
+    <div class="card" style="background:#fff">
+      <h3>Recall &mdash; share of PII items removed</h3>
+      {% for key, label, col in [("A_deterministic","A &middot; Rules + colour (regex/DLP baseline)","#9aa5b8"),("B_plus_llm","B &middot; + contextual LLM","#7c3aed"),("C_full","C &middot; + VLM = RedactAgent","#1f3a8a")] %}
+      <div style="margin:14px 0 4px;font-size:14px">{{ label|safe }}</div>
+      <div><span class="bar" style="width:{{ (m[key].recall*430)|int }}px;background:{{ col }}"></span>
+        <b style="font-size:20px;margin-left:8px">{{ "%.1f"|format(m[key].recall*100) }}%</b></div>
+      {% endfor %}
+      <p class="note" style="margin-top:14px">An item counts as removed when &ge;50% of its area is covered by redaction boxes.</p>
+    </div>
+    <div>
+      <table class="t">
+        <tr><th>Configuration</th><th>Recall</th><th>Precision</th><th>Clean pages</th></tr>
+        <tr><td>A &middot; rules</td><td>{{ "%.1f"|format(m.A_deterministic.recall*100) }}%</td><td>{{ "%.1f"|format(m.A_deterministic.precision*100) }}%</td><td>{{ "%.0f"|format(m.A_deterministic.clean_doc_rate*100) }}%</td></tr>
+        <tr><td>B &middot; + LLM</td><td>{{ "%.1f"|format(m.B_plus_llm.recall*100) }}%</td><td>{{ "%.1f"|format(m.B_plus_llm.precision*100) }}%</td><td>{{ "%.0f"|format(m.B_plus_llm.clean_doc_rate*100) }}%</td></tr>
+        <tr class="hl"><td><b>C &middot; full</b></td><td><b>{{ "%.1f"|format(m.C_full.recall*100) }}%</b></td><td><b>{{ "%.1f"|format(m.C_full.precision*100) }}%</b></td><td><b>{{ "%.0f"|format(m.C_full.clean_doc_rate*100) }}%</b></td></tr>
+      </table>
+      <div class="card" style="margin-top:14px">
+        <h3>Reading the numbers</h3>
+        <ul><li>Rules alone already catch most <i>structured</i> identifiers &mdash; but leave names in prose, quasi-IDs, signatures and photos.</li>
+          <li>The LLM adds context; the VLM adds what is not text at all.</li>
+          <li>"Clean page" = zero leaked items &mdash; the metric a compliance officer cares about; the reviewer closes the rest.</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="src">Precision: a redaction box is correct when &ge;30% of its area overlaps ground-truth PII. Reproduce with <span class="mono">python eval/evaluate.py</span>.</div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026</span><span>12</span></div>
+</section>
+
+<!-- 13 Per-category + latency -->
+<section class="slide">
+  <div class="kicker">Validation &middot; measured results</div>
+  <h1>Where it works, where it still misses</h1>
+  <div class="grid2" style="grid-template-columns:1.15fr 1fr;margin-top:14px;align-items:start">
+    <div class="card" style="background:#fff;padding:14px 18px">
+      <h3>Recall by category (full pipeline vs. rules only)</h3>
+      <table style="width:100%;font-size:13px;border-collapse:collapse;margin-top:6px">
+      {% for c in cats %}
+        <tr><td style="width:170px;padding:3px 0">{{ c.name }} <span class="note">({{ c.n }})</span></td>
+          <td><span class="bar" style="height:9px;width:{{ (c.A*250)|int }}px;background:#9aa5b8;display:block;margin-bottom:2px"></span>
+              <span class="bar" style="height:9px;width:{{ (c.C*250)|int }}px;background:#1f3a8a;display:block"></span></td>
+          <td style="width:90px;text-align:right"><span class="note">{{ "%.0f"|format(c.A*100) }}%</span> &rarr; <b>{{ "%.0f"|format(c.C*100) }}%</b></td></tr>
+      {% endfor %}
+      </table>
+    </div>
+    <div>
+      <div class="card"><h3>Latency per page &mdash; laptop (Apple M5, 24 GB)</h3>
+        <table class="t" style="font-size:12.5px;margin-top:6px">
+          <tr><th>Stage</th><th>mean</th><th>median</th></tr>
+          {% for k, label in [("ocr","OCR (PP-OCR)"),("rules","Rules"),("llm","LLM (Qwen3-8B)"),("vlm","VLM (Qwen2.5-VL-7B)"),("total","Total")] %}
+          <tr><td>{{ label }}</td><td>{{ "%.2f"|format(lat[k].mean) }} s</td><td>{{ "%.2f"|format(lat[k].p50) }} s</td></tr>
+          {% endfor %}
+        </table>
+        <p class="note" style="margin-top:6px">The LLM dominates; on a 24 GB laptop the two models cannot stay loaded together.</p></div>
+      <div class="card" style="margin-top:12px"><h3>Error analysis &rarr; Stage II work</h3>
+        <ul style="margin-top:4px">{% for e in error_notes %}<li style="font-size:13px;margin-bottom:2px">{{ e }}</li>{% endfor %}</ul></div>
+    </div>
+  </div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026</span><span>13</span></div>
+</section>
+
+<!-- 14 Expected benefits -->
+<section class="slide">
+  <div class="kicker">Expected benefits &amp; outcomes</div>
+  <h1>From minutes per page to seconds &mdash; with proof</h1>
+  <div class="grid3" style="margin-top:18px">
+    <div class="card"><div class="big">{{ "%.0f"|format(lat.total.mean) }} s</div><div class="bigl">machine time per page today on a laptop (measured), before any B70 batching</div></div>
+    <div class="card"><div class="big">{{ "%.0f"|format(m.C_full.clean_doc_rate*100) }}%</div><div class="bigl">of pages leave the pipeline with zero leaked items before human review (synthetic corpus)</div></div>
+    <div class="card"><div class="big">100%</div><div class="bigl">of exports traceable: input hash, policy, reviewer decisions, output hash</div></div>
+  </div>
+  <div class="grid2" style="margin-top:20px">
+    <div class="card" style="background:#fff">
+      <h3>Illustrative value for one regional hospital</h3>
+      <table class="t" style="font-size:13.5px;margin-top:6px">
+        <tr><th>Assumption (to validate in pilot)</th><th>Value</th></tr>
+        <tr><td>Pages de-identified per year (research, insurance, legal copies)</td><td>30,000</td></tr>
+        <tr><td>Manual effort incl. second check</td><td>4 min / page</td></tr>
+        <tr><td>With RedactAgent: review of pre-marked page</td><td>1 min / page</td></tr>
+        <tr><td><b>Staff time saved</b></td><td><b>~1,500 hours / year</b></td></tr>
+      </table>
+      <p class="note" style="margin-top:6px">All inputs are assumptions for illustration, not measurements; Stage II pilot will measure them.</p>
+    </div>
+    <div class="card">
+      <h3>Outcomes beyond time</h3>
+      <ul><li><b>Lower breach risk</b> &mdash; consistent detection of IDs, accounts and contacts that humans skip when tired.</li>
+        <li><b>Data that can finally be used</b> &mdash; de-identified text export feeds research and analytics.</li>
+        <li><b>Compliance evidence</b> &mdash; the audit chain documents the purpose and policy behind each release.</li>
+        <li><b>No cloud exposure, no per-page API fees</b> &mdash; fixed on-prem cost.</li></ul>
+    </div>
+  </div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026</span><span>14</span></div>
+</section>
+
+<!-- 15 Business model -->
+<section class="slide">
+  <div class="kicker">Commercial potential</div>
+  <h1>Business model: an on-prem privacy appliance</h1>
+  <div class="grid3" style="margin-top:18px">
+    <div class="card"><span class="tag">Product</span><h3 style="margin-top:8px">RedactAgent Appliance</h3>
+      <p>ASUS UGen B70 workstation, pre-installed RedactAgent, policy pack for Taiwan (PDPA, research, court, FOI).</p></div>
+    <div class="card"><span class="tag">Revenue</span><h3 style="margin-top:8px">Hardware + annual license</h3>
+      <p>One-time appliance sale through ASUS channel partners, plus a yearly software subscription for model, rule and policy updates and support.</p></div>
+    <div class="card"><span class="tag">Go-to-market</span><h3 style="margin-top:8px">Start where pain is highest</h3>
+      <p>Hospital medical-records &amp; IRB offices first (clear process, strict cloud rules), then law firms and government agencies.</p></div>
+  </div>
+  <div class="grid2" style="margin-top:20px">
+    <div class="card" style="background:#fff">
+      <h3>Why customers buy</h3>
+      <ul><li>Data cannot go to cloud AI &mdash; on-prem is a requirement, not a preference.</li>
+        <li>Predictable cost: no per-page or per-token fees for large archives.</li>
+        <li>Purpose policies and audit map directly to compliance questions.</li>
+        <li>Bilingual (EN + 繁中) and Taiwan identifier formats out of the box.</li></ul>
+    </div>
+    <div class="card" style="background:#fff">
+      <h3>Why it is good for ASUS UGen</h3>
+      <ul><li>A concrete, repeatable reason to buy a 32 GB local-AI card: regulated documents.</li>
+        <li>Same appliance serves other on-prem AI (RAG, meeting notes) &rarr; higher attach rate.</li>
+        <li>Expands to markets with similar rules (GDPR, HIPAA, Japan APPI) via policy packs.</li>
+        <li>Open-source core builds developer trust; enterprise features (SSO, batch, connectors) are paid.</li></ul>
+    </div>
+  </div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026</span><span>15</span></div>
+</section>
+
+<!-- 16 Roadmap -->
+<section class="slide">
+  <div class="kicker">Feasibility &middot; plan</div>
+  <h1>Stage II plan on the B70 (Nov 6 &ndash; Dec 4)</h1>
+  <div class="grid4" style="margin-top:18px">
+    <div class="card"><span class="tag">Week 1</span><h3 style="margin-top:8px">Bring-up</h3><p>vLLM XPU on the SDV host; both models resident; OpenVINO OCR; regression test on this corpus.</p></div>
+    <div class="card"><span class="tag">Week 2</span><h3 style="margin-top:8px">Scale up the model</h3><p>Qwen3-30B-A3B for context; measure recall gain vs. 8B; tune prompts on the error list.</p></div>
+    <div class="card"><span class="tag">Week 3</span><h3 style="margin-top:8px">Throughput</h3><p>Batch mode: 1/4/8/16 concurrent pages; pages per minute, p95 latency, tokens per watt.</p></div>
+    <div class="card"><span class="tag">Week 4</span><h3 style="margin-top:8px">Harden &amp; ship</h3><p>Multi-page batch UI, policy editor, final 10-min demo video and full GitHub documentation.</p></div>
+  </div>
+  <div class="card" style="margin-top:22px">
+    <h3>Definition of done for Stage II</h3>
+    <ul><li>Same pipeline running on the organiser's B70 environment with measured VRAM, latency and throughput.</li>
+      <li>Recall &ge; Stage I on the same corpus, with a larger contextual model and both models resident.</li>
+      <li>Repository with architecture diagram, README, model information and performance data (as required for the final).</li></ul>
+  </div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026</span><span>16</span></div>
+</section>
+
+<!-- 17 Risks -->
+<section class="slide">
+  <div class="kicker">Feasibility &middot; risks</div>
+  <h1>Risks and how we handle them</h1>
+  <table class="t" style="margin-top:14px">
+    <tr><th style="width:28%">Risk</th><th style="width:38%">Mitigation</th><th>Status</th></tr>
+    <tr><td>Model misses a PII item</td><td>Layered detection + mandatory human review; strict policy as default; recall tracked per category</td><td class="yes">built into the prototype</td></tr>
+    <tr><td>OCR errors on poor scans</td><td>Unread-ink check flags text the OCR skipped; checksum-failed IDs still flagged; fuzzy matching of LLM quotes; VLM sees the image</td><td class="yes">implemented</td></tr>
+    <tr><td>Synthetic data &ne; real data</td><td>Realistic scan artefacts; next step is a pilot on de-identified real samples under a partner's supervision</td><td class="part">Stage II / pilot</td></tr>
+    <tr><td>vLLM XPU / quantisation support for chosen models</td><td>OpenAI-compatible abstraction; fallback to Qwen3-14B or Ollama on Intel; both already supported by the code</td><td class="part">validate week 1</td></tr>
+    <tr><td>Legal mapping of policies</td><td>Policies are data, not code; legal bases shown are indicative and must be confirmed with counsel per customer</td><td class="part">ongoing</td></tr>
+    <tr><td>Licensing of components</td><td>Only Apache-2.0 / MIT / BSD components; no AGPL models</td><td class="yes">verified</td></tr>
+  </table>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026</span><span>17</span></div>
+</section>
+
+<!-- 18 References & links -->
+<section class="slide">
+  <div class="kicker">References &amp; links</div>
+  <h1>Code, demo video and team</h1>
+  <div class="grid2" style="margin-top:16px">
+    <div>
+      <div class="card" style="background:#0b1d4d;color:#fff;border:0">
+        <h3 style="color:#fff">GitHub repository</h3><p style="color:#dbe4ff;font-size:17px" class="mono">{{ cfg.github|e }}</p>
+        <h3 style="color:#fff;margin-top:14px">Demo video (YouTube, &lt; 3 min)</h3><p style="color:#dbe4ff;font-size:17px" class="mono">{{ cfg.video|e }}</p>
+      </div>
+      <div class="card" style="margin-top:14px">
+        <h3>Team</h3>
+        {% for p in cfg.team %}<p style="font-size:16px"><b>{{ p.name }}</b> &middot; Student ID {{ p.student_id }}<br><span class="note">{{ p.affiliation }}</span></p>{% endfor %}
+        <p class="note" style="margin-top:6px">Track: {{ cfg.track }} &middot; Theme: {{ cfg.theme }} &middot; {{ cfg.format }}</p>
+      </div>
+    </div>
+    <div class="card" style="background:#fff">
+      <h3>References</h3>
+      <ol style="font-size:12.5px;line-height:1.45;padding-left:18px;margin:6px 0 0">
+        <li>Qwen Team. Qwen3 Technical Report, 2025. &middot; Qwen2.5-VL Technical Report, 2025.</li>
+        <li>PaddlePaddle. PP-OCR; RapidOCR (ONNX Runtime / OpenVINO), github.com/RapidAI/RapidOCR.</li>
+        <li>Kwon et al. Efficient Memory Management for LLM Serving with PagedAttention (vLLM), SOSP 2023.</li>
+        <li>ASUS. UGen Intel Arc Pro B70 32GB datasheet &amp; sales kit, 2026.</li>
+        <li>Taiwan Personal Data Protection Act; 2025 amendment (K&amp;L Gates, Jan 2026; Baker McKenzie).</li>
+        <li>Freedom of Government Information Law, Art. 18; Human Subjects Research Act (Taiwan).</li>
+        <li>U.S. HHS. Guidance on De-identification of PHI (HIPAA Safe Harbor), 2012.</li>
+        <li>Ministry of Health and Welfare. 2024 Taiwan Health and Welfare Report.</li>
+        <li>Microsoft Presidio (regex/NER PII baseline), github.com/microsoft/presidio.</li>
+        <li>Ollama; FastAPI; pypdfium2; OpenCV &mdash; open-source software used in the prototype.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026</span><span>18</span></div>
+</section>
+
+<!-- Appendix A -->
+<section class="slide">
+  <div class="kicker">Appendix A (not counted in page limit)</div>
+  <h1 style="font-size:30px">Policy file example and detection taxonomy</h1>
+  <div class="grid2" style="margin-top:12px">
+    <div class="card" style="background:#0f172a;color:#e2e8f0;border:0"><pre class="mono" style="margin:0;font-size:12.5px;white-space:pre-wrap">{{ policy_yaml }}</pre></div>
+    <div class="card" style="background:#fff">
+      <table class="t" style="font-size:12.5px">
+        <tr><th>Category</th><th>Main detector</th><th>n</th></tr>
+        {% for c in cats %}<tr><td>{{ c.name }}</td><td>{{ c.detector }}</td><td>{{ c.n }}</td></tr>{% endfor %}
+      </table>
+    </div>
+  </div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026</span><span>A</span></div>
+</section>

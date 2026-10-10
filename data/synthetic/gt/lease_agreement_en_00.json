@@ -1,0 +1,174 @@
+{
+ "id": "lease_agreement_en_00",
+ "template": "lease_agreement_en",
+ "lang": "en",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "2026-12-01",
+   "bbox": [
+    464,
+    182,
+    595,
+    202
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lee Ting-ting",
+   "bbox": [
+    248,
+    230,
+    402,
+    257
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "T193413361",
+   "bbox": [
+    603,
+    226,
+    746,
+    246
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 377, Ziyou Rd., Sec. 1, Xitun Dist., Taichung City",
+   "bbox": [
+    205,
+    270,
+    817,
+    304
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Kyle Cummings",
+   "bbox": [
+    208,
+    322,
+    391,
+    350
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "B51703976",
+   "bbox": [
+    553,
+    319,
+    684,
+    339
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0932-990-389",
+   "bbox": [
+    158,
+    370,
+    316,
+    390
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "kyle.cummings@example.com",
+   "bbox": [
+    407,
+    363,
+    749,
+    394
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 122, Heping E. Rd., Lingya Dist., Kaohsiung City",
+   "bbox": [
+    114,
+    512,
+    722,
+    545
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-12-01",
+   "bbox": [
+    343,
+    612,
+    474,
+    632
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2027-12-01",
+   "bbox": [
+    620,
+    608,
+    751,
+    628
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(822) 4918-226-127751",
+   "bbox": [
+    588,
+    742,
+    855,
+    769
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Lee Ting-ting",
+   "bbox": [
+    85,
+    1416,
+    344,
+    1478
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Kyle Cummings",
+   "bbox": [
+    659,
+    1407,
+    955,
+    1471
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Cheng Po-chih",
+   "bbox": [
+    248,
+    1569,
+    413,
+    1596
+   ],
+   "role": "witness"
+  }
+ ]
+}

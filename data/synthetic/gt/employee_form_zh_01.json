@@ -1,0 +1,174 @@
+{
+ "id": "employee_form_zh_01",
+ "template": "employee_form_zh",
+ "lang": "zh",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "FACE_PHOTO",
+   "text": "portrait",
+   "bbox": [
+    933,
+    222,
+    1145,
+    494
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "沈秀琴",
+   "bbox": [
+    237,
+    233,
+    318,
+    259
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Tsai Ming-hao",
+   "bbox": [
+    236,
+    295,
+    409,
+    320
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "O241447363",
+   "bbox": [
+    262,
+    353,
+    418,
+    373
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "1989/02/01",
+   "bbox": [
+    236,
+    411,
+    372,
+    431
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0943-442-911",
+   "bbox": [
+    235,
+    469,
+    403,
+    489
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "minghao.tsai@mail.example.tw",
+   "bbox": [
+    235,
+    527,
+    611,
+    555
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺南市東區民生東路三段338號四樓",
+   "bbox": [
+    234,
+    611,
+    657,
+    640
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺北市士林區忠孝東路二段355號",
+   "bbox": [
+    233,
+    669,
+    630,
+    698
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(812) 4392-288-211492",
+   "bbox": [
+    285,
+    731,
+    569,
+    758
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳美娟",
+   "bbox": [
+    259,
+    785,
+    340,
+    811
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0931-774-349",
+   "bbox": [
+    634,
+    792,
+    802,
+    812
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025/03/22",
+   "bbox": [
+    232,
+    847,
+    368,
+    867
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Tsai Ming-hao",
+   "bbox": [
+    239,
+    1226,
+    521,
+    1287
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "2025/03/22",
+   "bbox": [
+    835,
+    1254,
+    971,
+    1274
+   ],
+   "role": null
+  }
+ ]
+}

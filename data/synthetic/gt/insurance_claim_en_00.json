@@ -1,0 +1,130 @@
+{
+ "id": "insurance_claim_en_00",
+ "template": "insurance_claim_en",
+ "lang": "en",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "HM-6007735",
+   "bbox": [
+    958,
+    112,
+    1094,
+    131
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lee Wei-jung",
+   "bbox": [
+    98,
+    265,
+    284,
+    303
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "18/08/1970",
+   "bbox": [
+    627,
+    265,
+    799,
+    296
+   ],
+   "role": null
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "B221857003",
+   "bbox": [
+    97,
+    359,
+    290,
+    385
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0945-993-717",
+   "bbox": [
+    629,
+    354,
+    839,
+    384
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "weilee71@mail.example.tw",
+   "bbox": [
+    99,
+    441,
+    464,
+    478
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 363, Zhongxiao E. Rd., Sec. 1, Da'an Dist., Taipei City",
+   "bbox": [
+    101,
+    524,
+    922,
+    568
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-06-18",
+   "bbox": [
+    631,
+    690,
+    803,
+    711
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "4222 9078 3315 8124",
+   "bbox": [
+    105,
+    942,
+    432,
+    973
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Lee Wei-jung",
+   "bbox": [
+    112,
+    1250,
+    358,
+    1311
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-06-24",
+   "bbox": [
+    637,
+    1248,
+    814,
+    1268
+   ],
+   "role": null
+  }
+ ]
+}

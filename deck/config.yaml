@@ -1,0 +1,10 @@
+# Values printed on the proposal deck. Fill github / video before the final build.
+team:
+  - name: "Yu-Tsen Tsai (蔡侑岑)"
+    student_id: "B12902026"
+    affiliation: "Dept. of Computer Science & Information Engineering, National Taiwan University"
+track: "Battlefield Thunderstorm - ASUS UGen Intel Arc Pro B70 32GB"
+theme: "Workplace AI"
+format: "Global Online Track"
+github: "https://github.com/<account>/RedactAgent"
+video: "https://youtu.be/<video-id>"

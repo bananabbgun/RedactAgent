@@ -1,0 +1,9 @@
+id: strict
+order: 4
+name: "Strict - redact everything"
+description: >
+  Removes every detected identifier, including officials and dates. Use for data that
+  leaves the organisation with no specific legal basis, or when in doubt.
+legal_basis: "Taiwan Personal Data Protection Act (PDPA) Art. 5 data-minimisation principle"
+default: redact
+categories: {}

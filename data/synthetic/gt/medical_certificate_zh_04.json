@@ -1,0 +1,163 @@
+{
+ "id": "medical_certificate_zh_04",
+ "template": "medical_certificate_zh",
+ "lang": "zh",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "黃冠宇",
+   "bbox": [
+    257,
+    234,
+    341,
+    259
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "民國78年5月18日",
+   "bbox": [
+    257,
+    299,
+    477,
+    325
+   ],
+   "role": null
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "T176475778",
+   "bbox": [
+    835,
+    303,
+    996,
+    323
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "C8785829",
+   "bbox": [
+    257,
+    369,
+    389,
+    389
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0910-531-751",
+   "bbox": [
+    807,
+    369,
+    985,
+    389
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國115年11月26日",
+   "bbox": [
+    257,
+    431,
+    509,
+    457
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "新竹市北區光復路一段242巷56號六樓",
+   "bbox": [
+    257,
+    497,
+    729,
+    524
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "黃冠宇",
+   "bbox": [
+    176,
+    722,
+    260,
+    747
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "民國115年11月26日",
+   "bbox": [
+    288,
+    721,
+    540,
+    747
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "現任國家女子冰壺隊總教練",
+   "bbox": [
+    428,
+    773,
+    764,
+    799
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "張秀珠",
+   "bbox": [
+    242,
+    1277,
+    326,
+    1302
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "張秀珠印",
+   "bbox": [
+    356,
+    1230,
+    474,
+    1348
+   ],
+   "role": null
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "仁和綜合證明專用",
+   "bbox": [
+    920,
+    1210,
+    1120,
+    1410
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115年11月28日",
+   "bbox": [
+    480,
+    1566,
+    676,
+    1592
+   ],
+   "role": null
+  }
+ ]
+}

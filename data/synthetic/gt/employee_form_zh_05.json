@@ -1,0 +1,174 @@
+{
+ "id": "employee_form_zh_05",
+ "template": "employee_form_zh",
+ "lang": "zh",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "FACE_PHOTO",
+   "text": "portrait",
+   "bbox": [
+    923,
+    214,
+    1136,
+    487
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "任正雄",
+   "bbox": [
+    225,
+    239,
+    306,
+    265
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Chen Jung-hsin",
+   "bbox": [
+    226,
+    300,
+    417,
+    326
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "O181728667",
+   "bbox": [
+    252,
+    358,
+    409,
+    379
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "1985/02/07",
+   "bbox": [
+    227,
+    417,
+    363,
+    437
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0942-909-465",
+   "bbox": [
+    228,
+    474,
+    396,
+    495
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "junghsin.chen@mail.example.tw",
+   "bbox": [
+    226,
+    530,
+    619,
+    559
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺中市北區民生東路二段77巷224號四樓",
+   "bbox": [
+    229,
+    613,
+    709,
+    644
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺北市大安區民生東路228號",
+   "bbox": [
+    230,
+    673,
+    572,
+    702
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(812) 3286-755-201891",
+   "bbox": [
+    282,
+    735,
+    567,
+    762
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳麗娟",
+   "bbox": [
+    257,
+    792,
+    338,
+    817
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0937-927-778",
+   "bbox": [
+    632,
+    790,
+    800,
+    811
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026/07/06",
+   "bbox": [
+    232,
+    853,
+    368,
+    873
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Chen Jung-hsin",
+   "bbox": [
+    246,
+    1230,
+    528,
+    1292
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026/07/06",
+   "bbox": [
+    842,
+    1248,
+    978,
+    1269
+   ],
+   "role": null
+  }
+ ]
+}

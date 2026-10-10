@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RedactAgent</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><rect x="3" y="5" width="26" height="22" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><rect x="7" y="11" width="11" height="4" fill="currentColor"/><rect x="7" y="18" width="18" height="4" fill="currentColor"/></svg>
+    <div>
+      <div class="name">RedactAgent</div>
+      <div class="tag">On-prem document de-identification &middot; nothing leaves this machine</div>
+    </div>
+  </div>
+  <div class="models" id="models"></div>
+</header>
+
+<main class="layout">
+  <aside class="panel controls">
+    <section>
+      <h3>1 &middot; Document</h3>
+      <select id="sample"></select>
+      <label class="drop" id="drop">
+        <input type="file" id="file" accept=".pdf,.png,.jpg,.jpeg" hidden>
+        <span id="dropText">or drop a PDF / scan here</span>
+      </label>
+    </section>
+    <section>
+      <h3>2 &middot; Purpose policy</h3>
+      <select id="policy"></select>
+      <p class="muted small" id="policyDesc"></p>
+      <p class="legal small" id="policyLegal"></p>
+    </section>
+    <section>
+      <h3>3 &middot; Detection layers</h3>
+      <label class="toggle"><input type="checkbox" value="rules" checked> <b>Rules</b> <span>regex + checksums</span></label>
+      <label class="toggle"><input type="checkbox" value="llm" checked> <b>LLM</b> <span id="llmName">contextual</span></label>
+      <label class="toggle"><input type="checkbox" value="vlm" checked> <b>VLM</b> <span id="vlmName">visual</span></label>
+    </section>
+    <button id="run" class="primary">Detect PII</button>
+    <div id="progress" class="progress hidden"><div class="bar"><i id="bar"></i></div><div id="stage" class="small"></div></div>
+
+    <section id="stats" class="hidden">
+      <h3>Result</h3>
+      <div class="kpis">
+        <div><b id="kFind">0</b><span>findings</span></div>
+        <div><b id="kRed">0</b><span>to redact</span></div>
+        <div><b id="kTime">0s</b><span>on-device</span></div>
+      </div>
+      <div class="srcs" id="srcs"></div>
+      <div class="timing small muted" id="timing"></div>
+      <button id="export" class="primary">Approve &amp; export</button>
+      <div id="downloads" class="downloads hidden"></div>
+    </section>
+    <section>
+      <h3>Audit trail</h3>
+      <div id="audit" class="small muted">&ndash;</div>
+    </section>
+  </aside>
+
+  <section class="stage">
+    <div class="pager hidden" id="pager"></div>
+    <div class="pages">
+      <figure>
+        <figcaption>Detected <span class="muted">&middot; click a box to accept / reject</span></figcaption>
+        <div class="pagewrap" id="origWrap"><div class="inner"><img id="orig" alt=""><svg id="overlay"></svg></div>
+          <div class="empty" id="emptyOrig">Pick a sample or upload a document, then press <b>Detect PII</b>.</div></div>
+      </figure>
+      <figure>
+        <figcaption>Redacted output <span class="muted">&middot; burned into pixels, no hidden text layer</span></figcaption>
+        <div class="pagewrap"><div class="inner"><img id="red" alt=""></div><div class="empty" id="emptyRed">&nbsp;</div></div>
+      </figure>
+    </div>
+  </section>
+
+  <aside class="panel findings">
+    <div class="fhead"><h3>Findings</h3><span class="small muted" id="docType"></span></div>
+    <div id="legend" class="legend"></div>
+    <div id="list" class="list"></div>
+  </aside>
+</main>
+<div id="tip" class="tip hidden"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>

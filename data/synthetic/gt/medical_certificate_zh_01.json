@@ -1,0 +1,163 @@
+{
+ "id": "medical_certificate_zh_01",
+ "template": "medical_certificate_zh",
+ "lang": "zh",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "潘志銘",
+   "bbox": [
+    260,
+    232,
+    344,
+    258
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "民國89年8月15日",
+   "bbox": [
+    260,
+    297,
+    480,
+    324
+   ],
+   "role": null
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "L155298452",
+   "bbox": [
+    838,
+    304,
+    998,
+    325
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "B5151845",
+   "bbox": [
+    260,
+    367,
+    391,
+    388
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0954-659-342",
+   "bbox": [
+    810,
+    370,
+    988,
+    391
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國114年9月13日",
+   "bbox": [
+    259,
+    429,
+    495,
+    456
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺中市南屯區文化路二段245號",
+   "bbox": [
+    259,
+    495,
+    643,
+    523
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "潘志銘",
+   "bbox": [
+    177,
+    720,
+    261,
+    745
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "民國114年9月13日",
+   "bbox": [
+    289,
+    719,
+    525,
+    747
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為該村唯一的排灣族語教師",
+   "bbox": [
+    428,
+    772,
+    765,
+    801
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "許美珍",
+   "bbox": [
+    240,
+    1274,
+    324,
+    1300
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "許美珍印",
+   "bbox": [
+    354,
+    1229,
+    472,
+    1347
+   ],
+   "role": null
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "仁和綜合證明專用",
+   "bbox": [
+    917,
+    1212,
+    1118,
+    1413
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "114年9月14日",
+   "bbox": [
+    476,
+    1565,
+    656,
+    1592
+   ],
+   "role": null
+  }
+ ]
+}

@@ -1,0 +1,229 @@
+{
+ "id": "discharge_summary_en_01",
+ "template": "discharge_summary_en",
+ "lang": "en",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Tsai Wei-chih",
+   "bbox": [
+    284,
+    205,
+    438,
+    223
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "MRN-9836864",
+   "bbox": [
+    743,
+    205,
+    906,
+    223
+   ],
+   "role": null
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "P172806997",
+   "bbox": [
+    256,
+    253,
+    399,
+    271
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "1995-03-13",
+   "bbox": [
+    847,
+    253,
+    975,
+    271
+   ],
+   "role": null
+  },
+  {
+   "cat": "HEALTH_INSURANCE_NO",
+   "text": "0000 4962 2881",
+   "bbox": [
+    853,
+    301,
+    1035,
+    319
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0948-957-990",
+   "bbox": [
+    195,
+    349,
+    351,
+    367
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "weichih.tsai19@mail.example.tw",
+   "bbox": [
+    754,
+    349,
+    1121,
+    372
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "11F., No. 302, Ziyou Rd., Xindian Dist., New Taipei City",
+   "bbox": [
+    221,
+    397,
+    843,
+    420
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-04-28",
+   "bbox": [
+    252,
+    445,
+    380,
+    463
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-04-28",
+   "bbox": [
+    814,
+    445,
+    942,
+    463
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Wu Pei-chia",
+   "bbox": [
+    376,
+    493,
+    553,
+    511
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Yang Chun-kuan",
+   "bbox": [
+    368,
+    541,
+    557,
+    564
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0960-503-713",
+   "bbox": [
+    682,
+    541,
+    838,
+    559
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Tsai",
+   "bbox": [
+    133,
+    791,
+    181,
+    809
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the only licensed ferry captain on Green Island",
+   "bbox": [
+    90,
+    831,
+    612,
+    854
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-04-28",
+   "bbox": [
+    90,
+    871,
+    218,
+    889
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Wu Pei-chia",
+   "bbox": [
+    258,
+    991,
+    435,
+    1009
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Wu Pei-chia",
+   "bbox": [
+    372,
+    1472,
+    606,
+    1517
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-04-28",
+   "bbox": [
+    860,
+    1485,
+    988,
+    1503
+   ],
+   "role": null
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "用專心仁",
+   "bbox": [
+    980,
+    1550,
+    1110,
+    1680
+   ],
+   "role": null
+  }
+ ]
+}

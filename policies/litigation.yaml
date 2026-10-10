@@ -1,0 +1,22 @@
+id: litigation
+order: 2
+name: "Court filing / litigation"
+description: >
+  Evidence submitted to court must keep the parties, dates and signatures intact,
+  but national ID numbers, account numbers and contact details of every person - and the
+  identity of third-party witnesses - are masked.
+legal_basis: "Court Organization Act Art. 83 (de-identified publication of court documents); PDPA Art. 5"
+default: redact
+categories:
+  PERSON_NAME: keep
+  DATE: keep
+  DATE_OF_BIRTH: generalize_year
+  SIGNATURE: keep
+  SEAL_STAMP: keep
+  LICENSE_PLATE: keep
+  ADDRESS: redact
+role_overrides:
+  - when: {category: PERSON_NAME, role: [witness, family]}
+    action: pseudonymize
+  - when: {category: [ADDRESS, PHONE], role: party}
+    action: redact

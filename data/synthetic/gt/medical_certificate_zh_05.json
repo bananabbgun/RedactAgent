@@ -1,0 +1,163 @@
+{
+ "id": "medical_certificate_zh_05",
+ "template": "medical_certificate_zh",
+ "lang": "zh",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "卓正雄",
+   "bbox": [
+    254,
+    235,
+    338,
+    261
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "民國45年6月11日",
+   "bbox": [
+    254,
+    300,
+    474,
+    327
+   ],
+   "role": null
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "B194190764",
+   "bbox": [
+    832,
+    301,
+    995,
+    322
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "A7863746",
+   "bbox": [
+    254,
+    370,
+    386,
+    391
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0922-813-154",
+   "bbox": [
+    805,
+    367,
+    983,
+    388
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國115年1月16日",
+   "bbox": [
+    255,
+    432,
+    491,
+    459
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺中市南屯區自由路一段128號八樓",
+   "bbox": [
+    255,
+    497,
+    695,
+    526
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "卓正雄",
+   "bbox": [
+    175,
+    724,
+    259,
+    749
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "民國115年1月16日",
+   "bbox": [
+    287,
+    721,
+    523,
+    749
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為該村唯一的排灣族語教師",
+   "bbox": [
+    428,
+    772,
+    764,
+    801
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "李明哲",
+   "bbox": [
+    244,
+    1278,
+    328,
+    1304
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "李明哲印",
+   "bbox": [
+    358,
+    1231,
+    476,
+    1349
+   ],
+   "role": null
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "康寧紀念證明專用",
+   "bbox": [
+    922,
+    1208,
+    1123,
+    1409
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115年1月19日",
+   "bbox": [
+    483,
+    1566,
+    663,
+    1593
+   ],
+   "role": null
+  }
+ ]
+}

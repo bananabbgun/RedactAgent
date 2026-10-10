@@ -1,0 +1,174 @@
+{
+ "id": "lease_agreement_en_02",
+ "template": "lease_agreement_en",
+ "lang": "en",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "2026-05-16",
+   "bbox": [
+    482,
+    180,
+    612,
+    200
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lee Yen-po",
+   "bbox": [
+    264,
+    224,
+    396,
+    249
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "F122856879",
+   "bbox": [
+    596,
+    228,
+    737,
+    247
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 159, Zhongxiao E. Rd., Sec. 1, Nantun Dist., Taichung City",
+   "bbox": [
+    220,
+    268,
+    935,
+    302
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Michael Ferguson",
+   "bbox": [
+    222,
+    314,
+    422,
+    342
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "X71742866",
+   "bbox": [
+    585,
+    320,
+    717,
+    339
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0947-678-324",
+   "bbox": [
+    171,
+    361,
+    329,
+    381
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "michael.ferguson@example.com",
+   "bbox": [
+    420,
+    363,
+    783,
+    393
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "5F., No. 54, Ziyou Rd., Nantun Dist., Taichung City",
+   "bbox": [
+    124,
+    507,
+    708,
+    539
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-05-01",
+   "bbox": [
+    350,
+    607,
+    480,
+    626
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2027-05-01",
+   "bbox": [
+    627,
+    610,
+    757,
+    630
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(808) 9559-948-541959",
+   "bbox": [
+    591,
+    745,
+    859,
+    772
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Lee Yen-po",
+   "bbox": [
+    71,
+    1406,
+    286,
+    1468
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Michael Ferguson",
+   "bbox": [
+    645,
+    1412,
+    976,
+    1475
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Hsieh Pei-hsin",
+   "bbox": [
+    230,
+    1562,
+    393,
+    1582
+   ],
+   "role": "witness"
+  }
+ ]
+}
