@@ -221,19 +221,3 @@
   </div>
   <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026</span><span>18</span></div>
 </section>
-
-<!-- Appendix A -->
-<section class="slide">
-  <div class="kicker">Appendix A (not counted in page limit)</div>
-  <h1 style="font-size:30px">Policy file example and detection taxonomy</h1>
-  <div class="grid2" style="margin-top:12px">
-    <div class="card" style="background:#0f172a;color:#e2e8f0;border:0"><pre class="mono" style="margin:0;font-size:12.5px;white-space:pre-wrap">{{ policy_yaml }}</pre></div>
-    <div class="card" style="background:#fff">
-      <table class="t" style="font-size:12.5px">
-        <tr><th>Category</th><th>Main detector</th><th>n</th></tr>
-        {% for c in cats %}<tr><td>{{ c.name }}</td><td>{{ c.detector }}</td><td>{{ c.n }}</td></tr>{% endfor %}
-      </table>
-    </div>
-  </div>
-  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026</span><span>A</span></div>
-</section>

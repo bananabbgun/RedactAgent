@@ -578,7 +578,7 @@
     <div>
       <div class="card" style="background:#0b1d4d;color:#fff;border:0">
         <h3 style="color:#fff">GitHub repository</h3><p style="color:#dbe4ff;font-size:17px" class="mono">https://github.com/bananabbgun/RedactAgent</p>
-        <h3 style="color:#fff;margin-top:14px">Demo video (YouTube, &lt; 3 min)</h3><p style="color:#dbe4ff;font-size:17px" class="mono">https://youtu.be/&lt;video-id&gt;</p>
+        <h3 style="color:#fff;margin-top:14px">Demo video (YouTube, &lt; 3 min)</h3><p style="color:#dbe4ff;font-size:17px" class="mono">https://www.youtube.com/watch?v=DQx-QkbOOHc</p>
       </div>
       <div class="card" style="margin-top:14px">
         <h3>Team</h3>
@@ -603,38 +603,4 @@
     </div>
   </div>
   <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026</span><span>18</span></div>
-</section>
-
-<!-- Appendix A -->
-<section class="slide">
-  <div class="kicker">Appendix A (not counted in page limit)</div>
-  <h1 style="font-size:30px">Policy file example and detection taxonomy</h1>
-  <div class="grid2" style="margin-top:12px">
-    <div class="card" style="background:#0f172a;color:#e2e8f0;border:0"><pre class="mono" style="margin:0;font-size:12.5px;white-space:pre-wrap">id: research
-order: 1
-name: "Research extract (IRB / de-identified dataset)"
-description: >
-  For sharing clinical documents with an approved research team. Patients and relatives
-  are replaced by consistent pseudonyms so the record stays readable; dates are reduced to
-  the year (HIPAA Safe-Harbor style); every direct identifier is removed.
-legal_basis: "PDPA Art. 6(1)(4) & 19 (research use of de-identified data); Human Subjects Research Act"
-default: redact
-categories:
-  PERSON_NAME: pseudonymize
-  DATE: generalize_year
-  DATE_OF_BIRTH: generalize_year
-  GOV_ID: redact
-  MEDICAL_RECORD_NO: pseudonymize
-  QUASI_IDENTIFIER: redact
-role_overrides:
-  - when: {category: PERSON_NAME, role: professional}
-    action: pseudonymize</pre></div>
-    <div class="card" style="background:#fff">
-      <table class="t" style="font-size:12.5px">
-        <tr><th>Category</th><th>Main detector</th><th>n</th></tr>
-        <tr><td>Person name</td><td>form fields + LLM</td><td>126</td></tr><tr><td>Government ID / passport</td><td>regex + checksum</td><td>48</td></tr><tr><td>Date of birth</td><td>regex + label context / LLM</td><td>36</td></tr><tr><td>Date (event)</td><td>regex</td><td>96</td></tr><tr><td>Phone number</td><td>regex</td><td>60</td></tr><tr><td>E-mail</td><td>regex</td><td>24</td></tr><tr><td>Address</td><td>form fields + LLM</td><td>54</td></tr><tr><td>Medical record no.</td><td>regex + keyword</td><td>12</td></tr><tr><td>Health insurance no.</td><td>regex</td><td>6</td></tr><tr><td>Bank / card / policy no.</td><td>regex + Luhn</td><td>24</td></tr><tr><td>Licence plate</td><td>regex</td><td>24</td></tr><tr><td>Quasi-identifier</td><td>LLM only</td><td>12</td></tr><tr><td>Signature</td><td>VLM</td><td>30</td></tr><tr><td>Face photo</td><td>VLM</td><td>6</td></tr><tr><td>Seal / chop</td><td>colour + VLM</td><td>24</td></tr>
-      </table>
-    </div>
-  </div>
-  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026</span><span>A</span></div>
 </section></body></html>
