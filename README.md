@@ -7,7 +7,7 @@ Entry for the **2026 ASUS UGen AI League** · Battlefield **Thunderstorm** (ASUS
 Theme **Workplace AI** · Global Online Track.
 Author: Yu-Tsen Tsai (蔡侑岑), CSIE, National Taiwan University.
 
-**Demo video (3 min):** https://www.youtube.com/watch?v=DQx-QkbOOHc
+**Demo video (3 min):** https://youtu.be/LxvyFA2Zhrc
 
 ![RedactAgent review UI](deck/assets/ui.png)
 
