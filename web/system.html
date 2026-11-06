@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RedactAgent System</title>
+<link rel="stylesheet" href="static/style.css">
+<style>
+  .sys { padding: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .card { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+  .card h3 { margin-top: 0; }
+  pre { margin: 0; background: #0f172a; color: #e2e8f0; border-radius: 8px; padding: 10px 12px; font-size: 12px;
+        font-family: ui-monospace, Menlo, monospace; overflow: auto; max-height: 270px; white-space: pre-wrap; }
+  .kv { display: grid; grid-template-columns: 110px 1fr; gap: 4px 10px; font-size: 13px; }
+  .kv b { color: var(--muted); font-weight: 600; }
+  .chart svg { width: 100%; height: 150px; background: #f8fafc; border: 1px solid var(--line); border-radius: 8px; }
+  .legend2 { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  .legend2 i { display: inline-block; width: 10px; height: 3px; margin: 0 4px 3px 10px; vertical-align: middle; }
+  .stamp { font-size: 12px; color: var(--muted); }
+  table.m { width: 100%; border-collapse: collapse; font-size: 13px; }
+  table.m td, table.m th { text-align: left; padding: 5px 6px; border-bottom: 1px solid var(--line); }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><rect x="3" y="5" width="26" height="22" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><rect x="7" y="11" width="11" height="4" fill="currentColor"/><rect x="7" y="18" width="18" height="4" fill="currentColor"/></svg>
+    <div><div class="name">RedactAgent &middot; System</div><div class="tag">What this deployment runs on &mdash; read live from the machine</div></div>
+  </div>
+  <div class="models"><a class="chip" href="./" style="color:#fff;text-decoration:none">review</a><a class="chip" href="batch" style="color:#fff;text-decoration:none">batch</a></div>
+</header>
+<div class="hwbar hidden" id="hwbar"></div>
+<div class="sys">
+  <div class="card">
+    <h3>Host</h3>
+    <div class="kv" id="host"></div>
+    <p class="stamp" id="stamp"></p>
+  </div>
+  <div class="card">
+    <h3>Model servers (vLLM XPU, one per card)</h3>
+    <table class="m" id="models"></table>
+    <pre id="containers" style="margin-top:10px;max-height:110px"></pre>
+  </div>
+  <div class="card chart">
+    <h3>Card power, last 2 minutes</h3>
+    <svg id="pchart" viewBox="0 0 600 150" preserveAspectRatio="none"></svg>
+    <div class="legend2"><i style="background:#1f3a8a"></i>XPU 0 (text LLM)<i style="background:#e4572e"></i>XPU 1 (vision model) &middot; 0&ndash;300 W</div>
+  </div>
+  <div class="card">
+    <h3>xpu-smi discovery</h3>
+    <pre id="gpus"></pre>
+  </div>
+</div>
+<script src="static/app.js"></script>
+<script>
+const $s = (q) => document.querySelector(q);
+const escH = (t) => String(t ?? "").replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c]);
+async function loadDiag() {
+  const r = await (await fetch("api/system/diagnostics")).json();
+  const d = r.diagnostics;
+  $s("#host").innerHTML = [["hostname", d.host], ["OS / kernel", d.os.replace("\n", " · ")], ["CPU", d.cpu.replace(/\n/g, "<br>")],
+    ["memory", "<span style='font-family:monospace;white-space:pre'>" + escH(d.memory) + "</span>"]]
+    .map(([k, v]) => `<b>${k}</b><div>${k === "memory" || k === "CPU" ? v : escH(v)}</div>`).join("");
+  $s("#stamp").textContent = "Captured live from this machine at " + d.captured_at;
+  $s("#gpus").textContent = d.gpus;
+  $s("#containers").textContent = d.containers;
+  $s("#models").innerHTML = "<tr><th>role</th><th>model</th><th>endpoint</th><th>context</th></tr>" +
+    (r.models || []).map((m) => `<tr><td>${m.role}</td><td>${escH(m.model)}</td><td>${escH(m.url)}</td><td>${m.max_len || ""}</td></tr>`).join("");
+}
+async function chart() {
+  const s = await (await fetch("api/system")).json();
+  const colors = ["#1f3a8a", "#e4572e"];
+  $s("#pchart").innerHTML = (s.gpus || []).map((g, k) => {
+    const h = (g.history || []).slice(-120);
+    const pts = h.map((p, i) => `${(i / 119) * 600},${150 - Math.min(300, p[2] || 0) / 2}`).join(" ");
+    return `<polyline points="${pts}" fill="none" stroke="${colors[k % 2]}" stroke-width="2.5"/>`;
+  }).join("") + [100, 200].map((w) => `<line x1="0" x2="600" y1="${150 - w / 2}" y2="${150 - w / 2}" stroke="#cbd5e1" stroke-dasharray="4 4"/>` +
+    `<text x="4" y="${146 - w / 2}" font-size="10" fill="#94a3b8">${w} W</text>`).join("");
+}
+loadDiag();
+chart();
+setInterval(chart, 2000);
+</script>
+</body>
+</html>

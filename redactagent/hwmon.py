@@ -135,3 +135,25 @@ def served_models() -> list[dict]:
 
 
 monitor = GpuMonitor()
+
+
+DIAG_COMMANDS = [  # fixed, read-only diagnostics shown on the /system page
+    ("host", ["hostname"]),
+    ("os", ["bash", "-c", "grep PRETTY_NAME /etc/os-release | cut -d= -f2 | tr -d '\\\"'; uname -r"]),
+    ("cpu", ["bash", "-c", "lscpu | grep -E 'Model name|^Socket|^CPU\\(s\\)' | sed 's/  */ /g'"]),
+    ("memory", ["bash", "-c", "free -g | head -n 2"]),
+    ("gpus", ["xpu-smi", "discovery"]),
+    ("containers", ["docker", "ps", "--format", "{{.Names}}  {{.Image}}  {{.Status}}"]),
+]
+
+
+def diagnostics() -> dict:
+    out = {}
+    for key, cmd in DIAG_COMMANDS:
+        try:
+            r = subprocess.run(cmd, capture_output=True, text=True, timeout=15, stdin=subprocess.DEVNULL)
+            out[key] = (r.stdout or r.stderr).strip()
+        except (OSError, subprocess.TimeoutExpired) as e:
+            out[key] = f"unavailable ({type(e).__name__})"
+    out["captured_at"] = time.strftime("%Y-%m-%d %H:%M:%S %Z")
+    return out

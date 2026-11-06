@@ -131,6 +131,16 @@ def batch_export(bid: str):
                     headers={"Content-Disposition": f'attachment; filename="redactagent_batch_{bid}.zip"'})
 
 
+@app.get("/system", response_class=HTMLResponse)
+def system_page():
+    return (WEB / "system.html").read_text(encoding="utf-8")
+
+
+@app.get("/api/system/diagnostics")
+def system_diagnostics():
+    return {"diagnostics": hwmon.diagnostics(), "models": hwmon.served_models(), **hwmon.monitor.snapshot()}
+
+
 @app.get("/api/samples")
 def samples():
     files = sorted(p.name for p in config.SAMPLES_DIR.glob("*") if p.suffix.lower() in (".png", ".jpg", ".pdf"))
