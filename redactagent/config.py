@@ -16,6 +16,9 @@ VISION_BASE_URL = os.getenv("RA_VISION_BASE_URL", BASE_URL)
 TEXT_MODEL = os.getenv("RA_TEXT_MODEL", "qwen3:8b")
 VISION_MODEL = os.getenv("RA_VISION_MODEL", "qwen2.5vl:7b")
 TIMEOUT = float(os.getenv("RA_TIMEOUT", "300"))
+# Run the LLM and VLM layers of a page at the same time. Default on for a vLLM backend (separate GPUs);
+# off for the laptop/Ollama path, where only one model fits in memory at a time.
+PARALLEL_LAYERS = os.getenv("RA_PARALLEL_LAYERS", "1" if BACKEND == "openai" else "0") == "1"
 
 RENDER_DPI = int(os.getenv("RA_DPI", "150"))
 RUNS_DIR = Path(os.getenv("RA_RUNS_DIR", ROOT / "runs"))

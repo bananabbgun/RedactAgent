@@ -8,18 +8,16 @@ import numpy as np
 
 from .schema import OcrLine
 
-_engine = None
-_lock = threading.Lock()
+_local = threading.local()
 
 
 def _get_engine():
-    global _engine
-    with _lock:
-        if _engine is None:
-            from rapidocr_onnxruntime import RapidOCR
+    """One RapidOCR engine per thread, so concurrent pages are OCR'd in parallel."""
+    if getattr(_local, "engine", None) is None:
+        from rapidocr_onnxruntime import RapidOCR
 
-            _engine = RapidOCR()
-    return _engine
+        _local.engine = RapidOCR()
+    return _local.engine
 
 
 def _quad_to_box(q) -> list[int]:

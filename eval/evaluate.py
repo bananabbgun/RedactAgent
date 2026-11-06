@@ -35,6 +35,7 @@ from redactagent.schema import CATEGORIES  # noqa: E402
 
 DATA = ROOT / "data" / "synthetic"
 OUT = ROOT / "eval" / "results"
+HW_LABEL = "Apple M5 laptop, 24 GB, Ollama"
 ABLATIONS = {
     "A_deterministic": {"rule", "cv"},
     "B_plus_llm": {"rule", "cv", "llm"},
@@ -121,6 +122,43 @@ def run_corpus(limit: int | None):
         print(f"[VLM {k}/{len(index)}] {doc['id']}: {len(vhits)} visual hits in {r['timings']['vlm']:.1f}s", flush=True)
 
 
+def run_concurrent(limit: int | None, workers: int):
+    """All layers per page, many pages in flight (both models resident, e.g. one per Arc Pro B70 card).
+    Records wall-clock throughput as well as per-page latency."""
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    pipe = Pipeline()
+    (OUT / "raw").mkdir(parents=True, exist_ok=True)
+    index = json.loads((DATA / "index.json").read_text())
+    if limit:
+        index = index[:limit]
+    todo = [d for d in index if not (OUT / "raw" / f"{d['id']}.json").exists()]
+
+    def one(doc):
+        data = (DATA / "images" / f"{doc['id']}.jpg").read_bytes()
+        job = pipe.new_job(f"{doc['id']}.jpg", "strict")
+        pipe.run(job, data)
+        if job.status != "done":
+            return doc["id"], job.error
+        (OUT / "raw" / f"{doc['id']}.json").write_text(json.dumps(
+            {"timings": job.timings, "tokens": job.tokens, "doc_type": job.doc_type, "vlm_done": True,
+             "findings": [f.to_dict() for f in job.findings]}, ensure_ascii=False))
+        return doc["id"], f"{len(job.findings)} findings in {job.timings['total']:.1f}s"
+
+    t0 = time.perf_counter()
+    with ThreadPoolExecutor(max_workers=workers) as ex:
+        futs = [ex.submit(one, d) for d in todo]
+        for k, f in enumerate(as_completed(futs), 1):
+            doc_id, msg = f.result()
+            print(f"[{k}/{len(todo)}] {doc_id}: {msg}", flush=True)
+    wall = time.perf_counter() - t0
+    if todo:
+        (OUT / "throughput.json").write_text(json.dumps(
+            {"pages": len(todo), "workers": workers, "wall_seconds": wall,
+             "pages_per_minute": len(todo) / wall * 60, "hardware": HW_LABEL}, indent=1))
+        print(f"{len(todo)} pages in {wall:.1f}s with {workers} workers -> {len(todo) / wall * 60:.1f} pages/min")
+
+
 def metrics():
     index = json.loads((DATA / "index.json").read_text())
     results = {}
@@ -192,7 +230,7 @@ def write_markdown(r):
         vals = [r[k]["recall_by_category"][c] for k in names]
         lines.append(f"| {CATEGORIES[c][0]} | {n} | " + " | ".join(f"{v:.0%}" for v in vals) + " |")
     lat = r["latency_seconds_per_page"]
-    lines += ["", "## Latency per page (Apple M5 laptop, 24 GB, Ollama)", "", "| Stage | mean | p50 | max |", "|---|---|---|---|"]
+    lines += ["", f"## Latency per page ({HW_LABEL})", "", "| Stage | mean | p50 | max |", "|---|---|---|---|"]
     for k in ("ocr", "rules", "llm", "vlm", "total"):
         if k in lat:
             lines.append(f"| {k} | {lat[k]['mean']:.2f} s | {lat[k]['p50']:.2f} s | {lat[k]['max']:.2f} s |")
@@ -205,7 +243,7 @@ def plot(r):
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
-    img = ROOT / "docs" / "img"
+    img = ROOT / "docs" / "img" if OUT == ROOT / "eval" / "results" else OUT
     img.mkdir(parents=True, exist_ok=True)
     cats = [c for c in CATEGORIES if r["C_full"]["support_by_category"][c]]
     labels = [CATEGORIES[c][0] for c in cats]
@@ -232,9 +270,19 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--reuse", action="store_true")
     ap.add_argument("--limit", type=int)
+    ap.add_argument("--out", help="results directory (default eval/results)")
+    ap.add_argument("--workers", type=int, default=0, help=">0: concurrent mode with N pages in flight")
+    ap.add_argument("--label", help="hardware label printed in RESULTS.md")
     args = ap.parse_args()
+    if args.out:
+        OUT = Path(args.out).resolve()
+    if args.label:
+        HW_LABEL = args.label
     if not args.reuse:
-        run_corpus(args.limit)
+        if args.workers > 0:
+            run_concurrent(args.limit, args.workers)
+        else:
+            run_corpus(args.limit)
     res = metrics()
     for k in ABLATIONS:
         x = res[k]

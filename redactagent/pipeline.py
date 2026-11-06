@@ -4,8 +4,10 @@ from __future__ import annotations
 
 import io
 import json
+import os
 import time
 import uuid
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Callable
@@ -25,6 +27,17 @@ from .ocr import run_ocr
 from .schema import Finding, OcrLine
 
 ALL_LAYERS = ("rules", "llm", "vlm")
+_layer_pool = ThreadPoolExecutor(max_workers=int(os.getenv("RA_LAYER_THREADS", "32")), thread_name_prefix="ra-llm")
+
+
+class _Done:
+    """Already-computed result with the Future.result() interface (sequential mode)."""
+
+    def __init__(self, value):
+        self.value = value
+
+    def result(self):
+        return self.value
 
 
 def load_pages(data: bytes, filename: str, dpi: int = config.RENDER_DPI) -> list[Image.Image]:
@@ -141,7 +154,7 @@ class Pipeline:
             job.input_sha256 = sha256_bytes(data)
             self.audit.append("ingest", job.id, filename=job.filename, sha256=job.input_sha256, policy=job.policy_id,
                               layers=list(job.layers))
-            t = time.perf_counter()
+            t_job = t = time.perf_counter()
             stage("Rendering pages", 0.02)
             images = load_pages(data, job.filename)
             job.timings["ingest"] = time.perf_counter() - t
@@ -162,23 +175,31 @@ class Pipeline:
                     t = time.perf_counter()
                     rhits = rule_det.detect(lines)
                     job.timings["rules"] = job.timings.get("rules", 0) + time.perf_counter() - t
-                lhits: list[llm_det.LlmHit] = []
+                # The LLM (text) and the VLM (pixels) are independent. When each has its own GPU (Arc Pro B70
+                # x2) they run concurrently, so a page costs max(LLM, VLM) instead of LLM + VLM.
+                llm_future = None
                 if "llm" in job.layers:
-                    stage(f"Page {i + 1}/{n}: contextual LLM ({self.text_client.model})", base + span * 0.2)
+                    stage(f"Page {i + 1}/{n}: contextual LLM ({self.text_client.model}) + visual identifiers",
+                          base + span * 0.2)
                     # the LLM reads the full text (masking rule hits hurt its recall in tests)
-                    lhits, doc_type, st = llm_det.detect(lines, self.text_client)
+                    if config.PARALLEL_LAYERS:
+                        llm_future = _layer_pool.submit(llm_det.detect, lines, self.text_client)
+                    else:
+                        llm_future = _Done(llm_det.detect(lines, self.text_client))
+
+                t = time.perf_counter()
+                vhits, vst = vis_det.detect(img, self.vision_client if "vlm" in job.layers else None)
+                job.timings["vlm"] = job.timings.get("vlm", 0) + (time.perf_counter() - t)
+                job.tokens["vlm_prompt"] = job.tokens.get("vlm_prompt", 0) + vst.prompt_tokens
+
+                lhits: list[llm_det.LlmHit] = []
+                if llm_future is not None:
+                    lhits, doc_type, st = llm_future.result()
                     job.doc_type = job.doc_type or doc_type
                     job.timings["llm"] = job.timings.get("llm", 0) + st.seconds
                     job.tokens["llm_prompt"] = job.tokens.get("llm_prompt", 0) + st.prompt_tokens
                     job.tokens["llm_completion"] = job.tokens.get("llm_completion", 0) + st.completion_tokens
                 page.findings = merge_text_hits(i, lines, rhits, lhits, next_id)
-
-                stage(f"Page {i + 1}/{n}: visual identifiers ({self.vision_client.model if 'vlm' in job.layers else 'colour check'})",
-                      base + span * 0.7)
-                t = time.perf_counter()
-                vhits, vst = vis_det.detect(img, self.vision_client if "vlm" in job.layers else None)
-                job.timings["vlm"] = job.timings.get("vlm", 0) + (time.perf_counter() - t)
-                job.tokens["vlm_prompt"] = job.tokens.get("vlm_prompt", 0) + vst.prompt_tokens
                 for h in vhits:
                     srcs = h.source.split("+")
                     page.findings.append(Finding(next_id(), i, h.category, h.category.lower(), h.bbox, srcs, h.confidence,
@@ -187,7 +208,7 @@ class Pipeline:
                 for bb in unread_regions(img, covered):
                     job.warnings.append({"page": i, "bbox": bb, "reason": "text-like ink not read by OCR - check manually"})
             self.apply_policy(job)
-            job.timings["total"] = sum(v for k, v in job.timings.items() if k != "total")
+            job.timings["total"] = time.perf_counter() - t_job  # wall clock (stages may overlap)
             job.status, job.stage, job.progress = "done", "Ready for review", 1.0
             by_src: dict[str, int] = {}
             for f in job.findings:
