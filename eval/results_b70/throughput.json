@@ -1,0 +1,7 @@
+{
+ "pages": 36,
+ "workers": 8,
+ "wall_seconds": 92.88819969102042,
+ "pages_per_minute": 23.253761050218838,
+ "hardware": "2x Intel Arc Pro B70 32GB, vLLM XPU 0.26, Qwen3-8B + Qwen2.5-VL-7B (one model per card), 8 pages in flight"
+}
