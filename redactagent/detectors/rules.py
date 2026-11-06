@@ -98,6 +98,9 @@ FIELD_RE = [(cat, re.compile(r"(?:^|\s)(?:" + lab + r")\s*[:：]\s*")) for cat, 
 STOP = re.compile(r"\s{2,}|\s*[,，(（]|\s+(?:性\s*别|性\s*別|關係|关系|电话|電話|Sex|Date)|$")
 ADDR_PHRASE = re.compile(r"(?:residing at|resides at|located at|living at|住於|居住於)\s*", re.I)
 ADDR_STOP = re.compile(r"\s{2,}|\s*[;；]|\s*(?:電話|电话|Tel\b|TEL\b|Phone)|$")
+# Taiwanese court judgments list parties without a colon: label, spaces, then the name.
+JUDGMENT_NAME = re.compile(r"^\s*(?:原\s*告|被\s*告|訴訟代理人|诉讼代理人|法\s*官|書記官|书记官|審判長|审判长|上\s*訴\s*人|"
+                           r"被\s*上\s*訴\s*人)[\s　]+([\u4e00-\u9fff]{2,4}?(?:律師|律师)?)(?=[\s　]|$)")
 TITLE_NAME = re.compile(r"(?:Mrs|Mr|Ms|Dr)\.\s?[A-Z][a-z]+(?:\s?[A-Z][a-z]+(?:-[a-z]+)?)?")
 
 
@@ -120,6 +123,9 @@ def field_hits(text: str) -> list[tuple[int, int, str, str]]:
         value = text[m.end():stop.start()].strip().rstrip(",.")
         if len(value) >= 10 and re.search(r"\d", value):
             out.append((m.end(), m.end() + len(value), "ADDRESS", f"address after '{m.group(0).strip()}'"))
+    m = JUDGMENT_NAME.search(text)
+    if m:
+        out.append((m.start(1), m.end(1), "PERSON_NAME", "party/official listed in a court judgment"))
     for m in TITLE_NAME.finditer(text):
         out.append((m.start(), m.end(), "PERSON_NAME", "title + surname"))
     return out

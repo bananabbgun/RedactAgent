@@ -14,6 +14,7 @@ from dataclasses import dataclass
 
 from ..llm_client import CallStats, ModelClient
 from ..schema import ROLES, TEXT_CATEGORIES, OcrLine
+from .rules import ORG_LINE
 
 SYSTEM = """You are RedactAgent, an on-premises de-identification engine for scanned Taiwanese and English documents \
 (medical records, contracts, police reports, insurance and HR forms). You receive OCR lines, each prefixed with an id \
@@ -27,6 +28,8 @@ Find every piece of personally identifiable information (PII) and label it with 
 - PHONE, EMAIL: contact details of a person.
 - ADDRESS: a residential or property street address (the whole address as one entity).
 - MEDICAL_RECORD_NO, HEALTH_INSURANCE_NO, FINANCIAL_ACCOUNT (bank account, credit card, insurance policy number), LICENSE_PLATE.
+- The phone number, address or name of an ORGANISATION (hospital, pharmacy, bank, court, company, hotline) is NOT
+  personal data. Only report contact details that belong to a person.
 - QUASI_IDENTIFIER: a phrase that would single out one person even without a name, e.g. a unique job or role in a small place \
 ("the only licensed ferry captain on Green Island", "現任國家女子冰壺隊總教練"). Quote the whole phrase.
 
@@ -142,9 +145,25 @@ UNIQUE_CUE = re.compile(r"\b(?:only|sole|last|first|youngest|oldest|unique|capta
                         r"唯一|現任|首位|第一位|最年輕|最年長|隊長|總教練|校長|村長|里長|冠軍", re.I)
 
 
+ORG_WORDS = re.compile(r"\b(?:Co|Inc|Ltd|Corp|LLC|Bank|Hospital|Clinic|Laboratory|Pharmacy|Court|Supermarket|branch|Mutual|"
+                       r"Insurance|Power|Telecom|University|School)\b|公司|銀行|醫院|診所|藥局|法院|分行|大學", re.I)
+NAME_PREFIX = re.compile(r"^(?:[A-Za-z]+\s*){0,3}?\b(?:to|from|by|for|of)\s*(?=[A-Z][A-Z\-\s]{3,})")
+
+
+def clean_name(text: str) -> str:
+    """'Transfer toYANG HAN-MING' -> 'YANG HAN-MING' (models sometimes quote the words before a name)."""
+    return NAME_PREFIX.sub("", text).strip()
+
+
 def plausible(text: str, cat: str) -> bool:
     """Cheap sanity checks against typical LLM over-flagging."""
     t = text.strip()
+    if cat == "PERSON_NAME":
+        if ORG_WORDS.search(t):
+            return False
+        latin = re.fullmatch(r"[A-Za-z][A-Za-z.\-]*", t)  # a single latin token like "Taipower" is rarely a full name
+        if latin and "-" not in t and not re.match(r"(?:Mr|Ms|Mrs|Dr)\.", t):
+            return False
     if cat in ("DATE", "DATE_OF_BIRTH"):
         return bool(DATE_LIKE.search(t)) and not NOT_DATE.search(t) and len(t) <= 40
     if cat == "ADDRESS":
@@ -183,6 +202,8 @@ def detect(lines: list[OcrLine], client: ModelClient, known: dict[str, list[tupl
     used: set[tuple[str, int, int]] = {(lid, a, b) for lid, sp in known.items() for a, b, _ in sp}
     for ent in out.get("entities", []):
         text = strip_label((ent.get("text") or "").strip())
+        if ent.get("category") == "PERSON_NAME":
+            text = clean_name(text)
         cat = ent.get("category")
         if not text or cat not in TEXT_CATEGORIES or not plausible(text, cat) or "⟦" in text:
             continue
@@ -192,6 +213,8 @@ def detect(lines: list[OcrLine], client: ModelClient, known: dict[str, list[tupl
             span = fuzzy_find(ln.text, text)
             if span is None:
                 continue
+            if cat in ("PHONE", "ADDRESS") and ORG_LINE.search(ln.text):
+                break  # organisation letterhead / hotline, not a person's contact detail
             key = (ln.id, span[0], span[1])
             if key in used:  # same text repeated: look for the next occurrence on the line
                 nxt = ln.text.find(text, span[1])

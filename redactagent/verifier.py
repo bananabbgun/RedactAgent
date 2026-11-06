@@ -13,7 +13,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
-from .detectors.llm import UNIQUE_CUE, fuzzy_find, plausible
+from .detectors.llm import UNIQUE_CUE, clean_name, fuzzy_find, plausible
 from .llm_client import CallStats, ModelClient
 from .schema import TEXT_CATEGORIES, Finding, OcrLine
 
@@ -99,6 +99,8 @@ def verify(page: int, lines: list[OcrLine], findings: list[Finding], client: Mod
         if len(parts) < 4:
             continue
         lid, text, cat, level = parts[0].strip("[]"), parts[1], parts[2].upper(), parts[3].lower()
+        if cat == "PERSON_NAME":
+            text = clean_name(text)
         reason = parts[4] if len(parts) > 4 else ""
         if cat not in TEXT_CATEGORIES or not text or LABEL.search(text) or not plausible(text, cat):
             continue
