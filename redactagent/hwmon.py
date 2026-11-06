@@ -44,7 +44,8 @@ class GpuMonitor:
 
     def _discover(self) -> list[dict]:
         try:
-            out = subprocess.run(["xpu-smi", "discovery"], capture_output=True, text=True, timeout=20).stdout
+            out = subprocess.run(["xpu-smi", "discovery"], capture_output=True, text=True, timeout=20,
+                                 stdin=subprocess.DEVNULL).stdout
         except (OSError, subprocess.TimeoutExpired):
             return []
         devs, cur = [], None
@@ -56,7 +57,7 @@ class GpuMonitor:
         for d in devs:  # total memory per card
             try:
                 det = subprocess.run(["xpu-smi", "discovery", "--device", d["id"]], capture_output=True, text=True,
-                                     timeout=20).stdout
+                                     timeout=20, stdin=subprocess.DEVNULL).stdout
                 m = re.search(r"Memory Physical Size:\s*([\d.]+)\s*MiB", det)
                 d["mem_total"] = float(m.group(1)) if m else None
             except (OSError, subprocess.TimeoutExpired):
@@ -68,7 +69,8 @@ class GpuMonitor:
         while True:
             try:
                 p = subprocess.Popen(["xpu-smi", "dump", "--device", dev, "--metrics", METRICS, "--interval", "1"],
-                                     stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True, bufsize=1)
+                                     stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL,
+                                     text=True, bufsize=1)  # no TTY: a background xpu-smi touching it gets stopped
                 header = None
                 for line in p.stdout:
                     cells = [c.strip() for c in line.split(",")]

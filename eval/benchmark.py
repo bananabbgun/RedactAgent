@@ -44,7 +44,7 @@ class GpuSampler:
             for d in self.devices:
                 self.procs[d] = subprocess.Popen(
                     ["xpu-smi", "dump", "--device", d, "--metrics", METRICS, "--interval", "1"],
-                    stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
+                    stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL, text=True)
         return self
 
     def __exit__(self, *exc):
