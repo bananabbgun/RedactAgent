@@ -33,6 +33,11 @@ async function init() {
   $("#run").onclick = run;
   $("#export").onclick = exportJob;
   refreshAudit();
+  const jid = new URLSearchParams(location.search).get("job");  // opened from the batch page
+  if (jid) {
+    const j = await api(`/api/jobs/${jid}`);
+    if (j.status === "done") { state.job = j; state.findings = j.findings; state.page = 0; done(); }
+  }
 }
 
 function previewSample() {
@@ -274,4 +279,4 @@ async function pollSystem() {
 }
 pollSystem();
 setInterval(pollSystem, 2000);
-init();
+if ($("#run")) init();

@@ -19,6 +19,9 @@ TIMEOUT = float(os.getenv("RA_TIMEOUT", "300"))
 # Run the LLM and VLM layers of a page at the same time. Default on for a vLLM backend (separate GPUs);
 # off for the laptop/Ollama path, where only one model fits in memory at a time.
 PARALLEL_LAYERS = os.getenv("RA_PARALLEL_LAYERS", "1" if BACKEND == "openai" else "0") == "1"
+# Documents processed concurrently by the server (vLLM batches the requests on the GPU).
+WORKERS = int(os.getenv("RA_WORKERS", "8" if BACKEND == "openai" else "1"))
+BATCH_DIR = Path(os.getenv("RA_BATCH_DIR", ROOT / "data" / "synthetic" / "images"))
 
 RENDER_DPI = int(os.getenv("RA_DPI", "150"))
 RUNS_DIR = Path(os.getenv("RA_RUNS_DIR", ROOT / "runs"))

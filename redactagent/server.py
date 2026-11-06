@@ -11,6 +11,9 @@ from __future__ import annotations
 import io
 import json
 import threading
+import time
+import uuid
+import zipfile
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
@@ -27,7 +30,8 @@ WEB = config.ROOT / "web"
 app = FastAPI(title="RedactAgent", version="0.1.0")
 pipe = Pipeline()
 jobs: dict[str, Job] = {}
-executor = ThreadPoolExecutor(max_workers=1)  # one GPU, one document at a time; the queue keeps order
+executor = ThreadPoolExecutor(max_workers=config.WORKERS)  # vLLM batches concurrent documents on the GPUs
+batches: dict[str, dict] = {}
 _lock = threading.Lock()
 
 app.mount("/static", StaticFiles(directory=WEB), name="static")
@@ -59,6 +63,72 @@ def _start_monitor():
 def system():
     return {"host": hwmon.host_info(), "backend": config.BACKEND, "models": hwmon.served_models(),
             **hwmon.monitor.snapshot()}
+
+
+@app.get("/batch", response_class=HTMLResponse)
+def batch_page():
+    return (WEB / "batch.html").read_text(encoding="utf-8")
+
+
+@app.post("/api/batches")
+async def create_batch(files: list[UploadFile] | None = File(None), demo: int = Form(0), policy: str = Form("strict")):
+    """Submit many documents at once: uploaded files, or `demo` = N pages from the synthetic corpus."""
+    items: list[tuple[str, bytes]] = []
+    for f in files or []:
+        items.append((f.filename or "upload", await f.read()))
+    if demo:
+        paths = sorted(config.BATCH_DIR.glob("*.jpg"))[:demo]
+        items += [(p.name, p.read_bytes()) for p in paths]
+    if not items:
+        raise HTTPException(400, "no documents")
+    bid = uuid.uuid4().hex[:8]
+    job_ids = [_submit(name, data, policy, list(ALL_LAYERS)).id for name, data in items]
+    batches[bid] = {"id": bid, "jobs": job_ids, "created": time.time(), "policy": policy}
+    pipe.audit.append("batch", bid, n_documents=len(job_ids), policy=policy, workers=config.WORKERS)
+    return {"id": bid, "n": len(job_ids)}
+
+
+@app.get("/api/batches/{bid}")
+def batch_status(bid: str):
+    b = batches.get(bid)
+    if b is None:
+        raise HTTPException(404)
+    rows, done_pages = [], 0
+    for jid in b["jobs"]:
+        j = jobs[jid]
+        rows.append({"id": j.id, "filename": j.filename, "status": j.status, "stage": j.stage, "pages": len(j.pages),
+                     "findings": len(j.findings), "redacted": sum(1 for f in j.findings if f.accepted and f.action != "keep"),
+                     "risk": j.risk.get("score"), "seconds": round(j.timings.get("total", 0), 1),
+                     "warnings": len(j.warnings)})
+        if j.status in ("done", "error"):
+            done_pages += max(1, len(j.pages))
+    all_done = all(r["status"] in ("done", "error") for r in rows)
+    if all_done and "finished" not in b:
+        b["finished"] = time.time()
+    wall = (b.get("finished") or time.time()) - b["created"]
+    return {"id": bid, "policy": b["policy"], "workers": config.WORKERS, "total": len(rows),
+            "done": sum(r["status"] in ("done", "error") for r in rows), "pages_done": done_pages,
+            "elapsed": round(wall, 1), "pages_per_min": round(done_pages / wall * 60, 1) if wall > 0 and done_pages else 0,
+            "all_done": all_done, "rows": rows}
+
+
+@app.get("/api/batches/{bid}/export.zip")
+def batch_export(bid: str):
+    b = batches.get(bid)
+    if b is None:
+        raise HTTPException(404)
+    buf = io.BytesIO()
+    with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
+        for jid in b["jobs"]:
+            j = jobs[jid]
+            if j.status != "done":
+                continue
+            info = pipe.export(j, actor="batch-reviewer")
+            stem = Path(j.filename).stem
+            z.write(Path(info["dir"]) / "redacted.pdf", f"{stem}_redacted.pdf")
+            z.write(Path(info["dir"]) / "report.json", f"{stem}_report.json")
+    return Response(buf.getvalue(), media_type="application/zip",
+                    headers={"Content-Disposition": f'attachment; filename="redactagent_batch_{bid}.zip"'})
 
 
 @app.get("/api/samples")
