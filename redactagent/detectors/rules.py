@@ -56,7 +56,7 @@ MONTH = r"(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(
 DATE_PATTERNS = [
     r"民[國国]\s?\d{2,3}\s?年\s?\d{1,2}\s?月\s?\d{1,2}\s?日(?:\s*\d{1,2}\s?[時时]\s?\d{1,2}\s?分)?",
     r"(?<!\d)\d{2,3}\s?年\s?\d{1,2}\s?月\s?\d{1,2}\s?日",
-    r"(?<!\d)(?:19|20)\d{2}\s?[/\-.]\s?\d{1,2}\s?[/\-.]\s?\d{1,2}(?!\d)",
+    r"(?<!\d)(?:19|20)\d{2}\s?[/\-.]\s?\d{1,2}\s?[/\-.]\s?\d{1,2}(?:\s*\d{1,2}:\d{2})?(?!\d)",
     r"(?<!\d)\d{1,2}\s?/\s?\d{1,2}\s?/\s?(?:19|20)\d{2}(?!\d)",
     MONTH + r"\.?\s*\d{1,2}\s*,?\s*(?:19|20)\d{2}",  # OCR often drops the spaces: "October19,2026"
 ]
@@ -79,6 +79,8 @@ PATTERNS = [
     ("MEDICAL_RECORD_NO", r"MRN[\s\-:]?\d{5,10}", 0.96, "medical record number", None, None),
     ("MEDICAL_RECORD_NO", r"(?<![A-Za-z0-9])[A-Z]?\d{6,9}(?!\d)", 0.9, "chart number after keyword", None,
      re.compile(r"病[歷历][號号]|病[歷历]號碼|病[历歷]号[码碼]|chart", re.I)),
+    ("MEDICAL_RECORD_NO", r"(?<![A-Za-z0-9])[A-Z]{1,3}\d{0,3}-?\d{5,9}(?!\d)", 0.88, "accession / specimen number", None,
+     re.compile(r"accession|specimen|檢體|检体|chart\s*no", re.I)),
     ("LICENSE_PLATE", r"(?<![A-Za-z0-9])(?:[A-Z]{3}-\d{4}|\d{3}-[A-Z]{3}|[A-Z]{2}-\d{4}|\d{4}-[A-Z]{2})(?![A-Za-z0-9])", 0.9,
      "Taiwan licence plate format", None, None),
 ]
@@ -87,13 +89,15 @@ PATTERNS = [
 # Form-field anchoring: the value that follows a well-known label is PII even without a fixed format.
 FIELD_LABELS = [
     ("PERSON_NAME", r"(?:中文|英文)?姓\s*名|緊急聯絡人|[緊紧]急[聯联][络絡]人|目擊證人|目[击擊][证證]人|證人|处理員警|處理員警|[诊診]治[医醫]師|"
-                    r"Patient Name|Full name of claimant|Attending Physician|Emergency Contact|WITNESS|Name"),
+                    r"原\s*告|被\s*告|法\s*官|書記官|处方医师|處方醫師|調劑藥師|调剂药师|"
+                    r"Patient Name|Patient|Full name of claimant|Attending Physician|Ordering physician|Verified by|"
+                    r"Emergency Contact|WITNESS|Name"),
     ("ADDRESS", r"(?:戶籍|户籍|通訊|通讯)?(?:住址|地址)|住\s*址|Residential address|Address"),
 ]
 FIELD_RE = [(cat, re.compile(r"(?:^|\s)(?:" + lab + r")\s*[:：]\s*")) for cat, lab in FIELD_LABELS]
 STOP = re.compile(r"\s{2,}|\s*[,，(（]|\s+(?:性\s*别|性\s*別|關係|关系|电话|電話|Sex|Date)|$")
 ADDR_PHRASE = re.compile(r"(?:residing at|resides at|located at|living at|住於|居住於)\s*", re.I)
-ADDR_STOP = re.compile(r"\s{2,}|\s*[;；]|$")
+ADDR_STOP = re.compile(r"\s{2,}|\s*[;；]|\s*(?:電話|电话|Tel\b|TEL\b|Phone)|$")
 TITLE_NAME = re.compile(r"(?:Mrs|Mr|Ms|Dr)\.\s?[A-Z][a-z]+(?:\s?[A-Z][a-z]+(?:-[a-z]+)?)?")
 
 
@@ -121,6 +125,11 @@ def field_hits(text: str) -> list[tuple[int, int, str, str]]:
     return out
 
 
+# Lines that carry an organisation's own contact details (letterheads, hotlines, footers).
+ORG_LINE = re.compile(r"hotline|www\.|https?://|\.test\b|\.com\b|accredited|Department of|"
+                      r"Hospital|Clinic|Laborator|Bank|Pharmacy|Court|醫院|医院|診所|藥局|药局|銀行|法院|客服|專線", re.I)
+
+
 def _overlaps(a: tuple[int, int], b: tuple[int, int]) -> bool:
     return a[0] < b[1] and b[0] < a[1]
 
@@ -137,8 +146,11 @@ def detect_line(line: OcrLine, prev_text: str = "") -> list[RuleHit]:
         taken.append((s, e))
         hits.append(RuleHit(line.id, s, e, cat, conf, reason))
 
+    org_line = bool(ORG_LINE.search(text))
     for cat, pat, conf, reason, validator, need in PATTERNS:
         if need is not None and not need.search(ctx):
+            continue
+        if cat == "PHONE" and org_line:
             continue
         for m in re.finditer(pat, text):
             value = m.group(0)

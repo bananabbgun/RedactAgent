@@ -88,42 +88,42 @@
   "template": "bank_statement_en",
   "lang": "en",
   "capture": "scan",
-  "n_pii": 16
+  "n_pii": 17
  },
  {
   "id": "bank_statement_en_01",
   "template": "bank_statement_en",
   "lang": "en",
   "capture": "phone",
-  "n_pii": 16
+  "n_pii": 17
  },
  {
   "id": "bank_statement_en_02",
   "template": "bank_statement_en",
   "lang": "en",
   "capture": "scan",
-  "n_pii": 16
+  "n_pii": 17
  },
  {
   "id": "bank_statement_en_03",
   "template": "bank_statement_en",
   "lang": "en",
   "capture": "phone",
-  "n_pii": 16
+  "n_pii": 17
  },
  {
   "id": "bank_statement_en_04",
   "template": "bank_statement_en",
   "lang": "en",
   "capture": "scan",
-  "n_pii": 16
+  "n_pii": 17
  },
  {
   "id": "bank_statement_en_05",
   "template": "bank_statement_en",
   "lang": "en",
   "capture": "phone",
-  "n_pii": 16
+  "n_pii": 17
  },
  {
   "id": "court_judgment_zh_00",

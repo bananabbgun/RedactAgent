@@ -150,9 +150,10 @@ def plausible(text: str, cat: str) -> bool:
     if cat == "ADDRESS":
         return bool(ADDRESS_LIKE.search(t)) and len(t) >= 6
     if cat == "QUASI_IDENTIFIER":
+        # a quasi-identifier singles out ONE person: require a uniqueness cue ("only", "唯一", "現任", "captain"...)
         words = len(t.split())
         cjk = sum(1 for c in t if "\u4e00" <= c <= "\u9fff")
-        return (words >= 4 or cjk >= 6) and len(t) <= 80 and "RedactAgent" not in t
+        return (words >= 4 or cjk >= 6) and len(t) <= 80 and bool(UNIQUE_CUE.search(t))
     if cat == "FINANCIAL_ACCOUNT":
         return "$" not in t and sum(c.isdigit() for c in t) >= 6
     if cat == "PERSON_NAME":
@@ -227,6 +228,18 @@ def _reason(cat: str, role: str | None) -> str:
     return f"contextual LLM: {cat.replace('_', ' ').lower()}{who}"
 
 
+def _all_occurrences(hay: str, needle: str) -> list[tuple[int, int]]:
+    """Every occurrence of needle in hay, ignoring whitespace (OCR often drops or adds spaces)."""
+    idx = [(c, k) for k, c in enumerate(hay) if not c.isspace()]
+    hs = "".join(c for c, _ in idx)
+    ns = "".join(c for c in needle if not c.isspace())
+    out, j = [], hs.find(ns) if ns else -1
+    while j >= 0:
+        out.append((idx[j][1], idx[j + len(ns) - 1][1] + 1))
+        j = hs.find(ns, j + len(ns))
+    return out
+
+
 def propagate(hits: list[LlmHit], lines: list[OcrLine], used: set) -> list[LlmHit]:
     """The model often reports a name once; copy every confirmed entity to its other exact occurrences."""
     extra = []
@@ -236,12 +249,10 @@ def propagate(hits: list[LlmHit], lines: list[OcrLine], used: set) -> list[LlmHi
             continue
         role = next((h.role for h in hits if h.text == text and h.category == cat), None)
         for ln in lines:
-            start = ln.text.find(text)
-            while start >= 0:
-                key = (ln.id, start, start + len(text))
+            for start, end in _all_occurrences(ln.text, text):
+                key = (ln.id, start, end)
                 if not any(k[0] == ln.id and k[1] < key[2] and key[1] < k[2] for k in used):
                     used.add(key)
-                    extra.append(LlmHit(ln.id, start, start + len(text), text, cat, role,
+                    extra.append(LlmHit(ln.id, start, end, ln.text[start:end], cat, role,
                                         _reason(cat, role) + " (repeated mention)"))
-                start = ln.text.find(text, start + len(text))
     return extra

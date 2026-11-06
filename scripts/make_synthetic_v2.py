@@ -163,7 +163,8 @@ def t_bank_statement_en(doc_id, rng, fen) -> Page:
     p.text(MARGIN, y + 38, en_address(rng), r, cat="ADDRESS")
     p.field(MARGIN, y + 84, "Account:", bank_account(rng), hb, r, "FINANCIAL_ACCOUNT")
     bb = p.field(660, y + 84, "Period:", f"{period[0]}-{period[1]:02d}-01", hb, r, "DATE")
-    p.text(bb[2] + 12, y + 84, f"to {period[0]}-{period[1]:02d}-28", r)
+    bb = p.text(bb[2] + 12, y + 84, "to ", r)
+    p.text(bb[2] + 4, y + 84, f"{period[0]}-{period[1]:02d}-28", r, cat="DATE")
     y += 150
     p.box([MARGIN, y, W - MARGIN, y + 44], w=0, fill=(228, 236, 245), outline=(228, 236, 245))
     cols = (MARGIN + 10, 280, 860, 1020)
