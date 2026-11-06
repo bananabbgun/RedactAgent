@@ -13,3 +13,4 @@ faker>=25.0
 matplotlib>=3.8
 kokoro-onnx>=0.4
 soundfile>=0.12
+pytest>=8
