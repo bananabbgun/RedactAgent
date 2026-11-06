@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RedactAgent Study</title>
+<link rel="stylesheet" href="static/style.css">
+<style>
+  body { overflow: hidden; }
+  .wrap { display: grid; grid-template-columns: 330px 1fr; gap: 14px; padding: 14px; height: calc(100vh - 64px); }
+  .side { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px; overflow: auto; }
+  .side h2 { margin: 0 0 8px; color: var(--navy, #0b1d4d); font-size: 20px; }
+  .side p, .side li { font-size: 14px; line-height: 1.5; }
+  .mode { display: inline-block; padding: 4px 10px; border-radius: 999px; font-weight: 700; font-size: 13px; color: #fff; }
+  .mode.manual { background: #64748b; } .mode.assisted { background: #be185d; }
+  .timer { font-size: 34px; font-weight: 800; color: #1f3a8a; margin: 10px 0; font-variant-numeric: tabular-nums; }
+  .stage { position: relative; overflow: auto; background: #e5e7eb; border-radius: 12px; display: flex; justify-content: center; }
+  .page { position: relative; height: fit-content; margin: 10px; user-select: none; }
+  .page img { display: block; height: calc(100vh - 110px); width: auto; }
+  .page svg { position: absolute; inset: 0; width: 100%; height: 100%; cursor: crosshair; }
+  .page rect.box { fill: rgba(0,0,0,.82); stroke: #000; cursor: pointer; }
+  .page rect.box.suggested { fill: rgba(190,24,93,.30); stroke: #be185d; stroke-width: 4; }
+  .page rect.box:hover { stroke: #ef4444; stroke-width: 5; }
+  input.pid { width: 100%; padding: 8px; font: inherit; border: 1px solid var(--line); border-radius: 8px; margin: 6px 0 12px; }
+  .hint { font-size: 12px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><rect x="3" y="5" width="26" height="22" rx="3" fill="none" stroke="currentColor" stroke-width="2.4"/><rect x="7" y="11" width="11" height="4" fill="currentColor"/><rect x="7" y="18" width="18" height="4" fill="currentColor"/></svg>
+    <div><div class="name">RedactAgent &middot; Redaction study</div><div class="tag">Manual vs. AI-assisted redaction &middot; synthetic documents only</div></div>
+  </div>
+</header>
+<div class="wrap">
+  <aside class="side" id="side"></aside>
+  <section class="stage"><div class="page" id="page"><img id="img" alt=""><svg id="svg"></svg></div></section>
+</div>
+<script>
+const S = { tasks: [], idx: -1, results: [], boxes: [], t0: 0, pid: "", order: "A", timer: null };
+const $q = (s) => document.querySelector(s);
+
+async function boot() {
+  const t = await (await fetch("api/study/tasks")).json();
+  S.tasks = t.tasks;
+  $q("#side").innerHTML = `
+    <h2>Redaction study / 遮蔽實驗</h2>
+    <p>You will redact personal data on <b>${S.tasks.length} synthetic documents</b> (all names and numbers are fake).</p>
+    <p>請把文件上<b>所有個人資料</b>遮起來：姓名、身分證／護照號、電話、Email、地址、跟個人相關的日期、病歷號、帳號、車牌、簽名、照片、印章，以及<b>能認出特定人的描述</b>（例如「綠島唯一的渡輪船長」）。</p>
+    <ul><li><b>Manual</b> pages: drag on the page to draw black boxes.</li>
+        <li><b>Assisted</b> pages: RedactAgent has pre-marked boxes (pink). Check them, click a box to remove it, drag to add missing ones.</li>
+        <li>Click any box to delete it. Work as fast as you can <i>and</i> as completely as you would for a real release.</li></ul>
+    <label>Participant ID / 編號</label><input class="pid" id="pid" placeholder="e.g. P01">
+    <button class="primary" id="go">Start / 開始</button>
+    <p class="hint">Timing starts when each page appears.</p>`;
+  $q("#go").onclick = () => {
+    S.pid = ($q("#pid").value || "anon").trim();
+    const n = parseInt(S.pid.replace(/\D/g, "") || "0", 10);
+    S.order = n % 2 ? "A" : "B";  // A: first half manual; B: first half assisted (counterbalanced)
+    next();
+  };
+}
+
+function modeFor(i) {
+  const firstHalf = i < S.tasks.length / 2;
+  return (S.order === "A") === firstHalf ? "manual" : "assisted";
+}
+
+function next() {
+  if (S.idx >= 0) {
+    const task = S.tasks[S.idx];
+    S.results.push({ id: task.id, mode: modeFor(S.idx), seconds: (performance.now() - S.t0) / 1000,
+                     boxes: S.boxes.map((b) => [Math.round(b[0]), Math.round(b[1]), Math.round(b[2]), Math.round(b[3])]),
+                     suggested_kept: S.boxes.filter((b) => b[4]).length, suggested_total: (task.suggested || []).length });
+  }
+  S.idx += 1;
+  if (S.idx >= S.tasks.length) return finish();
+  const task = S.tasks[S.idx], mode = modeFor(S.idx);
+  S.boxes = mode === "assisted" ? (task.suggested || []).map((b) => [...b.slice(0, 4), true]) : [];
+  $q("#img").onload = () => { draw(); S.t0 = performance.now(); };
+  $q("#img").src = `api/study/image/${task.id}`;
+  $q("#side").innerHTML = `<h2>Page ${S.idx + 1} / ${S.tasks.length}</h2>
+    <span class="mode ${mode}">${mode === "manual" ? "Manual / 手動" : "Assisted / AI 輔助"}</span>
+    <div class="timer" id="timer">0.0 s</div>
+    <p>${mode === "manual" ? "Drag on the page to cover every piece of personal data." : "Pink boxes were suggested by RedactAgent. Remove wrong ones, add anything missed."}</p>
+    <p class="hint">Click a box to delete it.</p>
+    <button class="primary" id="done">Done &rarr; next page</button>`;
+  $q("#done").onclick = next;
+  clearInterval(S.timer);
+  S.timer = setInterval(() => { const el = $q("#timer"); if (el) el.textContent = ((performance.now() - S.t0) / 1000).toFixed(1) + " s"; }, 100);
+}
+
+function draw() {
+  const img = $q("#img"), svg = $q("#svg");
+  svg.setAttribute("viewBox", `0 0 ${img.naturalWidth} ${img.naturalHeight}`);
+  svg.innerHTML = S.boxes.map((b, i) => `<rect class="box ${b[4] ? "suggested" : ""}" data-i="${i}" x="${b[0]}" y="${b[1]}" width="${b[2] - b[0]}" height="${b[3] - b[1]}"/>`).join("");
+  svg.querySelectorAll("rect.box").forEach((r) => r.onmousedown = (e) => { e.stopPropagation(); S.boxes.splice(+r.dataset.i, 1); draw(); });
+}
+
+(() => {  // drag-to-draw in image coordinates
+  const svg = $q("#svg");
+  let start = null, tmp = null;
+  const pt = (e) => { const r = svg.getBoundingClientRect(), img = $q("#img");
+    return [(e.clientX - r.left) * img.naturalWidth / r.width, (e.clientY - r.top) * img.naturalHeight / r.height]; };
+  svg.addEventListener("mousedown", (e) => { start = pt(e); tmp = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+    tmp.setAttribute("class", "box"); svg.appendChild(tmp); });
+  window.addEventListener("mousemove", (e) => { if (!start) return; const p = pt(e);
+    tmp.setAttribute("x", Math.min(start[0], p[0])); tmp.setAttribute("y", Math.min(start[1], p[1]));
+    tmp.setAttribute("width", Math.abs(p[0] - start[0])); tmp.setAttribute("height", Math.abs(p[1] - start[1])); });
+  window.addEventListener("mouseup", (e) => { if (!start) return; const p = pt(e);
+    const b = [Math.min(start[0], p[0]), Math.min(start[1], p[1]), Math.max(start[0], p[0]), Math.max(start[1], p[1]), false];
+    start = null; if (b[2] - b[0] > 6 && b[3] - b[1] > 6) S.boxes.push(b); draw(); });
+})();
+
+async function finish() {
+  clearInterval(S.timer);
+  const r = await fetch("api/study/results", { method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ participant: S.pid, order: S.order, pages: S.results }) });
+  const m = (k) => S.results.filter((x) => x.mode === k).reduce((a, x) => a + x.seconds, 0);
+  $q("#side").innerHTML = `<h2>Thank you! / 謝謝！</h2><p>Saved: ${r.ok ? (await r.json()).saved : "error"}</p>
+    <p>Manual pages: ${m("manual").toFixed(0)} s total<br>Assisted pages: ${m("assisted").toFixed(0)} s total</p>`;
+  $q("#img").removeAttribute("src"); $q("#svg").innerHTML = "";
+}
+boot();
+</script>
+</body>
+</html>

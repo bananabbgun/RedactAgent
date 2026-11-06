@@ -141,6 +141,45 @@ def system_diagnostics():
     return {"diagnostics": hwmon.diagnostics(), "models": hwmon.served_models(), **hwmon.monitor.snapshot()}
 
 
+# --- user study: manual vs. RedactAgent-assisted redaction -------------------------------------------
+STUDY_DIR = config.ROOT / "study"
+
+
+@app.get("/study", response_class=HTMLResponse)
+def study_page():
+    return (WEB / "study.html").read_text(encoding="utf-8")
+
+
+@app.get("/api/study/tasks")
+def study_tasks():
+    return json.loads((STUDY_DIR / "tasks.json").read_text(encoding="utf-8"))
+
+
+@app.get("/api/study/image/{doc_id}")
+def study_image(doc_id: str):
+    tasks = json.loads((STUDY_DIR / "tasks.json").read_text(encoding="utf-8"))
+    t = next((t for t in tasks["tasks"] if t["id"] == doc_id), None)
+    if t is None:
+        raise HTTPException(404)
+    return FileResponse(config.ROOT / t["image"])
+
+
+class StudyResult(BaseModel):
+    participant: str
+    order: str
+    pages: list[dict]
+
+
+@app.post("/api/study/results")
+def study_results(body: StudyResult):
+    out = config.RUNS_DIR / "study"
+    out.mkdir(parents=True, exist_ok=True)
+    safe = "".join(c for c in body.participant if c.isalnum() or c in "-_")[:40] or "anon"
+    path = out / f"{safe}_{int(time.time())}.json"
+    path.write_text(json.dumps(body.model_dump(), ensure_ascii=False, indent=1), encoding="utf-8")
+    return {"saved": path.name}
+
+
 @app.get("/api/samples")
 def samples():
     files = sorted(p.name for p in config.SAMPLES_DIR.glob("*") if p.suffix.lower() in (".png", ".jpg", ".pdf"))
