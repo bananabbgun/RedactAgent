@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import threading
 
 import numpy as np
@@ -16,7 +17,12 @@ def _get_engine():
     if getattr(_local, "engine", None) is None:
         from rapidocr_onnxruntime import RapidOCR
 
-        _local.engine = RapidOCR()
+        # On a many-core server every engine would otherwise grab all cores; when pages run in
+        # parallel a small per-engine pool is much faster overall (RA_OCR_THREADS, 0 = library default).
+        n = int(os.getenv("RA_OCR_THREADS", "0"))
+        # (global keys: RapidOCR copies them into the det/cls/rec sessions)
+        kw = {"intra_op_num_threads": n, "inter_op_num_threads": 1} if n > 0 else {}
+        _local.engine = RapidOCR(**kw)
     return _local.engine
 
 

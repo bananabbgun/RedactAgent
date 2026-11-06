@@ -50,12 +50,8 @@ class GpuSampler:
     def __exit__(self, *exc):
         self.rows = {}
         for d, p in self.procs.items():
-            p.terminate()
-            try:
-                out, _ = p.communicate(timeout=10)
-            except subprocess.TimeoutExpired:
-                p.kill()
-                out, _ = p.communicate()
+            p.kill()  # xpu-smi ignores SIGTERM
+            out, _ = p.communicate()
             self.rows[d] = list(csv.reader(io.StringIO(out)))
         return False
 
