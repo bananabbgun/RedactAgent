@@ -13,7 +13,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 
-from .detectors.llm import fuzzy_find, plausible
+from .detectors.llm import UNIQUE_CUE, fuzzy_find, plausible
 from .llm_client import CallStats, ModelClient
 from .schema import TEXT_CATEGORIES, Finding, OcrLine
 
@@ -26,8 +26,10 @@ private individual. Look for:
 - exact dates tied to the person (birth, admission, signing, accident)
 - quasi-identifiers: a unique job, role or title combined with a small place, team or community
   (e.g. "the only ... in ...", "唯一的...", "現任...隊長"), or rare combinations of age, job and location
-Do NOT report: organisation names, generic medical terms, drugs, amounts of money, form labels, or text that is
-already a redaction label.
+Do NOT report: organisation names (hospitals, banks, courts, companies), generic medical terms or advice, drugs,
+amounts of money, durations or ages ("30 days", "56-year-old"), form labels ("Date of birth", "Address"), legal
+boilerplate, generic job histories ("worked as a software engineer for three years"), or redaction labels.
+A quasi-identifier must point at ONE person: a rare role tied to a specific small place, team or community.
 
 Output plain text only. One clue per line:
 <line id> | <exact remaining text copied from that line> | <CATEGORY> | <high|medium|low> | <few-word reason>
@@ -108,8 +110,13 @@ def verify(page: int, lines: list[OcrLine], findings: list[Finding], client: Mod
                 continue
             if _covered(span, ln.id, findings + added):
                 break  # the attacker quoted something we already redact (or keep on purpose)
+            # auto-accept only confident clues; a quasi-identifier also needs an explicit uniqueness cue.
+            # Everything else is shown to the reviewer as an unticked suggestion.
+            accept = level == "high" or (level == "medium" and cat != "QUASI_IDENTIFIER")
+            if cat == "QUASI_IDENTIFIER" and not UNIQUE_CUE.search(text):
+                accept = False
             added.append(Finding(next_id(), page, cat, ln.text[span[0]:span[1]], ln.span_bbox(*span), ["agent"],
                                  RISK_CONF.get(level, 0.6), None, f"re-identification check ({level}): {reason}",
-                                 ln.id, span, accepted=level != "low"))
+                                 ln.id, span, accepted=accept))
             break
     return Verdict(risk, summary, added, stats)

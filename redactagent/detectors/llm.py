@@ -133,9 +133,22 @@ def _masked(ln: OcrLine, spans: list[tuple[int, int, str]]) -> str:
     return s
 
 
+DATE_LIKE = re.compile(
+    r"(?:19|20)\d{2}|\d{1,2}\s*[/\-.]\s*\d{1,2}|\d{2,3}\s*年\s*\d{1,2}\s*月|"
+    r"(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\.?\s*\d", re.I)
+NOT_DATE = re.compile(r"year[s\- ]*old|歲|days?\b|weeks?\b|months?\b|日內|週|天", re.I)
+ADDRESS_LIKE = re.compile(r"\d|號|巷|弄|路|街|段")
+UNIQUE_CUE = re.compile(r"\b(?:only|sole|last|first|youngest|oldest|unique|captain|coach|chief|principal|head|champion)\b|"
+                        r"唯一|現任|首位|第一位|最年輕|最年長|隊長|總教練|校長|村長|里長|冠軍", re.I)
+
+
 def plausible(text: str, cat: str) -> bool:
     """Cheap sanity checks against typical LLM over-flagging."""
     t = text.strip()
+    if cat in ("DATE", "DATE_OF_BIRTH"):
+        return bool(DATE_LIKE.search(t)) and not NOT_DATE.search(t) and len(t) <= 40
+    if cat == "ADDRESS":
+        return bool(ADDRESS_LIKE.search(t)) and len(t) >= 6
     if cat == "QUASI_IDENTIFIER":
         words = len(t.split())
         cjk = sum(1 for c in t if "\u4e00" <= c <= "\u9fff")
