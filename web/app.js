@@ -112,7 +112,7 @@ function done() {
   const t = j.timings;
   $("#kTime").textContent = (t.total || 0).toFixed(1) + "s";
   const fmt = (k, label) => (t[k] !== undefined ? `${label} ${t[k].toFixed(2)}s` : null);
-  $("#timing").innerHTML = [fmt("ocr", "OCR"), fmt("rules", "rules"), fmt("llm", "LLM"), fmt("vlm", "VLM")]
+  $("#timing").innerHTML = [fmt("ocr", "OCR"), fmt("rules", "rules"), fmt("llm", "LLM"), fmt("vlm", "VLM"), fmt("agent", "agent")]
     .filter(Boolean).join(" &middot; ") + (j.tokens.llm_completion ? `<br>${j.tokens.llm_prompt}+${j.tokens.llm_completion} LLM tokens` : "");
   const pager = $("#pager");
   if (j.pages > 1) {
@@ -134,12 +134,21 @@ function renderAll() {
   const fs = state.findings;
   $("#kFind").textContent = fs.length;
   $("#kRed").textContent = fs.filter((f) => f.accepted && f.action !== "keep").length;
-  const src = { rule: 0, llm: 0, vlm: 0, cv: 0 };
+  const src = { rule: 0, llm: 0, vlm: 0, cv: 0, agent: 0 };
   fs.forEach((f) => f.sources.forEach((s) => (src[s] = (src[s] || 0) + 1)));
   $("#srcs").innerHTML = Object.entries(src).filter(([, n]) => n)
     .map(([s, n]) => `<span class="badge ${s}">${s.toUpperCase()} ${n}</span>`).join("")
     + ((j.warnings || []).length ? `<div class="warnbox">&#9888; ${j.warnings.length} region(s) with ink the OCR could not read &mdash; check the dashed boxes</div>`
-      : `<div class="okbox">&#10003; every ink region on the page was read</div>`);
+      : `<div class="okbox">&#10003; every ink region on the page was read</div>`)
+    + riskBox(j.risk);
+}
+
+function riskBox(risk) {
+  if (!risk || risk.score === undefined) return "";
+  const s = risk.score, cls = s >= 50 ? "high" : s >= 20 ? "mid" : "low";
+  const added = (risk.per_page || []).reduce((a, p) => a + (p.added || 0), 0);
+  return `<div class="risk ${cls}"><b>${s}</b>re-identification risk after redaction (agentic check, ${esc(risk.policy || "")} policy)` +
+    `${added ? `<br>${added} residual clue(s) added as AGENT findings` : ""}${risk.summary ? `<br><i>${esc(risk.summary)}</i>` : ""}</div>`;
 }
 
 function refreshRedacted() {
