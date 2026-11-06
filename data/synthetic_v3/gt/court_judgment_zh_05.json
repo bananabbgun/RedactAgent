@@ -1,0 +1,153 @@
+{
+ "id": "court_judgment_zh_05",
+ "template": "court_judgment_zh",
+ "lang": "zh",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "林文章",
+   "bbox": [
+    256,
+    246,
+    328,
+    269
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "E181800076",
+   "bbox": [
+    761,
+    245,
+    893,
+    264
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺南市東區建國路175號七樓",
+   "bbox": [
+    314,
+    288,
+    616,
+    314
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "許志豪律師",
+   "bbox": [
+    281,
+    333,
+    401,
+    358
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳宥辰",
+   "bbox": [
+    258,
+    387,
+    330,
+    411
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺北市中山區中正路三段65號",
+   "bbox": [
+    315,
+    429,
+    629,
+    454
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國112年11月12日",
+   "bbox": [
+    350,
+    723,
+    560,
+    747
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳宥辰",
+   "bbox": [
+    207,
+    768,
+    279,
+    792
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為該部落唯一領有執照的狩獵者",
+   "bbox": [
+    279,
+    766,
+    614,
+    792
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "DATE",
+   "text": "115年2月12日",
+   "bbox": [
+    250,
+    1411,
+    400,
+    1435
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳志銘",
+   "bbox": [
+    343,
+    1468,
+    415,
+    1492
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "趙玉玲",
+   "bbox": [
+    248,
+    1519,
+    320,
+    1543
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "濱海地方法院印",
+   "bbox": [
+    922,
+    1404,
+    1099,
+    1586
+   ],
+   "role": null
+  }
+ ]
+}

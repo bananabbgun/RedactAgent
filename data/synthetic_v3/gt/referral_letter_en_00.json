@@ -1,0 +1,164 @@
+{
+ "id": "referral_letter_en_00",
+ "template": "referral_letter_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "May 8, 2026",
+   "bbox": [
+    95,
+    203,
+    229,
+    227
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Huang Han-tzu",
+   "bbox": [
+    154,
+    263,
+    358,
+    288
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Hsieh Hsin-han",
+   "bbox": [
+    137,
+    322,
+    301,
+    341
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "July 2, 1954",
+   "bbox": [
+    370,
+    324,
+    499,
+    349
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "MRN-4721368",
+   "bbox": [
+    573,
+    327,
+    732,
+    346
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the youngest member of the national para-fencing squad",
+   "bbox": [
+    531,
+    413,
+    1126,
+    442
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Hsieh",
+   "bbox": [
+    186,
+    454,
+    247,
+    473
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "May 8, 2026",
+   "bbox": [
+    395,
+    457,
+    529,
+    481
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0952-800-344",
+   "bbox": [
+    91,
+    675,
+    240,
+    693
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Hsieh Yu-yen",
+   "bbox": [
+    438,
+    677,
+    586,
+    702
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0975-324-755",
+   "bbox": [
+    625,
+    679,
+    774,
+    697
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "11F., No. 1, Zhongxiao E. Rd., Lingya Dist., Kaohsiung City",
+   "bbox": [
+    255,
+    719,
+    899,
+    748
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Kuo Hsin-po",
+   "bbox": [
+    82,
+    868,
+    329,
+    930
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Kuo Hsin-po",
+   "bbox": [
+    89,
+    963,
+    275,
+    987
+   ],
+   "role": "professional"
+  }
+ ]
+}

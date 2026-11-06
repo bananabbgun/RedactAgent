@@ -1,0 +1,197 @@
+{
+ "id": "bank_statement_en_04",
+ "template": "bank_statement_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "WU CHUN-CHUN",
+   "bbox": [
+    83,
+    183,
+    295,
+    204
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 92, Fuxing S. Rd., Sec. 3, Lingya Dist., Kaohsiung City",
+   "bbox": [
+    83,
+    215,
+    681,
+    244
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(808) 3711-400-505172",
+   "bbox": [
+    200,
+    265,
+    446,
+    289
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-11-01",
+   "bbox": [
+    749,
+    260,
+    869,
+    279
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-11-28",
+   "bbox": [
+    910,
+    259,
+    1030,
+    277
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-11-02",
+   "bbox": [
+    95,
+    390,
+    205,
+    406
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-11-05",
+   "bbox": [
+    96,
+    436,
+    206,
+    452
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-11-08",
+   "bbox": [
+    96,
+    482,
+    206,
+    498
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "KUO CHUN-YU",
+   "bbox": [
+    411,
+    479,
+    558,
+    495
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-11-11",
+   "bbox": [
+    96,
+    528,
+    207,
+    544
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-11-14",
+   "bbox": [
+    97,
+    574,
+    207,
+    590
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "CHEN PO-YU",
+   "bbox": [
+    441,
+    570,
+    572,
+    587
+   ],
+   "role": "other"
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-11-17",
+   "bbox": [
+    97,
+    620,
+    208,
+    636
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "TSAI YEN-YU",
+   "bbox": [
+    387,
+    617,
+    520,
+    633
+   ],
+   "role": "other"
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-11-20",
+   "bbox": [
+    98,
+    666,
+    208,
+    682
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-11-23",
+   "bbox": [
+    98,
+    712,
+    208,
+    728
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0911-896-129",
+   "bbox": [
+    491,
+    833,
+    637,
+    851
+   ],
+   "role": null
+  }
+ ]
+}

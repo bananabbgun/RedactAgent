@@ -1,0 +1,197 @@
+{
+ "id": "bank_statement_en_05",
+ "template": "bank_statement_en",
+ "lang": "en",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "LIN SHU-CHIA",
+   "bbox": [
+    110,
+    237,
+    271,
+    259
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 349, Minsheng E. Rd., Sec. 2, Xindian Dist., New Taipei City",
+   "bbox": [
+    110,
+    260,
+    714,
+    296
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(700) 8983-613-548683",
+   "bbox": [
+    216,
+    311,
+    442,
+    336
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-02-01",
+   "bbox": [
+    724,
+    302,
+    836,
+    320
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-02-28",
+   "bbox": [
+    875,
+    298,
+    989,
+    317
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-02-02",
+   "bbox": [
+    120,
+    430,
+    220,
+    446
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "TSAI CHIH-MING",
+   "bbox": [
+    385,
+    424,
+    539,
+    441
+   ],
+   "role": "other"
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-02-05",
+   "bbox": [
+    120,
+    473,
+    220,
+    489
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "LAI YI-YI",
+   "bbox": [
+    435,
+    467,
+    514,
+    483
+   ],
+   "role": "other"
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-02-08",
+   "bbox": [
+    120,
+    516,
+    220,
+    531
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-02-11",
+   "bbox": [
+    120,
+    558,
+    221,
+    574
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-02-14",
+   "bbox": [
+    121,
+    601,
+    221,
+    617
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-02-17",
+   "bbox": [
+    121,
+    644,
+    221,
+    659
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-02-20",
+   "bbox": [
+    121,
+    687,
+    221,
+    702
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-02-23",
+   "bbox": [
+    121,
+    729,
+    222,
+    745
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "WU WEI-PO",
+   "bbox": [
+    410,
+    726,
+    519,
+    741
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0975-649-105",
+   "bbox": [
+    481,
+    842,
+    616,
+    859
+   ],
+   "role": null
+  }
+ ]
+}

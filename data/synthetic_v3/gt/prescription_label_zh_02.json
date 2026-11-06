@@ -1,0 +1,109 @@
+{
+ "id": "prescription_label_zh_02",
+ "template": "prescription_label_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳建成",
+   "bbox": [
+    185,
+    199,
+    266,
+    225
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "民國83年8月20日",
+   "bbox": [
+    239,
+    252,
+    449,
+    277
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "89083050",
+   "bbox": [
+    762,
+    257,
+    882,
+    277
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國115年2月17日",
+   "bbox": [
+    239,
+    304,
+    464,
+    329
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳建成",
+   "bbox": [
+    174,
+    833,
+    255,
+    859
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "是臺東縣唯一的女性熱氣球駕駛",
+   "bbox": [
+    282,
+    834,
+    660,
+    861
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "盧碧珠",
+   "bbox": [
+    235,
+    1480,
+    316,
+    1505
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "高惠玲",
+   "bbox": [
+    785,
+    1482,
+    866,
+    1507
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "高惠玲印",
+   "bbox": [
+    891,
+    1446,
+    991,
+    1546
+   ],
+   "role": null
+  }
+ ]
+}

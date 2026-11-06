@@ -1,0 +1,164 @@
+{
+ "id": "referral_letter_en_05",
+ "template": "referral_letter_en",
+ "lang": "en",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "August 4, 2026",
+   "bbox": [
+    129,
+    268,
+    281,
+    292
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Tsai Hao-ting",
+   "bbox": [
+    184,
+    322,
+    360,
+    348
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Chen Han-ting",
+   "bbox": [
+    168,
+    379,
+    314,
+    404
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "May 17, 1950",
+   "bbox": [
+    379,
+    377,
+    517,
+    401
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "MRN-3189063",
+   "bbox": [
+    587,
+    373,
+    737,
+    393
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the last blacksmith still working in Lukang old street",
+   "bbox": [
+    538,
+    450,
+    1060,
+    481
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Chen",
+   "bbox": [
+    214,
+    504,
+    266,
+    522
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "August 4, 2026",
+   "bbox": [
+    404,
+    500,
+    556,
+    524
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0982-961-946",
+   "bbox": [
+    124,
+    711,
+    263,
+    729
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Liu Pei-hao",
+   "bbox": [
+    450,
+    705,
+    566,
+    724
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0976-124-311",
+   "bbox": [
+    603,
+    703,
+    742,
+    721
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 399, Wenhua Rd., Banqiao Dist., New Taipei City",
+   "bbox": [
+    276,
+    742,
+    821,
+    773
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Chang Kuan-hao",
+   "bbox": [
+    114,
+    889,
+    413,
+    948
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Chang Kuan-hao",
+   "bbox": [
+    121,
+    978,
+    341,
+    1003
+   ],
+   "role": "professional"
+  }
+ ]
+}

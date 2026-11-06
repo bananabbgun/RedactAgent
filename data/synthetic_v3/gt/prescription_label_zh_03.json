@@ -1,0 +1,109 @@
+{
+ "id": "prescription_label_zh_03",
+ "template": "prescription_label_zh",
+ "lang": "zh",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "邱美惠",
+   "bbox": [
+    216,
+    228,
+    292,
+    252
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "民國44年11月19日",
+   "bbox": [
+    266,
+    278,
+    476,
+    304
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "96948818",
+   "bbox": [
+    751,
+    286,
+    862,
+    305
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國114年3月10日",
+   "bbox": [
+    266,
+    327,
+    475,
+    353
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "邱美惠",
+   "bbox": [
+    202,
+    834,
+    279,
+    858
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為該部落唯一領有執照的狩獵者",
+   "bbox": [
+    304,
+    834,
+    656,
+    858
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "高文正",
+   "bbox": [
+    257,
+    1455,
+    333,
+    1479
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "沈文華",
+   "bbox": [
+    770,
+    1450,
+    845,
+    1475
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "沈文華印",
+   "bbox": [
+    868,
+    1415,
+    960,
+    1511
+   ],
+   "role": null
+  }
+ ]
+}

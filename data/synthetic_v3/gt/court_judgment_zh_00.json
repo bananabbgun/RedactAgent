@@ -1,0 +1,153 @@
+{
+ "id": "court_judgment_zh_00",
+ "template": "court_judgment_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳志明",
+   "bbox": [
+    231,
+    206,
+    309,
+    231
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "F140844126",
+   "bbox": [
+    779,
+    209,
+    921,
+    228
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺南市安平區忠孝東路105號一樓",
+   "bbox": [
+    293,
+    252,
+    673,
+    277
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "呂麗玉律師",
+   "bbox": [
+    257,
+    298,
+    388,
+    323
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "楊麗華",
+   "bbox": [
+    232,
+    354,
+    310,
+    378
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "新北市中和區中正路一段393號三樓",
+   "bbox": [
+    294,
+    400,
+    700,
+    425
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國112年7月27日",
+   "bbox": [
+    328,
+    706,
+    542,
+    730
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "楊麗華",
+   "bbox": [
+    172,
+    752,
+    250,
+    776
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為該部落唯一領有執照的狩獵者",
+   "bbox": [
+    250,
+    752,
+    614,
+    777
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "DATE",
+   "text": "115年2月6日",
+   "bbox": [
+    210,
+    1426,
+    359,
+    1450
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "黃義雄",
+   "bbox": [
+    311,
+    1486,
+    389,
+    1510
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳美娟",
+   "bbox": [
+    207,
+    1538,
+    285,
+    1563
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "濱海地方法院印",
+   "bbox": [
+    940,
+    1422,
+    1131,
+    1612
+   ],
+   "role": null
+  }
+ ]
+}

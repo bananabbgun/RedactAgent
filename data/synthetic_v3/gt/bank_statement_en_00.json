@@ -1,0 +1,197 @@
+{
+ "id": "bank_statement_en_00",
+ "template": "bank_statement_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "HSU YEN-SHU",
+   "bbox": [
+    94,
+    177,
+    273,
+    197
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "2F., No. 113, Zhongshan Rd., Banqiao Dist., New Taipei City",
+   "bbox": [
+    94,
+    213,
+    714,
+    240
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(13) 5256-901-448054",
+   "bbox": [
+    209,
+    261,
+    442,
+    284
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-03-01",
+   "bbox": [
+    758,
+    264,
+    878,
+    281
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-03-28",
+   "bbox": [
+    919,
+    265,
+    1039,
+    282
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-03-02",
+   "bbox": [
+    103,
+    383,
+    213,
+    399
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "HSIEH HAO-PEI",
+   "bbox": [
+    418,
+    385,
+    574,
+    401
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-03-05",
+   "bbox": [
+    102,
+    429,
+    212,
+    445
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "LIU CHIA-HSIN",
+   "bbox": [
+    392,
+    431,
+    538,
+    447
+   ],
+   "role": "other"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-03-08",
+   "bbox": [
+    102,
+    475,
+    212,
+    491
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-03-11",
+   "bbox": [
+    102,
+    521,
+    212,
+    537
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-03-14",
+   "bbox": [
+    102,
+    567,
+    212,
+    583
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "WU WEI-MING",
+   "bbox": [
+    446,
+    569,
+    589,
+    585
+   ],
+   "role": "other"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-03-17",
+   "bbox": [
+    101,
+    613,
+    211,
+    629
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-03-20",
+   "bbox": [
+    101,
+    659,
+    211,
+    675
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-03-23",
+   "bbox": [
+    101,
+    705,
+    211,
+    721
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0941-759-880",
+   "bbox": [
+    491,
+    832,
+    637,
+    850
+   ],
+   "role": null
+  }
+ ]
+}

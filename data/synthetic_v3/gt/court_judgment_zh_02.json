@@ -1,0 +1,153 @@
+{
+ "id": "court_judgment_zh_02",
+ "template": "court_judgment_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "魏建成",
+   "bbox": [
+    238,
+    204,
+    316,
+    227
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "E176159179",
+   "bbox": [
+    786,
+    210,
+    929,
+    231
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "高雄市苓雅區忠孝東路二段171巷84號",
+   "bbox": [
+    299,
+    249,
+    734,
+    277
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林素貞律師",
+   "bbox": [
+    263,
+    295,
+    393,
+    321
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "邱素貞",
+   "bbox": [
+    236,
+    351,
+    315,
+    375
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "新北市新店區中山路一段234號",
+   "bbox": [
+    298,
+    397,
+    652,
+    424
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國114年8月25日",
+   "bbox": [
+    329,
+    703,
+    544,
+    729
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "邱素貞",
+   "bbox": [
+    173,
+    748,
+    251,
+    773
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為該部落唯一領有執照的狩獵者",
+   "bbox": [
+    251,
+    749,
+    615,
+    777
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "DATE",
+   "text": "115年2月21日",
+   "bbox": [
+    205,
+    1422,
+    367,
+    1448
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "黄彥廷",
+   "bbox": [
+    304,
+    1482,
+    383,
+    1508
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "蔡文欽",
+   "bbox": [
+    200,
+    1534,
+    278,
+    1560
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "濱海地方法院印",
+   "bbox": [
+    933,
+    1425,
+    1125,
+    1617
+   ],
+   "role": null
+  }
+ ]
+}

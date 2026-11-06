@@ -1,0 +1,164 @@
+{
+ "id": "referral_letter_en_03",
+ "template": "referral_letter_en",
+ "lang": "en",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "October 25, 2026",
+   "bbox": [
+    123,
+    258,
+    296,
+    283
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Huang Chun-jung",
+   "bbox": [
+    178,
+    314,
+    395,
+    341
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Kuo Po-pei",
+   "bbox": [
+    163,
+    374,
+    276,
+    399
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "March 10, 1970",
+   "bbox": [
+    341,
+    370,
+    499,
+    394
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "MRN-8846041",
+   "bbox": [
+    568,
+    366,
+    718,
+    386
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the last blacksmith still working in Lukang old street",
+   "bbox": [
+    533,
+    443,
+    1055,
+    477
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Kuo",
+   "bbox": [
+    210,
+    502,
+    252,
+    519
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "October 25, 2026",
+   "bbox": [
+    391,
+    495,
+    564,
+    520
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0983-960-661",
+   "bbox": [
+    123,
+    712,
+    261,
+    731
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lee Kuan-yi",
+   "bbox": [
+    447,
+    705,
+    572,
+    731
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0915-570-116",
+   "bbox": [
+    609,
+    703,
+    748,
+    722
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 299, Zhongxiao E. Rd., Zhongshan Dist., Taipei City",
+   "bbox": [
+    275,
+    742,
+    842,
+    776
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Chen Yen-chih",
+   "bbox": [
+    116,
+    893,
+    367,
+    952
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Chen Yen-chih",
+   "bbox": [
+    124,
+    984,
+    320,
+    1003
+   ],
+   "role": "professional"
+  }
+ ]
+}

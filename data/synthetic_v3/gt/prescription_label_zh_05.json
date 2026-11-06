@@ -1,0 +1,109 @@
+{
+ "id": "prescription_label_zh_05",
+ "template": "prescription_label_zh",
+ "lang": "zh",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "王雅慧",
+   "bbox": [
+    215,
+    268,
+    291,
+    291
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "民國39年7月3日",
+   "bbox": [
+    265,
+    314,
+    449,
+    338
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "71920273",
+   "bbox": [
+    758,
+    316,
+    871,
+    334
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國115年2月3日",
+   "bbox": [
+    265,
+    362,
+    463,
+    385
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "王雅慧",
+   "bbox": [
+    205,
+    847,
+    282,
+    870
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為該部落唯一領有執照的狩獵者",
+   "bbox": [
+    307,
+    845,
+    665,
+    870
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳秀玲",
+   "bbox": [
+    264,
+    1443,
+    341,
+    1467
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "李志強",
+   "bbox": [
+    787,
+    1442,
+    865,
+    1464
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "李志強印",
+   "bbox": [
+    888,
+    1407,
+    984,
+    1500
+   ],
+   "role": null
+  }
+ ]
+}

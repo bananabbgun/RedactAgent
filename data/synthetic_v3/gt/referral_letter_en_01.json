@@ -1,0 +1,164 @@
+{
+ "id": "referral_letter_en_01",
+ "template": "referral_letter_en",
+ "lang": "en",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "September 23, 2026",
+   "bbox": [
+    111,
+    245,
+    307,
+    269
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Chen Wei-tzu",
+   "bbox": [
+    166,
+    301,
+    342,
+    319
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Tsai Chia-tzu",
+   "bbox": [
+    151,
+    357,
+    283,
+    374
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "September 8, 1964",
+   "bbox": [
+    347,
+    356,
+    533,
+    379
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "MRN-1954069",
+   "bbox": [
+    603,
+    356,
+    753,
+    373
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the principal of the sole elementary school on Dongyin island",
+   "bbox": [
+    519,
+    436,
+    1136,
+    461
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Tsai",
+   "bbox": [
+    197,
+    480,
+    239,
+    497
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "September 23, 2026",
+   "bbox": [
+    377,
+    479,
+    575,
+    502
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0952-258-426",
+   "bbox": [
+    111,
+    685,
+    248,
+    701
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Yang Chia-ting",
+   "bbox": [
+    433,
+    685,
+    585,
+    707
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0941-934-410",
+   "bbox": [
+    623,
+    686,
+    763,
+    702
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "5F., No. 231, Zhongxiao E. Rd., Sec. 1, Xitun Dist., Taichung City",
+   "bbox": [
+    263,
+    725,
+    928,
+    750
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Lin Po-wei",
+   "bbox": [
+    99,
+    864,
+    299,
+    914
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Lin Po-wei",
+   "bbox": [
+    110,
+    951,
+    264,
+    968
+   ],
+   "role": "professional"
+  }
+ ]
+}

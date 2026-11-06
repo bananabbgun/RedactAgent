@@ -1,0 +1,109 @@
+{
+ "id": "prescription_label_zh_00",
+ "template": "prescription_label_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "李家豪",
+   "bbox": [
+    183,
+    201,
+    264,
+    226
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "民國58年6月20日",
+   "bbox": [
+    237,
+    253,
+    447,
+    278
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "63529378",
+   "bbox": [
+    760,
+    257,
+    880,
+    276
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國114年3月7日",
+   "bbox": [
+    237,
+    305,
+    447,
+    330
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "李家豪",
+   "bbox": [
+    174,
+    835,
+    255,
+    860
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為金門唯一的手語翻譯員",
+   "bbox": [
+    282,
+    835,
+    579,
+    861
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "賴俊佑",
+   "bbox": [
+    237,
+    1481,
+    318,
+    1506
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳志文",
+   "bbox": [
+    787,
+    1482,
+    868,
+    1506
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "陳志文印",
+   "bbox": [
+    893,
+    1445,
+    993,
+    1545
+   ],
+   "role": null
+  }
+ ]
+}

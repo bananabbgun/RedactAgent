@@ -1,0 +1,164 @@
+{
+ "id": "referral_letter_en_04",
+ "template": "referral_letter_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "September 28, 2026",
+   "bbox": [
+    85,
+    208,
+    296,
+    234
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Huang Pei-jung",
+   "bbox": [
+    145,
+    268,
+    352,
+    293
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Cheng Ming-jung",
+   "bbox": [
+    129,
+    328,
+    315,
+    354
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "November 26, 1983",
+   "bbox": [
+    383,
+    326,
+    594,
+    350
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "MRN-1920244",
+   "bbox": [
+    668,
+    325,
+    827,
+    345
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the principal of the sole elementary school on Dongyin island",
+   "bbox": [
+    524,
+    410,
+    1173,
+    439
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Cheng",
+   "bbox": [
+    180,
+    461,
+    248,
+    485
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "September 28, 2026",
+   "bbox": [
+    396,
+    458,
+    607,
+    484
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0983-620-339",
+   "bbox": [
+    89,
+    682,
+    237,
+    700
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Huang Wei-wei",
+   "bbox": [
+    436,
+    678,
+    604,
+    703
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0989-300-224",
+   "bbox": [
+    644,
+    678,
+    792,
+    696
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "6F., No. 175, Heping E. Rd., Sec. 4, Nantun Dist., Taichung City",
+   "bbox": [
+    253,
+    720,
+    942,
+    749
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Lai Ming-hao",
+   "bbox": [
+    78,
+    874,
+    337,
+    935
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Lai Ming-hao",
+   "bbox": [
+    91,
+    969,
+    288,
+    994
+   ],
+   "role": "professional"
+  }
+ ]
+}

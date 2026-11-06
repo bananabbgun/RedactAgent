@@ -1,0 +1,153 @@
+{
+ "id": "lab_report_en_00",
+ "template": "lab_report_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lin Chia-shu",
+   "bbox": [
+    197,
+    188,
+    329,
+    205
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "08/27/1987",
+   "bbox": [
+    874,
+    191,
+    992,
+    209
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "CH-723546",
+   "bbox": [
+    226,
+    232,
+    346,
+    249
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "SP27-380501",
+   "bbox": [
+    809,
+    235,
+    953,
+    253
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-01-16 10:23",
+   "bbox": [
+    225,
+    276,
+    412,
+    294
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-01-17",
+   "bbox": [
+    792,
+    279,
+    913,
+    297
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Yang Pei-jung",
+   "bbox": [
+    340,
+    320,
+    527,
+    343
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lin Chia-shu",
+   "bbox": [
+    252,
+    757,
+    383,
+    775
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the last blacksmith still working in Lukang old street",
+   "bbox": [
+    467,
+    757,
+    992,
+    783
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Yang Pei-yi",
+   "bbox": [
+    414,
+    796,
+    532,
+    818
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0981-606-812",
+   "bbox": [
+    677,
+    797,
+    823,
+    815
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lee Kuan-yu, MT",
+   "bbox": [
+    234,
+    1483,
+    417,
+    1506
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Lee Kuan-yu",
+   "bbox": [
+    94,
+    1532,
+    309,
+    1587
+   ],
+   "role": "professional"
+  }
+ ]
+}

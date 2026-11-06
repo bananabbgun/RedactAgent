@@ -1,0 +1,153 @@
+{
+ "id": "court_judgment_zh_03",
+ "template": "court_judgment_zh",
+ "lang": "zh",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳美玲",
+   "bbox": [
+    268,
+    229,
+    338,
+    252
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "J202730100",
+   "bbox": [
+    765,
+    231,
+    893,
+    249
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "新竹市東區復興南路二段234號",
+   "bbox": [
+    324,
+    271,
+    644,
+    294
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳冠宇律師",
+   "bbox": [
+    291,
+    314,
+    408,
+    337
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "李明德",
+   "bbox": [
+    268,
+    366,
+    338,
+    389
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺南市東區中正路一段27號九樓",
+   "bbox": [
+    324,
+    408,
+    656,
+    433
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國112年5月15日",
+   "bbox": [
+    354,
+    693,
+    548,
+    717
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "李明德",
+   "bbox": [
+    214,
+    734,
+    284,
+    758
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為該部落唯一領有執照的狩獵者",
+   "bbox": [
+    284,
+    735,
+    614,
+    762
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "DATE",
+   "text": "115年6月12日",
+   "bbox": [
+    247,
+    1366,
+    394,
+    1392
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "徐世明",
+   "bbox": [
+    337,
+    1425,
+    408,
+    1450
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳俊傑",
+   "bbox": [
+    243,
+    1471,
+    314,
+    1496
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "濱海地方法院印",
+   "bbox": [
+    918,
+    1379,
+    1097,
+    1567
+   ],
+   "role": null
+  }
+ ]
+}

@@ -1,0 +1,197 @@
+{
+ "id": "bank_statement_en_01",
+ "template": "bank_statement_en",
+ "lang": "en",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "HUANG CHIA-TZU",
+   "bbox": [
+    126,
+    219,
+    339,
+    243
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 113, Guangfu Rd., Banqiao Dist., New Taipei City",
+   "bbox": [
+    126,
+    252,
+    637,
+    288
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(812) 3643-956-661505",
+   "bbox": [
+    234,
+    299,
+    464,
+    326
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-09-01",
+   "bbox": [
+    747,
+    313,
+    858,
+    332
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-09-28",
+   "bbox": [
+    896,
+    318,
+    1008,
+    336
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-09-02",
+   "bbox": [
+    133,
+    411,
+    237,
+    428
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-09-05",
+   "bbox": [
+    133,
+    454,
+    236,
+    470
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-09-08",
+   "bbox": [
+    133,
+    497,
+    236,
+    513
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-09-11",
+   "bbox": [
+    132,
+    539,
+    235,
+    556
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "CHANG WEI-WEI",
+   "bbox": [
+    454,
+    548,
+    611,
+    566
+   ],
+   "role": "other"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-09-14",
+   "bbox": [
+    132,
+    582,
+    235,
+    599
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "HSU MING-CHIH",
+   "bbox": [
+    427,
+    590,
+    579,
+    608
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-09-17",
+   "bbox": [
+    131,
+    625,
+    235,
+    642
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-09-20",
+   "bbox": [
+    131,
+    668,
+    234,
+    684
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-09-23",
+   "bbox": [
+    130,
+    711,
+    234,
+    727
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "YANG KUAN-YEN",
+   "bbox": [
+    402,
+    717,
+    564,
+    735
+   ],
+   "role": "other"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0948-687-285",
+   "bbox": [
+    495,
+    836,
+    631,
+    855
+   ],
+   "role": null
+  }
+ ]
+}

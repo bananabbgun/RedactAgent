@@ -1,0 +1,153 @@
+{
+ "id": "lab_report_en_01",
+ "template": "lab_report_en",
+ "lang": "en",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Huang Yu-jung",
+   "bbox": [
+    235,
+    214,
+    379,
+    238
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "10/27/1948",
+   "bbox": [
+    855,
+    227,
+    963,
+    245
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "CH-198254",
+   "bbox": [
+    261,
+    256,
+    372,
+    274
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "SP74-107946",
+   "bbox": [
+    795,
+    267,
+    927,
+    285
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-03-24 11:49",
+   "bbox": [
+    261,
+    297,
+    432,
+    316
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-03-25",
+   "bbox": [
+    780,
+    307,
+    890,
+    326
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Lin Han-yi",
+   "bbox": [
+    366,
+    340,
+    499,
+    364
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Huang Yu-jung",
+   "bbox": [
+    282,
+    750,
+    425,
+    773
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the only harbour pilot licensed for Hualien port",
+   "bbox": [
+    502,
+    753,
+    935,
+    782
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lin Po-yi",
+   "bbox": [
+    432,
+    788,
+    515,
+    810
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0954-350-251",
+   "bbox": [
+    647,
+    792,
+    781,
+    810
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Huang Chih-chun, MT",
+   "bbox": [
+    263,
+    1435,
+    477,
+    1459
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Huang Chih-chun",
+   "bbox": [
+    136,
+    1481,
+    397,
+    1535
+   ],
+   "role": "professional"
+  }
+ ]
+}

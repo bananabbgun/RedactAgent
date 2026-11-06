@@ -1,0 +1,109 @@
+{
+ "id": "prescription_label_zh_01",
+ "template": "prescription_label_zh",
+ "lang": "zh",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "朱淑娟",
+   "bbox": [
+    208,
+    274,
+    285,
+    297
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "民國49年9月21日",
+   "bbox": [
+    258,
+    320,
+    457,
+    345
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "68761727",
+   "bbox": [
+    752,
+    320,
+    866,
+    339
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國114年6月16日",
+   "bbox": [
+    258,
+    368,
+    470,
+    393
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "朱淑娟",
+   "bbox": [
+    194,
+    863,
+    270,
+    886
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "現任國家帕拉桌球隊隊長",
+   "bbox": [
+    295,
+    860,
+    574,
+    885
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "潘欣怡",
+   "bbox": [
+    247,
+    1456,
+    322,
+    1479
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "莊永昌",
+   "bbox": [
+    760,
+    1454,
+    837,
+    1477
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "莊永昌印",
+   "bbox": [
+    859,
+    1420,
+    954,
+    1512
+   ],
+   "role": null
+  }
+ ]
+}

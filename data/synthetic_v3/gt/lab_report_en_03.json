@@ -1,0 +1,153 @@
+{
+ "id": "lab_report_en_03",
+ "template": "lab_report_en",
+ "lang": "en",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Hsu Chun-chia",
+   "bbox": [
+    203,
+    218,
+    348,
+    234
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "03/05/1947",
+   "bbox": [
+    836,
+    218,
+    948,
+    234
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "CH-928106",
+   "bbox": [
+    231,
+    260,
+    343,
+    276
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "SP34-831254",
+   "bbox": [
+    776,
+    260,
+    912,
+    276
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-11-21 08:57",
+   "bbox": [
+    232,
+    302,
+    405,
+    318
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-11-22",
+   "bbox": [
+    761,
+    302,
+    874,
+    318
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Hsieh Chia-jung",
+   "bbox": [
+    339,
+    343,
+    532,
+    364
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Hsu Chun-chia",
+   "bbox": [
+    267,
+    754,
+    411,
+    771
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the last blacksmith still working in Lukang old street",
+   "bbox": [
+    488,
+    754,
+    979,
+    779
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lin Wei-yi",
+   "bbox": [
+    418,
+    790,
+    513,
+    812
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0927-381-243",
+   "bbox": [
+    648,
+    792,
+    784,
+    809
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Tsai Jung-han, MT",
+   "bbox": [
+    268,
+    1426,
+    451,
+    1449
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Tsai Jung-han",
+   "bbox": [
+    145,
+    1471,
+    370,
+    1522
+   ],
+   "role": "professional"
+  }
+ ]
+}

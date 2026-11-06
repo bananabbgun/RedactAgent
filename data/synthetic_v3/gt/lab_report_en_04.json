@@ -1,0 +1,153 @@
+{
+ "id": "lab_report_en_04",
+ "template": "lab_report_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Wang Po-jung",
+   "bbox": [
+    197,
+    188,
+    347,
+    210
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "05/04/1955",
+   "bbox": [
+    874,
+    191,
+    992,
+    209
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "CH-148647",
+   "bbox": [
+    226,
+    232,
+    346,
+    249
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "SP94-784650",
+   "bbox": [
+    809,
+    235,
+    953,
+    253
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-10-24 07:10",
+   "bbox": [
+    225,
+    276,
+    411,
+    294
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-10-25",
+   "bbox": [
+    792,
+    279,
+    912,
+    297
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Wu Yen-han",
+   "bbox": [
+    340,
+    320,
+    511,
+    338
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Wang Po-jung",
+   "bbox": [
+    252,
+    757,
+    399,
+    780
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the last blacksmith still working in Lukang old street",
+   "bbox": [
+    483,
+    757,
+    1008,
+    783
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Kuo Hsin-yen",
+   "bbox": [
+    414,
+    796,
+    554,
+    819
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0978-162-326",
+   "bbox": [
+    699,
+    797,
+    845,
+    815
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Yang Kuan-yu, MT",
+   "bbox": [
+    234,
+    1483,
+    434,
+    1506
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Yang Kuan-yu",
+   "bbox": [
+    97,
+    1532,
+    346,
+    1587
+   ],
+   "role": "professional"
+  }
+ ]
+}

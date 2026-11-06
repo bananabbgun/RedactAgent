@@ -1,0 +1,153 @@
+{
+ "id": "lab_report_en_02",
+ "template": "lab_report_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Tsai Pei-yen",
+   "bbox": [
+    201,
+    185,
+    333,
+    208
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "05/05/1978",
+   "bbox": [
+    878,
+    193,
+    996,
+    212
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "CH-132857",
+   "bbox": [
+    230,
+    229,
+    350,
+    248
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "SP10-739117",
+   "bbox": [
+    813,
+    236,
+    957,
+    255
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-03-13 07:35",
+   "bbox": [
+    229,
+    273,
+    415,
+    292
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-03-14",
+   "bbox": [
+    796,
+    280,
+    916,
+    299
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Lin Hsin-han",
+   "bbox": [
+    344,
+    319,
+    515,
+    338
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Tsai Pei-yen",
+   "bbox": [
+    252,
+    755,
+    381,
+    778
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the principal of the sole elementary school on Dongyin island",
+   "bbox": [
+    465,
+    756,
+    1088,
+    787
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Hsu Po-po",
+   "bbox": [
+    415,
+    795,
+    525,
+    818
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0966-706-165",
+   "bbox": [
+    670,
+    798,
+    816,
+    816
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Huang Shu-yu, MT",
+   "bbox": [
+    230,
+    1480,
+    431,
+    1505
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Huang Shu-yu",
+   "bbox": [
+    93,
+    1529,
+    330,
+    1586
+   ],
+   "role": "professional"
+  }
+ ]
+}

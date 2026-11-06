@@ -1,0 +1,164 @@
+{
+ "id": "referral_letter_en_02",
+ "template": "referral_letter_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "October 17, 2026",
+   "bbox": [
+    96,
+    201,
+    280,
+    225
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Lai Yu-han",
+   "bbox": [
+    155,
+    262,
+    318,
+    281
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Huang Chun-pei",
+   "bbox": [
+    138,
+    321,
+    312,
+    347
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "February 12, 1950",
+   "bbox": [
+    381,
+    324,
+    575,
+    350
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "MRN-8385237",
+   "bbox": [
+    649,
+    327,
+    808,
+    347
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the youngest member of the national para-fencing squad",
+   "bbox": [
+    531,
+    413,
+    1126,
+    443
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Huang",
+   "bbox": [
+    187,
+    455,
+    257,
+    479
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "October 17, 2026",
+   "bbox": [
+    405,
+    456,
+    589,
+    480
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0954-739-940",
+   "bbox": [
+    92,
+    674,
+    240,
+    692
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Liu Pei-hao",
+   "bbox": [
+    439,
+    676,
+    562,
+    695
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0957-194-872",
+   "bbox": [
+    602,
+    679,
+    750,
+    697
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "10F., No. 150, Fuxing S. Rd., Sec. 4, Nantun Dist., Taichung City",
+   "bbox": [
+    255,
+    719,
+    951,
+    749
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Wang Chia-tzu",
+   "bbox": [
+    82,
+    867,
+    364,
+    929
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Wang Chia-tzu",
+   "bbox": [
+    89,
+    962,
+    304,
+    987
+   ],
+   "role": "professional"
+  }
+ ]
+}

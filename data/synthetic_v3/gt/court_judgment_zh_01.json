@@ -1,0 +1,153 @@
+{
+ "id": "court_judgment_zh_01",
+ "template": "court_judgment_zh",
+ "lang": "zh",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "梁建中",
+   "bbox": [
+    272,
+    239,
+    346,
+    261
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "O160888560",
+   "bbox": [
+    788,
+    244,
+    924,
+    262
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "新北市中和區民生東路三段346號九樓",
+   "bbox": [
+    330,
+    282,
+    737,
+    306
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林威廷律師",
+   "bbox": [
+    295,
+    324,
+    419,
+    348
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "洪秀美",
+   "bbox": [
+    270,
+    377,
+    344,
+    399
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "高雄市三民區中正路二段255號",
+   "bbox": [
+    328,
+    420,
+    663,
+    442
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國113年5月20日",
+   "bbox": [
+    357,
+    706,
+    561,
+    730
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "洪秀美",
+   "bbox": [
+    207,
+    751,
+    282,
+    774
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為該部落唯一領有執照的狩獵者",
+   "bbox": [
+    282,
+    749,
+    629,
+    775
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "DATE",
+   "text": "115年10月14日",
+   "bbox": [
+    235,
+    1394,
+    406,
+    1420
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "駱志文",
+   "bbox": [
+    331,
+    1452,
+    407,
+    1478
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "朱麗香",
+   "bbox": [
+    229,
+    1506,
+    306,
+    1530
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "濱海地方法院印",
+   "bbox": [
+    934,
+    1378,
+    1114,
+    1563
+   ],
+   "role": null
+  }
+ ]
+}

@@ -1,0 +1,153 @@
+{
+ "id": "court_judgment_zh_04",
+ "template": "court_judgment_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "蒲家銘",
+   "bbox": [
+    232,
+    206,
+    310,
+    230
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "F173524308",
+   "bbox": [
+    780,
+    209,
+    922,
+    228
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "高雄市苓雅區和平東路一段30號",
+   "bbox": [
+    294,
+    252,
+    660,
+    276
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "蔡欣怡律師",
+   "bbox": [
+    258,
+    298,
+    388,
+    323
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "高秀雲",
+   "bbox": [
+    232,
+    354,
+    310,
+    378
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "新竹市北區建國路二段147巷349號六樓",
+   "bbox": [
+    294,
+    400,
+    742,
+    425
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國112年7月24日",
+   "bbox": [
+    328,
+    706,
+    542,
+    730
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "高秀雲",
+   "bbox": [
+    172,
+    752,
+    250,
+    776
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "是臺東縣唯一的女性熱氣球駕駛",
+   "bbox": [
+    250,
+    752,
+    614,
+    776
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "DATE",
+   "text": "115年11月28日",
+   "bbox": [
+    210,
+    1426,
+    386,
+    1450
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "李雅惠",
+   "bbox": [
+    310,
+    1486,
+    388,
+    1510
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林志宏",
+   "bbox": [
+    206,
+    1538,
+    284,
+    1562
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "濱海地方法院印",
+   "bbox": [
+    940,
+    1422,
+    1130,
+    1612
+   ],
+   "role": null
+  }
+ ]
+}

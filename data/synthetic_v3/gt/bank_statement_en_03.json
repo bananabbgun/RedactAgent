@@ -1,0 +1,197 @@
+{
+ "id": "bank_statement_en_03",
+ "template": "bank_statement_en",
+ "lang": "en",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "CHANG YU-MING",
+   "bbox": [
+    113,
+    204,
+    321,
+    229
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "11F., No. 286, Fuxing S. Rd., Xitun Dist., Taichung City",
+   "bbox": [
+    113,
+    239,
+    648,
+    276
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(808) 2619-547-594479",
+   "bbox": [
+    226,
+    287,
+    461,
+    314
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-01-01",
+   "bbox": [
+    747,
+    302,
+    859,
+    321
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-01-28",
+   "bbox": [
+    897,
+    306,
+    1008,
+    325
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-01-02",
+   "bbox": [
+    125,
+    401,
+    231,
+    418
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "HSIEH TZU-TZU",
+   "bbox": [
+    403,
+    409,
+    554,
+    426
+   ],
+   "role": "other"
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-01-05",
+   "bbox": [
+    126,
+    445,
+    232,
+    462
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-01-08",
+   "bbox": [
+    126,
+    489,
+    233,
+    506
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "WU WEI-SHU",
+   "bbox": [
+    456,
+    497,
+    581,
+    514
+   ],
+   "role": "other"
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-01-11",
+   "bbox": [
+    127,
+    533,
+    233,
+    550
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-01-14",
+   "bbox": [
+    128,
+    577,
+    234,
+    593
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "HSIEH JUNG-YI",
+   "bbox": [
+    429,
+    583,
+    575,
+    600
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-01-17",
+   "bbox": [
+    128,
+    621,
+    234,
+    637
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-01-20",
+   "bbox": [
+    129,
+    665,
+    235,
+    681
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-01-23",
+   "bbox": [
+    129,
+    708,
+    235,
+    725
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0953-447-363",
+   "bbox": [
+    504,
+    833,
+    642,
+    850
+   ],
+   "role": null
+  }
+ ]
+}
