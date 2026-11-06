@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" font-family="Helvetica Neue, Arial, sans-serif" font-size="13">
+  <title>RedactAgent architecture on 2x Intel Arc Pro B70</title>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3b5bdb"/></marker>
+  </defs>
+  <rect width="1200" height="640" fill="#ffffff"/>
+  <text x="24" y="34" font-size="20" font-weight="700" fill="#0b1d4d">RedactAgent on an ASUS UGen Intel Arc Pro B70 x2 host</text>
+  <text x="24" y="56" fill="#5b6478">Everything below runs inside the organisation's network. Model servers listen on 127.0.0.1 only.</text>
+
+  <!-- reviewer -->
+  <rect x="24" y="250" width="130" height="110" rx="12" fill="#fff" stroke="#c9d3ea" stroke-width="2"/>
+  <text x="89" y="288" text-anchor="middle" font-weight="700">Reviewer</text>
+  <text x="89" y="308" text-anchor="middle" fill="#5b6478">browser</text>
+  <text x="89" y="326" text-anchor="middle" fill="#5b6478">single / batch</text>
+  <line x1="154" y1="305" x2="196" y2="305" stroke="#3b5bdb" stroke-width="2.5" marker-end="url(#a)"/>
+
+  <!-- host CPU side -->
+  <rect x="200" y="80" width="470" height="530" rx="16" fill="#f7f9fd" stroke="#1f3a8a" stroke-width="2"/>
+  <text x="216" y="106" font-weight="700" fill="#1f3a8a" font-size="15">Host: 2x Intel Xeon 6787P (344 vCPU, AMX), 251 GB RAM</text>
+
+  <rect x="220" y="124" width="430" height="86" rx="10" fill="#fff" stroke="#c9d3ea"/>
+  <text x="236" y="148" font-weight="700" fill="#0b1d4d">RedactAgent server (FastAPI)</text>
+  <text x="236" y="168" fill="#3c4560">review UI, batch queue (8 documents in flight), policy engine (YAML),</text>
+  <text x="236" y="186" fill="#3c4560">pixel-burned PDF export, hash-chained audit log, xpu-smi telemetry</text>
+
+  <rect x="220" y="226" width="205" height="70" rx="10" fill="#e6f6fa"/>
+  <text x="234" y="250" font-weight="700" fill="#0e7490">OCR: PP-OCR (ONNX Runtime)</text>
+  <text x="234" y="270" fill="#3c4560">per-character boxes, EN + 中文</text>
+  <text x="234" y="287" fill="#3c4560">8 threads/engine: 274 pages/min</text>
+
+  <rect x="445" y="226" width="205" height="70" rx="10" fill="#e6f6fa"/>
+  <text x="459" y="250" font-weight="700" fill="#0e7490">Rules + colour check</text>
+  <text x="459" y="270" fill="#3c4560">IDs (checksum), dates, phones,</text>
+  <text x="459" y="287" fill="#3c4560">form fields, red seals</text>
+
+  <rect x="220" y="312" width="430" height="64" rx="10" fill="#eef2ff"/>
+  <text x="236" y="336" font-weight="700" fill="#1f3a8a">Merge + purpose policy</text>
+  <text x="236" y="356" fill="#3c4560">research (pseudonyms, year only) · court filing · public release · strict</text>
+
+  <rect x="220" y="392" width="430" height="80" rx="10" fill="#fdf2f8" stroke="#f9a8d4"/>
+  <text x="236" y="416" font-weight="700" fill="#be185d">Agentic re-identification check</text>
+  <text x="236" y="436" fill="#3c4560">adversarial LLM pass over the REDACTED text: residual names, exact dates,</text>
+  <text x="236" y="454" fill="#3c4560">rare job + place clues → new findings + 0-100 risk score</text>
+
+  <rect x="220" y="488" width="430" height="100" rx="10" fill="#fff" stroke="#c9d3ea"/>
+  <text x="236" y="512" font-weight="700" fill="#0b1d4d">Human review → export</text>
+  <text x="236" y="532" fill="#3c4560">accept / reject every box · unread-ink warning if OCR skipped text</text>
+  <text x="236" y="550" fill="#3c4560">redacted PDF (no text layer) · de-identified text · JSON report</text>
+  <text x="236" y="568" fill="#3c4560">audit: input hash, policy, reviewer decisions, output hash</text>
+
+  <!-- arrows to GPUs -->
+  <line x1="670" y1="250" x2="760" y2="200" stroke="#3b5bdb" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="690" y="196" fill="#3b5bdb">OCR text</text>
+  <line x1="670" y1="420" x2="760" y2="230" stroke="#be185d" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#a)"/>
+  <line x1="670" y1="300" x2="760" y2="430" stroke="#3b5bdb" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="716" y="318" fill="#3b5bdb">page image</text>
+
+  <!-- GPU 0 -->
+  <rect x="764" y="110" width="410" height="200" rx="14" fill="#0b1d4d"/>
+  <text x="784" y="140" font-weight="700" fill="#fff" font-size="15">XPU 0 · Arc Pro B70 32 GB (ECC)</text>
+  <text x="784" y="164" fill="#9fb4ff">vLLM XPU 0.26 · OpenAI API · ZE_AFFINITY_MASK=0</text>
+  <rect x="784" y="180" width="370" height="110" rx="10" fill="#1f3a8a"/>
+  <text x="800" y="206" fill="#fff" font-weight="700">Contextual LLM (Qwen3 family)</text>
+  <text x="800" y="228" fill="#c8d3f5">names, roles, addresses, quasi-identifiers</text>
+  <text x="800" y="248" fill="#c8d3f5">+ adversarial verifier pass (same server)</text>
+  <text x="800" y="270" fill="#c8d3f5">continuous batching across concurrent pages</text>
+
+  <!-- GPU 1 -->
+  <rect x="764" y="340" width="410" height="200" rx="14" fill="#0b1d4d"/>
+  <text x="784" y="370" font-weight="700" fill="#fff" font-size="15">XPU 1 · Arc Pro B70 32 GB (ECC)</text>
+  <text x="784" y="394" fill="#9fb4ff">vLLM XPU 0.26 · ZE_AFFINITY_MASK=1</text>
+  <rect x="784" y="410" width="370" height="110" rx="10" fill="#1f3a8a"/>
+  <text x="800" y="436" fill="#fff" font-weight="700">Vision-language model (Qwen2.5-VL-7B)</text>
+  <text x="800" y="458" fill="#c8d3f5">grounded boxes for signatures, ID photos, seals</text>
+  <text x="800" y="478" fill="#c8d3f5">runs concurrently with the LLM on card 0:</text>
+  <text x="800" y="498" fill="#c8d3f5">page latency = max(LLM, VLM), not the sum</text>
+
+  <text x="764" y="580" fill="#5b6478">Both models stay resident: no model swapping between pages.</text>
+  <text x="764" y="600" fill="#5b6478">Launch: deploy/b70/up.sh · telemetry: xpu-smi dump (power, VRAM)</text>
+</svg>
