@@ -1,0 +1,153 @@
+{
+ "id": "court_judgment_zh_00",
+ "template": "court_judgment_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "朱麗華",
+   "bbox": [
+    240,
+    201,
+    318,
+    227
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "J227869979",
+   "bbox": [
+    788,
+    211,
+    927,
+    232
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺中市北區和平東路一段164號三樓",
+   "bbox": [
+    301,
+    248,
+    707,
+    278
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "廖進財律師",
+   "bbox": [
+    265,
+    294,
+    395,
+    320
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "李家豪",
+   "bbox": [
+    238,
+    349,
+    316,
+    374
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺南市安平區自由路二段130巷150號六樓",
+   "bbox": [
+    299,
+    396,
+    774,
+    427
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國113年11月1日",
+   "bbox": [
+    330,
+    703,
+    544,
+    729
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "李家豪",
+   "bbox": [
+    173,
+    747,
+    251,
+    772
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為金門唯一的手語翻譯員",
+   "bbox": [
+    251,
+    748,
+    537,
+    776
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "DATE",
+   "text": "115年7月19日",
+   "bbox": [
+    203,
+    1421,
+    366,
+    1447
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "蔡俊良",
+   "bbox": [
+    303,
+    1482,
+    381,
+    1507
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "呂素貞",
+   "bbox": [
+    198,
+    1533,
+    276,
+    1558
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "濱海地方法院印",
+   "bbox": [
+    931,
+    1426,
+    1124,
+    1618
+   ],
+   "role": null
+  }
+ ]
+}

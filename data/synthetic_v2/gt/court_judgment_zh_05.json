@@ -1,0 +1,153 @@
+{
+ "id": "court_judgment_zh_05",
+ "template": "court_judgment_zh",
+ "lang": "zh",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "連柏翰",
+   "bbox": [
+    270,
+    249,
+    341,
+    272
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "B135864863",
+   "bbox": [
+    772,
+    244,
+    903,
+    263
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺北市中山區建國路二段278巷266號",
+   "bbox": [
+    326,
+    285,
+    713,
+    312
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "李淑敏律師",
+   "bbox": [
+    293,
+    330,
+    412,
+    355
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "何宜蓁",
+   "bbox": [
+    268,
+    382,
+    340,
+    405
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "新北市板橋區中正路160號四樓",
+   "bbox": [
+    325,
+    419,
+    651,
+    447
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國114年6月24日",
+   "bbox": [
+    354,
+    701,
+    553,
+    726
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "何宜蓁",
+   "bbox": [
+    209,
+    747,
+    282,
+    770
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為該部落唯一領有執照的狩獵者",
+   "bbox": [
+    281,
+    742,
+    620,
+    770
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "DATE",
+   "text": "115年4月25日",
+   "bbox": [
+    237,
+    1378,
+    391,
+    1404
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "許志豪",
+   "bbox": [
+    332,
+    1435,
+    406,
+    1460
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳玉英",
+   "bbox": [
+    233,
+    1487,
+    307,
+    1511
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "濱海地方法院印",
+   "bbox": [
+    927,
+    1363,
+    1108,
+    1548
+   ],
+   "role": null
+  }
+ ]
+}

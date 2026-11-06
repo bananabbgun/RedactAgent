@@ -1,0 +1,186 @@
+{
+ "id": "bank_statement_en_04",
+ "template": "bank_statement_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "LIU KUAN-JUNG",
+   "bbox": [
+    94,
+    177,
+    301,
+    197
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "4F., No. 246, Zhongxiao E. Rd., Sec. 2, Xindian Dist., New Taipei City",
+   "bbox": [
+    94,
+    213,
+    802,
+    240
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(812) 2497-946-275201",
+   "bbox": [
+    210,
+    260,
+    456,
+    284
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-06-01",
+   "bbox": [
+    759,
+    264,
+    879,
+    282
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-06-02",
+   "bbox": [
+    103,
+    383,
+    213,
+    398
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-06-05",
+   "bbox": [
+    103,
+    429,
+    213,
+    444
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-06-08",
+   "bbox": [
+    102,
+    475,
+    213,
+    490
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "LEE HAO-WEI",
+   "bbox": [
+    417,
+    477,
+    556,
+    493
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-06-11",
+   "bbox": [
+    102,
+    521,
+    212,
+    536
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "LIU YI-PEI",
+   "bbox": [
+    392,
+    523,
+    492,
+    538
+   ],
+   "role": "other"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-06-14",
+   "bbox": [
+    102,
+    567,
+    212,
+    582
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-06-17",
+   "bbox": [
+    102,
+    613,
+    212,
+    628
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "LAI MING-YU",
+   "bbox": [
+    446,
+    615,
+    575,
+    631
+   ],
+   "role": "other"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-06-20",
+   "bbox": [
+    101,
+    659,
+    211,
+    674
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-06-23",
+   "bbox": [
+    101,
+    705,
+    211,
+    720
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0953-475-702",
+   "bbox": [
+    491,
+    832,
+    637,
+    850
+   ],
+   "role": null
+  }
+ ]
+}

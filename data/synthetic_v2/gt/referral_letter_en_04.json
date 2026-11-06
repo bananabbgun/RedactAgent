@@ -1,0 +1,164 @@
+{
+ "id": "referral_letter_en_04",
+ "template": "referral_letter_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "January 11, 2026",
+   "bbox": [
+    96,
+    202,
+    277,
+    227
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Tsai Yen-yu",
+   "bbox": [
+    154,
+    262,
+    328,
+    287
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Liu Chih-chia",
+   "bbox": [
+    138,
+    322,
+    284,
+    341
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "August 25, 1981",
+   "bbox": [
+    353,
+    325,
+    527,
+    349
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "MRN-5312161",
+   "bbox": [
+    601,
+    327,
+    760,
+    346
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the principal of the sole elementary school on Dongyin island",
+   "bbox": [
+    531,
+    413,
+    1180,
+    443
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Liu",
+   "bbox": [
+    187,
+    454,
+    223,
+    472
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "January 11, 2026",
+   "bbox": [
+    371,
+    457,
+    552,
+    481
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0960-487-991",
+   "bbox": [
+    92,
+    674,
+    240,
+    693
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Wang Chih-tzu",
+   "bbox": [
+    439,
+    676,
+    600,
+    702
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0966-269-373",
+   "bbox": [
+    640,
+    679,
+    788,
+    698
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 263, Guangfu Rd., Zhongshan Dist., Taipei City",
+   "bbox": [
+    254,
+    719,
+    809,
+    748
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Lin Tzu-yi",
+   "bbox": [
+    78,
+    867,
+    288,
+    928
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Lin Tzu-yi",
+   "bbox": [
+    89,
+    962,
+    251,
+    987
+   ],
+   "role": "professional"
+  }
+ ]
+}

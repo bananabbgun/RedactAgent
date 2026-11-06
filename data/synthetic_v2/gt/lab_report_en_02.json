@@ -1,0 +1,153 @@
+{
+ "id": "lab_report_en_02",
+ "template": "lab_report_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Liu Hsin-kuan",
+   "bbox": [
+    190,
+    191,
+    334,
+    209
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "03/20/1991",
+   "bbox": [
+    867,
+    189,
+    985,
+    206
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "CH-250711",
+   "bbox": [
+    219,
+    235,
+    340,
+    253
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "SP86-869966",
+   "bbox": [
+    802,
+    233,
+    947,
+    250
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-05-25 08:37",
+   "bbox": [
+    220,
+    279,
+    406,
+    297
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-05-26",
+   "bbox": [
+    787,
+    277,
+    907,
+    294
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Hsieh Pei-pei",
+   "bbox": [
+    335,
+    322,
+    514,
+    345
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Liu Hsin-kuan",
+   "bbox": [
+    251,
+    760,
+    394,
+    777
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the last blacksmith still working in Lukang old street",
+   "bbox": [
+    478,
+    756,
+    1003,
+    782
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Hsieh Tzu-yi",
+   "bbox": [
+    414,
+    797,
+    544,
+    820
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0919-711-495",
+   "bbox": [
+    689,
+    796,
+    835,
+    814
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lin Wei-ting, MT",
+   "bbox": [
+    240,
+    1485,
+    414,
+    1509
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Lin Wei-ting",
+   "bbox": [
+    101,
+    1536,
+    311,
+    1590
+   ],
+   "role": "professional"
+  }
+ ]
+}

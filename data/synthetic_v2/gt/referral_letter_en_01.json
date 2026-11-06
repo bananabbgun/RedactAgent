@@ -1,0 +1,164 @@
+{
+ "id": "referral_letter_en_01",
+ "template": "referral_letter_en",
+ "lang": "en",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "March 4, 2026",
+   "bbox": [
+    131,
+    258,
+    273,
+    279
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Tsai Yi-yu",
+   "bbox": [
+    184,
+    312,
+    327,
+    335
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Cheng Yen-pei",
+   "bbox": [
+    169,
+    366,
+    316,
+    389
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "February 28, 1976",
+   "bbox": [
+    380,
+    368,
+    558,
+    392
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "MRN-6887443",
+   "bbox": [
+    626,
+    372,
+    772,
+    390
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the principal of the sole elementary school on Dongyin island",
+   "bbox": [
+    531,
+    449,
+    1129,
+    478
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Cheng",
+   "bbox": [
+    214,
+    485,
+    277,
+    507
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "March 4, 2026",
+   "bbox": [
+    413,
+    487,
+    556,
+    509
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0913-656-113",
+   "bbox": [
+    126,
+    683,
+    263,
+    700
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Chang Chih-han",
+   "bbox": [
+    447,
+    686,
+    606,
+    710
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0914-651-105",
+   "bbox": [
+    643,
+    690,
+    780,
+    707
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "10F., No. 166, Zhongxiao E. Rd., Xindian Dist., New Taipei City",
+   "bbox": [
+    277,
+    724,
+    917,
+    754
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Chen Hsin-tzu",
+   "bbox": [
+    116,
+    858,
+    361,
+    902
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Chen Hsin-tzu",
+   "bbox": [
+    123,
+    945,
+    314,
+    963
+   ],
+   "role": "professional"
+  }
+ ]
+}

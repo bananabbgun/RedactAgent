@@ -1,0 +1,109 @@
+{
+ "id": "prescription_label_zh_05",
+ "template": "prescription_label_zh",
+ "lang": "zh",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "鄭文龍",
+   "bbox": [
+    226,
+    239,
+    299,
+    264
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "民國74年2月5日",
+   "bbox": [
+    274,
+    285,
+    452,
+    312
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "10663157",
+   "bbox": [
+    755,
+    282,
+    868,
+    302
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國114年10月13日",
+   "bbox": [
+    274,
+    334,
+    493,
+    361
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "鄭文龍",
+   "bbox": [
+    215,
+    833,
+    288,
+    857
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為該部落唯一領有執照的狩獵者",
+   "bbox": [
+    312,
+    833,
+    657,
+    857
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "洪建宏",
+   "bbox": [
+    269,
+    1429,
+    342,
+    1453
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "郭靜宜",
+   "bbox": [
+    767,
+    1437,
+    842,
+    1461
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "郭靜宜印",
+   "bbox": [
+    864,
+    1405,
+    958,
+    1500
+   ],
+   "role": null
+  }
+ ]
+}

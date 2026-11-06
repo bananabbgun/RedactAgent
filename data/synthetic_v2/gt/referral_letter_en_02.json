@@ -1,0 +1,164 @@
+{
+ "id": "referral_letter_en_02",
+ "template": "referral_letter_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "December 10, 2026",
+   "bbox": [
+    90,
+    206,
+    298,
+    228
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Wang Hsin-han",
+   "bbox": [
+    149,
+    266,
+    357,
+    290
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Liu Kuan-shu",
+   "bbox": [
+    133,
+    326,
+    278,
+    344
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "August 8, 1962",
+   "bbox": [
+    347,
+    327,
+    508,
+    350
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "MRN-6456757",
+   "bbox": [
+    582,
+    327,
+    741,
+    345
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the principal of the sole elementary school on Dongyin island",
+   "bbox": [
+    527,
+    414,
+    1176,
+    438
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Liu",
+   "bbox": [
+    183,
+    458,
+    219,
+    476
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "December 10, 2026",
+   "bbox": [
+    367,
+    458,
+    575,
+    480
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0979-909-728",
+   "bbox": [
+    90,
+    679,
+    238,
+    696
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Cheng Yen-hao",
+   "bbox": [
+    437,
+    678,
+    603,
+    702
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0910-474-956",
+   "bbox": [
+    643,
+    679,
+    791,
+    696
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 313, Guangfu Rd., Sec. 4, Xitun Dist., Taichung City",
+   "bbox": [
+    253,
+    722,
+    862,
+    746
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Kuo Hao-chun",
+   "bbox": [
+    82,
+    872,
+    364,
+    917
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Kuo Hao-chun",
+   "bbox": [
+    90,
+    967,
+    298,
+    984
+   ],
+   "role": "professional"
+  }
+ ]
+}

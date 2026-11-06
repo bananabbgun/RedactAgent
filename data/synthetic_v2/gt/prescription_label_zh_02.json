@@ -1,0 +1,109 @@
+{
+ "id": "prescription_label_zh_02",
+ "template": "prescription_label_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "姚志偉",
+   "bbox": [
+    181,
+    203,
+    262,
+    227
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "民國85年2月21日",
+   "bbox": [
+    235,
+    253,
+    446,
+    279
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "99578926",
+   "bbox": [
+    758,
+    256,
+    878,
+    276
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國115年7月3日",
+   "bbox": [
+    236,
+    305,
+    446,
+    331
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "姚志偉",
+   "bbox": [
+    174,
+    837,
+    255,
+    861
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為金門唯一的手語翻譯員",
+   "bbox": [
+    282,
+    835,
+    579,
+    862
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "朱志豪",
+   "bbox": [
+    239,
+    1482,
+    320,
+    1507
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳志遠",
+   "bbox": [
+    789,
+    1480,
+    870,
+    1506
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "陳志遠印",
+   "bbox": [
+    894,
+    1444,
+    995,
+    1544
+   ],
+   "role": null
+  }
+ ]
+}

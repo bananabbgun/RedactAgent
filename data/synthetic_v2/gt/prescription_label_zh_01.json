@@ -1,0 +1,109 @@
+{
+ "id": "prescription_label_zh_01",
+ "template": "prescription_label_zh",
+ "lang": "zh",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "洪金龍",
+   "bbox": [
+    222,
+    233,
+    296,
+    257
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "民國63年12月23日",
+   "bbox": [
+    271,
+    280,
+    477,
+    307
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "25056433",
+   "bbox": [
+    748,
+    293,
+    857,
+    312
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國115年7月22日",
+   "bbox": [
+    271,
+    327,
+    477,
+    353
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "洪金龍",
+   "bbox": [
+    211,
+    809,
+    286,
+    833
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為金門唯一的手語翻譯員",
+   "bbox": [
+    311,
+    810,
+    585,
+    839
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "黃雅雯",
+   "bbox": [
+    266,
+    1414,
+    342,
+    1439
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "游雅婷",
+   "bbox": [
+    782,
+    1423,
+    858,
+    1448
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "游雅婷印",
+   "bbox": [
+    881,
+    1390,
+    975,
+    1487
+   ],
+   "role": null
+  }
+ ]
+}

@@ -1,0 +1,186 @@
+{
+ "id": "bank_statement_en_01",
+ "template": "bank_statement_en",
+ "lang": "en",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "LEE HSIN-YU",
+   "bbox": [
+    108,
+    248,
+    263,
+    269
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "8F., No. 107, Minsheng E. Rd., Sec. 1, Xitun Dist., Taichung City",
+   "bbox": [
+    109,
+    272,
+    729,
+    307
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(822) 3115-733-906687",
+   "bbox": [
+    219,
+    323,
+    451,
+    348
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-12-01",
+   "bbox": [
+    738,
+    314,
+    852,
+    333
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-12-02",
+   "bbox": [
+    121,
+    443,
+    225,
+    459
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "YANG MING-YU",
+   "bbox": [
+    417,
+    436,
+    565,
+    453
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-12-05",
+   "bbox": [
+    122,
+    486,
+    226,
+    502
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-12-08",
+   "bbox": [
+    123,
+    529,
+    226,
+    545
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-12-11",
+   "bbox": [
+    124,
+    571,
+    227,
+    587
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "CHANG YU-HAO",
+   "bbox": [
+    446,
+    565,
+    598,
+    581
+   ],
+   "role": "other"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-12-14",
+   "bbox": [
+    125,
+    614,
+    228,
+    630
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "LIN YI-SHU",
+   "bbox": [
+    396,
+    609,
+    499,
+    625
+   ],
+   "role": "other"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-12-17",
+   "bbox": [
+    126,
+    657,
+    228,
+    672
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-12-20",
+   "bbox": [
+    126,
+    699,
+    229,
+    715
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-12-23",
+   "bbox": [
+    127,
+    742,
+    230,
+    757
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0943-495-214",
+   "bbox": [
+    493,
+    850,
+    629,
+    867
+   ],
+   "role": null
+  }
+ ]
+}

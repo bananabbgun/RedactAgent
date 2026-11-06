@@ -1,0 +1,153 @@
+{
+ "id": "lab_report_en_03",
+ "template": "lab_report_en",
+ "lang": "en",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Hsu Chun-han",
+   "bbox": [
+    227,
+    224,
+    365,
+    242
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "06/05/1949",
+   "bbox": [
+    850,
+    212,
+    961,
+    230
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "CH-265620",
+   "bbox": [
+    253,
+    264,
+    362,
+    282
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "SP23-717531",
+   "bbox": [
+    789,
+    254,
+    924,
+    272
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-12-22 10:22",
+   "bbox": [
+    252,
+    304,
+    422,
+    322
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-12-23",
+   "bbox": [
+    773,
+    296,
+    886,
+    313
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Lin Han-ting",
+   "bbox": [
+    356,
+    342,
+    508,
+    365
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Hsu Chun-han",
+   "bbox": [
+    271,
+    747,
+    410,
+    763
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the principal of the sole elementary school on Dongyin island",
+   "bbox": [
+    487,
+    742,
+    1070,
+    767
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lin Ting-pei",
+   "bbox": [
+    420,
+    781,
+    532,
+    802
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0987-188-863",
+   "bbox": [
+    666,
+    780,
+    803,
+    796
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Hsieh Yi-hsin, MT",
+   "bbox": [
+    249,
+    1420,
+    422,
+    1441
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Hsieh Yi-hsin",
+   "bbox": [
+    124,
+    1465,
+    328,
+    1517
+   ],
+   "role": "professional"
+  }
+ ]
+}

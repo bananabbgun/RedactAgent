@@ -1,0 +1,164 @@
+{
+ "id": "referral_letter_en_05",
+ "template": "referral_letter_en",
+ "lang": "en",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "December 19, 2026",
+   "bbox": [
+    110,
+    241,
+    307,
+    265
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Tsai Po-shu",
+   "bbox": [
+    167,
+    299,
+    324,
+    319
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Wu Yen-po",
+   "bbox": [
+    153,
+    357,
+    270,
+    381
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "January 5, 1962",
+   "bbox": [
+    335,
+    360,
+    494,
+    385
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "MRN-3287941",
+   "bbox": [
+    565,
+    365,
+    717,
+    385
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the youngest member of the national para-fencing squad",
+   "bbox": [
+    527,
+    447,
+    1098,
+    482
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Wu",
+   "bbox": [
+    202,
+    483,
+    238,
+    500
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "December 19, 2026",
+   "bbox": [
+    377,
+    486,
+    575,
+    511
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0966-817-393",
+   "bbox": [
+    119,
+    688,
+    257,
+    707
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lai Wei-ting",
+   "bbox": [
+    444,
+    695,
+    572,
+    720
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0958-234-324",
+   "bbox": [
+    610,
+    700,
+    750,
+    719
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 114, Wenhua Rd., Da'an Dist., Taipei City",
+   "bbox": [
+    272,
+    732,
+    740,
+    766
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Lai Tzu-yu",
+   "bbox": [
+    111,
+    867,
+    319,
+    927
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Lai Tzu-yu",
+   "bbox": [
+    124,
+    955,
+    281,
+    981
+   ],
+   "role": "professional"
+  }
+ ]
+}

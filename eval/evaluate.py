@@ -273,7 +273,10 @@ if __name__ == "__main__":
     ap.add_argument("--out", help="results directory (default eval/results)")
     ap.add_argument("--workers", type=int, default=0, help=">0: concurrent mode with N pages in flight")
     ap.add_argument("--label", help="hardware label printed in RESULTS.md")
+    ap.add_argument("--data", help="corpus directory (default data/synthetic)")
     args = ap.parse_args()
+    if args.data:
+        DATA = Path(args.data).resolve()
     if args.out:
         OUT = Path(args.out).resolve()
     if args.label:

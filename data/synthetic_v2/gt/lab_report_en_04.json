@@ -1,0 +1,153 @@
+{
+ "id": "lab_report_en_04",
+ "template": "lab_report_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Liu Wei-han",
+   "bbox": [
+    198,
+    187,
+    325,
+    205
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "05/14/1972",
+   "bbox": [
+    875,
+    192,
+    994,
+    210
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "CH-716806",
+   "bbox": [
+    227,
+    231,
+    347,
+    249
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "SP21-815766",
+   "bbox": [
+    810,
+    236,
+    954,
+    254
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-10-23 07:23",
+   "bbox": [
+    227,
+    275,
+    413,
+    293
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-10-24",
+   "bbox": [
+    794,
+    279,
+    914,
+    297
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Lai Wei-chih",
+   "bbox": [
+    341,
+    320,
+    511,
+    338
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Liu Wei-han",
+   "bbox": [
+    252,
+    756,
+    376,
+    774
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the youngest member of the national para-fencing squad",
+   "bbox": [
+    460,
+    757,
+    1040,
+    784
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lee Pei-chun",
+   "bbox": [
+    415,
+    795,
+    552,
+    813
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0953-587-474",
+   "bbox": [
+    697,
+    798,
+    843,
+    816
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Wang Chun-chun, MT",
+   "bbox": [
+    233,
+    1482,
+    466,
+    1506
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Wang Chun-chun",
+   "bbox": [
+    96,
+    1531,
+    379,
+    1586
+   ],
+   "role": "professional"
+  }
+ ]
+}

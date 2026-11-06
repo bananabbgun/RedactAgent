@@ -1,0 +1,153 @@
+{
+ "id": "lab_report_en_00",
+ "template": "lab_report_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Yang Shu-hsin",
+   "bbox": [
+    190,
+    191,
+    345,
+    214
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "12/19/1973",
+   "bbox": [
+    867,
+    189,
+    985,
+    206
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "CH-742739",
+   "bbox": [
+    219,
+    235,
+    340,
+    253
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "SP98-692018",
+   "bbox": [
+    802,
+    233,
+    946,
+    250
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-03-22 09:57",
+   "bbox": [
+    220,
+    279,
+    406,
+    297
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-03-23",
+   "bbox": [
+    787,
+    277,
+    907,
+    294
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Wang Yi-ting",
+   "bbox": [
+    335,
+    321,
+    510,
+    345
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Yang Shu-hsin",
+   "bbox": [
+    251,
+    760,
+    403,
+    782
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the only harbour pilot licensed for Hualien port",
+   "bbox": [
+    486,
+    757,
+    960,
+    782
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Wu Pei-hao",
+   "bbox": [
+    414,
+    797,
+    535,
+    815
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0931-940-564",
+   "bbox": [
+    680,
+    796,
+    826,
+    814
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Kuo Po-yi, MT",
+   "bbox": [
+    240,
+    1486,
+    393,
+    1509
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Kuo Po-yi",
+   "bbox": [
+    105,
+    1536,
+    291,
+    1591
+   ],
+   "role": "professional"
+  }
+ ]
+}

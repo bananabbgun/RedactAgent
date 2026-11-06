@@ -1,0 +1,164 @@
+{
+ "id": "referral_letter_en_03",
+ "template": "referral_letter_en",
+ "lang": "en",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "October 15, 2026",
+   "bbox": [
+    131,
+    252,
+    308,
+    274
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Lin Jung-yu",
+   "bbox": [
+    188,
+    309,
+    350,
+    334
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lai Ting-hao",
+   "bbox": [
+    173,
+    368,
+    306,
+    392
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "August 21, 1965",
+   "bbox": [
+    371,
+    367,
+    537,
+    390
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "MRN-6174871",
+   "bbox": [
+    607,
+    365,
+    757,
+    383
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the only harbour pilot licensed for Hualien port",
+   "bbox": [
+    549,
+    445,
+    1017,
+    473
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lai",
+   "bbox": [
+    222,
+    496,
+    255,
+    513
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "October 15, 2026",
+   "bbox": [
+    396,
+    492,
+    571,
+    515
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0939-806-649",
+   "bbox": [
+    134,
+    707,
+    275,
+    726
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Kuo Chia-hsin",
+   "bbox": [
+    464,
+    701,
+    608,
+    721
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0941-984-683",
+   "bbox": [
+    646,
+    700,
+    784,
+    718
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "9F., No. 136, Wenhua Rd., Sec. 2, Xindian Dist., New Taipei City",
+   "bbox": [
+    291,
+    738,
+    950,
+    771
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Huang Yu-ming",
+   "bbox": [
+    128,
+    889,
+    410,
+    950
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Huang Yu-ming",
+   "bbox": [
+    136,
+    980,
+    348,
+    1006
+   ],
+   "role": "professional"
+  }
+ ]
+}

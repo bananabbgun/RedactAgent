@@ -1,0 +1,153 @@
+{
+ "id": "court_judgment_zh_02",
+ "template": "court_judgment_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "徐秀鳳",
+   "bbox": [
+    230,
+    207,
+    308,
+    231
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "A213277910",
+   "bbox": [
+    777,
+    208,
+    921,
+    228
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺北市北投區復興南路348號三樓",
+   "bbox": [
+    292,
+    252,
+    672,
+    278
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳志成律師",
+   "bbox": [
+    256,
+    299,
+    387,
+    324
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林秀霞",
+   "bbox": [
+    231,
+    355,
+    309,
+    379
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "新北市三重區忠孝東路二段206號八樓",
+   "bbox": [
+    293,
+    400,
+    725,
+    426
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國114年1月10日",
+   "bbox": [
+    328,
+    706,
+    542,
+    731
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林秀霞",
+   "bbox": [
+    172,
+    753,
+    250,
+    777
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "是臺東縣唯一的女性熱氣球駕駛",
+   "bbox": [
+    250,
+    752,
+    614,
+    777
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "DATE",
+   "text": "115年3月3日",
+   "bbox": [
+    211,
+    1427,
+    360,
+    1451
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "劉秀珠",
+   "bbox": [
+    312,
+    1487,
+    390,
+    1511
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳玉梅",
+   "bbox": [
+    208,
+    1539,
+    286,
+    1563
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "濱海地方法院印",
+   "bbox": [
+    941,
+    1421,
+    1132,
+    1611
+   ],
+   "role": null
+  }
+ ]
+}

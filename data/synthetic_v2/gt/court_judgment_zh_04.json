@@ -1,0 +1,153 @@
+{
+ "id": "court_judgment_zh_04",
+ "template": "court_judgment_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "李淑惠",
+   "bbox": [
+    228,
+    208,
+    307,
+    232
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "K274900344",
+   "bbox": [
+    776,
+    207,
+    920,
+    227
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺南市安平區建國路21巷183號",
+   "bbox": [
+    291,
+    252,
+    647,
+    279
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "蔡宗憲律師",
+   "bbox": [
+    255,
+    299,
+    385,
+    325
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林秀蘭",
+   "bbox": [
+    229,
+    356,
+    307,
+    380
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "高雄市三民區中正路一段143號五樓",
+   "bbox": [
+    291,
+    400,
+    698,
+    427
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國112年3月3日",
+   "bbox": [
+    327,
+    706,
+    527,
+    732
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林秀蘭",
+   "bbox": [
+    171,
+    754,
+    249,
+    778
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "是臺東縣唯一的女性熱氣球駕駛",
+   "bbox": [
+    249,
+    752,
+    613,
+    778
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "DATE",
+   "text": "115年3月1日",
+   "bbox": [
+    213,
+    1427,
+    361,
+    1452
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "翁美玲",
+   "bbox": [
+    313,
+    1487,
+    391,
+    1513
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "曾宸睿",
+   "bbox": [
+    210,
+    1540,
+    288,
+    1564
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "濱海地方法院印",
+   "bbox": [
+    943,
+    1419,
+    1134,
+    1610
+   ],
+   "role": null
+  }
+ ]
+}

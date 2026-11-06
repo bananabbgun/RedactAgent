@@ -1,0 +1,153 @@
+{
+ "id": "court_judgment_zh_03",
+ "template": "court_judgment_zh",
+ "lang": "zh",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "林志明",
+   "bbox": [
+    269,
+    256,
+    344,
+    280
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "O105096788",
+   "bbox": [
+    789,
+    263,
+    926,
+    281
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺北市信義區建國路一段38巷115號",
+   "bbox": [
+    328,
+    300,
+    715,
+    326
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "許素珠律師",
+   "bbox": [
+    294,
+    343,
+    417,
+    368
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "張義雄",
+   "bbox": [
+    269,
+    396,
+    343,
+    419
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "高雄市左營區建國路一段277號",
+   "bbox": [
+    328,
+    440,
+    663,
+    464
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國114年1月11日",
+   "bbox": [
+    359,
+    728,
+    562,
+    751
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "張義雄",
+   "bbox": [
+    210,
+    772,
+    284,
+    794
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "是臺東縣唯一的女性熱氣球駕駛",
+   "bbox": [
+    284,
+    772,
+    630,
+    794
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "DATE",
+   "text": "115年5月3日",
+   "bbox": [
+    244,
+    1404,
+    385,
+    1428
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "賴志忠",
+   "bbox": [
+    339,
+    1460,
+    413,
+    1483
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "黃怡君",
+   "bbox": [
+    240,
+    1510,
+    314,
+    1534
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "濱海地方法院印",
+   "bbox": [
+    931,
+    1394,
+    1109,
+    1572
+   ],
+   "role": null
+  }
+ ]
+}

@@ -1,0 +1,153 @@
+{
+ "id": "court_judgment_zh_01",
+ "template": "court_judgment_zh",
+ "lang": "zh",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "吳秀玲",
+   "bbox": [
+    258,
+    244,
+    330,
+    268
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "L215252858",
+   "bbox": [
+    768,
+    237,
+    900,
+    257
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "高雄市三民區自由路二段391號四樓",
+   "bbox": [
+    315,
+    280,
+    693,
+    310
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林仁傑律師",
+   "bbox": [
+    282,
+    328,
+    402,
+    353
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林宗霖",
+   "bbox": [
+    258,
+    381,
+    330,
+    404
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺南市安平區光復路三段58號一樓",
+   "bbox": [
+    315,
+    418,
+    680,
+    447
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國113年4月25日",
+   "bbox": [
+    346,
+    705,
+    545,
+    729
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林宗霖",
+   "bbox": [
+    201,
+    750,
+    273,
+    773
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為金門唯一的手語翻譯員",
+   "bbox": [
+    273,
+    748,
+    539,
+    773
+   ],
+   "role": "party"
+  },
+  {
+   "cat": "DATE",
+   "text": "115年4月19日",
+   "bbox": [
+    234,
+    1377,
+    385,
+    1400
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林美珠",
+   "bbox": [
+    327,
+    1433,
+    400,
+    1456
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林明德",
+   "bbox": [
+    230,
+    1482,
+    303,
+    1505
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "濱海地方法院印",
+   "bbox": [
+    919,
+    1374,
+    1100,
+    1555
+   ],
+   "role": null
+  }
+ ]
+}

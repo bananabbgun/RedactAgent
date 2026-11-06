@@ -1,0 +1,186 @@
+{
+ "id": "bank_statement_en_00",
+ "template": "bank_statement_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "HSIEH HSIN-JUNG",
+   "bbox": [
+    80,
+    184,
+    310,
+    206
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "4F., No. 25, Ziyou Rd., Sec. 3, Xindian Dist., New Taipei City",
+   "bbox": [
+    81,
+    215,
+    697,
+    246
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(822) 2088-885-825912",
+   "bbox": [
+    198,
+    265,
+    444,
+    291
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-07-01",
+   "bbox": [
+    746,
+    260,
+    867,
+    278
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-07-02",
+   "bbox": [
+    93,
+    392,
+    203,
+    408
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "YANG HAN-MING",
+   "bbox": [
+    383,
+    387,
+    554,
+    404
+   ],
+   "role": "other"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-07-05",
+   "bbox": [
+    94,
+    438,
+    204,
+    454
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "CHANG KUAN-HAN",
+   "bbox": [
+    438,
+    432,
+    628,
+    449
+   ],
+   "role": "other"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-07-08",
+   "bbox": [
+    95,
+    484,
+    205,
+    500
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-07-11",
+   "bbox": [
+    95,
+    530,
+    205,
+    546
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-07-14",
+   "bbox": [
+    96,
+    576,
+    206,
+    592
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-07-17",
+   "bbox": [
+    96,
+    622,
+    207,
+    638
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-07-20",
+   "bbox": [
+    97,
+    668,
+    207,
+    684
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "HSIEH CHIA-SHU",
+   "bbox": [
+    412,
+    662,
+    583,
+    680
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-07-23",
+   "bbox": [
+    98,
+    714,
+    208,
+    730
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0914-240-414",
+   "bbox": [
+    490,
+    833,
+    637,
+    852
+   ],
+   "role": null
+  }
+ ]
+}

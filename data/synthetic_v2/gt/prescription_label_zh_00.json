@@ -1,0 +1,109 @@
+{
+ "id": "prescription_label_zh_00",
+ "template": "prescription_label_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "葉冠宇",
+   "bbox": [
+    191,
+    196,
+    272,
+    222
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "民國48年9月1日",
+   "bbox": [
+    244,
+    249,
+    439,
+    276
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "93011189",
+   "bbox": [
+    767,
+    259,
+    887,
+    279
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國115年7月22日",
+   "bbox": [
+    243,
+    301,
+    469,
+    328
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "葉冠宇",
+   "bbox": [
+    174,
+    830,
+    256,
+    856
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為金門唯一的手語翻譯員",
+   "bbox": [
+    282,
+    831,
+    579,
+    861
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "李文章",
+   "bbox": [
+    230,
+    1476,
+    311,
+    1502
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "王靜宜",
+   "bbox": [
+    780,
+    1483,
+    861,
+    1509
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "王靜宜印",
+   "bbox": [
+    885,
+    1448,
+    986,
+    1549
+   ],
+   "role": null
+  }
+ ]
+}

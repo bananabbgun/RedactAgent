@@ -1,0 +1,186 @@
+{
+ "id": "bank_statement_en_02",
+ "template": "bank_statement_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "WU HAN-WEI",
+   "bbox": [
+    91,
+    179,
+    257,
+    199
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 243, Guangfu Rd., Sec. 4, Xinyi Dist., Taipei City",
+   "bbox": [
+    91,
+    215,
+    627,
+    239
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(812) 5437-385-693618",
+   "bbox": [
+    207,
+    263,
+    453,
+    285
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-05-01",
+   "bbox": [
+    756,
+    263,
+    876,
+    280
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-05-02",
+   "bbox": [
+    100,
+    385,
+    210,
+    401
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-05-05",
+   "bbox": [
+    100,
+    431,
+    210,
+    447
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-05-08",
+   "bbox": [
+    100,
+    477,
+    210,
+    493
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-05-11",
+   "bbox": [
+    100,
+    523,
+    210,
+    539
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-05-14",
+   "bbox": [
+    100,
+    569,
+    210,
+    585
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "LEE HAN-HSIN",
+   "bbox": [
+    444,
+    570,
+    591,
+    585
+   ],
+   "role": "other"
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-05-17",
+   "bbox": [
+    100,
+    615,
+    210,
+    631
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "HUANG SHU-HAO",
+   "bbox": [
+    390,
+    616,
+    567,
+    631
+   ],
+   "role": "other"
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-05-20",
+   "bbox": [
+    100,
+    661,
+    210,
+    677
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-05-23",
+   "bbox": [
+    100,
+    707,
+    210,
+    723
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "LAI SHU-MING",
+   "bbox": [
+    415,
+    708,
+    559,
+    723
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0920-247-501",
+   "bbox": [
+    491,
+    833,
+    637,
+    850
+   ],
+   "role": null
+  }
+ ]
+}

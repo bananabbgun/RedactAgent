@@ -1,0 +1,109 @@
+{
+ "id": "prescription_label_zh_03",
+ "template": "prescription_label_zh",
+ "lang": "zh",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "林進財",
+   "bbox": [
+    219,
+    265,
+    296,
+    289
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "民國53年10月16日",
+   "bbox": [
+    269,
+    311,
+    483,
+    337
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "59144549",
+   "bbox": [
+    763,
+    310,
+    876,
+    329
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國115年6月3日",
+   "bbox": [
+    269,
+    359,
+    468,
+    385
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林進財",
+   "bbox": [
+    202,
+    854,
+    280,
+    879
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為金門唯一的手語翻譯員",
+   "bbox": [
+    305,
+    848,
+    588,
+    878
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳志強",
+   "bbox": [
+    255,
+    1460,
+    332,
+    1485
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "施建銘",
+   "bbox": [
+    779,
+    1447,
+    856,
+    1472
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "施建銘印",
+   "bbox": [
+    879,
+    1410,
+    975,
+    1506
+   ],
+   "role": null
+  }
+ ]
+}

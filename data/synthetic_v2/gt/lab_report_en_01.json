@@ -1,0 +1,153 @@
+{
+ "id": "lab_report_en_01",
+ "template": "lab_report_en",
+ "lang": "en",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lee Yi-wei",
+   "bbox": [
+    233,
+    218,
+    334,
+    237
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "05/14/1946",
+   "bbox": [
+    856,
+    238,
+    965,
+    257
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "CH-623929",
+   "bbox": [
+    259,
+    259,
+    370,
+    278
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "SP81-879130",
+   "bbox": [
+    796,
+    276,
+    929,
+    296
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-10-13 10:53",
+   "bbox": [
+    259,
+    300,
+    431,
+    321
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-10-14",
+   "bbox": [
+    782,
+    316,
+    892,
+    335
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Wang Chih-ting",
+   "bbox": [
+    365,
+    343,
+    551,
+    370
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lee Yi-wei",
+   "bbox": [
+    282,
+    745,
+    382,
+    764
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the last blacksmith still working in Lukang old street",
+   "bbox": [
+    460,
+    749,
+    946,
+    785
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Wu Kuan-kuan",
+   "bbox": [
+    433,
+    785,
+    576,
+    805
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0944-801-992",
+   "bbox": [
+    710,
+    793,
+    845,
+    813
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lai Ming-hsin, MT",
+   "bbox": [
+    264,
+    1422,
+    441,
+    1447
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Lai Ming-hsin",
+   "bbox": [
+    133,
+    1465,
+    352,
+    1521
+   ],
+   "role": "professional"
+  }
+ ]
+}

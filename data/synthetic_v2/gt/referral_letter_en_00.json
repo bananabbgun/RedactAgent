@@ -1,0 +1,164 @@
+{
+ "id": "referral_letter_en_00",
+ "template": "referral_letter_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "November 21, 2026",
+   "bbox": [
+    98,
+    199,
+    309,
+    224
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Wu Jung-chih",
+   "bbox": [
+    157,
+    260,
+    347,
+    286
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Chang Kuan-wei",
+   "bbox": [
+    140,
+    320,
+    319,
+    346
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "September 17, 1950",
+   "bbox": [
+    388,
+    323,
+    599,
+    350
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "MRN-5163937",
+   "bbox": [
+    673,
+    328,
+    832,
+    348
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the youngest member of the national para-fencing squad",
+   "bbox": [
+    533,
+    413,
+    1128,
+    445
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Chang",
+   "bbox": [
+    188,
+    452,
+    257,
+    477
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "November 21, 2026",
+   "bbox": [
+    403,
+    455,
+    615,
+    480
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0987-848-776",
+   "bbox": [
+    92,
+    672,
+    241,
+    691
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Lin Ming-wei",
+   "bbox": [
+    439,
+    676,
+    586,
+    702
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0924-562-581",
+   "bbox": [
+    625,
+    679,
+    774,
+    698
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "No. 183, Heping E. Rd., Sec. 3, Lingya Dist., Kaohsiung City",
+   "bbox": [
+    255,
+    717,
+    908,
+    750
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Huang Yi-chun",
+   "bbox": [
+    81,
+    865,
+    364,
+    928
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Huang Yi-chun",
+   "bbox": [
+    89,
+    960,
+    304,
+    986
+   ],
+   "role": "professional"
+  }
+ ]
+}

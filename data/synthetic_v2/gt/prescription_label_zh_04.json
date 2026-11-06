@@ -1,0 +1,109 @@
+{
+ "id": "prescription_label_zh_04",
+ "template": "prescription_label_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "吳淑娟",
+   "bbox": [
+    176,
+    206,
+    257,
+    230
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "民國49年1月14日",
+   "bbox": [
+    231,
+    255,
+    441,
+    282
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "46237682",
+   "bbox": [
+    754,
+    254,
+    874,
+    275
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "民國114年2月5日",
+   "bbox": [
+    231,
+    307,
+    442,
+    334
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "吳淑娟",
+   "bbox": [
+    174,
+    840,
+    255,
+    864
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為該部落唯一領有執照的狩獵者",
+   "bbox": [
+    282,
+    835,
+    660,
+    863
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林金龍",
+   "bbox": [
+    243,
+    1484,
+    324,
+    1510
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "高家豪",
+   "bbox": [
+    793,
+    1478,
+    874,
+    1504
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "高家豪印",
+   "bbox": [
+    899,
+    1441,
+    1000,
+    1542
+   ],
+   "role": null
+  }
+ ]
+}

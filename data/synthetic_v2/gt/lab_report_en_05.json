@@ -1,0 +1,153 @@
+{
+ "id": "lab_report_en_05",
+ "template": "lab_report_en",
+ "lang": "en",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Chen Tzu-chih",
+   "bbox": [
+    213,
+    255,
+    359,
+    272
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "01/18/1972",
+   "bbox": [
+    854,
+    250,
+    966,
+    267
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "CH-781586",
+   "bbox": [
+    241,
+    297,
+    354,
+    313
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "SP86-761233",
+   "bbox": [
+    792,
+    292,
+    929,
+    309
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-08-21 11:44",
+   "bbox": [
+    241,
+    338,
+    417,
+    355
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2025-08-22",
+   "bbox": [
+    777,
+    334,
+    891,
+    351
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Dr. Lai Chih-hsin",
+   "bbox": [
+    350,
+    378,
+    516,
+    395
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Chen Tzu-chih",
+   "bbox": [
+    272,
+    788,
+    415,
+    805
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "the principal of the sole elementary school on Dongyin island",
+   "bbox": [
+    493,
+    784,
+    1080,
+    808
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Liu Yi-ting",
+   "bbox": [
+    425,
+    822,
+    521,
+    844
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0917-191-748",
+   "bbox": [
+    657,
+    822,
+    795,
+    838
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Yang Ting-yen, MT",
+   "bbox": [
+    265,
+    1459,
+    454,
+    1480
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Yang Ting-yen",
+   "bbox": [
+    138,
+    1506,
+    369,
+    1555
+   ],
+   "role": "professional"
+  }
+ ]
+}

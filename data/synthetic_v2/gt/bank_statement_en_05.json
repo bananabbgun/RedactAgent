@@ -1,0 +1,186 @@
+{
+ "id": "bank_statement_en_05",
+ "template": "bank_statement_en",
+ "lang": "en",
+ "capture": "phone",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "KUO MING-TZU",
+   "bbox": [
+    129,
+    239,
+    307,
+    264
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "15F., No. 268, Wenhua Rd., Sec. 1, Lingya Dist., Kaohsiung City",
+   "bbox": [
+    128,
+    254,
+    735,
+    300
+   ],
+   "role": null
+  },
+  {
+   "cat": "FINANCIAL_ACCOUNT",
+   "text": "(13) 1234-996-494721",
+   "bbox": [
+    235,
+    309,
+    450,
+    338
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-02-01",
+   "bbox": [
+    741,
+    292,
+    852,
+    313
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-02-02",
+   "bbox": [
+    135,
+    431,
+    237,
+    449
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "YANG YI-PEI",
+   "bbox": [
+    403,
+    419,
+    520,
+    438
+   ],
+   "role": "other"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-02-05",
+   "bbox": [
+    134,
+    473,
+    236,
+    492
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-02-08",
+   "bbox": [
+    134,
+    516,
+    236,
+    534
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-02-11",
+   "bbox": [
+    133,
+    559,
+    235,
+    577
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "CHANG MING-HAN",
+   "bbox": [
+    425,
+    544,
+    598,
+    565
+   ],
+   "role": "family"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-02-14",
+   "bbox": [
+    132,
+    601,
+    235,
+    619
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-02-17",
+   "bbox": [
+    132,
+    644,
+    234,
+    662
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-02-20",
+   "bbox": [
+    131,
+    687,
+    233,
+    705
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "KUO CHIA-HSIN",
+   "bbox": [
+    450,
+    672,
+    597,
+    692
+   ],
+   "role": "other"
+  },
+  {
+   "cat": "DATE",
+   "text": "2026-02-23",
+   "bbox": [
+    130,
+    729,
+    233,
+    748
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0987-986-496",
+   "bbox": [
+    492,
+    830,
+    629,
+    851
+   ],
+   "role": null
+  }
+ ]
+}
