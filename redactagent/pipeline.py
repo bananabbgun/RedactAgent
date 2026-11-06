@@ -17,6 +17,7 @@ from PIL import Image
 
 from . import config, render
 from .coverage import unread_regions
+from . import verifier
 from . import policy as policy_mod
 from .audit import AuditLog, sha256_bytes
 from .detectors import llm as llm_det
@@ -26,7 +27,7 @@ from .llm_client import ModelClient
 from .ocr import run_ocr
 from .schema import Finding, OcrLine
 
-ALL_LAYERS = ("rules", "llm", "vlm")
+ALL_LAYERS = ("rules", "llm", "vlm", "agent")
 _layer_pool = ThreadPoolExecutor(max_workers=int(os.getenv("RA_LAYER_THREADS", "32")), thread_name_prefix="ra-llm")
 
 
@@ -73,6 +74,7 @@ class Job:
     timings: dict[str, float] = field(default_factory=dict)
     tokens: dict[str, int] = field(default_factory=dict)
     warnings: list[dict] = field(default_factory=list)  # ink that OCR did not read -> reviewer must check
+    risk: dict = field(default_factory=dict)  # agentic re-identification check: {"score", "summary", "per_page"}
     created: float = field(default_factory=time.time)
 
     @property
@@ -89,7 +91,7 @@ class Job:
             "status": self.status, "stage": self.stage, "progress": round(self.progress, 3), "error": self.error,
             "doc_type": self.doc_type, "pages": len(self.pages), "n_findings": len(fs), "by_category": by_cat,
             "timings": {k: round(v, 3) for k, v in self.timings.items()}, "tokens": self.tokens,
-            "input_sha256": self.input_sha256, "warnings": self.warnings,
+            "input_sha256": self.input_sha256, "warnings": self.warnings, "risk": self.risk,
         }
 
 
@@ -208,6 +210,20 @@ class Pipeline:
                 for bb in unread_regions(img, covered):
                     job.warnings.append({"page": i, "bbox": bb, "reason": "text-like ink not read by OCR - check manually"})
             self.apply_policy(job)
+            if "agent" in job.layers and "llm" in job.layers:
+                stage("Agentic re-identification check", 0.95)
+                t = time.perf_counter()
+                per_page = []
+                for p in job.pages:
+                    v = verifier.verify(p.index, p.lines, p.findings, self.text_client, next_id)
+                    p.findings.extend(v.added)
+                    per_page.append({"page": p.index, "score": v.risk, "summary": v.summary, "added": len(v.added)})
+                    job.tokens["agent_completion"] = job.tokens.get("agent_completion", 0) + v.stats.completion_tokens
+                job.risk = {"score": max(x["score"] for x in per_page), "per_page": per_page,
+                            "summary": next((x["summary"] for x in sorted(per_page, key=lambda x: -x["score"])), ""),
+                            "policy": job.policy_id}
+                self.apply_policy(job)  # give the new findings actions/labels
+                job.timings["agent"] = time.perf_counter() - t
             job.timings["total"] = time.perf_counter() - t_job  # wall clock (stages may overlap)
             job.status, job.stage, job.progress = "done", "Ready for review", 1.0
             by_src: dict[str, int] = {}

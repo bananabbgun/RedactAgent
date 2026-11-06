@@ -1258,5 +1258,221 @@
     ]
    }
   ]
+ },
+ "D_agentic": {
+  "missed": [
+   {
+    "doc": "discharge_summary_en_01",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the only licensed ferry captain on Green Island"
+   },
+   {
+    "doc": "discharge_summary_en_01",
+    "cat": "DATE",
+    "text": "2026-04-28"
+   },
+   {
+    "doc": "discharge_summary_en_05",
+    "cat": "DATE",
+    "text": "2024-04-07"
+   },
+   {
+    "doc": "medical_certificate_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "蕭素琴"
+   },
+   {
+    "doc": "medical_certificate_zh_02",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "為綠島唯一領有執照的渡輪船長"
+   },
+   {
+    "doc": "medical_certificate_zh_04",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "現任國家女子冰壺隊總教練"
+   },
+   {
+    "doc": "lease_agreement_en_02",
+    "cat": "PERSON_NAME",
+    "text": "Lee Yen-po"
+   },
+   {
+    "doc": "lease_agreement_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Tsai Jung-hao"
+   },
+   {
+    "doc": "accident_report_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "李宗憲"
+   },
+   {
+    "doc": "accident_report_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "林志強"
+   },
+   {
+    "doc": "accident_report_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "謝淑華"
+   },
+   {
+    "doc": "accident_report_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "陳秀蘭"
+   },
+   {
+    "doc": "accident_report_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "陳正義"
+   }
+  ],
+  "false_positives": [
+   {
+    "doc": "discharge_summary_en_00",
+    "cat": "PHONE",
+    "text": "(02)2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Ms.Hsu",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_01",
+    "cat": "PHONE",
+    "text": "(02)2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Mr. Tsai",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_02",
+    "cat": "PHONE",
+    "text": "(02)2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_03",
+    "cat": "PHONE",
+    "text": "(02)2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Mr.Tsai",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_04",
+    "cat": "PHONE",
+    "text": "(02)2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Mr.Lee",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_05",
+    "cat": "PHONE",
+    "text": "(02) 2700-0000",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "discharge_summary_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Mr. Lai",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "medical_certificate_zh_01",
+    "cat": "LICENSE_PLATE",
+    "text": "医字第86513号",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "medical_certificate_zh_02",
+    "cat": "LICENSE_PLATE",
+    "text": "医字第30034号",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "medical_certificate_zh_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "腰椎椎間盤突出供坐骨神經痛",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "medical_certificate_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "診治医師：李明哲",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "insurance_claim_en_00",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "physician, hospital or other provider",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "insurance_claim_en_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "physician, hospital or other provider",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "employee_form_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "本人名",
+    "sources": [
+     "llm"
+    ]
+   }
+  ]
  }
 }

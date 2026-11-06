@@ -40,6 +40,7 @@ ABLATIONS = {
     "A_deterministic": {"rule", "cv"},
     "B_plus_llm": {"rule", "cv", "llm"},
     "C_full": {"rule", "cv", "llm", "vlm"},
+    "D_agentic": {"rule", "cv", "llm", "vlm", "agent"},
 }
 
 
@@ -52,7 +53,7 @@ def mask_of(boxes, w, h):
 
 def score_doc(gt: dict, findings: list[dict], allowed: set[str]):
     w, h = gt["width"], gt["height"]
-    pred = [f for f in findings if set(f["sources"]) & allowed]
+    pred = [f for f in findings if set(f["sources"]) & allowed and f.get("accepted", True)]
     pmask = mask_of([f["bbox"] for f in pred], w, h)
     gmask = mask_of([it["bbox"] for it in gt["items"]], w, h)
     caught = []
@@ -218,11 +219,11 @@ def write_markdown(r):
              "(6 templates, English + Traditional Chinese). Policy: strict.", "",
              "| Configuration | Recall | Precision | Clean pages |", "|---|---|---|---|"]
     names = {"A_deterministic": "A. Rules + colour (regex/DLP baseline)", "B_plus_llm": "B. + contextual LLM",
-             "C_full": "C. + VLM (RedactAgent)"}
+             "C_full": "C. + VLM", "D_agentic": "D. + agentic re-identification check (RedactAgent)"}
     for k, label in names.items():
         x = r[k]
         lines.append(f"| {label} | {x['recall']:.1%} | {x['precision']:.1%} | {x['clean_doc_rate']:.1%} |")
-    lines += ["", "## Recall by category", "", "| Category | n | A | B | C |", "|---|---|---|---|---|"]
+    lines += ["", "## Recall by category", "", "| Category | n | A | B | C | D |", "|---|---|---|---|---|---|"]
     for c in CATEGORIES:
         n = r["C_full"]["support_by_category"][c]
         if not n:
