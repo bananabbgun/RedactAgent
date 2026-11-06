@@ -70,4 +70,17 @@ document types with a fresh random seed (`data/synthetic_v3`), generated before 
 
 ## Model sweep (text model on card 0; vision model fixed: Qwen2.5-VL-7B)
 
-_in progress — see `eval/tune/`_
+All runs: round-1 fixes, agentic check on, `RA_OCR_THREADS=8`, 8 pages in flight, eager mode.
+Throughput includes the agentic pass (a second LLM call per page).
+
+| Config (card 0) | v1 pages/min | v1 recall / precision (D) | v2 pages/min | v2 recall / precision (D) |
+|---|---|---|---|---|
+| T0 Qwen3-8B BF16 | 15.7 | 98.3 / 98.2 | 16.8 | 92.9 / 88.8 |
+| T1 Qwen3-8B BF16 + XPU graph | — | failed: UR_RESULT_ERROR_OUT_OF_RESOURCES | — | — |
+| **T2 Qwen3-8B FP8 (online quant.)** | **27.5** | **98.5 / 98.3** | **27.4** | **94.4 / 90.2** |
+| T3 Qwen3-14B FP8 | _running_ | | | |
+| T4 Qwen3-30B-A3B GPTQ-Int4 | _queued_ | | | |
+| T5 gpt-oss-20b | _queued_ | | | |
+
+FP8 weights halve the bytes read per generated token (decoding is memory-bandwidth bound): +75 % throughput
+with no measurable accuracy loss.
