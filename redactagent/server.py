@@ -19,7 +19,7 @@ from fastapi.responses import FileResponse, HTMLResponse, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
-from . import config, render
+from . import config, hwmon, render
 from .pipeline import ALL_LAYERS, Job, Pipeline
 from .schema import CATEGORIES
 
@@ -48,6 +48,17 @@ def info():
         "policies": [p.to_dict() for p in pipe.policies.values()],
         "layers": list(ALL_LAYERS),
     }
+
+
+@app.on_event("startup")
+def _start_monitor():
+    hwmon.monitor.start()
+
+
+@app.get("/api/system")
+def system():
+    return {"host": hwmon.host_info(), "backend": config.BACKEND, "models": hwmon.served_models(),
+            **hwmon.monitor.snapshot()}
 
 
 @app.get("/api/samples")

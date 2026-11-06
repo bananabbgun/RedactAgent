@@ -250,4 +250,28 @@ async function refreshAudit() {
 }
 
 function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]); }
+async function pollSystem() {
+  try {
+    const s = await api("/api/system");
+    const bar = $("#hwbar");
+    if (!s.available) { bar.classList.add("hidden"); document.body.classList.remove("hw"); return; }
+    document.body.classList.add("hw");
+    bar.classList.remove("hidden");
+    const models = Object.fromEntries((s.models || []).map((m) => [m.role, m.model]));
+    const host = `<div class="host"><b>${esc(s.host.hostname)}</b><br>${s.host.cpus} vCPU &middot; ${s.host.ram_gb} GB RAM<br>vLLM XPU &middot; on-prem</div>`;
+    bar.innerHTML = host + s.gpus.map((g) => {
+      const role = g.role || "";
+      const model = role.startsWith("text") ? models.text : role.startsWith("vision") ? models.vision : "";
+      const memPct = g.mem_total ? (100 * (g.mem_used || 0) / g.mem_total) : 0;
+      const hist = (g.history || []).slice(-60);
+      const pts = hist.map((h, i) => `${(i / Math.max(1, hist.length - 1)) * 150},${46 - (h[1] || 0) * 0.44}`).join(" ");
+      return `<div class="gpu"><div><span class="t">XPU ${g.id} &middot; ${esc(g.name)}</span> <span class="m">${esc(role)}${model ? " &middot; " + esc(model) : ""}</span></div>
+        <svg viewBox="0 0 150 46"><polyline points="${pts}" fill="none" stroke="#3b5bdb" stroke-width="2"/></svg>
+        <div>GPU ${(g.util ?? 0).toFixed(0)}% &middot; ${(g.power ?? 0).toFixed(0)} W<div class="meter"><i style="width:${g.util || 0}%"></i></div></div>
+        <div>VRAM ${((g.mem_used || 0) / 1024).toFixed(1)} / ${g.mem_total ? (g.mem_total / 1024).toFixed(0) : "?"} GB<div class="meter"><i style="width:${memPct}%"></i></div></div></div>`;
+    }).join("");
+  } catch (e) { /* telemetry is optional */ }
+}
+pollSystem();
+setInterval(pollSystem, 2000);
 init();
