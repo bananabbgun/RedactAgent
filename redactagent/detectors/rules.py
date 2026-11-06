@@ -99,7 +99,7 @@ STOP = re.compile(r"\s{2,}|\s*[,，(（]|\s+(?:性\s*别|性\s*別|關係|关系
 ADDR_PHRASE = re.compile(r"(?:residing at|resides at|located at|living at|住於|居住於)\s*", re.I)
 ADDR_STOP = re.compile(r"\s{2,}|\s*[;；]|\s*(?:電話|电话|Tel\b|TEL\b|Phone)|$")
 # Taiwanese court judgments list parties without a colon: label, spaces, then the name.
-JUDGMENT_NAME = re.compile(r"^\s*(?:原\s*告|被\s*告|訴訟代理人|诉讼代理人|法\s*官|書記官|书记官|審判長|审判长|上\s*訴\s*人|"
+JUDGMENT_NAME = re.compile(r"^\s*(?:[\u4e00-\u9fff]{1,6}庭[\s　]*)?(?:原\s*告|被\s*告|訴訟代理人|诉讼代理人|法\s*官|書記官|书记官|審判長|审判长|上\s*訴\s*人|"
                            r"被\s*上\s*訴\s*人)[\s　]+([\u4e00-\u9fff]{2,4}?(?:律師|律师)?)(?=[\s　]|$)")
 TITLE_NAME = re.compile(r"(?:Mrs|Mr|Ms|Dr)\.\s?[A-Z][a-z]+(?:\s?[A-Z][a-z]+(?:-[a-z]+)?)?")
 
