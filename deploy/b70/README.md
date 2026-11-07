@@ -26,20 +26,21 @@ browser on the host itself.
 
 | Variable | Default | Meaning |
 |---|---|---|
-| `TEXT_MODEL` | `Qwen/Qwen3-8B` | contextual PII + agentic re-identification check (card 0) |
+| `TEXT_MODEL` | `openai/gpt-oss-20b` | contextual PII + agentic re-identification check (card 0) |
 | `TEXT_EXTRA` | – | extra vLLM args for the text server, e.g. `--quantization fp8` |
 | `VISION_MODEL` | `Qwen/Qwen2.5-VL-7B-Instruct` | signatures, photos, seals (card 1) |
 | `GPU_UTIL` | `0.85` | VRAM fraction vLLM may use per card |
 | `RA_OCR_THREADS` | `8` | ONNX Runtime threads per OCR engine (one engine per worker thread) |
 | `RA_WORKERS` | `8` | pages processed concurrently by the web app / batch mode |
-| `RA_REASONING_EFFORT` | – | only for always-reasoning models (gpt-oss): `low` / `medium` / `high` |
+| `RA_REASONING_EFFORT` | `low` for gpt-oss | only for always-reasoning models: `low` / `medium` / `high` |
 | `HOST`, `PORT` | `127.0.0.1`, `8080` | web UI address |
 
 The configurations measured in [`docs/STAGE2_LOG.md`](../../docs/STAGE2_LOG.md):
 
 ```bash
-TEXT_MODEL=Qwen/Qwen3-8B  TEXT_EXTRA="--quantization fp8" bash deploy/b70/up.sh   # fastest
-TEXT_MODEL=Qwen/Qwen3-14B TEXT_EXTRA="--quantization fp8" bash deploy/b70/up.sh   # best held-out recall
+bash deploy/b70/up.sh                                                              # accuracy mode: gpt-oss-20b (default)
+TEXT_MODEL=Qwen/Qwen3-8B  TEXT_EXTRA="--quantization fp8" bash deploy/b70/up.sh   # throughput mode: +44 % pages/min
+TEXT_MODEL=Qwen/Qwen3-14B TEXT_EXTRA="--quantization fp8" bash deploy/b70/up.sh
 TEXT_MODEL=Qwen/Qwen3-30B-A3B-GPTQ-Int4 bash deploy/b70/up.sh
 ```
 

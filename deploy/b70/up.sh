@@ -2,8 +2,8 @@
 # One-command deployment of RedactAgent on a 2x Intel Arc Pro B70 host (tested on Intel Cloud, Ubuntu 26.04,
 # vllm/vllm-openai-xpu:v0.26.0). Card 0 serves the contextual LLM, card 1 the vision-language model.
 #
-#   bash deploy/b70/up.sh                 # default models, web UI on 127.0.0.1:8080
-#   TEXT_MODEL=Qwen/Qwen3-14B TEXT_EXTRA="--quantization fp8" bash deploy/b70/up.sh
+#   bash deploy/b70/up.sh                 # accuracy mode (gpt-oss-20b), web UI on 127.0.0.1:8080
+#   TEXT_MODEL=Qwen/Qwen3-8B TEXT_EXTRA="--quantization fp8" bash deploy/b70/up.sh   # throughput mode
 #
 # Environment knobs:
 #   TEXT_MODEL / VISION_MODEL   Hugging Face model ids
@@ -14,7 +14,7 @@ set -euo pipefail
 cd "$(dirname "$0")/../.."
 
 IMG=${IMG:-vllm/vllm-openai-xpu:v0.26.0}
-TEXT_MODEL=${TEXT_MODEL:-Qwen/Qwen3-8B}
+TEXT_MODEL=${TEXT_MODEL:-openai/gpt-oss-20b}
 VISION_MODEL=${VISION_MODEL:-Qwen/Qwen2.5-VL-7B-Instruct}
 GPU_UTIL=${GPU_UTIL:-0.85}
 HF_CACHE=${HF_CACHE:-$HOME/hf-cache}
@@ -53,5 +53,7 @@ done
 
 export RA_BACKEND=openai RA_BASE_URL=http://127.0.0.1:8000 RA_VISION_BASE_URL=http://127.0.0.1:8001
 export RA_TEXT_MODEL=text RA_VISION_MODEL=vision RA_OCR_THREADS=${RA_OCR_THREADS:-8}
+# gpt-oss always reasons before answering: keep the reasoning short so the answer fits the token budget
+[[ "$TEXT_MODEL" == *gpt-oss* ]] && export RA_REASONING_EFFORT=${RA_REASONING_EFFORT:-low}
 echo "RedactAgent UI: http://${HOST:-127.0.0.1}:${PORT:-8080}  (batch mode: /batch)"
 exec .venv/bin/python -c "import uvicorn; uvicorn.run('redactagent.server:app', host='${HOST:-127.0.0.1}', port=${PORT:-8080})"
