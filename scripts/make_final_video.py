@@ -41,7 +41,7 @@ def numbers() -> dict[str, str]:
         out[f"{v}_recall_spoken"] = spoken_pct(m[v]["recall"] * 100)
         out[f"{v}_precision"] = f"{m[v]['precision'] * 100:.1f}%"
         out[f"{v}_precision_spoken"] = spoken_pct(m[v]["precision"] * 100)
-    live = json.loads((B70 / "video_v3_live" / "take2" / "metrics.json").read_text())["D_agentic"]
+    live = json.loads((B70 / "video_v3_live" / "take3" / "metrics.json").read_text())["D_agentic"]
     out["live_recall"], out["live_recall_spoken"] = f"{live['recall'] * 100:.1f}%", spoken_pct(live["recall"] * 100)
     out["live_precision"], out["live_precision_spoken"] = f"{live['precision'] * 100:.1f}%", spoken_pct(live["precision"] * 100)
     b8 = next(r for r in bench if r["concurrency"] == 8)  # the batch on screen runs 8 pages in flight

@@ -296,6 +296,7 @@ unaffected. Throughput mode was then run again on all three corpora (table above
 
 `scripts/record_b70.py` (web app) and `scripts/record_terminal.py` (real JupyterLab terminal: hardware, both
 served models, a **live v3 evaluation**, GPU power) on the final configuration. The terminal recording was taken
-twice (the first take showed a JupyterLab notification toast); both live v3 runs are kept in
-`eval/results_b70/video_v3_live/`: take 1 96.2 / 95.9, **take 2 (in the video) 96.5 / 94.8**. Together with final
+three times (take 1 showed a JupyterLab notification toast, take 2 an `xpu-smi` permission warning on stderr);
+every live v3 run is kept in `eval/results_b70/video_v3_live/`: take 1 96.2 / 95.9, take 2 96.5 / 94.8,
+**take 3 (in the video) 97.0 / 95.2**. Together with final
 runs 1–3 these are all v3 evaluations ever made; none was used to change the system.
