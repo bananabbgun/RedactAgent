@@ -15,15 +15,16 @@ from playwright.sync_api import sync_playwright
 
 STEPS = [  # (mark, command, seconds to wait after the prompt returns / max seconds)
     ("hw", "hostname; lscpu | grep -E 'Model name|^CPU\\(s\\)'; free -g | head -n 2", 4),
-    ("gpus", "xpu-smi discovery | grep -E 'Device ID|Device Name|Memory Physical Size|PCI BDF'", 6),
+    ("gpus", "for d in 0 1; do echo \"--- XPU $d\"; xpu-smi discovery --device $d | "
+             "grep -E 'Device Name|Memory Physical Size|PCI BDF|Number of EUs' | sed 's/^ *//'; done", 6),
     ("servers", "docker ps --format '{{.Names}}  {{.Image}}  {{.Status}}'; curl -s 127.0.0.1:8000/v1/models | "
                 "python3 -c \"import json,sys; print('card 0 serves:', json.load(sys.stdin)['data'][0]['root'])\"; "
                 "curl -s 127.0.0.1:8001/v1/models | python3 -c \"import json,sys; print('card 1 serves:', "
                 "json.load(sys.stdin)['data'][0]['root'])\"", 5),
     ("eval", "cd ~/RedactAgent && source deploy/b70/env.sh && rm -rf /tmp/v3_live && "
              "python eval/evaluate.py --workers 8 --data data/synthetic_v3 --out /tmp/v3_live --label '2x Arc Pro B70'", 6),
-    ("power", "xpu-smi stats -d 0 | grep -E 'Power|Memory Used|Temperature' | head -n 6; "
-              "xpu-smi stats -d 1 | grep -E 'Power|Memory Used|Temperature' | head -n 6", 6),
+    ("power", "for d in 0 1; do echo \"--- XPU $d\"; xpu-smi stats --device $d | "
+              "grep -E 'GPU Power|GPU Memory Used|GPU Frequency' | cut -c1-90; done", 6),
 ]
 
 
@@ -44,10 +45,6 @@ def main():
         ctx = b.new_context(viewport={"width": W, "height": H}, ignore_https_errors=True,
                             record_video_dir=str(out / "_term"), record_video_size={"width": W, "height": H})
         page = ctx.new_page()
-        # larger terminal font for a readable video (JupyterLab settings API)
-        page.request.put(f"{base}/lab/api/settings/@jupyterlab/terminal-extension:plugin",
-                         data=json.dumps({"raw": json.dumps({"fontSize": a.font, "theme": "light"})}),
-                         headers={"Content-Type": "application/json"})
         # a separate, reset workspace so the user's own JupyterLab layout is untouched and the launcher is shown
         page.goto(f"{base}/lab/workspaces/ra-rec?reset", wait_until="domcontentloaded")
         try:
@@ -55,10 +52,25 @@ def main():
         except Exception:
             page.screenshot(path=str(out / "debug_launcher.png"))
             raise
+        # larger terminal font for a readable video (JupyterLab settings API, needs the XSRF cookie)
+        page.evaluate("""async (size) => {
+            const x = (document.cookie.match(/_xsrf=([^;]+)/) || [])[1];
+            await fetch(location.pathname.split('/lab')[0] + '/lab/api/settings/@jupyterlab/terminal-extension:plugin',
+              {method: 'PUT', headers: {'Content-Type': 'application/json', 'X-XSRFToken': x},
+               body: JSON.stringify({raw: JSON.stringify({fontSize: size})})});
+        }""", a.font)
+        page.reload(wait_until="domcontentloaded")
+        page.wait_for_selector(".jp-LauncherCard", timeout=120000)
+        page.wait_for_timeout(1500)
+        for sel in (".jp-Notification-Toast button:has-text('No')", ".Toastify__close-button"):
+            if page.locator(sel).count():
+                page.locator(sel).first.click()
+        # collapse the left sidebar (click the active tab) so the terminal fills the frame
+        cur = page.locator(".jp-SideBar.jp-mod-left .lm-TabBar-tab.lm-mod-current")
+        if cur.count():
+            cur.first.click()
         page.locator(".jp-LauncherCard[data-category='Other'][title*='erminal'], .jp-LauncherCard:has-text('Terminal')").first.click()
         page.wait_for_selector(".jp-Terminal .xterm-screen", timeout=60000)
-        # collapse the file browser so the terminal fills the frame
-        page.keyboard.press("Control+b")
         page.wait_for_timeout(1500)
         page.locator(".jp-Terminal").first.click()
         t0 = time.perf_counter()
@@ -96,6 +108,11 @@ def main():
                 page.keyboard.type("clear", delay=20); page.keyboard.press("Enter")
                 page.wait_for_timeout(600)
         page.screenshot(path=str(out / "terminal_last.png"))
+        page.evaluate("""async () => {  // restore the default terminal settings
+            const x = (document.cookie.match(/_xsrf=([^;]+)/) || [])[1];
+            await fetch(location.pathname.split('/lab')[0] + '/lab/api/settings/@jupyterlab/terminal-extension:plugin',
+              {method: 'PUT', headers: {'Content-Type': 'application/json', 'X-XSRFToken': x}, body: JSON.stringify({raw: '{}'})});
+        }""")
         mark("end")
         video = page.video
         ctx.close()
