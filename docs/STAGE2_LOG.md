@@ -78,9 +78,19 @@ Throughput includes the agentic pass (a second LLM call per page).
 | T0 Qwen3-8B BF16 | 15.7 | 98.3 / 98.2 | 16.8 | 92.9 / 88.8 |
 | T1 Qwen3-8B BF16 + XPU graph | — | failed: UR_RESULT_ERROR_OUT_OF_RESOURCES | — | — |
 | **T2 Qwen3-8B FP8 (online quant.)** | **27.5** | **98.5 / 98.3** | **27.4** | **94.4 / 90.2** |
-| T3 Qwen3-14B FP8 | _running_ | | | |
-| T4 Qwen3-30B-A3B GPTQ-Int4 | _queued_ | | | |
-| T5 gpt-oss-20b | _queued_ | | | |
+| T3 Qwen3-14B FP8 | 29.1 | 98.1 / 98.4 | 21.5 | 96.2 / 90.6 |
+| T4 Qwen3-30B-A3B GPTQ-Int4 | 16.6 | 98.8 / 97.3 | 20.5 | 96.0 / 89.0 |
+| T5 gpt-oss-20b | 15.4 | invalid (34/36 pages failed) | 16.2 | invalid (30/30 pages failed) |
 
 FP8 weights halve the bytes read per generated token (decoding is memory-bandwidth bound): +75 % throughput
 with no measurable accuracy loss.
+
+Without the agentic check (C) on v2: 8B FP8 88.9 / 92.7, 14B FP8 **94.2 / 93.8**, 30B-A3B 93.7 / 92.0 – the larger
+models close most of the held-out gap on their own.
+
+**An evaluation bug the sweep exposed.** gpt-oss-20b "scored" 100 % on v1 – because only 2 of 36 pages
+succeeded and the harness silently excluded failed pages. gpt-oss always reasons before answering; with a
+1024-token budget the reasoning consumed everything and the answer came back empty. Fixes: the harness now
+counts a failed page as fully missed and reports `failed_docs` (throughput counts successes only), and the client
+supports `RA_REASONING_EFFORT` with an extra reasoning-token allowance. All candidates are re-run on the latest
+code (round-2 fixes) in a second sweep (`eval/tune3/`).

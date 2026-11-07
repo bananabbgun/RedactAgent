@@ -1,62 +1,61 @@
-# Deploying RedactAgent on ASUS UGen Intel Arc Pro B70 32GB
+# Deploying RedactAgent on 2x Intel Arc Pro B70 32GB
 
-> Stage II plan. The Stage I prototype runs on a laptop through Ollama; the code already
-> speaks the OpenAI-compatible API that vLLM exposes, so moving to the B70 is a configuration
-> change (`RA_BACKEND=openai`), not a rewrite. Memory figures below are planning estimates and
-> will be replaced by measurements on the organiser's SDV environment.
+Tested on the organiser-provided Intel Cloud host: 2x Arc Pro B70 32 GB, 2x Xeon 6787P (344 vCPU, AMX),
+251 GB RAM, Ubuntu 26.04, Docker, image `vllm/vllm-openai-xpu:v0.26.0`.
 
-## Why this workload needs the B70
+## One command
 
-| Requirement | Laptop prototype | B70 32GB target |
+```bash
+git clone https://github.com/bananabbgun/RedactAgent.git && cd RedactAgent
+bash deploy/b70/up.sh
+```
+
+`up.sh` does four things:
+
+1. starts **one vLLM XPU server per card** – `ZE_AFFINITY_MASK=0` text LLM on port 8000, `ZE_AFFINITY_MASK=1`
+   vision-language model on port 8001 (both bound to 127.0.0.1);
+2. waits until both answer `/v1/models` (prints the container log and stops if one exits);
+3. creates `.venv` with `uv` on first run and installs `requirements.txt`;
+4. starts the RedactAgent web UI (default `127.0.0.1:8080`; `/batch`, `/system`).
+
+Reach the UI through an SSH tunnel or a reverse proxy with authentication – it is deliberately not exposed on all
+interfaces. On the Intel Cloud JupyterLab, the recording script (`scripts/record_b70.py`) drives a headless
+browser on the host itself.
+
+## Configuration
+
+| Variable | Default | Meaning |
 |---|---|---|
-| Contextual model | Qwen3-8B (Q4) | **Qwen3-30B-A3B** (MoE, INT4) - better recall on names / quasi-identifiers in long, messy OCR |
-| Vision model | Qwen2.5-VL-7B (Q4) | Qwen2.5-VL-7B (FP8) resident **at the same time** - no model swapping between pages |
-| Concurrency | 1 page at a time | vLLM continuous batching: many pages / users in parallel |
-| Data residency | on-device | on-premises server in the hospital / firm / agency LAN |
-| Reliability | consumer RAM | **ECC GDDR6** - long unattended batch jobs (legal discovery, archive digitisation) |
+| `TEXT_MODEL` | `Qwen/Qwen3-8B` | contextual PII + agentic re-identification check (card 0) |
+| `TEXT_EXTRA` | – | extra vLLM args for the text server, e.g. `--quantization fp8` |
+| `VISION_MODEL` | `Qwen/Qwen2.5-VL-7B-Instruct` | signatures, photos, seals (card 1) |
+| `GPU_UTIL` | `0.85` | VRAM fraction vLLM may use per card |
+| `RA_OCR_THREADS` | `8` | ONNX Runtime threads per OCR engine (one engine per worker thread) |
+| `RA_WORKERS` | `8` | pages processed concurrently by the web app / batch mode |
+| `RA_REASONING_EFFORT` | – | only for always-reasoning models (gpt-oss): `low` / `medium` / `high` |
+| `HOST`, `PORT` | `127.0.0.1`, `8080` | web UI address |
 
-Planned VRAM budget (single card, 32 GB):
-
-| Component | Precision | Weights | KV cache / runtime | Total |
-|---|---|---|---|---|
-| Qwen3-30B-A3B (text) | INT4 (AWQ) | ~16 GB | ~3 GB | ~19 GB |
-| Qwen2.5-VL-7B (vision) | FP8 | ~8.5 GB | ~2.5 GB | ~11 GB |
-| Headroom | | | | ~2 GB |
-
-Fallback if the budget is tight: Qwen3-14B INT4 (~9 GB) for text. Scale-out: a second B70 gives
-each model its own card (64 GB pool) and doubles batch throughput.
-
-## Serving (vLLM XPU)
-
-`compose.yaml` starts two vLLM servers on the same GPU plus the RedactAgent web app:
+The configurations measured in [`docs/STAGE2_LOG.md`](../../docs/STAGE2_LOG.md):
 
 ```bash
-cp .env.example .env        # set the vLLM XPU image tag from Intel's LLM Scaler release
-docker compose up -d
-open http://<b70-host>:8080
+TEXT_MODEL=Qwen/Qwen3-8B  TEXT_EXTRA="--quantization fp8" bash deploy/b70/up.sh   # fastest
+TEXT_MODEL=Qwen/Qwen3-14B TEXT_EXTRA="--quantization fp8" bash deploy/b70/up.sh   # best held-out recall
+TEXT_MODEL=Qwen/Qwen3-30B-A3B-GPTQ-Int4 bash deploy/b70/up.sh
 ```
 
-RedactAgent environment:
+## Lessons from bring-up (vLLM XPU 0.26 on this host)
 
-```bash
-RA_BACKEND=openai
-RA_BASE_URL=http://vllm-text:8000         # Qwen3-30B-A3B
-RA_VISION_BASE_URL=http://vllm-vision:8001  # Qwen2.5-VL-7B
-RA_TEXT_MODEL=Qwen/Qwen3-30B-A3B
-RA_VISION_MODEL=Qwen/Qwen2.5-VL-7B-Instruct
-```
+| Symptom | Cause / fix |
+|---|---|
+| `Failed to infer device type` | the oneAPI environment is not sourced; `up.sh` uses `bash -c "source /opt/intel/oneapi/setvars.sh; exec …"` as entrypoint |
+| graph capture fails with `UR_RESULT_ERROR_OUT_OF_RESOURCES` (also at `GPU_UTIL=0.70`) | XPU graph mode not usable here; `--enforce-eager` |
+| `--limit-mm-per-prompt` JSON quoting errors | use the dotted form `--limit-mm-per-prompt.image=1` |
+| throughput flat beyond 4 pages in flight, GPUs idle | OCR threads oversubscribed 344 cores; cap with `RA_OCR_THREADS=8` (9x faster OCR) |
+| `xpu-smi` hangs a server started from a terminal | it reads stdin; `redactagent/hwmon.py` starts it with stdin closed; GPU utilisation reads N/A on this platform, so board power is used as the activity signal |
+| gpt-oss returns an empty answer | it reasons first and runs out of tokens; set `RA_REASONING_EFFORT=low` |
 
-Structured output uses vLLM's `response_format: json_schema` (guided decoding), the same JSON
-schemas the Ollama path uses, so detector code is unchanged.
+## Health checks
 
-## OCR on Intel
-
-RapidOCR runs PP-OCR models through ONNX Runtime; on the B70 host it can switch to the
-OpenVINO execution provider (`rapidocr_openvino`) to run on the Xeon/Core CPU or the Arc GPU.
-
-## Stage II validation plan
-
-1. Bring-up on the SDV virtual host: both models resident, `GET /api/info` shows both online.
-2. Re-run `eval/evaluate.py` on the same synthetic corpus - compare recall / precision with the laptop.
-3. Throughput test: 1, 4, 8, 16 concurrent pages; report pages/min and p95 latency.
-4. Power and cost: tokens per watt from the B70 telemetry; cost per 1,000 pages vs. cloud APIs.
+- `GET /api/system` – host, both cards (power, VRAM, temperature), served models.
+- `GET /api/system/diagnostics` – host, OS, CPU, memory, `xpu-smi discovery`, `docker ps` (fixed read-only commands).
+- `python eval/evaluate.py --workers 8 --data data/synthetic_v3 --out /tmp/v3` – end-to-end accuracy check.
