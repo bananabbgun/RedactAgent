@@ -64,6 +64,17 @@ def tune_rows() -> list[dict]:
     return rows
 
 
+def renumber(body: str) -> str:
+    """Page numbers in slide footers follow slide order, so slides can be inserted or hidden freely."""
+    import re
+
+    parts = re.split(r'(?=<section class="slide)', body)
+    for i, sec in enumerate(parts[1:], 1):
+        parts[i] = re.sub(r'(<div class="foot">.*?<span>[^<]*</span>\s*<span>)[^<]*(</span>\s*</div>)',
+                          lambda m: f"{m.group(1)}{i}{m.group(2)}", sec, count=1, flags=re.S)
+    return "".join(parts)
+
+
 def build(out_pdf: Path):
     cfg = yaml.safe_load((DECK / "config.yaml").read_text(encoding="utf-8"))
     fin = {v: load(B70 / v / "metrics.json") for v in ("v1", "v2", "v3")}
@@ -71,6 +82,9 @@ def build(out_pdf: Path):
     missing = [v for v, m in fin.items() if m is None]
     if missing:
         sys.exit(f"final results missing for {missing}: run the final evaluation first")
+    fast = {v: load(B70 / "fast" / v / "metrics.json") for v in ("v1", "v2", "v3")}
+    fast_thr = {v: load(B70 / "fast" / v / "throughput.json") for v in ("v1", "v2", "v3")}
+    fast_bench = load(B70 / "fast" / "bench" / "benchmark.json") or []
     bench = load(B70 / "bench" / "benchmark.json") or []
     best = max(bench, key=lambda r: r["pages_per_min"]) if bench else None
     v3 = fin["v3"]
@@ -81,11 +95,13 @@ def build(out_pdf: Path):
             cats.append({"name": CATEGORIES[c][0], "n": n, "A": v3["A_deterministic"]["recall_by_category"][c],
                          "D": v3["D_agentic"]["recall_by_category"][c]})
     build_deck.RESULTS = B70 / "v1"
-    ctx = dict(cfg=cfg, fin=fin, thr=thr, bench=bench, bench0=BENCH0, best=best, cats=cats, tune=tune_rows(),
+    ctx = dict(cfg=cfg, fin=fin, thr=thr, fast=fast, fast_thr=fast_thr, fast_bench=fast_bench,
+               fast_best=max(fast_bench, key=lambda r: r["pages_per_min"]) if fast_bench else None, bench=bench, bench0=BENCH0, best=best, cats=cats, tune=tune_rows(),
                study=load(B70 / "study_summary.json"), triptych=build_deck.triptych("discharge_summary_en_00"),
                final=cfg.get("final_model", {}))
     env = Environment(loader=FileSystemLoader(DECK), autoescape=False)
     body = "".join(env.get_template(t).render(**ctx) for t in ("final_a.html.j2", "final_b.html.j2", "final_c.html.j2"))
+    body = renumber(body)
     html = (f'<!doctype html><html lang="en"><head><meta charset="utf-8"><title>RedactAgent - Final</title>'
             f'<link rel="stylesheet" href="deck.css"></head><body>{body}</body></html>')
     (DECK / "final.html").write_text(html, encoding="utf-8")

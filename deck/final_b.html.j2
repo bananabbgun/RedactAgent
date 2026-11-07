@@ -83,6 +83,40 @@
   <div class="foot"><span>Recall / precision in %. Raw results: eval/tune3/ in the repository.</span><span>10</span></div>
 </section>
 
+<!-- 10b Robustness: reasoning loops -->
+<section class="slide">
+  <div class="kicker">Stage II &middot; robustness at scale</div>
+  <h1>A failure that only shows up at scale: reasoning loops</h1>
+  <p class="lead">Under load, gpt-oss sometimes repeats its own reasoning verbatim until the token limit and returns no answer
+    &mdash; on vLLM XPU 0.26 occasionally in bursts, with garbage output. We measured it before fixing it.</p>
+  <div class="grid3" style="margin-top:6px">
+    <div class="card"><h3>1 &middot; Measure</h3><ul>
+      <li>Observe mode streams every call and marks where a loop detector <i>would</i> fire.</li>
+      <li>380 calls: 30 loops; <b>23 ended by themselves</b> with a full answer, 7 never did.</li>
+      <li>Normal answers end by 2,028 tokens (p99 1,280).</li></ul></div>
+    <div class="card"><h3>2 &middot; Fix the cause</h3><ul>
+      <li>vLLM XPU 0.26 &rarr; <b>0.33</b>: no garbage bursts or degraded periods since.</li>
+      <li>Greedy decoding is what makes gpt-oss loop; sampling at T&nbsp;=&nbsp;1.0 removes loops entirely
+        (0 of 264 calls).</li></ul></div>
+    <div class="card"><h3>3 &middot; Guard the rest</h3><ul>
+      <li><b>Loop guard</b>: stream, detect a periodic tail, cancel only a loop still running after 2,000 tokens,
+        resample (&le;&nbsp;2 retries).</li>
+      <li>Cancelling at the first repetition would have cost 0.5 recall points &mdash; measured, then avoided.</li></ul></div>
+  </div>
+  {% if fast.v2 %}
+  <table class="t" style="margin-top:14px">
+    <tr><th>Mode (same model, vLLM 0.33)</th><th>Decoding</th><th>v1 recall / precision</th><th>v2 recall / precision</th><th>v3 recall / precision</th><th>Pages / min (8 in flight)</th></tr>
+    <tr class="hl"><td><b>Accuracy mode</b> (default)</td><td>greedy + loop guard</td>
+      {% for v in ("v1", "v2", "v3") %}<td><b>{{ "%.1f"|format(fin[v].D_agentic.recall*100) }}</b> / {{ "%.1f"|format(fin[v].D_agentic.precision*100) }}</td>{% endfor %}
+      <td>{{ "%.1f"|format(best.pages_per_min) if best else "&ndash;" }}</td></tr>
+    <tr><td>Throughput mode</td><td>sampled, T = 1.0</td>
+      {% for v in ("v1", "v2", "v3") %}<td>{{ "%.1f"|format(fast[v].D_agentic.recall*100) }} / {{ "%.1f"|format(fast[v].D_agentic.precision*100) }}</td>{% endfor %}
+      <td>{{ "%.1f"|format(fast_best.pages_per_min) if fast_best else "&ndash;" }}</td></tr>
+  </table>
+  {% endif %}
+  <div class="foot"><span>Details and every intermediate run: docs/STAGE2_LOG.md.</span><span></span></div>
+</section>
+
 <!-- 11 Accuracy -->
 <section class="slide">
   <div class="kicker">Validation &middot; held-out evaluation</div>

@@ -58,17 +58,17 @@
   <!-- GPU 0 -->
   <rect x="764" y="110" width="410" height="200" rx="14" fill="#0b1d4d"/>
   <text x="784" y="140" font-weight="700" fill="#fff" font-size="15">XPU 0 · Arc Pro B70 32 GB (ECC)</text>
-  <text x="784" y="164" fill="#9fb4ff">vLLM XPU 0.26 · OpenAI API · ZE_AFFINITY_MASK=0</text>
+  <text x="784" y="164" fill="#9fb4ff">vLLM XPU 0.33 · OpenAI API · ZE_AFFINITY_MASK=0</text>
   <rect x="784" y="180" width="370" height="110" rx="10" fill="#1f3a8a"/>
   <text x="800" y="206" fill="#fff" font-weight="700">Contextual LLM (gpt-oss-20b, MXFP4 MoE)</text>
   <text x="800" y="228" fill="#c8d3f5">names, roles, addresses, quasi-identifiers</text>
-  <text x="800" y="248" fill="#c8d3f5">+ adversarial verifier pass (same server)</text>
+  <text x="800" y="248" fill="#c8d3f5">+ adversarial verifier pass · streamed, loop guard</text>
   <text x="800" y="270" fill="#c8d3f5">continuous batching across concurrent pages</text>
 
   <!-- GPU 1 -->
   <rect x="764" y="340" width="410" height="200" rx="14" fill="#0b1d4d"/>
   <text x="784" y="370" font-weight="700" fill="#fff" font-size="15">XPU 1 · Arc Pro B70 32 GB (ECC)</text>
-  <text x="784" y="394" fill="#9fb4ff">vLLM XPU 0.26 · ZE_AFFINITY_MASK=1</text>
+  <text x="784" y="394" fill="#9fb4ff">vLLM XPU 0.33 · ZE_AFFINITY_MASK=1</text>
   <rect x="784" y="410" width="370" height="110" rx="10" fill="#1f3a8a"/>
   <text x="800" y="436" fill="#fff" font-weight="700">Vision-language model (Qwen2.5-VL-7B)</text>
   <text x="800" y="458" fill="#c8d3f5">grounded boxes for signatures, ID photos, seals</text>
