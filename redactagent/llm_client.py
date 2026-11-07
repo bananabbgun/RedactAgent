@@ -21,6 +21,19 @@ from PIL import Image
 from . import config
 
 
+def is_looping(text: str, window: int = 1200, min_repeats: int = 3, max_period: int = 400) -> bool:
+    """True if the tail of `text` is (exactly) periodic: the last `window` characters consist of one chunk of at most
+    `max_period` characters repeated at least `min_repeats` times. Normal reasoning never repeats itself verbatim
+    several times over; a degenerate decoding loop does (observed periods: 20-250 characters)."""
+    if len(text) < window:
+        return False
+    s = text[-window:]
+    for p in range(4, min(max_period, window // min_repeats) + 1):
+        if s[p:] == s[:-p]:
+            return True
+    return False
+
+
 @dataclass
 class CallStats:
     seconds: float
@@ -112,28 +125,68 @@ class ModelClient:
                                                                     usage.get("completion_tokens", 0))
 
     def _post_openai(self, body: dict) -> dict:
-        """POST a chat completion. For reasoning models, greedy decoding occasionally falls into a repetition loop in
-        the reasoning ("Also line 25 date. Also line 25 date. ...") until the token cap and returns no answer. Such a
-        call is retried once with sampling (RA_RETRY_TEMPERATURE). A repetition penalty is deliberately not sent by
-        default: on vLLM XPU 0.26 requests carrying repetition_penalty were followed by many more looping requests
-        (see docs/STAGE2_LOG.md)."""
+        """POST a chat completion. For reasoning models, decoding occasionally falls into a repetition loop in the
+        reasoning ("Also line 25 date. Also line 25 date. ...") that would run to the token cap and return no answer.
+        On vLLM XPU this happens at random (~5 % of calls, different pages in different runs), so it is handled at run
+        time: the response is streamed, a loop is detected from the text itself and the request is cancelled within a
+        few hundred tokens, then retried with sampling (RA_RETRY_TEMPERATURE, up to RA_MAX_RETRIES times). A
+        repetition penalty is deliberately not sent by default: on vLLM XPU 0.26 requests carrying
+        repetition_penalty were followed by many more looping requests (see docs/STAGE2_LOG.md)."""
+        if not config.REASONING_EFFORT:
+            r = self.http.post(f"{self.base_url}/v1/chat/completions", json=body)
+            r.raise_for_status()
+            return r.json()
+        used = {"prompt_tokens": 0, "completion_tokens": 0}
+        data: dict = {}
+        for attempt in range(1 + config.MAX_RETRIES):
+            req = body
+            if attempt:
+                req = dict(body, temperature=config.RETRY_TEMPERATURE, seed=attempt)
+                if config.RETRY_REPETITION_PENALTY != 1.0:
+                    req["repetition_penalty"] = config.RETRY_REPETITION_PENALTY
+            data = self._stream_openai(req) if config.STREAM_LOOP_GUARD else self._plain_openai(req)
+            for k in used:
+                used[k] += data.get("usage", {}).get(k, 0)
+            ch = data["choices"][0]
+            if ch.get("finish_reason") not in ("length", "loop") and (ch["message"].get("content") or "").strip():
+                break
+        data["usage"] = used
+        data["attempts"] = attempt + 1
+        return data
+
+    def _plain_openai(self, body: dict) -> dict:
         r = self.http.post(f"{self.base_url}/v1/chat/completions", json=body)
         r.raise_for_status()
-        data = r.json()
-        ch = data["choices"][0]
-        if config.REASONING_EFFORT and (ch.get("finish_reason") == "length" or not (ch["message"].get("content") or "").strip()):
-            retry = dict(body, temperature=config.RETRY_TEMPERATURE)
-            if config.RETRY_REPETITION_PENALTY != 1.0:
-                retry["repetition_penalty"] = config.RETRY_REPETITION_PENALTY
-            r2 = self.http.post(f"{self.base_url}/v1/chat/completions", json=retry)
-            r2.raise_for_status()
-            data2 = r2.json()
-            if (data2["choices"][0]["message"].get("content") or "").strip():
-                u1, u2 = data.get("usage", {}), data2.get("usage", {})
-                data2["usage"] = {k: u1.get(k, 0) + u2.get(k, 0) for k in ("prompt_tokens", "completion_tokens")}
-                data2["retried"] = True
-                return data2
-        return data
+        return r.json()
+
+    def _stream_openai(self, body: dict) -> dict:
+        """Stream one completion; cancel it as soon as the generated text becomes periodic (a runaway loop).
+        Returns the same shape as a non-streamed response; finish_reason "loop" marks a cancelled request."""
+        body = dict(body, stream=True, stream_options={"include_usage": True})
+        reasoning, content, finish, usage, chunks, checked = [], [], None, {}, 0, 0
+        with self.http.stream("POST", f"{self.base_url}/v1/chat/completions", json=body) as r:
+            r.raise_for_status()
+            for line in r.iter_lines():
+                if not line.startswith("data: ") or line.strip() == "data: [DONE]":
+                    continue
+                d = json.loads(line[6:])
+                if d.get("usage"):
+                    usage = d["usage"]
+                for c in d.get("choices", []):
+                    delta = c.get("delta") or {}
+                    reasoning.append(delta.get("reasoning_content") or delta.get("reasoning") or "")
+                    content.append(delta.get("content") or "")
+                    finish = c.get("finish_reason") or finish
+                    chunks += 1
+                if chunks - checked >= 32:
+                    checked = chunks
+                    if is_looping("".join(reasoning)) or is_looping("".join(content)):
+                        finish = "loop"
+                        break  # leaving the context closes the connection; vLLM aborts the request
+        if finish == "loop" and not usage:
+            usage = {"prompt_tokens": 0, "completion_tokens": chunks}
+        return {"choices": [{"message": {"content": "".join(content), "reasoning_content": "".join(reasoning)},
+                             "finish_reason": finish}], "usage": usage}
 
     def _reasoning(self, body: dict) -> None:
         """Always-reasoning models (e.g. gpt-oss) spend tokens before the answer: lower the effort and add

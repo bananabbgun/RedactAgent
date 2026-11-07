@@ -16,7 +16,9 @@ VISION_BASE_URL = os.getenv("RA_VISION_BASE_URL", BASE_URL)
 TEXT_MODEL = os.getenv("RA_TEXT_MODEL", "qwen3:8b")
 REASONING_EFFORT = os.getenv("RA_REASONING_EFFORT", "")  # only for always-reasoning models such as gpt-oss
 REASONING_TOKENS = int(os.getenv("RA_REASONING_TOKENS", "2048"))
-RETRY_TEMPERATURE = float(os.getenv("RA_RETRY_TEMPERATURE", "0.7"))  # one sampled retry after a runaway reasoning call
+RETRY_TEMPERATURE = float(os.getenv("RA_RETRY_TEMPERATURE", "0.7"))  # sampled retry after a runaway reasoning call
+MAX_RETRIES = int(os.getenv("RA_MAX_RETRIES", "2"))
+STREAM_LOOP_GUARD = os.getenv("RA_STREAM_LOOP_GUARD", "1") == "1"  # stream and cancel a looping call early
 RETRY_REPETITION_PENALTY = float(os.getenv("RA_RETRY_REPETITION_PENALTY", "1.0"))  # 1.0 = not sent (see llm_client)
 VISION_MODEL = os.getenv("RA_VISION_MODEL", "qwen2.5vl:7b")
 TIMEOUT = float(os.getenv("RA_TIMEOUT", "300"))

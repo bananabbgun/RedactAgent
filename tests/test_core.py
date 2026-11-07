@@ -148,6 +148,7 @@ def test_reasoning_runaway_is_retried_with_sampling(monkeypatch):
     from redactagent import config, llm_client
 
     monkeypatch.setattr(config, "REASONING_EFFORT", "low")
+    monkeypatch.setattr(config, "STREAM_LOOP_GUARD", False)
     calls = []
 
     class Resp:
@@ -175,3 +176,60 @@ def test_reasoning_runaway_is_retried_with_sampling(monkeypatch):
     assert len(calls) == 2 and calls[0]["temperature"] == 0 and calls[1]["temperature"] == config.RETRY_TEMPERATURE
     assert "repetition_penalty" not in calls[0] and "repetition_penalty" not in calls[1]
     assert stats.completion_tokens == 3050
+
+
+def test_loop_detector():
+    from redactagent.llm_client import is_looping
+
+    assert is_looping("We need to list all PII. " + "Also line 25 date. " * 70)
+    cycle = ("Also the role of the patient is subject. Also the role of the physician signature is professional. "
+             "Also the role of the attending physician is professional. Also the role of the emergency contact is "
+             "family. Also the role of the lighthouse keeper is quasi identifier. ")  # observed on vLLM XPU, 250 chars
+    assert is_looping("We need to list PII. " + cycle * 5)
+    normal = ("We need to find names, IDs and dates. Line 3 has the patient name Wang Xiao-ming. Line 4 is the national "
+              "ID A123456789. Line 7 shows the admission date 2025-04-15 and line 8 the discharge date. The physician "
+              "Dr. Chen signs on line 30; that is staff. The address on line 6 is in Taipei. Phone on line 5. ") * 3
+    assert not is_looping(normal)
+    assert not is_looping("short " * 10)
+
+
+def test_streamed_loop_is_cancelled_and_retried(monkeypatch):
+    import json as _json
+    from contextlib import contextmanager
+
+    from redactagent import config, llm_client
+
+    monkeypatch.setattr(config, "REASONING_EFFORT", "low")
+    monkeypatch.setattr(config, "STREAM_LOOP_GUARD", True)
+    bodies, served = [], []
+
+    def sse(delta, finish=None):
+        return "data: " + _json.dumps({"choices": [{"delta": delta, "finish_reason": finish}]})
+
+    @contextmanager
+    def stream(method, url, json):
+        bodies.append(json)
+
+        class R:
+            def raise_for_status(self):
+                pass
+
+            def iter_lines(self):
+                if len(bodies) == 1:  # endless loop in the reasoning
+                    while True:
+                        served.append(1)
+                        yield sse({"reasoning_content": "Also line 25 date. "})
+                yield sse({"reasoning_content": "Line 3 is a name."})
+                yield sse({"content": "3 | Wang Xiao-ming | PERSON_NAME"}, "stop")
+                yield "data: " + _json.dumps({"choices": [], "usage": {"prompt_tokens": 10, "completion_tokens": 20}})
+                yield "data: [DONE]"
+        yield R()
+
+    c = llm_client.ModelClient("text", backend="openai", base_url="http://x")
+    monkeypatch.setattr(c.http, "stream", stream)
+    text, stats = c.chat_text("sys", "user")
+    assert text.startswith("3 | Wang")
+    assert len(served) < 100  # cancelled after a few dozen chunks, not at the token cap
+    assert bodies[0]["temperature"] == 0 and bodies[1]["temperature"] == config.RETRY_TEMPERATURE
+    assert all(b["stream"] for b in bodies) and "repetition_penalty" not in bodies[1]
+    assert stats.completion_tokens == len(served) + 20
