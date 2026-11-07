@@ -39,7 +39,7 @@
 
   <rect x="220" y="392" width="430" height="80" rx="10" fill="#fdf2f8" stroke="#f9a8d4"/>
   <text x="236" y="416" font-weight="700" fill="#be185d">Agentic re-identification check</text>
-  <text x="236" y="436" fill="#3c4560">adversarial LLM pass over the REDACTED text: residual names, exact dates,</text>
+  <text x="236" y="436" fill="#3c4560">adversarial LLM pass over the REDACTED text: leftover names, dates,</text>
   <text x="236" y="454" fill="#3c4560">rare job + place clues → new findings + 0-100 risk score</text>
 
   <rect x="220" y="488" width="430" height="100" rx="10" fill="#fff" stroke="#c9d3ea"/>
@@ -53,14 +53,14 @@
   <text x="690" y="196" fill="#3b5bdb">OCR text</text>
   <line x1="670" y1="420" x2="760" y2="230" stroke="#be185d" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#a)"/>
   <line x1="670" y1="300" x2="760" y2="430" stroke="#3b5bdb" stroke-width="2.5" marker-end="url(#a)"/>
-  <text x="716" y="318" fill="#3b5bdb">page image</text>
+  <text x="752" y="462" fill="#3b5bdb" text-anchor="end">page image</text>
 
   <!-- GPU 0 -->
   <rect x="764" y="110" width="410" height="200" rx="14" fill="#0b1d4d"/>
   <text x="784" y="140" font-weight="700" fill="#fff" font-size="15">XPU 0 · Arc Pro B70 32 GB (ECC)</text>
   <text x="784" y="164" fill="#9fb4ff">vLLM XPU 0.26 · OpenAI API · ZE_AFFINITY_MASK=0</text>
   <rect x="784" y="180" width="370" height="110" rx="10" fill="#1f3a8a"/>
-  <text x="800" y="206" fill="#fff" font-weight="700">Contextual LLM (Qwen3 family)</text>
+  <text x="800" y="206" fill="#fff" font-weight="700">Contextual LLM (gpt-oss-20b, MXFP4 MoE)</text>
   <text x="800" y="228" fill="#c8d3f5">names, roles, addresses, quasi-identifiers</text>
   <text x="800" y="248" fill="#c8d3f5">+ adversarial verifier pass (same server)</text>
   <text x="800" y="270" fill="#c8d3f5">continuous batching across concurrent pages</text>
