@@ -1,0 +1,136 @@
+{% set ppm = best.pages_per_min if best else thr.v3.pages_per_minute %}
+{% if study %}
+<!-- 13 User study -->
+<section class="slide">
+  <div class="kicker">Practical value &middot; people in the loop</div>
+  <h1>With RedactAgent, people redact faster <i>and</i> miss less</h1>
+  <p class="lead">{{ study.participants }} participants each redacted the same six unseen (v3) pages: three by hand, three starting from
+    RedactAgent's suggestions (order counterbalanced). Same pixel-level scoring as the benchmark.</p>
+  <div class="grid2" style="grid-template-columns:1.1fr 1fr">
+    <table class="t">
+      <tr><th>Condition</th><th>Time / page (median)</th><th>Recall</th><th>Precision</th></tr>
+      {% for r in study.rows %}
+      <tr{% if r.mode == "assisted" %} class="hl"{% endif %}><td>{{ r.label }}</td><td>{{ r.time }}</td><td>{{ r.recall }}</td><td>{{ r.precision }}</td></tr>
+      {% endfor %}
+    </table>
+    <div>
+      <div class="grid2" style="gap:12px">
+        <div class="card"><div class="big">{{ study.speedup }}</div><div class="bigl">faster per page with suggestions</div></div>
+        <div class="card"><div class="big">{{ study.recall_gain }}</div><div class="bigl">more PII removed than by hand</div></div>
+      </div>
+      <div class="card" style="margin-top:12px"><h3>Reading the result</h3><p>{{ study.note }}</p></div>
+    </div>
+  </div>
+  <div class="src">Small sample; synthetic documents; participants were university students, not records officers. Raw data: eval/results_b70/study.json.</div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>13</span></div>
+</section>
+{% endif %}
+
+<!-- 14 Economics -->
+<section class="slide">
+  <div class="kicker">Practical value &middot; what one B70 host does</div>
+  <h1>One 2&times; B70 host replaces a backlog, not a person</h1>
+  <div class="grid4" style="margin-top:18px">
+    <div class="card"><div class="big">{{ "{:,.0f}".format(ppm * 60) }}</div><div class="bigl">pages per hour, full pipeline incl. agentic check</div></div>
+    <div class="card"><div class="big">{{ "{:,.0f}".format(ppm * 60 * 8) }}</div><div class="bigl">pages per 8-hour shift</div></div>
+    <div class="card"><div class="big">{{ "{:,.0f}".format(best.pages_per_kwh) if best else "–" }}</div><div class="bigl">pages per kWh of GPU energy</div></div>
+    <div class="card"><div class="big">{{ "%.0f"|format(fin.v3.D_agentic.clean_doc_rate*100) }}%</div><div class="bigl">of unseen pages leave with zero leaked items before human review</div></div>
+  </div>
+  <div class="grid2" style="margin-top:20px">
+    <div class="card" style="background:#fff">
+      <h3>Illustrative: one regional hospital</h3>
+      <table class="t" style="font-size:13.5px;margin-top:6px">
+        <tr><th>Assumption</th><th>Value</th></tr>
+        <tr><td>Pages de-identified per year (research, insurance, legal copies)</td><td>30,000</td></tr>
+        <tr><td>Machine time on one 2&times; B70 host</td><td>{{ "%.0f"|format(30000 / (ppm * 60)) }} hours / year</td></tr>
+        <tr><td>Manual effort incl. second check</td><td>{{ study.manual_min if study else "4" }} min / page</td></tr>
+        <tr><td>Review of a pre-marked page</td><td>{{ study.assisted_min if study else "1" }} min / page</td></tr>
+        <tr><td><b>Staff time saved</b></td><td><b>~{{ "{:,.0f}".format(30000 * ((study.manual_min_f if study else 4) - (study.assisted_min_f if study else 1)) / 60) }} hours / year</b></td></tr>
+      </table>
+      <p class="note" style="margin-top:6px">Volume is an assumption to validate in a pilot; {{ "minutes per page are from our user study" if study else "minutes per page are assumptions" }}.</p>
+    </div>
+    <div class="card">
+      <h3>Why the B70 is the right hardware</h3>
+      <ul><li><b>Two models resident at once</b> &mdash; 32 GB per card holds an 8&ndash;14B text model and a 7B vision model without swapping.</li>
+        <li><b>Concurrency</b> &mdash; vLLM continuous batching turns one review station into an archive processor.</li>
+        <li><b>On-prem by design</b> &mdash; regulated documents never touch a cloud API; no per-page fees.</li>
+        <li><b>ECC memory</b> for long unattended batch jobs.</li></ul>
+    </div>
+  </div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>{{ 14 if study else 13 }}</span></div>
+</section>
+
+<!-- 15 Business model -->
+<section class="slide">
+  <div class="kicker">Commercial potential</div>
+  <h1>Business model: an on-prem privacy appliance</h1>
+  <div class="grid3" style="margin-top:18px">
+    <div class="card"><span class="tag">Product</span><h3 style="margin-top:8px">RedactAgent Appliance</h3>
+      <p>ASUS UGen 2&times; B70 workstation or server, pre-installed RedactAgent, policy packs for Taiwan (PDPA, IRB, court, FOI).</p></div>
+    <div class="card"><span class="tag">Revenue</span><h3 style="margin-top:8px">Hardware + annual licence</h3>
+      <p>Appliance sale through ASUS channel partners, plus a yearly subscription for model, rule and policy updates and support.</p></div>
+    <div class="card"><span class="tag">Go-to-market</span><h3 style="margin-top:8px">Start where pain is highest</h3>
+      <p>Hospital medical-records &amp; IRB offices (476 hospitals in Taiwan), then law firms, courts and government agencies.</p></div>
+  </div>
+  <div class="grid2" style="margin-top:20px">
+    <div class="card" style="background:#fff">
+      <h3>Why customers buy</h3>
+      <ul><li>On-prem is a requirement, not a preference, for these documents.</li>
+        <li>Predictable cost: no per-page or per-token fees for large archives.</li>
+        <li>Purpose policies, risk score and audit chain answer the compliance officer's questions directly.</li>
+        <li>Bilingual (EN + 繁中) and Taiwan identifier formats out of the box.</li></ul>
+    </div>
+    <div class="card" style="background:#fff">
+      <h3>Why it is good for ASUS UGen</h3>
+      <ul><li>A concrete, repeatable reason to buy 32 GB local-AI cards: regulated documents.</li>
+        <li>Batch mode makes the second card pay off &mdash; measured, not promised.</li>
+        <li>Same appliance runs other on-prem AI (RAG, meeting notes) &rarr; higher attach rate.</li>
+        <li>Policy packs extend it to GDPR, HIPAA and APPI markets.</li></ul>
+    </div>
+  </div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>{{ 15 if study else 14 }}</span></div>
+</section>
+
+<!-- 16 Feasibility -->
+<section class="slide">
+  <div class="kicker">Feasibility</div>
+  <h1>Deployable today; honest about what is next</h1>
+  <div class="grid2" style="margin-top:14px;align-items:start">
+    <div>
+      <div class="card" style="background:#0b1d4d;color:#fff;border:0">
+        <h3 style="color:#fff">One command on a 2&times; B70 host</h3>
+        <p class="mono" style="color:#dbe4ff;font-size:14px;margin-top:6px">git clone {{ cfg.github }}<br>bash deploy/b70/up.sh</p>
+        <p style="color:#c8d3f5;margin-top:8px">Starts one vLLM XPU server per card, waits for health, installs the app, serves the UI. Tested on the organiser's Intel Cloud instance.</p>
+      </div>
+      <div class="card" style="margin-top:12px"><h3>Open, commercially usable stack</h3>
+        <p>Qwen3 / gpt-oss / Qwen2.5-VL (Apache-2.0), PP-OCR via RapidOCR (Apache-2.0), vLLM (Apache-2.0), FastAPI, OpenCV. No AGPL components. RedactAgent itself: MIT.</p></div>
+      <div class="card" style="margin-top:12px"><h3>Engineering quality</h3>
+        <p>Unit tests, reproducible evaluation and benchmark scripts, a hash-chained audit log, and a public engineering log of every measurement.</p></div>
+    </div>
+    <table class="t" style="font-size:13.5px">
+      <tr><th style="width:34%">Risk</th><th>Mitigation</th></tr>
+      <tr><td>A PII item is missed</td><td>Four layers, adversarial re-check, risk score, mandatory human approval, strict default policy</td></tr>
+      <tr><td>OCR misses text on a poor scan</td><td>Unread-ink check flags any region the OCR did not read; the VLM sees the image</td></tr>
+      <tr><td>Synthetic &ne; real documents</td><td>Held-out corpora with new types and phone photos; next step is a supervised pilot on real documents</td></tr>
+      <tr><td>Legal mapping of policies</td><td>Policies are data (YAML), confirmed with counsel per customer</td></tr>
+      <tr><td>Software stack changes</td><td>OpenAI-compatible API: the same code runs on vLLM XPU, Ollama or any compatible server</td></tr>
+    </table>
+  </div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>{{ 16 if study else 15 }}</span></div>
+</section>
+
+<!-- 17 Summary & links -->
+<section class="slide cover" style="padding-top:60px">
+  <div class="kicker" style="color:#8fb3ff">Summary</div>
+  <h1 style="font-size:46px">Private documents, shared safely &mdash; on two Arc Pro B70 cards</h1>
+  <div class="grid3" style="margin-top:26px;gap:18px">
+    <div style="border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:18px"><div style="font-size:40px;font-weight:800">{{ "%.1f"|format(fin.v3.D_agentic.recall*100) }}%</div><div style="color:#c8d3f5">PII recall on unseen documents, {{ "%.1f"|format(fin.v3.D_agentic.precision*100) }}% precision</div></div>
+    <div style="border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:18px"><div style="font-size:40px;font-weight:800">{{ "%.0f"|format(ppm) }}</div><div style="color:#c8d3f5">pages / minute with the agentic check, measured on the organiser's B70 host</div></div>
+    <div style="border:1px solid rgba(255,255,255,.3);border-radius:14px;padding:18px"><div style="font-size:40px;font-weight:800">1</div><div style="color:#c8d3f5">command to deploy; every number reproducible from the repository</div></div>
+  </div>
+  <div style="margin-top:34px;font-size:18px;color:#dbe4ff;line-height:1.7">
+    GitHub &nbsp;<span class="mono" style="font-size:17px">{{ cfg.github }}</span><br>
+    Demo video &nbsp;<span class="mono" style="font-size:17px">{{ cfg.final_video|default("(link)") }}</span><br>
+    {% for p in cfg.team %}{{ p.name }} &middot; {{ p.affiliation }}{% endfor %}
+  </div>
+</section>

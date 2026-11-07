@@ -1,0 +1,142 @@
+<!-- 8 Architecture -->
+<section class="slide" style="padding-top:40px">
+  <div class="kicker">Stage II &middot; architecture on 2&times; Intel Arc Pro B70</div>
+  <h1 style="font-size:30px">One model per card, both always resident</h1>
+  <div style="text-align:center"><img src="../docs/img/architecture.png" style="max-height:470px;max-width:1150px;margin-top:4px"></div>
+  <div class="grid3" style="margin-top:10px;gap:14px">
+    <div class="card" style="padding:10px 14px"><p><b>Card 0 &middot; text LLM</b> ({{ final.text|default("Qwen3") }}): contextual PII + agentic check, vLLM XPU, continuous batching.</p></div>
+    <div class="card" style="padding:10px 14px"><p><b>Card 1 &middot; vision model</b> (Qwen2.5-VL-7B): signatures, photos, seals &mdash; runs <i>concurrently</i> with the LLM layer for the same page.</p></div>
+    <div class="card" style="padding:10px 14px"><p><b>Xeon host</b>: OCR (ONNX Runtime, 8 threads per engine), rules, policy, rendering, audit; 8 pages in flight.</p></div>
+  </div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>8</span></div>
+</section>
+
+<!-- 9 Performance journey -->
+<section class="slide">
+  <div class="kicker">Stage II &middot; performance on the organiser's environment</div>
+  <h1>From {{ "%.0f"|format(bench0[0].ppm) }} to {{ "%.0f"|format(best.pages_per_min if best else 0) }} pages per minute &mdash; by measuring, not guessing</h1>
+  <div class="grid2" style="grid-template-columns:1.1fr 1fr;align-items:start;margin-top:8px">
+    <div class="card" style="background:#fff">
+      <h3>Pages per minute vs. pages in flight</h3>
+      {% set W = 430 %}{% set top = (best.pages_per_min if best else 30) * 1.15 %}
+      <table style="width:100%;border-collapse:collapse;font-size:13px;margin-top:8px">
+        {% for r0 in bench0 %}{% set r1 = (bench | selectattr("concurrency", "equalto", r0.c) | list | first) %}
+        <tr><td style="width:80px;padding:5px 0"><b>{{ r0.c }}</b> page{{ "s" if r0.c > 1 }}</td>
+          <td><span class="bar" style="height:11px;width:{{ (r0.ppm / top * W)|int }}px;background:#9aa5b8;display:block;margin-bottom:3px"></span>
+              {% if r1 %}<span class="bar" style="height:11px;width:{{ (r1.pages_per_min / top * W)|int }}px;background:#1f3a8a;display:block"></span>{% endif %}</td>
+          <td style="width:110px;text-align:right"><span class="note">{{ "%.1f"|format(r0.ppm) }}</span> &rarr; <b>{{ "%.1f"|format(r1.pages_per_min) if r1 else "–" }}</b></td></tr>
+        {% endfor %}
+      </table>
+      <p class="note" style="margin-top:8px"><span class="bar" style="height:9px;width:18px;background:#9aa5b8"></span> day-1 baseline (BF16, default OCR threads)
+        &nbsp; <span class="bar" style="height:9px;width:18px;background:#1f3a8a"></span> final configuration (incl. agentic check)</p>
+    </div>
+    <div>
+      <table class="t" style="font-size:13.5px">
+        <tr><th>What we found</th><th>Fix</th><th>Effect</th></tr>
+        <tr><td>GPU power <i>fell</i> as load rose: 344 cores of OCR threads fighting each other</td><td>8 ONNX threads per OCR engine</td><td>9&times; faster OCR</td></tr>
+        <tr><td>LLM and VLM waited for each other per page</td><td>both layers in parallel, one card each</td><td>lower page latency</td></tr>
+        <tr><td>Decoding is memory-bandwidth bound</td><td>FP8 weights (online quant.)</td><td>+75&nbsp;% throughput, same accuracy</td></tr>
+        <tr><td>XPU graph mode</td><td>tested; out of resources on this stack</td><td>eager mode kept</td></tr>
+      </table>
+      {% if best %}
+      <div class="grid2" style="gap:12px;margin-top:12px">
+        <div class="card"><div class="big" style="font-size:38px">{{ "{:,.0f}".format(best.pages_per_kwh) }}</div><div class="bigl">pages per kWh of GPU energy ({{ "%.0f"|format(best.power_w_total) }} W, both cards)</div></div>
+        <div class="card"><div class="big" style="font-size:38px">{{ "%.0f"|format(best.latency_p50_s) }} s</div><div class="bigl">median page latency at {{ best.concurrency }} pages in flight</div></div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="src">Measured with <span class="mono">eval/benchmark.py</span> on {{ bench[0].pages if bench else 36 }} pages per level; board power from <span class="mono">xpu-smi</span> sampled every second.</div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>9</span></div>
+</section>
+
+<!-- 10 Model selection -->
+<section class="slide">
+  <div class="kicker">Stage II &middot; model selection</div>
+  <h1>Choosing the text model with data</h1>
+  <p class="lead">Four open models on card 0, same code, same vision model on card 1. Development set (v1) and held-out set (v2),
+    8 pages in flight, agentic check on.</p>
+  <table class="t">
+    <tr><th>Text model (card 0)</th><th>Precision</th><th>Pages / min</th><th>v1 recall / precision</th><th>v2 detectors only</th><th>v2 + agentic check</th></tr>
+    {% for r in tune %}
+    <tr{% if final.id == r.id %} class="hl"{% endif %}><td>{% if final.id == r.id %}<b>{{ r.name }}</b> &larr; final{% else %}{{ r.name }}{% endif %}</td><td>{{ r.prec }}</td>
+      <td>{{ "%.1f"|format(r.ppm) }}</td>
+      <td>{{ "%.1f"|format(r.v1r*100) }} / {{ "%.1f"|format(r.v1p*100) }}</td>
+      <td>{{ "%.1f"|format(r.v2cr*100) }} / {{ "%.1f"|format(r.v2cp*100) }}</td>
+      <td><b>{{ "%.1f"|format(r.v2r*100) }}</b> / {{ "%.1f"|format(r.v2p*100) }}</td></tr>
+    {% endfor %}
+  </table>
+  <div class="grid2" style="margin-top:16px">
+    <div class="card"><h3>Decision</h3><p>{{ final.why|default("") }}</p></div>
+    <div class="card"><h3>Also learned</h3><ul>
+      <li>BF16 &rarr; FP8 on Qwen3-8B: +75&nbsp;% pages/min, no accuracy loss.</li>
+      <li>gpt-oss always reasons first; without a reasoning budget its answers came back empty &mdash; which exposed an evaluation bug (next slides).</li></ul></div>
+  </div>
+  <div class="foot"><span>Recall / precision in %. Raw results: eval/tune3/ in the repository.</span><span>10</span></div>
+</section>
+
+<!-- 11 Accuracy -->
+<section class="slide">
+  <div class="kicker">Validation &middot; held-out evaluation</div>
+  <h1>Accuracy on documents the system has never seen</h1>
+  <p class="lead">Three synthetic corpora: v1 was used to build the rules and prompts; v2 introduced five <i>new</i> document types
+    and phone photos and was used for error analysis; <b>v3 was generated before any result was seen and used only once, for these numbers.</b></p>
+  <div class="grid2" style="grid-template-columns:1.1fr 1fr">
+    <div class="card" style="background:#fff">
+      <h3>v3 &middot; recall by layer ({{ fin.v3.C_full.docs }} pages, {{ fin.v3.C_full.gt_items }} PII items)</h3>
+      {% for key, label, col in [("A_deterministic","A &middot; rules + colour (regex/DLP baseline)","#9aa5b8"),("B_plus_llm","B &middot; + contextual LLM","#7c3aed"),("C_full","C &middot; + VLM","#1f3a8a"),("D_agentic","D &middot; + agentic re-identification check","#be185d")] %}
+      <div style="margin:12px 0 3px;font-size:14px">{{ label|safe }}</div>
+      <div><span class="bar" style="width:{{ (fin.v3[key].recall*420)|int }}px;background:{{ col }}"></span>
+        <b style="font-size:19px;margin-left:8px">{{ "%.1f"|format(fin.v3[key].recall*100) }}%</b></div>
+      {% endfor %}
+    </div>
+    <div>
+      <table class="t" style="font-size:13.5px">
+        <tr><th>Corpus</th><th>Pages</th><th>Recall</th><th>Precision</th><th>Clean pages</th></tr>
+        {% for v, label in [("v1","v1 &middot; development"),("v2","v2 &middot; held-out, analysed"),("v3","v3 &middot; untouched")] %}
+        <tr{% if v == "v3" %} class="hl"{% endif %}><td>{{ label|safe }}</td><td>{{ fin[v].D_agentic.docs }}</td>
+          <td><b>{{ "%.1f"|format(fin[v].D_agentic.recall*100) }}%</b></td><td>{{ "%.1f"|format(fin[v].D_agentic.precision*100) }}%</td>
+          <td>{{ "%.0f"|format(fin[v].D_agentic.clean_doc_rate*100) }}%</td></tr>
+        {% endfor %}
+      </table>
+      <div class="card" style="margin-top:12px">
+        <h3>Scoring</h3>
+        <ul><li>Pixel-level: an item is removed when &ge;50&nbsp;% of its area is covered; a box is correct when &ge;30&nbsp;% overlaps PII.</li>
+          <li>A page that fails to process counts as <b>fully leaked</b>, never skipped.</li>
+          <li>Strict policy; full pipeline as deployed on the B70.</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="src">Reproduce: <span class="mono">python eval/evaluate.py --workers 8 --data data/synthetic_v3</span></div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>11</span></div>
+</section>
+
+<!-- 12 Per category -->
+<section class="slide">
+  <div class="kicker">Validation &middot; held-out evaluation</div>
+  <h1>Where it works, where it still misses (v3)</h1>
+  <div class="grid2" style="grid-template-columns:1.15fr 1fr;margin-top:14px;align-items:start">
+    <div class="card" style="background:#fff;padding:14px 18px">
+      <h3>Recall by category: rules only vs. full system</h3>
+      <table style="width:100%;font-size:13px;border-collapse:collapse;margin-top:6px">
+      {% for c in cats %}
+        <tr><td style="width:170px;padding:3px 0">{{ c.name }} <span class="note">({{ c.n }})</span></td>
+          <td><span class="bar" style="height:9px;width:{{ (c.A*250)|int }}px;background:#9aa5b8;display:block;margin-bottom:2px"></span>
+              <span class="bar" style="height:9px;width:{{ (c.D*250)|int }}px;background:#1f3a8a;display:block"></span></td>
+          <td style="width:90px;text-align:right"><span class="note">{{ "%.0f"|format(c.A*100) }}%</span> &rarr; <b>{{ "%.0f"|format(c.D*100) }}%</b></td></tr>
+      {% endfor %}
+      </table>
+    </div>
+    <div>
+      <div class="card"><h3>From 84&nbsp;% to {{ "%.0f"|format(fin.v2.D_agentic.recall*100) }}&nbsp;% on v2 &mdash; with general fixes only</h3>
+        <ul><li>Dates with times, accession / specimen numbers, more form labels, court-judgment party lines.</li>
+          <li>Organisation phones and addresses (letterheads, hotlines) are <i>not</i> personal data.</li>
+          <li>Names propagated to repeated mentions even when OCR drops spaces.</li>
+          <li>The agentic check for what detectors cannot see.</li></ul></div>
+      <div class="card" style="margin-top:12px"><h3>An honest evaluation</h3>
+        <ul><li>The model sweep showed gpt-oss scoring 100&nbsp;% &mdash; because 34 of 36 pages had <i>failed</i> and were silently skipped.</li>
+          <li>We fixed the harness: failed pages now count as leaked, and throughput counts only successful pages.</li></ul></div>
+    </div>
+  </div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>12</span></div>
+</section>

@@ -61,6 +61,21 @@ def main(paths: list[str]):
           f"{statistics.mean(a[1] for a in ai):.1%} |")
     out = ROOT / "eval" / "results_b70" / "study.json"
     out.write_text(json.dumps(rows, indent=1))
+    if rows["manual"] and rows["assisted"]:  # compact summary for the final deck
+        med = {k: statistics.median(x["s"] for x in v) for k, v in rows.items()}
+        rec = {k: statistics.mean(x["recall"] for x in v) for k, v in rows.items()}
+        pre = {k: statistics.mean(x["precision"] for x in v) for k, v in rows.items()}
+        table = [{"mode": k, "label": lab, "time": f"{med[k]:.0f} s", "recall": f"{rec[k]:.1%}", "precision": f"{pre[k]:.1%}"}
+                 for k, lab in (("manual", "Manual (by hand)"), ("assisted", "RedactAgent-assisted"))]
+        table.append({"mode": "ai", "label": "AI suggestions alone (no human)", "time": "-",
+                      "recall": f"{statistics.mean(a[0] for a in ai):.1%}", "precision": f"{statistics.mean(a[1] for a in ai):.1%}"})
+        summary = {"participants": len(paths), "rows": table,
+                   "speedup": f"{med['manual'] / med['assisted']:.1f}x",
+                   "recall_gain": f"{(rec['assisted'] - rec['manual']) * 100:+.0f} pts",
+                   "manual_min": f"{med['manual'] / 60:.1f}", "assisted_min": f"{med['assisted'] / 60:.1f}",
+                   "manual_min_f": med["manual"] / 60, "assisted_min_f": med["assisted"] / 60,
+                   "note": "Median seconds per page; recall = share of PII items covered; precision = share of boxes on PII."}
+        (out.parent / "study_summary.json").write_text(json.dumps(summary, indent=1))
 
 
 if __name__ == "__main__":
