@@ -8,9 +8,9 @@ behaviour comes from prompts, deterministic rules and post-processing, all in th
 | Role | Model | Licence | Where it runs (B70 deployment) | Precision | Laptop prototype |
 |---|---|---|---|---|---|
 | OCR (text + per-character boxes) | PP-OCR det/cls/rec via RapidOCR 1.4 | Apache-2.0 | Xeon CPU, ONNX Runtime, 8 threads/engine | FP32 | same |
-| Contextual PII detection + agentic re-identification check | **gpt-oss-20b** (MoE, 21B total / 3.6B active), reasoning effort *low* | Apache-2.0 | Arc Pro B70 #0, vLLM XPU 0.26 | MXFP4 MoE weights, native XPU MXFP4 kernel | Qwen3-8B Q4 (Ollama) |
-| Throughput mode (alternative text model) | Qwen3-8B | Apache-2.0 | Arc Pro B70 #0 | FP8 (online) | — |
-| Visual identifiers (signatures, ID photos, seals) | Qwen2.5-VL-7B-Instruct | Apache-2.0 | Arc Pro B70 #1, vLLM XPU 0.26 | BF16 | Qwen2.5-VL-7B Q4 (Ollama) |
+| Contextual PII detection + agentic re-identification check | **gpt-oss-20b** (MoE, 21B total / 3.6B active), reasoning effort *low* | Apache-2.0 | Arc Pro B70 #0, vLLM XPU 0.33 | MXFP4 MoE weights, native XPU MXFP4 kernel; greedy decoding + loop guard | Qwen3-8B Q4 (Ollama) |
+| Throughput mode | same gpt-oss-20b, sampled at temperature 1.0 (`RA_TEMPERATURE=1.0`) | Apache-2.0 | Arc Pro B70 #0 | MXFP4 | — |
+| Visual identifiers (signatures, ID photos, seals) | Qwen2.5-VL-7B-Instruct | Apache-2.0 | Arc Pro B70 #1, vLLM XPU 0.33 | BF16 | Qwen2.5-VL-7B Q4 (Ollama) |
 | Seal impressions (cross-check) | OpenCV colour segmentation | Apache-2.0 | Xeon CPU | — | same |
 
 Serving: one OpenAI-compatible vLLM server per card (`ZE_AFFINITY_MASK`), JSON-schema guided decoding for the
@@ -31,8 +31,14 @@ Pages/min combines both corpora.
 | Qwen3-8B BF16 + XPU graph | Apache-2.0 | BF16 | — | graph capture out of resources | — | — |
 
 **Decision:** gpt-oss-20b is the default ("accuracy mode"): the best held-out recall *and* precision, best or
-tied in both English and Chinese, and the fewest false positives. Qwen3-8B FP8 is the documented
-"throughput mode" (+44 % pages/min, −2.6 recall points on held-out documents).
+tied in both English and Chinese, and the fewest false positives. (The sweep ran on vLLM XPU 0.26; the final
+configuration runs on 0.33, see below.)
+
+**Decoding and the throughput mode (2026-11-08).** Greedy decoding occasionally makes gpt-oss repeat its reasoning
+until the token cap. Accuracy mode keeps greedy decoding (most thorough on held-out documents) and adds a
+streaming loop guard; throughput mode samples the same model at temperature 1.0, which removes the loops and
+raises throughput by ~40 % for ~2 recall points on v2. This replaced Qwen3-8B FP8 as the throughput mode: on this
+stack it is both faster and more accurate. Measurements: `docs/STAGE2_LOG.md`.
 
 gpt-oss always reasons before answering. With RedactAgent's original 1,024-token budget the reasoning consumed
 everything and the answer came back empty; `RA_REASONING_EFFORT=low` plus a reasoning-token allowance fixes it

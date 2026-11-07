@@ -79,13 +79,15 @@ perf_model:   # model selection slide
   - ["We compared four open models on card zero with the same code."]
   - ["gpt-oss-20b had the best held-out recall and precision at the same time, so it is the default;",
      "G P T O S S twenty B had the best held-out recall and precision at the same time, so it is the default;"]
-  - ["Qwen3-8B in FP8 remains a faster throughput mode.",
-     "Qwen three eight B in F P eight remains a faster throughput mode."]
+  - ["It runs on vLLM 0.33 on both cards, the newest XPU release.",
+     "It runs on V L L M zero point three three on both cards, the newest X P U release."]
 
 loops:   # slide on robustness (reasoning loops)
   - ["We also found a failure that only shows up at scale."]
   - ["The reasoning model sometimes repeats itself. Usually it recovers, sometimes it never stops."]
+  - ["We measured it first: most loops end by themselves, a few never do."]
   - ["RedactAgent streams every answer, recognises a loop that will not end, cancels it and retries."]
+  - ["For archives, sampling the same model removes loops entirely and is about forty percent faster."]
 
 accuracy:   # slides 11 + 12
   - ["Across three corpora, the full system reaches {v1_recall}, {v2_recall} and {v3_recall} recall.",
