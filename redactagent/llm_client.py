@@ -38,6 +38,28 @@ def is_looping(text: str, min_repeats: int = 3, min_span: int = 400, max_period:
     return False
 
 
+def parse_json_lenient(content: str) -> dict:
+    """Parse a JSON object; if it was cut off (token limit), keep every complete element and drop the tail.
+    Never raises: a malformed answer must not fail the whole page."""
+    try:
+        out = json.loads(content)
+        return out if isinstance(out, dict) else {}
+    except json.JSONDecodeError:
+        pass
+    s = content.find("{")
+    if s < 0:
+        return {}
+    ends = [i for i, ch in enumerate(content) if ch == "}" and i > s]
+    for e in reversed(ends[-200:]):
+        for closing in ("", "]}", "}", "]}}"):
+            try:
+                out = json.loads(content[s:e + 1] + closing)
+                return out if isinstance(out, dict) else {}
+            except json.JSONDecodeError:
+                continue
+    return {}
+
+
 @dataclass
 class CallStats:
     seconds: float
@@ -104,12 +126,7 @@ class ModelClient:
             usage = data.get("usage", {})
             stats = CallStats(time.perf_counter() - t0, usage.get("prompt_tokens", 0), usage.get("completion_tokens", 0),
                               data.get("attempts", 1))
-        try:
-            return json.loads(content), stats
-        except json.JSONDecodeError:
-            # structured decoding should prevent this; recover the largest JSON object if it happens
-            s, e = content.find("{"), content.rfind("}")
-            return (json.loads(content[s:e + 1]) if s >= 0 and e > s else {}), stats
+        return parse_json_lenient(content), stats
 
     def chat_text(self, system: str, user: str, max_tokens: int = 1024, num_ctx: int = 8192) -> tuple[str, CallStats]:
         """Unconstrained text completion (used with compact line formats, ~3x fewer tokens than JSON)."""

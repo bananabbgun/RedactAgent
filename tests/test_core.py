@@ -268,3 +268,14 @@ def test_loop_that_ends_by_itself_is_not_cancelled(monkeypatch):
     monkeypatch.setattr(c.http, "stream", stream)
     text, stats = c.chat_text("sys", "user")
     assert text == "25 | 2025-04-15 | DATE" and len(bodies) == 1 and stats.attempts == 1
+
+
+def test_truncated_json_is_salvaged_not_raised():
+    from redactagent.llm_client import parse_json_lenient
+
+    full = '{"objects": [{"label": "signature", "bbox_2d": [1, 2, 3, 4]}, {"label": "seal", "bbox_2d": [5, 6, 7, 8]}]}'
+    assert parse_json_lenient(full)["objects"][1]["label"] == "seal"
+    cut = full[:-30]  # token limit hit inside the second object
+    assert parse_json_lenient(cut) == {"objects": [{"label": "signature", "bbox_2d": [1, 2, 3, 4]}]}
+    assert parse_json_lenient('{"objects": [{"label": "sig') == {} or parse_json_lenient('{"objects": [{"label": "sig') == {"objects": []}
+    assert parse_json_lenient("not json") == {}

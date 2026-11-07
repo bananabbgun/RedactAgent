@@ -65,7 +65,7 @@ def _resize_for_vlm(img: Image.Image, max_side: int = 1260) -> tuple[Image.Image
 
 def vlm_detect(img: Image.Image, client: ModelClient) -> tuple[list[VisionHit], CallStats]:
     small, scale = _resize_for_vlm(img)
-    out, stats = client.chat_json(SYSTEM, PROMPT, SCHEMA, images=[small], max_tokens=512, num_ctx=4096)
+    out, stats = client.chat_json(SYSTEM, PROMPT, SCHEMA, images=[small], max_tokens=1024, num_ctx=4096)
     W, H = img.size
     hits = []
     for o in out.get("objects", []):
