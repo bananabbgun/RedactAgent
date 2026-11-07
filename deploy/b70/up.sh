@@ -1,9 +1,9 @@
 #!/bin/bash
 # One-command deployment of RedactAgent on a 2x Intel Arc Pro B70 host (tested on Intel Cloud, Ubuntu 26.04,
-# vllm/vllm-openai-xpu:v0.26.0). Card 0 serves the contextual LLM, card 1 the vision-language model.
+# vllm/vllm-openai-xpu:v0.33.0). Card 0 serves the contextual LLM, card 1 the vision-language model.
 #
-#   bash deploy/b70/up.sh                 # accuracy mode (gpt-oss-20b), web UI on 127.0.0.1:8080
-#   TEXT_MODEL=Qwen/Qwen3-8B TEXT_EXTRA="--quantization fp8" bash deploy/b70/up.sh   # throughput mode
+#   bash deploy/b70/up.sh                       # accuracy mode: gpt-oss-20b, greedy + loop guard; UI on 127.0.0.1:8080
+#   RA_TEMPERATURE=1.0 bash deploy/b70/up.sh    # throughput mode: same model, sampled (no loops, ~50 % more pages/min)
 #
 # Environment knobs:
 #   TEXT_MODEL / VISION_MODEL   Hugging Face model ids
@@ -13,7 +13,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/../.."
 
-IMG=${IMG:-vllm/vllm-openai-xpu:v0.26.0}
+IMG=${IMG:-vllm/vllm-openai-xpu:v0.33.0}
 TEXT_MODEL=${TEXT_MODEL:-openai/gpt-oss-20b}
 VISION_MODEL=${VISION_MODEL:-Qwen/Qwen2.5-VL-7B-Instruct}
 GPU_UTIL=${GPU_UTIL:-0.85}

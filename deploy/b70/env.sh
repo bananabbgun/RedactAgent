@@ -6,4 +6,6 @@ export RA_TEXT_MODEL=text RA_VISION_MODEL=vision
 export RA_OCR_THREADS=${RA_OCR_THREADS:-8}
 # the default text model (gpt-oss-20b) reasons first; keep it short (unset for Qwen3)
 export RA_REASONING_EFFORT=${RA_REASONING_EFFORT-low}
+# accuracy mode decodes greedily (default 0); throughput mode: RA_TEMPERATURE=1.0
+export RA_TEMPERATURE=${RA_TEMPERATURE:-0}
 [ -d .venv ] && source .venv/bin/activate
