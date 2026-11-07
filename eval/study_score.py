@@ -20,11 +20,12 @@ sys.path.insert(0, str(ROOT))
 
 from eval.evaluate import mask_of  # noqa: E402
 
-GT_DIR = ROOT / "data" / "synthetic_v2" / "gt"
+TASKS = {t["id"]: t for t in json.loads((ROOT / "study" / "tasks.json").read_text())["tasks"]}
 
 
 def score(doc_id: str, boxes: list[list[int]]) -> tuple[float, float]:
-    gt = json.loads((GT_DIR / f"{doc_id}.json").read_text())
+    gt_path = ROOT / Path(TASKS[doc_id]["image"]).parent.parent / "gt" / f"{doc_id}.json"
+    gt = json.loads(gt_path.read_text())
     w, h = gt["width"], gt["height"]
     pmask = mask_of(boxes, w, h)
     gmask = mask_of([it["bbox"] for it in gt["items"]], w, h)
@@ -40,7 +41,7 @@ def score(doc_id: str, boxes: list[list[int]]) -> tuple[float, float]:
 
 
 def main(paths: list[str]):
-    tasks = {t["id"]: t for t in json.loads((ROOT / "study" / "tasks.json").read_text())["tasks"]}
+    tasks = TASKS
     rows = {"manual": [], "assisted": []}
     for p in paths:
         r = json.loads(Path(p).read_text())
