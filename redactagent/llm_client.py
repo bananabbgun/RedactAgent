@@ -12,6 +12,7 @@ from __future__ import annotations
 import base64
 import io
 import json
+import logging
 import time
 from dataclasses import dataclass
 
@@ -19,6 +20,8 @@ import httpx
 from PIL import Image
 
 from . import config
+
+log = logging.getLogger("redactagent.llm")
 
 
 def is_looping(text: str, min_repeats: int = 3, min_span: int = 400, max_period: int = 400) -> bool:
@@ -183,6 +186,8 @@ class ModelClient:
                     checked = chunks
                     if is_looping("".join(reasoning)) or is_looping("".join(content)):
                         finish = "loop"
+                        log.warning("loop-guard: cancelled a looping completion after %d chunks (temperature %s)",
+                                    chunks, body.get("temperature"))
                         break  # leaving the context closes the connection; vLLM aborts the request
         if finish == "loop" and not usage:
             usage = {"prompt_tokens": 0, "completion_tokens": chunks}
