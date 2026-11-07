@@ -1,0 +1,109 @@
+# Narration for the final (Stage II) video. Each segment: list of [caption, spoken] pairs (spoken may be omitted
+# when identical). {placeholders} are filled from result files by scripts/make_final_video.py.
+# Spoken text spells out acronyms so the Kokoro voice pronounces them clearly.
+
+intro:   # slide 1 (cover)
+  - ["This is RedactAgent: on-premises AI that finds and removes personal data from scanned documents.",
+     "This is Redact Agent: on-premises A I that finds and removes personal data from scanned documents."]
+
+problem:   # slide 2
+  - ["Hospitals, law firms and government agencies share sensitive records every day,"]
+  - ["for research, court cases, insurance claims and public-information requests."]
+  - ["Every copy has to be de-identified first, and today that is mostly done by hand."]
+  - ["Cloud AI is not an option: these documents are exactly the data that may not leave the building.",
+     "Cloud A I is not an option: these documents are exactly the data that may not leave the building."]
+
+solution:   # slide 4
+  - ["RedactAgent reads each page, detects personal data with rules, a local language model and a local vision model,",
+     "Redact Agent reads each page, detects personal data with rules, a local language model and a local vision model,"]
+  - ["and then does something new: a second model attacks the redacted page,"]
+  - ["asking whether anyone could still be identified, before a person approves the release."]
+
+env:   # terminal on the organiser's instance: hostname, xpu-smi, docker
+  - ["Everything you see next runs on the Intel Cloud instance provided by the organisers."]
+  - ["Two Intel Arc Pro B70 cards, 32 gigabytes each, and two Xeon 6 processors.",
+     "Two Intel Arc Pro B seventy cards, thirty-two gigabytes each, and two Xeon six processors."]
+  - ["Card zero serves gpt-oss-20b with the native MXFP4 kernel;",
+     "Card zero serves G P T O S S twenty B, with the native M X F P four kernel;"]
+  - ["card one serves the Qwen 2.5 VL vision model. Both through vLLM, both resident all the time.",
+     "card one serves the Qwen two point five V L vision model. Both through V L L M, both resident all the time."]
+
+system:   # /system page
+  - ["The system page shows live power and memory for both cards, read from xpu-smi.",
+     "The system page shows live power and memory for both cards, read from X P U S M I."]
+
+review:   # single document, research policy, detections
+  - ["Here is a scanned discharge summary. I choose the research policy and run detection."]
+  - ["Names, ID numbers, dates, contacts, the signature and the seal are found,",
+     "Names, I D numbers, dates, contacts, the signature and the seal are found,"]
+  - ["and every box shows which layer found it: rule, language model, vision model, or agent."]
+
+risk:
+  - ["The agentic check then reads the redacted page as an attacker would,"]
+  - ["and reports a re-identification risk, here with the clues it found."]
+
+policies:
+  - ["Policies are plain files a compliance officer can read."]
+  - ["Research keeps consistent pseudonyms and the year. A court filing keeps the parties."]
+  - ["A public release removes private individuals but keeps the physician acting officially."]
+
+export:
+  - ["Export burns the redaction into the pixels, so there is no hidden text layer,"]
+  - ["and every decision goes into a hash-chained audit log."]
+
+chinese:
+  - ["Traditional Chinese works the same way: national ID checksums, ROC dates and red seals.",
+     "Traditional Chinese works the same way: national I D checksums, R O C dates and red seals."]
+
+batch:
+  - ["For archives there is a batch mode. Thirty-six documents, eight in flight,"]
+  - ["both cards busy at once. This part is sped up."]
+  - ["{batch_ppm} pages per minute, with the full pipeline including the agentic check.",
+     "{batch_ppm_spoken} pages per minute, with the full pipeline including the agentic check."]
+
+verify:   # terminal: live evaluation on v3
+  - ["Now verification, on the same machine."]
+  - ["This corpus, v3, was generated before any result was seen and was never used for development.",
+     "This corpus, v three, was generated before any result was seen, and was never used for development."]
+  - ["Thirty pages, three hundred ninety-six personal-data items, scored at pixel level."]
+  - ["A page that fails counts as fully leaked; nothing is skipped."]
+  - ["The result: {v3_recall} recall at {v3_precision} precision.",
+     "The result: {v3_recall_spoken} recall, at {v3_precision_spoken} precision."]
+
+perf:   # slides 9 + 10
+  - ["Getting there took measurement, not guesswork."]
+  - ["OCR threads were fighting for 344 cores; pinning eight threads per engine made OCR nine times faster.",
+     "O C R threads were fighting for three hundred forty-four cores; pinning eight threads per engine made O C R nine times faster."]
+
+perf_model:   # model selection slide
+  - ["We compared four open models on card zero with the same code."]
+  - ["gpt-oss-20b had the best held-out recall and precision at the same time, so it is the default;",
+     "G P T O S S twenty B had the best held-out recall and precision at the same time, so it is the default;"]
+  - ["Qwen3-8B in FP8 remains a faster throughput mode.",
+     "Qwen three eight B in F P eight remains a faster throughput mode."]
+
+loops:   # slide on robustness (reasoning loops)
+  - ["We also found a failure that only shows up at scale."]
+  - ["The reasoning model sometimes repeats itself. Usually it recovers, sometimes it never stops."]
+  - ["RedactAgent streams every answer, recognises a loop that will not end, cancels it and retries."]
+
+accuracy:   # slides 11 + 12
+  - ["Across three corpora, the full system reaches {v1_recall}, {v2_recall} and {v3_recall} recall.",
+     "Across three corpora, the full system reaches {v1_recall_spoken}, {v2_recall_spoken}, and {v3_recall_spoken} recall."]
+
+accuracy_miss:   # where it misses
+  - ["Rules alone find about sixty percent on unseen documents; the agentic check adds the last few points."]
+  - ["We also report where it still misses, and an evaluation bug we found and fixed along the way."]
+
+business:   # slides 13 + 14
+  - ["One two-card B70 host de-identifies about {pages_hour} pages an hour.",
+     "One two-card B seventy host de-identifies about {pages_hour_spoken} pages an hour."]
+
+business_model:   # business model slide
+  - ["We see it as an on-premises privacy appliance: ASUS hardware, RedactAgent pre-installed,",
+     "We see it as an on-premises privacy appliance: Asus hardware, Redact Agent pre-installed,"]
+  - ["with policy packs for Taiwan, starting where the pain is highest: hospital records and research offices."]
+
+outro:   # summary slide
+  - ["RedactAgent. Share the document, not the person.", "Redact Agent. Share the document, not the person."]
+  - ["Everything shown is reproducible from the repository with one command. Thank you."]

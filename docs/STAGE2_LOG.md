@@ -183,3 +183,65 @@ gpt-oss-20b + Qwen2.5-VL-7B, full pipeline including the agentic check, 36 pages
 Eight pages in flight is the sweet spot (the web app and batch mode default to `RA_WORKERS=8`); beyond 16 the
 host-side work and long reasoning tails make throughput collapse, so the queue deliberately caps concurrency.
 The p95 at one page in flight fell from 105 s to 47 s with the runaway-reasoning retry.
+
+## 2026-11-07/08 — Reasoning loops at scale: diagnosis, vLLM 0.33, decoding temperature
+
+While recording the demo, the very first page took 114 s: both the greedy call and the sampled retry ran to the
+token cap. That started a systematic look at gpt-oss's repetition loops.
+
+**What a loop looks like.** The reasoning repeats a sentence cycle verbatim ("Also the role of the patient is
+subject. Also the role of the physician signature is professional. ...", period 20–250 characters) until the
+token cap. During some periods the server also returned pure garbage ("!!!!…", the signature of NaN logits).
+
+**Instrumentation.** `RA_LOOP_GUARD_OBSERVE=1` streams every call and records where a periodicity detector
+(`llm_client.is_looping`: the tail is one chunk repeated ≥ 3 times) would fire, without cancelling anything;
+`RA_LOOP_DUMP` saves the completions. 380 streamed calls on v1+v2 (vLLM 0.26, greedy):
+
+| | Calls |
+|---|---|
+| detector fired | 30 |
+| … loop ended by itself with a complete answer | 23 (most before 1,800 chunks, two after ~3,000) |
+| … ran to the token cap | 7 |
+| ran to the cap without the detector firing | 0 |
+| normal completions: length p50 / p99 / max | 122 / 1,280 / 2,028 chunks |
+
+Cancelling at the first sign of repetition therefore throws away answers the model would have finished:
+in two v1+v2 runs it cost 0.4–0.7 recall points. The guard now cancels only a loop that is still running after
+2,000 chunks (`RA_LOOP_MIN_CHUNKS`), then retries with sampling (up to 2 retries).
+
+**Degraded periods on vLLM 0.26.** Loops are not independent: in one round of v2, 27 of 111 calls ran to the
+cap and 7 returned "!!!!" garbage within three minutes (5.2 pages/min, recall 93.4 %), and the next run on the
+same server was still slow (8.7 pages/min). Prefix caching is not the cause (same loop rate with
+`--no-enable-prefix-caching`).
+
+**vLLM 0.33.0** (released 2026-11-02; the B70 instance had 0.26.0): same XPU MXFP4 MoE backend, no garbage
+episodes and no degraded periods observed, v2 recall higher; greedy decoding still loops sometimes (7 of 402
+calls ran to the cap, all on v1).
+
+**Decoding temperature.** OpenAI recommends sampling gpt-oss at temperature 1.0; greedy decoding is what makes it
+loop. Observe mode, vLLM 0.33, v1 / v2 recall and precision of the full system (D), two rounds each:
+
+| Text-model decoding | v1 D | v2 D | Pages / min (v1, v2) | Calls that looped / ran to the cap |
+|---|---|---|---|---|
+| greedy (T = 0) | 98.8 / 98.1, 98.3 / 98.1 | 97.0 / 94.7, 97.2 / 93.0 | 15.0–19.9, 24.0–24.5 | 23 / 7 of 402 |
+| T = 0.6 | 98.5 / 97.6, 98.5 / 97.6 | 94.7 / 93.9, 94.9 / 93.5 | 32.6–37.1, 28.3–31.2 | 2 / 0 of 264 |
+| T = 1.0 | 98.6 / 97.2, 98.3 / 97.7 | 95.2 / 93.9, 94.4 / 94.6 | 33.1–35.2, 28.8–30.4 | 0 / 0 of 264 |
+
+Sampling removes the loops and raises throughput by ~50 %, but greedy decoding is more thorough on the harder
+held-out corpus (+2 recall points on v2).
+
+Greedy decoding **with the loop guard** (new code `1313367`, vLLM 0.33, two rounds):
+
+| | v1 D | v2 D | Pages / min (v1, v2) | Loops cancelled (all rescued) |
+|---|---|---|---|---|
+| greedy + loop guard | 98.8 / 97.4, 99.0 / 97.9 | 96.7 / 92.5, 97.0 / 93.1 | 22.9–24.6, 23.8–25.1 | 1–2 per corpus run |
+
+**Decision (taken on v1/v2 only, before any further v3 run):**
+- *Accuracy mode (default):* vLLM XPU **0.33.0** on both cards, gpt-oss-20b with greedy decoding and the loop
+  guard (cancel a loop still running after 2,000 chunks, ≤ 2 sampled retries).
+- *Throughput mode:* the same model sampled at temperature 1.0 (`RA_TEMPERATURE=1.0`): no loops, ~50 % more
+  pages per minute, ~2 recall points lower on v2. It replaces Qwen3-8B FP8 as the throughput mode (better on
+  both speed and accuracy on this stack).
+
+Because this changes the final configuration, v1, v2, v3 and the benchmark are run again (final run 3); runs 1
+and 2 stay in the repository and all v3 results are reported.
