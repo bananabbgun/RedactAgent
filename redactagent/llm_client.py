@@ -134,8 +134,9 @@ class ModelClient:
         """POST a chat completion. For reasoning models, decoding occasionally falls into a repetition loop in the
         reasoning ("Also line 25 date. Also line 25 date. ...") that would run to the token cap and return no answer.
         On vLLM XPU this happens at random (~5 % of calls, different pages in different runs), so it is handled at run
-        time: the response is streamed, a loop is detected from the text itself and the request is cancelled within a
-        few hundred tokens, then retried with sampling (RA_RETRY_TEMPERATURE, up to RA_MAX_RETRIES times). A
+        time: the response is streamed, a loop is detected from the text itself, and a request still looping after
+        RA_LOOP_MIN_CHUNKS streamed chunks is cancelled (most loops end by themselves earlier, with a complete greedy
+        answer) and retried with sampling (RA_RETRY_TEMPERATURE, up to RA_MAX_RETRIES times). A
         repetition penalty is deliberately not sent by default: on vLLM XPU 0.26 requests carrying
         repetition_penalty were followed by many more looping requests (see docs/STAGE2_LOG.md)."""
         if not config.REASONING_EFFORT:
@@ -184,11 +185,13 @@ class ModelClient:
                     content.append(delta.get("content") or "")
                     finish = c.get("finish_reason") or finish
                     chunks += 1
-                if chunks - checked >= 32 and fired is None:
+                if chunks - checked >= 32:
                     checked = chunks
                     if is_looping("".join(reasoning)) or is_looping("".join(content)):
-                        fired = chunks
-                        if not config.LOOP_GUARD_OBSERVE:
+                        fired = chunks if fired is None else fired
+                        # most loops end by themselves with a complete answer; cancel only one that is still
+                        # looping past the length of any normal completion (calibrated on 380 calls, STAGE2_LOG)
+                        if chunks >= config.LOOP_MIN_CHUNKS and not config.LOOP_GUARD_OBSERVE:
                             finish = "loop"
                             log.warning("loop-guard: cancelled a looping completion after %d chunks (temperature %s)",
                                         chunks, body.get("temperature"))

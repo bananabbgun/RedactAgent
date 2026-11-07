@@ -200,6 +200,7 @@ def test_streamed_loop_is_cancelled_and_retried(monkeypatch):
 
     monkeypatch.setattr(config, "REASONING_EFFORT", "low")
     monkeypatch.setattr(config, "STREAM_LOOP_GUARD", True)
+    monkeypatch.setattr(config, "LOOP_MIN_CHUNKS", 0)
     bodies, served = [], []
 
     def sse(delta, finish=None):
@@ -232,3 +233,38 @@ def test_streamed_loop_is_cancelled_and_retried(monkeypatch):
     assert bodies[0]["temperature"] == 0 and bodies[1]["temperature"] == config.RETRY_TEMPERATURE
     assert all(b["stream"] for b in bodies) and "repetition_penalty" not in bodies[1]
     assert stats.completion_tokens == len(served) + 20
+
+
+def test_loop_that_ends_by_itself_is_not_cancelled(monkeypatch):
+    import json as _json
+    from contextlib import contextmanager
+
+    from redactagent import config, llm_client
+
+    monkeypatch.setattr(config, "REASONING_EFFORT", "low")
+    monkeypatch.setattr(config, "STREAM_LOOP_GUARD", True)
+    monkeypatch.setattr(config, "LOOP_MIN_CHUNKS", 500)
+    bodies = []
+
+    def sse(delta, finish=None):
+        return "data: " + _json.dumps({"choices": [{"delta": delta, "finish_reason": finish}]})
+
+    @contextmanager
+    def stream(method, url, json):
+        bodies.append(json)
+
+        class R:
+            def raise_for_status(self):
+                pass
+
+            def iter_lines(self):
+                for _ in range(200):  # a short loop the model escapes from
+                    yield sse({"reasoning_content": "Also line 25 date. "})
+                yield sse({"reasoning_content": "Enough. Output now."})
+                yield sse({"content": "25 | 2025-04-15 | DATE"}, "stop")
+        yield R()
+
+    c = llm_client.ModelClient("text", backend="openai", base_url="http://x")
+    monkeypatch.setattr(c.http, "stream", stream)
+    text, stats = c.chat_text("sys", "user")
+    assert text == "25 | 2025-04-15 | DATE" and len(bodies) == 1 and stats.attempts == 1

@@ -20,6 +20,7 @@ RETRY_TEMPERATURE = float(os.getenv("RA_RETRY_TEMPERATURE", "0.7"))  # sampled r
 MAX_RETRIES = int(os.getenv("RA_MAX_RETRIES", "2"))
 STREAM_LOOP_GUARD = os.getenv("RA_STREAM_LOOP_GUARD", "1") == "1"  # stream and cancel a looping call early
 LOOP_DUMP_DIR = Path(os.environ["RA_LOOP_DUMP"]) if os.getenv("RA_LOOP_DUMP") else None  # save cancelled texts
+LOOP_MIN_CHUNKS = int(os.getenv("RA_LOOP_MIN_CHUNKS", "2000"))  # normal completions: p99 1280, max 2028 chunks
 LOOP_GUARD_OBSERVE = os.getenv("RA_LOOP_GUARD_OBSERVE", "0") == "1"  # stream, detect, never cancel (calibration)
 RETRY_REPETITION_PENALTY = float(os.getenv("RA_RETRY_REPETITION_PENALTY", "1.0"))  # 1.0 = not sent (see llm_client)
 VISION_MODEL = os.getenv("RA_VISION_MODEL", "qwen2.5vl:7b")
