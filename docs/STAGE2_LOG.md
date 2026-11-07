@@ -291,3 +291,11 @@ reasoning allowance had silently been added to the vision calls too, which hid t
 1,024 tokens for the vision model and a lenient parser that keeps every complete element and never fails a page.
 Accuracy-mode runs never reached the 512-token limit (a truncation would have failed a page), so they are
 unaffected. Throughput mode was then run again on all three corpora (table above).
+
+### Recording on the instance (final video)
+
+`scripts/record_b70.py` (web app) and `scripts/record_terminal.py` (real JupyterLab terminal: hardware, both
+served models, a **live v3 evaluation**, GPU power) on the final configuration. The terminal recording was taken
+twice (the first take showed a JupyterLab notification toast); both live v3 runs are kept in
+`eval/results_b70/video_v3_live/`: take 1 96.2 / 95.9, **take 2 (in the video) 96.5 / 94.8**. Together with final
+runs 1–3 these are all v3 evaluations ever made; none was used to change the system.

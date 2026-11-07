@@ -14,7 +14,7 @@ Theme **Workplace AI** · Global Online Track · Yu-Tsen Tsai (蔡侑岑), CSIE,
 | Model information | [`docs/MODELS.md`](docs/MODELS.md) |
 | Performance data | [`eval/results_b70/`](eval/results_b70/) · [`eval/tune3/`](eval/tune3/) |
 
-![RedactAgent review UI](deck/assets/ui.png)
+![RedactAgent review UI on the 2x Arc Pro B70 instance](deck/assets/ui_b70.png)
 
 ## What it does
 
@@ -60,7 +60,16 @@ v3 has been evaluated three times in total, each time once with a configuration 
 tuning: 96.7 / 94.8 (final run 1), 96.2 / 95.0 (run 2), 96.7 / 96.0 (run 3, above). All three are in
 [`eval/results_b70/`](eval/results_b70/) and [`docs/STAGE2_LOG.md`](docs/STAGE2_LOG.md).
 
-Throughput and energy: see [`eval/results_b70/bench/`](eval/results_b70/bench/) (concurrency sweep with GPU board power).
+**Throughput and energy** (full pipeline incl. agentic check, board power of both cards from `xpu-smi`):
+
+| Mode | Pages in flight | Pages / min | Latency p50 / p95 | GPU power | v3 recall / precision |
+|---|---|---|---|---|---|
+| Accuracy (default: greedy + loop guard) | 8 | 21.0 | 15.2 / 39.6 s | 362 W | 96.7 / 96.0 |
+| Accuracy | 16 | 25.5 | 23.4 / 58.2 s | 347 W | |
+| Throughput (`RA_TEMPERATURE=1.0`) | 8 | 34.7 | 11.6 / 21.2 s | 382 W | 96.0 / 94.5 |
+| Throughput | 16 | 42.2 | 18.4 / 28.2 s | 365 W | |
+
+Raw data: [`eval/results_b70/bench/`](eval/results_b70/bench/), [`eval/results_b70/fast/`](eval/results_b70/fast/).
 Model selection: four text models compared on the same hardware – [`docs/MODELS.md`](docs/MODELS.md).
 Every measurement and what it changed: [`docs/STAGE2_LOG.md`](docs/STAGE2_LOG.md).
 

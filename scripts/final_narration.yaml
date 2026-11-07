@@ -73,8 +73,8 @@ verify:   # terminal: live evaluation on v3
      "This corpus, v three, was generated before any result was seen, and was never used for development."]
   - ["Thirty pages, three hundred ninety-six personal-data items, scored at pixel level."]
   - ["A page that fails counts as fully leaked; nothing is skipped."]
-  - ["The result: {v3_recall} recall at {v3_precision} precision.",
-     "The result: {v3_recall_spoken} recall, at {v3_precision_spoken} precision."]
+  - ["The result on screen: {live_recall} recall at {live_precision} precision, in line with our final runs.",
+     "The result on screen: {live_recall_spoken} recall, at {live_precision_spoken} precision, in line with our final runs."]
 
 perf:   # slides 9 + 10
   - ["Getting there took measurement, not guesswork."]
