@@ -46,17 +46,19 @@ Pages: `/` single-document review, `/batch` many documents in flight, `/system` 
 
 ## Results (2x Arc Pro B70, final configuration)
 
-Text model **gpt-oss-20b** (MXFP4, native XPU kernel) on card 0, **Qwen2.5-VL-7B** on card 1, 8 pages in flight,
-strict policy. Recall / precision in %, pixel-level scoring; a page that fails to process counts as fully leaked.
+Text model **gpt-oss-20b** (MXFP4, native XPU kernel; greedy decoding + loop guard) on card 0, **Qwen2.5-VL-7B**
+on card 1, both on vLLM XPU 0.33, 8 pages in flight, strict policy. Recall / precision in %, pixel-level scoring;
+a page that fails to process counts as fully leaked.
 
 | Corpus | Pages / PII items | Rules only (regex/DLP baseline) | **RedactAgent (all layers + agentic check)** | Pages with zero leaks |
 |---|---|---|---|---|
-| v1 development | 36 / 582 | 75.4 / 98.6 | **99.0 / 97.8** | 86 % |
-| v2 held-out (used for error analysis) | 30 / 396 | 59.6 / 91.9 | **96.2 / 93.8** | 63 % |
-| **v3 never used for development** | 30 / 396 | 59.3 / 93.9 | **96.2 / 95.0** | 63 % |
+| v1 development | 36 / 582 | 75.4 / 98.6 | **98.5 / 98.4** | 81 % |
+| v2 held-out (used for error analysis) | 30 / 396 | 59.6 / 92.3 | **96.7 / 92.9** | 70 % |
+| **v3 never used for development** | 30 / 396 | 59.3 / 93.4 | **96.7 / 96.0** | 63 % |
 
-v3 was evaluated twice in total, never for tuning: once with the first final configuration (96.7 / 94.8) and once
-after a robustness fix found on v1 (above). See [`docs/STAGE2_LOG.md`](docs/STAGE2_LOG.md).
+v3 has been evaluated three times in total, each time once with a configuration fixed on v1/v2 and never for
+tuning: 96.7 / 94.8 (final run 1), 96.2 / 95.0 (run 2), 96.7 / 96.0 (run 3, above). All three are in
+[`eval/results_b70/`](eval/results_b70/) and [`docs/STAGE2_LOG.md`](docs/STAGE2_LOG.md).
 
 Throughput and energy: see [`eval/results_b70/bench/`](eval/results_b70/bench/) (concurrency sweep with GPU board power).
 Model selection: four text models compared on the same hardware – [`docs/MODELS.md`](docs/MODELS.md).
@@ -68,10 +70,14 @@ Highlights of the Stage II engineering:
   engine made OCR 9x faster.
 - **One model per card**, LLM and VLM layers of a page run concurrently.
 - **FP8** made Qwen3-8B 75 % faster at the same accuracy; **gpt-oss-20b** was chosen for the best held-out accuracy.
+- **Two modes, one model**: accuracy mode decodes greedily; throughput mode samples gpt-oss at temperature 1.0
+  (`RA_TEMPERATURE=1.0`) – no reasoning loops and ~40 % more pages per minute, ~2 recall points lower on v2.
 - **Held-out documents exposed a generalisation gap** (84 % recall on new document types); general fixes plus the
   agentic re-identification check closed most of it, confirmed on the v3 corpus that was never used for development.
-- **Reasoning loops**: gpt-oss occasionally loops in its reasoning until the token cap; such calls are retried with
-  sampling. A repetition penalty looked like a fix but destabilised the vLLM XPU server – measured, documented, dropped.
+- **Reasoning loops at scale**: greedy gpt-oss occasionally repeats its reasoning until the token cap. Streaming
+  every call in an observe mode showed most loops end by themselves; the **loop guard** cancels only a loop still
+  running after 2,000 tokens and resamples. vLLM XPU 0.26 → 0.33 removed bursts of garbage output. A repetition
+  penalty looked like a fix but destabilised the server – measured, documented, dropped.
 - An evaluation bug (failed pages silently skipped) was found and fixed during model selection.
 
 ## Quick start

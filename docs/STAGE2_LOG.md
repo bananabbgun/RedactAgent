@@ -245,3 +245,17 @@ Greedy decoding **with the loop guard** (new code `1313367`, vLLM 0.33, two roun
 
 Because this changes the final configuration, v1, v2, v3 and the benchmark are run again (final run 3); runs 1
 and 2 stay in the repository and all v3 results are reported.
+
+## Final run 3 — vLLM XPU 0.33.0 on both cards, accuracy mode (greedy + loop guard), 2026-11-07
+
+Code `490c1c1`; both servers restarted on `vllm/vllm-openai-xpu:v0.33.0`; 8 pages in flight. Recall / precision
+in %, clean pages = pages with zero leaked items. Final run 2 moved to `eval/results_b70/run2/`.
+
+| Corpus | A rules | B + LLM | C + VLM | **D + agentic check** | Clean pages (D) | Pages / min | Latency p50 / p95 | Loops cancelled |
+|---|---|---|---|---|---|---|---|---|
+| v1 | 75.4 / 98.6 | 95.5 / 98.9 | 97.3 / 98.5 | **98.5 / 98.4** | 81 % | 22.8 | 14.3 / 49.5 s | 2 (both rescued) |
+| v2 | 59.6 / 92.3 | 93.9 / 95.1 | 94.7 / 95.3 | **96.7 / 92.9** | 70 % | 25.8 | 13.7 / 43.6 s | 0 |
+| **v3** | 59.3 / 93.4 | 94.4 / 95.9 | 95.5 / 96.1 | **96.7 / 96.0** | 63 % | 21.9 | 15.4 / 36.3 s | 0 |
+
+All v3 results so far (each run once, never used for tuning): run 1 96.7 / 94.8, run 2 96.2 / 95.0 (11.3 pages/min,
+one unrescued loop), **run 3 96.7 / 96.0 (21.9 pages/min)**.
