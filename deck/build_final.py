@@ -90,8 +90,17 @@ def build(out_pdf: Path):
             f'<link rel="stylesheet" href="deck.css"></head><body>{body}</body></html>')
     (DECK / "final.html").write_text(html, encoding="utf-8")
     out_pdf.parent.mkdir(parents=True, exist_ok=True)
-    subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--no-pdf-header-footer", "--allow-file-access-from-files",
-                    f"--print-to-pdf={out_pdf}", (DECK / "final.html").as_uri()], check=True, capture_output=True)
+    if Path(CHROME).exists():
+        subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--no-pdf-header-footer", "--allow-file-access-from-files",
+                        f"--print-to-pdf={out_pdf}", (DECK / "final.html").as_uri()], check=True, capture_output=True)
+    else:  # e.g. on the B70 host: Playwright's Chromium
+        from playwright.sync_api import sync_playwright
+        with sync_playwright() as p:
+            b = p.chromium.launch(args=["--allow-file-access-from-files"])
+            page = b.new_page(viewport={"width": 1280, "height": 720})
+            page.goto((DECK / "final.html").as_uri(), wait_until="networkidle")
+            page.pdf(path=str(out_pdf), width="1280px", height="720px", print_background=True)
+            b.close()
     print(f"wrote {out_pdf}")
 
 
