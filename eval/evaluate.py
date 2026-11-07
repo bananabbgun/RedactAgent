@@ -147,17 +147,22 @@ def run_concurrent(limit: int | None, workers: int):
         return doc["id"], f"{len(job.findings)} findings in {job.timings['total']:.1f}s"
 
     t0 = time.perf_counter()
+    failed = 0
     with ThreadPoolExecutor(max_workers=workers) as ex:
         futs = [ex.submit(one, d) for d in todo]
         for k, f in enumerate(as_completed(futs), 1):
             doc_id, msg = f.result()
-            print(f"[{k}/{len(todo)}] {doc_id}: {msg}", flush=True)
+            ok = (OUT / "raw" / f"{doc_id}.json").exists()
+            failed += not ok
+            print(f"[{k}/{len(todo)}] {doc_id}: {msg if ok else 'ERROR ' + str(msg)}", flush=True)
     wall = time.perf_counter() - t0
     if todo:
+        done = len(todo) - failed
         (OUT / "throughput.json").write_text(json.dumps(
-            {"pages": len(todo), "workers": workers, "wall_seconds": wall,
-             "pages_per_minute": len(todo) / wall * 60, "hardware": HW_LABEL}, indent=1))
-        print(f"{len(todo)} pages in {wall:.1f}s with {workers} workers -> {len(todo) / wall * 60:.1f} pages/min")
+            {"pages": done, "failed": failed, "workers": workers, "wall_seconds": wall,
+             "pages_per_minute": done / wall * 60, "hardware": HW_LABEL}, indent=1))
+        print(f"{done} pages in {wall:.1f}s with {workers} workers -> {done / wall * 60:.1f} pages/min"
+              + (f"  ({failed} FAILED)" if failed else ""))
 
 
 def metrics():
@@ -174,9 +179,8 @@ def metrics():
         fps_all = []
         for doc in index:
             raw = OUT / "raw" / f"{doc['id']}.json"
-            if not raw.exists():
-                continue
-            r = json.loads(raw.read_text())
+            # a page that failed to process counts as fully missed (no silent exclusion)
+            r = json.loads(raw.read_text()) if raw.exists() else {"findings": [], "failed": True}
             gt = json.loads((DATA / "gt" / f"{doc['id']}.json").read_text())
             caught, t, n, fps = score_doc(gt, r["findings"], allowed)
             ndocs += 1
@@ -189,14 +193,15 @@ def metrics():
             tp += t
             npred += n
             fps_all += [{"doc": doc["id"], "cat": c, "text": x, "sources": s} for c, x, s in fps]
-            if name == "C_full":
+            if name == "C_full" and not r.get("failed"):
                 for k in lat:
                     lat[k].append(r["timings"].get(k, 0.0))
                 tok.append(r["tokens"].get("llm_completion", 0))
+        failed = sum(not (OUT / "raw" / f"{d['id']}.json").exists() for d in index)
         total_ok = sum(v[0] for v in per_cat.values())
         total = sum(v[1] for v in per_cat.values())
         results[name] = {
-            "docs": ndocs, "gt_items": total, "caught": total_ok, "recall": total_ok / max(1, total),
+            "docs": ndocs, "failed_docs": failed, "gt_items": total, "caught": total_ok, "recall": total_ok / max(1, total),
             "precision": tp / max(1, npred), "redaction_boxes": npred, "clean_doc_rate": clean / max(1, ndocs),
             "recall_by_category": {c: (v[0] / v[1] if v[1] else None) for c, v in per_cat.items()},
             "support_by_category": {c: v[1] for c, v in per_cat.items()},

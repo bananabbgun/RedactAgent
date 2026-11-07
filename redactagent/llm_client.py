@@ -76,10 +76,11 @@ class ModelClient:
                 "response_format": {"type": "json_schema", "json_schema": {"name": "result", "schema": schema}},
                 "chat_template_kwargs": {"enable_thinking": bool(self.think)},
             }
+            self._reasoning(body)
             r = self.http.post(f"{self.base_url}/v1/chat/completions", json=body)
             r.raise_for_status()
             data = r.json()
-            content = data["choices"][0]["message"]["content"]
+            content = data["choices"][0]["message"]["content"] or "{}"
             usage = data.get("usage", {})
             stats = CallStats(time.perf_counter() - t0, usage.get("prompt_tokens", 0), usage.get("completion_tokens", 0))
         try:
@@ -106,12 +107,20 @@ class ModelClient:
         body = {"model": self.model, "temperature": 0, "max_tokens": max_tokens,
                 "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
                 "chat_template_kwargs": {"enable_thinking": bool(self.think)}}
+        self._reasoning(body)
         r = self.http.post(f"{self.base_url}/v1/chat/completions", json=body)
         r.raise_for_status()
         data = r.json()
         usage = data.get("usage", {})
-        return data["choices"][0]["message"]["content"], CallStats(time.perf_counter() - t0, usage.get("prompt_tokens", 0),
+        return data["choices"][0]["message"]["content"] or "", CallStats(time.perf_counter() - t0, usage.get("prompt_tokens", 0),
                                                                     usage.get("completion_tokens", 0))
+
+    def _reasoning(self, body: dict) -> None:
+        """Always-reasoning models (e.g. gpt-oss) spend tokens before the answer: lower the effort and add
+        a reasoning allowance so the answer is not cut off (RA_REASONING_EFFORT=low|medium|high)."""
+        if config.REASONING_EFFORT:
+            body["reasoning_effort"] = config.REASONING_EFFORT
+            body["max_tokens"] = body["max_tokens"] + config.REASONING_TOKENS
 
     def ping(self) -> bool:
         try:

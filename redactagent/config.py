@@ -14,6 +14,8 @@ BACKEND = os.getenv("RA_BACKEND", "ollama")  # "ollama" | "openai"
 BASE_URL = os.getenv("RA_BASE_URL", "http://127.0.0.1:11434")
 VISION_BASE_URL = os.getenv("RA_VISION_BASE_URL", BASE_URL)
 TEXT_MODEL = os.getenv("RA_TEXT_MODEL", "qwen3:8b")
+REASONING_EFFORT = os.getenv("RA_REASONING_EFFORT", "")  # only for always-reasoning models such as gpt-oss
+REASONING_TOKENS = int(os.getenv("RA_REASONING_TOKENS", "2048"))
 VISION_MODEL = os.getenv("RA_VISION_MODEL", "qwen2.5vl:7b")
 TIMEOUT = float(os.getenv("RA_TIMEOUT", "300"))
 # Run the LLM and VLM layers of a page at the same time. Default on for a vLLM backend (separate GPUs);
