@@ -67,25 +67,35 @@ def main():
             marks.append({"label": label, "t": round(time.perf_counter() - t0, 2)})
             print(f"{marks[-1]['t']:7.2f}s  {label}", flush=True)
 
-        page.keyboard.type("clear", delay=20); page.keyboard.press("Enter")
+        # The terminal is drawn on a canvas, so completion is detected from the host side: the shell rewrites a
+        # small file every time its prompt returns (set up before the first `clear`, so it is not in the video).
+        flag = Path(f"/tmp/ra_prompt_{int(time.time())}")
+        page.keyboard.type(f"PROMPT_COMMAND='date +%s.%N > {flag}'", delay=5); page.keyboard.press("Enter")
         page.wait_for_timeout(800)
+        page.keyboard.type("clear", delay=20); page.keyboard.press("Enter")
+        page.wait_for_timeout(1200)
+
+        def wait_prompt(since: float, limit: float):
+            deadline = time.time() + limit
+            while time.time() < deadline:
+                if flag.exists() and float(flag.read_text().strip() or 0) > since:
+                    return True
+                page.wait_for_timeout(300)
+            return False
+
         for label, cmd, after in [s for s in STEPS if s[0] in a.steps.split(",")]:
             mark(label)
             page.keyboard.type(cmd, delay=18)
+            sent = time.time()
             page.keyboard.press("Enter")
-            deadline = time.time() + (900 if label == "eval" else 60)
-            while time.time() < deadline:
-                txt = page.locator(".xterm-rows").inner_text()
-                if label == "eval" and "D_agentic" in txt:
-                    break
-                if label != "eval" and txt.rstrip().endswith("$"):
-                    break
-                page.wait_for_timeout(500)
+            if not wait_prompt(sent, 900 if label == "eval" else 90):
+                print(f"warning: no prompt after {label}", flush=True)
             mark(label + "_done")
             page.wait_for_timeout(after * 1000)
             if label in ("servers", "eval"):
                 page.keyboard.type("clear", delay=20); page.keyboard.press("Enter")
                 page.wait_for_timeout(600)
+        page.screenshot(path=str(out / "terminal_last.png"))
         mark("end")
         video = page.video
         ctx.close()
