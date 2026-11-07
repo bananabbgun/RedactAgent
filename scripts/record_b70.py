@@ -89,6 +89,7 @@ def main():
             r.wait(1100)
         r.move(".risk") if page.locator(".risk").count() else None
         r.mark("risk")
+        page.screenshot(path=str(out / "ui_b70.png"))  # reviewer's view for the final deck (deck/assets/)
         r.wait(3500)
         for pid in ("litigation", "public_release", "research"):
             r.move("#policy")
