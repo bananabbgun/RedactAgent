@@ -112,7 +112,7 @@ def label_png(text: str, out: Path):
 def cut(raw: Path, plan: list[tuple[float, float, float | None]], out: Path, work: Path, tag: str):
     """Concatenate spans of a recording; a span with a target length is sped up and labelled.
     Returns a function mapping raw time -> edited time."""
-    parts, labels, inputs = [], [], ["-i", str(raw)]
+    parts, labels, inputs, n_in = [], [], ["-i", str(raw)], 1
     for i, (s, e, tgt) in enumerate(plan):
         if tgt is None:
             parts.append(f"[0:v]trim=start={s:.2f}:end={e:.2f},setpts=PTS-STARTPTS,scale=1920:1080[v{i}]")
@@ -121,7 +121,7 @@ def cut(raw: Path, plan: list[tuple[float, float, float | None]], out: Path, wor
             png = work / f"label_{tag}_{i}.png"
             label_png(f"waiting for the models  ·  sped up ×{speed:.0f}", png)
             inputs += ["-loop", "1", "-i", str(png)]
-            k = len(inputs) // 2 - 1
+            k, n_in = n_in, n_in + 1
             parts.append(f"[0:v]trim=start={s:.2f}:end={e:.2f},setpts=(PTS-STARTPTS)/{speed:.5f},scale=1920:1080[r{i}];"
                          f"[r{i}][{k}:v]overlay=W-w-30:30:shortest=1[v{i}]")
         labels.append(f"[v{i}]")
@@ -170,41 +170,39 @@ def main():
             narrate_demo(v, [(0.4, audio[key], caps[key])], work / f"c_{tag}_{i}.mp4", work)
             clips.append(work / f"c_{tag}_{i}.mp4")
 
-    slides_block("open", [("Sensitive documents", "intro"), ("Sensitive documents", "problem"),
+    slides_block("open", [("RedactAgent", "intro"), ("Sensitive documents", "problem"),
                           ("Detect, attack, decide", "solution")])
 
     tm = {m["label"]: m["t"] for m in json.loads((work / "terminal_marks.json").read_text())}
     term = work / "terminal_raw.webm"
-    t_env = cut(term, [(tm["hw"] - 0.5, tm["servers_done"] + 3.0, None)], work / "term_env.mp4", work, "te")
+    cut(term, [(tm["hw"] - 0.5, tm["servers_done"] + 3.0, None)], work / "term_env.mp4", work, "te")
     narrate_demo(work / "term_env.mp4", [(0.5, audio["env"], caps["env"])], work / "c_env.mp4", work)
     clips.append(work / "c_env.mp4")
 
     dm = {m["label"]: m["t"] for m in json.loads((work / "marks.json").read_text())}
     demo = work / "demo_b70_raw.webm"
-    plan = [
-        (dm["system"], dm["detect_start"] + 1.0, None),
-        (dm["detect_start"] + 1.0, dm["detect_done"] - 0.3, 3.0),
-        (dm["detect_done"] - 0.3, dm["detect2_start"] + 1.0, None),
-        (dm["detect2_start"] + 1.0, dm["detect2_done"] - 0.3, 2.5),
-        (dm["detect2_done"] - 0.3, dm["batch_start"] + 3.0, None),
-        (dm["batch_start"] + 3.0, dm["batch_done"] - 1.0, 12.0),
-        (dm["batch_done"] - 1.0, dm["end"] + 0.5, None),
+    # one sub-clip per narration segment; a clip holds its last frame while its narration finishes,
+    # so speech never drifts behind what is on screen
+    segments = [
+        ("system", [(dm["system"], dm["review"] - 0.3, None)]),
+        ("review", [(dm["review"] - 0.3, dm["detect_start"] + 1.0, None), (dm["detect_start"] + 1.0, dm["detect_done"] - 0.3, 3.0),
+                    (dm["detect_done"] - 0.3, dm["risk"] - 0.5, None)]),
+        ("risk", [(dm["risk"] - 0.5, dm["select_litigation"] - 0.3, None)]),
+        ("policies", [(dm["select_litigation"] - 0.3, dm["export_click"] - 0.3, None)]),
+        ("export", [(dm["export_click"] - 0.3, dm["exported"] + 0.5, None)]),
+        ("chinese", [(dm["exported"] + 0.5, dm["detect2_start"] + 1.0, None), (dm["detect2_start"] + 1.0, dm["detect2_done"] - 0.3, 2.5),
+                     (dm["detect2_done"] - 0.3, dm["batch"] - 0.2, None)]),
+        ("batch", [(dm["batch"] - 0.2, dm["batch_start"] + 3.0, None), (dm["batch_start"] + 3.0, dm["batch_done"] - 1.0, 12.0),
+                   (dm["batch_done"] - 1.0, dm["end"] + 0.5, None)]),
     ]
-    t_demo = cut(demo, plan, work / "demo_edit.mp4", work, "dm")
-    narrate_demo(work / "demo_edit.mp4", [
-        (0.4, audio["system"], caps["system"]),
-        (t_demo(dm["review"]) + 0.3, audio["review"], caps["review"]),
-        (t_demo(dm["risk"]) - 1.0, audio["risk"], caps["risk"]),
-        (t_demo(dm["select_litigation"]) - 0.5, audio["policies"], caps["policies"]),
-        (t_demo(dm["export_click"]), audio["export"], caps["export"]),
-        (t_demo(dm["detect2_start"]) - 0.5, audio["chinese"], caps["chinese"]),
-        (t_demo(dm["batch"]), audio["batch"], caps["batch"]),
-    ], work / "c_demo.mp4", work)
-    clips.append(work / "c_demo.mp4")
+    for key, plan in segments:
+        cut(demo, plan, work / f"demo_{key}.mp4", work, f"dm_{key}")
+        narrate_demo(work / f"demo_{key}.mp4", [(0.3, audio[key], caps[key])], work / f"c_demo_{key}.mp4", work)
+        clips.append(work / f"c_demo_{key}.mp4")
 
     ev = [(tm["eval"] - 0.5, tm["eval"] + 8.0, None), (tm["eval"] + 8.0, tm["eval_done"] - 6.0, 14.0),
           (tm["eval_done"] - 6.0, tm["power_done"] + 4.0, None)]
-    t_ev = cut(term, ev, work / "term_eval.mp4", work, "tv")
+    cut(term, ev, work / "term_eval.mp4", work, "tv")
     narrate_demo(work / "term_eval.mp4", [(0.5, audio["verify"], caps["verify"])], work / "c_verify.mp4", work)
     clips.append(work / "c_verify.mp4")
 

@@ -130,7 +130,7 @@
   </div>
   <div style="margin-top:34px;font-size:18px;color:#dbe4ff;line-height:1.7">
     GitHub &nbsp;<span class="mono" style="font-size:17px">{{ cfg.github }}</span><br>
-    Demo video &nbsp;<span class="mono" style="font-size:17px">{{ cfg.final_video|default("(link)") }}</span><br>
+    {% if cfg.final_video and not cfg.final_video.startswith("(") %}Demo video &nbsp;<span class="mono" style="font-size:17px">{{ cfg.final_video }}</span><br>{% endif %}
     {% for p in cfg.team %}{{ p.name }} &middot; {{ p.affiliation }}{% endfor %}
   </div>
 </section>

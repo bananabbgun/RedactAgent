@@ -45,6 +45,7 @@ def main():
         ctx = b.new_context(viewport={"width": W, "height": H}, ignore_https_errors=True,
                             record_video_dir=str(out / "_term"), record_video_size={"width": W, "height": H})
         page = ctx.new_page()
+        t_video = time.perf_counter()  # the video starts with the page; marks are relative to it
         # a separate, reset workspace so the user's own JupyterLab layout is untouched and the launcher is shown
         page.goto(f"{base}/lab/workspaces/ra-rec?reset", wait_until="domcontentloaded")
         try:
@@ -75,7 +76,7 @@ def main():
         page.wait_for_selector(".jp-Terminal .xterm-screen", timeout=60000)
         page.wait_for_timeout(1500)
         page.locator(".jp-Terminal").first.click()
-        t0 = time.perf_counter()
+        t0 = t_video
 
         def mark(label):
             marks.append({"label": label, "t": round(time.perf_counter() - t0, 2)})
