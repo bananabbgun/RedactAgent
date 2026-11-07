@@ -1,0 +1,18 @@
+{
+ "A_deterministic": {
+  "missed": [],
+  "false_positives": []
+ },
+ "B_plus_llm": {
+  "missed": [],
+  "false_positives": []
+ },
+ "C_full": {
+  "missed": [],
+  "false_positives": []
+ },
+ "D_agentic": {
+  "missed": [],
+  "false_positives": []
+ }
+}

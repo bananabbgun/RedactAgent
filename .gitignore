@@ -8,3 +8,4 @@ deploy/b70/.env
 eval_run.log
 eval/results_run1/
 eval/results_run2/
+deck/final.html

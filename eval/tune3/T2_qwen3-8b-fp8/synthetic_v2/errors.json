@@ -1,0 +1,2286 @@
+{
+ "A_deterministic": {
+  "missed": [
+   {
+    "doc": "lab_report_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Yang Shu-hsin"
+   },
+   {
+    "doc": "lab_report_en_00",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the only harbour pilot licensed for Hualien port"
+   },
+   {
+    "doc": "lab_report_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Wu Pei-hao"
+   },
+   {
+    "doc": "lab_report_en_00",
+    "cat": "SIGNATURE",
+    "text": "Kuo Po-yi"
+   },
+   {
+    "doc": "lab_report_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Lee Yi-wei"
+   },
+   {
+    "doc": "lab_report_en_01",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the last blacksmith still working in Lukang old street"
+   },
+   {
+    "doc": "lab_report_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Wu Kuan-kuan"
+   },
+   {
+    "doc": "lab_report_en_01",
+    "cat": "SIGNATURE",
+    "text": "Lai Ming-hsin"
+   },
+   {
+    "doc": "lab_report_en_02",
+    "cat": "PERSON_NAME",
+    "text": "Liu Hsin-kuan"
+   },
+   {
+    "doc": "lab_report_en_02",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the last blacksmith still working in Lukang old street"
+   },
+   {
+    "doc": "lab_report_en_02",
+    "cat": "PERSON_NAME",
+    "text": "Hsieh Tzu-yi"
+   },
+   {
+    "doc": "lab_report_en_02",
+    "cat": "SIGNATURE",
+    "text": "Lin Wei-ting"
+   },
+   {
+    "doc": "lab_report_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Hsu Chun-han"
+   },
+   {
+    "doc": "lab_report_en_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the principal of the sole elementary school on Dongyin island"
+   },
+   {
+    "doc": "lab_report_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Lin Ting-pei"
+   },
+   {
+    "doc": "lab_report_en_03",
+    "cat": "SIGNATURE",
+    "text": "Hsieh Yi-hsin"
+   },
+   {
+    "doc": "lab_report_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Liu Wei-han"
+   },
+   {
+    "doc": "lab_report_en_04",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the youngest member of the national para-fencing squad"
+   },
+   {
+    "doc": "lab_report_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Lee Pei-chun"
+   },
+   {
+    "doc": "lab_report_en_04",
+    "cat": "SIGNATURE",
+    "text": "Wang Chun-chun"
+   },
+   {
+    "doc": "lab_report_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Chen Tzu-chih"
+   },
+   {
+    "doc": "lab_report_en_05",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the principal of the sole elementary school on Dongyin island"
+   },
+   {
+    "doc": "lab_report_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Liu Yi-ting"
+   },
+   {
+    "doc": "lab_report_en_05",
+    "cat": "SIGNATURE",
+    "text": "Yang Ting-yen"
+   },
+   {
+    "doc": "prescription_label_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "葉冠宇"
+   },
+   {
+    "doc": "prescription_label_zh_00",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "為金門唯一的手語翻譯員"
+   },
+   {
+    "doc": "prescription_label_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "李文章"
+   },
+   {
+    "doc": "prescription_label_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "洪金龍"
+   },
+   {
+    "doc": "prescription_label_zh_01",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "為金門唯一的手語翻譯員"
+   },
+   {
+    "doc": "prescription_label_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "黃雅雯"
+   },
+   {
+    "doc": "prescription_label_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "姚志偉"
+   },
+   {
+    "doc": "prescription_label_zh_02",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "為金門唯一的手語翻譯員"
+   },
+   {
+    "doc": "prescription_label_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "朱志豪"
+   },
+   {
+    "doc": "prescription_label_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "林進財"
+   },
+   {
+    "doc": "prescription_label_zh_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "為金門唯一的手語翻譯員"
+   },
+   {
+    "doc": "prescription_label_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "陳志強"
+   },
+   {
+    "doc": "prescription_label_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "吳淑娟"
+   },
+   {
+    "doc": "prescription_label_zh_04",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "為該部落唯一領有執照的狩獵者"
+   },
+   {
+    "doc": "prescription_label_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "林金龍"
+   },
+   {
+    "doc": "prescription_label_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "高家豪"
+   },
+   {
+    "doc": "prescription_label_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "鄭文龍"
+   },
+   {
+    "doc": "prescription_label_zh_05",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "為該部落唯一領有執照的狩獵者"
+   },
+   {
+    "doc": "prescription_label_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "洪建宏"
+   },
+   {
+    "doc": "bank_statement_en_00",
+    "cat": "PERSON_NAME",
+    "text": "HSIEH HSIN-JUNG"
+   },
+   {
+    "doc": "bank_statement_en_00",
+    "cat": "ADDRESS",
+    "text": "4F., No. 25, Ziyou Rd., Sec. 3, Xindian Dist., New Taipei City"
+   },
+   {
+    "doc": "bank_statement_en_00",
+    "cat": "PERSON_NAME",
+    "text": "YANG HAN-MING"
+   },
+   {
+    "doc": "bank_statement_en_00",
+    "cat": "PERSON_NAME",
+    "text": "CHANG KUAN-HAN"
+   },
+   {
+    "doc": "bank_statement_en_00",
+    "cat": "PERSON_NAME",
+    "text": "HSIEH CHIA-SHU"
+   },
+   {
+    "doc": "bank_statement_en_01",
+    "cat": "PERSON_NAME",
+    "text": "LEE HSIN-YU"
+   },
+   {
+    "doc": "bank_statement_en_01",
+    "cat": "ADDRESS",
+    "text": "8F., No. 107, Minsheng E. Rd., Sec. 1, Xitun Dist., Taichung City"
+   },
+   {
+    "doc": "bank_statement_en_01",
+    "cat": "PERSON_NAME",
+    "text": "YANG MING-YU"
+   },
+   {
+    "doc": "bank_statement_en_01",
+    "cat": "PERSON_NAME",
+    "text": "CHANG YU-HAO"
+   },
+   {
+    "doc": "bank_statement_en_01",
+    "cat": "PERSON_NAME",
+    "text": "LIN YI-SHU"
+   },
+   {
+    "doc": "bank_statement_en_02",
+    "cat": "PERSON_NAME",
+    "text": "WU HAN-WEI"
+   },
+   {
+    "doc": "bank_statement_en_02",
+    "cat": "ADDRESS",
+    "text": "No. 243, Guangfu Rd., Sec. 4, Xinyi Dist., Taipei City"
+   },
+   {
+    "doc": "bank_statement_en_02",
+    "cat": "PERSON_NAME",
+    "text": "LEE HAN-HSIN"
+   },
+   {
+    "doc": "bank_statement_en_02",
+    "cat": "PERSON_NAME",
+    "text": "HUANG SHU-HAO"
+   },
+   {
+    "doc": "bank_statement_en_02",
+    "cat": "PERSON_NAME",
+    "text": "LAI SHU-MING"
+   },
+   {
+    "doc": "bank_statement_en_03",
+    "cat": "PERSON_NAME",
+    "text": "HSIEH SHU-SHU"
+   },
+   {
+    "doc": "bank_statement_en_03",
+    "cat": "ADDRESS",
+    "text": "13F., No. 216, Ziyou Rd., Sec. 4, Zuoying Dist., Kaohsiung City"
+   },
+   {
+    "doc": "bank_statement_en_03",
+    "cat": "PERSON_NAME",
+    "text": "LEE HAN-KUAN"
+   },
+   {
+    "doc": "bank_statement_en_03",
+    "cat": "PERSON_NAME",
+    "text": "CHEN SHU-HAO"
+   },
+   {
+    "doc": "bank_statement_en_03",
+    "cat": "PERSON_NAME",
+    "text": "CHANG KUAN-PEI"
+   },
+   {
+    "doc": "bank_statement_en_04",
+    "cat": "PERSON_NAME",
+    "text": "LIU KUAN-JUNG"
+   },
+   {
+    "doc": "bank_statement_en_04",
+    "cat": "ADDRESS",
+    "text": "4F., No. 246, Zhongxiao E. Rd., Sec. 2, Xindian Dist., New Taipei City"
+   },
+   {
+    "doc": "bank_statement_en_04",
+    "cat": "PERSON_NAME",
+    "text": "LEE HAO-WEI"
+   },
+   {
+    "doc": "bank_statement_en_04",
+    "cat": "PERSON_NAME",
+    "text": "LIU YI-PEI"
+   },
+   {
+    "doc": "bank_statement_en_04",
+    "cat": "PERSON_NAME",
+    "text": "LAI MING-YU"
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "PERSON_NAME",
+    "text": "KUO MING-TZU"
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "ADDRESS",
+    "text": "15F., No. 268, Wenhua Rd., Sec. 1, Lingya Dist., Kaohsiung City"
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "FINANCIAL_ACCOUNT",
+    "text": "(13) 1234-996-494721"
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "PERSON_NAME",
+    "text": "YANG YI-PEI"
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "PERSON_NAME",
+    "text": "CHANG MING-HAN"
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "PERSON_NAME",
+    "text": "KUO CHIA-HSIN"
+   },
+   {
+    "doc": "court_judgment_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "朱麗華"
+   },
+   {
+    "doc": "court_judgment_zh_00",
+    "cat": "ADDRESS",
+    "text": "臺中市北區和平東路一段164號三樓"
+   },
+   {
+    "doc": "court_judgment_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "廖進財律師"
+   },
+   {
+    "doc": "court_judgment_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "李家豪"
+   },
+   {
+    "doc": "court_judgment_zh_00",
+    "cat": "ADDRESS",
+    "text": "臺南市安平區自由路二段130巷150號六樓"
+   },
+   {
+    "doc": "court_judgment_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "李家豪"
+   },
+   {
+    "doc": "court_judgment_zh_00",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "為金門唯一的手語翻譯員"
+   },
+   {
+    "doc": "court_judgment_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "蔡俊良"
+   },
+   {
+    "doc": "court_judgment_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "呂素貞"
+   },
+   {
+    "doc": "court_judgment_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "吳秀玲"
+   },
+   {
+    "doc": "court_judgment_zh_01",
+    "cat": "ADDRESS",
+    "text": "高雄市三民區自由路二段391號四樓"
+   },
+   {
+    "doc": "court_judgment_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "林仁傑律師"
+   },
+   {
+    "doc": "court_judgment_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "林宗霖"
+   },
+   {
+    "doc": "court_judgment_zh_01",
+    "cat": "ADDRESS",
+    "text": "臺南市安平區光復路三段58號一樓"
+   },
+   {
+    "doc": "court_judgment_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "林宗霖"
+   },
+   {
+    "doc": "court_judgment_zh_01",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "為金門唯一的手語翻譯員"
+   },
+   {
+    "doc": "court_judgment_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "林美珠"
+   },
+   {
+    "doc": "court_judgment_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "林明德"
+   },
+   {
+    "doc": "court_judgment_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "徐秀鳳"
+   },
+   {
+    "doc": "court_judgment_zh_02",
+    "cat": "ADDRESS",
+    "text": "臺北市北投區復興南路348號三樓"
+   },
+   {
+    "doc": "court_judgment_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "陳志成律師"
+   },
+   {
+    "doc": "court_judgment_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "林秀霞"
+   },
+   {
+    "doc": "court_judgment_zh_02",
+    "cat": "ADDRESS",
+    "text": "新北市三重區忠孝東路二段206號八樓"
+   },
+   {
+    "doc": "court_judgment_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "林秀霞"
+   },
+   {
+    "doc": "court_judgment_zh_02",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "是臺東縣唯一的女性熱氣球駕駛"
+   },
+   {
+    "doc": "court_judgment_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "劉秀珠"
+   },
+   {
+    "doc": "court_judgment_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "陳玉梅"
+   },
+   {
+    "doc": "court_judgment_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "林志明"
+   },
+   {
+    "doc": "court_judgment_zh_03",
+    "cat": "GOV_ID",
+    "text": "O105096788"
+   },
+   {
+    "doc": "court_judgment_zh_03",
+    "cat": "ADDRESS",
+    "text": "臺北市信義區建國路一段38巷115號"
+   },
+   {
+    "doc": "court_judgment_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "許素珠律師"
+   },
+   {
+    "doc": "court_judgment_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "張義雄"
+   },
+   {
+    "doc": "court_judgment_zh_03",
+    "cat": "ADDRESS",
+    "text": "高雄市左營區建國路一段277號"
+   },
+   {
+    "doc": "court_judgment_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "張義雄"
+   },
+   {
+    "doc": "court_judgment_zh_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "是臺東縣唯一的女性熱氣球駕駛"
+   },
+   {
+    "doc": "court_judgment_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "賴志忠"
+   },
+   {
+    "doc": "court_judgment_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "黃怡君"
+   },
+   {
+    "doc": "court_judgment_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "李淑惠"
+   },
+   {
+    "doc": "court_judgment_zh_04",
+    "cat": "ADDRESS",
+    "text": "臺南市安平區建國路21巷183號"
+   },
+   {
+    "doc": "court_judgment_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "蔡宗憲律師"
+   },
+   {
+    "doc": "court_judgment_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "林秀蘭"
+   },
+   {
+    "doc": "court_judgment_zh_04",
+    "cat": "ADDRESS",
+    "text": "高雄市三民區中正路一段143號五樓"
+   },
+   {
+    "doc": "court_judgment_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "林秀蘭"
+   },
+   {
+    "doc": "court_judgment_zh_04",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "是臺東縣唯一的女性熱氣球駕駛"
+   },
+   {
+    "doc": "court_judgment_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "翁美玲"
+   },
+   {
+    "doc": "court_judgment_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "曾宸睿"
+   },
+   {
+    "doc": "court_judgment_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "連柏翰"
+   },
+   {
+    "doc": "court_judgment_zh_05",
+    "cat": "ADDRESS",
+    "text": "臺北市中山區建國路二段278巷266號"
+   },
+   {
+    "doc": "court_judgment_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "李淑敏律師"
+   },
+   {
+    "doc": "court_judgment_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "何宜蓁"
+   },
+   {
+    "doc": "court_judgment_zh_05",
+    "cat": "ADDRESS",
+    "text": "新北市板橋區中正路160號四樓"
+   },
+   {
+    "doc": "court_judgment_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "何宜蓁"
+   },
+   {
+    "doc": "court_judgment_zh_05",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "為該部落唯一領有執照的狩獵者"
+   },
+   {
+    "doc": "court_judgment_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "許志豪"
+   },
+   {
+    "doc": "court_judgment_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "陳玉英"
+   },
+   {
+    "doc": "referral_letter_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Chang Kuan-wei"
+   },
+   {
+    "doc": "referral_letter_en_00",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the youngest member of the national para-fencing squad"
+   },
+   {
+    "doc": "referral_letter_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Lin Ming-wei"
+   },
+   {
+    "doc": "referral_letter_en_00",
+    "cat": "ADDRESS",
+    "text": "No. 183, Heping E. Rd., Sec. 3, Lingya Dist., Kaohsiung City"
+   },
+   {
+    "doc": "referral_letter_en_00",
+    "cat": "SIGNATURE",
+    "text": "Huang Yi-chun"
+   },
+   {
+    "doc": "referral_letter_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Cheng Yen-pei"
+   },
+   {
+    "doc": "referral_letter_en_01",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the principal of the sole elementary school on Dongyin island"
+   },
+   {
+    "doc": "referral_letter_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Chang Chih-han"
+   },
+   {
+    "doc": "referral_letter_en_01",
+    "cat": "ADDRESS",
+    "text": "10F., No. 166, Zhongxiao E. Rd., Xindian Dist., New Taipei City"
+   },
+   {
+    "doc": "referral_letter_en_01",
+    "cat": "SIGNATURE",
+    "text": "Chen Hsin-tzu"
+   },
+   {
+    "doc": "referral_letter_en_02",
+    "cat": "PERSON_NAME",
+    "text": "Liu Kuan-shu"
+   },
+   {
+    "doc": "referral_letter_en_02",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the principal of the sole elementary school on Dongyin island"
+   },
+   {
+    "doc": "referral_letter_en_02",
+    "cat": "PERSON_NAME",
+    "text": "Cheng Yen-hao"
+   },
+   {
+    "doc": "referral_letter_en_02",
+    "cat": "ADDRESS",
+    "text": "No. 313, Guangfu Rd., Sec. 4, Xitun Dist., Taichung City"
+   },
+   {
+    "doc": "referral_letter_en_02",
+    "cat": "SIGNATURE",
+    "text": "Kuo Hao-chun"
+   },
+   {
+    "doc": "referral_letter_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Lai Ting-hao"
+   },
+   {
+    "doc": "referral_letter_en_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the only harbour pilot licensed for Hualien port"
+   },
+   {
+    "doc": "referral_letter_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Kuo Chia-hsin"
+   },
+   {
+    "doc": "referral_letter_en_03",
+    "cat": "ADDRESS",
+    "text": "9F., No. 136, Wenhua Rd., Sec. 2, Xindian Dist., New Taipei City"
+   },
+   {
+    "doc": "referral_letter_en_03",
+    "cat": "SIGNATURE",
+    "text": "Huang Yu-ming"
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Liu Chih-chia"
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the principal of the sole elementary school on Dongyin island"
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "DATE",
+    "text": "January 11, 2026"
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Wang Chih-tzu"
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "ADDRESS",
+    "text": "No. 263, Guangfu Rd., Zhongshan Dist., Taipei City"
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "SIGNATURE",
+    "text": "Lin Tzu-yi"
+   },
+   {
+    "doc": "referral_letter_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Wu Yen-po"
+   },
+   {
+    "doc": "referral_letter_en_05",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the youngest member of the national para-fencing squad"
+   },
+   {
+    "doc": "referral_letter_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Lai Wei-ting"
+   },
+   {
+    "doc": "referral_letter_en_05",
+    "cat": "ADDRESS",
+    "text": "No. 114, Wenhua Rd., Da'an Dist., Taipei City"
+   },
+   {
+    "doc": "referral_letter_en_05",
+    "cat": "SIGNATURE",
+    "text": "Lai Tzu-yu"
+   }
+  ],
+  "false_positives": [
+   {
+    "doc": "prescription_label_zh_00",
+    "cat": "ADDRESS",
+    "text": "壹南市安平區中正路二段209号八楼",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_01",
+    "cat": "ADDRESS",
+    "text": "新北市新店區復興南路三段75号八楼",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_02",
+    "cat": "ADDRESS",
+    "text": "高雄市左学區和平东路一段33巷47号四楼",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_03",
+    "cat": "ADDRESS",
+    "text": "高雄市苓雅區民生东路二段57巷343号七楼",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_04",
+    "cat": "ADDRESS",
+    "text": "壹北市大安區自由路二段197号七楼電话：（07）2804-9106",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_05",
+    "cat": "ADDRESS",
+    "text": "高雄市三民區民生东路-段287号",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_01",
+    "cat": "PHONE",
+    "text": "(02)2181-0000",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "PHONE",
+    "text": "0987-986-496",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "PHONE",
+    "text": "(02)2181-0000",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_00",
+    "cat": "PHONE",
+    "text": "(02)2700-1234",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Ms. Chang",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_01",
+    "cat": "PHONE",
+    "text": "(02)2700-1234",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Mr.Ms.Cheng",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_02",
+    "cat": "PERSON_NAME",
+    "text": "Mr./Ms. Liu",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Mr./Ms.Laipresented",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "PHONE",
+    "text": "(02)2700-1234",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Mr./Ms. Liu",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Mr.Ms.Wu",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   }
+  ]
+ },
+ "B_plus_llm": {
+  "missed": [
+   {
+    "doc": "lab_report_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Yang Shu-hsin"
+   },
+   {
+    "doc": "lab_report_en_00",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the only harbour pilot licensed for Hualien port"
+   },
+   {
+    "doc": "lab_report_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Wu Pei-hao"
+   },
+   {
+    "doc": "lab_report_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Lee Yi-wei"
+   },
+   {
+    "doc": "lab_report_en_01",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the last blacksmith still working in Lukang old street"
+   },
+   {
+    "doc": "lab_report_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Wu Kuan-kuan"
+   },
+   {
+    "doc": "lab_report_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Lin Ting-pei"
+   },
+   {
+    "doc": "lab_report_en_03",
+    "cat": "SIGNATURE",
+    "text": "Hsieh Yi-hsin"
+   },
+   {
+    "doc": "lab_report_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Lee Pei-chun"
+   },
+   {
+    "doc": "lab_report_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Chen Tzu-chih"
+   },
+   {
+    "doc": "lab_report_en_05",
+    "cat": "SIGNATURE",
+    "text": "Yang Ting-yen"
+   },
+   {
+    "doc": "bank_statement_en_00",
+    "cat": "PERSON_NAME",
+    "text": "YANG HAN-MING"
+   },
+   {
+    "doc": "bank_statement_en_01",
+    "cat": "PERSON_NAME",
+    "text": "YANG MING-YU"
+   },
+   {
+    "doc": "bank_statement_en_01",
+    "cat": "PERSON_NAME",
+    "text": "CHANG YU-HAO"
+   },
+   {
+    "doc": "bank_statement_en_01",
+    "cat": "PERSON_NAME",
+    "text": "LIN YI-SHU"
+   },
+   {
+    "doc": "bank_statement_en_02",
+    "cat": "PERSON_NAME",
+    "text": "LEE HAN-HSIN"
+   },
+   {
+    "doc": "bank_statement_en_02",
+    "cat": "PERSON_NAME",
+    "text": "HUANG SHU-HAO"
+   },
+   {
+    "doc": "bank_statement_en_02",
+    "cat": "PERSON_NAME",
+    "text": "LAI SHU-MING"
+   },
+   {
+    "doc": "bank_statement_en_03",
+    "cat": "PERSON_NAME",
+    "text": "CHANG KUAN-PEI"
+   },
+   {
+    "doc": "bank_statement_en_04",
+    "cat": "PERSON_NAME",
+    "text": "LEE HAO-WEI"
+   },
+   {
+    "doc": "bank_statement_en_04",
+    "cat": "PERSON_NAME",
+    "text": "LIU YI-PEI"
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "PERSON_NAME",
+    "text": "YANG YI-PEI"
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "PERSON_NAME",
+    "text": "CHANG MING-HAN"
+   },
+   {
+    "doc": "court_judgment_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "蔡俊良"
+   },
+   {
+    "doc": "court_judgment_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "呂素貞"
+   },
+   {
+    "doc": "court_judgment_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "林仁傑律師"
+   },
+   {
+    "doc": "court_judgment_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "林美珠"
+   },
+   {
+    "doc": "court_judgment_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "林明德"
+   },
+   {
+    "doc": "court_judgment_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "陳志成律師"
+   },
+   {
+    "doc": "court_judgment_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "劉秀珠"
+   },
+   {
+    "doc": "court_judgment_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "陳玉梅"
+   },
+   {
+    "doc": "court_judgment_zh_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "是臺東縣唯一的女性熱氣球駕駛"
+   },
+   {
+    "doc": "court_judgment_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "翁美玲"
+   },
+   {
+    "doc": "court_judgment_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "曾宸睿"
+   },
+   {
+    "doc": "court_judgment_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "李淑敏律師"
+   },
+   {
+    "doc": "court_judgment_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "許志豪"
+   },
+   {
+    "doc": "court_judgment_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "陳玉英"
+   },
+   {
+    "doc": "referral_letter_en_00",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the youngest member of the national para-fencing squad"
+   },
+   {
+    "doc": "referral_letter_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Lin Ming-wei"
+   },
+   {
+    "doc": "referral_letter_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Chang Chih-han"
+   },
+   {
+    "doc": "referral_letter_en_02",
+    "cat": "PERSON_NAME",
+    "text": "Cheng Yen-hao"
+   },
+   {
+    "doc": "referral_letter_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Lai Ting-hao"
+   },
+   {
+    "doc": "referral_letter_en_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the only harbour pilot licensed for Hualien port"
+   },
+   {
+    "doc": "referral_letter_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Kuo Chia-hsin"
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "DATE",
+    "text": "January 11, 2026"
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Wang Chih-tzu"
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "SIGNATURE",
+    "text": "Lin Tzu-yi"
+   },
+   {
+    "doc": "referral_letter_en_05",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the youngest member of the national para-fencing squad"
+   },
+   {
+    "doc": "referral_letter_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Lai Wei-ting"
+   },
+   {
+    "doc": "referral_letter_en_05",
+    "cat": "SIGNATURE",
+    "text": "Lai Tzu-yu"
+   }
+  ],
+  "false_positives": [
+   {
+    "doc": "prescription_label_zh_00",
+    "cat": "ADDRESS",
+    "text": "壹南市安平區中正路二段209号八楼",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_01",
+    "cat": "ADDRESS",
+    "text": "新北市新店區復興南路三段75号八楼",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_02",
+    "cat": "ADDRESS",
+    "text": "高雄市左学區和平东路一段33巷47号四楼",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_03",
+    "cat": "ADDRESS",
+    "text": "高雄市苓雅區民生东路二段57巷343号七楼",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_04",
+    "cat": "ADDRESS",
+    "text": "壹北市大安區自由路二段197号七楼電话：（07）2804-9106",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_05",
+    "cat": "ADDRESS",
+    "text": "高雄市三民區民生东路-段287号",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_01",
+    "cat": "PHONE",
+    "text": "(02)2181-0000",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "PHONE",
+    "text": "0987-986-496",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "PHONE",
+    "text": "(02)2181-0000",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_00",
+    "cat": "PHONE",
+    "text": "(02)2700-1234",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Ms. Chang",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_01",
+    "cat": "PHONE",
+    "text": "(02)2700-1234",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Mr.Ms.Cheng",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_01",
+    "cat": "ADDRESS",
+    "text": "4F.,No.151,Heping E.Rd,Sec.1,NantunDist.,Taichung City",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_02",
+    "cat": "PERSON_NAME",
+    "text": "Mr./Ms. Liu",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_02",
+    "cat": "ADDRESS",
+    "text": "No.208,WenhuaRd.,Sec.4,DaanDist.,Taipei City",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_02",
+    "cat": "PHONE",
+    "text": "(02）2700-1234",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Mr./Ms.Laipresented",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "PHONE",
+    "text": "(02)2700-1234",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Mr./Ms. Liu",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "ADDRESS",
+    "text": "9F.,No.148,Fuxing S.Rd.,Sec.2,Zhongshan Dist.,Taipei City",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Mr.Ms.Wu",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_05",
+    "cat": "ADDRESS",
+    "text": "No.310,Guangfu Rd,ShilinDis,TaipeiCity 02）700-1234",
+    "sources": [
+     "llm"
+    ]
+   }
+  ]
+ },
+ "C_full": {
+  "missed": [
+   {
+    "doc": "lab_report_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Yang Shu-hsin"
+   },
+   {
+    "doc": "lab_report_en_00",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the only harbour pilot licensed for Hualien port"
+   },
+   {
+    "doc": "lab_report_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Wu Pei-hao"
+   },
+   {
+    "doc": "lab_report_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Lee Yi-wei"
+   },
+   {
+    "doc": "lab_report_en_01",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the last blacksmith still working in Lukang old street"
+   },
+   {
+    "doc": "lab_report_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Wu Kuan-kuan"
+   },
+   {
+    "doc": "lab_report_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Lin Ting-pei"
+   },
+   {
+    "doc": "lab_report_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Lee Pei-chun"
+   },
+   {
+    "doc": "lab_report_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Chen Tzu-chih"
+   },
+   {
+    "doc": "bank_statement_en_00",
+    "cat": "PERSON_NAME",
+    "text": "YANG HAN-MING"
+   },
+   {
+    "doc": "bank_statement_en_01",
+    "cat": "PERSON_NAME",
+    "text": "YANG MING-YU"
+   },
+   {
+    "doc": "bank_statement_en_01",
+    "cat": "PERSON_NAME",
+    "text": "CHANG YU-HAO"
+   },
+   {
+    "doc": "bank_statement_en_01",
+    "cat": "PERSON_NAME",
+    "text": "LIN YI-SHU"
+   },
+   {
+    "doc": "bank_statement_en_02",
+    "cat": "PERSON_NAME",
+    "text": "LEE HAN-HSIN"
+   },
+   {
+    "doc": "bank_statement_en_02",
+    "cat": "PERSON_NAME",
+    "text": "HUANG SHU-HAO"
+   },
+   {
+    "doc": "bank_statement_en_02",
+    "cat": "PERSON_NAME",
+    "text": "LAI SHU-MING"
+   },
+   {
+    "doc": "bank_statement_en_03",
+    "cat": "PERSON_NAME",
+    "text": "CHANG KUAN-PEI"
+   },
+   {
+    "doc": "bank_statement_en_04",
+    "cat": "PERSON_NAME",
+    "text": "LEE HAO-WEI"
+   },
+   {
+    "doc": "bank_statement_en_04",
+    "cat": "PERSON_NAME",
+    "text": "LIU YI-PEI"
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "PERSON_NAME",
+    "text": "YANG YI-PEI"
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "PERSON_NAME",
+    "text": "CHANG MING-HAN"
+   },
+   {
+    "doc": "court_judgment_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "蔡俊良"
+   },
+   {
+    "doc": "court_judgment_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "呂素貞"
+   },
+   {
+    "doc": "court_judgment_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "林仁傑律師"
+   },
+   {
+    "doc": "court_judgment_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "林美珠"
+   },
+   {
+    "doc": "court_judgment_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "林明德"
+   },
+   {
+    "doc": "court_judgment_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "陳志成律師"
+   },
+   {
+    "doc": "court_judgment_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "劉秀珠"
+   },
+   {
+    "doc": "court_judgment_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "陳玉梅"
+   },
+   {
+    "doc": "court_judgment_zh_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "是臺東縣唯一的女性熱氣球駕駛"
+   },
+   {
+    "doc": "court_judgment_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "翁美玲"
+   },
+   {
+    "doc": "court_judgment_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "曾宸睿"
+   },
+   {
+    "doc": "court_judgment_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "李淑敏律師"
+   },
+   {
+    "doc": "court_judgment_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "許志豪"
+   },
+   {
+    "doc": "court_judgment_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "陳玉英"
+   },
+   {
+    "doc": "referral_letter_en_00",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the youngest member of the national para-fencing squad"
+   },
+   {
+    "doc": "referral_letter_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Lin Ming-wei"
+   },
+   {
+    "doc": "referral_letter_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Chang Chih-han"
+   },
+   {
+    "doc": "referral_letter_en_02",
+    "cat": "PERSON_NAME",
+    "text": "Cheng Yen-hao"
+   },
+   {
+    "doc": "referral_letter_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Lai Ting-hao"
+   },
+   {
+    "doc": "referral_letter_en_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the only harbour pilot licensed for Hualien port"
+   },
+   {
+    "doc": "referral_letter_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Kuo Chia-hsin"
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "DATE",
+    "text": "January 11, 2026"
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Wang Chih-tzu"
+   },
+   {
+    "doc": "referral_letter_en_05",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the youngest member of the national para-fencing squad"
+   },
+   {
+    "doc": "referral_letter_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Lai Wei-ting"
+   }
+  ],
+  "false_positives": [
+   {
+    "doc": "prescription_label_zh_00",
+    "cat": "ADDRESS",
+    "text": "壹南市安平區中正路二段209号八楼",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_01",
+    "cat": "ADDRESS",
+    "text": "新北市新店區復興南路三段75号八楼",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_02",
+    "cat": "ADDRESS",
+    "text": "高雄市左学區和平东路一段33巷47号四楼",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_03",
+    "cat": "ADDRESS",
+    "text": "高雄市苓雅區民生东路二段57巷343号七楼",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_04",
+    "cat": "ADDRESS",
+    "text": "壹北市大安區自由路二段197号七楼電话：（07）2804-9106",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_05",
+    "cat": "ADDRESS",
+    "text": "高雄市三民區民生东路-段287号",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_01",
+    "cat": "PHONE",
+    "text": "(02)2181-0000",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "PHONE",
+    "text": "0987-986-496",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "PHONE",
+    "text": "(02)2181-0000",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_00",
+    "cat": "PHONE",
+    "text": "(02)2700-1234",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Ms. Chang",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_01",
+    "cat": "PHONE",
+    "text": "(02)2700-1234",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Mr.Ms.Cheng",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_01",
+    "cat": "ADDRESS",
+    "text": "4F.,No.151,Heping E.Rd,Sec.1,NantunDist.,Taichung City",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_02",
+    "cat": "PERSON_NAME",
+    "text": "Mr./Ms. Liu",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_02",
+    "cat": "ADDRESS",
+    "text": "No.208,WenhuaRd.,Sec.4,DaanDist.,Taipei City",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_02",
+    "cat": "PHONE",
+    "text": "(02）2700-1234",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Mr./Ms.Laipresented",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "PHONE",
+    "text": "(02)2700-1234",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Mr./Ms. Liu",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "ADDRESS",
+    "text": "9F.,No.148,Fuxing S.Rd.,Sec.2,Zhongshan Dist.,Taipei City",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Mr.Ms.Wu",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_05",
+    "cat": "ADDRESS",
+    "text": "No.310,Guangfu Rd,ShilinDis,TaipeiCity 02）700-1234",
+    "sources": [
+     "llm"
+    ]
+   }
+  ]
+ },
+ "D_agentic": {
+  "missed": [
+   {
+    "doc": "lab_report_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Yang Shu-hsin"
+   },
+   {
+    "doc": "lab_report_en_00",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the only harbour pilot licensed for Hualien port"
+   },
+   {
+    "doc": "lab_report_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Wu Pei-hao"
+   },
+   {
+    "doc": "lab_report_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Lee Yi-wei"
+   },
+   {
+    "doc": "lab_report_en_01",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the last blacksmith still working in Lukang old street"
+   },
+   {
+    "doc": "lab_report_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Wu Kuan-kuan"
+   },
+   {
+    "doc": "lab_report_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Lee Pei-chun"
+   },
+   {
+    "doc": "lab_report_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Chen Tzu-chih"
+   },
+   {
+    "doc": "bank_statement_en_00",
+    "cat": "PERSON_NAME",
+    "text": "YANG HAN-MING"
+   },
+   {
+    "doc": "bank_statement_en_01",
+    "cat": "PERSON_NAME",
+    "text": "YANG MING-YU"
+   },
+   {
+    "doc": "bank_statement_en_01",
+    "cat": "PERSON_NAME",
+    "text": "LIN YI-SHU"
+   },
+   {
+    "doc": "bank_statement_en_03",
+    "cat": "PERSON_NAME",
+    "text": "CHANG KUAN-PEI"
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "PERSON_NAME",
+    "text": "YANG YI-PEI"
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "PERSON_NAME",
+    "text": "CHANG MING-HAN"
+   },
+   {
+    "doc": "court_judgment_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "呂素貞"
+   },
+   {
+    "doc": "court_judgment_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "陳志成律師"
+   },
+   {
+    "doc": "court_judgment_zh_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "是臺東縣唯一的女性熱氣球駕駛"
+   },
+   {
+    "doc": "court_judgment_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "翁美玲"
+   },
+   {
+    "doc": "court_judgment_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "曾宸睿"
+   },
+   {
+    "doc": "court_judgment_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "李淑敏律師"
+   },
+   {
+    "doc": "referral_letter_en_00",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the youngest member of the national para-fencing squad"
+   },
+   {
+    "doc": "referral_letter_en_02",
+    "cat": "PERSON_NAME",
+    "text": "Cheng Yen-hao"
+   },
+   {
+    "doc": "referral_letter_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Lai Ting-hao"
+   },
+   {
+    "doc": "referral_letter_en_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the only harbour pilot licensed for Hualien port"
+   },
+   {
+    "doc": "referral_letter_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Kuo Chia-hsin"
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "DATE",
+    "text": "January 11, 2026"
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Wang Chih-tzu"
+   },
+   {
+    "doc": "referral_letter_en_05",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the youngest member of the national para-fencing squad"
+   }
+  ],
+  "false_positives": [
+   {
+    "doc": "prescription_label_zh_00",
+    "cat": "ADDRESS",
+    "text": "壹南市安平區中正路二段209号八楼",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_01",
+    "cat": "ADDRESS",
+    "text": "新北市新店區復興南路三段75号八楼",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_02",
+    "cat": "ADDRESS",
+    "text": "高雄市左学區和平东路一段33巷47号四楼",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_03",
+    "cat": "ADDRESS",
+    "text": "高雄市苓雅區民生东路二段57巷343号七楼",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_04",
+    "cat": "ADDRESS",
+    "text": "壹北市大安區自由路二段197号七楼電话：（07）2804-9106",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_05",
+    "cat": "ADDRESS",
+    "text": "高雄市三民區民生东路-段287号",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_00",
+    "cat": "PHONE",
+    "text": "(02)2181-0000",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_01",
+    "cat": "PHONE",
+    "text": "(02)2181-0000",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_02",
+    "cat": "PERSON_NAME",
+    "text": "TransfertoHUANGSHU-HAO",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_02",
+    "cat": "PERSON_NAME",
+    "text": "TransferfromLAI SHU-MING",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_02",
+    "cat": "PHONE",
+    "text": "(02)2181-0000",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_03",
+    "cat": "PHONE",
+    "text": "(02)2181-0000",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_04",
+    "cat": "PERSON_NAME",
+    "text": "TransferfromLEEHAO-WEI",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_04",
+    "cat": "PERSON_NAME",
+    "text": "TransfertoLIUYI-PEI",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "PHONE",
+    "text": "0987-986-496",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "PHONE",
+    "text": "(02)2181-0000",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Utility bill-Taipower",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "court_judgment_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "民事庭法官蔡俊良",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "court_judgment_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "書記官",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "court_judgment_zh_01",
+    "cat": "FINANCIAL_ACCOUNT",
+    "text": "115年度字第1242号",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "court_judgment_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "民事庭法官許志豪",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_00",
+    "cat": "PHONE",
+    "text": "(02)2700-1234",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Ms. Chang",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_01",
+    "cat": "PHONE",
+    "text": "(02)2700-1234",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Mr.Ms.Cheng",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_01",
+    "cat": "ADDRESS",
+    "text": "4F.,No.151,Heping E.Rd,Sec.1,NantunDist.,Taichung City",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_02",
+    "cat": "PERSON_NAME",
+    "text": "Mr./Ms. Liu",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_02",
+    "cat": "ADDRESS",
+    "text": "No.208,WenhuaRd.,Sec.4,DaanDist.,Taipei City",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_02",
+    "cat": "PHONE",
+    "text": "(02）2700-1234",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Mr./Ms.Laipresented",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "PHONE",
+    "text": "(02)2700-1234",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "PERSON_NAME",
+    "text": "Mr./Ms. Liu",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_04",
+    "cat": "ADDRESS",
+    "text": "9F.,No.148,Fuxing S.Rd.,Sec.2,Zhongshan Dist.,Taipei City",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_05",
+    "cat": "PERSON_NAME",
+    "text": "Mr.Ms.Wu",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "referral_letter_en_05",
+    "cat": "ADDRESS",
+    "text": "No.310,Guangfu Rd,ShilinDis,TaipeiCity 02）700-1234",
+    "sources": [
+     "llm"
+    ]
+   }
+  ]
+ }
+}

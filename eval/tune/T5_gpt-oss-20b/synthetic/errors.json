@@ -1,0 +1,49 @@
+{
+ "A_deterministic": {
+  "missed": [
+   {
+    "doc": "insurance_claim_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Lee Wei-jung"
+   },
+   {
+    "doc": "insurance_claim_en_00",
+    "cat": "ADDRESS",
+    "text": "No. 363, Zhongxiao E. Rd., Sec. 1, Da'an Dist., Taipei City"
+   },
+   {
+    "doc": "insurance_claim_en_00",
+    "cat": "SIGNATURE",
+    "text": "Lee Wei-jung"
+   },
+   {
+    "doc": "insurance_claim_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Lai Hao-po"
+   },
+   {
+    "doc": "insurance_claim_en_03",
+    "cat": "ADDRESS",
+    "text": "No. 165, Wenhua Rd., Lingya Dist., Kaohsiung City"
+   },
+   {
+    "doc": "insurance_claim_en_03",
+    "cat": "SIGNATURE",
+    "text": "Lai Hao-po"
+   }
+  ],
+  "false_positives": []
+ },
+ "B_plus_llm": {
+  "missed": [],
+  "false_positives": []
+ },
+ "C_full": {
+  "missed": [],
+  "false_positives": []
+ },
+ "D_agentic": {
+  "missed": [],
+  "false_positives": []
+ }
+}

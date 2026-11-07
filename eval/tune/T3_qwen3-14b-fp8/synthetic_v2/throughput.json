@@ -1,0 +1,7 @@
+{
+ "pages": 30,
+ "workers": 8,
+ "wall_seconds": 83.77863554100622,
+ "pages_per_minute": 21.485191163312436,
+ "hardware": "2x Arc Pro B70, T3_qwen3-14b-fp8"
+}

@@ -1,0 +1,8 @@
+{
+ "pages": 30,
+ "failed": 0,
+ "workers": 8,
+ "wall_seconds": 95.33225057495292,
+ "pages_per_minute": 18.881333327852037,
+ "hardware": "2x Arc Pro B70, T5b_gpt-oss-20b-low"
+}

@@ -1,0 +1,202 @@
+{
+ "A_deterministic": {
+  "docs": 30,
+  "gt_items": 396,
+  "caught": 236,
+  "recall": 0.5959595959595959,
+  "precision": 0.9149797570850202,
+  "redaction_boxes": 247,
+  "clean_doc_rate": 0.0,
+  "recall_by_category": {
+   "PERSON_NAME": 0.3263888888888889,
+   "GOV_ID": 0.8333333333333334,
+   "DATE_OF_BIRTH": 1.0,
+   "DATE": 0.9901960784313726,
+   "PHONE": 1.0,
+   "EMAIL": null,
+   "ADDRESS": 0.0,
+   "MEDICAL_RECORD_NO": 1.0,
+   "HEALTH_INSURANCE_NO": null,
+   "FINANCIAL_ACCOUNT": 0.8333333333333334,
+   "LICENSE_PLATE": null,
+   "QUASI_IDENTIFIER": 0.0,
+   "SIGNATURE": 0.0,
+   "FACE_PHOTO": null,
+   "SEAL_STAMP": 1.0
+  },
+  "support_by_category": {
+   "PERSON_NAME": 144,
+   "GOV_ID": 6,
+   "DATE_OF_BIRTH": 18,
+   "DATE": 102,
+   "PHONE": 24,
+   "EMAIL": 0,
+   "ADDRESS": 24,
+   "MEDICAL_RECORD_NO": 24,
+   "HEALTH_INSURANCE_NO": 0,
+   "FINANCIAL_ACCOUNT": 6,
+   "LICENSE_PLATE": 0,
+   "QUASI_IDENTIFIER": 24,
+   "SIGNATURE": 12,
+   "FACE_PHOTO": 0,
+   "SEAL_STAMP": 12
+  }
+ },
+ "B_plus_llm": {
+  "docs": 30,
+  "gt_items": 396,
+  "caught": 371,
+  "recall": 0.9368686868686869,
+  "precision": 0.9151670951156813,
+  "redaction_boxes": 389,
+  "clean_doc_rate": 0.4,
+  "recall_by_category": {
+   "PERSON_NAME": 0.9027777777777778,
+   "GOV_ID": 1.0,
+   "DATE_OF_BIRTH": 1.0,
+   "DATE": 1.0,
+   "PHONE": 1.0,
+   "EMAIL": null,
+   "ADDRESS": 1.0,
+   "MEDICAL_RECORD_NO": 1.0,
+   "HEALTH_INSURANCE_NO": null,
+   "FINANCIAL_ACCOUNT": 1.0,
+   "LICENSE_PLATE": null,
+   "QUASI_IDENTIFIER": 0.5416666666666666,
+   "SIGNATURE": 1.0,
+   "FACE_PHOTO": null,
+   "SEAL_STAMP": 1.0
+  },
+  "support_by_category": {
+   "PERSON_NAME": 144,
+   "GOV_ID": 6,
+   "DATE_OF_BIRTH": 18,
+   "DATE": 102,
+   "PHONE": 24,
+   "EMAIL": 0,
+   "ADDRESS": 24,
+   "MEDICAL_RECORD_NO": 24,
+   "HEALTH_INSURANCE_NO": 0,
+   "FINANCIAL_ACCOUNT": 6,
+   "LICENSE_PLATE": 0,
+   "QUASI_IDENTIFIER": 24,
+   "SIGNATURE": 12,
+   "FACE_PHOTO": 0,
+   "SEAL_STAMP": 12
+  }
+ },
+ "C_full": {
+  "docs": 30,
+  "gt_items": 396,
+  "caught": 371,
+  "recall": 0.9368686868686869,
+  "precision": 0.9200968523002422,
+  "redaction_boxes": 413,
+  "clean_doc_rate": 0.4,
+  "recall_by_category": {
+   "PERSON_NAME": 0.9027777777777778,
+   "GOV_ID": 1.0,
+   "DATE_OF_BIRTH": 1.0,
+   "DATE": 1.0,
+   "PHONE": 1.0,
+   "EMAIL": null,
+   "ADDRESS": 1.0,
+   "MEDICAL_RECORD_NO": 1.0,
+   "HEALTH_INSURANCE_NO": null,
+   "FINANCIAL_ACCOUNT": 1.0,
+   "LICENSE_PLATE": null,
+   "QUASI_IDENTIFIER": 0.5416666666666666,
+   "SIGNATURE": 1.0,
+   "FACE_PHOTO": null,
+   "SEAL_STAMP": 1.0
+  },
+  "support_by_category": {
+   "PERSON_NAME": 144,
+   "GOV_ID": 6,
+   "DATE_OF_BIRTH": 18,
+   "DATE": 102,
+   "PHONE": 24,
+   "EMAIL": 0,
+   "ADDRESS": 24,
+   "MEDICAL_RECORD_NO": 24,
+   "HEALTH_INSURANCE_NO": 0,
+   "FINANCIAL_ACCOUNT": 6,
+   "LICENSE_PLATE": 0,
+   "QUASI_IDENTIFIER": 24,
+   "SIGNATURE": 12,
+   "FACE_PHOTO": 0,
+   "SEAL_STAMP": 12
+  }
+ },
+ "D_agentic": {
+  "docs": 30,
+  "gt_items": 396,
+  "caught": 380,
+  "recall": 0.9595959595959596,
+  "precision": 0.8901601830663616,
+  "redaction_boxes": 437,
+  "clean_doc_rate": 0.6,
+  "recall_by_category": {
+   "PERSON_NAME": 0.9513888888888888,
+   "GOV_ID": 1.0,
+   "DATE_OF_BIRTH": 1.0,
+   "DATE": 1.0,
+   "PHONE": 1.0,
+   "EMAIL": null,
+   "ADDRESS": 1.0,
+   "MEDICAL_RECORD_NO": 1.0,
+   "HEALTH_INSURANCE_NO": null,
+   "FINANCIAL_ACCOUNT": 1.0,
+   "LICENSE_PLATE": null,
+   "QUASI_IDENTIFIER": 0.625,
+   "SIGNATURE": 1.0,
+   "FACE_PHOTO": null,
+   "SEAL_STAMP": 1.0
+  },
+  "support_by_category": {
+   "PERSON_NAME": 144,
+   "GOV_ID": 6,
+   "DATE_OF_BIRTH": 18,
+   "DATE": 102,
+   "PHONE": 24,
+   "EMAIL": 0,
+   "ADDRESS": 24,
+   "MEDICAL_RECORD_NO": 24,
+   "HEALTH_INSURANCE_NO": 0,
+   "FINANCIAL_ACCOUNT": 6,
+   "LICENSE_PLATE": 0,
+   "QUASI_IDENTIFIER": 24,
+   "SIGNATURE": 12,
+   "FACE_PHOTO": 0,
+   "SEAL_STAMP": 12
+  }
+ },
+ "latency_seconds_per_page": {
+  "ocr": {
+   "mean": 1.6177029488957486,
+   "p50": 0.8125417074916186,
+   "max": 4.375239776010858
+  },
+  "rules": {
+   "mean": 0.0009636926687865828,
+   "p50": 0.0007273509982042015,
+   "max": 0.003438202023971826
+  },
+  "llm": {
+   "mean": 7.83998272253181,
+   "p50": 7.409280341496924,
+   "max": 11.961461906001205
+  },
+  "vlm": {
+   "mean": 1.9855611199338454,
+   "p50": 2.0466432649845956,
+   "max": 3.3556602250027936
+  },
+  "total": {
+   "mean": 21.058276479167397,
+   "p50": 20.584801920500468,
+   "max": 38.84779812800116
+  }
+ },
+ "llm_completion_tokens_mean": 247.1
+}

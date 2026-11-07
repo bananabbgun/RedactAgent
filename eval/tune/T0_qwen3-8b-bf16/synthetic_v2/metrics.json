@@ -1,0 +1,202 @@
+{
+ "A_deterministic": {
+  "docs": 30,
+  "gt_items": 396,
+  "caught": 236,
+  "recall": 0.5959595959595959,
+  "precision": 0.9271255060728745,
+  "redaction_boxes": 247,
+  "clean_doc_rate": 0.0,
+  "recall_by_category": {
+   "PERSON_NAME": 0.3263888888888889,
+   "GOV_ID": 0.8333333333333334,
+   "DATE_OF_BIRTH": 1.0,
+   "DATE": 0.9901960784313726,
+   "PHONE": 1.0,
+   "EMAIL": null,
+   "ADDRESS": 0.0,
+   "MEDICAL_RECORD_NO": 1.0,
+   "HEALTH_INSURANCE_NO": null,
+   "FINANCIAL_ACCOUNT": 0.8333333333333334,
+   "LICENSE_PLATE": null,
+   "QUASI_IDENTIFIER": 0.0,
+   "SIGNATURE": 0.0,
+   "FACE_PHOTO": null,
+   "SEAL_STAMP": 1.0
+  },
+  "support_by_category": {
+   "PERSON_NAME": 144,
+   "GOV_ID": 6,
+   "DATE_OF_BIRTH": 18,
+   "DATE": 102,
+   "PHONE": 24,
+   "EMAIL": 0,
+   "ADDRESS": 24,
+   "MEDICAL_RECORD_NO": 24,
+   "HEALTH_INSURANCE_NO": 0,
+   "FINANCIAL_ACCOUNT": 6,
+   "LICENSE_PLATE": 0,
+   "QUASI_IDENTIFIER": 24,
+   "SIGNATURE": 12,
+   "FACE_PHOTO": 0,
+   "SEAL_STAMP": 12
+  }
+ },
+ "B_plus_llm": {
+  "docs": 30,
+  "gt_items": 396,
+  "caught": 349,
+  "recall": 0.8813131313131313,
+  "precision": 0.907103825136612,
+  "redaction_boxes": 366,
+  "clean_doc_rate": 0.16666666666666666,
+  "recall_by_category": {
+   "PERSON_NAME": 0.7430555555555556,
+   "GOV_ID": 1.0,
+   "DATE_OF_BIRTH": 1.0,
+   "DATE": 0.9901960784313726,
+   "PHONE": 1.0,
+   "EMAIL": null,
+   "ADDRESS": 1.0,
+   "MEDICAL_RECORD_NO": 1.0,
+   "HEALTH_INSURANCE_NO": null,
+   "FINANCIAL_ACCOUNT": 1.0,
+   "LICENSE_PLATE": null,
+   "QUASI_IDENTIFIER": 0.75,
+   "SIGNATURE": 0.75,
+   "FACE_PHOTO": null,
+   "SEAL_STAMP": 1.0
+  },
+  "support_by_category": {
+   "PERSON_NAME": 144,
+   "GOV_ID": 6,
+   "DATE_OF_BIRTH": 18,
+   "DATE": 102,
+   "PHONE": 24,
+   "EMAIL": 0,
+   "ADDRESS": 24,
+   "MEDICAL_RECORD_NO": 24,
+   "HEALTH_INSURANCE_NO": 0,
+   "FINANCIAL_ACCOUNT": 6,
+   "LICENSE_PLATE": 0,
+   "QUASI_IDENTIFIER": 24,
+   "SIGNATURE": 12,
+   "FACE_PHOTO": 0,
+   "SEAL_STAMP": 12
+  }
+ },
+ "C_full": {
+  "docs": 30,
+  "gt_items": 396,
+  "caught": 352,
+  "recall": 0.8888888888888888,
+  "precision": 0.9128205128205128,
+  "redaction_boxes": 390,
+  "clean_doc_rate": 0.16666666666666666,
+  "recall_by_category": {
+   "PERSON_NAME": 0.7430555555555556,
+   "GOV_ID": 1.0,
+   "DATE_OF_BIRTH": 1.0,
+   "DATE": 0.9901960784313726,
+   "PHONE": 1.0,
+   "EMAIL": null,
+   "ADDRESS": 1.0,
+   "MEDICAL_RECORD_NO": 1.0,
+   "HEALTH_INSURANCE_NO": null,
+   "FINANCIAL_ACCOUNT": 1.0,
+   "LICENSE_PLATE": null,
+   "QUASI_IDENTIFIER": 0.75,
+   "SIGNATURE": 1.0,
+   "FACE_PHOTO": null,
+   "SEAL_STAMP": 1.0
+  },
+  "support_by_category": {
+   "PERSON_NAME": 144,
+   "GOV_ID": 6,
+   "DATE_OF_BIRTH": 18,
+   "DATE": 102,
+   "PHONE": 24,
+   "EMAIL": 0,
+   "ADDRESS": 24,
+   "MEDICAL_RECORD_NO": 24,
+   "HEALTH_INSURANCE_NO": 0,
+   "FINANCIAL_ACCOUNT": 6,
+   "LICENSE_PLATE": 0,
+   "QUASI_IDENTIFIER": 24,
+   "SIGNATURE": 12,
+   "FACE_PHOTO": 0,
+   "SEAL_STAMP": 12
+  }
+ },
+ "D_agentic": {
+  "docs": 30,
+  "gt_items": 396,
+  "caught": 368,
+  "recall": 0.9292929292929293,
+  "precision": 0.8883495145631068,
+  "redaction_boxes": 412,
+  "clean_doc_rate": 0.43333333333333335,
+  "recall_by_category": {
+   "PERSON_NAME": 0.8472222222222222,
+   "GOV_ID": 1.0,
+   "DATE_OF_BIRTH": 1.0,
+   "DATE": 0.9901960784313726,
+   "PHONE": 1.0,
+   "EMAIL": null,
+   "ADDRESS": 1.0,
+   "MEDICAL_RECORD_NO": 1.0,
+   "HEALTH_INSURANCE_NO": null,
+   "FINANCIAL_ACCOUNT": 1.0,
+   "LICENSE_PLATE": null,
+   "QUASI_IDENTIFIER": 0.7916666666666666,
+   "SIGNATURE": 1.0,
+   "FACE_PHOTO": null,
+   "SEAL_STAMP": 1.0
+  },
+  "support_by_category": {
+   "PERSON_NAME": 144,
+   "GOV_ID": 6,
+   "DATE_OF_BIRTH": 18,
+   "DATE": 102,
+   "PHONE": 24,
+   "EMAIL": 0,
+   "ADDRESS": 24,
+   "MEDICAL_RECORD_NO": 24,
+   "HEALTH_INSURANCE_NO": 0,
+   "FINANCIAL_ACCOUNT": 6,
+   "LICENSE_PLATE": 0,
+   "QUASI_IDENTIFIER": 24,
+   "SIGNATURE": 12,
+   "FACE_PHOTO": 0,
+   "SEAL_STAMP": 12
+  }
+ },
+ "latency_seconds_per_page": {
+  "ocr": {
+   "mean": 1.7936084149308347,
+   "p50": 0.77433673851192,
+   "max": 5.030839749990264
+  },
+  "rules": {
+   "mean": 0.0010173666329743962,
+   "p50": 0.0007419745088554919,
+   "max": 0.0031572000007145107
+  },
+  "llm": {
+   "mean": 6.8983534647947335,
+   "p50": 7.222391261981102,
+   "max": 10.176691063999897
+  },
+  "vlm": {
+   "mean": 1.9234941677675428,
+   "p50": 1.9701012660079869,
+   "max": 3.0181169569841586
+  },
+  "total": {
+   "mean": 23.118156892301826,
+   "p50": 19.813729306988535,
+   "max": 38.99019645701628
+  }
+ },
+ "llm_completion_tokens_mean": 216.86666666666667
+}
