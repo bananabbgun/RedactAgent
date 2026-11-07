@@ -201,6 +201,8 @@ class Pipeline:
                     job.timings["llm"] = job.timings.get("llm", 0) + st.seconds
                     job.tokens["llm_prompt"] = job.tokens.get("llm_prompt", 0) + st.prompt_tokens
                     job.tokens["llm_completion"] = job.tokens.get("llm_completion", 0) + st.completion_tokens
+                    if st.attempts > 1:
+                        job.tokens["llm_retries"] = job.tokens.get("llm_retries", 0) + st.attempts - 1
                 page.findings = merge_text_hits(i, lines, rhits, lhits, next_id)
                 for h in vhits:
                     srcs = h.source.split("+")
@@ -219,6 +221,8 @@ class Pipeline:
                     p.findings.extend(v.added)
                     per_page.append({"page": p.index, "score": v.risk, "summary": v.summary, "added": len(v.added)})
                     job.tokens["agent_completion"] = job.tokens.get("agent_completion", 0) + v.stats.completion_tokens
+                    if v.stats.attempts > 1:
+                        job.tokens["agent_retries"] = job.tokens.get("agent_retries", 0) + v.stats.attempts - 1
                 job.risk = {"score": max(x["score"] for x in per_page), "per_page": per_page,
                             "summary": next((x["summary"] for x in sorted(per_page, key=lambda x: -x["score"])), ""),
                             "policy": job.policy_id}

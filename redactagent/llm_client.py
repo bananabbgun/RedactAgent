@@ -43,6 +43,7 @@ class CallStats:
     seconds: float
     prompt_tokens: int = 0
     completion_tokens: int = 0
+    attempts: int = 1  # >1 when a runaway reasoning loop was cancelled and retried
 
 
 def _b64_png(img: Image.Image) -> str:
@@ -97,7 +98,8 @@ class ModelClient:
             data = self._post_openai(body)
             content = data["choices"][0]["message"]["content"] or "{}"
             usage = data.get("usage", {})
-            stats = CallStats(time.perf_counter() - t0, usage.get("prompt_tokens", 0), usage.get("completion_tokens", 0))
+            stats = CallStats(time.perf_counter() - t0, usage.get("prompt_tokens", 0), usage.get("completion_tokens", 0),
+                              data.get("attempts", 1))
         try:
             return json.loads(content), stats
         except json.JSONDecodeError:
@@ -126,7 +128,7 @@ class ModelClient:
         data = self._post_openai(body)
         usage = data.get("usage", {})
         return data["choices"][0]["message"]["content"] or "", CallStats(time.perf_counter() - t0, usage.get("prompt_tokens", 0),
-                                                                    usage.get("completion_tokens", 0))
+                                                                    usage.get("completion_tokens", 0), data.get("attempts", 1))
 
     def _post_openai(self, body: dict) -> dict:
         """POST a chat completion. For reasoning models, decoding occasionally falls into a repetition loop in the
