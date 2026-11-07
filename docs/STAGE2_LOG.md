@@ -167,3 +167,19 @@ v3 across the two final runs: recall 96.7 → 96.2, precision 94.8 → 95.0. The
 occurrence of reasoning loops (none in run 1; two in run 2, one not rescued by the retry, which also explains the
 lower v3 throughput). This is reported as run-to-run variation; v3 is not used again. Remaining mitigation for an
 unrescued loop: the agentic check, the unread-ink check and mandatory human review.
+
+### Throughput and energy — final configuration (`eval/results_b70/bench/`)
+
+gpt-oss-20b + Qwen2.5-VL-7B, full pipeline including the agentic check, 36 pages per level, 2 warm-up pages.
+
+| Pages in flight | Pages / min | Latency p50 | Latency p95 | GPU power (both cards) |
+|---|---|---|---|---|
+| 1 | 3.3 | 12.7 s | 46.9 s | 263 W |
+| 4 | 12.7 | 13.3 s | 37.3 s | 355 W |
+| **8** | **24.7** | **14.4 s** | **30.0 s** | **364 W** |
+| 16 | 23.4 | 20.6 s | 50.2 s | 334 W |
+| 32 | 8.8 | 38.9 s | 194.8 s | 270 W |
+
+Eight pages in flight is the sweet spot (the web app and batch mode default to `RA_WORKERS=8`); beyond 16 the
+host-side work and long reasoning tails make throughput collapse, so the queue deliberately caps concurrency.
+The p95 at one page in flight fell from 105 s to 47 s with the runaway-reasoning retry.
