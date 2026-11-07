@@ -55,9 +55,11 @@ def main():
         # larger terminal font for a readable video (JupyterLab settings API, needs the XSRF cookie)
         page.evaluate("""async (size) => {
             const x = (document.cookie.match(/_xsrf=([^;]+)/) || [])[1];
-            await fetch(location.pathname.split('/lab')[0] + '/lab/api/settings/@jupyterlab/terminal-extension:plugin',
-              {method: 'PUT', headers: {'Content-Type': 'application/json', 'X-XSRFToken': x},
-               body: JSON.stringify({raw: JSON.stringify({fontSize: size})})});
+            const put = (plugin, raw) => fetch(location.pathname.split('/lab')[0] + '/lab/api/settings/' + plugin,
+              {method: 'PUT', headers: {'Content-Type': 'application/json', 'X-XSRFToken': x}, body: JSON.stringify({raw})});
+            await put('@jupyterlab/terminal-extension:plugin', JSON.stringify({fontSize: size}));
+            // no "Jupyter news?" toast in the middle of the recording
+            await put('@jupyterlab/apputils-extension:notification', JSON.stringify({fetchNews: 'false'}));
         }""", a.font)
         page.reload(wait_until="domcontentloaded")
         page.wait_for_selector(".jp-LauncherCard", timeout=120000)
@@ -108,10 +110,11 @@ def main():
                 page.keyboard.type("clear", delay=20); page.keyboard.press("Enter")
                 page.wait_for_timeout(600)
         page.screenshot(path=str(out / "terminal_last.png"))
-        page.evaluate("""async () => {  // restore the default terminal settings
+        page.evaluate("""async () => {  // restore the default settings
             const x = (document.cookie.match(/_xsrf=([^;]+)/) || [])[1];
-            await fetch(location.pathname.split('/lab')[0] + '/lab/api/settings/@jupyterlab/terminal-extension:plugin',
-              {method: 'PUT', headers: {'Content-Type': 'application/json', 'X-XSRFToken': x}, body: JSON.stringify({raw: '{}'})});
+            for (const plugin of ['@jupyterlab/terminal-extension:plugin', '@jupyterlab/apputils-extension:notification'])
+              await fetch(location.pathname.split('/lab')[0] + '/lab/api/settings/' + plugin,
+                {method: 'PUT', headers: {'Content-Type': 'application/json', 'X-XSRFToken': x}, body: JSON.stringify({raw: '{}'})});
         }""")
         mark("end")
         video = page.video
