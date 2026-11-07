@@ -88,7 +88,7 @@
   <div class="kicker">Validation &middot; held-out evaluation</div>
   <h1>Accuracy on documents the system has never seen</h1>
   <p class="lead">Three synthetic corpora: v1 was used to build the rules and prompts; v2 introduced five <i>new</i> document types
-    and phone photos and was used for error analysis; <b>v3 was generated before any result was seen and used only once, for these numbers.</b></p>
+    and phone photos and was used for error analysis; <b>v3 was generated before any result was seen and never used for development.</b></p>
   <div class="grid2" style="grid-template-columns:1.1fr 1fr">
     <div class="card" style="background:#fff">
       <h3>v3 &middot; recall by layer ({{ fin.v3.C_full.docs }} pages, {{ fin.v3.C_full.gt_items }} PII items)</h3>
@@ -101,7 +101,7 @@
     <div>
       <table class="t" style="font-size:13.5px">
         <tr><th>Corpus</th><th>Pages</th><th>Recall</th><th>Precision</th><th>Clean pages</th></tr>
-        {% for v, label in [("v1","v1 &middot; development"),("v2","v2 &middot; held-out, analysed"),("v3","v3 &middot; untouched")] %}
+        {% for v, label in [("v1","v1 &middot; development"),("v2","v2 &middot; held-out, analysed"),("v3","v3 &middot; never tuned on")] %}
         <tr{% if v == "v3" %} class="hl"{% endif %}><td>{{ label|safe }}</td><td>{{ fin[v].D_agentic.docs }}</td>
           <td><b>{{ "%.1f"|format(fin[v].D_agentic.recall*100) }}%</b></td><td>{{ "%.1f"|format(fin[v].D_agentic.precision*100) }}%</td>
           <td>{{ "%.0f"|format(fin[v].D_agentic.clean_doc_rate*100) }}%</td></tr>
@@ -111,6 +111,7 @@
         <h3>Scoring</h3>
         <ul><li>Pixel-level: an item is removed when &ge;50&nbsp;% of its area is covered; a box is correct when &ge;30&nbsp;% overlaps PII.</li>
           <li>A page that fails to process counts as <b>fully leaked</b>, never skipped.</li>
+          <li>v3 was run twice in total (before and after a robustness fix found on v1): 96.7 / 94.8, then the numbers shown.</li>
           <li>Strict policy; full pipeline as deployed on the B70.</li></ul>
       </div>
     </div>
