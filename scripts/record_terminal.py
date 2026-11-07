@@ -15,7 +15,7 @@ from playwright.sync_api import sync_playwright
 
 STEPS = [  # (mark, command, seconds to wait after the prompt returns / max seconds)
     ("hw", "hostname; lscpu | grep -E 'Model name|^CPU\\(s\\)'; free -g | head -n 2", 4),
-    ("gpus", "for d in 0 1; do echo \"--- XPU $d\"; xpu-smi discovery --device $d | "
+    ("gpus", "for d in 0 1; do echo \"--- XPU $d\"; xpu-smi discovery --device $d 2>/dev/null | "
              "grep -E 'Device Name|Memory Physical Size|PCI BDF|Number of EUs' | sed 's/^ *//'; done", 6),
     ("servers", "docker ps --format '{{.Names}}  {{.Image}}  {{.Status}}'; curl -s 127.0.0.1:8000/v1/models | "
                 "python3 -c \"import json,sys; print('card 0 serves:', json.load(sys.stdin)['data'][0]['root'])\"; "
@@ -23,7 +23,7 @@ STEPS = [  # (mark, command, seconds to wait after the prompt returns / max seco
                 "json.load(sys.stdin)['data'][0]['root'])\"", 5),
     ("eval", "cd ~/RedactAgent && source deploy/b70/env.sh && rm -rf /tmp/v3_live && "
              "python eval/evaluate.py --workers 8 --data data/synthetic_v3 --out /tmp/v3_live --label '2x Arc Pro B70'", 6),
-    ("power", "for d in 0 1; do echo \"--- XPU $d\"; xpu-smi stats --device $d | "
+    ("power", "for d in 0 1; do echo \"--- XPU $d\"; xpu-smi stats --device $d 2>/dev/null | "
               "grep -E 'GPU Power|GPU Memory Used|GPU Frequency' | cut -c1-90; done", 6),
 ]
 
