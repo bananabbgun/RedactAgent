@@ -14,7 +14,7 @@
 <!-- 9 Performance journey -->
 <section class="slide">
   <div class="kicker">Stage II &middot; performance on the organiser's environment</div>
-  <h1>From {{ "%.0f"|format(bench0[0].ppm) }} to {{ "%.0f"|format(best.pages_per_min if best else 0) }} pages per minute &mdash; by measuring, not guessing</h1>
+  <h1>Throughput on two B70 cards &mdash; bottlenecks found by measuring</h1>
   <div class="grid2" style="grid-template-columns:1.1fr 1fr;align-items:start;margin-top:8px">
     <div class="card" style="background:#fff">
       <h3>Pages per minute vs. pages in flight</h3>
@@ -37,6 +37,14 @@
         <tr><td>LLM and VLM waited for each other per page</td><td>both layers in parallel, one card each</td><td>lower page latency</td></tr>
         <tr><td>Decoding is memory-bandwidth bound</td><td>FP8 weights (online quant.)</td><td>+75&nbsp;% throughput, same accuracy</td></tr>
         <tr><td>XPU graph mode</td><td>tested; out of resources on this stack</td><td>eager mode kept</td></tr>
+      </table>
+      {% set t8 = (tune | selectattr("id", "equalto", "T2_qwen3-8b-fp8") | list | first) %}
+      <table class="t" style="font-size:13px;margin-top:12px">
+        <tr><th>Configuration (8 pages in flight)</th><th>Work per page</th><th>Pages / min</th></tr>
+        <tr><td>Day 1: Qwen3-8B BF16</td><td>detect</td><td>{{ "%.1f"|format(bench0[2].ppm) }}</td></tr>
+        {% if t8 %}<tr><td>Throughput mode: Qwen3-8B FP8</td><td>detect + agentic check</td><td>{{ "%.1f"|format(t8.ppm) }}</td></tr>{% endif %}
+        {% set b8 = (bench | selectattr("concurrency", "equalto", 8) | list | first) %}
+        <tr class="hl"><td><b>Accuracy mode: gpt-oss-20b</b></td><td>detect + agentic check</td><td><b>{{ "%.1f"|format(b8.pages_per_min) if b8 else "–" }}</b></td></tr>
       </table>
       {% if best %}
       <div class="grid2" style="gap:12px;margin-top:12px">
