@@ -51,9 +51,12 @@ strict policy. Recall / precision in %, pixel-level scoring; a page that fails t
 
 | Corpus | Pages / PII items | Rules only (regex/DLP baseline) | **RedactAgent (all layers + agentic check)** | Pages with zero leaks |
 |---|---|---|---|---|
-| v1 development | 36 / 582 | 75.4 / 98.6 | **98.5 / 97.8** | 83 % |
-| v2 held-out (used for error analysis) | 30 / 396 | 59.6 / 92.3 | **96.0 / 93.8** | 63 % |
-| **v3 untouched (run once)** | 30 / 396 | 59.3 / 93.9 | **96.7 / 94.8** | 60 % |
+| v1 development | 36 / 582 | 75.4 / 98.6 | **99.0 / 97.8** | 86 % |
+| v2 held-out (used for error analysis) | 30 / 396 | 59.6 / 91.9 | **96.2 / 93.8** | 63 % |
+| **v3 never used for development** | 30 / 396 | 59.3 / 93.9 | **96.2 / 95.0** | 63 % |
+
+v3 was evaluated twice in total, never for tuning: once with the first final configuration (96.7 / 94.8) and once
+after a robustness fix found on v1 (above). See [`docs/STAGE2_LOG.md`](docs/STAGE2_LOG.md).
 
 Throughput and energy: see [`eval/results_b70/bench/`](eval/results_b70/bench/) (concurrency sweep with GPU board power).
 Model selection: four text models compared on the same hardware – [`docs/MODELS.md`](docs/MODELS.md).
@@ -66,7 +69,9 @@ Highlights of the Stage II engineering:
 - **One model per card**, LLM and VLM layers of a page run concurrently.
 - **FP8** made Qwen3-8B 75 % faster at the same accuracy; **gpt-oss-20b** was chosen for the best held-out accuracy.
 - **Held-out documents exposed a generalisation gap** (84 % recall on new document types); general fixes plus the
-  agentic re-identification check closed most of it, confirmed on the untouched v3 corpus.
+  agentic re-identification check closed most of it, confirmed on the v3 corpus that was never used for development.
+- **Reasoning loops**: gpt-oss occasionally loops in its reasoning until the token cap; such calls are retried with
+  sampling. A repetition penalty looked like a fix but destabilised the vLLM XPU server – measured, documented, dropped.
 - An evaluation bug (failed pages silently skipped) was found and fixed during model selection.
 
 ## Quick start

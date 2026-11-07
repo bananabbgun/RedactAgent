@@ -154,3 +154,16 @@ unchanged (greedy). Loops are rare on a healthy server (0–2 of 36 pages per ru
 The fix was motivated by v1 only. Because it changes the final configuration, all three corpora and the
 benchmark were run again (final run 2, `eval/results_b70/`); the first final run is kept in
 `eval/results_b70/run1/` and both v3 results are reported.
+
+## Final run 2 — final code (`a53e39c`), clean text-server restart
+
+| Corpus | A rules | B + LLM | C + VLM | **D + agentic check** | Clean pages (D) | Pages / min | Runaway calls (rescued) |
+|---|---|---|---|---|---|---|---|
+| v1 | 75.4 / 98.6 | 95.4 / 98.9 | 97.3 / 98.5 | **99.0 / 97.8** | 86 % | 20.6 | 2 (2) |
+| v2 | 59.6 / 91.9 | 94.7 / 94.9 | 95.2 / 95.1 | **96.2 / 93.8** | 63 % | 17.9 | 0 |
+| **v3** | 59.3 / 93.9 | 92.9 / 96.0 | 93.7 / 95.5 | **96.2 / 95.0** | 63 % | 11.3 | 2 (1) |
+
+v3 across the two final runs: recall 96.7 → 96.2, precision 94.8 → 95.0. The difference comes from the random
+occurrence of reasoning loops (none in run 1; two in run 2, one not rescued by the retry, which also explains the
+lower v3 throughput). This is reported as run-to-run variation; v3 is not used again. Remaining mitigation for an
+unrescued loop: the agentic check, the unread-ink check and mandatory human review.
