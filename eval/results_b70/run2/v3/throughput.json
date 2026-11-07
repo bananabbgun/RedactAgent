@@ -1,0 +1,8 @@
+{
+ "pages": 30,
+ "failed": 0,
+ "workers": 8,
+ "wall_seconds": 159.92233691195725,
+ "pages_per_minute": 11.255463337751012,
+ "hardware": "2x Arc Pro B70, gpt-oss-20b (reasoning low) + Qwen2.5-VL-7B"
+}

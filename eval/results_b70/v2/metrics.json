@@ -5,7 +5,7 @@
   "gt_items": 396,
   "caught": 236,
   "recall": 0.5959595959595959,
-  "precision": 0.9190283400809717,
+  "precision": 0.9230769230769231,
   "redaction_boxes": 247,
   "clean_doc_rate": 0.0,
   "recall_by_category": {
@@ -47,13 +47,13 @@
   "docs": 30,
   "failed_docs": 0,
   "gt_items": 396,
-  "caught": 375,
-  "recall": 0.946969696969697,
-  "precision": 0.9485861182519281,
-  "redaction_boxes": 389,
+  "caught": 372,
+  "recall": 0.9393939393939394,
+  "precision": 0.9505208333333334,
+  "redaction_boxes": 384,
   "clean_doc_rate": 0.5333333333333333,
   "recall_by_category": {
-   "PERSON_NAME": 0.9027777777777778,
+   "PERSON_NAME": 0.8819444444444444,
    "GOV_ID": 1.0,
    "DATE_OF_BIRTH": 1.0,
    "DATE": 1.0,
@@ -62,10 +62,10 @@
    "ADDRESS": 1.0,
    "MEDICAL_RECORD_NO": 1.0,
    "HEALTH_INSURANCE_NO": null,
-   "FINANCIAL_ACCOUNT": 0.8333333333333334,
+   "FINANCIAL_ACCOUNT": 1.0,
    "LICENSE_PLATE": null,
    "QUASI_IDENTIFIER": 0.8333333333333334,
-   "SIGNATURE": 0.8333333333333334,
+   "SIGNATURE": 0.75,
    "FACE_PHOTO": null,
    "SEAL_STAMP": 1.0
   },
@@ -91,13 +91,13 @@
   "docs": 30,
   "failed_docs": 0,
   "gt_items": 396,
-  "caught": 377,
-  "recall": 0.952020202020202,
-  "precision": 0.9514563106796117,
-  "redaction_boxes": 412,
-  "clean_doc_rate": 0.5666666666666667,
+  "caught": 375,
+  "recall": 0.946969696969697,
+  "precision": 0.9530864197530864,
+  "redaction_boxes": 405,
+  "clean_doc_rate": 0.6,
   "recall_by_category": {
-   "PERSON_NAME": 0.9027777777777778,
+   "PERSON_NAME": 0.8819444444444444,
    "GOV_ID": 1.0,
    "DATE_OF_BIRTH": 1.0,
    "DATE": 1.0,
@@ -106,7 +106,7 @@
    "ADDRESS": 1.0,
    "MEDICAL_RECORD_NO": 1.0,
    "HEALTH_INSURANCE_NO": null,
-   "FINANCIAL_ACCOUNT": 0.8333333333333334,
+   "FINANCIAL_ACCOUNT": 1.0,
    "LICENSE_PLATE": null,
    "QUASI_IDENTIFIER": 0.8333333333333334,
    "SIGNATURE": 1.0,
@@ -135,13 +135,13 @@
   "docs": 30,
   "failed_docs": 0,
   "gt_items": 396,
-  "caught": 381,
-  "recall": 0.9621212121212122,
-  "precision": 0.9383886255924171,
-  "redaction_boxes": 422,
-  "clean_doc_rate": 0.6333333333333333,
+  "caught": 383,
+  "recall": 0.9671717171717171,
+  "precision": 0.9287410926365796,
+  "redaction_boxes": 421,
+  "clean_doc_rate": 0.7,
   "recall_by_category": {
-   "PERSON_NAME": 0.9166666666666666,
+   "PERSON_NAME": 0.9375,
    "GOV_ID": 1.0,
    "DATE_OF_BIRTH": 1.0,
    "DATE": 1.0,
@@ -152,7 +152,7 @@
    "HEALTH_INSURANCE_NO": null,
    "FINANCIAL_ACCOUNT": 1.0,
    "LICENSE_PLATE": null,
-   "QUASI_IDENTIFIER": 0.875,
+   "QUASI_IDENTIFIER": 0.8333333333333334,
    "SIGNATURE": 1.0,
    "FACE_PHOTO": null,
    "SEAL_STAMP": 1.0
@@ -177,30 +177,30 @@
  },
  "latency_seconds_per_page": {
   "ocr": {
-   "mean": 1.5989641854636527,
-   "p50": 0.8457652564975433,
-   "max": 4.282306487963069
+   "mean": 1.6288124712378098,
+   "p50": 0.844468126015272,
+   "max": 4.359028332983144
   },
   "rules": {
-   "mean": 0.0009327064035460353,
-   "p50": 0.0007518180063925683,
-   "max": 0.0025077859754674137
+   "mean": 0.0009301512618549168,
+   "p50": 0.0007603550038766116,
+   "max": 0.0026491489843465388
   },
   "llm": {
-   "mean": 13.670895908999956,
-   "p50": 9.156401329499204,
-   "max": 41.90771396900527
+   "mean": 9.939938667141057,
+   "p50": 7.393675160506973,
+   "max": 34.798668812029064
   },
   "vlm": {
-   "mean": 1.8866946767258923,
-   "p50": 1.856726908503333,
-   "max": 3.1910605040029623
+   "mean": 2.299427221397248,
+   "p50": 1.8982463924912736,
+   "max": 4.783838729024865
   },
   "total": {
-   "mean": 20.102764672698687,
-   "p50": 15.742180352506693,
-   "max": 46.98357061203569
+   "mean": 16.065422158839645,
+   "p50": 13.52577410248341,
+   "max": 43.81540184200276
   }
  },
- "llm_completion_tokens_mean": 776.8
+ "llm_completion_tokens_mean": 560.7
 }

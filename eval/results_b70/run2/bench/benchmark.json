@@ -1,0 +1,192 @@
+[
+ {
+  "concurrency": 1,
+  "pages": 36,
+  "errors": 0,
+  "wall_s": 659.9803350919974,
+  "pages_per_min": 3.272824787573267,
+  "latency_p50_s": 12.656563155003823,
+  "latency_p95_s": 46.850905391038395,
+  "gpu": {
+   "0": {
+    "util_mean": null,
+    "power_mean_w": 157.08921092564492,
+    "mem_max_mib": 26688.29296875,
+    "header": [
+     "Timestamp",
+     " DeviceId",
+     " utilization.gpu (%)",
+     " power.draw (W)",
+     " memory.used (MiB)"
+    ]
+   },
+   "1": {
+    "util_mean": null,
+    "power_mean_w": 106.30872534142641,
+    "mem_max_mib": 29229.25,
+    "header": [
+     "Timestamp",
+     " DeviceId",
+     " utilization.gpu (%)",
+     " power.draw (W)",
+     " memory.used (MiB)"
+    ]
+   }
+  },
+  "power_w_total": 263.3979362670713,
+  "energy_j_per_page": 4828.818284446731,
+  "pages_per_kwh": 745.5240160093279
+ },
+ {
+  "concurrency": 4,
+  "pages": 36,
+  "errors": 0,
+  "wall_s": 170.14195312699303,
+  "pages_per_min": 12.69528155932116,
+  "latency_p50_s": 13.276893764967099,
+  "latency_p95_s": 37.264059544948395,
+  "gpu": {
+   "0": {
+    "util_mean": null,
+    "power_mean_w": 222.74763313609466,
+    "mem_max_mib": 26688.296875,
+    "header": [
+     "Timestamp",
+     " DeviceId",
+     " utilization.gpu (%)",
+     " power.draw (W)",
+     " memory.used (MiB)"
+    ]
+   },
+   "1": {
+    "util_mean": null,
+    "power_mean_w": 132.02278106508876,
+    "mem_max_mib": 29229.25,
+    "header": [
+     "Timestamp",
+     " DeviceId",
+     " utilization.gpu (%)",
+     " power.draw (W)",
+     " memory.used (MiB)"
+    ]
+   }
+  },
+  "power_w_total": 354.7704142011834,
+  "energy_j_per_page": 1676.7036439961569,
+  "pages_per_kwh": 2147.0699445848236
+ },
+ {
+  "concurrency": 8,
+  "pages": 36,
+  "errors": 0,
+  "wall_s": 87.39682316500694,
+  "pages_per_min": 24.714857151293444,
+  "latency_p50_s": 14.355590112973005,
+  "latency_p95_s": 29.964224431023467,
+  "gpu": {
+   "0": {
+    "util_mean": null,
+    "power_mean_w": 216.81137931034482,
+    "mem_max_mib": 26688.296875,
+    "header": [
+     "Timestamp",
+     " DeviceId",
+     " utilization.gpu (%)",
+     " power.draw (W)",
+     " memory.used (MiB)"
+    ]
+   },
+   "1": {
+    "util_mean": null,
+    "power_mean_w": 147.46528735632185,
+    "mem_max_mib": 29229.25390625,
+    "header": [
+     "Timestamp",
+     " DeviceId",
+     " utilization.gpu (%)",
+     " power.draw (W)",
+     " memory.used (MiB)"
+    ]
+   }
+  },
+  "power_w_total": 364.27666666666664,
+  "energy_j_per_page": 884.3506505501344,
+  "pages_per_kwh": 4070.783458756458
+ },
+ {
+  "concurrency": 16,
+  "pages": 36,
+  "errors": 0,
+  "wall_s": 92.398237012967,
+  "pages_per_min": 23.377069409851075,
+  "latency_p50_s": 20.553889215982053,
+  "latency_p95_s": 50.16179653001018,
+  "gpu": {
+   "0": {
+    "util_mean": null,
+    "power_mean_w": 202.71239130434782,
+    "mem_max_mib": 26688.3046875,
+    "header": [
+     "Timestamp",
+     " DeviceId",
+     " utilization.gpu (%)",
+     " power.draw (W)",
+     " memory.used (MiB)"
+    ]
+   },
+   "1": {
+    "util_mean": null,
+    "power_mean_w": 131.04684782608695,
+    "mem_max_mib": 29957.24609375,
+    "header": [
+     "Timestamp",
+     " DeviceId",
+     " utilization.gpu (%)",
+     " power.draw (W)",
+     " memory.used (MiB)"
+    ]
+   }
+  },
+  "power_w_total": 333.75923913043476,
+  "energy_j_per_page": 856.6323689567067,
+  "pages_per_kwh": 4202.502882752893
+ },
+ {
+  "concurrency": 32,
+  "pages": 36,
+  "errors": 0,
+  "wall_s": 245.59754583099857,
+  "pages_per_min": 8.794876156809591,
+  "latency_p50_s": 38.86268844798906,
+  "latency_p95_s": 194.76045962201897,
+  "gpu": {
+   "0": {
+    "util_mean": null,
+    "power_mean_w": 165.96938775510205,
+    "mem_max_mib": 26688.296875,
+    "header": [
+     "Timestamp",
+     " DeviceId",
+     " utilization.gpu (%)",
+     " power.draw (W)",
+     " memory.used (MiB)"
+    ]
+   },
+   "1": {
+    "util_mean": null,
+    "power_mean_w": 103.91314285714286,
+    "mem_max_mib": 29957.24609375,
+    "header": [
+     "Timestamp",
+     " DeviceId",
+     " utilization.gpu (%)",
+     " power.draw (W)",
+     " memory.used (MiB)"
+    ]
+   }
+  },
+  "power_w_total": 269.8825306122449,
+  "energy_j_per_page": 1841.1801994729637,
+  "pages_per_kwh": 1955.2676055448005
+ }
+]

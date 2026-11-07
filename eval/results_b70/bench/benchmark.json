@@ -3,15 +3,15 @@
   "concurrency": 1,
   "pages": 36,
   "errors": 0,
-  "wall_s": 659.9803350919974,
-  "pages_per_min": 3.272824787573267,
-  "latency_p50_s": 12.656563155003823,
-  "latency_p95_s": 46.850905391038395,
+  "wall_s": 643.6041775409831,
+  "pages_per_min": 3.3561000306938755,
+  "latency_p50_s": 14.846780261024833,
+  "latency_p95_s": 38.14344439597335,
   "gpu": {
    "0": {
     "util_mean": null,
-    "power_mean_w": 157.08921092564492,
-    "mem_max_mib": 26688.29296875,
+    "power_mean_w": 155.45597200622083,
+    "mem_max_mib": 25876.9609375,
     "header": [
      "Timestamp",
      " DeviceId",
@@ -22,8 +22,8 @@
    },
    "1": {
     "util_mean": null,
-    "power_mean_w": 106.30872534142641,
-    "mem_max_mib": 29229.25,
+    "power_mean_w": 107.74230171073094,
+    "mem_max_mib": 25053.50390625,
     "header": [
      "Timestamp",
      " DeviceId",
@@ -33,23 +33,23 @@
     ]
    }
   },
-  "power_w_total": 263.3979362670713,
-  "energy_j_per_page": 4828.818284446731,
-  "pages_per_kwh": 745.5240160093279
+  "power_w_total": 263.1982737169518,
+  "energy_j_per_page": 4705.43079127237,
+  "pages_per_kwh": 765.0734140383656
  },
  {
   "concurrency": 4,
   "pages": 36,
   "errors": 0,
-  "wall_s": 170.14195312699303,
-  "pages_per_min": 12.69528155932116,
-  "latency_p50_s": 13.276893764967099,
-  "latency_p95_s": 37.264059544948395,
+  "wall_s": 186.92304238904035,
+  "pages_per_min": 11.555557690444722,
+  "latency_p50_s": 13.037823806982487,
+  "latency_p95_s": 40.97758540202631,
   "gpu": {
    "0": {
     "util_mean": null,
-    "power_mean_w": 222.74763313609466,
-    "mem_max_mib": 26688.296875,
+    "power_mean_w": 206.47435483870967,
+    "mem_max_mib": 25876.96875,
     "header": [
      "Timestamp",
      " DeviceId",
@@ -60,8 +60,8 @@
    },
    "1": {
     "util_mean": null,
-    "power_mean_w": 132.02278106508876,
-    "mem_max_mib": 29229.25,
+    "power_mean_w": 122.60903225806452,
+    "mem_max_mib": 25323.5078125,
     "header": [
      "Timestamp",
      " DeviceId",
@@ -71,23 +71,23 @@
     ]
    }
   },
-  "power_w_total": 354.7704142011834,
-  "energy_j_per_page": 1676.7036439961569,
-  "pages_per_kwh": 2147.0699445848236
+  "power_w_total": 329.0833870967742,
+  "energy_j_per_page": 1708.7018865505358,
+  "pages_per_kwh": 2106.862541872384
  },
  {
   "concurrency": 8,
   "pages": 36,
   "errors": 0,
-  "wall_s": 87.39682316500694,
-  "pages_per_min": 24.714857151293444,
-  "latency_p50_s": 14.355590112973005,
-  "latency_p95_s": 29.964224431023467,
+  "wall_s": 102.95670521899592,
+  "pages_per_min": 20.979692341606437,
+  "latency_p50_s": 15.225953923014458,
+  "latency_p95_s": 39.59196485596476,
   "gpu": {
    "0": {
     "util_mean": null,
-    "power_mean_w": 216.81137931034482,
-    "mem_max_mib": 26688.296875,
+    "power_mean_w": 219.47245098039215,
+    "mem_max_mib": 25885.02734375,
     "header": [
      "Timestamp",
      " DeviceId",
@@ -98,8 +98,8 @@
    },
    "1": {
     "util_mean": null,
-    "power_mean_w": 147.46528735632185,
-    "mem_max_mib": 29229.25390625,
+    "power_mean_w": 142.1813725490196,
+    "mem_max_mib": 25323.51953125,
     "header": [
      "Timestamp",
      " DeviceId",
@@ -109,23 +109,23 @@
     ]
    }
   },
-  "power_w_total": 364.27666666666664,
-  "energy_j_per_page": 884.3506505501344,
-  "pages_per_kwh": 4070.783458756458
+  "power_w_total": 361.65382352941174,
+  "energy_j_per_page": 1034.2968361233447,
+  "pages_per_kwh": 3480.6255557091185
  },
  {
   "concurrency": 16,
   "pages": 36,
   "errors": 0,
-  "wall_s": 92.398237012967,
-  "pages_per_min": 23.377069409851075,
-  "latency_p50_s": 20.553889215982053,
-  "latency_p95_s": 50.16179653001018,
+  "wall_s": 84.67997095698956,
+  "pages_per_min": 25.507802796686146,
+  "latency_p50_s": 23.3803051590221,
+  "latency_p95_s": 58.20025826600613,
   "gpu": {
    "0": {
     "util_mean": null,
-    "power_mean_w": 202.71239130434782,
-    "mem_max_mib": 26688.3046875,
+    "power_mean_w": 212.29226190476192,
+    "mem_max_mib": 25885.02734375,
     "header": [
      "Timestamp",
      " DeviceId",
@@ -136,8 +136,8 @@
    },
    "1": {
     "util_mean": null,
-    "power_mean_w": 131.04684782608695,
-    "mem_max_mib": 29957.24609375,
+    "power_mean_w": 134.81535714285715,
+    "mem_max_mib": 26465.51953125,
     "header": [
      "Timestamp",
      " DeviceId",
@@ -147,23 +147,23 @@
     ]
    }
   },
-  "power_w_total": 333.75923913043476,
-  "energy_j_per_page": 856.6323689567067,
-  "pages_per_kwh": 4202.502882752893
+  "power_w_total": 347.1076190476191,
+  "energy_j_per_page": 816.4739749972828,
+  "pages_per_kwh": 4409.203612413955
  },
  {
   "concurrency": 32,
   "pages": 36,
   "errors": 0,
-  "wall_s": 245.59754583099857,
-  "pages_per_min": 8.794876156809591,
-  "latency_p50_s": 38.86268844798906,
-  "latency_p95_s": 194.76045962201897,
+  "wall_s": 83.48776794201694,
+  "pages_per_min": 25.872053514475805,
+  "latency_p50_s": 35.9658695589751,
+  "latency_p95_s": 73.78001598495757,
   "gpu": {
    "0": {
     "util_mean": null,
-    "power_mean_w": 165.96938775510205,
-    "mem_max_mib": 26688.296875,
+    "power_mean_w": 211.6898795180723,
+    "mem_max_mib": 25885.02734375,
     "header": [
      "Timestamp",
      " DeviceId",
@@ -174,8 +174,8 @@
    },
    "1": {
     "util_mean": null,
-    "power_mean_w": 103.91314285714286,
-    "mem_max_mib": 29957.24609375,
+    "power_mean_w": 124.81831325301205,
+    "mem_max_mib": 26467.5234375,
     "header": [
      "Timestamp",
      " DeviceId",
@@ -185,8 +185,8 @@
     ]
    }
   },
-  "power_w_total": 269.8825306122449,
-  "energy_j_per_page": 1841.1801994729637,
-  "pages_per_kwh": 1955.2676055448005
+  "power_w_total": 336.50819277108434,
+  "energy_j_per_page": 780.3977196849942,
+  "pages_per_kwh": 4613.032443832783
  }
 ]

@@ -832,8 +832,7 @@
     "cat": "ADDRESS",
     "text": "高雄市苓雅區民生东路二段57巷343号七楼",
     "sources": [
-     "rule",
-     "llm"
+     "rule"
     ]
    },
    {
@@ -858,6 +857,15 @@
     "text": "(02)2181-0000",
     "sources": [
      "rule"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_02",
+    "cat": "PHONE",
+    "text": "mobile0920-247-501",
+    "sources": [
+     "rule",
+     "llm"
     ]
    },
    {
@@ -914,19 +922,9 @@
    {
     "doc": "referral_letter_en_02",
     "cat": "PERSON_NAME",
-    "text": "Mr./Ms. Liu",
+    "text": "Ms. Liu",
     "sources": [
-     "rule",
-     "llm"
-    ]
-   },
-   {
-    "doc": "referral_letter_en_03",
-    "cat": "MEDICAL_RECORD_NO",
-    "text": "chartMRN-6174871",
-    "sources": [
-     "rule",
-     "llm"
+     "rule"
     ]
    },
    {
@@ -950,15 +948,6 @@
     "doc": "referral_letter_en_04",
     "cat": "PERSON_NAME",
     "text": "Mr./Ms. Liu",
-    "sources": [
-     "rule",
-     "llm"
-    ]
-   },
-   {
-    "doc": "referral_letter_en_05",
-    "cat": "MEDICAL_RECORD_NO",
-    "text": "chartMRN-3287941",
     "sources": [
      "rule",
      "llm"
@@ -998,6 +987,11 @@
     "text": "the last blacksmith still working in Lukang old street"
    },
    {
+    "doc": "lab_report_en_02",
+    "cat": "SIGNATURE",
+    "text": "Lin Wei-ting"
+   },
+   {
     "doc": "prescription_label_zh_01",
     "cat": "PERSON_NAME",
     "text": "黃雅雯"
@@ -1006,6 +1000,11 @@
     "doc": "prescription_label_zh_03",
     "cat": "PERSON_NAME",
     "text": "林進財"
+   },
+   {
+    "doc": "prescription_label_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "陳志強"
    },
    {
     "doc": "bank_statement_en_00",
@@ -1038,9 +1037,14 @@
     "text": "CHANG KUAN-PEI"
    },
    {
-    "doc": "bank_statement_en_05",
-    "cat": "FINANCIAL_ACCOUNT",
-    "text": "(13) 1234-996-494721"
+    "doc": "bank_statement_en_04",
+    "cat": "PERSON_NAME",
+    "text": "LEE HAO-WEI"
+   },
+   {
+    "doc": "bank_statement_en_04",
+    "cat": "PERSON_NAME",
+    "text": "LIU YI-PEI"
    },
    {
     "doc": "bank_statement_en_05",
@@ -1053,19 +1057,19 @@
     "text": "CHANG MING-HAN"
    },
    {
-    "doc": "court_judgment_zh_05",
+    "doc": "bank_statement_en_05",
     "cat": "PERSON_NAME",
-    "text": "何宜蓁"
-   },
-   {
-    "doc": "referral_letter_en_00",
-    "cat": "PERSON_NAME",
-    "text": "Lin Ming-wei"
+    "text": "KUO CHIA-HSIN"
    },
    {
     "doc": "referral_letter_en_03",
     "cat": "QUASI_IDENTIFIER",
     "text": "the only harbour pilot licensed for Hualien port"
+   },
+   {
+    "doc": "referral_letter_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Kuo Chia-hsin"
    },
    {
     "doc": "referral_letter_en_04",
@@ -1113,8 +1117,7 @@
     "cat": "ADDRESS",
     "text": "高雄市苓雅區民生东路二段57巷343号七楼",
     "sources": [
-     "rule",
-     "llm"
+     "rule"
     ]
    },
    {
@@ -1139,6 +1142,15 @@
     "text": "(02)2181-0000",
     "sources": [
      "rule"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_02",
+    "cat": "PHONE",
+    "text": "mobile0920-247-501",
+    "sources": [
+     "rule",
+     "llm"
     ]
    },
    {
@@ -1195,19 +1207,9 @@
    {
     "doc": "referral_letter_en_02",
     "cat": "PERSON_NAME",
-    "text": "Mr./Ms. Liu",
+    "text": "Ms. Liu",
     "sources": [
-     "rule",
-     "llm"
-    ]
-   },
-   {
-    "doc": "referral_letter_en_03",
-    "cat": "MEDICAL_RECORD_NO",
-    "text": "chartMRN-6174871",
-    "sources": [
-     "rule",
-     "llm"
+     "rule"
     ]
    },
    {
@@ -1231,15 +1233,6 @@
     "doc": "referral_letter_en_04",
     "cat": "PERSON_NAME",
     "text": "Mr./Ms. Liu",
-    "sources": [
-     "rule",
-     "llm"
-    ]
-   },
-   {
-    "doc": "referral_letter_en_05",
-    "cat": "MEDICAL_RECORD_NO",
-    "text": "chartMRN-3287941",
     "sources": [
      "rule",
      "llm"
@@ -1289,6 +1282,11 @@
     "text": "林進財"
    },
    {
+    "doc": "prescription_label_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "陳志強"
+   },
+   {
     "doc": "bank_statement_en_00",
     "cat": "PERSON_NAME",
     "text": "YANG HAN-MING"
@@ -1319,9 +1317,14 @@
     "text": "CHANG KUAN-PEI"
    },
    {
-    "doc": "bank_statement_en_05",
-    "cat": "FINANCIAL_ACCOUNT",
-    "text": "(13) 1234-996-494721"
+    "doc": "bank_statement_en_04",
+    "cat": "PERSON_NAME",
+    "text": "LEE HAO-WEI"
+   },
+   {
+    "doc": "bank_statement_en_04",
+    "cat": "PERSON_NAME",
+    "text": "LIU YI-PEI"
    },
    {
     "doc": "bank_statement_en_05",
@@ -1334,19 +1337,19 @@
     "text": "CHANG MING-HAN"
    },
    {
-    "doc": "court_judgment_zh_05",
+    "doc": "bank_statement_en_05",
     "cat": "PERSON_NAME",
-    "text": "何宜蓁"
-   },
-   {
-    "doc": "referral_letter_en_00",
-    "cat": "PERSON_NAME",
-    "text": "Lin Ming-wei"
+    "text": "KUO CHIA-HSIN"
    },
    {
     "doc": "referral_letter_en_03",
     "cat": "QUASI_IDENTIFIER",
     "text": "the only harbour pilot licensed for Hualien port"
+   },
+   {
+    "doc": "referral_letter_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Kuo Chia-hsin"
    },
    {
     "doc": "referral_letter_en_05",
@@ -1384,8 +1387,7 @@
     "cat": "ADDRESS",
     "text": "高雄市苓雅區民生东路二段57巷343号七楼",
     "sources": [
-     "rule",
-     "llm"
+     "rule"
     ]
    },
    {
@@ -1410,6 +1412,15 @@
     "text": "(02)2181-0000",
     "sources": [
      "rule"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_02",
+    "cat": "PHONE",
+    "text": "mobile0920-247-501",
+    "sources": [
+     "rule",
+     "llm"
     ]
    },
    {
@@ -1466,19 +1477,9 @@
    {
     "doc": "referral_letter_en_02",
     "cat": "PERSON_NAME",
-    "text": "Mr./Ms. Liu",
+    "text": "Ms. Liu",
     "sources": [
-     "rule",
-     "llm"
-    ]
-   },
-   {
-    "doc": "referral_letter_en_03",
-    "cat": "MEDICAL_RECORD_NO",
-    "text": "chartMRN-6174871",
-    "sources": [
-     "rule",
-     "llm"
+     "rule"
     ]
    },
    {
@@ -1502,15 +1503,6 @@
     "doc": "referral_letter_en_04",
     "cat": "PERSON_NAME",
     "text": "Mr./Ms. Liu",
-    "sources": [
-     "rule",
-     "llm"
-    ]
-   },
-   {
-    "doc": "referral_letter_en_05",
-    "cat": "MEDICAL_RECORD_NO",
-    "text": "chartMRN-3287941",
     "sources": [
      "rule",
      "llm"
@@ -1550,11 +1542,6 @@
     "text": "the last blacksmith still working in Lukang old street"
    },
    {
-    "doc": "prescription_label_zh_01",
-    "cat": "PERSON_NAME",
-    "text": "黃雅雯"
-   },
-   {
     "doc": "prescription_label_zh_03",
     "cat": "PERSON_NAME",
     "text": "林進財"
@@ -1575,11 +1562,6 @@
     "text": "LIN YI-SHU"
    },
    {
-    "doc": "bank_statement_en_02",
-    "cat": "PERSON_NAME",
-    "text": "HUANG SHU-HAO"
-   },
-   {
     "doc": "bank_statement_en_03",
     "cat": "PERSON_NAME",
     "text": "CHANG KUAN-PEI"
@@ -1595,9 +1577,9 @@
     "text": "CHANG MING-HAN"
    },
    {
-    "doc": "court_judgment_zh_05",
-    "cat": "PERSON_NAME",
-    "text": "何宜蓁"
+    "doc": "referral_letter_en_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "the only harbour pilot licensed for Hualien port"
    },
    {
     "doc": "referral_letter_en_05",
@@ -1615,11 +1597,35 @@
     ]
    },
    {
+    "doc": "prescription_label_zh_00",
+    "cat": "PHONE",
+    "text": "電話：（02）2100-7901",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
     "doc": "prescription_label_zh_01",
     "cat": "ADDRESS",
     "text": "新北市新店區復興南路三段75号八楼",
     "sources": [
      "rule"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_01",
+    "cat": "PHONE",
+    "text": "：（04）2425-8855",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "处方医師：黄雅雯",
+    "sources": [
+     "agent"
     ]
    },
    {
@@ -1635,8 +1641,15 @@
     "cat": "ADDRESS",
     "text": "高雄市苓雅區民生东路二段57巷343号七楼",
     "sources": [
-     "rule",
-     "llm"
+     "rule"
+    ]
+   },
+   {
+    "doc": "prescription_label_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "处方医師：陳志强",
+    "sources": [
+     "agent"
     ]
    },
    {
@@ -1664,9 +1677,34 @@
     ]
    },
    {
-    "doc": "bank_statement_en_03",
+    "doc": "bank_statement_en_02",
     "cat": "PHONE",
-    "text": "(02)2181-0000",
+    "text": "mobile0920-247-501",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_02",
+    "cat": "PERSON_NAME",
+    "text": "TransfertoHUANGSHU-HAO",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_04",
+    "cat": "PERSON_NAME",
+    "text": "TransferfromLEEHAO-WEI",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "bank_statement_en_04",
+    "cat": "PERSON_NAME",
+    "text": "TransfertoLIUYI-PEI",
     "sources": [
      "agent"
     ]
@@ -1723,20 +1761,11 @@
     ]
    },
    {
-    "doc": "referral_letter_en_01",
-    "cat": "ADDRESS",
-    "text": "4F.,No.151,Heping E.Rd,Sec.1,NantunDist.,Taichung City",
-    "sources": [
-     "agent"
-    ]
-   },
-   {
     "doc": "referral_letter_en_02",
     "cat": "PERSON_NAME",
-    "text": "Mr./Ms. Liu",
+    "text": "Ms. Liu",
     "sources": [
-     "rule",
-     "llm"
+     "rule"
     ]
    },
    {
@@ -1753,15 +1782,6 @@
     "text": "(02）2700-1234",
     "sources": [
      "agent"
-    ]
-   },
-   {
-    "doc": "referral_letter_en_03",
-    "cat": "MEDICAL_RECORD_NO",
-    "text": "chartMRN-6174871",
-    "sources": [
-     "rule",
-     "llm"
     ]
    },
    {
@@ -1785,15 +1805,6 @@
     "doc": "referral_letter_en_04",
     "cat": "PERSON_NAME",
     "text": "Mr./Ms. Liu",
-    "sources": [
-     "rule",
-     "llm"
-    ]
-   },
-   {
-    "doc": "referral_letter_en_05",
-    "cat": "MEDICAL_RECORD_NO",
-    "text": "chartMRN-3287941",
     "sources": [
      "rule",
      "llm"

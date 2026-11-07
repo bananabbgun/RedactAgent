@@ -1,0 +1,8 @@
+{
+ "pages": 30,
+ "failed": 0,
+ "workers": 8,
+ "wall_seconds": 57.70180573302787,
+ "pages_per_minute": 31.19486430508188,
+ "hardware": "gpt-oss-20b T=0.6 t06_033 r1"
+}

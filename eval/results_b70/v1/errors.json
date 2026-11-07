@@ -723,8 +723,7 @@
     "cat": "PERSON_NAME",
     "text": "Ms.Hsu",
     "sources": [
-     "rule",
-     "llm"
+     "rule"
     ]
    },
    {
@@ -740,7 +739,8 @@
     "cat": "PERSON_NAME",
     "text": "Mr. Tsai",
     "sources": [
-     "rule"
+     "rule",
+     "llm"
     ]
    },
    {
@@ -748,8 +748,7 @@
     "cat": "PERSON_NAME",
     "text": "Mr.Tsai",
     "sources": [
-     "rule",
-     "llm"
+     "rule"
     ]
    },
    {
@@ -789,9 +788,19 @@
     "text": "Wu Pei-chia"
    },
    {
+    "doc": "discharge_summary_en_02",
+    "cat": "SIGNATURE",
+    "text": "Cheng Chih-kuan"
+   },
+   {
     "doc": "discharge_summary_en_05",
     "cat": "DATE",
     "text": "2024-04-07"
+   },
+   {
+    "doc": "medical_certificate_zh_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "是蘭嶼唯一的牙醫師"
    },
    {
     "doc": "lease_agreement_en_00",
@@ -799,14 +808,14 @@
     "text": "0932-990-389"
    },
    {
-    "doc": "lease_agreement_en_00",
-    "cat": "ADDRESS",
-    "text": "No. 122, Heping E. Rd., Lingya Dist., Kaohsiung City"
-   },
-   {
     "doc": "lease_agreement_en_01",
     "cat": "PHONE",
     "text": "0974-685-134"
+   },
+   {
+    "doc": "lease_agreement_en_01",
+    "cat": "ADDRESS",
+    "text": "No. 233, Ziyou Rd., Banqiao Dist., New Taipei City"
    },
    {
     "doc": "lease_agreement_en_01",
@@ -824,14 +833,14 @@
     "text": "5F., No. 54, Ziyou Rd., Nantun Dist., Taichung City"
    },
    {
-    "doc": "lease_agreement_en_02",
-    "cat": "SIGNATURE",
-    "text": "Lee Yen-po"
-   },
-   {
     "doc": "lease_agreement_en_03",
     "cat": "PHONE",
     "text": "0912-867-652"
+   },
+   {
+    "doc": "lease_agreement_en_03",
+    "cat": "SIGNATURE",
+    "text": "Wu Ting-chia"
    },
    {
     "doc": "lease_agreement_en_04",
@@ -845,8 +854,8 @@
    },
    {
     "doc": "lease_agreement_en_05",
-    "cat": "ADDRESS",
-    "text": "No. 89, Fuxing S. Rd., Lingya Dist., Kaohsiung City"
+    "cat": "SIGNATURE",
+    "text": "Tsai Jung-hao"
    },
    {
     "doc": "accident_report_zh_02",
@@ -874,16 +883,6 @@
     "text": "portrait"
    },
    {
-    "doc": "employee_form_zh_01",
-    "cat": "FINANCIAL_ACCOUNT",
-    "text": "(812) 4392-288-211492"
-   },
-   {
-    "doc": "employee_form_zh_01",
-    "cat": "SIGNATURE",
-    "text": "Tsai Ming-hao"
-   },
-   {
     "doc": "employee_form_zh_02",
     "cat": "FACE_PHOTO",
     "text": "portrait"
@@ -899,11 +898,6 @@
     "text": "portrait"
    },
    {
-    "doc": "employee_form_zh_04",
-    "cat": "SIGNATURE",
-    "text": "Lee Ming-ting"
-   },
-   {
     "doc": "employee_form_zh_05",
     "cat": "FACE_PHOTO",
     "text": "portrait"
@@ -915,8 +909,7 @@
     "cat": "PERSON_NAME",
     "text": "Ms.Hsu",
     "sources": [
-     "rule",
-     "llm"
+     "rule"
     ]
    },
    {
@@ -932,7 +925,8 @@
     "cat": "PERSON_NAME",
     "text": "Mr. Tsai",
     "sources": [
-     "rule"
+     "rule",
+     "llm"
     ]
    },
    {
@@ -940,8 +934,7 @@
     "cat": "PERSON_NAME",
     "text": "Mr.Tsai",
     "sources": [
-     "rule",
-     "llm"
+     "rule"
     ]
    },
    {
@@ -976,9 +969,19 @@
     "text": "2026-04-28"
    },
    {
+    "doc": "discharge_summary_en_02",
+    "cat": "SIGNATURE",
+    "text": "Cheng Chih-kuan"
+   },
+   {
     "doc": "discharge_summary_en_05",
     "cat": "DATE",
     "text": "2024-04-07"
+   },
+   {
+    "doc": "medical_certificate_zh_03",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "是蘭嶼唯一的牙醫師"
    },
    {
     "doc": "lease_agreement_en_00",
@@ -986,14 +989,14 @@
     "text": "0932-990-389"
    },
    {
-    "doc": "lease_agreement_en_00",
-    "cat": "ADDRESS",
-    "text": "No. 122, Heping E. Rd., Lingya Dist., Kaohsiung City"
-   },
-   {
     "doc": "lease_agreement_en_01",
     "cat": "PHONE",
     "text": "0974-685-134"
+   },
+   {
+    "doc": "lease_agreement_en_01",
+    "cat": "ADDRESS",
+    "text": "No. 233, Ziyou Rd., Banqiao Dist., New Taipei City"
    },
    {
     "doc": "lease_agreement_en_02",
@@ -1021,11 +1024,6 @@
     "text": "0912-799-710"
    },
    {
-    "doc": "lease_agreement_en_05",
-    "cat": "ADDRESS",
-    "text": "No. 89, Fuxing S. Rd., Lingya Dist., Kaohsiung City"
-   },
-   {
     "doc": "accident_report_zh_02",
     "cat": "PERSON_NAME",
     "text": "李宗憲"
@@ -1039,11 +1037,6 @@
     "doc": "accident_report_zh_05",
     "cat": "PERSON_NAME",
     "text": "陳正義"
-   },
-   {
-    "doc": "employee_form_zh_01",
-    "cat": "FINANCIAL_ACCOUNT",
-    "text": "(812) 4392-288-211492"
    }
   ],
   "false_positives": [
@@ -1052,8 +1045,7 @@
     "cat": "PERSON_NAME",
     "text": "Ms.Hsu",
     "sources": [
-     "rule",
-     "llm"
+     "rule"
     ]
    },
    {
@@ -1069,7 +1061,8 @@
     "cat": "PERSON_NAME",
     "text": "Mr. Tsai",
     "sources": [
-     "rule"
+     "rule",
+     "llm"
     ]
    },
    {
@@ -1085,8 +1078,7 @@
     "cat": "PERSON_NAME",
     "text": "Mr.Tsai",
     "sources": [
-     "rule",
-     "llm"
+     "rule"
     ]
    },
    {
@@ -1115,7 +1107,7 @@
     ]
    },
    {
-    "doc": "insurance_claim_en_01",
+    "doc": "insurance_claim_en_05",
     "cat": "SEAL_STAMP",
     "text": "seal_stamp",
     "sources": [
@@ -1137,19 +1129,34 @@
     "text": "2026-04-28"
    },
    {
+    "doc": "discharge_summary_en_02",
+    "cat": "SIGNATURE",
+    "text": "Cheng Chih-kuan"
+   },
+   {
     "doc": "discharge_summary_en_05",
     "cat": "DATE",
     "text": "2024-04-07"
    },
    {
-    "doc": "lease_agreement_en_01",
+    "doc": "lease_agreement_en_02",
     "cat": "PHONE",
-    "text": "0974-685-134"
+    "text": "0947-678-324"
    },
    {
     "doc": "lease_agreement_en_02",
     "cat": "ADDRESS",
     "text": "5F., No. 54, Ziyou Rd., Nantun Dist., Taichung City"
+   },
+   {
+    "doc": "lease_agreement_en_04",
+    "cat": "PHONE",
+    "text": "0953-178-876"
+   },
+   {
+    "doc": "accident_report_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "李宗憲"
    },
    {
     "doc": "accident_report_zh_05",
@@ -1163,8 +1170,7 @@
     "cat": "PERSON_NAME",
     "text": "Ms.Hsu",
     "sources": [
-     "rule",
-     "llm"
+     "rule"
     ]
    },
    {
@@ -1180,7 +1186,8 @@
     "cat": "PERSON_NAME",
     "text": "Mr. Tsai",
     "sources": [
-     "rule"
+     "rule",
+     "llm"
     ]
    },
    {
@@ -1196,8 +1203,7 @@
     "cat": "PERSON_NAME",
     "text": "Mr.Tsai",
     "sources": [
-     "rule",
-     "llm"
+     "rule"
     ]
    },
    {
@@ -1218,17 +1224,9 @@
     ]
    },
    {
-    "doc": "lease_agreement_en_00",
+    "doc": "lease_agreement_en_01",
     "cat": "PHONE",
-    "text": "phone 0932-990-389",
-    "sources": [
-     "agent"
-    ]
-   },
-   {
-    "doc": "lease_agreement_en_03",
-    "cat": "PHONE",
-    "text": "phone 0912-867-652",
+    "text": "phone 0974-685-134",
     "sources": [
      "agent"
     ]
@@ -1242,35 +1240,11 @@
     ]
    },
    {
-    "doc": "lease_agreement_en_04",
-    "cat": "PHONE",
-    "text": "phone 0953-178-876",
-    "sources": [
-     "agent"
-    ]
-   },
-   {
-    "doc": "lease_agreement_en_05",
-    "cat": "PHONE",
-    "text": "phone 0912-799-710",
-    "sources": [
-     "agent"
-    ]
-   },
-   {
-    "doc": "insurance_claim_en_01",
+    "doc": "insurance_claim_en_05",
     "cat": "SEAL_STAMP",
     "text": "seal_stamp",
     "sources": [
      "vlm"
-    ]
-   },
-   {
-    "doc": "employee_form_zh_01",
-    "cat": "PERSON_NAME",
-    "text": "本人名：",
-    "sources": [
-     "agent"
     ]
    }
   ]

@@ -5,7 +5,7 @@
   "gt_items": 396,
   "caught": 235,
   "recall": 0.5934343434343434,
-  "precision": 0.9385245901639344,
+  "precision": 0.9344262295081968,
   "redaction_boxes": 244,
   "clean_doc_rate": 0.0,
   "recall_by_category": {
@@ -47,25 +47,25 @@
   "docs": 30,
   "failed_docs": 0,
   "gt_items": 396,
-  "caught": 368,
-  "recall": 0.9292929292929293,
-  "precision": 0.9604221635883905,
-  "redaction_boxes": 379,
-  "clean_doc_rate": 0.5,
+  "caught": 374,
+  "recall": 0.9444444444444444,
+  "precision": 0.9585492227979274,
+  "redaction_boxes": 386,
+  "clean_doc_rate": 0.4666666666666667,
   "recall_by_category": {
-   "PERSON_NAME": 0.875,
+   "PERSON_NAME": 0.8958333333333334,
    "GOV_ID": 1.0,
    "DATE_OF_BIRTH": 0.9444444444444444,
    "DATE": 1.0,
    "PHONE": 1.0,
    "EMAIL": null,
-   "ADDRESS": 0.9166666666666666,
+   "ADDRESS": 1.0,
    "MEDICAL_RECORD_NO": 1.0,
    "HEALTH_INSURANCE_NO": null,
-   "FINANCIAL_ACCOUNT": 1.0,
+   "FINANCIAL_ACCOUNT": 0.8333333333333334,
    "LICENSE_PLATE": null,
-   "QUASI_IDENTIFIER": 0.8333333333333334,
-   "SIGNATURE": 0.75,
+   "QUASI_IDENTIFIER": 0.9583333333333334,
+   "SIGNATURE": 0.6666666666666666,
    "FACE_PHOTO": null,
    "SEAL_STAMP": 1.0
   },
@@ -91,24 +91,24 @@
   "docs": 30,
   "failed_docs": 0,
   "gt_items": 396,
-  "caught": 371,
-  "recall": 0.9368686868686869,
-  "precision": 0.9554455445544554,
-  "redaction_boxes": 404,
+  "caught": 378,
+  "recall": 0.9545454545454546,
+  "precision": 0.9610705596107056,
+  "redaction_boxes": 411,
   "clean_doc_rate": 0.5666666666666667,
   "recall_by_category": {
-   "PERSON_NAME": 0.875,
+   "PERSON_NAME": 0.8958333333333334,
    "GOV_ID": 1.0,
    "DATE_OF_BIRTH": 0.9444444444444444,
    "DATE": 1.0,
    "PHONE": 1.0,
    "EMAIL": null,
-   "ADDRESS": 0.9166666666666666,
+   "ADDRESS": 1.0,
    "MEDICAL_RECORD_NO": 1.0,
    "HEALTH_INSURANCE_NO": null,
-   "FINANCIAL_ACCOUNT": 1.0,
+   "FINANCIAL_ACCOUNT": 0.8333333333333334,
    "LICENSE_PLATE": null,
-   "QUASI_IDENTIFIER": 0.8333333333333334,
+   "QUASI_IDENTIFIER": 0.9583333333333334,
    "SIGNATURE": 1.0,
    "FACE_PHOTO": null,
    "SEAL_STAMP": 1.0
@@ -135,13 +135,13 @@
   "docs": 30,
   "failed_docs": 0,
   "gt_items": 396,
-  "caught": 381,
-  "recall": 0.9621212121212122,
-  "precision": 0.95,
+  "caught": 383,
+  "recall": 0.9671717171717171,
+  "precision": 0.9595238095238096,
   "redaction_boxes": 420,
   "clean_doc_rate": 0.6333333333333333,
   "recall_by_category": {
-   "PERSON_NAME": 0.9097222222222222,
+   "PERSON_NAME": 0.9166666666666666,
    "GOV_ID": 1.0,
    "DATE_OF_BIRTH": 1.0,
    "DATE": 1.0,
@@ -152,7 +152,7 @@
    "HEALTH_INSURANCE_NO": null,
    "FINANCIAL_ACCOUNT": 1.0,
    "LICENSE_PLATE": null,
-   "QUASI_IDENTIFIER": 0.9166666666666666,
+   "QUASI_IDENTIFIER": 0.9583333333333334,
    "SIGNATURE": 1.0,
    "FACE_PHOTO": null,
    "SEAL_STAMP": 1.0
@@ -177,30 +177,30 @@
  },
  "latency_seconds_per_page": {
   "ocr": {
-   "mean": 1.6492973487319735,
-   "p50": 0.7927444110100623,
-   "max": 4.5305650740046985
+   "mean": 1.8264857500364693,
+   "p50": 0.8381792725122068,
+   "max": 5.015686674974859
   },
   "rules": {
-   "mean": 0.0009983331973974904,
-   "p50": 0.0007547055138275027,
-   "max": 0.004359818994998932
+   "mean": 0.0012558180373162032,
+   "p50": 0.0007550659938715398,
+   "max": 0.008622850989922881
   },
   "llm": {
-   "mean": 16.413598212760796,
-   "p50": 7.342674380983226,
-   "max": 117.1928781340248
+   "mean": 10.54568165736079,
+   "p50": 8.324467027996434,
+   "max": 34.14914338302333
   },
   "vlm": {
-   "mean": 1.947145237296354,
-   "p50": 1.7620575409964658,
-   "max": 4.489637769002002
+   "mean": 2.4833153233358947,
+   "p50": 2.279998127487488,
+   "max": 4.877276082988828
   },
   "total": {
-   "mean": 22.75023564839697,
-   "p50": 15.002411322493572,
-   "max": 125.07030508900061
+   "mean": 16.072873656568117,
+   "p50": 14.895697236497654,
+   "max": 36.408260555996094
   }
  },
- "llm_completion_tokens_mean": 942.6666666666666
+ "llm_completion_tokens_mean": 607.5666666666667
 }

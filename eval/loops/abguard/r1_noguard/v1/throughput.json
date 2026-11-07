@@ -1,0 +1,8 @@
+{
+ "pages": 36,
+ "failed": 0,
+ "workers": 8,
+ "wall_seconds": 249.48482745396905,
+ "pages_per_minute": 8.657841128228643,
+ "hardware": "gpt-oss-20b loop guard=noguard round 1"
+}

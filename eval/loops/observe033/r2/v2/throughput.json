@@ -1,0 +1,8 @@
+{
+ "pages": 30,
+ "failed": 0,
+ "workers": 8,
+ "wall_seconds": 73.59931527101435,
+ "pages_per_minute": 24.456749269634777,
+ "hardware": "gpt-oss-20b observe v0.33 r2"
+}
