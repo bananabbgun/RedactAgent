@@ -94,3 +94,17 @@ succeeded and the harness silently excluded failed pages. gpt-oss always reasons
 counts a failed page as fully missed and reports `failed_docs` (throughput counts successes only), and the client
 supports `RA_REASONING_EFFORT` with an extra reasoning-token allowance. All candidates are re-run on the latest
 code (round-2 fixes) in a second sweep (`eval/tune3/`).
+
+## Model sweep 2 — latest code, failure-aware scoring (`eval/tune3/`)
+
+| Text model (card 0) | Pages / min (v1+v2) | v1 recall / precision (D) | v2 detectors only (C) | v2 + agentic check (D) | v2 EN / ZH recall |
+|---|---|---|---|---|---|
+| **gpt-oss-20b, reasoning low (MXFP4)** | 19.6 | 98.5 / 98.2 | 92.4 / 95.5 | **95.5 / 94.2** | 95.1 / 96.2 |
+| Qwen3-14B FP8 | 27.7 | 96.9 / 98.7 | 93.4 / 94.4 | 94.7 / 91.3 | 93.9 / 96.2 |
+| Qwen3-8B FP8 | 28.1 | 98.3 / 97.8 | 88.4 / 93.9 | 92.9 / 91.4 | 91.7 / 95.5 |
+| Qwen3-30B-A3B GPTQ-Int4 | 17.5 | 98.5 / 97.4 | 92.9 / 93.1 | 94.7 / 89.6 | 94.3 / 95.5 |
+
+No configuration had a failed page. vLLM runs gpt-oss with its native XPU MXFP4 MoE kernel.
+**Final choice: gpt-oss-20b** (accuracy mode, default in `deploy/b70/up.sh`); Qwen3-8B FP8 is the
+throughput mode. Single runs; differences of about one point are within run-to-run noise, so the decision rests
+on gpt-oss leading on recall, precision and false positives at the same time.

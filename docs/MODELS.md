@@ -8,7 +8,8 @@ behaviour comes from prompts, deterministic rules and post-processing, all in th
 | Role | Model | Licence | Where it runs (B70 deployment) | Precision | Laptop prototype |
 |---|---|---|---|---|---|
 | OCR (text + per-character boxes) | PP-OCR det/cls/rec via RapidOCR 1.4 | Apache-2.0 | Xeon CPU, ONNX Runtime, 8 threads/engine | FP32 | same |
-| Contextual PII detection + agentic re-identification check | Qwen3 family (final: see below) | Apache-2.0 | Arc Pro B70 #0, vLLM XPU 0.26 | FP8 (online) | Qwen3-8B Q4 (Ollama) |
+| Contextual PII detection + agentic re-identification check | **gpt-oss-20b** (MoE, 21B total / 3.6B active), reasoning effort *low* | Apache-2.0 | Arc Pro B70 #0, vLLM XPU 0.26 | MXFP4 MoE weights, native XPU MXFP4 kernel | Qwen3-8B Q4 (Ollama) |
+| Throughput mode (alternative text model) | Qwen3-8B | Apache-2.0 | Arc Pro B70 #0 | FP8 (online) | — |
 | Visual identifiers (signatures, ID photos, seals) | Qwen2.5-VL-7B-Instruct | Apache-2.0 | Arc Pro B70 #1, vLLM XPU 0.26 | BF16 | Qwen2.5-VL-7B Q4 (Ollama) |
 | Seal impressions (cross-check) | OpenCV colour segmentation | Apache-2.0 | Xeon CPU | — | same |
 
@@ -17,14 +18,25 @@ vision model, compact line output for the text model. Launch: `deploy/b70/up.sh`
 
 ## Text-model selection (measured on the B70, see `docs/STAGE2_LOG.md`)
 
-| Candidate | Licence | Result |
-|---|---|---|
-| Qwen3-8B BF16 | Apache-2.0 | baseline |
-| Qwen3-8B BF16 + XPU graph | Apache-2.0 | failed at graph capture (out of resources) |
-| Qwen3-8B FP8 | Apache-2.0 | +75 % throughput, same accuracy |
-| Qwen3-14B FP8 | Apache-2.0 | _pending_ |
-| Qwen3-30B-A3B GPTQ-Int4 | Apache-2.0 | _pending_ |
-| gpt-oss-20b | Apache-2.0 | _pending_ |
+Second sweep, latest code, agentic check on, 8 pages in flight, eager mode. Recall / precision in %, ablation D.
+Pages/min combines both corpora.
+
+| Candidate | Licence | Weights on the B70 | Pages / min | v1 (dev) | v2 (held-out) | failed pages |
+|---|---|---|---|---|---|---|
+| **gpt-oss-20b, reasoning low** | Apache-2.0 | MXFP4 (native) | 19.6 | 98.5 / 98.2 | **95.5 / 94.2** | 0 |
+| Qwen3-14B | Apache-2.0 | FP8 (online) | 27.7 | 96.9 / 98.7 | 94.7 / 91.3 | 0 |
+| Qwen3-8B | Apache-2.0 | FP8 (online) | 28.1 | 98.3 / 97.8 | 92.9 / 91.4 | 0 |
+| Qwen3-30B-A3B | Apache-2.0 | GPTQ INT4 | 17.5 | 98.5 / 97.4 | 94.7 / 89.6 | 0 |
+| Qwen3-8B BF16 (first sweep) | Apache-2.0 | BF16 | 15.7–16.8 | 98.3 / 98.2 | 92.9 / 88.8 | 0 |
+| Qwen3-8B BF16 + XPU graph | Apache-2.0 | BF16 | — | graph capture out of resources | — | — |
+
+**Decision:** gpt-oss-20b is the default ("accuracy mode"): the best held-out recall *and* precision, best or
+tied in both English and Chinese, and the fewest false positives. Qwen3-8B FP8 is the documented
+"throughput mode" (+44 % pages/min, −2.6 recall points on held-out documents).
+
+gpt-oss always reasons before answering. With RedactAgent's original 1,024-token budget the reasoning consumed
+everything and the answer came back empty; `RA_REASONING_EFFORT=low` plus a reasoning-token allowance fixes it
+(`deploy/b70/up.sh` sets this automatically for gpt-oss).
 
 ## Why no AGPL detectors
 
