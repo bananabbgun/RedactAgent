@@ -186,9 +186,8 @@ def test_loop_detector():
              "Also the role of the attending physician is professional. Also the role of the emergency contact is "
              "family. Also the role of the lighthouse keeper is quasi identifier. ")  # observed on vLLM XPU, 250 chars
     assert is_looping("We need to list PII. " + cycle * 5)
-    normal = ("We need to find names, IDs and dates. Line 3 has the patient name Wang Xiao-ming. Line 4 is the national "
-              "ID A123456789. Line 7 shows the admission date 2025-04-15 and line 8 the discharge date. The physician "
-              "Dr. Chen signs on line 30; that is staff. The address on line 6 is in Taipei. Phone on line 5. ") * 3
+    normal = "We need to find names, IDs and dates. " + " ".join(
+        f"Line {i} has item {i * 7 % 13} of type {['name', 'ID', 'date', 'phone'][i % 4]}; the role is subject." for i in range(60))
     assert not is_looping(normal)
     assert not is_looping("short " * 10)
 

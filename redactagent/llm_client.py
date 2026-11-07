@@ -21,14 +21,15 @@ from PIL import Image
 from . import config
 
 
-def is_looping(text: str, window: int = 1200, min_repeats: int = 3, max_period: int = 400) -> bool:
-    """True if the tail of `text` is (exactly) periodic: the last `window` characters consist of one chunk of at most
-    `max_period` characters repeated at least `min_repeats` times. Normal reasoning never repeats itself verbatim
+def is_looping(text: str, min_repeats: int = 3, min_span: int = 400, max_period: int = 400) -> bool:
+    """True if the tail of `text` is (exactly) periodic: one chunk of p <= `max_period` characters repeated at least
+    `min_repeats` times, covering at least `min_span` characters. Normal reasoning never repeats itself verbatim
     several times over; a degenerate decoding loop does (observed periods: 20-250 characters)."""
-    if len(text) < window:
-        return False
-    s = text[-window:]
-    for p in range(4, min(max_period, window // min_repeats) + 1):
+    for p in range(4, max_period + 1):
+        n = max(min_repeats * p, min_span)
+        if len(text) < n:
+            break
+        s = text[-n:]
         if s[p:] == s[:-p]:
             return True
     return False
