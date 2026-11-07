@@ -110,10 +110,12 @@
     <tr><th>Mode (same model, vLLM 0.33)</th><th>Decoding</th><th>v1 recall / precision</th><th>v2 recall / precision</th><th>v3 recall / precision</th><th>Pages / min (8 in flight)</th></tr>
     <tr class="hl"><td><b>Accuracy mode</b> (default)</td><td>greedy + loop guard</td>
       {% for v in ("v1", "v2", "v3") %}<td><b>{{ "%.1f"|format(fin[v].D_agentic.recall*100) }}</b> / {{ "%.1f"|format(fin[v].D_agentic.precision*100) }}</td>{% endfor %}
-      <td>{{ "%.1f"|format(best.pages_per_min) if best else "&ndash;" }}</td></tr>
+      {% set a8 = (bench | selectattr("concurrency", "equalto", 8) | list | first) %}
+      <td>{{ "%.1f"|format(a8.pages_per_min) if a8 else "&ndash;" }}</td></tr>
     <tr><td>Throughput mode</td><td>sampled, T = 1.0</td>
       {% for v in ("v1", "v2", "v3") %}<td>{{ "%.1f"|format(fast[v].D_agentic.recall*100) }} / {{ "%.1f"|format(fast[v].D_agentic.precision*100) }}</td>{% endfor %}
-      <td>{{ "%.1f"|format(fast_best.pages_per_min) if fast_best else "&ndash;" }}</td></tr>
+      {% set q8 = (fast_bench | selectattr("concurrency", "equalto", 8) | list | first) %}
+      <td>{{ "%.1f"|format(q8.pages_per_min) if q8 else "&ndash;" }}</td></tr>
   </table>
   {% endif %}
   <div class="foot"><span>Details and every intermediate run: docs/STAGE2_LOG.md.</span><span></span></div>
