@@ -100,14 +100,15 @@ def run_level(pipe: Pipeline, docs: list[Path], conc: int) -> dict:
         wall = time.perf_counter() - t0
     g = gpu.summary()
     power = sum(d["power_mean_w"] or 0 for d in g.values()) if g else None
+    done = sum(s == "done" for s in statuses)  # failed pages do not count as throughput
     res = {
-        "concurrency": conc, "pages": len(docs), "errors": sum(s != "done" for s in statuses),
-        "wall_s": wall, "pages_per_min": len(docs) / wall * 60,
+        "concurrency": conc, "pages": done, "errors": len(docs) - done,
+        "wall_s": wall, "pages_per_min": done / wall * 60,
         "latency_p50_s": pctl(lat, 50), "latency_p95_s": pctl(lat, 95), "gpu": g,
     }
     if power:
         res["power_w_total"] = power
-        res["energy_j_per_page"] = power * wall / len(docs)
+        res["energy_j_per_page"] = power * wall / max(1, done)
         res["pages_per_kwh"] = 3.6e6 / res["energy_j_per_page"]
     return res
 
