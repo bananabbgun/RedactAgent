@@ -1,0 +1,8 @@
+{
+ "pages": 30,
+ "failed": 0,
+ "workers": 8,
+ "wall_seconds": 82.1545821580221,
+ "pages_per_minute": 21.909916071847938,
+ "hardware": "2x Arc Pro B70"
+}
