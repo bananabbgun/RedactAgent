@@ -77,9 +77,7 @@ class ModelClient:
                 "chat_template_kwargs": {"enable_thinking": bool(self.think)},
             }
             self._reasoning(body)
-            r = self.http.post(f"{self.base_url}/v1/chat/completions", json=body)
-            r.raise_for_status()
-            data = r.json()
+            data = self._post_openai(body)
             content = data["choices"][0]["message"]["content"] or "{}"
             usage = data.get("usage", {})
             stats = CallStats(time.perf_counter() - t0, usage.get("prompt_tokens", 0), usage.get("completion_tokens", 0))
@@ -108,12 +106,29 @@ class ModelClient:
                 "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
                 "chat_template_kwargs": {"enable_thinking": bool(self.think)}}
         self._reasoning(body)
-        r = self.http.post(f"{self.base_url}/v1/chat/completions", json=body)
-        r.raise_for_status()
-        data = r.json()
+        data = self._post_openai(body)
         usage = data.get("usage", {})
         return data["choices"][0]["message"]["content"] or "", CallStats(time.perf_counter() - t0, usage.get("prompt_tokens", 0),
                                                                     usage.get("completion_tokens", 0))
+
+    def _post_openai(self, body: dict) -> dict:
+        """POST a chat completion. For reasoning models, greedy decoding occasionally loops in the reasoning until the
+        token cap and returns no answer; retry such a call once with sampling (RA_RETRY_TEMPERATURE)."""
+        r = self.http.post(f"{self.base_url}/v1/chat/completions", json=body)
+        r.raise_for_status()
+        data = r.json()
+        ch = data["choices"][0]
+        if config.REASONING_EFFORT and (ch.get("finish_reason") == "length" or not (ch["message"].get("content") or "").strip()):
+            retry = dict(body, temperature=config.RETRY_TEMPERATURE)
+            r2 = self.http.post(f"{self.base_url}/v1/chat/completions", json=retry)
+            r2.raise_for_status()
+            data2 = r2.json()
+            if (data2["choices"][0]["message"].get("content") or "").strip():
+                u1, u2 = data.get("usage", {}), data2.get("usage", {})
+                data2["usage"] = {k: u1.get(k, 0) + u2.get(k, 0) for k in ("prompt_tokens", "completion_tokens")}
+                data2["retried"] = True
+                return data2
+        return data
 
     def _reasoning(self, body: dict) -> None:
         """Always-reasoning models (e.g. gpt-oss) spend tokens before the answer: lower the effort and add

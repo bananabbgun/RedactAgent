@@ -142,3 +142,35 @@ def test_verifier_adds_residual_clue_and_score():
     v = verifier.verify(0, [l1, l2], [f], FakeAttacker(), lambda: f"a{next(ids)}")
     assert v.risk == 85
     assert [(a.category, a.accepted) for a in v.added] == [("QUASI_IDENTIFIER", True)]
+
+
+def test_reasoning_runaway_is_retried_with_sampling(monkeypatch):
+    from redactagent import config, llm_client
+
+    monkeypatch.setattr(config, "REASONING_EFFORT", "low")
+    calls = []
+
+    class Resp:
+        def __init__(self, data):
+            self.data = data
+
+        def raise_for_status(self):
+            pass
+
+        def json(self):
+            return self.data
+
+    def post(url, json):
+        calls.append(json)
+        if len(calls) == 1:  # first call: reasoning hit the token cap, no answer
+            return Resp({"choices": [{"message": {"content": None}, "finish_reason": "length"}],
+                         "usage": {"prompt_tokens": 10, "completion_tokens": 3000}})
+        return Resp({"choices": [{"message": {"content": "1 | Wang Xiao-ming | PERSON_NAME"}, "finish_reason": "stop"}],
+                     "usage": {"prompt_tokens": 10, "completion_tokens": 50}})
+
+    c = llm_client.ModelClient("text", backend="openai", base_url="http://x")
+    monkeypatch.setattr(c.http, "post", post)
+    text, stats = c.chat_text("sys", "user")
+    assert text.startswith("1 | Wang")
+    assert len(calls) == 2 and calls[0]["temperature"] == 0 and calls[1]["temperature"] == config.RETRY_TEMPERATURE
+    assert stats.completion_tokens == 3050
