@@ -12,7 +12,7 @@ Theme **Workplace AI** · Global Online Track · Yu-Tsen Tsai (蔡侑岑), CSIE,
 | Stage I demo (3 min) | https://youtu.be/LxvyFA2Zhrc |
 | Engineering log (Stage II) | [`docs/STAGE2_LOG.md`](docs/STAGE2_LOG.md) |
 | Model information | [`docs/MODELS.md`](docs/MODELS.md) |
-| Performance data | [`eval/results_b70/`](eval/results_b70/) · [`eval/tune/`](eval/tune/) |
+| Performance data | [`eval/results_b70/`](eval/results_b70/) · [`eval/tune3/`](eval/tune3/) |
 
 ![RedactAgent review UI](deck/assets/ui.png)
 
@@ -23,7 +23,7 @@ Theme **Workplace AI** · Global Online Track · Yu-Tsen Tsai (蔡侑岑), CSIE,
 3. **Detect** personal data with complementary layers
    - **Rules** – regex + checksums (Taiwan national ID, Luhn cards, NHI, MRN, ROC dates …), form-field anchoring
      (姓名 / 住址 / Name / Address / court-judgment party lines), organisation letterheads excluded.
-   - **Contextual LLM** (Qwen3) – names in prose, addresses, each person's *role*, quasi-identifiers
+   - **Contextual LLM** (gpt-oss-20b on the B70, Qwen3-8B on a laptop) – names in prose, addresses, each person's *role*, quasi-identifiers
      ("the only ferry captain on Green Island").
    - **Vision** (Qwen2.5-VL grounding + red-ink colour segmentation) – signatures, ID photos, seals (印章).
    - **Agentic re-identification check** – an adversarial LLM pass reads the *redacted* text, reports anything that
@@ -44,19 +44,30 @@ Each Arc Pro B70 serves one model through vLLM XPU (`ZE_AFFINITY_MASK=0` text LL
 and VLM layers of a page run concurrently and both models stay resident. OCR and rules run on the Xeon host.
 Pages: `/` single-document review, `/batch` many documents in flight, `/system` live host / GPU / model status.
 
-## Results
+## Results (2x Arc Pro B70, final configuration)
 
-_Final numbers (held-out corpus v3, final configuration) will be filled in after the final run; see
-[`docs/STAGE2_LOG.md`](docs/STAGE2_LOG.md) for every intermediate measurement._
+Text model **gpt-oss-20b** (MXFP4, native XPU kernel) on card 0, **Qwen2.5-VL-7B** on card 1, 8 pages in flight,
+strict policy. Recall / precision in %, pixel-level scoring; a page that fails to process counts as fully leaked.
 
-Measured so far on the B70 host:
+| Corpus | Pages / PII items | Rules only (regex/DLP baseline) | **RedactAgent (all layers + agentic check)** | Pages with zero leaks |
+|---|---|---|---|---|
+| v1 development | 36 / 582 | 75.4 / 98.6 | **98.5 / 97.8** | 83 % |
+| v2 held-out (used for error analysis) | 30 / 396 | 59.6 / 92.3 | **96.0 / 93.8** | 63 % |
+| **v3 untouched (run once)** | 30 / 396 | 59.3 / 93.9 | **96.7 / 94.8** | 60 % |
 
-- Accuracy parity with the laptop prototype on corpus v1 (recall 97.8 %, precision 97.1 %).
-- 23 → 27.5 pages/min with Qwen3-8B FP8 and the agentic check, 8 pages in flight
-  (laptop: ~2 pages/min).
-- OCR bottleneck found and removed: 9x faster OCR by capping ONNX Runtime threads per engine.
-- Held-out document types (v2) exposed a generalisation gap (84 % recall); error analysis + the agentic check
-  raised it to 94.4 %.
+Throughput and energy: see [`eval/results_b70/bench/`](eval/results_b70/bench/) (concurrency sweep with GPU board power).
+Model selection: four text models compared on the same hardware – [`docs/MODELS.md`](docs/MODELS.md).
+Every measurement and what it changed: [`docs/STAGE2_LOG.md`](docs/STAGE2_LOG.md).
+
+Highlights of the Stage II engineering:
+
+- **OCR, not the GPU, was the first bottleneck** – 344 cores of ONNX threads fighting each other; capping threads per
+  engine made OCR 9x faster.
+- **One model per card**, LLM and VLM layers of a page run concurrently.
+- **FP8** made Qwen3-8B 75 % faster at the same accuracy; **gpt-oss-20b** was chosen for the best held-out accuracy.
+- **Held-out documents exposed a generalisation gap** (84 % recall on new document types); general fixes plus the
+  agentic re-identification check closed most of it, confirmed on the untouched v3 corpus.
+- An evaluation bug (failed pages silently skipped) was found and fixed during model selection.
 
 ## Quick start
 
@@ -106,7 +117,7 @@ per page and completeness with people in the loop.
 | `web/` | review UI, batch page, system page, user-study page (vanilla JS, works offline) |
 | `policies/` | purpose policies (YAML) |
 | `scripts/` | synthetic corpus generators (v1, v2/v3), demo recording and video tooling |
-| `eval/` | evaluation harness, benchmark, study scorer, results (`results/` laptop, `results_b70/`, `tune/`) |
+| `eval/` | evaluation harness, benchmark, study scorer, results (`results/` laptop, `results_b70/`, `tune3/` model sweep) |
 | `deploy/b70/` | one-command deployment for the Arc Pro B70 host |
 | `docs/` | architecture diagram, model information, Stage II engineering log |
 | `deck/` | proposal deck source |

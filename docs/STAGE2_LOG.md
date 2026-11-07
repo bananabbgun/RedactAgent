@@ -108,3 +108,24 @@ No configuration had a failed page. vLLM runs gpt-oss with its native XPU MXFP4 
 **Final choice: gpt-oss-20b** (accuracy mode, default in `deploy/b70/up.sh`); Qwen3-8B FP8 is the
 throughput mode. Single runs; differences of about one point are within run-to-run noise, so the decision rests
 on gpt-oss leading on recall, precision and false positives at the same time.
+
+## Final evaluation — gpt-oss-20b (MXFP4, reasoning low) + Qwen2.5-VL-7B, 2026-11-07
+
+Run once with the final code (commit `72cc4b0`); v3 was used here for the first time. 8 pages in flight,
+strict policy, failed pages would count as fully leaked (there were none).
+
+| Corpus | Pages / items | A rules | B + LLM | C + VLM | **D + agentic check** | Clean pages (D) |
+|---|---|---|---|---|---|---|
+| v1 development | 36 / 582 | 75.4 / 98.6 | 94.0 / 98.9 | 96.0 / 98.5 | **98.5 / 97.8** | 83 % |
+| v2 held-out, analysed | 30 / 396 | 59.6 / 92.3 | 94.7 / 95.1 | 95.2 / 95.4 | **96.0 / 93.8** | 63 % |
+| **v3 untouched** | 30 / 396 | 59.3 / 93.9 | 94.9 / 96.1 | 95.7 / 95.4 | **96.7 / 94.8** | 60 % |
+
+Recall / precision in %. Median page latency at 8 in flight (v3): OCR 0.8 s, LLM 7.2 s, VLM 2.4 s (in parallel
+with the LLM), total 13.7 s.
+
+**What v3 still misses** (13 of 396 items): 10 person names – account-holder names in capitals on bank statements
+(4), patient / pharmacist names on Chinese prescription labels (3), parties in court judgments (2), one in a lab
+report – plus two quasi-identifiers ("the youngest member of the national para-fencing squad", "the last
+blacksmith still working in Lukang old street") and one date of birth. Most false positives (22 of 423 boxes) are
+pharmacy addresses on prescription labels (organisation, not personal, data) and VLM signature boxes on a
+judgment. These are reported, not fixed: v3 stays a one-shot test set, and any later fix will be validated on v2.
