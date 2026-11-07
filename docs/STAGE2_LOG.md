@@ -129,3 +129,15 @@ report – plus two quasi-identifiers ("the youngest member of the national para
 blacksmith still working in Lukang old street") and one date of birth. Most false positives (22 of 423 boxes) are
 pharmacy addresses on prescription labels (organisation, not personal, data) and VLM signature boxes on a
 judgment. These are reported, not fixed: v3 stays a one-shot test set, and any later fix will be validated on v2.
+
+### Runaway reasoning → retry (found on v1 after the first final run)
+
+The benchmark at one page in flight showed a p95 latency of 105 s against a median of 14 s. The raw results
+explain it: on two v1 Chinese pages gpt-oss reasoned until the token cap (3,548 completion tokens) and returned no
+answer, so the LLM layer contributed **zero** findings on those pages (the agentic check recovered part of it).
+Greedy decoding is a known trigger for such loops in reasoning models. Fix: a call that ends with
+`finish_reason=length` or an empty answer is retried once with sampling (`RA_RETRY_TEMPERATURE=0.7`).
+
+The fix was motivated by v1 only. Because it changes the final configuration, all three corpora and the
+benchmark were run again (final run 2, `eval/results_b70/`); the first final run is kept in
+`eval/results_b70/run1/` and both v3 results are reported.
