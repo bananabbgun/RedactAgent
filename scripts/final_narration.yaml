@@ -12,12 +12,17 @@ problem:   # slide 2
   - ["Every copy has to be de-identified first, and today that is mostly done by hand."]
   - ["Cloud AI is not an option: these documents are exactly the data that may not leave the building.",
      "Cloud A I is not an option: these documents are exactly the data that may not leave the building."]
+  - ["And the stakes are rising: Taiwan's amended Personal Data Protection Act brings a dedicated regulator and higher fines.",
+     "And the stakes are rising: Taiwan's amended Personal Data Protection Act brings a dedicated regulator, and higher fines."]
 
 solution:   # slide 4
   - ["RedactAgent reads each page, detects personal data with rules, a local language model and a local vision model,",
      "Redact Agent reads each page, detects personal data with rules, a local language model and a local vision model,"]
   - ["and then does something new: a second model attacks the redacted page,"]
   - ["asking whether anyone could still be identified, before a person approves the release."]
+  - ["Privacy fails on combinations, a job title plus an island, not only on ID numbers.",
+     "Privacy fails on combinations, a job title plus an island, not only on I D numbers."]
+  - ["That is why the last check is done by an agent that thinks like an attacker."]
 
 env:   # terminal on the organiser's instance: hostname, xpu-smi, docker
   - ["Everything you see next runs on the Intel Cloud instance provided by the organisers."]
@@ -37,6 +42,7 @@ review:   # single document, research policy, detections
   - ["Names, ID numbers, dates, contacts, the signature and the seal are found,",
      "Names, I D numbers, dates, contacts, the signature and the seal are found,"]
   - ["and every box shows which layer found it: rule, language model, vision model, or agent."]
+  - ["The language model also decides each person's role: patient, relative, or the physician acting officially."]
 
 risk:
   - ["The agentic check then reads the redacted page as an attacker would,"]
@@ -100,11 +106,15 @@ accuracy_miss:   # where it misses
 business:   # slides 13 + 14
   - ["One two-card B70 host de-identifies about {pages_hour} pages an hour.",
      "One two-card B seventy host de-identifies about {pages_hour_spoken} pages an hour."]
+  - ["We estimate that checking a pre-marked page takes about a minute instead of four: people check rather than search."]
 
 business_model:   # business model slide
   - ["We see it as an on-premises privacy appliance: ASUS hardware, RedactAgent pre-installed,",
      "We see it as an on-premises privacy appliance: Asus hardware, Redact Agent pre-installed,"]
   - ["with policy packs for Taiwan, starting where the pain is highest: hospital records and research offices."]
+  - ["Then law firms, courts and government agencies, and with new policy packs, GDPR and HIPAA markets.",
+     "Then law firms, courts and government agencies, and with new policy packs, G D P R and HIPAA markets."]
+  - ["Everything is open and commercially licensed, and deploys with one command on a B70 host."]
 
 outro:   # summary slide
   - ["RedactAgent. Share the document, not the person.", "Redact Agent. Share the document, not the person."]
