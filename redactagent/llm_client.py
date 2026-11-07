@@ -169,7 +169,7 @@ class ModelClient:
         """Stream one completion; cancel it as soon as the generated text becomes periodic (a runaway loop).
         Returns the same shape as a non-streamed response; finish_reason "loop" marks a cancelled request."""
         body = dict(body, stream=True, stream_options={"include_usage": True})
-        reasoning, content, finish, usage, chunks, checked = [], [], None, {}, 0, 0
+        reasoning, content, finish, usage, chunks, checked, fired = [], [], None, {}, 0, 0, None
         with self.http.stream("POST", f"{self.base_url}/v1/chat/completions", json=body) as r:
             r.raise_for_status()
             for line in r.iter_lines():
@@ -184,18 +184,19 @@ class ModelClient:
                     content.append(delta.get("content") or "")
                     finish = c.get("finish_reason") or finish
                     chunks += 1
-                if chunks - checked >= 32:
+                if chunks - checked >= 32 and fired is None:
                     checked = chunks
                     if is_looping("".join(reasoning)) or is_looping("".join(content)):
-                        finish = "loop"
-                        log.warning("loop-guard: cancelled a looping completion after %d chunks (temperature %s)",
-                                    chunks, body.get("temperature"))
-                        if config.LOOP_DUMP_DIR:  # debugging aid: keep the cancelled text
-                            d = config.LOOP_DUMP_DIR
-                            d.mkdir(parents=True, exist_ok=True)
-                            (d / f"loop_{time.time():.3f}.txt").write_text(
-                                "".join(reasoning) + "\n=====CONTENT=====\n" + "".join(content), encoding="utf-8")
-                        break  # leaving the context closes the connection; vLLM aborts the request
+                        fired = chunks
+                        if not config.LOOP_GUARD_OBSERVE:
+                            finish = "loop"
+                            log.warning("loop-guard: cancelled a looping completion after %d chunks (temperature %s)",
+                                        chunks, body.get("temperature"))
+                            break  # leaving the context closes the connection; vLLM aborts the request
+        if config.LOOP_DUMP_DIR and (fired is not None or config.LOOP_GUARD_OBSERVE):  # debugging/calibration aid
+            config.LOOP_DUMP_DIR.mkdir(parents=True, exist_ok=True)
+            (config.LOOP_DUMP_DIR / f"c_{time.time():.3f}_{finish}_fired{fired}_n{chunks}.txt").write_text(
+                "".join(reasoning) + "\n=====CONTENT=====\n" + "".join(content), encoding="utf-8")
         if finish == "loop" and not usage:
             usage = {"prompt_tokens": 0, "completion_tokens": chunks}
         return {"choices": [{"message": {"content": "".join(content), "reasoning_content": "".join(reasoning)},
