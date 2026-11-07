@@ -112,16 +112,19 @@ class ModelClient:
                                                                     usage.get("completion_tokens", 0))
 
     def _post_openai(self, body: dict) -> dict:
-        """POST a chat completion. For reasoning models, decoding occasionally falls into a repetition loop in the
-        reasoning ("Also line 25 date. Also line 25 date. ...") until the token cap and returns no answer. Such a call
-        is retried once with sampling and a repetition penalty (measured on the looping v1 page: sampling alone looped
-        4/4 times, sampling + repetition_penalty 1.1 finished 4/4 times)."""
+        """POST a chat completion. For reasoning models, greedy decoding occasionally falls into a repetition loop in
+        the reasoning ("Also line 25 date. Also line 25 date. ...") until the token cap and returns no answer. Such a
+        call is retried once with sampling (RA_RETRY_TEMPERATURE). A repetition penalty is deliberately not sent by
+        default: on vLLM XPU 0.26 requests carrying repetition_penalty were followed by many more looping requests
+        (see docs/STAGE2_LOG.md)."""
         r = self.http.post(f"{self.base_url}/v1/chat/completions", json=body)
         r.raise_for_status()
         data = r.json()
         ch = data["choices"][0]
         if config.REASONING_EFFORT and (ch.get("finish_reason") == "length" or not (ch["message"].get("content") or "").strip()):
-            retry = dict(body, temperature=config.RETRY_TEMPERATURE, repetition_penalty=config.RETRY_REPETITION_PENALTY)
+            retry = dict(body, temperature=config.RETRY_TEMPERATURE)
+            if config.RETRY_REPETITION_PENALTY != 1.0:
+                retry["repetition_penalty"] = config.RETRY_REPETITION_PENALTY
             r2 = self.http.post(f"{self.base_url}/v1/chat/completions", json=retry)
             r2.raise_for_status()
             data2 = r2.json()
