@@ -48,8 +48,13 @@ def main():
         page.request.put(f"{base}/lab/api/settings/@jupyterlab/terminal-extension:plugin",
                          data=json.dumps({"raw": json.dumps({"fontSize": a.font, "theme": "light"})}),
                          headers={"Content-Type": "application/json"})
-        page.goto(a.lab, wait_until="domcontentloaded")
-        page.wait_for_selector(".jp-LauncherCard", timeout=120000)
+        # a separate, reset workspace so the user's own JupyterLab layout is untouched and the launcher is shown
+        page.goto(f"{base}/lab/workspaces/ra-rec?reset", wait_until="domcontentloaded")
+        try:
+            page.wait_for_selector(".jp-LauncherCard", timeout=120000)
+        except Exception:
+            page.screenshot(path=str(out / "debug_launcher.png"))
+            raise
         page.locator(".jp-LauncherCard[data-category='Other'][title*='erminal'], .jp-LauncherCard:has-text('Terminal')").first.click()
         page.wait_for_selector(".jp-Terminal .xterm-screen", timeout=60000)
         # collapse the file browser so the terminal fills the frame
