@@ -135,8 +135,11 @@ judgment. These are reported, not fixed: v3 stays a one-shot test set, and any l
 The benchmark at one page in flight showed a p95 latency of 105 s against a median of 14 s. The raw results
 explain it: on two v1 Chinese pages gpt-oss reasoned until the token cap (3,548 completion tokens) and returned no
 answer, so the LLM layer contributed **zero** findings on those pages (the agentic check recovered part of it).
-Greedy decoding is a known trigger for such loops in reasoning models. Fix: a call that ends with
-`finish_reason=length` or an empty answer is retried once with sampling (`RA_RETRY_TEMPERATURE=0.7`).
+The reasoning had fallen into a repetition loop ("Also P1L25 date." hundreds of times). Probing that page
+4x each: sampling alone (temperature 0.7) still looped to the cap 4/4 times; sampling plus
+`repetition_penalty=1.1` finished 4/4 times with a normal answer (173–836 tokens). Fix: a call that ends with
+`finish_reason=length` or an empty answer is retried once with temperature 0.7 and repetition penalty 1.1;
+the normal path is unchanged (greedy, no penalty).
 
 The fix was motivated by v1 only. Because it changes the final configuration, all three corpora and the
 benchmark were run again (final run 2, `eval/results_b70/`); the first final run is kept in
