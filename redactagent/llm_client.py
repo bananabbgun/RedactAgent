@@ -53,8 +53,12 @@ def _b64_png(img: Image.Image) -> str:
 
 
 class ModelClient:
-    def __init__(self, model: str, backend: str | None = None, base_url: str | None = None, think: bool | None = False):
+    def __init__(self, model: str, backend: str | None = None, base_url: str | None = None, think: bool | None = False,
+                 reasoning: str | None = None):
         self.model = model
+        # reasoning settings apply to the always-reasoning text model only (not to the vision model)
+        self.reasoning = config.REASONING_EFFORT if reasoning is None else reasoning
+        self.temperature = config.TEMPERATURE if self.reasoning else 0.0
         self.backend = backend or config.BACKEND
         self.base_url = (base_url or config.BASE_URL).rstrip("/")
         self.think = think
@@ -89,7 +93,7 @@ class ModelClient:
             body = {
                 "model": self.model,
                 "messages": [{"role": "system", "content": system}, {"role": "user", "content": parts}],
-                "temperature": 0,
+                "temperature": self.temperature,
                 "max_tokens": max_tokens,
                 "response_format": {"type": "json_schema", "json_schema": {"name": "result", "schema": schema}},
                 "chat_template_kwargs": {"enable_thinking": bool(self.think)},
@@ -121,7 +125,7 @@ class ModelClient:
             data = r.json()
             return data["message"]["content"], CallStats(time.perf_counter() - t0, data.get("prompt_eval_count", 0),
                                                           data.get("eval_count", 0))
-        body = {"model": self.model, "temperature": 0, "max_tokens": max_tokens,
+        body = {"model": self.model, "temperature": self.temperature, "max_tokens": max_tokens,
                 "messages": [{"role": "system", "content": system}, {"role": "user", "content": user}],
                 "chat_template_kwargs": {"enable_thinking": bool(self.think)}}
         self._reasoning(body)
@@ -139,7 +143,7 @@ class ModelClient:
         answer) and retried with sampling (RA_RETRY_TEMPERATURE, up to RA_MAX_RETRIES times). A
         repetition penalty is deliberately not sent by default: on vLLM XPU 0.26 requests carrying
         repetition_penalty were followed by many more looping requests (see docs/STAGE2_LOG.md)."""
-        if not config.REASONING_EFFORT:
+        if not self.reasoning:
             r = self.http.post(f"{self.base_url}/v1/chat/completions", json=body)
             r.raise_for_status()
             return r.json()
@@ -208,8 +212,8 @@ class ModelClient:
     def _reasoning(self, body: dict) -> None:
         """Always-reasoning models (e.g. gpt-oss) spend tokens before the answer: lower the effort and add
         a reasoning allowance so the answer is not cut off (RA_REASONING_EFFORT=low|medium|high)."""
-        if config.REASONING_EFFORT:
-            body["reasoning_effort"] = config.REASONING_EFFORT
+        if self.reasoning:
+            body["reasoning_effort"] = self.reasoning
             body["max_tokens"] = body["max_tokens"] + config.REASONING_TOKENS
 
     def ping(self) -> bool:

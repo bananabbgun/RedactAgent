@@ -15,6 +15,8 @@ BASE_URL = os.getenv("RA_BASE_URL", "http://127.0.0.1:11434")
 VISION_BASE_URL = os.getenv("RA_VISION_BASE_URL", BASE_URL)
 TEXT_MODEL = os.getenv("RA_TEXT_MODEL", "qwen3:8b")
 REASONING_EFFORT = os.getenv("RA_REASONING_EFFORT", "")  # only for always-reasoning models such as gpt-oss
+# gpt-oss is meant to be sampled (OpenAI recommends temperature 1.0); greedy decoding makes it loop more often
+TEMPERATURE = float(os.getenv("RA_TEMPERATURE", "0"))  # text model only, when RA_REASONING_EFFORT is set
 REASONING_TOKENS = int(os.getenv("RA_REASONING_TOKENS", "2048"))
 RETRY_TEMPERATURE = float(os.getenv("RA_RETRY_TEMPERATURE", "0.7"))  # sampled retry after a runaway reasoning call
 MAX_RETRIES = int(os.getenv("RA_MAX_RETRIES", "2"))

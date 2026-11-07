@@ -133,7 +133,7 @@ class Pipeline:
     def __init__(self, text_client: ModelClient | None = None, vision_client: ModelClient | None = None,
                  audit: AuditLog | None = None):
         self.text_client = text_client or ModelClient(config.TEXT_MODEL, think=False)
-        self.vision_client = vision_client or ModelClient(config.VISION_MODEL, base_url=config.VISION_BASE_URL, think=None)
+        self.vision_client = vision_client or ModelClient(config.VISION_MODEL, base_url=config.VISION_BASE_URL, think=None, reasoning="")
         self.audit = audit or AuditLog(config.RUNS_DIR / "audit.jsonl")
         self.policies = policy_mod.load_policies()
 
