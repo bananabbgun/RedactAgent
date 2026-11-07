@@ -188,6 +188,11 @@ class ModelClient:
                         finish = "loop"
                         log.warning("loop-guard: cancelled a looping completion after %d chunks (temperature %s)",
                                     chunks, body.get("temperature"))
+                        if config.LOOP_DUMP_DIR:  # debugging aid: keep the cancelled text
+                            d = config.LOOP_DUMP_DIR
+                            d.mkdir(parents=True, exist_ok=True)
+                            (d / f"loop_{time.time():.3f}.txt").write_text(
+                                "".join(reasoning) + "\n=====CONTENT=====\n" + "".join(content), encoding="utf-8")
                         break  # leaving the context closes the connection; vLLM aborts the request
         if finish == "loop" and not usage:
             usage = {"prompt_tokens": 0, "completion_tokens": chunks}
