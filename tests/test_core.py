@@ -173,4 +173,5 @@ def test_reasoning_runaway_is_retried_with_sampling(monkeypatch):
     text, stats = c.chat_text("sys", "user")
     assert text.startswith("1 | Wang")
     assert len(calls) == 2 and calls[0]["temperature"] == 0 and calls[1]["temperature"] == config.RETRY_TEMPERATURE
+    assert "repetition_penalty" not in calls[0] and calls[1]["repetition_penalty"] == config.RETRY_REPETITION_PENALTY
     assert stats.completion_tokens == 3050
