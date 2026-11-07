@@ -259,3 +259,35 @@ in %, clean pages = pages with zero leaked items. Final run 2 moved to `eval/res
 
 All v3 results so far (each run once, never used for tuning): run 1 96.7 / 94.8, run 2 96.2 / 95.0 (11.3 pages/min,
 one unrescued loop), **run 3 96.7 / 96.0 (21.9 pages/min)**.
+
+### Throughput and energy on vLLM 0.33 (`eval/results_b70/bench/`, `eval/results_b70/fast/bench/`)
+
+Full pipeline including the agentic check, 36 pages per level, board power of both cards from `xpu-smi`.
+
+| Mode | Pages in flight | Pages / min | Latency p50 | Latency p95 | GPU power (both cards) |
+|---|---|---|---|---|---|
+| accuracy | 1 | 3.4 | 14.8 s | 38.1 s | 263 W |
+| accuracy | 4 | 11.6 | 13.0 s | 41.0 s | 329 W |
+| accuracy | **8** | **21.0** | **15.2 s** | **39.6 s** | **362 W** |
+| accuracy | 16 | 25.5 | 23.4 s | 58.2 s | 347 W |
+| accuracy | 32 | 25.9 | 36.0 s | 73.8 s | 337 W |
+| throughput (T = 1.0) | 8 | 34.7 | 11.6 s | 21.2 s | 382 W |
+| throughput (T = 1.0) | 16 | 42.2 | 18.4 s | 28.2 s | 365 W |
+
+On vLLM 0.26, 32 pages in flight collapsed to 8.8 pages/min; on 0.33 throughput keeps rising to 16–32 in flight.
+Interactive review keeps 8 in flight (lowest latency); archive batches can use 16.
+
+### Throughput mode (gpt-oss-20b sampled at T = 1.0), vLLM 0.33 (`eval/results_b70/fast/`)
+
+| Corpus | A rules | C + VLM | **D + agentic check** | Clean pages | Pages / min |
+|---|---|---|---|---|---|
+| v1 | 75.4 / 98.6 | 96.6 / 98.0 | **97.4 / 97.4** | 69 % | 39.4 |
+| v2 | 59.3 / 92.3 | 92.9 / 94.7 | **95.5 / 91.5** | 60 % | 29.9 |
+| v3 | 58.8 / 93.0 | 93.7 / 95.8 | **96.0 / 94.5** | 50 % | 32.2 |
+
+The first throughput-mode run (`fast/run1/`) lost one v3 page: the vision model's JSON was cut off at 512 tokens
+and the parse error failed the page (v3 D 90.9 / 95.4, the page counted as fully leaked). Until `1313367` the
+reasoning allowance had silently been added to the vision calls too, which hid the short budget. Fix (`11caa66`):
+1,024 tokens for the vision model and a lenient parser that keeps every complete element and never fails a page.
+Accuracy-mode runs never reached the 512-token limit (a truncation would have failed a page), so they are
+unaffected. Throughput mode was then run again on all three corpora (table above).
