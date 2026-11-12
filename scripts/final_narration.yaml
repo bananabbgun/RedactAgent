@@ -119,9 +119,14 @@ robust:   # robustness slide
   - ["blur, low resolution, compression, skew and fax. Recall stays above ninety-one percent;"]
   - ["blur and low resolution cost the most, and those pages are flagged for full review."]
 
-business:   # value slide
-  - ["For a hospital, the value is fewer leaks, no backlog, and evidence for the regulator."]
-  - ["The review queue is ordered by risk, and the privacy officer gets policy files and a hash-chained audit trail."]
+business:   # value slide (claims with evidence)
+  - ["Is the value real? We list every claim with its evidence."]
+  - ["On unseen hospital documents RedactAgent removes {hosp_recall} of the personal data before anyone reviews it;",
+     "On unseen hospital documents Redact Agent removes {hosp_recall_spoken} of the personal data before anyone reviews it;"]
+  - ["identifying combinations go from zero with rules to {qi_recall} with the agentic check,",
+     "identifying combinations go from zero with rules to {qi_recall_spoken} with the agentic check,"]
+  - ["and one host has the capacity for about three million pages a year."]
+  - ["Two claims are still open: how much faster reviewers become, and whether hospitals adopt it. Those are our next steps."]
 
 business_model:   # commercial potential slide
   - ["ASUS already runs medical-record AI inside Taiwanese hospitals, so the path to users exists.",

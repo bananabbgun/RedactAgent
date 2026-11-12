@@ -26,27 +26,32 @@
 </section>
 {% endif %}
 
-<!-- 14 Value -->
+<!-- 14 Value, with evidence -->
 <section class="slide">
-  <div class="kicker">Practical value &middot; what a hospital gets</div>
-  <h1>Less risk, more capacity, and proof for the regulator</h1>
-  <p class="lead">Clerical time costs about NT$227 an hour, so the case is not cheaper labour. It is
-    <b>fewer leaks</b>, <b>no backlog</b> and <b>evidence</b> &mdash; without data leaving the hospital.</p>
-  <div class="grid4" style="margin-top:6px">
-    <div class="card"><div class="big">{{ "%.1f"|format(fin.v3.D_agentic.recall*100) }}%</div><div class="bigl">of personal data removed on unseen pages <i>before</i> human review (single human reviewers: 81&nbsp;% in a published study)</div></div>
-    <div class="card"><div class="big">{{ "{:,.0f}".format(ppm * 60) }}</div><div class="bigl">pages per hour on one 2&times; B70 host, full pipeline incl. the agentic check</div></div>
-    {% if triage %}<div class="card"><div class="big">{{ "%.0f"|format(triage.caught*100) }}%</div><div class="bigl">of the remaining misses are on the {{ "%.0f"|format(triage.flagged*100) }}&nbsp;% of pages flagged for full review (risk score or unread ink)</div></div>{% endif %}
-    {% if robust_min %}<div class="card"><div class="big">&ge;{{ "%.0f"|format((robust_min*100)|round(0,'floor')) }}%</div><div class="bigl">recall on blurred, low-resolution, fax and skewed scans</div></div>{% endif %}
-  </div>
-  <table class="t" style="font-size:13.5px;margin-top:16px">
-    <tr><th style="width:19%">Who in the hospital</th><th style="width:31%">Their problem</th><th>What RedactAgent gives them</th></tr>
-    <tr><td><b>Records office</b></td><td>Copy requests and research extracts queue up; every page read twice</td><td>Pre-marked pages, a review queue ordered by risk, batch and hot-folder processing</td></tr>
-    <tr><td><b>Privacy officer</b></td><td>Must show the PDPA test &ldquo;cannot identify the person&rdquo; was met</td><td>Purpose policies as files, re-identification risk per page, hash-chained audit from input hash to output hash</td></tr>
-    <tr><td><b>IRB &amp; researchers</b></td><td>Studies wait for de-identified data</td><td>Research policy: consistent pseudonyms and year-only dates, released after one review</td></tr>
-    <tr><td><b>Hospital IT</b></td><td>No cloud for medical records; no new integration project</td><td>One on-premises appliance, REST API and hot folder (docs/INTEGRATION.md), no per-page fees</td></tr>
+  <div class="kicker">Practical value &middot; is the value real?</div>
+  <h1>Every value claim for hospitals, with its evidence</h1>
+  <p class="lead">Fewer leaks, no backlog, proof for the regulator &mdash; and nothing leaves the hospital. Labour is cheap (~NT$227 an hour),
+    so the case rests on risk and capacity. Here is what supports each claim, and what is still open.</p>
+  <table class="t" style="font-size:12.5px">
+    <tr><th style="width:27%">Claim</th><th>Evidence</th><th style="width:10%">Type</th></tr>
+    <tr><td>Hospitals must release de-identified records, and the law now punishes leaks</td>
+      <td>PDPA Art. 6 (research only if the person cannot be identified, also by combination), Medical Care Act Art. 71, NHI Data Management Act (Aug 2026), fines up to NT$15M</td><td class="yes">sourced</td></tr>
+    <tr><td>No existing product fits their documents</td><td>Main de-identification products checked: cloud-only, no Traditional Chinese, or no scanned seals and signatures</td><td class="yes">sourced</td></tr>
+    {% if hosp %}<tr><td>It removes the personal data in <b>hospital</b> documents</td>
+      <td>Unseen hospital pages (v3: lab reports, prescription labels, referral letters): recall <b>{{ "%.1f"|format(hosp.v3.hospital.D_agentic.recall*100) }}&nbsp;%</b>, precision {{ "%.1f"|format(hosp.v3.hospital.D_agentic.precision*100) }}&nbsp;%,
+        {{ "%.0f"|format(hosp.v3.hospital.D_agentic.clean_pages*100) }}&nbsp;% of pages with nothing leaked &mdash; before human review. Single human reviewers: 81&nbsp;% in a published study</td><td class="yes">measured</td></tr>{% endif %}
+    <tr><td>It catches what people and regex miss: identifying combinations</td>
+      <td>Quasi-identifiers on unseen pages: rules {{ "%.0f"|format(fin.v3.A_deterministic.recall_by_category.QUASI_IDENTIFIER*100) }}&nbsp;% &rarr; full system {{ "%.0f"|format(fin.v3.D_agentic.recall_by_category.QUASI_IDENTIFIER*100) }}&nbsp;% (agentic check)</td><td class="yes">measured</td></tr>
+    <tr><td>It works on real scan quality</td><td>Recall &ge;&nbsp;{{ "%.0f"|format((robust_min*100)|round(0,'floor')) if robust_min else '' }}&nbsp;% on blurred, low-resolution, fax and skewed pages</td><td class="yes">measured</td></tr>
+    <tr><td>One host clears a hospital's backlog</td><td>{{ "{:,.0f}".format(ppm*60) }} pages / hour &asymp; {{ "%.1f"|format(ppm*60*8*250/1e6) }} million pages a year on one 8-hour shift (Taiwan: 3.35 million discharges a year)</td><td class="yes">measured</td></tr>
+    <tr><td>It fits hospital IT and keeps a person in charge</td><td>REST API and hot folder; release only after a recorded human export; hash-chained audit</td><td class="yes">built &amp; tested</td></tr>
+    <tr><td>Reviewers are faster and miss less with it</td>
+      <td>{% if study %}User study: {{ study.manual_min }} &rarr; {{ study.assisted_min }} min per page, recall {{ study.recall_gain }} ({{ study.participants }} participants){% else %}User study built (/study); runs next{% endif %}</td>
+      <td class="{{ 'yes' if study else 'no' }}">{{ 'measured' if study else 'open' }}</td></tr>
+    <tr><td>Hospitals would adopt it; the policies meet the legal test</td><td>Interviews with hospital records / IRB staff; a supervised pilot with the hospital's counsel</td><td class="no">next</td></tr>
   </table>
-  <div class="src">Labour cost: MOL occupational wage survey 2025 (clerical support NT$40,000/month). Human recall: Neamatullah et al. 2008 (clinical notes, not our corpus).
-    Triage figures from development data (v1 + v2, {{ triage.pages if triage else '' }} pages). Human review stays mandatory for every page.</div>
+  <div class="src">Sources and data: docs/MARKET_RESEARCH.md, eval/subset.py (hospital document types: discharge summary, medical certificate, lab report, referral letter, prescription label),
+    eval/robustness/, Neamatullah et al. 2008. Capacity: 250 working days.</div>
   <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span></span></div>
 </section>
 

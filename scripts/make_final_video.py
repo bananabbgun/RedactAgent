@@ -44,6 +44,10 @@ def numbers() -> dict[str, str]:
     live = json.loads((B70 / "video_v3_live" / "take3" / "metrics.json").read_text())["D_agentic"]
     out["live_recall"], out["live_recall_spoken"] = f"{live['recall'] * 100:.1f}%", spoken_pct(live["recall"] * 100)
     out["live_precision"], out["live_precision_spoken"] = f"{live['precision'] * 100:.1f}%", spoken_pct(live["precision"] * 100)
+    hosp = json.loads((B70 / "hospital_subset.json").read_text())["v3"]["hospital"]["D_agentic"]
+    out["hosp_recall"], out["hosp_recall_spoken"] = f"{hosp['recall'] * 100:.1f}%", spoken_pct(hosp["recall"] * 100)
+    qi = json.loads((B70 / "v3" / "metrics.json").read_text())["D_agentic"]["recall_by_category"]["QUASI_IDENTIFIER"] * 100
+    out["qi_recall"], out["qi_recall_spoken"] = f"{qi:.0f}%", f"{qi:.0f} percent"
     b8 = next(r for r in bench if r["concurrency"] == 8)  # the batch on screen runs 8 pages in flight
     out["batch_ppm"] = out["batch_ppm_spoken"] = f"{b8['pages_per_min']:.0f}"
     ph = round(best["pages_per_min"] * 60, -1)

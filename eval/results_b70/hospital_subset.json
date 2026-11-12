@@ -1,0 +1,208 @@
+{
+ "v1": {
+  "hospital": {
+   "A_deterministic": {
+    "recall": 0.8627450980392157,
+    "precision": 0.9664804469273743,
+    "clean_pages": 0.0,
+    "pages": 12,
+    "items": 204
+   },
+   "C_full": {
+    "recall": 0.9754901960784313,
+    "precision": 0.9666666666666667,
+    "clean_pages": 0.6666666666666666,
+    "pages": 12,
+    "items": 204
+   },
+   "D_agentic": {
+    "recall": 0.9803921568627451,
+    "precision": 0.9672897196261683,
+    "clean_pages": 0.75,
+    "pages": 12,
+    "items": 204
+   }
+  },
+  "other": {
+   "A_deterministic": {
+    "recall": 0.6957671957671958,
+    "precision": 1.0,
+    "clean_pages": 0.0,
+    "pages": 24,
+    "items": 378
+   },
+   "C_full": {
+    "recall": 0.9708994708994709,
+    "precision": 0.9949622166246851,
+    "clean_pages": 0.625,
+    "pages": 24,
+    "items": 378
+   },
+   "D_agentic": {
+    "recall": 0.9867724867724867,
+    "precision": 0.9926289926289926,
+    "clean_pages": 0.8333333333333334,
+    "pages": 24,
+    "items": 378
+   }
+  },
+  "types": {
+   "discharge_summary_en": {
+    "recall": 0.9666666666666667,
+    "precision": 0.9426229508196722,
+    "clean_pages": 0.5,
+    "pages": 6,
+    "items": 120
+   },
+   "medical_certificate_zh": {
+    "recall": 1.0,
+    "precision": 1.0,
+    "clean_pages": 1.0,
+    "pages": 6,
+    "items": 84
+   }
+  }
+ },
+ "v2": {
+  "hospital": {
+   "A_deterministic": {
+    "recall": 0.6574074074074074,
+    "precision": 0.9006622516556292,
+    "clean_pages": 0.0,
+    "pages": 18,
+    "items": 216
+   },
+   "C_full": {
+    "recall": 0.9537037037037037,
+    "precision": 0.9347826086956522,
+    "clean_pages": 0.6666666666666666,
+    "pages": 18,
+    "items": 216
+   },
+   "D_agentic": {
+    "recall": 0.9675925925925926,
+    "precision": 0.9045643153526971,
+    "clean_pages": 0.7222222222222222,
+    "pages": 18,
+    "items": 216
+   }
+  },
+  "other": {
+   "A_deterministic": {
+    "recall": 0.5222222222222223,
+    "precision": 0.9583333333333334,
+    "clean_pages": 0.0,
+    "pages": 12,
+    "items": 180
+   },
+   "C_full": {
+    "recall": 0.9388888888888889,
+    "precision": 0.9771428571428571,
+    "clean_pages": 0.5,
+    "pages": 12,
+    "items": 180
+   },
+   "D_agentic": {
+    "recall": 0.9666666666666667,
+    "precision": 0.9611111111111111,
+    "clean_pages": 0.6666666666666666,
+    "pages": 12,
+    "items": 180
+   }
+  },
+  "types": {
+   "lab_report_en": {
+    "recall": 0.9487179487179487,
+    "precision": 1.0,
+    "clean_pages": 0.6666666666666666,
+    "pages": 6,
+    "items": 78
+   },
+   "prescription_label_zh": {
+    "recall": 0.9814814814814815,
+    "precision": 0.855072463768116,
+    "clean_pages": 0.8333333333333334,
+    "pages": 6,
+    "items": 54
+   },
+   "referral_letter_en": {
+    "recall": 0.9761904761904762,
+    "precision": 0.8602150537634409,
+    "clean_pages": 0.6666666666666666,
+    "pages": 6,
+    "items": 84
+   }
+  }
+ },
+ "v3": {
+  "hospital": {
+   "A_deterministic": {
+    "recall": 0.6527777777777778,
+    "precision": 0.8926174496644296,
+    "clean_pages": 0.0,
+    "pages": 18,
+    "items": 216
+   },
+   "C_full": {
+    "recall": 0.9722222222222222,
+    "precision": 0.9310344827586207,
+    "clean_pages": 0.7777777777777778,
+    "pages": 18,
+    "items": 216
+   },
+   "D_agentic": {
+    "recall": 0.9814814814814815,
+    "precision": 0.9285714285714286,
+    "clean_pages": 0.8333333333333334,
+    "pages": 18,
+    "items": 216
+   }
+  },
+  "other": {
+   "A_deterministic": {
+    "recall": 0.5222222222222223,
+    "precision": 1.0,
+    "clean_pages": 0.0,
+    "pages": 12,
+    "items": 180
+   },
+   "C_full": {
+    "recall": 0.9333333333333333,
+    "precision": 1.0,
+    "clean_pages": 0.25,
+    "pages": 12,
+    "items": 180
+   },
+   "D_agentic": {
+    "recall": 0.95,
+    "precision": 1.0,
+    "clean_pages": 0.3333333333333333,
+    "pages": 12,
+    "items": 180
+   }
+  },
+  "types": {
+   "lab_report_en": {
+    "recall": 1.0,
+    "precision": 1.0,
+    "clean_pages": 1.0,
+    "pages": 6,
+    "items": 78
+   },
+   "prescription_label_zh": {
+    "recall": 0.9444444444444444,
+    "precision": 0.9076923076923077,
+    "clean_pages": 0.6666666666666666,
+    "pages": 6,
+    "items": 54
+   },
+   "referral_letter_en": {
+    "recall": 0.9880952380952381,
+    "precision": 0.8777777777777778,
+    "clean_pages": 0.8333333333333334,
+    "pages": 6,
+    "items": 84
+   }
+  }
+ }
+}

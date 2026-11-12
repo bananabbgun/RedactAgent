@@ -103,7 +103,8 @@ def build(out_pdf: Path):
             cats.append({"name": CATEGORIES[c][0], "n": n, "A": v3["A_deterministic"]["recall_by_category"][c],
                          "D": v3["D_agentic"]["recall_by_category"][c]})
     build_deck.RESULTS = B70 / "v1"
-    ctx = dict(robust=robust, robust_min=min((r["D"] for r in robust), default=None), triage=triage, cfg=cfg, fin=fin, thr=thr, fast=fast, fast_thr=fast_thr, fast_bench=fast_bench,
+    hosp = load(ROOT / "eval" / "results_b70" / "hospital_subset.json")
+    ctx = dict(hosp=hosp, robust=robust, robust_min=min((r["D"] for r in robust), default=None), triage=triage, cfg=cfg, fin=fin, thr=thr, fast=fast, fast_thr=fast_thr, fast_bench=fast_bench,
                fast_best=max(fast_bench, key=lambda r: r["pages_per_min"]) if fast_bench else None, bench=bench, bench0=BENCH0, best=best, cats=cats, tune=tune_rows(),
                study=load(B70 / "study_summary.json"), triptych=build_deck.triptych("discharge_summary_en_00"),
                final=cfg.get("final_model", {}))
