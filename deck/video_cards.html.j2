@@ -1,0 +1,154 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+:root { --navy:#0b1d4d; --brand:#1f3a8a; --acc:#3b5bdb; --ink:#14213d; --mut:#5b6478; --line:#dde3ee; --soft:#f3f6fb;
+  --red:#d9480f; --green:#12805c; --pink:#db2777; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #fff; }
+body { font-family: "Helvetica Neue", -apple-system, "PingFang TC", Arial, sans-serif; color: var(--ink); }
+/* 1920x1080; the bottom 190 px stay empty for captions */
+.card { width: 1920px; height: 1080px; position: relative; overflow: hidden; background: #fff; padding: 120px 150px 190px; }
+.chap { position: absolute; top: 44px; left: 150px; right: 150px; display: flex; gap: 10px; }
+.chap span { flex: 1; font-size: 19px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #b4bccd;
+  border-top: 5px solid #e3e8f2; padding-top: 10px; }
+.chap span.on { color: var(--acc); border-color: var(--acc); }
+.chap span.done { color: #8a96b3; border-color: #b9c6e6; }
+h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); letter-spacing: -1px; font-weight: 800; }
+.sub { font-size: 34px; color: var(--mut); margin-top: 26px; line-height: 1.35; max-width: 1500px; }
+.num { font-size: 210px; font-weight: 800; color: var(--brand); line-height: 1; letter-spacing: -6px; }
+.src { position: absolute; left: 150px; bottom: 196px; font-size: 18px; color: #9aa3b5; }
+.row { display: flex; gap: 40px; margin-top: 60px; }
+.box { flex: 1; background: var(--soft); border: 2px solid var(--line); border-radius: 22px; padding: 38px 40px; }
+.box h3 { font-size: 44px; margin: 0 0 14px; color: var(--navy); }
+.box p { font-size: 29px; line-height: 1.35; margin: 0; color: #2d3650; }
+.x h3::before { content: "✕  "; color: var(--red); }
+.ok h3::before { content: "✓  "; color: var(--green); }
+.step { flex: 1; border-radius: 22px; padding: 40px; color: #fff; }
+.step .n { font-size: 26px; opacity: .75; font-weight: 700; letter-spacing: 2px; }
+.step h3 { font-size: 64px; margin: 10px 0 18px; }
+.step p { font-size: 30px; line-height: 1.35; margin: 0; opacity: .95; }
+.arrow { align-self: center; font-size: 60px; color: #b4bccd; }
+.navy { background: var(--navy); color: #fff; }
+.navy h1 { color: #fff; }
+.doc { margin-top: 70px; background: #fbf7ee; border: 2px solid #e8dfc8; border-radius: 16px; padding: 50px 60px;
+  font-family: Georgia, serif; font-size: 46px; line-height: 1.7; color: #222; }
+.bar { background: #111; color: #111; padding: 0 6px; border-radius: 3px; }
+.hl { background: #fde2ef; border: 3px solid var(--pink); border-radius: 6px; padding: 0 8px; }
+.note { margin-top: 36px; font-size: 36px; color: var(--pink); font-weight: 700; }
+.stat { flex: 1; }
+.stat .v { font-size: 150px; font-weight: 800; line-height: 1; letter-spacing: -4px; }
+.stat .l { font-size: 32px; color: var(--mut); margin-top: 14px; line-height: 1.3; }
+.gpu { flex: 1; border: 3px solid var(--brand); border-radius: 22px; padding: 34px 40px; }
+.gpu .t { font-size: 24px; font-weight: 700; letter-spacing: 2px; color: var(--acc); text-transform: uppercase; }
+.gpu h3 { font-size: 50px; margin: 10px 0 12px; color: var(--navy); }
+.gpu p { font-size: 30px; margin: 0; line-height: 1.4; color: #2d3650; }
+</style></head><body>
+
+{% macro chap(i) %}<div class="chap">{% for c in ["The problem", "Our idea", "Live demo", "Proof", "Ready"] %}<span class="{{ 'on' if loop.index == i else ('done' if loop.index < i else '') }}">{{ loop.index }} · {{ c }}</span>{% endfor %}</div>{% endmacro %}
+
+<section class="card navy" data-key="cover" style="padding-top:250px">
+  <div style="font-size:26px;letter-spacing:3px;color:#8fb3ff;font-weight:700">ASUS UGEN AI LEAGUE 2026 · FINAL</div>
+  <h1 style="font-size:150px;margin-top:20px">RedactAgent</h1>
+  <div class="sub" style="color:#c8d3f5;font-size:44px">Removes personal data from scanned hospital records &mdash;<br>without the records leaving the hospital.</div>
+  <div style="margin-top:60px;font-size:28px;color:#dbe4ff">2&times; ASUS UGen Intel Arc Pro B70 &middot; Battlefield Thunderstorm &middot; Workplace AI</div>
+</section>
+
+<section class="card" data-key="volume">
+  {{ chap(1) }}
+  <div class="num" style="margin-top:60px">3.35 million</div>
+  <h1 style="margin-top:20px">hospital discharges a year in Taiwan</h1>
+  <div class="sub">Each chart may be requested later &mdash; for <b>research</b>, as a <b>copy</b>, or in a <b>dispute</b>.<br>
+    Before it leaves, its personal data must be removed.</div>
+  <div class="src">Source: Ministry of Health and Welfare, hospital statistics 2025</div>
+</section>
+
+<section class="card" data-key="humans">
+  {{ chap(1) }}
+  <div class="num" style="margin-top:60px;color:var(--red)">81%</div>
+  <h1 style="margin-top:20px">of identifiers found by a single human reviewer</h1>
+  <div class="sub">Done by hand today. A leak can cost up to <b>NT$15 million</b>.</div>
+  <div class="src">Neamatullah et al. 2008, BMC Med Inform Decis Mak · Taiwan Personal Data Protection Act Art. 48</div>
+</section>
+
+<section class="card" data-key="notool">
+  {{ chap(1) }}
+  <h1 style="margin-top:110px">No existing product fits a Taiwanese hospital</h1>
+  <div class="row">
+    <div class="box x"><h3>Cloud only</h3><p>Medical records cannot be sent out</p></div>
+    <div class="box x"><h3>No Chinese</h3><p>No Traditional Chinese or Taiwan ID numbers</p></div>
+    <div class="box x"><h3>No scans</h3><p>No seals or signatures on scanned pages</p></div>
+  </div>
+</section>
+
+<section class="card" data-key="idea">
+  {{ chap(2) }}
+  <h1 style="margin-top:90px">Detect, attack, decide &mdash; all on premises</h1>
+  <div class="row" style="gap:20px">
+    <div class="step" style="background:#1f3a8a"><div class="n">STEP 1</div><h3>Detect</h3><p>Rules, a language model and a vision model find the personal data</p></div>
+    <div class="arrow">&rarr;</div>
+    <div class="step" style="background:#db2777"><div class="n">STEP 2</div><h3>Attack</h3><p>An agent attacks the redacted page: can anyone still be identified?</p></div>
+    <div class="arrow">&rarr;</div>
+    <div class="step" style="background:#12805c"><div class="n">STEP 3</div><h3>Decide</h3><p>A person approves; only then is the page released</p></div>
+  </div>
+</section>
+
+<section class="card" data-key="combo">
+  {{ chap(2) }}
+  <h1 style="margin-top:90px">Privacy fails on combinations</h1>
+  <div class="doc"><span class="bar">Ms. Hsu</span> is a 56-year-old patient who works as
+    <span class="hl">the only licensed ferry captain on Green Island</span>.</div>
+  <div class="note">Name removed &mdash; but this still points to one person.</div>
+</section>
+
+<section class="card" data-key="proof">
+  {{ chap(4) }}
+  <h1 style="margin-top:90px">On unseen hospital documents, before human review</h1>
+  <div class="row" style="margin-top:80px">
+    <div class="stat"><div class="v" style="color:var(--brand)">{{ hosp_recall }}</div><div class="l">of personal data removed<br>by RedactAgent</div></div>
+    <div class="stat"><div class="v" style="color:#b4bccd">81%</div><div class="l">found by a single<br>human reviewer</div></div>
+    <div class="stat"><div class="v" style="color:var(--pink)">{{ qi_recall }}</div><div class="l">of combination clues caught<br>(rules alone: 0%)</div></div>
+  </div>
+  <div class="src">Held-out test set v3, generated before any result was seen, never used for tuning; pixel-level scoring. Human figure: Neamatullah et al. 2008.</div>
+</section>
+
+<section class="card" data-key="hardware">
+  {{ chap(4) }}
+  <h1 style="margin-top:90px">One host, two B70 cards, one agent</h1>
+  <div class="row" style="margin-top:56px">
+    <div class="gpu"><div class="t">Card 0 · reasoning</div><h3>gpt-oss-20b</h3><p>21B parameters in 13 GB (native MXFP4)<br>37 requests in parallel</p></div>
+    <div class="gpu"><div class="t">Card 1 · vision</div><h3>Qwen2.5-VL-7B</h3><p>Always loaded<br>reads seals, signatures, photos</p></div>
+  </div>
+  <div style="margin-top:56px;display:flex;align-items:baseline;gap:30px">
+    <div class="num" style="font-size:120px;letter-spacing:-3px">{{ pages_hour }}</div>
+    <div style="font-size:36px;color:var(--mut)">pages per hour &asymp; <b style="color:var(--navy)">3 million pages a year</b> on one 8-hour shift</div>
+  </div>
+</section>
+
+<section class="card" data-key="ready">
+  {{ chap(5) }}
+  <h1 style="margin-top:90px">Ready for a hospital</h1>
+  <div class="row">
+    <div class="box ok"><h3>Stays inside</h3><p>Nothing leaves the building; no per-page fees</p></div>
+    <div class="box ok"><h3>Plugs in</h3><p>REST API or a watched folder for hospital systems</p></div>
+    <div class="box ok"><h3>A person decides</h3><p>No release without recorded approval and audit log</p></div>
+  </div>
+  <div class="sub" style="margin-top:56px">Path to users: ASUS already runs medical-record AI in Taiwanese hospitals.</div>
+</section>
+
+<section class="card" data-key="next">
+  {{ chap(5) }}
+  <h1 style="margin-top:90px">Stage I goals: met. Next: prove adoption.</h1>
+  <div class="row">
+    <div class="box ok"><h3>Done</h3><p>Runs on the B70 with both models loaded; recall rose from 97.8% to {{ v1_recall }} on the Stage I test set</p></div>
+    <div class="box"><h3>Next</h3><p>Reviewer study: how much faster, how many fewer misses</p></div>
+    <div class="box"><h3>Next</h3><p>Pilot with a hospital records office</p></div>
+  </div>
+</section>
+
+<section class="card navy" data-key="outro" style="padding-top:300px">
+  <h1 style="font-size:130px">RedactAgent</h1>
+  <div class="sub" style="color:#c8d3f5;font-size:52px">Share the document, not the person.</div>
+  <div style="margin-top:70px;font-size:32px;color:#dbe4ff">github.com/bananabbgun/RedactAgent</div>
+</section>
+
+</body></html>
