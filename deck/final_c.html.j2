@@ -90,6 +90,34 @@
   <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span></span></div>
 </section>
 
+<!-- 15b Stage I commitments -> delivered -->
+<section class="slide">
+  <div class="kicker">Feasibility &middot; expected results, achieved</div>
+  <h1>What we promised in Stage I &mdash; and what runs today</h1>
+  <p class="lead">Stage I ended with a &ldquo;definition of done&rdquo; and a plan for the B70. Every item, checked against the measurements in this repository.</p>
+  <table class="t" style="font-size:13px">
+    <tr><th style="width:31%">Stage I commitment</th><th style="width:9%">Status</th><th>Stage II result on the organiser's 2&times; B70 instance</th></tr>
+    <tr><td>Same pipeline on the organiser's B70, with measured VRAM, latency and throughput</td><td class="yes"><b>done</b></td>
+      <td>Both models resident (25&ndash;26&nbsp;GiB per card); {% set b8 = (bench | selectattr("concurrency", "equalto", 8) | list | first) %}p50 latency {{ "%.0f"|format(b8.latency_p50_s if b8 else 0) }}&nbsp;s at 8 pages in flight; up to {{ "%.0f"|format(best.pages_per_min if best else 0) }} pages/min vs. 2 on the laptop</td></tr>
+    <tr><td>Recall &ge; Stage I on the same corpus, with a larger model and both models resident</td><td class="yes"><b>done</b></td>
+      <td>v1 recall <b>{{ "%.1f"|format(fin.v1.D_agentic.recall*100) }}&nbsp;%</b> (Stage I: 97.8&nbsp;%), precision {{ "%.1f"|format(fin.v1.D_agentic.precision*100) }}&nbsp;%; 21B MoE instead of an 8B model</td></tr>
+    <tr><td>Repository with architecture diagram, README, model information and performance data</td><td class="yes"><b>done</b></td>
+      <td>README, docs/MODELS.md, eval/results_b70/, an engineering log of every measurement, one-command deployment</td></tr>
+    <tr><td>&ldquo;A second verification pass&rdquo;</td><td class="yes"><b>done</b></td>
+      <td>Agentic re-identification check: v3 recall {{ "%.1f"|format(fin.v3.C_full.recall*100) }} &rarr; {{ "%.1f"|format(fin.v3.D_agentic.recall*100) }}&nbsp;%, quasi-identifiers found that no detector caught</td></tr>
+    <tr><td>Scale up to Qwen3-30B-A3B</td><td class="part"><b>changed</b></td>
+      <td>Tested with three other open models; gpt-oss-20b was more accurate on held-out pages, so the data decided</td></tr>
+    <tr><td>OCR on OpenVINO</td><td class="part"><b>changed</b></td>
+      <td>Measuring showed thread contention, not the engine, was the bottleneck; 8 threads per engine made OCR 9&times; faster</td></tr>
+    <tr><td>Measure minutes per page in a pilot (assumed 4 &rarr; 1&nbsp;min)</td>
+      {% if study %}<td class="yes"><b>done</b></td><td>User study: {{ study.manual_min }} &rarr; {{ study.assisted_min }} min per page ({{ study.participants }} participants)</td>
+      {% else %}<td class="no"><b>open</b></td><td>Study tool built (/study, scored by eval/study_score.py); not yet run with participants</td>{% endif %}</tr>
+  </table>
+  <p class="note" style="margin-top:8px"><b>Beyond the plan:</b> two held-out corpora (v2, v3), robustness to degraded scans, batch mode and hot folder, a throughput mode,
+    the reasoning-loop guard, and review triage &mdash; each measured on the instance.</p>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span></span></div>
+</section>
+
 <!-- 16 Feasibility -->
 <section class="slide">
   <div class="kicker">Feasibility</div>

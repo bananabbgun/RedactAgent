@@ -207,11 +207,11 @@ def main():
     narrate_demo(work / "term_eval.mp4", [(0.5, audio["verify"], caps["verify"])], work / "c_verify.mp4", work)
     clips.append(work / "c_verify.mp4")
 
-    slides_block("mid", [("Throughput on two B70", "perf"), ("Choosing the text model", "perf_model"),
+    slides_block("mid", [("dual-card private agent host", "hardware"), ("Throughput on two B70", "perf"), ("Choosing the text model", "perf_model"),
                          ("reasoning loops", "loops"), ("Accuracy on documents", "accuracy"),
                          ("Where it works", "accuracy_miss"), ("Real scans are worse", "robust"),
                          ("Less risk, more capacity", "business"), ("Commercial potential", "business_model"),
-                         ("Deployable today", "feasibility"), ("Private documents, shared safely", "outro")])
+                         ("What we promised in Stage I", "promises"), ("Deployable today", "feasibility"), ("Private documents, shared safely", "outro")])
 
     lst = work / "concat.txt"
     lst.write_text("".join(f"file '{c.resolve()}'\n" for c in clips))

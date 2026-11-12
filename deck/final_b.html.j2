@@ -11,6 +11,34 @@
   <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>8</span></div>
 </section>
 
+<!-- 8b Hardware integration -->
+<section class="slide">
+  <div class="kicker">Innovation &middot; hardware integration on 2&times; Arc Pro B70</div>
+  <h1>The dual-card private agent host &mdash; built, measured, put to work</h1>
+  <p class="lead">The organisers' own B70 blueprint: <i>&ldquo;card 0 runs the reasoning brain, card 1 keeps the VLM resident &mdash; a private agent host whose data never leaves the company (GPT-OSS 20B)&rdquo;</i> (translated).
+    RedactAgent implements it for a regulated workload, and every number below was measured on the organiser's instance.</p>
+  <div class="grid3" style="margin-top:4px">
+    <div class="card" style="background:#0b1d4d;color:#fff;border:0"><h3 style="color:#fff">Card 0 &middot; reasoning brain</h3>
+      <p style="color:#dbe4ff">gpt-oss-20b, 21B-parameter MoE in <b>12.9&nbsp;GiB</b> with the native XPU MXFP4 kernel.</p>
+      <p style="color:#dbe4ff">10.6&nbsp;GiB left for KV cache: <b>304k tokens</b>, 37 concurrent 8k-token requests.</p>
+      <p style="color:#dbe4ff">Detects context PII, then attacks its own redaction (agentic check).</p></div>
+    <div class="card" style="background:#0b1d4d;color:#fff;border:0"><h3 style="color:#fff">Card 1 &middot; eyes</h3>
+      <p style="color:#dbe4ff">Qwen2.5-VL-7B, <b>15.6&nbsp;GiB</b> BF16, 6.6&nbsp;GiB KV cache (123k tokens).</p>
+      <p style="color:#dbe4ff">Grounded boxes for signatures, ID photos and seals, <b>in parallel</b> with card 0: page latency = max(LLM, VLM), not the sum.</p></div>
+    <div class="card" style="background:#0b1d4d;color:#fff;border:0"><h3 style="color:#fff">Host &middot; Xeon 6 (344 vCPU)</h3>
+      <p style="color:#dbe4ff">OCR, rules, policy and audit; 8 ONNX threads per OCR engine after measuring thread contention (9&times; faster OCR).</p>
+      <p style="color:#dbe4ff">Both servers bound to 127.0.0.1; nothing leaves the machine.</p></div>
+  </div>
+  <div class="grid4" style="margin-top:14px">
+    <div class="card"><div class="big">25&ndash;26&nbsp;GiB</div><div class="bigl">of 32&nbsp;GB used per card &mdash; both models resident, no swapping, ECC</div></div>
+    <div class="card"><div class="big">{{ "%.1f"|format(best.pages_per_min) if best else "&ndash;" }}</div><div class="bigl">pages / min with {{ best.concurrency if best else '' }} pages in flight; 1 page alone: {{ "%.1f"|format(bench[0].pages_per_min) if bench else "&ndash;" }}</div></div>
+    <div class="card"><div class="big">{{ "%.0f"|format(best.power_w_total) if best else "&ndash;" }}&nbsp;W</div><div class="bigl">board power of both cards under full load (xpu-smi)</div></div>
+    <div class="card"><div class="big">{{ "{:,.0f}".format(best.pages_per_kwh) if best else "&ndash;" }}</div><div class="bigl">pages per kWh of GPU energy</div></div>
+  </div>
+  <div class="src">Model sizes and KV cache from the vLLM XPU 0.33 server logs; memory and power from xpu-smi during the benchmark (eval/results_b70/bench/). Blueprint quoted from the ASUS &times; Intel &times; Hailo hackathon promotion deck (proposal A).</div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span></span></div>
+</section>
+
 <!-- 9 Performance journey -->
 <section class="slide">
   <div class="kicker">Stage II &middot; performance on the organiser's environment</div>

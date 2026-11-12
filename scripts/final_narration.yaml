@@ -81,6 +81,12 @@ verify:   # terminal: live evaluation on v3
   - ["The result on screen: {live_recall} recall at {live_precision} precision, in line with our final runs.",
      "The result on screen: {live_recall_spoken} recall, at {live_precision_spoken} precision, in line with our final runs."]
 
+hardware:   # hardware integration slide
+  - ["This is the dual-card agent host the organisers sketched for the B70, built and measured."]
+  - ["Native MXFP4 fits a 21-billion-parameter model into thirteen gigabytes on card zero, leaving room for thirty-seven concurrent requests,",
+     "Native M X F P four fits a twenty-one-billion-parameter model into thirteen gigabytes on card zero, leaving room for thirty-seven concurrent requests,"]
+  - ["while card one keeps the vision model resident and works on the same page at the same time."]
+
 perf:   # slides 9 + 10
   - ["Getting there took measurement, not guesswork."]
   - ["OCR threads were fighting for 344 cores; pinning eight threads per engine made OCR nine times faster.",
@@ -114,23 +120,21 @@ robust:   # robustness slide
   - ["blur and low resolution cost the most, and those pages are flagged for full review."]
 
 business:   # value slide
-  - ["For a hospital, the value is not cheaper labour. It is fewer leaks, no backlog, and evidence."]
-  - ["One two-card B70 host de-identifies about {pages_hour} pages an hour,",
-     "One two-card B seventy host de-identifies about {pages_hour_spoken} pages an hour,"]
-  - ["and the review queue is ordered by risk: the flagged pages hold most of what remains to fix."]
-  - ["The privacy officer gets policy files and a hash-chained audit trail to show the law was followed."]
+  - ["For a hospital, the value is fewer leaks, no backlog, and evidence for the regulator."]
+  - ["The review queue is ordered by risk, and the privacy officer gets policy files and a hash-chained audit trail."]
 
-business_model:   # business model slide
-  - ["We see it as an on-premises privacy appliance: ASUS hardware with RedactAgent pre-installed,",
-     "We see it as an on-premises privacy appliance: Asus hardware with Redact Agent pre-installed,"]
-  - ["kept current with policy packs that follow the new regulator's rules."]
-  - ["Processing a thousand pages takes about forty minutes and a fifth of a kilowatt-hour on the B70 host, with no per-page fees,",
-     "Processing a thousand pages takes about forty minutes and a fifth of a kilowatt hour on the B seventy host, with no per-page fees,"]
-  - ["while the cloud alternatives cost money per page, do not read Traditional Chinese, and are not allowed for medical records.",
-     "while the cloud alternatives cost money per page, do not read Traditional Chinese, and are not allowed for medical records."]
-  - ["ASUS already runs medical-record AI inside Taiwanese hospitals, so the channel exists.",
-     "Asus already runs medical-record A I inside Taiwanese hospitals, so the channel exists."]
-  - ["We start with the ninety-six medical centres and regional hospitals, then district hospitals, courts and insurers."]
+business_model:   # commercial potential slide
+  - ["ASUS already runs medical-record AI inside Taiwanese hospitals, so the path to users exists.",
+     "Asus already runs medical-record A I inside Taiwanese hospitals, so the path to users exists."]
+  - ["A thousand pages take about forty minutes and a fifth of a kilowatt-hour, with no per-page fees, and nothing leaves the hospital.",
+     "A thousand pages take about forty minutes and a fifth of a kilowatt hour, with no per-page fees, and nothing leaves the hospital."]
+
+promises:   # Stage I commitments -> delivered
+  - ["In Stage I we wrote down what done would mean. All three commitments are met on the organiser's B70:"]
+  - ["the pipeline runs with both models resident, recall on the original corpus rose from 97.8 to {v1_recall},",
+     "the pipeline runs with both models resident, recall on the original corpus rose from ninety-seven point eight to {v1_recall_spoken},"]
+  - ["and the repository holds the architecture, model information and every measurement."]
+  - ["Where we changed the plan, the measurements decided."]
 
 feasibility:   # feasibility slide
   - ["It fits into hospital IT through a REST API or a hot folder, and nothing is released without a recorded human review.",
