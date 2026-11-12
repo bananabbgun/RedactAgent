@@ -143,6 +143,7 @@ def run_concurrent(limit: int | None, workers: int):
             return doc["id"], job.error
         (OUT / "raw" / f"{doc['id']}.json").write_text(json.dumps(
             {"timings": job.timings, "tokens": job.tokens, "doc_type": job.doc_type, "vlm_done": True,
+             "risk": job.risk, "warnings": job.warnings,  # signals for review triage (eval/triage.py)
              "findings": [f.to_dict() for f in job.findings]}, ensure_ascii=False))
         return doc["id"], f"{len(job.findings)} findings in {job.timings['total']:.1f}s"
 
