@@ -33,41 +33,44 @@
 
 <!-- 2 Problem -->
 <section class="slide">
-  <div class="kicker">Context &amp; problem</div>
-  <h1>Sensitive documents have to leave the building every day</h1>
-  <p class="lead">Medical records, court files, bank statements and lab reports are routinely shared for research, litigation,
-    insurance and public-information requests. Every copy must first be stripped of personal data &mdash; today, by hand.</p>
-  <div class="grid4" style="margin-bottom:22px">
-    <div class="card"><span class="tag">Hospitals</span><h3 style="margin-top:8px">Research &amp; IRB</h3><p>Chart extracts for approved studies must be de-identified before release.</p></div>
-    <div class="card"><span class="tag">Law firms &amp; courts</span><h3 style="margin-top:8px">Litigation</h3><p>Filings keep the parties but mask ID numbers, accounts and witnesses.</p></div>
-    <div class="card"><span class="tag">Government</span><h3 style="margin-top:8px">Public release</h3><p>Freedom-of-information requests require removing private individuals.</p></div>
-    <div class="card"><span class="tag">Insurers &amp; HR</span><h3 style="margin-top:8px">Claims &amp; audits</h3><p>Handwritten forms, ID photos and seals travel to third parties.</p></div>
+  <div class="kicker">Context &amp; problem &middot; Taiwan hospitals first</div>
+  <h1>Hospitals must share records &mdash; and the law now punishes leaks</h1>
+  <p class="lead">Every one of Taiwan's <b>3.35 million discharges a year</b> leaves a chart that may later be requested for
+    research, insurance claims, disputes or copies. Each released copy must first be stripped of personal data &mdash; today, by hand.</p>
+  <div class="grid4" style="margin-bottom:20px">
+    <div class="card"><span class="tag">IRB &amp; research</span><h3 style="margin-top:8px">Data release</h3><p>Research use is lawful only if the data &ldquo;cannot identify the person&rdquo; &mdash; also after combining it with other data (PDPA Art.&nbsp;6, MOJ).</p></div>
+    <div class="card"><span class="tag">Records office</span><h3 style="margin-top:8px">Copies on request</h3><p>Hospitals must provide copies of medical records (Medical Care Act Art.&nbsp;71); third parties see only what they may.</p></div>
+    <div class="card"><span class="tag">Legal &amp; QA</span><h3 style="margin-top:8px">Disputes &amp; claims</h3><p>Scanned charts, consent forms, prescriptions with seals and signatures go to courts and insurers.</p></div>
+    <div class="card"><span class="tag">Health data</span><h3 style="margin-top:8px">Secondary use</h3><p>The NHI Data Management Act (in force Aug 2026) adds an opt-out and NT$2&ndash;10M fines for misuse.</p></div>
   </div>
   <div class="grid3">
-    <div class="card" style="background:#fff5f2;border-color:#f6c7b8"><h3>Slow &amp; error-prone</h3><p>A reviewer reads every line of every scan, then a second reviewer checks. One missed ID number is a reportable breach.</p></div>
-    <div class="card" style="background:#fff5f2;border-color:#f6c7b8"><h3>Cloud AI is off-limits</h3><p>The documents are exactly the data that policy forbids sending to an external API &mdash; the tool must run on-premises.</p></div>
-    <div class="card" style="background:#fff5f2;border-color:#f6c7b8"><h3>Stakes are rising</h3><p>Taiwan's PDPA amendment (promulgated Nov 2025) creates a dedicated regulator and fines up to NT$15 million per failure to rectify.</p></div>
+    <div class="card" style="background:#fff5f2;border-color:#f6c7b8"><h3>People miss identifiers</h3><p>Single clinicians found only <b>81&nbsp;%</b> of identifiers on average (63&ndash;94&nbsp;%); three reviewers still missed some. Manual de-identification took ~87&nbsp;s per note.</p></div>
+    <div class="card" style="background:#fff5f2;border-color:#f6c7b8"><h3>Cloud AI is off-limits</h3><p>Medical records are special-category data &mdash; hospitals will not send them to an external API. The tool must run inside the hospital.</p></div>
+    <div class="card" style="background:#fff5f2;border-color:#f6c7b8"><h3>Stakes are rising</h3><p>PDPA amendment (Nov 2025): breach notification and a dedicated regulator; security failures already cost up to <b>NT$15M</b> per uncorrected instance.</p></div>
   </div>
-  <div class="src">Sources: K&amp;L Gates, "New Developments in the Taiwan Personal Data Protection Act" (Jan 2026); Baker McKenzie InsightPlus on the 2025 PDPA amendment.</div>
+  <div class="src">Sources: MOHW hospital statistics 2025; PDPA Art. 6, 12, 48 and Enforcement Rules Art. 17; Medical Care Act Art. 71; NHI Data Management Act (MOHW 2025-12, in force 2026-08-10);
+    Neamatullah et al., BMC Med Inform Decis Mak 2008; Dorr et al., Methods Inf Med 2006. Details: docs/MARKET_RESEARCH.md.</div>
   <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>2</span></div>
 </section>
 
 <!-- 3 Why existing tools fail -->
 <section class="slide">
-  <div class="kicker">Context &amp; problem</div>
-  <h1>Why existing approaches fall short</h1>
-  <p class="lead">Real documents are scanned, bilingual, handwritten and stamped. Identifiers hide in free text, not just in fixed formats.</p>
-  <table class="t">
-    <tr><th style="width:30%">Capability</th><th>Manual review</th><th>Regex / DLP tools</th><th>Cloud AI APIs</th><th class="hl" style="background:#1f3a8a">RedactAgent</th></tr>
-    <tr><td>Scanned / photographed pages (OCR)</td><td class="yes">yes</td><td class="part">add-on</td><td class="yes">yes</td><td class="yes hl">yes &mdash; PP-OCR</td></tr>
-    <tr><td>Names, addresses, roles in free text</td><td class="yes">yes</td><td class="no">no</td><td class="yes">yes</td><td class="yes hl">yes &mdash; local LLM</td></tr>
-    <tr><td>Quasi-identifiers ("the only dentist on Orchid Island")</td><td class="part">if noticed</td><td class="no">no</td><td class="part">partly</td><td class="yes hl">yes + agentic re-check</td></tr>
-    <tr><td>Signatures, ID photos, red seals (印章)</td><td class="yes">yes</td><td class="no">no</td><td class="part">partly</td><td class="yes hl">yes &mdash; local VLM + colour</td></tr>
-    <tr><td>Taiwan formats (身分證 checksum, ROC dates, NHI no.)</td><td class="yes">yes</td><td class="part">custom rules</td><td class="part">weak</td><td class="yes hl">built-in</td></tr>
-    <tr><td>Data never leaves the premises</td><td class="yes">yes</td><td class="yes">yes</td><td class="no">no</td><td class="yes hl">yes</td></tr>
-    <tr><td>Purpose-aware (research vs. court vs. public)</td><td class="part">by memory</td><td class="no">no</td><td class="no">no</td><td class="yes hl">policy files</td></tr>
-    <tr><td>Throughput &amp; tamper-evident audit trail</td><td class="no">minutes / page</td><td class="yes">fast</td><td class="part">vendor logs</td><td class="yes hl">{{ "%.0f"|format(best.pages_per_min if best else thr.v3.pages_per_minute) }} pages/min + hash chain</td></tr>
+  <div class="kicker">Context &amp; problem &middot; competition</div>
+  <h1>No existing product covers a Taiwanese hospital's documents</h1>
+  <p class="lead">Hospital documents are scanned, Traditional Chinese, stamped and signed &mdash; and must stay in the building.
+    We checked the main de-identification products against exactly those needs.</p>
+  <table class="t" style="font-size:14px">
+    <tr><th style="width:24%">Product</th><th>Runs on premises</th><th>Traditional Chinese + Taiwan IDs</th><th>Scans, signatures, seals</th><th>Re-identification check</th><th>Purpose policies + audit</th></tr>
+    <tr><td>Microsoft Presidio (open source)</td><td class="yes">yes</td><td class="part">custom models needed</td><td class="part">basic image redactor</td><td class="no">&ndash;</td><td class="no">&ndash;</td></tr>
+    <tr><td>Google Cloud Sensitive Data Protection</td><td class="no">cloud only</td><td class="part">Taiwan ID detector</td><td class="yes">OCR</td><td class="part">tables only</td><td class="part">cloud logs</td></tr>
+    <tr><td>AWS Comprehend Medical + Textract</td><td class="no">cloud only</td><td class="no">US English only</td><td class="part">no Chinese OCR</td><td class="no">&ndash;</td><td class="no">&ndash;</td></tr>
+    <tr><td>Azure Health de-identification</td><td class="no">cloud only</td><td class="no">no Chinese</td><td class="no">text only</td><td class="no">&ndash;</td><td class="no">&ndash;</td></tr>
+    <tr><td>Private AI (Limina)</td><td class="yes">container</td><td class="no">&ldquo;coming soon&rdquo;</td><td class="part">core languages</td><td class="no">&ndash;</td><td class="no">&ndash;</td></tr>
+    <tr><td>Adobe Acrobat Pro</td><td class="yes">desktop</td><td class="part">manual</td><td class="part">manual</td><td class="no">&ndash;</td><td class="no">&ndash;</td></tr>
+    <tr><td>Manual review</td><td class="yes">yes</td><td class="yes">yes</td><td class="yes">yes</td><td class="part">if noticed</td><td class="part">by memory</td></tr>
+    <tr class="hl"><td><b>RedactAgent</b> on 2&times; Arc Pro B70</td><td class="yes"><b>appliance</b></td><td class="yes"><b>built in</b> (checksums, ROC dates, NHI)</td><td class="yes"><b>VLM + colour</b></td><td class="yes"><b>agentic attacker</b></td><td class="yes"><b>YAML + hash chain</b></td></tr>
   </table>
+  <div class="src">&ndash; = not offered in the public documentation we checked (2026-11-12). Sources: vendor documentation and pricing pages, listed in docs/MARKET_RESEARCH.md.</div>
   <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>3</span></div>
 </section>
 
