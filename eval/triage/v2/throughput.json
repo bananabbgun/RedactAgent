@@ -1,0 +1,8 @@
+{
+ "pages": 30,
+ "failed": 0,
+ "workers": 8,
+ "wall_seconds": 100.98152440297417,
+ "pages_per_minute": 17.825042854542065,
+ "hardware": "triage signals, accuracy mode"
+}

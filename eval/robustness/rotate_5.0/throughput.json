@@ -1,0 +1,8 @@
+{
+ "pages": 30,
+ "failed": 0,
+ "workers": 8,
+ "wall_seconds": 80.4842874709284,
+ "pages_per_minute": 22.36461372227685,
+ "hardware": "v2 degraded: rotate_5.0"
+}

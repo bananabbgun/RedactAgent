@@ -1,0 +1,8 @@
+{
+ "pages": 30,
+ "failed": 0,
+ "workers": 8,
+ "wall_seconds": 74.59814654907677,
+ "pages_per_minute": 24.12928582368749,
+ "hardware": "v2 degraded: fax_1"
+}

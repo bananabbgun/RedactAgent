@@ -1,0 +1,8 @@
+{
+ "pages": 30,
+ "failed": 0,
+ "workers": 8,
+ "wall_seconds": 62.034774626023136,
+ "pages_per_minute": 29.01598354876449,
+ "hardware": "v2 degraded: blur_2.0"
+}

@@ -1,0 +1,1440 @@
+{
+ "pages": [
+  {
+   "doc": "accident_report_zh_00",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "accident_report_zh_01",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "accident_report_zh_02",
+   "missed": 1,
+   "risk": 90,
+   "warn": 0,
+   "pending": 0,
+   "agent": 2,
+   "retries": 0
+  },
+  {
+   "doc": "accident_report_zh_03",
+   "missed": 0,
+   "risk": 80,
+   "warn": 0,
+   "pending": 0,
+   "agent": 3,
+   "retries": 0
+  },
+  {
+   "doc": "accident_report_zh_04",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "accident_report_zh_05",
+   "missed": 0,
+   "risk": 85,
+   "warn": 0,
+   "pending": 0,
+   "agent": 3,
+   "retries": 0
+  },
+  {
+   "doc": "discharge_summary_en_00",
+   "missed": 0,
+   "risk": 80,
+   "warn": 0,
+   "pending": 0,
+   "agent": 1,
+   "retries": 0
+  },
+  {
+   "doc": "discharge_summary_en_01",
+   "missed": 1,
+   "risk": 20,
+   "warn": 2,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "discharge_summary_en_02",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 1
+  },
+  {
+   "doc": "discharge_summary_en_03",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "discharge_summary_en_04",
+   "missed": 0,
+   "risk": 10,
+   "warn": 0,
+   "pending": 2,
+   "agent": 2,
+   "retries": 1
+  },
+  {
+   "doc": "discharge_summary_en_05",
+   "missed": 1,
+   "risk": 0,
+   "warn": 1,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "employee_form_zh_00",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "employee_form_zh_01",
+   "missed": 0,
+   "risk": 85,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "employee_form_zh_02",
+   "missed": 0,
+   "risk": 90,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "employee_form_zh_03",
+   "missed": 0,
+   "risk": 85,
+   "warn": 0,
+   "pending": 0,
+   "agent": 1,
+   "retries": 0
+  },
+  {
+   "doc": "employee_form_zh_04",
+   "missed": 0,
+   "risk": 10,
+   "warn": 0,
+   "pending": 1,
+   "agent": 1,
+   "retries": 0
+  },
+  {
+   "doc": "employee_form_zh_05",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "insurance_claim_en_00",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "insurance_claim_en_01",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "insurance_claim_en_02",
+   "missed": 0,
+   "risk": 0,
+   "warn": 1,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "insurance_claim_en_03",
+   "missed": 0,
+   "risk": 0,
+   "warn": 1,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "insurance_claim_en_04",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "insurance_claim_en_05",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "lease_agreement_en_00",
+   "missed": 0,
+   "risk": 95,
+   "warn": 0,
+   "pending": 0,
+   "agent": 2,
+   "retries": 0
+  },
+  {
+   "doc": "lease_agreement_en_01",
+   "missed": 0,
+   "risk": 95,
+   "warn": 0,
+   "pending": 0,
+   "agent": 2,
+   "retries": 0
+  },
+  {
+   "doc": "lease_agreement_en_02",
+   "missed": 0,
+   "risk": 90,
+   "warn": 0,
+   "pending": 0,
+   "agent": 2,
+   "retries": 0
+  },
+  {
+   "doc": "lease_agreement_en_03",
+   "missed": 0,
+   "risk": 90,
+   "warn": 0,
+   "pending": 0,
+   "agent": 1,
+   "retries": 0
+  },
+  {
+   "doc": "lease_agreement_en_04",
+   "missed": 0,
+   "risk": 80,
+   "warn": 0,
+   "pending": 0,
+   "agent": 2,
+   "retries": 0
+  },
+  {
+   "doc": "lease_agreement_en_05",
+   "missed": 0,
+   "risk": 90,
+   "warn": 0,
+   "pending": 0,
+   "agent": 1,
+   "retries": 0
+  },
+  {
+   "doc": "medical_certificate_zh_00",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "medical_certificate_zh_01",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "medical_certificate_zh_02",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "medical_certificate_zh_03",
+   "missed": 0,
+   "risk": 80,
+   "warn": 0,
+   "pending": 0,
+   "agent": 3,
+   "retries": 0
+  },
+  {
+   "doc": "medical_certificate_zh_04",
+   "missed": 0,
+   "risk": 10,
+   "warn": 0,
+   "pending": 1,
+   "agent": 1,
+   "retries": 0
+  },
+  {
+   "doc": "medical_certificate_zh_05",
+   "missed": 0,
+   "risk": 90,
+   "warn": 0,
+   "pending": 0,
+   "agent": 1,
+   "retries": 0
+  },
+  {
+   "doc": "bank_statement_en_00",
+   "missed": 1,
+   "risk": 85,
+   "warn": 0,
+   "pending": 0,
+   "agent": 1,
+   "retries": 0
+  },
+  {
+   "doc": "bank_statement_en_01",
+   "missed": 1,
+   "risk": 95,
+   "warn": 0,
+   "pending": 0,
+   "agent": 2,
+   "retries": 0
+  },
+  {
+   "doc": "bank_statement_en_02",
+   "missed": 0,
+   "risk": 90,
+   "warn": 0,
+   "pending": 0,
+   "agent": 1,
+   "retries": 0
+  },
+  {
+   "doc": "bank_statement_en_03",
+   "missed": 1,
+   "risk": 5,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "bank_statement_en_04",
+   "missed": 0,
+   "risk": 90,
+   "warn": 0,
+   "pending": 0,
+   "agent": 2,
+   "retries": 0
+  },
+  {
+   "doc": "bank_statement_en_05",
+   "missed": 2,
+   "risk": 90,
+   "warn": 0,
+   "pending": 0,
+   "agent": 1,
+   "retries": 0
+  },
+  {
+   "doc": "court_judgment_zh_00",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "court_judgment_zh_01",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "court_judgment_zh_02",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "court_judgment_zh_03",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "court_judgment_zh_04",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "court_judgment_zh_05",
+   "missed": 1,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "lab_report_en_00",
+   "missed": 2,
+   "risk": 0,
+   "warn": 1,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "lab_report_en_01",
+   "missed": 2,
+   "risk": 95,
+   "warn": 2,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "lab_report_en_02",
+   "missed": 0,
+   "risk": 95,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "lab_report_en_03",
+   "missed": 0,
+   "risk": 0,
+   "warn": 2,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "lab_report_en_04",
+   "missed": 0,
+   "risk": 85,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "lab_report_en_05",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "prescription_label_zh_00",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "prescription_label_zh_01",
+   "missed": 0,
+   "risk": 45,
+   "warn": 1,
+   "pending": 0,
+   "agent": 1,
+   "retries": 0
+  },
+  {
+   "doc": "prescription_label_zh_02",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "prescription_label_zh_03",
+   "missed": 1,
+   "risk": 80,
+   "warn": 0,
+   "pending": 0,
+   "agent": 1,
+   "retries": 0
+  },
+  {
+   "doc": "prescription_label_zh_04",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "prescription_label_zh_05",
+   "missed": 0,
+   "risk": 80,
+   "warn": 0,
+   "pending": 0,
+   "agent": 1,
+   "retries": 0
+  },
+  {
+   "doc": "referral_letter_en_00",
+   "missed": 1,
+   "risk": 90,
+   "warn": 0,
+   "pending": 0,
+   "agent": 1,
+   "retries": 0
+  },
+  {
+   "doc": "referral_letter_en_01",
+   "missed": 0,
+   "risk": 90,
+   "warn": 0,
+   "pending": 0,
+   "agent": 1,
+   "retries": 0
+  },
+  {
+   "doc": "referral_letter_en_02",
+   "missed": 0,
+   "risk": 0,
+   "warn": 0,
+   "pending": 0,
+   "agent": 0,
+   "retries": 0
+  },
+  {
+   "doc": "referral_letter_en_03",
+   "missed": 0,
+   "risk": 95,
+   "warn": 0,
+   "pending": 0,
+   "agent": 2,
+   "retries": 0
+  },
+  {
+   "doc": "referral_letter_en_04",
+   "missed": 0,
+   "risk": 80,
+   "warn": 0,
+   "pending": 0,
+   "agent": 2,
+   "retries": 0
+  },
+  {
+   "doc": "referral_letter_en_05",
+   "missed": 2,
+   "risk": 90,
+   "warn": 0,
+   "pending": 0,
+   "agent": 1,
+   "retries": 1
+  }
+ ],
+ "rules": [
+  {
+   "rule": "risk>=101 or retried call",
+   "params": [
+    101,
+    false,
+    false,
+    false
+   ],
+   "flagged": 3,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 1,
+   "missed_items": 17,
+   "missed_in_flagged": 2
+  },
+  {
+   "rule": "risk>=101 or unconfirmed suggestion or retried call",
+   "params": [
+    101,
+    false,
+    true,
+    false
+   ],
+   "flagged": 5,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 1,
+   "missed_items": 17,
+   "missed_in_flagged": 2
+  },
+  {
+   "rule": "risk>=101 or unread ink or retried call",
+   "params": [
+    101,
+    true,
+    false,
+    false
+   ],
+   "flagged": 11,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 5,
+   "missed_items": 17,
+   "missed_in_flagged": 8
+  },
+  {
+   "rule": "risk>=101 or unread ink or unconfirmed suggestion or retried call",
+   "params": [
+    101,
+    true,
+    true,
+    false
+   ],
+   "flagged": 13,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 5,
+   "missed_items": 17,
+   "missed_in_flagged": 8
+  },
+  {
+   "rule": "risk>=101 or agent added a finding or retried call",
+   "params": [
+    101,
+    false,
+    false,
+    true
+   ],
+   "flagged": 30,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 7,
+   "missed_items": 17,
+   "missed_in_flagged": 9
+  },
+  {
+   "rule": "risk>=101 or unconfirmed suggestion or agent added a finding or retried call",
+   "params": [
+    101,
+    false,
+    true,
+    true
+   ],
+   "flagged": 30,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 7,
+   "missed_items": 17,
+   "missed_in_flagged": 9
+  },
+  {
+   "rule": "risk>=70 or retried call",
+   "params": [
+    70,
+    false,
+    false,
+    false
+   ],
+   "flagged": 32,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 8,
+   "missed_items": 17,
+   "missed_in_flagged": 11
+  },
+  {
+   "rule": "risk>=50 or retried call",
+   "params": [
+    50,
+    false,
+    false,
+    false
+   ],
+   "flagged": 32,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 8,
+   "missed_items": 17,
+   "missed_in_flagged": 11
+  },
+  {
+   "rule": "risk>=40 or retried call",
+   "params": [
+    40,
+    false,
+    false,
+    false
+   ],
+   "flagged": 33,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 8,
+   "missed_items": 17,
+   "missed_in_flagged": 11
+  },
+  {
+   "rule": "risk>=30 or retried call",
+   "params": [
+    30,
+    false,
+    false,
+    false
+   ],
+   "flagged": 33,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 8,
+   "missed_items": 17,
+   "missed_in_flagged": 11
+  },
+  {
+   "rule": "risk>=20 or retried call",
+   "params": [
+    20,
+    false,
+    false,
+    false
+   ],
+   "flagged": 34,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 9,
+   "missed_items": 17,
+   "missed_in_flagged": 12
+  },
+  {
+   "rule": "risk>=70 or unconfirmed suggestion or retried call",
+   "params": [
+    70,
+    false,
+    true,
+    false
+   ],
+   "flagged": 34,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 8,
+   "missed_items": 17,
+   "missed_in_flagged": 11
+  },
+  {
+   "rule": "risk>=50 or unconfirmed suggestion or retried call",
+   "params": [
+    50,
+    false,
+    true,
+    false
+   ],
+   "flagged": 34,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 8,
+   "missed_items": 17,
+   "missed_in_flagged": 11
+  },
+  {
+   "rule": "risk>=70 or agent added a finding or retried call",
+   "params": [
+    70,
+    false,
+    false,
+    true
+   ],
+   "flagged": 35,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 8,
+   "missed_items": 17,
+   "missed_in_flagged": 11
+  },
+  {
+   "rule": "risk>=70 or unconfirmed suggestion or agent added a finding or retried call",
+   "params": [
+    70,
+    false,
+    true,
+    true
+   ],
+   "flagged": 35,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 8,
+   "missed_items": 17,
+   "missed_in_flagged": 11
+  },
+  {
+   "rule": "risk>=50 or agent added a finding or retried call",
+   "params": [
+    50,
+    false,
+    false,
+    true
+   ],
+   "flagged": 35,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 8,
+   "missed_items": 17,
+   "missed_in_flagged": 11
+  },
+  {
+   "rule": "risk>=50 or unconfirmed suggestion or agent added a finding or retried call",
+   "params": [
+    50,
+    false,
+    true,
+    true
+   ],
+   "flagged": 35,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 8,
+   "missed_items": 17,
+   "missed_in_flagged": 11
+  },
+  {
+   "rule": "risk>=40 or agent added a finding or retried call",
+   "params": [
+    40,
+    false,
+    false,
+    true
+   ],
+   "flagged": 35,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 8,
+   "missed_items": 17,
+   "missed_in_flagged": 11
+  },
+  {
+   "rule": "risk>=40 or unconfirmed suggestion or retried call",
+   "params": [
+    40,
+    false,
+    true,
+    false
+   ],
+   "flagged": 35,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 8,
+   "missed_items": 17,
+   "missed_in_flagged": 11
+  },
+  {
+   "rule": "risk>=40 or unconfirmed suggestion or agent added a finding or retried call",
+   "params": [
+    40,
+    false,
+    true,
+    true
+   ],
+   "flagged": 35,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 8,
+   "missed_items": 17,
+   "missed_in_flagged": 11
+  },
+  {
+   "rule": "risk>=30 or agent added a finding or retried call",
+   "params": [
+    30,
+    false,
+    false,
+    true
+   ],
+   "flagged": 35,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 8,
+   "missed_items": 17,
+   "missed_in_flagged": 11
+  },
+  {
+   "rule": "risk>=30 or unconfirmed suggestion or retried call",
+   "params": [
+    30,
+    false,
+    true,
+    false
+   ],
+   "flagged": 35,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 8,
+   "missed_items": 17,
+   "missed_in_flagged": 11
+  },
+  {
+   "rule": "risk>=30 or unconfirmed suggestion or agent added a finding or retried call",
+   "params": [
+    30,
+    false,
+    true,
+    true
+   ],
+   "flagged": 35,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 8,
+   "missed_items": 17,
+   "missed_in_flagged": 11
+  },
+  {
+   "rule": "risk>=20 or agent added a finding or retried call",
+   "params": [
+    20,
+    false,
+    false,
+    true
+   ],
+   "flagged": 36,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 9,
+   "missed_items": 17,
+   "missed_in_flagged": 12
+  },
+  {
+   "rule": "risk>=20 or unconfirmed suggestion or retried call",
+   "params": [
+    20,
+    false,
+    true,
+    false
+   ],
+   "flagged": 36,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 9,
+   "missed_items": 17,
+   "missed_in_flagged": 12
+  },
+  {
+   "rule": "risk>=20 or unconfirmed suggestion or agent added a finding or retried call",
+   "params": [
+    20,
+    false,
+    true,
+    true
+   ],
+   "flagged": 36,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 9,
+   "missed_items": 17,
+   "missed_in_flagged": 12
+  },
+  {
+   "rule": "risk>=10 or retried call",
+   "params": [
+    10,
+    false,
+    false,
+    false
+   ],
+   "flagged": 36,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 9,
+   "missed_items": 17,
+   "missed_in_flagged": 12
+  },
+  {
+   "rule": "risk>=10 or agent added a finding or retried call",
+   "params": [
+    10,
+    false,
+    false,
+    true
+   ],
+   "flagged": 36,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 9,
+   "missed_items": 17,
+   "missed_in_flagged": 12
+  },
+  {
+   "rule": "risk>=10 or unconfirmed suggestion or retried call",
+   "params": [
+    10,
+    false,
+    true,
+    false
+   ],
+   "flagged": 36,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 9,
+   "missed_items": 17,
+   "missed_in_flagged": 12
+  },
+  {
+   "rule": "risk>=10 or unconfirmed suggestion or agent added a finding or retried call",
+   "params": [
+    10,
+    false,
+    true,
+    true
+   ],
+   "flagged": 36,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 9,
+   "missed_items": 17,
+   "missed_in_flagged": 12
+  },
+  {
+   "rule": "risk>=101 or unread ink or agent added a finding or retried call",
+   "params": [
+    101,
+    true,
+    false,
+    true
+   ],
+   "flagged": 37,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=101 or unread ink or unconfirmed suggestion or agent added a finding or retried call",
+   "params": [
+    101,
+    true,
+    true,
+    true
+   ],
+   "flagged": 37,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=70 or unread ink or retried call",
+   "params": [
+    70,
+    true,
+    false,
+    false
+   ],
+   "flagged": 39,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=50 or unread ink or retried call",
+   "params": [
+    50,
+    true,
+    false,
+    false
+   ],
+   "flagged": 39,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=40 or unread ink or retried call",
+   "params": [
+    40,
+    true,
+    false,
+    false
+   ],
+   "flagged": 39,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=30 or unread ink or retried call",
+   "params": [
+    30,
+    true,
+    false,
+    false
+   ],
+   "flagged": 39,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=20 or unread ink or retried call",
+   "params": [
+    20,
+    true,
+    false,
+    false
+   ],
+   "flagged": 39,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=70 or unread ink or agent added a finding or retried call",
+   "params": [
+    70,
+    true,
+    false,
+    true
+   ],
+   "flagged": 41,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=70 or unread ink or unconfirmed suggestion or retried call",
+   "params": [
+    70,
+    true,
+    true,
+    false
+   ],
+   "flagged": 41,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=70 or unread ink or unconfirmed suggestion or agent added a finding or retried call",
+   "params": [
+    70,
+    true,
+    true,
+    true
+   ],
+   "flagged": 41,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=50 or unread ink or agent added a finding or retried call",
+   "params": [
+    50,
+    true,
+    false,
+    true
+   ],
+   "flagged": 41,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=50 or unread ink or unconfirmed suggestion or retried call",
+   "params": [
+    50,
+    true,
+    true,
+    false
+   ],
+   "flagged": 41,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=50 or unread ink or unconfirmed suggestion or agent added a finding or retried call",
+   "params": [
+    50,
+    true,
+    true,
+    true
+   ],
+   "flagged": 41,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=40 or unread ink or agent added a finding or retried call",
+   "params": [
+    40,
+    true,
+    false,
+    true
+   ],
+   "flagged": 41,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=40 or unread ink or unconfirmed suggestion or retried call",
+   "params": [
+    40,
+    true,
+    true,
+    false
+   ],
+   "flagged": 41,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=40 or unread ink or unconfirmed suggestion or agent added a finding or retried call",
+   "params": [
+    40,
+    true,
+    true,
+    true
+   ],
+   "flagged": 41,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=30 or unread ink or agent added a finding or retried call",
+   "params": [
+    30,
+    true,
+    false,
+    true
+   ],
+   "flagged": 41,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=30 or unread ink or unconfirmed suggestion or retried call",
+   "params": [
+    30,
+    true,
+    true,
+    false
+   ],
+   "flagged": 41,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=30 or unread ink or unconfirmed suggestion or agent added a finding or retried call",
+   "params": [
+    30,
+    true,
+    true,
+    true
+   ],
+   "flagged": 41,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=20 or unread ink or agent added a finding or retried call",
+   "params": [
+    20,
+    true,
+    false,
+    true
+   ],
+   "flagged": 41,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=20 or unread ink or unconfirmed suggestion or retried call",
+   "params": [
+    20,
+    true,
+    true,
+    false
+   ],
+   "flagged": 41,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=20 or unread ink or unconfirmed suggestion or agent added a finding or retried call",
+   "params": [
+    20,
+    true,
+    true,
+    true
+   ],
+   "flagged": 41,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=10 or unread ink or retried call",
+   "params": [
+    10,
+    true,
+    false,
+    false
+   ],
+   "flagged": 41,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=10 or unread ink or agent added a finding or retried call",
+   "params": [
+    10,
+    true,
+    false,
+    true
+   ],
+   "flagged": 41,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=10 or unread ink or unconfirmed suggestion or retried call",
+   "params": [
+    10,
+    true,
+    true,
+    false
+   ],
+   "flagged": 41,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  },
+  {
+   "rule": "risk>=10 or unread ink or unconfirmed suggestion or agent added a finding or retried call",
+   "params": [
+    10,
+    true,
+    true,
+    true
+   ],
+   "flagged": 41,
+   "pages": 66,
+   "leaky": 13,
+   "leaky_flagged": 11,
+   "missed_items": 17,
+   "missed_in_flagged": 15
+  }
+ ]
+}

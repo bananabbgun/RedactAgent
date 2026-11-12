@@ -1,0 +1,27 @@
+66 pages, 14 leaking, 19 missed items
+risk scores of leaking pages: [0, 0, 0, 0, 0, 0, 10, 60, 70, 80, 90, 90, 90, 95]
+risk scores of clean pages:   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 30, 80, 80, 85, 85, 90, 90, 90, 90, 90, 95, 95, 95, 95]
+ flagged  leaky caught  items caught  rule
+  2/66       0/14          0/19       risk>=101 or retried call
+  6/66       0/14          0/19       risk>=101 or unconfirmed suggestion or retried call
+ 10/66       4/14          7/19       risk>=101 or unread ink or retried call
+ 14/66       4/14          7/19       risk>=101 or unread ink or unconfirmed suggestion or retried call
+ 21/66       6/14          9/19       risk>=70 or retried call
+ 22/66       7/14         11/19       risk>=50 or retried call
+ 22/66       6/14          9/19       risk>=70 or unconfirmed suggestion or retried call
+ 23/66       7/14         11/19       risk>=50 or unconfirmed suggestion or retried call
+ 24/66       8/14         12/19       risk>=10 or retried call
+ 24/66       7/14         11/19       risk>=30 or unconfirmed suggestion or retried call
+ 25/66       8/14         12/19       risk>=10 or unconfirmed suggestion or retried call
+ 27/66       8/14         12/19       risk>=70 or unread ink or retried call
+ 27/66       5/14          7/19       risk>=101 or agent added a finding or retried call
+ 28/66       9/14         14/19       risk>=50 or unread ink or retried call
+ 28/66       8/14         12/19       risk>=70 or unread ink or unconfirmed suggestion or retried call
+ 29/66      10/14         15/19       risk>=10 or unread ink or retried call
+ 29/66       9/14         14/19       risk>=50 or unread ink or unconfirmed suggestion or retried call
+ 30/66      10/14         15/19       risk>=10 or unread ink or unconfirmed suggestion or retried call
+ 34/66       9/14         14/19       risk>=101 or unread ink or agent added a finding or retried call
+ 35/66       8/14         12/19       risk>=70 or agent added a finding or retried call
+ 36/66       9/14         13/19       risk>=10 or agent added a finding or retried call
+ 40/66      10/14         15/19       risk>=70 or unread ink or agent added a finding or retried call
+ 41/66      11/14         16/19       risk>=10 or unread ink or agent added a finding or retried call
