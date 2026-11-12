@@ -123,7 +123,11 @@ business:   # value slide
 business_model:   # business model slide
   - ["We see it as an on-premises privacy appliance: ASUS hardware with RedactAgent pre-installed,",
      "We see it as an on-premises privacy appliance: Asus hardware with Redact Agent pre-installed,"]
-  - ["sold with a subscription for policy packs that follow the new regulator's rules."]
+  - ["kept current with policy packs that follow the new regulator's rules."]
+  - ["Processing a thousand pages takes about forty minutes and a fifth of a kilowatt-hour on the B70 host, with no per-page fees,",
+     "Processing a thousand pages takes about forty minutes and a fifth of a kilowatt hour on the B seventy host, with no per-page fees,"]
+  - ["while the cloud alternatives cost money per page, do not read Traditional Chinese, and are not allowed for medical records.",
+     "while the cloud alternatives cost money per page, do not read Traditional Chinese, and are not allowed for medical records."]
   - ["ASUS already runs medical-record AI inside Taiwanese hospitals, so the channel exists.",
      "Asus already runs medical-record A I inside Taiwanese hospitals, so the channel exists."]
   - ["We start with the ninety-six medical centres and regional hospitals, then district hospitals, courts and insurers."]

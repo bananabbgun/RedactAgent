@@ -210,7 +210,7 @@ def main():
     slides_block("mid", [("Throughput on two B70", "perf"), ("Choosing the text model", "perf_model"),
                          ("reasoning loops", "loops"), ("Accuracy on documents", "accuracy"),
                          ("Where it works", "accuracy_miss"), ("Real scans are worse", "robust"),
-                         ("Less risk, more capacity", "business"), ("Business model", "business_model"),
+                         ("Less risk, more capacity", "business"), ("Commercial potential", "business_model"),
                          ("Deployable today", "feasibility"), ("Private documents, shared safely", "outro")])
 
     lst = work / "concat.txt"

@@ -87,7 +87,8 @@ to hospitals.
 
 Intel Arc Pro B70 32 GB: US$949 suggested price at launch (2026-03-25). The ASUS UGen card is €1,799 including VAT
 in Germany ([Guru3D](https://www.guru3d.com/story/asus-arc-pro-b70-32gb-arrives-in-europe-at/)). We found no NT$
-price for a complete 2x B70 workstation, so appliance pricing in the deck is labelled as an assumption.
+price for a complete 2x B70 workstation; the deck therefore shows measured running cost per 1,000 pages
+instead of a price.
 
 ## Not found
 

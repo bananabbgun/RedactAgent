@@ -53,14 +53,14 @@
 <!-- 15 Business model -->
 <section class="slide">
   <div class="kicker">Commercial potential</div>
-  <h1>Business model: an on-premises privacy appliance for hospitals</h1>
+  <h1>Commercial potential: a privacy appliance for hospitals</h1>
   <div class="grid3" style="margin-top:14px">
     <div class="card"><span class="tag">Product</span><h3 style="margin-top:8px">RedactAgent Appliance</h3>
       <p>ASUS 2&times; B70 workstation with RedactAgent pre-installed: review UI, batch, REST API and hot folder, and Taiwan policy packs (research / IRB, copies, court, public release).</p></div>
-    <div class="card"><span class="tag">Revenue</span><h3 style="margin-top:8px">Appliance + annual subscription</h3>
-      <p>Hardware sold through ASUS channel partners. The subscription covers model and rule updates and <b>policy packs that follow the regulator</b>: the new PDPA commission's rules are still to come.</p></div>
+    <div class="card"><span class="tag">Delivery</span><h3 style="margin-top:8px">Appliance + updates</h3>
+      <p>Delivered through ASUS channel partners, kept current with model and rule updates and <b>policy packs that follow the regulator</b>: the new PDPA commission's rules are still to come.</p></div>
     <div class="card"><span class="tag">Channel</span><h3 style="margin-top:8px">ASUS is already in hospitals</h3>
-      <p>ASUS's on-premises medical-record AI runs at Taipei Veterans General Hospital. RedactAgent is the next product for the same buyers.</p></div>
+      <p>ASUS's on-premises medical-record AI runs at Taipei Veterans General Hospital. RedactAgent is the next product for the same buyers &mdash; and a regulated reason to buy 32&nbsp;GB local-AI cards.</p></div>
   </div>
   <div class="grid2" style="margin-top:16px;grid-template-columns:1.15fr 1fr">
     <div class="card" style="background:#fff">
@@ -74,12 +74,17 @@
       <p class="note" style="margin-top:6px">Hospital counts: MOHW statistics, end of 2025 (460 hospitals).</p>
     </div>
     <div class="card" style="background:#fff">
-      <h3>Pricing hypothesis &mdash; to validate in pilots</h3>
-      <ul><li>Two Arc Pro B70 cards list at US$949 each; we assume a complete appliance at ~NT$400k.</li>
-        <li>Subscription assumed at NT$300k per hospital per year &rarr; phase 1 alone is <b>~NT$29M recurring per year</b>.</li>
-        <li>Reference points: one uncorrected security failure can cost up to NT$15M; cloud APIs are not an option for medical records.</li></ul>
-      <h3 style="margin-top:10px">Why it is good for ASUS</h3>
-      <ul><li>A regulated, repeatable reason to buy 32 GB local-AI cards &mdash; and the batch mode uses the second card.</li></ul>
+      <h3>What 1,000 pages cost to process &mdash; measured</h3>
+      <table class="t" style="font-size:13px;margin-top:6px">
+        <tr><th></th><th>RedactAgent on 2&times; B70</th><th>Cloud reference (AWS)</th></tr>
+        <tr><td>Running cost</td><td><b>{{ "%.2f"|format(1000 / best.pages_per_kwh) if best else "&ndash;" }} kWh</b> of GPU energy, no per-page fee</td><td>&asymp;&nbsp;US$29.5 (OCR US$1.50 + PHI detection)</td></tr>
+        <tr><td>Time</td><td>{{ "%.0f"|format(1000 / best.pages_per_min) if best else "&ndash;" }} minutes on one host</td><td>&ndash;</td></tr>
+        <tr><td>Traditional Chinese, seals</td><td class="yes">yes</td><td class="no">no (English only)</td></tr>
+        <tr><td>Data leaves the hospital</td><td class="yes">never</td><td class="no">yes &mdash; not allowed</td></tr>
+      </table>
+      <p class="note" style="margin-top:6px">Hardware: two Arc Pro B70 cards, US$949 each at launch. AWS: Textract US$1.50 per 1,000 pages + Comprehend Medical
+        US$0.0014 per 100 characters at ~2,000 characters per page (list prices, Nov 2026).</p>
+
     </div>
   </div>
   <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span></span></div>
