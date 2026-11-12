@@ -217,15 +217,26 @@ class Pipeline:
                 t = time.perf_counter()
                 per_page = []
                 for p in job.pages:
-                    v = verifier.verify(p.index, p.lines, p.findings, self.text_client, next_id)
-                    p.findings.extend(v.added)
-                    per_page.append({"page": p.index, "score": v.risk, "summary": v.summary, "added": len(v.added)})
-                    job.tokens["agent_completion"] = job.tokens.get("agent_completion", 0) + v.stats.completion_tokens
-                    if v.stats.attempts > 1:
-                        job.tokens["agent_retries"] = job.tokens.get("agent_retries", 0) + v.stats.attempts - 1
+                    row = {"page": p.index}
+                    for rnd in range(max(1, config.AGENT_ROUNDS)):
+                        # round 1 attacks the detectors' redaction; a further round attacks the result after the
+                        # agent's own additions, so its score is the residual risk of what would be released
+                        v = verifier.verify(p.index, p.lines, p.findings, self.text_client, next_id)
+                        p.findings.extend(v.added)
+                        if rnd == 0:
+                            row.update(score=v.risk, summary=v.summary, added=len(v.added))
+                        else:
+                            row.update(residual=v.risk, residual_summary=v.summary, added_later=row.get("added_later", 0) + len(v.added))
+                        job.tokens["agent_completion"] = job.tokens.get("agent_completion", 0) + v.stats.completion_tokens
+                        if v.stats.attempts > 1:
+                            job.tokens["agent_retries"] = job.tokens.get("agent_retries", 0) + v.stats.attempts - 1
+                        self.apply_policy(job)
+                    per_page.append(row)
                 job.risk = {"score": max(x["score"] for x in per_page), "per_page": per_page,
                             "summary": next((x["summary"] for x in sorted(per_page, key=lambda x: -x["score"])), ""),
                             "policy": job.policy_id}
+                if any("residual" in x for x in per_page):
+                    job.risk["residual"] = max(x.get("residual", 0) for x in per_page)
                 self.apply_policy(job)  # give the new findings actions/labels
                 job.timings["agent"] = time.perf_counter() - t
             job.timings["total"] = time.perf_counter() - t_job  # wall clock (stages may overlap)

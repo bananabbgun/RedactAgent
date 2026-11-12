@@ -26,7 +26,8 @@ def pages(run: Path) -> list[dict]:
         fs = r.get("findings", [])
         out.append({
             "doc": f.stem, "missed": missed.get(f.stem, 0),
-            "risk": (r.get("risk") or {}).get("score", 0) or 0,
+            # residual risk (second attack round, RA_AGENT_ROUNDS=2) when available, else the first-round score
+            "risk": (r.get("risk") or {}).get("residual", (r.get("risk") or {}).get("score", 0)) or 0,
             "warn": len(r.get("warnings") or []),
             "pending": sum(1 for x in fs if not x.get("accepted", True)),
             "agent": sum(1 for x in fs if "agent" in (x.get("sources") or [])),
