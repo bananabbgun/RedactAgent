@@ -60,7 +60,7 @@ def rotate_box(b, deg, w, h):
         dx, dy = x - cx, y - cy
         pts.append((cx + dx * math.cos(a) + dy * math.sin(a), cy - dx * math.sin(a) + dy * math.cos(a)))
     xs, ys = [p[0] for p in pts], [p[1] for p in pts]
-    return [max(0, min(xs)), max(0, min(ys)), min(w, max(xs)), min(h, max(ys))]
+    return [int(max(0, min(xs))), int(max(0, min(ys))), int(math.ceil(min(w, max(xs)))), int(math.ceil(min(h, max(ys))))]
 
 
 def main():
