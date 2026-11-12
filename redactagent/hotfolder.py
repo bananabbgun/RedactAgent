@@ -127,7 +127,7 @@ def main():
     ap.add_argument("--inbox", required=True, type=Path)
     ap.add_argument("--outbox", required=True, type=Path)
     ap.add_argument("--policy", default="strict")
-    ap.add_argument("--risk-threshold", type=int, default=50, help="risk score that triggers a full review")
+    ap.add_argument("--risk-threshold", type=int, default=70, help="risk score that triggers a full review (eval/triage.py)")
     ap.add_argument("--interval", type=float, default=5.0)
     a = ap.parse_args()
     a.inbox.mkdir(parents=True, exist_ok=True)

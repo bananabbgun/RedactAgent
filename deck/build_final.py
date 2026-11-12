@@ -86,6 +86,14 @@ def build(out_pdf: Path):
     fast_thr = {v: load(B70 / "fast" / v / "throughput.json") for v in ("v1", "v2", "v3")}
     fast_bench = load(B70 / "fast" / "bench" / "benchmark.json") or []
     bench = load(B70 / "bench" / "benchmark.json") or []
+    robust = load(ROOT / "eval" / "robustness" / "summary.json") or []
+    tri = load(ROOT / "eval" / "triage" / "triage_rules.json")
+    triage = None
+    if tri:  # pre-chosen rule: risk score >= 70 or ink the OCR did not read (decided on v1+v2 development data)
+        r = next((r for r in tri["rules"] if list(r["params"]) == [70, True, False, False]), None)
+        if r:
+            triage = {"flagged": r["flagged"] / r["pages"], "caught": r["missed_in_flagged"] / r["missed_items"],
+                      "pages": r["pages"], "missed": r["missed_items"]}
     best = max(bench, key=lambda r: r["pages_per_min"]) if bench else None
     v3 = fin["v3"]
     cats = []
@@ -95,7 +103,7 @@ def build(out_pdf: Path):
             cats.append({"name": CATEGORIES[c][0], "n": n, "A": v3["A_deterministic"]["recall_by_category"][c],
                          "D": v3["D_agentic"]["recall_by_category"][c]})
     build_deck.RESULTS = B70 / "v1"
-    ctx = dict(cfg=cfg, fin=fin, thr=thr, fast=fast, fast_thr=fast_thr, fast_bench=fast_bench,
+    ctx = dict(robust=robust, robust_min=min((r["D"] for r in robust), default=None), triage=triage, cfg=cfg, fin=fin, thr=thr, fast=fast, fast_thr=fast_thr, fast_bench=fast_bench,
                fast_best=max(fast_bench, key=lambda r: r["pages_per_min"]) if fast_bench else None, bench=bench, bench0=BENCH0, best=best, cats=cats, tune=tune_rows(),
                study=load(B70 / "study_summary.json"), triptych=build_deck.triptych("discharge_summary_en_00"),
                final=cfg.get("final_model", {}))

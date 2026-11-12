@@ -26,69 +26,63 @@
 </section>
 {% endif %}
 
-<!-- 14 Economics -->
+<!-- 14 Value -->
 <section class="slide">
-  <div class="kicker">Practical value &middot; what one B70 host does</div>
-  <h1>One 2&times; B70 host replaces a backlog, not a person</h1>
-  <div class="grid4" style="margin-top:18px">
-    <div class="card"><div class="big">{{ "{:,.0f}".format(ppm * 60) }}</div><div class="bigl">pages per hour, full pipeline incl. agentic check</div></div>
-    <div class="card"><div class="big">{{ "{:,.0f}".format(ppm * 60 * 8) }}</div><div class="bigl">pages per 8-hour shift</div></div>
-    <div class="card"><div class="big">{{ "{:,.0f}".format(best.pages_per_kwh) if best else "–" }}</div><div class="bigl">pages per kWh of GPU energy</div></div>
-    <div class="card"><div class="big">{{ "%.0f"|format(fin.v3.D_agentic.clean_doc_rate*100) }}%</div><div class="bigl">of unseen pages leave with zero leaked items before human review</div></div>
+  <div class="kicker">Practical value &middot; what a hospital gets</div>
+  <h1>Less risk, more capacity, and proof for the regulator</h1>
+  <p class="lead">Clerical time costs about NT$227 an hour, so the case is not cheaper labour. It is
+    <b>fewer leaks</b>, <b>no backlog</b> and <b>evidence</b> &mdash; without data leaving the hospital.</p>
+  <div class="grid4" style="margin-top:6px">
+    <div class="card"><div class="big">{{ "%.1f"|format(fin.v3.D_agentic.recall*100) }}%</div><div class="bigl">of personal data removed on unseen pages <i>before</i> human review (single human reviewers: 81&nbsp;% in a published study)</div></div>
+    <div class="card"><div class="big">{{ "{:,.0f}".format(ppm * 60) }}</div><div class="bigl">pages per hour on one 2&times; B70 host, full pipeline incl. the agentic check</div></div>
+    {% if triage %}<div class="card"><div class="big">{{ "%.0f"|format(triage.caught*100) }}%</div><div class="bigl">of the remaining misses are on the {{ "%.0f"|format(triage.flagged*100) }}&nbsp;% of pages flagged for full review (risk score or unread ink)</div></div>{% endif %}
+    {% if robust_min %}<div class="card"><div class="big">&ge;{{ "%.0f"|format((robust_min*100)|round(0,'floor')) }}%</div><div class="bigl">recall on blurred, low-resolution, fax and skewed scans</div></div>{% endif %}
   </div>
-  <div class="grid2" style="margin-top:20px">
-    <div class="card" style="background:#fff">
-      <h3>Illustrative: one regional hospital</h3>
-      <table class="t" style="font-size:13.5px;margin-top:6px">
-        <tr><th>Assumption</th><th>Value</th></tr>
-        <tr><td>Pages de-identified per year (research, insurance, legal copies)</td><td>30,000</td></tr>
-        <tr><td>Machine time on one 2&times; B70 host</td><td>{{ "%.0f"|format(30000 / (ppm * 60)) }} hours / year</td></tr>
-        <tr><td>Manual effort incl. second check</td><td>{{ study.manual_min if study else "4" }} min / page</td></tr>
-        <tr><td>Review of a pre-marked page</td><td>{{ study.assisted_min if study else "1" }} min / page</td></tr>
-        <tr><td><b>Staff time saved</b></td><td><b>~{{ "{:,.0f}".format(30000 * ((study.manual_min_f if study else 4) - (study.assisted_min_f if study else 1)) / 60) }} hours / year</b></td></tr>
-      </table>
-      <p class="note" style="margin-top:6px">Volume is an assumption to validate in a pilot; {{ "minutes per page are from our user study" if study else "minutes per page are assumptions" }}.</p>
-    </div>
-    <div class="card">
-      <h3>Why the B70 is the right hardware</h3>
-      <ul><li><b>Two models resident at once</b> &mdash; 32 GB per card holds an 8&ndash;14B text model and a 7B vision model without swapping.</li>
-        <li><b>Concurrency</b> &mdash; vLLM continuous batching turns one review station into an archive processor.</li>
-        <li><b>On-prem by design</b> &mdash; regulated documents never touch a cloud API; no per-page fees.</li>
-        <li><b>ECC memory</b> for long unattended batch jobs.</li></ul>
-    </div>
-  </div>
-  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>{{ 14 if study else 13 }}</span></div>
+  <table class="t" style="font-size:13.5px;margin-top:16px">
+    <tr><th style="width:19%">Who in the hospital</th><th style="width:31%">Their problem</th><th>What RedactAgent gives them</th></tr>
+    <tr><td><b>Records office</b></td><td>Copy requests and research extracts queue up; every page read twice</td><td>Pre-marked pages, a review queue ordered by risk, batch and hot-folder processing</td></tr>
+    <tr><td><b>Privacy officer</b></td><td>Must show the PDPA test &ldquo;cannot identify the person&rdquo; was met</td><td>Purpose policies as files, re-identification risk per page, hash-chained audit from input hash to output hash</td></tr>
+    <tr><td><b>IRB &amp; researchers</b></td><td>Studies wait for de-identified data</td><td>Research policy: consistent pseudonyms and year-only dates, released after one review</td></tr>
+    <tr><td><b>Hospital IT</b></td><td>No cloud for medical records; no new integration project</td><td>One on-premises appliance, REST API and hot folder (docs/INTEGRATION.md), no per-page fees</td></tr>
+  </table>
+  <div class="src">Labour cost: MOL occupational wage survey 2025 (clerical support NT$40,000/month). Human recall: Neamatullah et al. 2008 (clinical notes, not our corpus).
+    Triage figures from development data (v1 + v2, {{ triage.pages if triage else '' }} pages). Human review stays mandatory for every page.</div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span></span></div>
 </section>
 
 <!-- 15 Business model -->
 <section class="slide">
   <div class="kicker">Commercial potential</div>
-  <h1>Business model: an on-prem privacy appliance</h1>
-  <div class="grid3" style="margin-top:18px">
+  <h1>Business model: an on-premises privacy appliance for hospitals</h1>
+  <div class="grid3" style="margin-top:14px">
     <div class="card"><span class="tag">Product</span><h3 style="margin-top:8px">RedactAgent Appliance</h3>
-      <p>ASUS UGen 2&times; B70 workstation or server, pre-installed RedactAgent, policy packs for Taiwan (PDPA, IRB, court, FOI).</p></div>
-    <div class="card"><span class="tag">Revenue</span><h3 style="margin-top:8px">Hardware + annual licence</h3>
-      <p>Appliance sale through ASUS channel partners, plus a yearly subscription for model, rule and policy updates and support.</p></div>
-    <div class="card"><span class="tag">Go-to-market</span><h3 style="margin-top:8px">Start where pain is highest</h3>
-      <p>Hospital medical-records &amp; IRB offices (476 hospitals in Taiwan), then law firms, courts and government agencies.</p></div>
+      <p>ASUS 2&times; B70 workstation with RedactAgent pre-installed: review UI, batch, REST API and hot folder, and Taiwan policy packs (research / IRB, copies, court, public release).</p></div>
+    <div class="card"><span class="tag">Revenue</span><h3 style="margin-top:8px">Appliance + annual subscription</h3>
+      <p>Hardware sold through ASUS channel partners. The subscription covers model and rule updates and <b>policy packs that follow the regulator</b>: the new PDPA commission's rules are still to come.</p></div>
+    <div class="card"><span class="tag">Channel</span><h3 style="margin-top:8px">ASUS is already in hospitals</h3>
+      <p>ASUS's on-premises medical-record AI runs at Taipei Veterans General Hospital. RedactAgent is the next product for the same buyers.</p></div>
   </div>
-  <div class="grid2" style="margin-top:20px">
+  <div class="grid2" style="margin-top:16px;grid-template-columns:1.15fr 1fr">
     <div class="card" style="background:#fff">
-      <h3>Why customers buy</h3>
-      <ul><li>On-prem is a requirement, not a preference, for these documents.</li>
-        <li>Predictable cost: no per-page or per-token fees for large archives.</li>
-        <li>Purpose policies, risk score and audit chain answer the compliance officer's questions directly.</li>
-        <li>Bilingual (EN + 繁中) and Taiwan identifier formats out of the box.</li></ul>
+      <h3>Go-to-market in three steps</h3>
+      <table class="t" style="font-size:13px;margin-top:6px">
+        <tr><th>Phase</th><th>Customers</th><th>Why them</th></tr>
+        <tr><td><b>1 &middot; Pilot &amp; launch</b></td><td>25 medical centres + 71 regional hospitals</td><td>IRBs, research volume, records offices and IT departments that buy on-premises systems</td></tr>
+        <tr><td><b>2 &middot; Scale</b></td><td>292 district hospitals, via hospital groups sharing one appliance</td><td>same documents, smaller volume</td></tr>
+        <tr><td><b>3 &middot; Expand</b></td><td>Courts, insurers, government; GDPR / HIPAA policy packs</td><td>same engine, new policies; the Judicial Yuan already automates redaction</td></tr>
+      </table>
+      <p class="note" style="margin-top:6px">Hospital counts: MOHW statistics, end of 2025 (460 hospitals).</p>
     </div>
     <div class="card" style="background:#fff">
-      <h3>Why it is good for ASUS UGen</h3>
-      <ul><li>A concrete, repeatable reason to buy 32 GB local-AI cards: regulated documents.</li>
-        <li>Batch mode makes the second card pay off &mdash; measured, not promised.</li>
-        <li>Same appliance runs other on-prem AI (RAG, meeting notes) &rarr; higher attach rate.</li>
-        <li>Policy packs extend it to GDPR, HIPAA and APPI markets.</li></ul>
+      <h3>Pricing hypothesis &mdash; to validate in pilots</h3>
+      <ul><li>Two Arc Pro B70 cards list at US$949 each; we assume a complete appliance at ~NT$400k.</li>
+        <li>Subscription assumed at NT$300k per hospital per year &rarr; phase 1 alone is <b>~NT$29M recurring per year</b>.</li>
+        <li>Reference points: one uncorrected security failure can cost up to NT$15M; cloud APIs are not an option for medical records.</li></ul>
+      <h3 style="margin-top:10px">Why it is good for ASUS</h3>
+      <ul><li>A regulated, repeatable reason to buy 32 GB local-AI cards &mdash; and the batch mode uses the second card.</li></ul>
     </div>
   </div>
-  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>{{ 15 if study else 14 }}</span></div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span></span></div>
 </section>
 
 <!-- 16 Feasibility -->
@@ -109,9 +103,10 @@
     </div>
     <table class="t" style="font-size:13.5px">
       <tr><th style="width:34%">Risk</th><th>Mitigation</th></tr>
-      <tr><td>A PII item is missed</td><td>Four layers, adversarial re-check, risk score, mandatory human approval, strict default policy</td></tr>
+      <tr><td>A PII item is missed</td><td>Four layers, adversarial re-check, review queue ordered by risk, mandatory human approval, strict default policy</td></tr>
       <tr><td>OCR misses text on a poor scan</td><td>Unread-ink check flags any region the OCR did not read; the VLM sees the image</td></tr>
-      <tr><td>Synthetic &ne; real documents</td><td>Held-out corpora with new types and phone photos; next step is a supervised pilot on real documents</td></tr>
+      <tr><td>Synthetic &ne; real documents</td><td>Held-out corpora, phone photos and degraded scans (blur, low DPI, fax, skew); next step is a supervised pilot on real documents</td></tr>
+      <tr><td>Fitting into hospital IT</td><td>REST API and hot folder; release only after a recorded human export (docs/INTEGRATION.md)</td></tr>
       <tr><td>Legal mapping of policies</td><td>Policies are data (YAML), confirmed with counsel per customer</td></tr>
       <tr><td>Software stack changes</td><td>OpenAI-compatible API: the same code runs on vLLM XPU, Ollama or any compatible server</td></tr>
     </table>

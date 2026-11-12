@@ -187,3 +187,39 @@
   </div>
   <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>12</span></div>
 </section>
+
+<!-- 12b Robustness to scan quality -->
+{% if robust %}
+<section class="slide">
+  <div class="kicker">Validation &middot; real-world scan quality</div>
+  <h1>Real scans are worse &mdash; recall stays above {{ "%.0f"|format((robust_min * 100) | round(0, 'floor')) }}&nbsp;%</h1>
+  <p class="lead">The held-out v2 pages degraded the way hospital scans and faxes are: blur, low resolution, heavy compression,
+    skew and 1-bit fax. Same pixel-level scoring; the ground-truth boxes follow the transformation.</p>
+  <div class="grid2" style="grid-template-columns:1.35fr 1fr;align-items:start">
+    <div class="card" style="background:#fff">
+      <h3>Recall: rules only vs. full RedactAgent</h3>
+      {% for r in robust %}
+      <div style="display:grid;grid-template-columns:190px 1fr 58px;gap:8px;align-items:center;margin:5px 0;font-size:13px">
+        <div><b>{{ r.label }}</b>{% if r.level %} <span style="color:#5b6478">&middot; {{ r.level }}</span>{% endif %}</div>
+        <div style="position:relative;height:18px;background:#eef1f8;border-radius:4px">
+          <div style="position:absolute;left:0;top:0;height:8px;width:{{ r.A*100 }}%;background:#a5adc0;border-radius:3px"></div>
+          <div style="position:absolute;left:0;top:9px;height:9px;width:{{ r.D*100 }}%;background:{{ '#1f3a8a' if r.kind != 'clean' else '#be185d' }};border-radius:3px"></div>
+        </div>
+        <div style="text-align:right"><b>{{ "%.1f"|format(r.D*100) }}%</b></div>
+      </div>
+      {% endfor %}
+      <p class="note" style="margin-top:6px">Grey: rules only (regex / DLP baseline). Blue: full system with the agentic check.</p>
+    </div>
+    <div>
+      <div class="card"><h3>What it shows</h3><ul>
+        <li><b>Fax, compression and skew</b> barely matter: within the run-to-run variation (&plusmn;1 point).</li>
+        <li><b>Blur and low resolution</b> cost 3&ndash;5 points: characters merge, OCR misreads digits.</li>
+        <li>The language and vision layers recover what the rules lose on every degraded set.</li></ul></div>
+      <div class="card" style="margin-top:12px"><h3>In deployment</h3><p>The unread-ink check flags regions the OCR could not read, and those pages are
+        sent to full review. A scanner setting of &ge;&nbsp;150&nbsp;DPI is the one hard recommendation.</p></div>
+    </div>
+  </div>
+  <div class="src">30 pages &times; 10 degraded copies of v2 (v3 untouched), accuracy mode on 2&times; Arc Pro B70. Script: scripts/make_degraded.py; results: eval/robustness/.</div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span></span></div>
+</section>
+{% endif %}

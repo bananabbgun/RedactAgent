@@ -300,3 +300,32 @@ three times (take 1 showed a JupyterLab notification toast, take 2 an `xpu-smi` 
 every live v3 run is kept in `eval/results_b70/video_v3_live/`: take 1 96.2 / 95.9, take 2 96.5 / 94.8,
 **take 3 (in the video) 97.0 / 95.2**. Together with final
 runs 1–3 these are all v3 evaluations ever made; none was used to change the system.
+
+## 2026-11-12 — Review triage, robustness to scan quality, hospital integration
+
+**Does the risk score tell reviewers where to look?** (`eval/triage.py`, development data v1 + v2, 66 pages.)
+The evaluation now stores each page's re-identification risk score and warnings. The first-round risk score
+(the attacker's view *before* its own fixes) is bimodal (0 or 80–95). Leaking pages are more often high-risk than
+clean pages (8/13 vs 25/53), but the score alone is a weak separator. The chosen rule is **risk ≥ 70 or ink the
+OCR did not read**: it flags 59 % of pages, and those pages contain 88 % of the remaining missed items.
+A second attack round after the agent's own fixes (`RA_AGENT_ROUNDS=2`, `eval/triage2/`) gives a residual-risk
+score that separates slightly better (≥ 10 or unread ink: 44 % of pages hold 79 % of misses). It adds no recall
+(v1 99.1 / 98.1, v2 96.5 / 92.2) and costs ~15 % throughput, so it stays off. Conclusion: the score orders the
+review queue (`redactagent/hotfolder.py`, threshold 70); it does not justify skipping review. v3 was not used.
+
+**Robustness to scan quality** (`scripts/make_degraded.py`, `eval/robustness/`). The 30 v2 pages were degraded 10
+ways; ground-truth boxes follow rotations. Full-system recall / precision (clean v2: 96.7 / 92.9):
+
+| Degradation | Level | Rules only | Full system |
+|---|---|---|---|
+| Blur | radius 1.2 / 2.0 px | 59.8 / 54.0 | 93.4 / 92.0 · 91.9 / 89.0 |
+| Low resolution | 100 / 75 DPI | 59.6 / 59.3 | 93.7 / 93.5 · 93.2 / 91.1 |
+| JPEG | quality 25 / 10 | 59.1 / 56.6 | 94.9 / 91.6 · 96.2 / 92.9 |
+| Skew | 2° / 5° | 58.8 / 58.8 | 96.2 / 93.0 · 97.0 / 91.7 |
+| Fax (1-bit) | clean / speckle | 54.8 / 54.0 | 96.7 / 92.5 · 96.7 / 92.6 |
+
+Fax, compression and skew stay within run-to-run variation; blur and low resolution cost 3–5 points.
+
+**Integration.** `redactagent/hotfolder.py` (inbox → review ticket with priority and reasons → release only after
+an `export` event in the audit log) and `docs/INTEGRATION.md` (REST API, policies, security).
+Market and regulation facts behind the business slides: `docs/MARKET_RESEARCH.md`.
