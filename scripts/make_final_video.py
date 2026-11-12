@@ -214,7 +214,7 @@ def main():
     slides_block("mid", [("dual-card private agent host", "hardware"), ("Throughput on two B70", "perf"), ("Choosing the text model", "perf_model"),
                          ("reasoning loops", "loops"), ("Accuracy on documents", "accuracy"),
                          ("Where it works", "accuracy_miss"), ("Real scans are worse", "robust"),
-                         ("Less risk, more capacity", "business"), ("Commercial potential", "business_model"),
+                         ("Every value claim for hospitals", "business"), ("Commercial potential", "business_model"),
                          ("What we promised in Stage I", "promises"), ("Deployable today", "feasibility"), ("Private documents, shared safely", "outro")])
 
     lst = work / "concat.txt"
