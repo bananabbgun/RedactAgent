@@ -89,6 +89,13 @@ Highlights of the Stage II engineering:
   running after 2,000 tokens and resamples. vLLM XPU 0.26 → 0.33 removed bursts of garbage output. A repetition
   penalty looked like a fix but destabilised the server – measured, documented, dropped.
 - An evaluation bug (failed pages silently skipped) was found and fixed during model selection.
+- **Robust to real scan quality**: on held-out pages degraded by blur, low resolution, JPEG, skew and fax, recall
+  stays at 91.9–97.0 % ([`eval/robustness/`](eval/robustness/), `scripts/make_degraded.py`).
+- **Review triage, measured**: pages with a re-identification risk ≥ 70 or ink the OCR did not read (59 % of pages)
+  contain 88 % of the remaining misses ([`eval/triage.py`](eval/triage.py)). The review queue is ordered by this;
+  every page is still reviewed.
+- **Hospital integration**: REST API and a hot folder that releases documents only after a recorded human review
+  ([`docs/INTEGRATION.md`](docs/INTEGRATION.md)). Market and regulation facts: [`docs/MARKET_RESEARCH.md`](docs/MARKET_RESEARCH.md).
 
 ## Quick start
 

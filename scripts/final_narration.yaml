@@ -7,13 +7,18 @@ intro:   # slide 1 (cover)
      "This is Redact Agent: on-premises A I that finds and removes personal data from scanned documents."]
 
 problem:   # slide 2
-  - ["Hospitals, law firms and government agencies share sensitive records every day,"]
-  - ["for research, court cases, insurance claims and public-information requests."]
-  - ["Every copy has to be de-identified first, and today that is mostly done by hand."]
-  - ["Cloud AI is not an option: these documents are exactly the data that may not leave the building.",
-     "Cloud A I is not an option: these documents are exactly the data that may not leave the building."]
-  - ["And the stakes are rising: Taiwan's amended Personal Data Protection Act brings a dedicated regulator and higher fines.",
-     "And the stakes are rising: Taiwan's amended Personal Data Protection Act brings a dedicated regulator, and higher fines."]
+  - ["We start with hospitals. Taiwan's hospitals discharge three point three million patients a year,"]
+  - ["and every chart may later be requested: for research, for copies, for disputes and insurance claims."]
+  - ["Each copy must be stripped of personal data first, and today that is done by hand."]
+  - ["People miss identifiers: in a published study, a single reviewer found only eighty-one percent of them."]
+  - ["Cloud AI is not an option for medical records, and the stakes are rising:",
+     "Cloud A I is not an option for medical records, and the stakes are rising:"]
+  - ["the amended data protection law brings breach notification and fines of up to fifteen million NT dollars."]
+
+competition:   # slide 3
+  - ["We checked the main de-identification products. None of them covers a Taiwanese hospital:"]
+  - ["cloud only, no Traditional Chinese, or no scanned pages with seals and signatures,"]
+  - ["and none attacks its own output to look for combinations that still identify someone."]
 
 solution:   # slide 4
   - ["RedactAgent reads each page, detects personal data with rules, a local language model and a local vision model,",
@@ -103,18 +108,31 @@ accuracy_miss:   # where it misses
   - ["Rules alone find about sixty percent on unseen documents; the agentic check adds the last few points."]
   - ["We also report where it still misses, and an evaluation bug we found and fixed along the way."]
 
-business:   # slides 13 + 14
-  - ["One two-card B70 host de-identifies about {pages_hour} pages an hour.",
-     "One two-card B seventy host de-identifies about {pages_hour_spoken} pages an hour."]
-  - ["We estimate that checking a pre-marked page takes about a minute instead of four: people check rather than search."]
+robust:   # robustness slide
+  - ["Real scans are worse than synthetic ones, so we degraded the held-out pages:"]
+  - ["blur, low resolution, compression, skew and fax. Recall stays above ninety-one percent;"]
+  - ["blur and low resolution cost the most, and those pages are flagged for full review."]
+
+business:   # value slide
+  - ["For a hospital, the value is not cheaper labour. It is fewer leaks, no backlog, and evidence."]
+  - ["One two-card B70 host de-identifies about {pages_hour} pages an hour,",
+     "One two-card B seventy host de-identifies about {pages_hour_spoken} pages an hour,"]
+  - ["and the review queue is ordered by risk: the flagged pages hold most of what remains to fix."]
+  - ["The privacy officer gets policy files and a hash-chained audit trail to show the law was followed."]
 
 business_model:   # business model slide
-  - ["We see it as an on-premises privacy appliance: ASUS hardware, RedactAgent pre-installed,",
-     "We see it as an on-premises privacy appliance: Asus hardware, Redact Agent pre-installed,"]
-  - ["with policy packs for Taiwan, starting where the pain is highest: hospital records and research offices."]
-  - ["Then law firms, courts and government agencies, and with new policy packs, GDPR and HIPAA markets.",
-     "Then law firms, courts and government agencies, and with new policy packs, G D P R and HIPAA markets."]
-  - ["Everything is open and commercially licensed, and deploys with one command on a B70 host."]
+  - ["We see it as an on-premises privacy appliance: ASUS hardware with RedactAgent pre-installed,",
+     "We see it as an on-premises privacy appliance: Asus hardware with Redact Agent pre-installed,"]
+  - ["sold with a subscription for policy packs that follow the new regulator's rules."]
+  - ["ASUS already runs medical-record AI inside Taiwanese hospitals, so the channel exists.",
+     "Asus already runs medical-record A I inside Taiwanese hospitals, so the channel exists."]
+  - ["We start with the ninety-six medical centres and regional hospitals, then district hospitals, courts and insurers."]
+
+feasibility:   # feasibility slide
+  - ["It fits into hospital IT through a REST API or a hot folder, and nothing is released without a recorded human review.",
+     "It fits into hospital I T through a REST A P I or a hot folder, and nothing is released without a recorded human review."]
+  - ["Everything is open and commercially licensed, and deploys with one command on a B70 host.",
+     "Everything is open and commercially licensed, and deploys with one command on a B seventy host."]
 
 outro:   # summary slide
   - ["RedactAgent. Share the document, not the person.", "Redact Agent. Share the document, not the person."]

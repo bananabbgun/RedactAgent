@@ -170,7 +170,8 @@ def main():
             narrate_demo(v, [(0.4, audio[key], caps[key])], work / f"c_{tag}_{i}.mp4", work)
             clips.append(work / f"c_{tag}_{i}.mp4")
 
-    slides_block("open", [("RedactAgent", "intro"), ("Sensitive documents", "problem"),
+    slides_block("open", [("RedactAgent", "intro"), ("Hospitals must share records", "problem"),
+                          ("No existing product", "competition"),
                           ("Detect, attack, decide", "solution")])
 
     tm = {m["label"]: m["t"] for m in json.loads((work / "terminal_marks.json").read_text())}
@@ -208,8 +209,9 @@ def main():
 
     slides_block("mid", [("Throughput on two B70", "perf"), ("Choosing the text model", "perf_model"),
                          ("reasoning loops", "loops"), ("Accuracy on documents", "accuracy"),
-                         ("Where it works", "accuracy_miss"), ("replaces a backlog", "business"),
-                         ("Business model", "business_model"), ("Private documents, shared safely", "outro")])
+                         ("Where it works", "accuracy_miss"), ("Real scans are worse", "robust"),
+                         ("Less risk, more capacity", "business"), ("Business model", "business_model"),
+                         ("Deployable today", "feasibility"), ("Private documents, shared safely", "outro")])
 
     lst = work / "concat.txt"
     lst.write_text("".join(f"file '{c.resolve()}'\n" for c in clips))
