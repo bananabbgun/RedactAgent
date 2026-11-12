@@ -42,9 +42,37 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
 .gpu .t { font-size: 24px; font-weight: 700; letter-spacing: 2px; color: var(--acc); text-transform: uppercase; }
 .gpu h3 { font-size: 50px; margin: 10px 0 12px; color: var(--navy); }
 .gpu p { font-size: 30px; margin: 0; line-height: 1.4; color: #2d3650; }
+.mx { width: 100%; border-collapse: collapse; margin-top: 50px; font-size: 32px; }
+.mx th { font-size: 24px; color: var(--mut); font-weight: 700; text-align: center; padding: 0 10px 18px; letter-spacing: .5px; }
+.mx th:first-child, .mx td:first-child { text-align: left; }
+.mx td { padding: 14px 10px; border-top: 2px solid var(--line); text-align: center; font-weight: 700; }
+.mx td:first-child { font-weight: 600; color: #2d3650; }
+.y { color: var(--green); } .n { color: var(--red); } .p { color: #b0b8c9; font-size: 26px; }
+.mx tr.us td { background: #eef3ff; color: var(--brand); border-top: 3px solid var(--brand); }
+.bars { margin-top: 46px; }
+.br { display: flex; align-items: center; gap: 24px; margin-bottom: 20px; font-size: 30px; }
+.br .k { width: 360px; color: #2d3650; font-weight: 600; }
+.br .k small { display: block; font-size: 21px; color: var(--mut); font-weight: 400; }
+.br .track { flex: 1; height: 46px; background: #f0f3f8; border-radius: 8px; position: relative; }
+.br .a { position: absolute; left: 0; top: 0; bottom: 0; background: #d5dae4; border-radius: 8px; }
+.br .d { position: absolute; left: 0; top: 11px; height: 24px; background: var(--brand); border-radius: 6px; }
+.br .v { width: 130px; font-weight: 800; color: var(--brand); text-align: right; }
+.br.hl .k, .br.hl .v { color: var(--pink); } .br.hl .d { background: var(--pink); }
+.leg { font-size: 22px; color: var(--mut); margin-top: 6px; }
+.leg i { display: inline-block; width: 26px; height: 14px; border-radius: 3px; margin: 0 8px 0 18px; vertical-align: middle; }
+.cols3 { display: flex; gap: 34px; margin-top: 56px; }
+.col { flex: 1; border-top: 6px solid var(--acc); padding-top: 22px; }
+.col .t { font-size: 24px; font-weight: 700; letter-spacing: 2px; color: var(--acc); text-transform: uppercase; }
+.col .v { font-size: 92px; font-weight: 800; color: var(--navy); line-height: 1.05; margin: 14px 0 10px; letter-spacing: -2px; }
+.col p { font-size: 28px; line-height: 1.35; color: #2d3650; margin: 0; }
+.vs { display: flex; gap: 40px; margin-top: 50px; }
+.vs > div { flex: 1; border-radius: 22px; padding: 36px 44px; }
+.vs h3 { font-size: 34px; margin: 0 0 20px; }
+.vs .row2 { display: flex; justify-content: space-between; font-size: 32px; padding: 14px 0; border-top: 2px solid rgba(0,0,0,.08); }
+.vs .row2 b { font-weight: 800; }
 </style></head><body>
 
-{% macro chap(i) %}<div class="chap">{% for c in ["The problem", "Our idea", "Live demo", "Proof", "Ready"] %}<span class="{{ 'on' if loop.index == i else ('done' if loop.index < i else '') }}">{{ loop.index }} · {{ c }}</span>{% endfor %}</div>{% endmacro %}
+{% macro chap(i) %}<div class="chap">{% for c in ["The problem", "Our idea", "Live demo", "Proof", "Built on the B70", "Ready"] %}<span class="{{ 'on' if loop.index == i else ('done' if loop.index < i else '') }}">{{ loop.index }} · {{ c }}</span>{% endfor %}</div>{% endmacro %}
 
 <section class="card navy" data-key="cover" style="padding-top:250px">
   <div style="font-size:26px;letter-spacing:3px;color:#8fb3ff;font-weight:700">ASUS UGEN AI LEAGUE 2026 · FINAL</div>
@@ -72,12 +100,13 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
 
 <section class="card" data-key="notool">
   {{ chap(1) }}
-  <h1 style="margin-top:110px">No existing product fits a Taiwanese hospital</h1>
-  <div class="row">
-    <div class="box x"><h3>Cloud only</h3><p>Medical records cannot be sent out</p></div>
-    <div class="box x"><h3>No Chinese</h3><p>No Traditional Chinese or Taiwan ID numbers</p></div>
-    <div class="box x"><h3>No scans</h3><p>No seals or signatures on scanned pages</p></div>
-  </div>
+  <h1 style="margin-top:80px">No existing product fits a Taiwanese hospital</h1>
+  <table class="mx">
+    <tr><th style="width:36%"></th><th>Runs inside<br>the hospital</th><th>Traditional Chinese<br>+ Taiwan IDs</th><th>Scans, seals,<br>signatures</th><th>Attacks its<br>own output</th></tr>
+    <tr><td>Google Cloud Sensitive Data Protection</td><td class="n">✕</td><td class="p">partly</td><td class="y">✓</td><td class="p">partly</td></tr><tr><td>AWS Comprehend Medical</td><td class="n">✕</td><td class="n">✕</td><td class="p">partly</td><td class="n">✕</td></tr><tr><td>Azure Health de-identification</td><td class="n">✕</td><td class="n">✕</td><td class="n">✕</td><td class="n">✕</td></tr><tr><td>Private AI</td><td class="y">✓</td><td class="n">✕</td><td class="p">partly</td><td class="n">✕</td></tr><tr><td>Microsoft Presidio (open source)</td><td class="y">✓</td><td class="p">partly</td><td class="p">partly</td><td class="n">✕</td></tr>
+    <tr class="us"><td>RedactAgent</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+  </table>
+  <div class="src">Public vendor documentation, checked 2026-11-12 (sources in docs/MARKET_RESEARCH.md)</div>
 </section>
 
 <section class="card" data-key="idea">
@@ -111,21 +140,84 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
   <div class="src">Held-out test set v3, generated before any result was seen, never used for tuning; pixel-level scoring. Human figure: Neamatullah et al. 2008.</div>
 </section>
 
-<section class="card" data-key="hardware">
+<section class="card" data-key="robust">
   {{ chap(4) }}
-  <h1 style="margin-top:90px">One host, two B70 cards, one agent</h1>
-  <div class="row" style="margin-top:56px">
-    <div class="gpu"><div class="t">Card 0 · reasoning</div><h3>gpt-oss-20b</h3><p>21B parameters in 13 GB (native MXFP4)<br>37 requests in parallel</p></div>
-    <div class="gpu"><div class="t">Card 1 · vision</div><h3>Qwen2.5-VL-7B</h3><p>Always loaded<br>reads seals, signatures, photos</p></div>
+  <h1 style="margin-top:80px">Real scans are worse &mdash; recall stays above {{ robust_min }}</h1>
+  <div class="bars">
+  {% for r in robust %}<div class="br"><div class="k">{{ r.label }}<small>{{ r.level }}</small></div>
+    <div class="track"><div class="a" style="width:{{ r.A*100 }}%"></div><div class="d" style="width:{{ r.D*100 }}%"></div></div>
+    <div class="v">{{ "%.1f"|format(r.D*100) }}%</div></div>
+  {% endfor %}</div>
+  <div class="leg"><i style="background:#d5dae4"></i>rules only<i style="background:var(--brand)"></i>RedactAgent (recall, worst setting of each kind)</div>
+</section>
+
+<section class="card" data-key="hardware">
+  {{ chap(5) }}
+  <h1 style="margin-top:80px">The dual-card agent host, built and measured</h1>
+  <div class="sub" style="font-size:30px;margin-top:16px">The organisers' blueprint for the B70: card 0 runs the reasoning brain, card 1 keeps the vision model resident.</div>
+  <div class="row" style="margin-top:46px">
+    <div class="gpu"><div class="t">Card 0 · reasoning brain</div><h3>gpt-oss-20b</h3><p>21B parameters in 13 GB (native MXFP4)<br>37 requests in parallel<br>detects, then attacks its own redaction</p></div>
+    <div class="gpu"><div class="t">Card 1 · eyes</div><h3>Qwen2.5-VL-7B</h3><p>Always loaded<br>signatures, seals, ID photos<br>works on the same page at the same time</p></div>
   </div>
-  <div style="margin-top:56px;display:flex;align-items:baseline;gap:30px">
-    <div class="num" style="font-size:120px;letter-spacing:-3px">{{ pages_hour }}</div>
-    <div style="font-size:36px;color:var(--mut)">pages per hour &asymp; <b style="color:var(--navy)">3 million pages a year</b> on one 8-hour shift</div>
+  <div class="sub" style="margin-top:40px;font-size:30px"><b style="color:var(--navy)">25 of 32 GB</b> used on each card &middot; both models resident &middot; nothing leaves the machine</div>
+</section>
+
+<section class="card" data-key="model">
+  {{ chap(5) }}
+  <h1 style="margin-top:80px">Choosing the reasoning model with data</h1>
+  <div class="sub" style="font-size:30px;margin-top:16px">Four open models on card 0, same code, unseen test pages (v2), agentic check on</div>
+  <div class="bars" style="margin-top:40px">
+  {% for r in tune %}<div class="br {{ 'hl' if r.final }}"><div class="k">{{ r.name }}<small>{{ r.prec }}</small></div>
+    <div style="flex:1">
+      <div class="track" style="height:30px;margin-bottom:8px"><div class="d" style="top:5px;height:20px;width:{{ (r.v2r-0.8)/0.2*100 }}%"></div></div>
+      <div class="track" style="height:30px"><div class="d" style="top:5px;height:20px;opacity:.45;width:{{ (r.v2p-0.8)/0.2*100 }}%"></div></div>
+    </div>
+    <div class="v" style="width:300px;font-size:28px">{{ "%.1f"|format(r.v2r*100) }} recall<br><span style="opacity:.6">{{ "%.1f"|format(r.v2p*100) }} precision</span></div></div>
+  {% endfor %}</div>
+  <div class="leg">Bars start at 80%. gpt-oss-20b is best on recall <b>and</b> precision.</div>
+</section>
+
+<section class="card" data-key="ocr">
+  {{ chap(5) }}
+  <h1 style="margin-top:80px">Speed came from measuring, not guessing</h1>
+  <div class="cols3">
+    <div class="col"><div class="t">Found</div><div class="v" style="font-size:64px">GPU power fell as load rose</div><p>344 CPU threads of OCR were fighting each other</p></div>
+    <div class="col"><div class="t">Fixed</div><div class="v" style="font-size:64px">8 threads per OCR engine</div><p>and the two models work on each page in parallel, one card each</p></div>
+    <div class="col" style="border-color:var(--green)"><div class="t" style="color:var(--green)">Result</div><div class="v" style="color:var(--green)">9&times;</div><p>faster OCR; the GPUs are no longer waiting</p></div>
   </div>
 </section>
 
-<section class="card" data-key="ready">
+<section class="card" data-key="loops">
   {{ chap(5) }}
+  <h1 style="margin-top:80px">A failure that only appears at scale: reasoning loops</h1>
+  <div class="cols3">
+    <div class="col"><div class="t">1 · Measure</div><div class="v">7 / 380</div><p>calls looped forever<br>(30 looped, 23 recovered by themselves)</p></div>
+    <div class="col"><div class="t">2 · Guard</div><div class="v">2,000</div><p>tokens: a loop still running is cancelled and retried &mdash; normal answers never get there</p></div>
+    <div class="col" style="border-color:var(--green)"><div class="t" style="color:var(--green)">3 · Throughput mode</div><div class="v" style="color:var(--green)">0 / 264</div><p>loops with sampling, and {{ fast_gain }} more pages per minute</p></div>
+  </div>
+</section>
+
+<section class="card" data-key="cost">
+  {{ chap(5) }}
+  <h1 style="margin-top:80px">{{ pages_hour }} pages an hour &mdash; what 1,000 pages cost</h1>
+  <div class="vs">
+    <div style="background:#eef3ff;border:3px solid var(--brand)"><h3 style="color:var(--brand)">RedactAgent on 2&times; B70</h3>
+      <div class="row2"><span>Time</span><b>{{ min_per_1000 }} minutes</b></div>
+      <div class="row2"><span>Energy</span><b>{{ kwh_per_1000 }} kWh</b></div>
+      <div class="row2"><span>Per-page fee</span><b>none</b></div>
+      <div class="row2"><span>Data leaves the hospital</span><b style="color:var(--green)">never</b></div></div>
+    <div style="background:var(--soft);border:2px solid var(--line)"><h3 style="color:var(--mut)">Cloud reference (AWS)</h3>
+      <div class="row2"><span>Fee</span><b>&asymp; US$29.5</b></div>
+      <div class="row2"><span>Traditional Chinese</span><b style="color:var(--red)">no</b></div>
+      <div class="row2"><span>Seals and signatures</span><b style="color:var(--red)">no</b></div>
+      <div class="row2"><span>Data leaves the hospital</span><b style="color:var(--red)">yes</b></div></div>
+  </div>
+  <div class="sub" style="font-size:30px;margin-top:34px">One host, one 8-hour shift: about <b style="color:var(--navy)">3 million pages a year</b> &mdash; Taiwan has 3.35 million discharges.</div>
+  <div class="src">Measured on the organiser's instance (32 pages in flight, xpu-smi board power). AWS: Textract + Comprehend Medical list prices, Nov 2026.</div>
+</section>
+
+<section class="card" data-key="ready">
+  {{ chap(6) }}
   <h1 style="margin-top:90px">Ready for a hospital</h1>
   <div class="row">
     <div class="box ok"><h3>Stays inside</h3><p>Nothing leaves the building; no per-page fees</p></div>
@@ -136,7 +228,7 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
 </section>
 
 <section class="card" data-key="next">
-  {{ chap(5) }}
+  {{ chap(6) }}
   <h1 style="margin-top:90px">Stage I goals: met. Next: prove adoption.</h1>
   <div class="row">
     <div class="box ok"><h3>Done</h3><p>Runs on the B70 with both models loaded; recall rose from 97.8% to {{ v1_recall }} on the Stage I test set</p></div>

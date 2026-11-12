@@ -81,7 +81,7 @@ Highlights of the Stage II engineering:
 - **One model per card**, LLM and VLM layers of a page run concurrently.
 - **FP8** made Qwen3-8B 75 % faster at the same accuracy; **gpt-oss-20b** was chosen for the best held-out accuracy.
 - **Two modes, one model**: accuracy mode decodes greedily; throughput mode samples gpt-oss at temperature 1.0
-  (`RA_TEMPERATURE=1.0`) – no reasoning loops and ~40 % more pages per minute, ~2 recall points lower on v2.
+  (`RA_TEMPERATURE=1.0`) – no reasoning loops and ~65 % more pages per minute in the benchmark (34.7 vs 21.0 at 8 pages in flight), ~1 recall point lower on v2.
 - **Held-out documents exposed a generalisation gap** (84 % recall on new document types); general fixes plus the
   agentic re-identification check closed most of it, confirmed on the v3 corpus that was never used for development.
 - **Reasoning loops at scale**: greedy gpt-oss occasionally repeats its reasoning until the token cap. Streaming

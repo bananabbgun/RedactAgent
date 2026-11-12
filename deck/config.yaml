@@ -11,5 +11,5 @@ video: "https://youtu.be/LxvyFA2Zhrc"
 final_model:
   id: "T5b_gpt-oss-20b-low"
   text: "gpt-oss-20b, MXFP4"
-  why: "gpt-oss-20b leads on held-out recall and precision at the same time, in both English and Chinese, with the fewest false positives. For archives, the same model sampled at temperature 1.0 is the throughput mode: no reasoning loops and about 40% more pages per minute (next slide)."
+  why: "gpt-oss-20b leads on held-out recall and precision at the same time, in both English and Chinese, with the fewest false positives. For archives, the same model sampled at temperature 1.0 is the throughput mode: no reasoning loops and about 65% more pages per minute in the benchmark (next slide)."
 final_video: "(to be added)"

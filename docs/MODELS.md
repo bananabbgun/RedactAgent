@@ -37,7 +37,7 @@ configuration runs on 0.33, see below.)
 **Decoding and the throughput mode (2026-11-08).** Greedy decoding occasionally makes gpt-oss repeat its reasoning
 until the token cap. Accuracy mode keeps greedy decoding (most thorough on held-out documents) and adds a
 streaming loop guard; throughput mode samples the same model at temperature 1.0, which removes the loops and
-raises throughput by ~40 % for ~2 recall points on v2. This replaced Qwen3-8B FP8 as the throughput mode: on this
+raises benchmark throughput by ~65 % (34.7 vs 21.0 pages/min at 8 in flight) for ~1 recall point on v2 (95.5 vs 96.7). This replaced Qwen3-8B FP8 as the throughput mode: on this
 stack it is both faster and more accurate. Measurements: `docs/STAGE2_LOG.md`.
 
 gpt-oss always reasons before answering. With RedactAgent's original 1,024-token budget the reasoning consumed

@@ -1,7 +1,8 @@
 """Final video, story cut: one idea per screen, the live demo in the middle, details left to the deck.
 
 Structure (chapters shown on every card): 1 problem, 2 idea, 3 live demo on the organiser's B70 instance,
-4 proof (live evaluation + numbers), 5 ready. Cards come from deck/video_cards.html.j2 (1920x1080, bottom band
+4 proof (live evaluation, hospital numbers, degraded scans), 5 built on the B70 (dual-card host, model choice,
+measured bottlenecks, reasoning loops, cost), 6 ready. Cards come from deck/video_cards.html.j2 (1920x1080, bottom band
 kept free for captions); footage is the same recordings as scripts/make_final_video.py, cut per narration
 segment, with zoomed crops where the narration points at something small.
 
@@ -65,6 +66,39 @@ def pill(text: str, out: Path, bg=(31, 58, 138, 230)):
     d.rounded_rectangle((0, 0, w - 1, 49), radius=25, fill=bg)
     d.text((20, 25), text, font=fnt, fill=(255, 255, 255, 255), anchor="lm")
     im.save(out)
+
+
+def story_context(nums: dict) -> dict:
+    """Numbers for the cards beyond numbers(): robustness, model sweep, loops, cost; all read from result files."""
+    import sys
+
+    sys.path.insert(0, str(ROOT / "deck"))
+    from build_final import tune_rows
+
+    ctx = dict(nums)
+    robust = json.loads((ROOT / "eval" / "robustness" / "summary.json").read_text())
+    worst = {}
+    for r in robust:  # worst setting of each kind
+        if r["kind"] not in worst or r["D"] < worst[r["kind"]]["D"]:
+            worst[r["kind"]] = r
+    names = {"clean": ("Clean scan", "test set v2"), "fax": ("Fax", None), "rotate": ("Skewed", None), "jpeg": ("JPEG", None),
+             "lowres": ("Low resolution", None), "blur": ("Blur", None)}
+    ctx["robust"] = sorted(({"label": names[k][0], "level": names[k][1] or r["level"], "A": r["A"], "D": r["D"]}
+                            for k, r in worst.items()), key=lambda r: -r["D"])
+    ctx["robust_min"] = f"{int(min(r['D'] for r in robust) * 100)}%"
+    rows = tune_rows()
+    for r in rows:
+        r["name"], r["final"] = r["name"].replace(" (MoE)", ""), r["id"].startswith("T5b")
+    ctx["tune"] = rows
+    b70 = ROOT / "eval" / "results_b70"
+    bench = json.loads((b70 / "bench" / "benchmark.json").read_text())
+    fast = json.loads((b70 / "fast" / "bench" / "benchmark.json").read_text())
+    acc8, fast8 = (next(r for r in x if r["concurrency"] == 8)["pages_per_min"] for x in (bench, fast))
+    ctx["fast_gain"] = f"{(fast8 / acc8 - 1) * 100:.0f}%"
+    best = max(bench, key=lambda r: r["pages_per_min"])
+    ctx["min_per_1000"] = f"{1000 / best['pages_per_min']:.0f}"
+    ctx["kwh_per_1000"] = f"{1000 / best['pages_per_kwh']:.2f}"
+    return ctx
 
 
 def render_cards(nums: dict, out_dir: Path) -> dict[str, Path]:
@@ -141,7 +175,9 @@ def main():
     work.mkdir(parents=True, exist_ok=True)
     rec = Path(a.work).resolve()
 
-    nums = numbers()
+    nums = story_context(numbers())
+    nums["robust_min_spoken"] = nums["robust_min"].replace("%", " percent")
+    nums["fast_gain_spoken"] = nums["fast_gain"].replace("%", " percent")
     raw = yaml.safe_load((ROOT / "scripts" / "story_narration.yaml").read_text(encoding="utf-8"))
     audio, caps = {}, {}
     for k, chunks in raw.items():
@@ -203,7 +239,7 @@ def main():
             "4 · PROOF  —  live evaluation on the B70, unseen test set",
             extra=[(7.5 + 8.0 + 4.8 + 0.3, "verify_result")])
 
-    for k in ("proof", "hardware", "ready", "next"):
+    for k in ("proof", "robust", "hardware", "model", "ocr", "loops", "cost", "ready", "next"):
         card(k)
     card("outro", hold=2.0)
 

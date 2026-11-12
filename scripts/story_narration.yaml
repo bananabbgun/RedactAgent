@@ -22,8 +22,11 @@ humans:
   - ["And a leak can now cost up to fifteen million NT dollars."]
 
 notool:
-  - ["No existing product fits: cloud services cannot take medical records,"]
-  - ["and the ones we checked lack Traditional Chinese, or scanned seals and signatures."]
+  - ["We checked the main de-identification products. None of them fits."]
+  - ["The cloud services cannot run inside a hospital, and the health tools from Amazon and Microsoft have no Chinese."]
+  - ["Private AI runs on premises, but its Traditional Chinese is still coming soon.",
+     "Private A I runs on premises, but its Traditional Chinese is still coming soon."]
+  - ["And none of them attacks its own output to check whether someone can still be identified."]
 
 idea:
   - ["RedactAgent works in three steps."]
@@ -82,12 +85,46 @@ proof:
   - ["And it catches {qi_recall} of the combination clues, which rules miss completely.",
      "And it catches {qi_recall_spoken} of the combination clues, which rules miss completely."]
 
+robust:
+  - ["Real scans are worse than our test pages, so we blurred, faxed, compressed and skewed them."]
+  - ["Recall stays above {robust_min}. Rules alone find only 55 to 60 percent.",
+     "Recall stays above {robust_min_spoken}. Rules alone find only fifty-five to sixty percent."]
+  - ["Blur and low resolution cost the most, and pages the OCR could not fully read are flagged for review.",
+     "Blur and low resolution cost the most, and pages the O C R could not fully read are flagged for review."]
+
 hardware:
-  - ["This is the dual-card agent host the organisers proposed for the B70, built and measured.",
-     "This is the dual-card agent host the organisers proposed for the B seventy, built and measured."]
-  - ["A twenty-one billion parameter model fits on card zero with room for thirty-seven parallel requests."]
+  - ["How does this run on the B70? The organisers proposed a dual-card agent host. We built it and measured it.",
+     "How does this run on the B seventy? The organisers proposed a dual-card agent host. We built it and measured it."]
+  - ["Card zero is the reasoning brain: a twenty-one billion parameter model in thirteen gigabytes, with room for thirty-seven parallel requests."]
+  - ["Card one is the eyes: the vision model stays loaded and works on the same page at the same time."]
+
+model:
+  - ["Which reasoning model? We tested four open models on card zero with the same code."]
+  - ["On unseen pages, gpt-oss-20b was best on recall and on precision at the same time, so it is the default.",
+     "On unseen pages, G P T O S S twenty B was best on recall and on precision at the same time, so it is the default."]
+
+ocr:
+  - ["Speed came from measuring. GPU power fell as the load went up: the cards were waiting."]
+  - ["The cause was on the CPU: OCR threads on three hundred forty-four cores were fighting each other.",
+     "The cause was on the C P U: O C R threads on three hundred forty-four cores were fighting each other."]
+  - ["Eight threads per OCR engine made OCR nine times faster.",
+     "Eight threads per O C R engine made O C R nine times faster."]
+
+loops:
+  - ["One failure only shows up at scale: the reasoning model sometimes repeats itself."]
+  - ["We measured first: in 380 calls, 30 looped, and only 7 never stopped.",
+     "We measured first: in three hundred eighty calls, thirty looped, and only seven never stopped."]
+  - ["So RedactAgent cancels a loop still running after two thousand tokens and retries; normal answers never get that far.",
+     "So Redact Agent cancels a loop still running after two thousand tokens and retries; normal answers never get that far."]
+  - ["For archives, a throughput mode samples the same model: no loops at all, and {fast_gain} more pages per minute.",
+     "For archives, a throughput mode samples the same model: no loops at all, and {fast_gain_spoken} more pages per minute."]
+
+cost:
   - ["One host handles about {pages_hour} pages an hour: three million a year on a single shift.",
      "One host handles about {pages_hour_spoken} pages an hour: three million a year on a single shift."]
+  - ["A thousand pages take {min_per_1000} minutes and {kwh_per_1000} kilowatt-hours, with no per-page fee.",
+     "A thousand pages take {min_per_1000} minutes and {kwh_per_1000} kilowatt hours, with no per-page fee."]
+  - ["A cloud service would charge about thirty dollars, without Chinese, and the records would leave the hospital."]
 
 ready:
   - ["It is ready for a hospital: nothing leaves the building,"]
