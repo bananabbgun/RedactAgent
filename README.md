@@ -12,6 +12,7 @@ Theme **Workplace AI** · Global Online Track · Yu-Tsen Tsai (蔡侑岑), CSIE,
 | Stage I demo (3 min) | https://youtu.be/LxvyFA2Zhrc |
 | Engineering log (Stage II) | [`docs/STAGE2_LOG.md`](docs/STAGE2_LOG.md) |
 | Model information | [`docs/MODELS.md`](docs/MODELS.md) |
+| Integration (hot folder, REST API) | [`docs/INTEGRATION.md`](docs/INTEGRATION.md) |
 | Performance data | [`eval/results_b70/`](eval/results_b70/) · [`eval/tune3/`](eval/tune3/) |
 
 ![RedactAgent review UI on the 2x Arc Pro B70 instance](deck/assets/ui_b70.png)

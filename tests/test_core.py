@@ -279,3 +279,44 @@ def test_truncated_json_is_salvaged_not_raised():
     assert parse_json_lenient(cut) == {"objects": [{"label": "signature", "bbox_2d": [1, 2, 3, 4]}]}
     assert parse_json_lenient('{"objects": [{"label": "sig') == {} or parse_json_lenient('{"objects": [{"label": "sig') == {"objects": []}
     assert parse_json_lenient("not json") == {}
+
+
+def test_hotfolder_submits_tickets_and_releases_only_after_review(tmp_path, monkeypatch):
+    import httpx
+
+    from redactagent import hotfolder
+
+    state = {"exported": False}
+
+    def handler(req: httpx.Request):
+        p = req.url.path
+        if req.method == "POST" and p == "/api/jobs":
+            return httpx.Response(200, json={"id": "j1"})
+        if p == "/api/jobs/j1":
+            return httpx.Response(200, json={"status": "done", "policy": "research", "pages": 1, "n_findings": 2,
+                                             "by_category": {"PERSON_NAME": 2}, "input_sha256": "x", "error": "",
+                                             "risk": {"score": 70}, "warnings": [],
+                                             "findings": [{"accepted": True}, {"accepted": False}]})
+        if p == "/api/audit":
+            return httpx.Response(200, json={"entries": [{"event": "export"}] if state["exported"] else []})
+        if p.startswith("/api/jobs/j1/download/"):
+            return httpx.Response(200, content=b"%PDF")
+        return httpx.Response(404)
+
+    monkeypatch.setattr(hotfolder, "stable", lambda p, wait=1.0: True)
+    hf = hotfolder.HotFolder("http://ra", tmp_path / "in", tmp_path / "out", "research", 50)
+    hf.http = httpx.Client(base_url="http://ra", transport=httpx.MockTransport(handler))
+    (tmp_path / "in").mkdir(exist_ok=True)
+    (tmp_path / "in" / "chart.pdf").write_bytes(b"%PDF-1.4")
+    hf.submit_new()
+    assert not (tmp_path / "in" / "chart.pdf").exists() and hf.state["j1"]["stage"] == "processing"
+    hf.advance()
+    ticket = json.loads((tmp_path / "out" / "pending_review" / "chart.json").read_text())
+    assert ticket["priority"] == "full" and ticket["review_url"].endswith("/?job=j1")
+    assert any("risk 70" in r for r in ticket["reasons"]) and any("unconfirmed" in r for r in ticket["reasons"])
+    hf.advance()  # not reviewed yet: nothing is released
+    assert not any((tmp_path / "out" / "released").iterdir())
+    state["exported"] = True
+    hf.advance()
+    assert (tmp_path / "out" / "released" / "chart_redacted.pdf").exists()
+    assert not (tmp_path / "out" / "pending_review" / "chart.json").exists()
