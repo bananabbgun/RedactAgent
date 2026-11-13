@@ -47,6 +47,7 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
 .mx th:first-child, .mx td:first-child { text-align: left; }
 .mx td { padding: 14px 10px; border-top: 2px solid var(--line); text-align: center; font-weight: 700; }
 .mx td:first-child { font-weight: 600; color: #2d3650; }
+.step .n { color: #fff; }
 .y { color: var(--green); } .n { color: var(--red); } .p { color: #b0b8c9; font-size: 26px; }
 .mx tr.us td { background: #eef3ff; color: var(--brand); border-top: 3px solid var(--brand); }
 .bars { margin-top: 46px; }
@@ -77,17 +78,32 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
 <section class="card navy" data-key="cover" style="padding-top:250px">
   <div style="font-size:26px;letter-spacing:3px;color:#8fb3ff;font-weight:700">ASUS UGEN AI LEAGUE 2026 · FINAL</div>
   <h1 style="font-size:150px;margin-top:20px">RedactAgent</h1>
-  <div class="sub" style="color:#c8d3f5;font-size:44px">Removes personal data from scanned hospital records &mdash;<br>without the records leaving the hospital.</div>
+  <div class="sub" style="color:#c8d3f5;font-size:44px">Removes personal data from scanned documents &mdash;<br>without the documents leaving the building.</div>
+  <div style="margin-top:28px;font-size:34px;color:#fff;font-weight:700">First customers: hospitals</div>
   <div style="margin-top:60px;font-size:28px;color:#dbe4ff">2&times; ASUS UGen Intel Arc Pro B70 &middot; Battlefield Thunderstorm &middot; Workplace AI</div>
 </section>
 
-<section class="card" data-key="volume">
+<section class="card" data-key="everyone">
   {{ chap(1) }}
-  <div class="num" style="margin-top:60px">3.35 million</div>
-  <h1 style="margin-top:20px">hospital discharges a year in Taiwan</h1>
-  <div class="sub">Each chart may be requested later &mdash; for <b>research</b>, as a <b>copy</b>, or in a <b>dispute</b>.<br>
-    Before it leaves, its personal data must be removed.</div>
-  <div class="src">Source: Ministry of Health and Welfare, hospital statistics 2025</div>
+  <h1 style="margin-top:90px">Every workplace hands out documents about people</h1>
+  <div class="row" style="gap:28px">
+    <div class="box"><h3>Hospitals</h3><p>charts for research, copies and disputes</p></div>
+    <div class="box"><h3>Courts</h3><p>judgments and case files</p></div>
+    <div class="box"><h3>Insurers</h3><p>claims with IDs and medical bills</p></div>
+    <div class="box"><h3>Agencies &amp; HR</h3><p>information requests, personnel files</p></div>
+  </div>
+  <div class="sub" style="margin-top:50px">Each copy must have its personal data removed first &mdash; mostly <b>by hand</b>.</div>
+</section>
+
+<section class="card" data-key="whyhosp">
+  {{ chap(1) }}
+  <h1 style="margin-top:90px">We start where the need is sharpest: hospitals</h1>
+  <div class="row">
+    <div class="box"><h3>Strictest law</h3><p>Medical records are special-category data; the amended data protection law and the NHI Data Act (Aug 2026) raise the stakes</p></div>
+    <div class="box"><h3>Biggest volume</h3><p><b>3.35 million</b> discharges a year in 460 hospitals &mdash; each chart may be requested later</p></div>
+    <div class="box"><h3>A way in</h3><p>ASUS already runs medical-record AI inside Taiwanese hospitals</p></div>
+  </div>
+  <div class="src">Sources: MOHW hospital statistics 2025; PDPA Art. 6 and 48; NHI Data Management Act; NOWnews 2025-12-04</div>
 </section>
 
 <section class="card" data-key="humans">
@@ -224,7 +240,21 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
     <div class="box ok"><h3>Plugs in</h3><p>REST API or a watched folder for hospital systems</p></div>
     <div class="box ok"><h3>A person decides</h3><p>No release without recorded approval and audit log</p></div>
   </div>
-  <div class="sub" style="margin-top:56px">Path to users: ASUS already runs medical-record AI in Taiwanese hospitals.</div>
+  <div class="sub" style="margin-top:56px">Deploys with one command on a 2&times; B70 host.</div>
+</section>
+
+<section class="card" data-key="expand">
+  {{ chap(6) }}
+  <h1 style="margin-top:90px">Hospitals first &mdash; the same engine goes further</h1>
+  <div class="row" style="gap:20px">
+    <div class="step" style="background:#1f3a8a"><div class="n">NOW</div><h3 style="font-size:52px">Hospitals</h3><p>research, copies, disputes</p></div>
+    <div class="arrow">&rarr;</div>
+    <div class="step" style="background:#4f6bd8"><div class="n">NEXT</div><h3 style="font-size:52px">Courts &amp; insurers</h3><p>judgments, case files, claims</p></div>
+    <div class="arrow">&rarr;</div>
+    <div class="step" style="background:#8ea2e8"><div class="n">THEN</div><h3 style="font-size:52px">Agencies</h3><p>information requests, HR files</p></div>
+  </div>
+  <div class="sub" style="margin-top:46px;font-size:30px">Already in the engine: court-filing and public-release policies. On unseen non-hospital pages (bank statements,
+    court judgments): <b style="color:var(--navy)">{{ other_recall }} recall, {{ other_precision }} precision</b> &mdash; each new market still starts with a pilot on its own documents.</div>
 </section>
 
 <section class="card" data-key="next">

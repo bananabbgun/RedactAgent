@@ -98,6 +98,10 @@ def story_context(nums: dict) -> dict:
     best = max(bench, key=lambda r: r["pages_per_min"])
     ctx["min_per_1000"] = f"{1000 / best['pages_per_min']:.0f}"
     ctx["kwh_per_1000"] = f"{1000 / best['pages_per_kwh']:.2f}"
+    other = json.loads((b70 / "hospital_subset.json").read_text())["v3"]["other"]["D_agentic"]  # unseen non-hospital pages
+    ctx["other_recall"], ctx["other_precision"] = f"{other['recall'] * 100:.1f}%", f"{other['precision'] * 100:.0f}%"
+    ctx["other_recall_spoken"] = ctx["other_recall"].replace(".", " point ").replace("%", " percent")
+    ctx["other_precision_spoken"] = ctx["other_precision"].replace("%", " percent")
     return ctx
 
 
@@ -206,7 +210,7 @@ def main():
         narrate_demo(v, narr, work / f"c_{key}.mp4", work)
         clips.append(work / f"c_{key}.mp4")
 
-    for k in ("cover", "volume", "humans", "notool", "idea", "combo"):
+    for k in ("cover", "everyone", "whyhosp", "humans", "notool", "idea", "combo"):
         card(k)
 
     LIVE = "3 · LIVE DEMO  —  organiser's Intel Cloud instance, 2× Arc Pro B70"
@@ -239,7 +243,7 @@ def main():
             "4 · PROOF  —  live evaluation on the B70, unseen test set",
             extra=[(7.5 + 8.0 + 4.8 + 0.3, "verify_result")])
 
-    for k in ("proof", "robust", "hardware", "model", "ocr", "loops", "cost", "ready", "next"):
+    for k in ("proof", "robust", "hardware", "model", "ocr", "loops", "cost", "ready", "expand", "next"):
         card(k)
     card("outro", hold=2.0)
 

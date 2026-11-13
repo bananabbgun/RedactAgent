@@ -3,20 +3,27 @@
 # {placeholders} are filled from eval/results_b70/ by scripts/make_story_video.py.
 
 cover:
-  - ["RedactAgent removes personal data from scanned hospital records,",
-     "Redact Agent removes personal data from scanned hospital records,"]
-  - ["inside the hospital, on two Intel Arc Pro B70 cards.",
-     "inside the hospital, on two Intel Arc Pro B seventy cards."]
+  - ["RedactAgent removes personal data from scanned documents, without them leaving the building,",
+     "Redact Agent removes personal data from scanned documents, without them leaving the building,"]
+  - ["on two Intel Arc Pro B70 cards. Our first customers are hospitals.",
+     "on two Intel Arc Pro B seventy cards. Our first customers are hospitals."]
 
-volume:
-  - ["Taiwan's hospitals discharge 3.35 million patients a year.",
-     "Taiwan's hospitals discharge three point three five million patients a year."]
-  - ["Any of those charts may be requested later: for research, as a copy, or in a dispute."]
-  - ["Before it leaves, every name, ID number, signature and seal must be removed.",
-     "Before it leaves, every name, I D number, signature and seal must be removed."]
+everyone:
+  - ["Every workplace hands out documents about people."]
+  - ["Hospitals release charts, courts publish judgments, insurers pass on claims, and agencies answer information requests."]
+  - ["Each copy must have its names, ID numbers, signatures and seals removed first, mostly by hand.",
+     "Each copy must have its names, I D numbers, signatures and seals removed first, mostly by hand."]
+
+whyhosp:
+  - ["We start where the need is sharpest: hospitals."]
+  - ["Medical records are the most protected data, and new laws raise the stakes."]
+  - ["Taiwan's hospitals discharge 3.35 million patients a year, and any chart may be requested later.",
+     "Taiwan's hospitals discharge three point three five million patients a year, and any chart may be requested later."]
+  - ["And ASUS already sells medical-record AI to hospitals, so there is a way in.",
+     "And Asus already sells medical-record A I to hospitals, so there is a way in."]
 
 humans:
-  - ["Today that is done by hand, and people miss things."]
+  - ["Doing it by hand is slow, and people miss things."]
   - ["In a published study, one reviewer found only 81 percent of the identifiers.",
      "In a published study, one reviewer found only eighty-one percent of the identifiers."]
   - ["And a leak can now cost up to fifteen million NT dollars."]
@@ -129,8 +136,14 @@ cost:
 ready:
   - ["It is ready for a hospital: nothing leaves the building,"]
   - ["it plugs into hospital systems, and nothing is released without a person's approval."]
-  - ["And ASUS already runs medical-record AI in Taiwanese hospitals.",
-     "And Asus already runs medical-record A I in Taiwanese hospitals."]
+  - ["And it deploys with one command on a B70 host.", "And it deploys with one command on a B seventy host."]
+
+expand:
+  - ["Hospitals are the first market, not the last."]
+  - ["The engine already has court-filing and public-release policies,"]
+  - ["and on the unseen bank statements and court judgments it found {other_recall} of the personal data, with {other_precision} precision.",
+     "and on the unseen bank statements and court judgments it found {other_recall_spoken} of the personal data, with {other_precision_spoken} precision."]
+  - ["Courts, insurers and agencies come next, each starting with a pilot on its own documents."]
 
 next:
   - ["The three goals we set in Stage I are met on the B70.", "The three goals we set in Stage I are met on the B seventy."]
