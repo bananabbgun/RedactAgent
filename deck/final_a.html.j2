@@ -3,7 +3,7 @@
   <div class="kicker" style="color:#8fb3ff">2026 ASUS UGen AI League &middot; Final</div>
   <h1>RedactAgent</h1>
   <p class="lead">On-premises AI that finds and removes personal data from scanned documents, without the documents
-    ever leaving the building &mdash; starting with hospitals, then courts, insurers and agencies.</p>
+    ever leaving the building.</p>
   <div style="margin-top:30px">
     <span class="pill">Battlefield Thunderstorm &middot; 2&times; ASUS UGen Intel Arc Pro B70 32GB</span>
     <span class="pill">Theme: Workplace AI</span>
@@ -31,34 +31,33 @@
   </svg>
 </section>
 
-<!-- 2 Problem -->
+<!-- 2 Problem (general) -->
 <section class="slide">
-  <div class="kicker">Context &amp; problem &middot; Taiwan hospitals first</div>
-  <h1>Hospitals must share records &mdash; and the law now punishes leaks</h1>
-  <p class="lead">Every workplace hands out documents about people &mdash; hospitals, courts, insurers, agencies. We start where the
-    need is sharpest. Every one of Taiwan's <b>3.35 million discharges a year</b> leaves a chart that may later be requested for
-    research, insurance claims, disputes or copies. Each released copy must first be stripped of personal data &mdash; today, by hand.</p>
+  <div class="kicker">Context &amp; problem</div>
+  <h1>Every workplace shares documents about people &mdash; and the law now punishes leaks</h1>
+  <p class="lead">Organisations hand out scanned documents every day. Before each copy leaves, names, ID numbers, addresses,
+    signatures and seals must be removed &mdash; today, mostly by hand.</p>
   <div class="grid4" style="margin-bottom:20px">
-    <div class="card"><span class="tag">IRB &amp; research</span><h3 style="margin-top:8px">Data release</h3><p>Research use is lawful only if the data &ldquo;cannot identify the person&rdquo; &mdash; also after combining it with other data (PDPA Art.&nbsp;6, MOJ).</p></div>
-    <div class="card"><span class="tag">Records office</span><h3 style="margin-top:8px">Copies on request</h3><p>Hospitals must provide copies of medical records (Medical Care Act Art.&nbsp;71); third parties see only what they may.</p></div>
-    <div class="card"><span class="tag">Legal &amp; QA</span><h3 style="margin-top:8px">Disputes &amp; claims</h3><p>Scanned charts, consent forms, prescriptions with seals and signatures go to courts and insurers.</p></div>
-    <div class="card"><span class="tag">Health data</span><h3 style="margin-top:8px">Secondary use</h3><p>The NHI Data Management Act (in force Aug 2026) adds an opt-out and NT$2&ndash;10M fines for misuse.</p></div>
+    <div class="card"><span class="tag">Healthcare</span><h3 style="margin-top:8px">Hospitals</h3><p>Charts released for research, patient copies, disputes and insurance claims.</p></div>
+    <div class="card"><span class="tag">Justice</span><h3 style="margin-top:8px">Courts &amp; law firms</h3><p>Judgments are published; case files and evidence go to other parties.</p></div>
+    <div class="card"><span class="tag">Finance</span><h3 style="margin-top:8px">Insurers &amp; banks</h3><p>Claims and statements carry IDs, account numbers and medical bills.</p></div>
+    <div class="card"><span class="tag">Public sector &amp; HR</span><h3 style="margin-top:8px">Agencies &amp; employers</h3><p>Information requests, personnel files, application forms.</p></div>
   </div>
   <div class="grid3">
-    <div class="card" style="background:#fff5f2;border-color:#f6c7b8"><h3>People miss identifiers</h3><p>Single clinicians found only <b>81&nbsp;%</b> of identifiers on average (63&ndash;94&nbsp;%); three reviewers still missed some. Manual de-identification took ~87&nbsp;s per note.</p></div>
-    <div class="card" style="background:#fff5f2;border-color:#f6c7b8"><h3>Cloud AI is off-limits</h3><p>Medical records are special-category data &mdash; hospitals will not send them to an external API. The tool must run inside the hospital.</p></div>
+    <div class="card" style="background:#fff5f2;border-color:#f6c7b8"><h3>People miss identifiers</h3><p>Single reviewers found only <b>81&nbsp;%</b> of identifiers on average (63&ndash;94&nbsp;%); three reviewers still missed some. Manual de-identification took ~87&nbsp;s per note.</p></div>
+    <div class="card" style="background:#fff5f2;border-color:#f6c7b8"><h3>Cloud AI is off-limits</h3><p>Sensitive records (medical, judicial, financial) will not be sent to an external API. The tool must run inside the organisation.</p></div>
     <div class="card" style="background:#fff5f2;border-color:#f6c7b8"><h3>Stakes are rising</h3><p>PDPA amendment (Nov 2025): breach notification and a dedicated regulator; security failures already cost up to <b>NT$15M</b> per uncorrected instance.</p></div>
   </div>
-  <div class="src">Sources: MOHW hospital statistics 2025; PDPA Art. 6, 12, 48 and Enforcement Rules Art. 17; Medical Care Act Art. 71; NHI Data Management Act (MOHW 2025-12, in force 2026-08-10);
-    Neamatullah et al., BMC Med Inform Decis Mak 2008; Dorr et al., Methods Inf Med 2006. Details: docs/MARKET_RESEARCH.md.</div>
+  <div class="src">Sources: PDPA Art. 6, 12, 48; Neamatullah et al., BMC Med Inform Decis Mak 2008 (clinical notes); Dorr et al., Methods Inf Med 2006;
+    Judicial Yuan automatic redaction (iThome). Details: docs/MARKET_RESEARCH.md.</div>
   <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>2</span></div>
 </section>
 
 <!-- 3 Why existing tools fail -->
 <section class="slide">
   <div class="kicker">Context &amp; problem &middot; competition</div>
-  <h1>No existing product covers a Taiwanese hospital's documents</h1>
-  <p class="lead">Hospital documents are scanned, Traditional Chinese, stamped and signed &mdash; and must stay in the building.
+  <h1>No existing product covers Taiwan's sensitive documents</h1>
+  <p class="lead">Hospital, court and insurance documents are scanned, Traditional Chinese, stamped and signed &mdash; and must stay in the building.
     We checked the main de-identification products against exactly those needs.</p>
   <table class="t" style="font-size:14px">
     <tr><th style="width:24%">Product</th><th>Runs on premises</th><th>Traditional Chinese + Taiwan IDs</th><th>Scans, signatures, seals</th><th>Re-identification check</th><th>Purpose policies + audit</th></tr>
@@ -157,4 +156,26 @@
     {% endfor %}
   </div>
   <div class="foot"><span>Real output of the final pipeline on the B70 (synthetic discharge summary, crop). Policies are YAML files a compliance officer can edit.</span><span>7</span></div>
+</section>
+
+<!-- 7b First customer: hospitals -->
+<section class="slide">
+  <div class="kicker">First customer &middot; Taiwan hospitals</div>
+  <h1>Our first customer: hospitals, where the need is sharpest</h1>
+  <p class="lead">Every one of Taiwan's <b>3.35 million discharges a year</b> leaves a chart that may later be requested for
+    research, insurance claims, disputes or copies. Each released copy must first be stripped of personal data.</p>
+  <div class="grid4" style="margin-bottom:20px">
+    <div class="card"><span class="tag">IRB &amp; research</span><h3 style="margin-top:8px">Data release</h3><p>Research use is lawful only if the data &ldquo;cannot identify the person&rdquo; &mdash; also after combining it with other data (PDPA Art.&nbsp;6, MOJ).</p></div>
+    <div class="card"><span class="tag">Records office</span><h3 style="margin-top:8px">Copies on request</h3><p>Hospitals must provide copies of medical records (Medical Care Act Art.&nbsp;71); third parties see only what they may.</p></div>
+    <div class="card"><span class="tag">Legal &amp; QA</span><h3 style="margin-top:8px">Disputes &amp; claims</h3><p>Scanned charts, consent forms, prescriptions with seals and signatures go to courts and insurers.</p></div>
+    <div class="card"><span class="tag">Health data</span><h3 style="margin-top:8px">Secondary use</h3><p>The NHI Data Management Act (in force Aug 2026) adds an opt-out and NT$2&ndash;10M fines for misuse.</p></div>
+  </div>
+  <div class="grid3">
+    <div class="card" style="background:#eef3ff;border-color:#c9d6f5"><h3>Strictest law</h3><p>Medical records are special-category data (PDPA Art.&nbsp;6); the combination test is exactly what the agentic check targets.</p></div>
+    <div class="card" style="background:#eef3ff;border-color:#c9d6f5"><h3>Biggest volume</h3><p>460 hospitals; the ~100 medical centres and regional hospitals run IRBs, records offices and on-premises IT.</p></div>
+    <div class="card" style="background:#eef3ff;border-color:#c9d6f5"><h3>A way in</h3><p>ASUS's on-premises medical-record AI already runs at Taipei Veterans General Hospital.</p></div>
+  </div>
+  <div class="src">Sources: MOHW hospital statistics 2025; PDPA Art. 6 and Enforcement Rules Art. 17; Medical Care Act Art. 71; NHI Data Management Act (MOHW 2025-12, in force 2026-08-10);
+    NOWnews 2025-12-04. Details: docs/MARKET_RESEARCH.md.</div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>8</span></div>
 </section>

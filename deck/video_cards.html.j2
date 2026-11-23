@@ -73,13 +73,12 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
 .vs .row2 b { font-weight: 800; }
 </style></head><body>
 
-{% macro chap(i) %}<div class="chap">{% for c in ["The problem", "Our idea", "Live demo", "Proof", "Built on the B70", "Ready"] %}<span class="{{ 'on' if loop.index == i else ('done' if loop.index < i else '') }}">{{ loop.index }} · {{ c }}</span>{% endfor %}</div>{% endmacro %}
+{% macro chap(i) %}<div class="chap">{% for c in ["The problem", "Our idea", "Hospital case", "Proof", "Built on the B70", "Ready"] %}<span class="{{ 'on' if loop.index == i else ('done' if loop.index < i else '') }}">{{ loop.index }} · {{ c }}</span>{% endfor %}</div>{% endmacro %}
 
 <section class="card navy" data-key="cover" style="padding-top:250px">
   <div style="font-size:26px;letter-spacing:3px;color:#8fb3ff;font-weight:700">ASUS UGEN AI LEAGUE 2026 · FINAL</div>
   <h1 style="font-size:150px;margin-top:20px">RedactAgent</h1>
   <div class="sub" style="color:#c8d3f5;font-size:44px">Removes personal data from scanned documents &mdash;<br>without the documents leaving the building.</div>
-  <div style="margin-top:28px;font-size:34px;color:#fff;font-weight:700">First customers: hospitals</div>
   <div style="margin-top:60px;font-size:28px;color:#dbe4ff">2&times; ASUS UGen Intel Arc Pro B70 &middot; Battlefield Thunderstorm &middot; Workplace AI</div>
 </section>
 
@@ -95,16 +94,7 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
   <div class="sub" style="margin-top:50px">Each copy must have its personal data removed first &mdash; mostly <b>by hand</b>.</div>
 </section>
 
-<section class="card" data-key="whyhosp">
-  {{ chap(1) }}
-  <h1 style="margin-top:90px">We start where the need is sharpest: hospitals</h1>
-  <div class="row">
-    <div class="box"><h3>Strictest law</h3><p>Medical records are special-category data; the amended data protection law and the NHI Data Act (Aug 2026) raise the stakes</p></div>
-    <div class="box"><h3>Biggest volume</h3><p><b>3.35 million</b> discharges a year in 460 hospitals &mdash; each chart may be requested later</p></div>
-    <div class="box"><h3>A way in</h3><p>ASUS already runs medical-record AI inside Taiwanese hospitals</p></div>
-  </div>
-  <div class="src">Sources: MOHW hospital statistics 2025; PDPA Art. 6 and 48; NHI Data Management Act; NOWnews 2025-12-04</div>
-</section>
+
 
 <section class="card" data-key="humans">
   {{ chap(1) }}
@@ -116,9 +106,9 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
 
 <section class="card" data-key="notool">
   {{ chap(1) }}
-  <h1 style="margin-top:80px">No existing product fits a Taiwanese hospital</h1>
+  <h1 style="margin-top:80px">No existing product does all four</h1>
   <table class="mx">
-    <tr><th style="width:36%"></th><th>Runs inside<br>the hospital</th><th>Traditional Chinese<br>+ Taiwan IDs</th><th>Scans, seals,<br>signatures</th><th>Attacks its<br>own output</th></tr>
+    <tr><th style="width:36%"></th><th>Runs on<br>premises</th><th>Traditional Chinese<br>+ Taiwan IDs</th><th>Scans, seals,<br>signatures</th><th>Attacks its<br>own output</th></tr>
     <tr><td>Google Cloud Sensitive Data Protection</td><td class="n">✕</td><td class="p">partly</td><td class="y">✓</td><td class="p">partly</td></tr><tr><td>AWS Comprehend Medical</td><td class="n">✕</td><td class="n">✕</td><td class="p">partly</td><td class="n">✕</td></tr><tr><td>Azure Health de-identification</td><td class="n">✕</td><td class="n">✕</td><td class="n">✕</td><td class="n">✕</td></tr><tr><td>Private AI</td><td class="y">✓</td><td class="n">✕</td><td class="p">partly</td><td class="n">✕</td></tr><tr><td>Microsoft Presidio (open source)</td><td class="y">✓</td><td class="p">partly</td><td class="p">partly</td><td class="n">✕</td></tr>
     <tr class="us"><td>RedactAgent</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
   </table>
@@ -143,6 +133,17 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
   <div class="doc"><span class="bar">Ms. Hsu</span> is a 56-year-old patient who works as
     <span class="hl">the only licensed ferry captain on Green Island</span>.</div>
   <div class="note">Name removed &mdash; but this still points to one person.</div>
+</section>
+
+<section class="card" data-key="whyhosp">
+  {{ chap(3) }}
+  <h1 style="margin-top:90px">Our first customer: hospitals, where the need is sharpest</h1>
+  <div class="row">
+    <div class="box"><h3>Strictest law</h3><p>Medical records are special-category data; the amended data protection law and the NHI Data Act (Aug 2026) raise the stakes</p></div>
+    <div class="box"><h3>Biggest volume</h3><p><b>3.35 million</b> discharges a year in 460 hospitals &mdash; each chart may be requested later</p></div>
+    <div class="box"><h3>A way in</h3><p>ASUS already runs medical-record AI inside Taiwanese hospitals</p></div>
+  </div>
+  <div class="src">Sources: MOHW hospital statistics 2025; PDPA Art. 6 and 48; NHI Data Management Act; NOWnews 2025-12-04</div>
 </section>
 
 <section class="card" data-key="proof">

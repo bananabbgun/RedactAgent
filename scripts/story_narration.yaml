@@ -5,8 +5,8 @@
 cover:
   - ["RedactAgent removes personal data from scanned documents, without them leaving the building,",
      "Redact Agent removes personal data from scanned documents, without them leaving the building,"]
-  - ["on two Intel Arc Pro B70 cards. Our first customers are hospitals.",
-     "on two Intel Arc Pro B seventy cards. Our first customers are hospitals."]
+  - ["on two Intel Arc Pro B70 cards.",
+     "on two Intel Arc Pro B seventy cards."]
 
 everyone:
   - ["Every workplace hands out documents about people."]
@@ -15,12 +15,14 @@ everyone:
      "Each copy must have its names, I D numbers, signatures and seals removed first, mostly by hand."]
 
 whyhosp:
-  - ["We start where the need is sharpest: hospitals."]
+  - ["How does this work in practice? Our first customer is where the need is sharpest: hospitals."]
   - ["Medical records are the most protected data, and new laws raise the stakes."]
   - ["Taiwan's hospitals discharge 3.35 million patients a year, and any chart may be requested later.",
      "Taiwan's hospitals discharge three point three five million patients a year, and any chart may be requested later."]
   - ["And ASUS already sells medical-record AI to hospitals, so there is a way in.",
      "And Asus already sells medical-record A I to hospitals, so there is a way in."]
+  - ["So let's follow one hospital document, live on the organisers' B70.",
+     "So let's follow one hospital document, live on the organisers' B seventy."]
 
 humans:
   - ["Doing it by hand is slow, and people miss things."]
@@ -30,7 +32,7 @@ humans:
 
 notool:
   - ["We checked the main de-identification products. None of them fits."]
-  - ["The cloud services cannot run inside a hospital, and the health tools from Amazon and Microsoft have no Chinese."]
+  - ["The cloud services cannot run inside the organisation, and the health tools from Amazon and Microsoft have no Chinese."]
   - ["Private AI runs on premises, but its Traditional Chinese is still coming soon.",
      "Private A I runs on premises, but its Traditional Chinese is still coming soon."]
   - ["And none of them attacks its own output to check whether someone can still be identified."]

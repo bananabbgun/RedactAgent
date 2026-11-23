@@ -210,10 +210,10 @@ def main():
         narrate_demo(v, narr, work / f"c_{key}.mp4", work)
         clips.append(work / f"c_{key}.mp4")
 
-    for k in ("cover", "everyone", "whyhosp", "humans", "notool", "idea", "combo"):
+    for k in ("cover", "everyone", "humans", "notool", "idea", "combo", "whyhosp"):
         card(k)
 
-    LIVE = "3 · LIVE DEMO  —  organiser's Intel Cloud instance, 2× Arc Pro B70"
+    LIVE = "3 · HOSPITAL CASE  —  live on the organiser's Intel Cloud instance, 2× Arc Pro B70"
     tm = {m["label"]: m["t"] for m in json.loads((rec / "terminal_marks.json").read_text())}
     term = rec / "terminal_raw.webm"
     footage("env", term, [(tm["hw"] - 0.5, tm["gpus_done"] + 1.5, None, None),
