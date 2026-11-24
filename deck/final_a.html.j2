@@ -58,19 +58,21 @@
   <div class="kicker">Context &amp; problem &middot; competition</div>
   <h1>No existing product covers Taiwan's sensitive documents</h1>
   <p class="lead">Hospital, court and insurance documents are scanned, Traditional Chinese, stamped and signed &mdash; and must stay in the building.
-    We checked the main de-identification products against exactly those needs.</p>
-  <table class="t" style="font-size:14px">
+    We checked the main de-identification products against exactly those needs &mdash; and found no Taiwanese vendor selling de-identification to hospitals.</p>
+  <table class="t" style="font-size:13px">
     <tr><th style="width:24%">Product</th><th>Runs on premises</th><th>Traditional Chinese + Taiwan IDs</th><th>Scans, signatures, seals</th><th>Re-identification check</th><th>Purpose policies + audit</th></tr>
     <tr><td>Microsoft Presidio (open source)</td><td class="yes">yes</td><td class="part">custom models needed</td><td class="part">basic image redactor</td><td class="no">&ndash;</td><td class="no">&ndash;</td></tr>
     <tr><td>Google Cloud Sensitive Data Protection</td><td class="no">cloud only</td><td class="part">Taiwan ID detector</td><td class="yes">OCR</td><td class="part">tables only</td><td class="part">cloud logs</td></tr>
     <tr><td>AWS Comprehend Medical + Textract</td><td class="no">cloud only</td><td class="no">US English only</td><td class="part">no Chinese OCR</td><td class="no">&ndash;</td><td class="no">&ndash;</td></tr>
     <tr><td>Azure Health de-identification</td><td class="no">cloud only</td><td class="no">no Chinese</td><td class="no">text only</td><td class="no">&ndash;</td><td class="no">&ndash;</td></tr>
+    <tr><td>Azure AI Language PII</td><td class="part">cloud; offline container on application + commitment plan</td><td class="yes">zh-Hant text, Taiwan ID</td><td class="no">text PDFs (preview); scans need separate OCR</td><td class="no">&ndash;</td><td class="no">&ndash;</td></tr>
+    <tr><td>John Snow Labs (clinical de-ID)</td><td class="yes">container / AWS</td><td class="no">English</td><td class="yes">PDFs and images</td><td class="no">&ndash;</td><td class="part">masking modes</td></tr>
     <tr><td>Private AI (Limina)</td><td class="yes">container</td><td class="no">&ldquo;coming soon&rdquo;</td><td class="part">core languages</td><td class="no">&ndash;</td><td class="no">&ndash;</td></tr>
     <tr><td>Adobe Acrobat Pro</td><td class="yes">desktop</td><td class="part">manual</td><td class="part">manual</td><td class="no">&ndash;</td><td class="no">&ndash;</td></tr>
     <tr><td>Manual review</td><td class="yes">yes</td><td class="yes">yes</td><td class="yes">yes</td><td class="part">if noticed</td><td class="part">by memory</td></tr>
     <tr class="hl"><td><b>RedactAgent</b> on 2&times; Arc Pro B70</td><td class="yes"><b>appliance</b></td><td class="yes"><b>built in</b> (checksums, ROC dates, NHI)</td><td class="yes"><b>VLM + colour</b></td><td class="yes"><b>agentic attacker</b></td><td class="yes"><b>YAML + hash chain</b></td></tr>
   </table>
-  <div class="src">&ndash; = not offered in the public documentation we checked (2026-11-12). Sources: vendor documentation and pricing pages, listed in docs/MARKET_RESEARCH.md.</div>
+  <div class="src">&ndash; = not offered in the public documentation we checked (2026-11-12, Azure AI Language re-checked 2026-11-24). Sources: vendor documentation and pricing pages, listed in docs/MARKET_RESEARCH.md.</div>
   <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>3</span></div>
 </section>
 

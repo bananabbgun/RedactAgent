@@ -102,6 +102,23 @@ def story_context(nums: dict) -> dict:
     ctx["other_recall"], ctx["other_precision"] = f"{other['recall'] * 100:.1f}%", f"{other['precision'] * 100:.0f}%"
     ctx["other_recall_spoken"] = ctx["other_recall"].replace(".", " point ").replace("%", " percent")
     ctx["other_precision_spoken"] = ctx["other_precision"].replace("%", " percent")
+    m3 = json.loads((b70 / "v3" / "metrics.json").read_text())
+    from make_final_video import spoken_pct
+    ctx["layers"] = [{"k": k, "s": d, "r": m3[key]["recall"]} for key, k, d in (
+        ("A_deterministic", "Rules", "regex, checksums, red ink"),
+        ("B_plus_llm", "+ language model", "card 0: names, roles, addresses"),
+        ("C_full", "+ vision model", "card 1: signatures, photos, seals"),
+        ("D_agentic", "+ attacking agent", "card 0 again: what still identifies"))]
+    for key, tag in (("A_deterministic", "A"), ("B_plus_llm", "B"), ("D_agentic", "D")):
+        ctx[f"layer_{tag}"] = f"{m3[key]['recall'] * 100:.1f}%"
+        ctx[f"layer_{tag}_spoken"] = spoken_pct(m3[key]["recall"] * 100)
+    tri = json.loads((ROOT / "eval" / "triage" / "triage_rules.json").read_text())
+    r = next(r for r in tri["rules"] if list(r["params"]) == [70, True, False, False])  # rule fixed in eval/triage.py
+    ctx["tri_flag"], ctx["tri_caught"] = f"{r['flagged'] / r['pages'] * 100:.0f}%", f"{r['missed_in_flagged'] / r['missed_items'] * 100:.0f}%"
+    ctx["tri_flag_spoken"] = ctx["tri_flag"].replace("%", " percent")
+    ctx["tri_caught_spoken"] = ctx["tri_caught"].replace("%", " percent")
+    ctx["tri_pages"], ctx["tri_missed"] = r["pages"], r["missed_items"]
+    ctx["best_ppm"] = f"{best['pages_per_min']:.0f}"
     return ctx
 
 
@@ -243,7 +260,7 @@ def main():
             "4 · PROOF  —  live evaluation on the B70, unseen test set",
             extra=[(7.5 + 8.0 + 4.8 + 0.3, "verify_result")])
 
-    for k in ("proof", "robust", "hardware", "model", "ocr", "loops", "cost", "ready", "expand", "next"):
+    for k in ("proof", "layers", "robust", "hardware", "model", "ocr", "loops", "cost", "ready", "audit", "triage", "business", "expand", "next"):
         card(k)
     card("outro", hold=2.0)
 

@@ -33,9 +33,12 @@ humans:
 notool:
   - ["We checked the main de-identification products. None of them fits."]
   - ["The cloud services cannot run inside the organisation, and the health tools from Amazon and Microsoft have no Chinese."]
+  - ["Microsoft's general PII service reads Chinese text, but not scanned pages.",
+     "Microsoft's general P I I service reads Chinese text, but not scanned pages."]
   - ["Private AI runs on premises, but its Traditional Chinese is still coming soon.",
      "Private A I runs on premises, but its Traditional Chinese is still coming soon."]
   - ["And none of them attacks its own output to check whether someone can still be identified."]
+  - ["We also found no Taiwanese company selling this to hospitals."]
 
 idea:
   - ["RedactAgent works in three steps."]
@@ -94,6 +97,14 @@ proof:
   - ["And it catches {qi_recall} of the combination clues, which rules miss completely.",
      "And it catches {qi_recall_spoken} of the combination clues, which rules miss completely."]
 
+layers:
+  - ["Every layer earns its place. Rules alone find {layer_A} of the personal data.",
+     "Every layer earns its place. Rules alone find {layer_A_spoken} of the personal data."]
+  - ["The language model on card zero lifts that to {layer_B}.",
+     "The language model on card zero lifts that to {layer_B_spoken}."]
+  - ["The vision model on card one adds the signatures, and the attacking agent brings it to {layer_D}.",
+     "The vision model on card one adds the signatures, and the attacking agent brings it to {layer_D_spoken}."]
+
 robust:
   - ["Real scans are worse than our test pages, so we blurred, faxed, compressed and skewed them."]
   - ["Recall stays above {robust_min}. Rules alone find only 55 to 60 percent.",
@@ -140,6 +151,29 @@ ready:
   - ["it plugs into hospital systems, and nothing is released without a person's approval."]
   - ["And it deploys with one command on a B70 host.", "And it deploys with one command on a B seventy host."]
 
+audit:
+  - ["And the result can be proven."]
+  - ["Black boxes drawn over a PDF often leave the text underneath, and it can be copied out.",
+     "Black boxes drawn over a P D F often leave the text underneath, and it can be copied out."]
+  - ["RedactAgent burns the redaction into the image itself, so nothing is left to copy.",
+     "Redact Agent burns the redaction into the image itself, so nothing is left to copy."]
+  - ["Every submission, decision and export is chained with hashes, so any later edit to the log is detected."]
+
+triage:
+  - ["The attacker's risk score also tells reviewers where to start."]
+  - ["On our development pages, the {tri_flag} of pages it flags hold {tri_caught} of everything the system missed.",
+     "On our development pages, the {tri_flag_spoken} of pages it flags hold {tri_caught_spoken} of everything the system missed."]
+  - ["So reviewers read the risky pages first, and every page is still checked."]
+
+business:
+  - ["How is it sold? As an appliance: an ASUS workstation with two B70 cards and RedactAgent installed,",
+     "How is it sold? As an appliance: an Asus workstation with two B seventy cards and Redact Agent installed,"]
+  - ["plus yearly updates: models, rules, and policy packs that follow the new privacy regulator."]
+  - ["ASUS already sells medical-record AI to hospitals, so the channel exists.",
+     "Asus already sells medical-record A I to hospitals, so the channel exists."]
+  - ["We start with 96 medical centres and regional hospitals, then 292 district hospitals. Every appliance is two more B70 cards.",
+     "We start with ninety-six medical centres and regional hospitals, then two hundred ninety-two district hospitals. Every appliance is two more B seventy cards."]
+
 expand:
   - ["Hospitals are the first market, not the last."]
   - ["The engine already has court-filing and public-release policies,"]
@@ -148,7 +182,8 @@ expand:
   - ["Courts, insurers and agencies come next, each starting with a pilot on its own documents."]
 
 next:
-  - ["The three goals we set in Stage I are met on the B70.", "The three goals we set in Stage I are met on the B seventy."]
+  - ["The three goals we set in Stage I are met on the B70: thirteen times faster than the Stage I laptop, with higher recall.",
+     "The three goals we set in Stage I are met on the B seventy: thirteen times faster than the Stage I laptop, with higher recall."]
   - ["Next, we prove the rest: a study with reviewers, and a pilot with a hospital records office."]
 
 outro:

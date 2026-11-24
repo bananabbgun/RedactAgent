@@ -51,7 +51,7 @@ MOHW statistics for 2025 (published 2026-07-31):
   staff review ([iThome](https://www.ithome.com.tw/news/156693)), which shows the need exists. After courts come
   insurers and government agencies handling information requests.
 
-## Competition (checked 2026-11-12)
+## Competition (checked 2026-11-12; Azure AI Language re-checked 2026-11-24)
 
 | Product | Runs on premises | Traditional Chinese + Taiwan IDs | Scanned images | Price published |
 |---|---|---|---|---|
@@ -59,7 +59,7 @@ MOHW statistics for 2025 (published 2026-07-31):
 | Google Cloud Sensitive Data Protection | **no** (cloud API) | has Taiwan ID / passport detectors | yes (OCR) | US$3/GiB inspected after 1 GiB ([pricing](https://cloud.google.com/sensitive-data-protection/pricing)) |
 | AWS Comprehend Medical + Textract | **no** | **no**: Comprehend Medical is US English only; Textract OCR has no Chinese ([docs](https://docs.aws.amazon.com/comprehend-medical/latest/dev/comprehendmedical-welcome.html)) | via Textract | US$0.0014 per 100 characters + US$1.50 per 1,000 pages |
 | Azure Health Data Services de-identification | **no** | **no** (English, French, German, Spanish) ([docs](https://learn.microsoft.com/en-us/azure/healthcare-apis/deidentification/languages-supported)) | no (text only) | US$0.05/MB |
-| Azure AI Language PII | cloud; offline container by commitment | yes, zh-hant text | native documents | US$1 per 1,000 records |
+| Azure AI Language PII | cloud; disconnected container only after an access application and a commitment plan ([containers](https://learn.microsoft.com/azure/ai-services/language-service/personally-identifiable-information/how-to/use-containers)) | yes, zh-hant text; Taiwan ID category ([entities](https://learn.microsoft.com/azure/ai-services/language-service/personally-identifiable-information/concepts/entity-categories)) | native documents in preview; fully scanned PDFs not supported, OCR first ([native documents](https://learn.microsoft.com/azure/ai-services/language-service/native-document-support/use-native-documents)) | US$1 per 1,000 records |
 | Private AI (Limina) | yes (container) | **no**: Traditional Mandarin "coming soon" ([docs](https://docs.private-ai.com/languages)) | Core languages only | contact sales |
 | John Snow Labs clinical de-ID for PDF | yes / AWS | English | yes | US$95 per host-hour ([AWS Marketplace](https://aws.amazon.com/marketplace/pp/prodview-ddhtngof3o6fa)) |
 | Adobe Acrobat Pro | desktop | manual tool | manual redaction | ~US$20 per user per month |

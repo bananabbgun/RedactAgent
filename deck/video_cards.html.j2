@@ -45,7 +45,7 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
 .mx { width: 100%; border-collapse: collapse; margin-top: 50px; font-size: 32px; }
 .mx th { font-size: 24px; color: var(--mut); font-weight: 700; text-align: center; padding: 0 10px 18px; letter-spacing: .5px; }
 .mx th:first-child, .mx td:first-child { text-align: left; }
-.mx td { padding: 14px 10px; border-top: 2px solid var(--line); text-align: center; font-weight: 700; }
+.mx td { padding: 10px 10px; border-top: 2px solid var(--line); text-align: center; font-weight: 700; }
 .mx td:first-child { font-weight: 600; color: #2d3650; }
 .step .n { color: #fff; }
 .y { color: var(--green); } .n { color: var(--red); } .p { color: #b0b8c9; font-size: 26px; }
@@ -106,13 +106,13 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
 
 <section class="card" data-key="notool">
   {{ chap(1) }}
-  <h1 style="margin-top:80px">No existing product does all four</h1>
-  <table class="mx">
+  <h1 style="margin-top:70px">No existing product does all four</h1>
+  <table class="mx" style="margin-top:34px;font-size:29px">
     <tr><th style="width:36%"></th><th>Runs on<br>premises</th><th>Traditional Chinese<br>+ Taiwan IDs</th><th>Scans, seals,<br>signatures</th><th>Attacks its<br>own output</th></tr>
-    <tr><td>Google Cloud Sensitive Data Protection</td><td class="n">✕</td><td class="p">partly</td><td class="y">✓</td><td class="p">partly</td></tr><tr><td>AWS Comprehend Medical</td><td class="n">✕</td><td class="n">✕</td><td class="p">partly</td><td class="n">✕</td></tr><tr><td>Azure Health de-identification</td><td class="n">✕</td><td class="n">✕</td><td class="n">✕</td><td class="n">✕</td></tr><tr><td>Private AI</td><td class="y">✓</td><td class="n">✕</td><td class="p">partly</td><td class="n">✕</td></tr><tr><td>Microsoft Presidio (open source)</td><td class="y">✓</td><td class="p">partly</td><td class="p">partly</td><td class="n">✕</td></tr>
+    <tr><td>Google Cloud Sensitive Data Protection</td><td class="n">✕</td><td class="p">partly</td><td class="y">✓</td><td class="p">partly</td></tr><tr><td>AWS Comprehend Medical</td><td class="n">✕</td><td class="n">✕</td><td class="p">partly</td><td class="n">✕</td></tr><tr><td>Azure Health de-identification</td><td class="n">✕</td><td class="n">✕</td><td class="n">✕</td><td class="n">✕</td></tr><tr><td>Azure AI Language PII</td><td class="p">by application</td><td class="y">✓</td><td class="n">✕</td><td class="n">✕</td></tr><tr><td>Private AI</td><td class="y">✓</td><td class="n">✕</td><td class="p">partly</td><td class="n">✕</td></tr><tr><td>John Snow Labs</td><td class="y">✓</td><td class="n">✕</td><td class="y">✓</td><td class="n">✕</td></tr><tr><td>Microsoft Presidio (open source)</td><td class="y">✓</td><td class="p">partly</td><td class="p">partly</td><td class="n">✕</td></tr>
     <tr class="us"><td>RedactAgent</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
   </table>
-  <div class="src">Public vendor documentation, checked 2026-11-12 (sources in docs/MARKET_RESEARCH.md)</div>
+  <div class="src">Public vendor documentation, checked 2026-11-12 / 11-24 (sources in docs/MARKET_RESEARCH.md). We found no Taiwanese vendor selling de-identification to hospitals.</div>
 </section>
 
 <section class="card" data-key="idea">
@@ -155,6 +155,17 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
     <div class="stat"><div class="v" style="color:var(--pink)">{{ qi_recall }}</div><div class="l">of combination clues caught<br>(rules alone: 0%)</div></div>
   </div>
   <div class="src">Held-out test set v3, generated before any result was seen, never used for tuning; pixel-level scoring. Human figure: Neamatullah et al. 2008.</div>
+</section>
+
+<section class="card" data-key="layers">
+  {{ chap(4) }}
+  <h1 style="margin-top:80px">Every layer earns its place</h1>
+  <div class="bars" style="margin-top:60px">
+  {% for l in layers %}<div class="br{{ ' hl' if loop.last else '' }}" style="margin-bottom:30px"><div class="k" style="width:520px">{{ l.k }}<small>{{ l.s }}</small></div>
+    <div class="track"><div class="d" style="width:{{ l.r*100 }}%;{{ 'background:var(--pink);' if loop.last else '' }}"></div></div>
+    <div class="v">{{ "%.1f"|format(l.r*100) }}%</div></div>
+  {% endfor %}</div>
+  <div class="leg">Recall on the unseen test set v3 (396 personal-data items), each layer added on top of the previous ones.</div>
 </section>
 
 <section class="card" data-key="robust">
@@ -244,6 +255,40 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
   <div class="sub" style="margin-top:56px">Deploys with one command on a 2&times; B70 host.</div>
 </section>
 
+<section class="card" data-key="audit">
+  {{ chap(6) }}
+  <h1 style="margin-top:90px">Redaction you can prove</h1>
+  <div class="row">
+    <div class="box"><h3>Burned into the pixels</h3><p>Black boxes drawn over a PDF often leave the text underneath &mdash; copy and paste reveals it. RedactAgent rewrites the page image: nothing is left to copy.</p></div>
+    <div class="box"><h3>Tamper-evident log</h3><p>Every submission, review decision and export is chained with SHA-256 hashes. Any later edit breaks the chain.</p></div>
+    <div class="box ok"><h3>Released by a person</h3><p>Files leave only after a recorded human export.</p></div>
+  </div>
+</section>
+
+<section class="card" data-key="triage">
+  {{ chap(6) }}
+  <h1 style="margin-top:80px">Reviewers start where the risk is</h1>
+  <div class="cols3">
+    <div class="col"><div class="t">Flagged</div><div class="v">{{ tri_flag }}</div><p>of pages: the attacker's risk score is high, or ink was not read</p></div>
+    <div class="col" style="border-color:var(--pink)"><div class="t" style="color:var(--pink)">They hold</div><div class="v" style="color:var(--pink)">{{ tri_caught }}</div><p>of everything the system missed</p></div>
+    <div class="col" style="border-color:var(--green)"><div class="t" style="color:var(--green)">Still</div><div class="v" style="color:var(--green)">100%</div><p>of pages reviewed &mdash; the score sets the order, not what gets skipped</p></div>
+  </div>
+  <div class="src">Development pages v1 + v2 ({{ tri_pages }} pages, {{ tri_missed }} missed items); rule: risk &ge; 70 or unread ink (eval/triage.py).</div>
+</section>
+
+<section class="card" data-key="business">
+  {{ chap(6) }}
+  <h1 style="margin-top:80px">How it is sold: a privacy appliance</h1>
+  <div class="row" style="gap:28px">
+    <div class="box"><h3>Product</h3><p>An ASUS workstation with two Arc Pro B70 cards, RedactAgent installed, with Taiwan policy packs</p></div>
+    <div class="box"><h3>Recurring</h3><p>Yearly updates: models, rules, and policy packs that follow the new privacy regulator</p></div>
+    <div class="box"><h3>Channel</h3><p>ASUS already sells on-premises medical-record AI to hospitals</p></div>
+  </div>
+  <div class="sub" style="margin-top:44px;font-size:32px">First <b style="color:var(--navy)">96</b> medical centres and regional hospitals, then <b style="color:var(--navy)">292</b> district hospitals &mdash;
+    every appliance is <b style="color:var(--navy)">two more B70 cards</b>.</div>
+  <div class="src">Hospital counts: MOHW statistics, end of 2025 (460 hospitals). Channel: ASUS medical-record AI at Taipei Veterans General Hospital (NOWnews 2025-12-04).</div>
+</section>
+
 <section class="card" data-key="expand">
   {{ chap(6) }}
   <h1 style="margin-top:90px">Hospitals first &mdash; the same engine goes further</h1>
@@ -262,7 +307,7 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
   {{ chap(6) }}
   <h1 style="margin-top:90px">Stage I goals: met. Next: prove adoption.</h1>
   <div class="row">
-    <div class="box ok"><h3>Done</h3><p>Runs on the B70 with both models loaded; recall rose from 97.8% to {{ v1_recall }} on the Stage I test set</p></div>
+    <div class="box ok"><h3>Done</h3><p>13&times; the Stage I laptop (2 &rarr; {{ best_ppm }} pages a minute) with both models loaded; recall 97.8% &rarr; {{ v1_recall }} on the Stage I test set</p></div>
     <div class="box"><h3>Next</h3><p>Reviewer study: how much faster, how many fewer misses</p></div>
     <div class="box"><h3>Next</h3><p>Pilot with a hospital records office</p></div>
   </div>
