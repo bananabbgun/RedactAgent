@@ -134,9 +134,8 @@ Scoring is pixel-level: a ground-truth item counts as removed when ≥ 50 % of i
 a redaction box is correct when ≥ 30 % of its area overlaps ground-truth PII. Ablations: A rules + colour,
 B + contextual LLM, C + VLM, D + agentic re-identification check.
 
-A user-study tool (manual vs. AI-assisted redaction, counterbalanced, `/study`, scored with `eval/study_score.py`)
-measures time per page and completeness with people in the loop. It has not been run yet; it is meant for the
-reviewers of the first pilot hospital.
+The repository also includes a user-study page (manual vs. AI-assisted redaction, counterbalanced, `/study`,
+scored with `eval/study_score.py`) for measuring time per page and completeness with people in the loop.
 
 ## Repository layout
 
@@ -165,6 +164,6 @@ account was randomly generated. No real personal data was used.
 ## Notes and limitations
 
 - Policy legal bases are indicative and must be confirmed with counsel for each deployment.
-- Synthetic documents approximate real scans; a supervised pilot on real documents is the next step.
+- All evaluation uses synthetic documents (held-out, phone photos, degraded scans); accuracy on real documents has not been measured.
 - Human review stays mandatory: RedactAgent pre-marks, a person approves.
 - XPU graph mode could not be used on this software stack (graph capture ran out of resources); all numbers are eager mode.

@@ -182,10 +182,9 @@ expand:
   - ["Courts, insurers and agencies come next, each starting with a pilot on its own documents."]
 
 next:
-  - ["The three goals we set in Stage I are met on the B70: thirteen times faster than the Stage I laptop, with higher recall.",
-     "The three goals we set in Stage I are met on the B seventy: thirteen times faster than the Stage I laptop, with higher recall."]
-  - ["Next is a supervised pilot with a hospital records office, on real documents."]
-  - ["There we measure reviewer time and misses with the built-in study tool, and the hospital's counsel confirms the policies."]
+  - ["What we promised in Stage I runs on the B70: thirteen times faster than the Stage I laptop, with higher recall,",
+     "What we promised in Stage I runs on the B seventy: thirteen times faster than the Stage I laptop, with higher recall,"]
+  - ["and everything is on GitHub: architecture, models, performance data and a one-command deployment."]
 
 outro:
   - ["RedactAgent. Share the document, not the person.", "Redact Agent. Share the document, not the person."]

@@ -31,7 +31,7 @@
   <div class="kicker">Practical value &middot; is the value real?</div>
   <h1>Every value claim for hospitals, with its evidence</h1>
   <p class="lead">Fewer leaks, no backlog, proof for the regulator &mdash; and nothing leaves the hospital. Labour is cheap (~NT$227 an hour),
-    so the case rests on risk and capacity. Here is what supports each claim, and what is still open.</p>
+    so the case rests on risk and capacity. Here is what supports each claim.</p>
   <table class="t tight" style="font-size:12px">
     <tr><th style="width:25%">Claim</th><th>Evidence</th><th style="width:10%">Type</th></tr>
     <tr><td>Hospitals must release de-identified records, and the law now punishes leaks</td>
@@ -47,10 +47,6 @@
     {% if triage %}<tr><td>Reviewers know where to look first</td><td>Review queue ordered by the attacker's risk score and unread ink: the {{ "%.0f"|format(triage.flagged*100) }}&nbsp;% of pages it flags hold {{ "%.0f"|format(triage.caught*100) }}&nbsp;% of the items the system missed ({{ triage.pages }} development pages); every page is still reviewed</td><td class="yes">measured</td></tr>{% endif %}
     <tr><td>It fits hospital IT, proves what it did, keeps a person in charge</td><td>REST API and hot folder; redaction burned into pixels (no hidden text layer to copy out); tamper-evident hash-chained audit; release only after a recorded human export</td><td class="yes">built &amp; tested</td></tr>
     {% if hosp %}<tr><td>The same engine extends beyond hospitals</td><td>Unseen non-hospital pages (bank statements, court judgments): recall {{ "%.1f"|format(hosp.v3.other.D_agentic.recall*100) }}&nbsp;%, precision {{ "%.0f"|format(hosp.v3.other.D_agentic.precision*100) }}&nbsp;% ({{ "%.0f"|format(hosp.v3.other.D_agentic.clean_pages*100) }}&nbsp;% of pages fully clean); court and public-release policies built in</td><td class="part">measured, partly</td></tr>{% endif %}
-    <tr><td>Reviewers are faster and miss less with it</td>
-      <td>{% if study %}User study: {{ study.manual_min }} &rarr; {{ study.assisted_min }} min per page, recall {{ study.recall_gain }} ({{ study.participants }} participants){% else %}Measurement tool built (/study: manual vs. assisted, counterbalanced); runs with the reviewers of the first pilot hospital{% endif %}</td>
-      <td class="{{ 'yes' if study else 'no' }}">{{ 'measured' if study else 'open' }}</td></tr>
-    <tr><td>Hospitals would adopt it; the policies meet the legal test</td><td>A supervised pilot: the hospital's records office uses it on real documents, its counsel confirms the policies</td><td class="no">pilot</td></tr>
   </table>
   <div class="src">Sources and data: docs/MARKET_RESEARCH.md, eval/subset.py (hospital document types: discharge summary, medical certificate, lab report, referral letter, prescription label),
     eval/robustness/, Neamatullah et al. 2008. Capacity: 250 working days.</div>
@@ -118,7 +114,7 @@
       <td>Measuring showed thread contention, not the engine, was the bottleneck; 8 threads per engine made OCR 9&times; faster</td></tr>
     <tr><td>Measure minutes per page in a pilot (assumed 4 &rarr; 1&nbsp;min)</td>
       {% if study %}<td class="yes"><b>done</b></td><td>User study: {{ study.manual_min }} &rarr; {{ study.assisted_min }} min per page ({{ study.participants }} participants)</td>
-      {% else %}<td class="no"><b>open</b></td><td>Study tool built (/study, scored by eval/study_score.py); runs with the reviewers of the first pilot hospital</td>{% endif %}</tr>
+      {% else %}<td class="no"><b>open</b></td><td>Study tool built (/study, scored by eval/study_score.py); not run with participants</td>{% endif %}</tr>
   </table>
   <p class="note" style="margin-top:8px"><b>Beyond the plan:</b> two held-out corpora (v2, v3), robustness to degraded scans, batch mode and hot folder, a throughput mode,
     the reasoning-loop guard, and review triage &mdash; each measured on the instance.</p>
@@ -128,7 +124,7 @@
 <!-- 16 Feasibility -->
 <section class="slide">
   <div class="kicker">Feasibility</div>
-  <h1>Deployable today; honest about what is next</h1>
+  <h1>Deployable today</h1>
   <div class="grid2" style="margin-top:14px;align-items:start">
     <div>
       <div class="card" style="background:#0b1d4d;color:#fff;border:0">
@@ -145,7 +141,7 @@
       <tr><th style="width:34%">Risk</th><th>Mitigation</th></tr>
       <tr><td>A PII item is missed</td><td>Four layers, adversarial re-check, review queue ordered by risk, mandatory human approval, strict default policy</td></tr>
       <tr><td>OCR misses text on a poor scan</td><td>Unread-ink check flags any region the OCR did not read; the VLM sees the image</td></tr>
-      <tr><td>Synthetic &ne; real documents</td><td>Held-out corpora, phone photos and degraded scans (blur, low DPI, fax, skew); next step is a supervised pilot on real documents</td></tr>
+      <tr><td>Synthetic &ne; real documents</td><td>Held-out corpora, phone photos and degraded scans (blur, low DPI, fax, skew)</td></tr>
       <tr><td>Fitting into hospital IT</td><td>REST API and hot folder; release only after a recorded human export (docs/INTEGRATION.md)</td></tr>
       <tr><td>Legal mapping of policies</td><td>Policies are data (YAML), confirmed with counsel per customer</td></tr>
       <tr><td>Software stack changes</td><td>OpenAI-compatible API: the same code runs on vLLM XPU, Ollama or any compatible server</td></tr>
