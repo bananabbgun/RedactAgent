@@ -184,7 +184,8 @@ expand:
 next:
   - ["The three goals we set in Stage I are met on the B70: thirteen times faster than the Stage I laptop, with higher recall.",
      "The three goals we set in Stage I are met on the B seventy: thirteen times faster than the Stage I laptop, with higher recall."]
-  - ["Next, we prove the rest: a study with reviewers, and a pilot with a hospital records office."]
+  - ["Next is a supervised pilot with a hospital records office, on real documents."]
+  - ["There we measure reviewer time and misses with the built-in study tool, and the hospital's counsel confirms the policies."]
 
 outro:
   - ["RedactAgent. Share the document, not the person.", "Redact Agent. Share the document, not the person."]

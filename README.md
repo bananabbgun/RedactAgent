@@ -134,8 +134,9 @@ Scoring is pixel-level: a ground-truth item counts as removed when ≥ 50 % of i
 a redaction box is correct when ≥ 30 % of its area overlaps ground-truth PII. Ablations: A rules + colour,
 B + contextual LLM, C + VLM, D + agentic re-identification check.
 
-A small user study (manual vs. AI-assisted redaction, `/study`, scored with `eval/study_score.py`) measures time
-per page and completeness with people in the loop.
+A user-study tool (manual vs. AI-assisted redaction, counterbalanced, `/study`, scored with `eval/study_score.py`)
+measures time per page and completeness with people in the loop. It has not been run yet; it is meant for the
+reviewers of the first pilot hospital.
 
 ## Repository layout
 
