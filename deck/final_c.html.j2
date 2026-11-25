@@ -26,9 +26,38 @@
 </section>
 {% endif %}
 
+<!-- 16 Feasibility -->
+<section class="slide">
+  <div class="kicker">6 &middot; Ready &middot; feasibility</div>
+  <h1>Deployable today</h1>
+  <div class="grid2" style="margin-top:14px;align-items:start">
+    <div>
+      <div class="card" style="background:#0b1d4d;color:#fff;border:0">
+        <h3 style="color:#fff">One command on a 2&times; B70 host</h3>
+        <p class="mono" style="color:#dbe4ff;font-size:14px;margin-top:6px">git clone {{ cfg.github }}<br>bash deploy/b70/up.sh</p>
+        <p style="color:#c8d3f5;margin-top:8px">Starts one vLLM XPU server per card, waits for health, installs the app, serves the UI. Tested on the organiser's Intel Cloud instance.</p>
+      </div>
+      <div class="card" style="margin-top:12px"><h3>Open, commercially usable stack</h3>
+        <p>Qwen3 / gpt-oss / Qwen2.5-VL (Apache-2.0), PP-OCR via RapidOCR (Apache-2.0), vLLM (Apache-2.0), FastAPI, OpenCV. No AGPL components. RedactAgent itself: MIT.</p></div>
+      <div class="card" style="margin-top:12px"><h3>Engineering quality</h3>
+        <p>Unit tests, reproducible evaluation and benchmark scripts, a hash-chained audit log, and a public engineering log of every measurement.</p></div>
+    </div>
+    <table class="t" style="font-size:13.5px">
+      <tr><th style="width:34%">Risk</th><th>Mitigation</th></tr>
+      <tr><td>A PII item is missed</td><td>Four layers, adversarial re-check, review queue ordered by risk, mandatory human approval, strict default policy</td></tr>
+      <tr><td>OCR misses text on a poor scan</td><td>Unread-ink check flags any region the OCR did not read; the VLM sees the image</td></tr>
+      <tr><td>Synthetic &ne; real documents</td><td>Held-out corpora, phone photos and degraded scans (blur, low DPI, fax, skew)</td></tr>
+      <tr><td>Fitting into hospital IT</td><td>REST API and hot folder; release only after a recorded human export (docs/INTEGRATION.md)</td></tr>
+      <tr><td>Legal mapping of policies</td><td>Policies are data (YAML), confirmed with counsel per customer</td></tr>
+      <tr><td>Software stack changes</td><td>OpenAI-compatible API: the same code runs on vLLM XPU, Ollama or any compatible server</td></tr>
+    </table>
+  </div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>{{ 16 if study else 15 }}</span></div>
+</section>
+
 <!-- 14 Value, with evidence -->
 <section class="slide">
-  <div class="kicker">Practical value &middot; is the value real?</div>
+  <div class="kicker">6 &middot; Ready &middot; practical value</div>
   <h1>Every value claim for hospitals, with its evidence</h1>
   <p class="lead">Fewer leaks, no backlog, proof for the regulator &mdash; and nothing leaves the hospital. Labour is cheap (~NT$227 an hour),
     so the case rests on risk and capacity. Here is what supports each claim.</p>
@@ -55,7 +84,7 @@
 
 <!-- 15 Business model -->
 <section class="slide">
-  <div class="kicker">Commercial potential</div>
+  <div class="kicker">6 &middot; Ready &middot; commercial potential</div>
   <h1>Commercial potential: a privacy appliance for hospitals</h1>
   <div class="grid3" style="margin-top:14px">
     <div class="card"><span class="tag">Product</span><h3 style="margin-top:8px">RedactAgent Appliance</h3>
@@ -70,7 +99,7 @@
       <h3>Go-to-market in three steps</h3>
       <table class="t" style="font-size:13px;margin-top:6px">
         <tr><th>Phase</th><th>Customers</th><th>Why them</th></tr>
-        <tr><td><b>1 &middot; Pilot &amp; launch</b></td><td>25 medical centres + 71 regional hospitals</td><td>IRBs, research volume, records offices and IT departments that buy on-premises systems</td></tr>
+        <tr><td><b>1 &middot; Launch</b></td><td>25 medical centres + 71 regional hospitals</td><td>IRBs, research volume, records offices and IT departments that buy on-premises systems</td></tr>
         <tr><td><b>2 &middot; Scale</b></td><td>292 district hospitals, via hospital groups sharing one appliance</td><td>same documents, smaller volume</td></tr>
         <tr><td><b>3 &middot; Expand</b></td><td>Courts, insurers, government; GDPR / HIPAA policy packs</td><td>same engine, new policies; the Judicial Yuan already automates redaction</td></tr>
       </table>
@@ -95,7 +124,7 @@
 
 <!-- 15b Stage I commitments -> delivered -->
 <section class="slide">
-  <div class="kicker">Feasibility &middot; expected results, achieved</div>
+  <div class="kicker">6 &middot; Ready &middot; Stage I promises, delivered</div>
   <h1>What we promised in Stage I &mdash; and what runs today</h1>
   <p class="lead">Stage I ended with a &ldquo;definition of done&rdquo; and a plan for the B70. Every item, checked against the measurements in this repository.</p>
   <table class="t" style="font-size:13px">
@@ -119,35 +148,6 @@
   <p class="note" style="margin-top:8px"><b>Beyond the plan:</b> two held-out corpora (v2, v3), robustness to degraded scans, batch mode and hot folder, a throughput mode,
     the reasoning-loop guard, and review triage &mdash; each measured on the instance.</p>
   <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span></span></div>
-</section>
-
-<!-- 16 Feasibility -->
-<section class="slide">
-  <div class="kicker">Feasibility</div>
-  <h1>Deployable today</h1>
-  <div class="grid2" style="margin-top:14px;align-items:start">
-    <div>
-      <div class="card" style="background:#0b1d4d;color:#fff;border:0">
-        <h3 style="color:#fff">One command on a 2&times; B70 host</h3>
-        <p class="mono" style="color:#dbe4ff;font-size:14px;margin-top:6px">git clone {{ cfg.github }}<br>bash deploy/b70/up.sh</p>
-        <p style="color:#c8d3f5;margin-top:8px">Starts one vLLM XPU server per card, waits for health, installs the app, serves the UI. Tested on the organiser's Intel Cloud instance.</p>
-      </div>
-      <div class="card" style="margin-top:12px"><h3>Open, commercially usable stack</h3>
-        <p>Qwen3 / gpt-oss / Qwen2.5-VL (Apache-2.0), PP-OCR via RapidOCR (Apache-2.0), vLLM (Apache-2.0), FastAPI, OpenCV. No AGPL components. RedactAgent itself: MIT.</p></div>
-      <div class="card" style="margin-top:12px"><h3>Engineering quality</h3>
-        <p>Unit tests, reproducible evaluation and benchmark scripts, a hash-chained audit log, and a public engineering log of every measurement.</p></div>
-    </div>
-    <table class="t" style="font-size:13.5px">
-      <tr><th style="width:34%">Risk</th><th>Mitigation</th></tr>
-      <tr><td>A PII item is missed</td><td>Four layers, adversarial re-check, review queue ordered by risk, mandatory human approval, strict default policy</td></tr>
-      <tr><td>OCR misses text on a poor scan</td><td>Unread-ink check flags any region the OCR did not read; the VLM sees the image</td></tr>
-      <tr><td>Synthetic &ne; real documents</td><td>Held-out corpora, phone photos and degraded scans (blur, low DPI, fax, skew)</td></tr>
-      <tr><td>Fitting into hospital IT</td><td>REST API and hot folder; release only after a recorded human export (docs/INTEGRATION.md)</td></tr>
-      <tr><td>Legal mapping of policies</td><td>Policies are data (YAML), confirmed with counsel per customer</td></tr>
-      <tr><td>Software stack changes</td><td>OpenAI-compatible API: the same code runs on vLLM XPU, Ollama or any compatible server</td></tr>
-    </table>
-  </div>
-  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>{{ 16 if study else 15 }}</span></div>
 </section>
 
 <!-- 17 Summary & links -->

@@ -52,3 +52,5 @@ img.shot { border: 1px solid #c9d3ea; border-radius: 10px; }
 .mono { font-family: Menlo, ui-monospace, monospace; font-size: 12px; }
 
 .flow .step span.badge { color: #fff; font-size: 11px; }
+
+table.t tr.grp td { background: #eef3ff; color: var(--navy, #0b1d4d); font-weight: 700; font-size: 11.5px; letter-spacing: .6px; text-transform: uppercase; padding: 4px 10px; }

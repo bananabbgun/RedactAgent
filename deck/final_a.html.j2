@@ -33,7 +33,7 @@
 
 <!-- 2 Problem (general) -->
 <section class="slide">
-  <div class="kicker">Context &amp; problem</div>
+  <div class="kicker">1 &middot; The problem</div>
   <h1>Every workplace shares documents about people &mdash; and the law now punishes leaks</h1>
   <p class="lead">Organisations hand out scanned documents every day. Before each copy leaves, names, ID numbers, addresses,
     signatures and seals must be removed &mdash; today, mostly by hand.</p>
@@ -55,21 +55,22 @@
 
 <!-- 3 Why existing tools fail -->
 <section class="slide">
-  <div class="kicker">Context &amp; problem &middot; competition</div>
-  <h1>No existing product covers Taiwan's sensitive documents</h1>
-  <p class="lead">Hospital, court and insurance documents are scanned, Traditional Chinese, stamped and signed &mdash; and must stay in the building.
-    We checked the main de-identification products against exactly those needs &mdash; and found no Taiwanese vendor selling de-identification to hospitals.</p>
+  <div class="kicker">1 &middot; The problem &middot; existing products</div>
+  <h1>No existing product meets all four needs</h1>
+  <p class="lead">A de-identification tool for these documents must <b>run inside the organisation</b>, read <b>Traditional Chinese and Taiwan IDs</b>,
+    handle <b>scans with seals and signatures</b>, and <b>check whether anyone can still be identified</b>. We checked the main products against these four needs.</p>
   <table class="t" style="font-size:13px">
-    <tr><th style="width:24%">Product</th><th>Runs on premises</th><th>Traditional Chinese + Taiwan IDs</th><th>Scans, signatures, seals</th><th>Re-identification check</th><th>Purpose policies + audit</th></tr>
-    <tr><td>Microsoft Presidio (open source)</td><td class="yes">yes</td><td class="part">custom models needed</td><td class="part">basic image redactor</td><td class="no">&ndash;</td><td class="no">&ndash;</td></tr>
+    <tr><th style="width:24%">Product</th><th>Runs inside the organisation</th><th>Traditional Chinese + Taiwan IDs</th><th>Scans, seals, signatures</th><th>Checks if someone is still identifiable</th><th>Purpose policies + audit</th></tr>
+    <tr class="grp"><td colspan="6">Cloud services &mdash; fail the first need</td></tr>
     <tr><td>Google Cloud Sensitive Data Protection</td><td class="no">cloud only</td><td class="part">Taiwan ID detector</td><td class="yes">OCR</td><td class="part">tables only</td><td class="part">cloud logs</td></tr>
+    <tr><td>Microsoft Azure AI Language PII</td><td class="part">cloud; offline container on application + commitment plan</td><td class="yes">zh-Hant text, Taiwan ID</td><td class="no">text PDFs (preview); scans need separate OCR</td><td class="no">&ndash;</td><td class="no">&ndash;</td></tr>
     <tr><td>AWS Comprehend Medical + Textract</td><td class="no">cloud only</td><td class="no">US English only</td><td class="part">no Chinese OCR</td><td class="no">&ndash;</td><td class="no">&ndash;</td></tr>
     <tr><td>Azure Health de-identification</td><td class="no">cloud only</td><td class="no">no Chinese</td><td class="no">text only</td><td class="no">&ndash;</td><td class="no">&ndash;</td></tr>
-    <tr><td>Azure AI Language PII</td><td class="part">cloud; offline container on application + commitment plan</td><td class="yes">zh-Hant text, Taiwan ID</td><td class="no">text PDFs (preview); scans need separate OCR</td><td class="no">&ndash;</td><td class="no">&ndash;</td></tr>
-    <tr><td>John Snow Labs (clinical de-ID)</td><td class="yes">container / AWS</td><td class="no">English</td><td class="yes">PDFs and images</td><td class="no">&ndash;</td><td class="part">masking modes</td></tr>
+    <tr class="grp"><td colspan="6">Run on premises &mdash; no ready Traditional Chinese</td></tr>
+    <tr><td>Microsoft Presidio (open source)</td><td class="yes">yes</td><td class="part">custom models needed</td><td class="part">basic image redactor</td><td class="no">&ndash;</td><td class="no">&ndash;</td></tr>
     <tr><td>Private AI (Limina)</td><td class="yes">container</td><td class="no">&ldquo;coming soon&rdquo;</td><td class="part">core languages</td><td class="no">&ndash;</td><td class="no">&ndash;</td></tr>
-    <tr><td>Adobe Acrobat Pro</td><td class="yes">desktop</td><td class="part">manual</td><td class="part">manual</td><td class="no">&ndash;</td><td class="no">&ndash;</td></tr>
-    <tr><td>Manual review</td><td class="yes">yes</td><td class="yes">yes</td><td class="yes">yes</td><td class="part">if noticed</td><td class="part">by memory</td></tr>
+    <tr><td>John Snow Labs (clinical de-ID)</td><td class="yes">container / AWS</td><td class="no">English</td><td class="yes">PDFs and images</td><td class="no">&ndash;</td><td class="part">masking modes</td></tr>
+    <tr><td>Adobe Acrobat Pro / manual review</td><td class="yes">yes</td><td class="part">by hand</td><td class="part">by hand</td><td class="part">if noticed</td><td class="part">by memory</td></tr>
     <tr class="hl"><td><b>RedactAgent</b> on 2&times; Arc Pro B70</td><td class="yes"><b>appliance</b></td><td class="yes"><b>built in</b> (checksums, ROC dates, NHI)</td><td class="yes"><b>VLM + colour</b></td><td class="yes"><b>agentic attacker</b></td><td class="yes"><b>YAML + hash chain</b></td></tr>
   </table>
   <div class="src">&ndash; = not offered in the public documentation we checked (2026-11-12, Azure AI Language re-checked 2026-11-24). Sources: vendor documentation and pricing pages, listed in docs/MARKET_RESEARCH.md.</div>
@@ -78,7 +79,7 @@
 
 <!-- 4 Solution overview -->
 <section class="slide">
-  <div class="kicker">Solution</div>
+  <div class="kicker">2 &middot; Our idea</div>
   <h1>Detect, attack, decide, redact, prove &mdash; all on-prem</h1>
   <p class="lead">Deterministic rules for precision, a local LLM for context, a local VLM for what is not text &mdash;
     and an <b>adversarial agent</b> that tries to re-identify people from the redacted result before anyone releases it.</p>
@@ -101,17 +102,9 @@
   <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>4</span></div>
 </section>
 
-<!-- 5 Product -->
-<section class="slide" style="padding-top:40px">
-  <div class="kicker">Solution &middot; running on the organiser's B70 environment</div>
-  <h1 style="font-size:30px">The reviewer's view</h1>
-  <div style="text-align:center"><img class="shot" src="assets/ui_b70.png" onerror="this.src='assets/ui.png'" style="height:540px;margin-top:6px"></div>
-  <div class="foot"><span>Left: detections coloured by category &middot; middle: burned-in output &middot; right: findings with source badges (RULE / LLM / VLM / AGENT), policy action and the re-identification risk.</span><span>5</span></div>
-</section>
-
 <!-- 6 Agentic check -->
 <section class="slide">
-  <div class="kicker">Innovation &middot; agentic re-identification check</div>
+  <div class="kicker">2 &middot; Our idea &middot; innovation: agentic re-identification check</div>
   <h1>A second model attacks the redaction before release</h1>
   <p class="lead">Detectors label spans. Privacy fails on combinations &mdash; a job title plus an island, a relative plus a date.
     So after redaction, the LLM is re-prompted as an adversary and given only what would be released.</p>
@@ -128,7 +121,7 @@
     </div>
     <div>
       <table class="t">
-        <tr><th>Unseen documents (v3)</th><th>Recall</th><th>Precision</th><th>Clean pages</th></tr>
+        <tr><th>Unseen test pages (v3, slide 9)</th><th>Recall</th><th>Precision</th><th>Clean pages</th></tr>
         <tr><td>Detectors only (C)</td><td>{{ "%.1f"|format(fin.v3.C_full.recall*100) }}%</td><td>{{ "%.1f"|format(fin.v3.C_full.precision*100) }}%</td><td>{{ "%.0f"|format(fin.v3.C_full.clean_doc_rate*100) }}%</td></tr>
         <tr class="hl"><td><b>+ agentic check (D)</b></td><td><b>{{ "%.1f"|format(fin.v3.D_agentic.recall*100) }}%</b></td><td><b>{{ "%.1f"|format(fin.v3.D_agentic.precision*100) }}%</b></td><td><b>{{ "%.0f"|format(fin.v3.D_agentic.clean_doc_rate*100) }}%</b></td></tr>
       </table>
@@ -144,25 +137,9 @@
   <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>6</span></div>
 </section>
 
-<!-- 7 Policies triptych -->
-<section class="slide" style="padding-top:42px">
-  <div class="kicker">Solution &middot; purpose-based policies</div>
-  <h1 style="font-size:30px">One document, three lawful outputs</h1>
-  <div class="grid3" style="gap:18px;margin-top:6px">
-    {% for t in triptych %}
-    <div>
-      <div style="font-weight:700;color:var(--navy);font-size:15px">{{ t.title }}</div>
-      <div class="note" style="height:34px">{{ t.desc }}</div>
-      <img class="shot" src="{{ t.img }}" style="width:100%">
-    </div>
-    {% endfor %}
-  </div>
-  <div class="foot"><span>Real output of the final pipeline on the B70 (synthetic discharge summary, crop). Policies are YAML files a compliance officer can edit.</span><span>7</span></div>
-</section>
-
 <!-- 7b First customer: hospitals -->
 <section class="slide">
-  <div class="kicker">First customer &middot; Taiwan hospitals</div>
+  <div class="kicker">3 &middot; Hospital case &middot; first customer</div>
   <h1>Our first customer: hospitals, where the need is sharpest</h1>
   <p class="lead">Every one of Taiwan's <b>3.35 million discharges a year</b> leaves a chart that may later be requested for
     research, insurance claims, disputes or copies. Each released copy must first be stripped of personal data.</p>
@@ -175,9 +152,33 @@
   <div class="grid3">
     <div class="card" style="background:#eef3ff;border-color:#c9d6f5"><h3>Strictest law</h3><p>Medical records are special-category data (PDPA Art.&nbsp;6); the combination test is exactly what the agentic check targets.</p></div>
     <div class="card" style="background:#eef3ff;border-color:#c9d6f5"><h3>Biggest volume</h3><p>460 hospitals; the ~100 medical centres and regional hospitals run IRBs, records offices and on-premises IT.</p></div>
-    <div class="card" style="background:#eef3ff;border-color:#c9d6f5"><h3>A way in</h3><p>ASUS's on-premises medical-record AI already runs at Taipei Veterans General Hospital.</p></div>
+    <div class="card" style="background:#eef3ff;border-color:#c9d6f5"><h3>Open, with a way in</h3><p>We found no Taiwanese vendor selling de-identification to hospitals; ASUS's on-premises medical-record AI already runs at Taipei Veterans General Hospital.</p></div>
   </div>
   <div class="src">Sources: MOHW hospital statistics 2025; PDPA Art. 6 and Enforcement Rules Art. 17; Medical Care Act Art. 71; NHI Data Management Act (MOHW 2025-12, in force 2026-08-10);
     NOWnews 2025-12-04. Details: docs/MARKET_RESEARCH.md.</div>
   <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>8</span></div>
+</section>
+
+<!-- 5 Product -->
+<section class="slide" style="padding-top:40px">
+  <div class="kicker">3 &middot; Hospital case &middot; running on the organiser's B70 instance</div>
+  <h1 style="font-size:30px">The reviewer's view</h1>
+  <div style="text-align:center"><img class="shot" src="assets/ui_b70.png" onerror="this.src='assets/ui.png'" style="height:540px;margin-top:6px"></div>
+  <div class="foot"><span>Left: detections coloured by category &middot; middle: burned-in output &middot; right: findings with source badges (RULE / LLM / VLM / AGENT), policy action and the re-identification risk.</span><span>5</span></div>
+</section>
+
+<!-- 7 Policies triptych -->
+<section class="slide" style="padding-top:42px">
+  <div class="kicker">3 &middot; Hospital case &middot; purpose-based policies</div>
+  <h1 style="font-size:30px">One document, three lawful outputs</h1>
+  <div class="grid3" style="gap:18px;margin-top:6px">
+    {% for t in triptych %}
+    <div>
+      <div style="font-weight:700;color:var(--navy);font-size:15px">{{ t.title }}</div>
+      <div class="note" style="height:34px">{{ t.desc }}</div>
+      <img class="shot" src="{{ t.img }}" style="width:100%">
+    </div>
+    {% endfor %}
+  </div>
+  <div class="foot"><span>Real output of the final pipeline on the B70 (synthetic discharge summary, crop). Policies are YAML files a compliance officer can edit.</span><span>7</span></div>
 </section>

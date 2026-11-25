@@ -1,6 +1,112 @@
+<!-- 11 Accuracy -->
+<section class="slide">
+  <div class="kicker">4 &middot; Proof &middot; held-out evaluation</div>
+  <h1>Accuracy on documents the system has never seen</h1>
+  <p class="lead">Three synthetic corpora: v1 was used to build the rules and prompts; v2 introduced five <i>new</i> document types
+    and phone photos and was used for error analysis; <b>v3 was generated before any result was seen and never used for development.</b></p>
+  <div class="grid2" style="grid-template-columns:1.1fr 1fr">
+    <div class="card" style="background:#fff">
+      <h3>v3 &middot; recall by layer ({{ fin.v3.C_full.docs }} pages, {{ fin.v3.C_full.gt_items }} PII items)</h3>
+      {% for key, label, col in [("A_deterministic","A &middot; rules + colour (regex/DLP baseline)","#9aa5b8"),("B_plus_llm","B &middot; + contextual LLM","#7c3aed"),("C_full","C &middot; + VLM","#1f3a8a"),("D_agentic","D &middot; + agentic re-identification check","#be185d")] %}
+      <div style="margin:12px 0 3px;font-size:14px">{{ label|safe }}</div>
+      <div><span class="bar" style="width:{{ (fin.v3[key].recall*420)|int }}px;background:{{ col }}"></span>
+        <b style="font-size:19px;margin-left:8px">{{ "%.1f"|format(fin.v3[key].recall*100) }}%</b></div>
+      {% endfor %}
+    </div>
+    <div>
+      <table class="t" style="font-size:13.5px">
+        <tr><th>Corpus</th><th>Pages</th><th>Recall</th><th>Precision</th><th>Clean pages</th></tr>
+        {% for v, label in [("v1","v1 &middot; development"),("v2","v2 &middot; held-out, analysed"),("v3","v3 &middot; never tuned on")] %}
+        <tr{% if v == "v3" %} class="hl"{% endif %}><td>{{ label|safe }}</td><td>{{ fin[v].D_agentic.docs }}</td>
+          <td><b>{{ "%.1f"|format(fin[v].D_agentic.recall*100) }}%</b></td><td>{{ "%.1f"|format(fin[v].D_agentic.precision*100) }}%</td>
+          <td>{{ "%.0f"|format(fin[v].D_agentic.clean_doc_rate*100) }}%</td></tr>
+        {% endfor %}
+        {% if hosp %}{% set h = hosp.v3.hospital.D_agentic %}<tr><td>&nbsp;&nbsp;v3 hospital documents only</td><td>{{ h.pages }}</td>
+          <td><b>{{ "%.1f"|format(h.recall*100) }}%</b></td><td>{{ "%.1f"|format(h.precision*100) }}%</td><td>{{ "%.0f"|format(h.clean_pages*100) }}%</td></tr>{% endif %}
+      </table>
+      <p class="note" style="margin-top:6px">All before human review. For comparison, a single human reviewer found 81&nbsp;% of identifiers in a published study (Neamatullah et al. 2008).</p>
+      <div class="card" style="margin-top:12px">
+        <h3>Scoring</h3>
+        <ul><li>Pixel-level: an item is removed when &ge;50&nbsp;% of its area is covered; a box is correct when &ge;30&nbsp;% overlaps PII.</li>
+          <li>A page that fails to process counts as <b>fully leaked</b>, never skipped.</li>
+          <li>v3 was run three times in total, each with a configuration fixed on v1/v2: 96.7 / 94.8, 96.2 / 95.0, then the numbers shown. The live run recorded for the video: 97.0 / 95.2.</li>
+          <li>Strict policy; full pipeline as deployed on the B70.</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="src">Reproduce: <span class="mono">python eval/evaluate.py --workers 8 --data data/synthetic_v3</span></div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>11</span></div>
+</section>
+
+<!-- 12 Per category -->
+<section class="slide">
+  <div class="kicker">4 &middot; Proof &middot; held-out evaluation</div>
+  <h1>Where it works, where it still misses (v3)</h1>
+  <div class="grid2" style="grid-template-columns:1.15fr 1fr;margin-top:14px;align-items:start">
+    <div class="card" style="background:#fff;padding:14px 18px">
+      <h3>Recall by category: rules only vs. full system</h3>
+      <table style="width:100%;font-size:13px;border-collapse:collapse;margin-top:6px">
+      {% for c in cats %}
+        <tr><td style="width:170px;padding:3px 0">{{ c.name }} <span class="note">({{ c.n }})</span></td>
+          <td><span class="bar" style="height:9px;width:{{ (c.A*250)|int }}px;background:#9aa5b8;display:block;margin-bottom:2px"></span>
+              <span class="bar" style="height:9px;width:{{ (c.D*250)|int }}px;background:#1f3a8a;display:block"></span></td>
+          <td style="width:90px;text-align:right"><span class="note">{{ "%.0f"|format(c.A*100) }}%</span> &rarr; <b>{{ "%.0f"|format(c.D*100) }}%</b></td></tr>
+      {% endfor %}
+      </table>
+    </div>
+    <div>
+      <div class="card"><h3>From 84&nbsp;% to {{ "%.0f"|format(fin.v2.D_agentic.recall*100) }}&nbsp;% on v2 &mdash; with general fixes only</h3>
+        <ul><li>Dates with times, accession / specimen numbers, more form labels, court-judgment party lines.</li>
+          <li>Organisation phones and addresses (letterheads, hotlines) are <i>not</i> personal data.</li>
+          <li>Names propagated to repeated mentions even when OCR drops spaces.</li>
+          <li>The agentic check for what detectors cannot see.</li></ul></div>
+      <div class="card" style="margin-top:12px"><h3>An honest evaluation</h3>
+        <ul><li>During model selection, one model scored 100&nbsp;% &mdash; because 34 of 36 pages had <i>failed</i> and were silently skipped.</li>
+          <li>We fixed the harness: failed pages now count as leaked, and throughput counts only successful pages.</li></ul></div>
+    </div>
+  </div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>12</span></div>
+</section>
+
+<!-- 12b Robustness to scan quality -->
+{% if robust %}
+<section class="slide">
+  <div class="kicker">4 &middot; Proof &middot; real-world scan quality</div>
+  <h1>Real scans are worse &mdash; recall stays above {{ "%.0f"|format((robust_min * 100) | round(0, 'floor')) }}&nbsp;%</h1>
+  <p class="lead">The held-out v2 pages degraded the way hospital scans and faxes are: blur, low resolution, heavy compression,
+    skew and 1-bit fax. Same pixel-level scoring; the ground-truth boxes follow the transformation.</p>
+  <div class="grid2" style="grid-template-columns:1.35fr 1fr;align-items:start">
+    <div class="card" style="background:#fff">
+      <h3>Recall: rules only vs. full RedactAgent</h3>
+      {% for r in robust %}
+      <div style="display:grid;grid-template-columns:190px 1fr 58px;gap:8px;align-items:center;margin:5px 0;font-size:13px">
+        <div><b>{{ r.label }}</b>{% if r.level %} <span style="color:#5b6478">&middot; {{ r.level }}</span>{% endif %}</div>
+        <div style="position:relative;height:18px;background:#eef1f8;border-radius:4px">
+          <div style="position:absolute;left:0;top:0;height:8px;width:{{ r.A*100 }}%;background:#a5adc0;border-radius:3px"></div>
+          <div style="position:absolute;left:0;top:9px;height:9px;width:{{ r.D*100 }}%;background:{{ '#1f3a8a' if r.kind != 'clean' else '#be185d' }};border-radius:3px"></div>
+        </div>
+        <div style="text-align:right"><b>{{ "%.1f"|format(r.D*100) }}%</b></div>
+      </div>
+      {% endfor %}
+      <p class="note" style="margin-top:6px">Grey: rules only (regex / DLP baseline). Blue: full system with the agentic check.</p>
+    </div>
+    <div>
+      <div class="card"><h3>What it shows</h3><ul>
+        <li><b>Fax, compression and skew</b> barely matter: within the run-to-run variation (&plusmn;1 point).</li>
+        <li><b>Blur and low resolution</b> cost 3&ndash;5 points: characters merge, OCR misreads digits.</li>
+        <li>The language and vision layers recover what the rules lose on every degraded set.</li></ul></div>
+      <div class="card" style="margin-top:12px"><h3>In deployment</h3><p>The unread-ink check flags regions the OCR could not read, and those pages are
+        sent to full review. A scanner setting of &ge;&nbsp;150&nbsp;DPI is the one hard recommendation.</p></div>
+    </div>
+  </div>
+  <div class="src">30 pages &times; 10 degraded copies of v2 (v3 untouched), accuracy mode on 2&times; Arc Pro B70. Script: scripts/make_degraded.py; results: eval/robustness/.</div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span></span></div>
+</section>
+{% endif %}
+
 <!-- 8 Architecture -->
 <section class="slide" style="padding-top:40px">
-  <div class="kicker">Stage II &middot; architecture on 2&times; Intel Arc Pro B70</div>
+  <div class="kicker">5 &middot; Built on the B70 &middot; architecture</div>
   <h1 style="font-size:30px">One model per card, both always resident</h1>
   <div style="text-align:center"><img src="../docs/img/architecture.png" style="max-height:470px;max-width:1150px;margin-top:4px"></div>
   <div class="grid3" style="margin-top:10px;gap:14px">
@@ -13,7 +119,7 @@
 
 <!-- 8b Hardware integration -->
 <section class="slide">
-  <div class="kicker">Innovation &middot; hardware integration on 2&times; Arc Pro B70</div>
+  <div class="kicker">5 &middot; Built on the B70 &middot; innovation: hardware integration</div>
   <h1>The dual-card private agent host &mdash; built, measured, put to work</h1>
   <p class="lead">The organisers' own B70 blueprint: <i>&ldquo;card 0 runs the reasoning brain, card 1 keeps the VLM resident &mdash; a private agent host whose data never leaves the company (GPT-OSS 20B)&rdquo;</i> (translated).
     RedactAgent implements it for a regulated workload, and every number below was measured on the organiser's instance.</p>
@@ -39,9 +145,34 @@
   <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span></span></div>
 </section>
 
+<!-- 10 Model selection -->
+<section class="slide">
+  <div class="kicker">5 &middot; Built on the B70 &middot; model selection</div>
+  <h1>Choosing the text model with data</h1>
+  <p class="lead">Four open models on card 0, same code, same vision model on card 1. Development set (v1) and held-out set (v2),
+    8 pages in flight, agentic check on.</p>
+  <table class="t">
+    <tr><th>Text model (card 0)</th><th>Precision</th><th>Pages / min</th><th>v1 recall / precision</th><th>v2 detectors only</th><th>v2 + agentic check</th></tr>
+    {% for r in tune %}
+    <tr{% if final.id == r.id %} class="hl"{% endif %}><td>{% if final.id == r.id %}<b>{{ r.name }}</b> &larr; final{% else %}{{ r.name }}{% endif %}</td><td>{{ r.prec }}</td>
+      <td>{{ "%.1f"|format(r.ppm) }}</td>
+      <td>{{ "%.1f"|format(r.v1r*100) }} / {{ "%.1f"|format(r.v1p*100) }}</td>
+      <td>{{ "%.1f"|format(r.v2cr*100) }} / {{ "%.1f"|format(r.v2cp*100) }}</td>
+      <td><b>{{ "%.1f"|format(r.v2r*100) }}</b> / {{ "%.1f"|format(r.v2p*100) }}</td></tr>
+    {% endfor %}
+  </table>
+  <div class="grid2" style="margin-top:16px">
+    <div class="card"><h3>Decision</h3><p>{{ final.why|default("") }}</p></div>
+    <div class="card"><h3>Also learned</h3><ul>
+      <li>BF16 &rarr; FP8 on Qwen3-8B: +75&nbsp;% pages/min, no accuracy loss.</li>
+      <li>gpt-oss always reasons first; without a reasoning budget its answers came back empty &mdash; which exposed an evaluation bug: failed pages had been silently skipped. They now count as fully leaked.</li></ul></div>
+  </div>
+  <div class="foot"><span>Recall / precision in %. Raw results: eval/tune3/ in the repository.</span><span>10</span></div>
+</section>
+
 <!-- 9 Performance journey -->
 <section class="slide">
-  <div class="kicker">Stage II &middot; performance on the organiser's environment</div>
+  <div class="kicker">5 &middot; Built on the B70 &middot; performance</div>
   <h1>Throughput on two B70 cards &mdash; bottlenecks found by measuring</h1>
   <div class="grid2" style="grid-template-columns:1.1fr 1fr;align-items:start;margin-top:8px">
     <div class="card" style="background:#fff">
@@ -88,34 +219,9 @@
   <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>9</span></div>
 </section>
 
-<!-- 10 Model selection -->
-<section class="slide">
-  <div class="kicker">Stage II &middot; model selection</div>
-  <h1>Choosing the text model with data</h1>
-  <p class="lead">Four open models on card 0, same code, same vision model on card 1. Development set (v1) and held-out set (v2),
-    8 pages in flight, agentic check on.</p>
-  <table class="t">
-    <tr><th>Text model (card 0)</th><th>Precision</th><th>Pages / min</th><th>v1 recall / precision</th><th>v2 detectors only</th><th>v2 + agentic check</th></tr>
-    {% for r in tune %}
-    <tr{% if final.id == r.id %} class="hl"{% endif %}><td>{% if final.id == r.id %}<b>{{ r.name }}</b> &larr; final{% else %}{{ r.name }}{% endif %}</td><td>{{ r.prec }}</td>
-      <td>{{ "%.1f"|format(r.ppm) }}</td>
-      <td>{{ "%.1f"|format(r.v1r*100) }} / {{ "%.1f"|format(r.v1p*100) }}</td>
-      <td>{{ "%.1f"|format(r.v2cr*100) }} / {{ "%.1f"|format(r.v2cp*100) }}</td>
-      <td><b>{{ "%.1f"|format(r.v2r*100) }}</b> / {{ "%.1f"|format(r.v2p*100) }}</td></tr>
-    {% endfor %}
-  </table>
-  <div class="grid2" style="margin-top:16px">
-    <div class="card"><h3>Decision</h3><p>{{ final.why|default("") }}</p></div>
-    <div class="card"><h3>Also learned</h3><ul>
-      <li>BF16 &rarr; FP8 on Qwen3-8B: +75&nbsp;% pages/min, no accuracy loss.</li>
-      <li>gpt-oss always reasons first; without a reasoning budget its answers came back empty &mdash; which exposed an evaluation bug (next slides).</li></ul></div>
-  </div>
-  <div class="foot"><span>Recall / precision in %. Raw results: eval/tune3/ in the repository.</span><span>10</span></div>
-</section>
-
 <!-- 10b Robustness: reasoning loops -->
 <section class="slide">
-  <div class="kicker">Stage II &middot; robustness at scale</div>
+  <div class="kicker">5 &middot; Built on the B70 &middot; robustness at scale</div>
   <h1>A failure that only shows up at scale: reasoning loops</h1>
   <p class="lead">Under load, gpt-oss sometimes repeats its own reasoning verbatim until the token limit and returns no answer
     &mdash; on vLLM XPU 0.26 occasionally in bursts, with garbage output. We measured it before fixing it.</p>
@@ -148,106 +254,3 @@
   {% endif %}
   <div class="foot"><span>Details and every intermediate run: docs/STAGE2_LOG.md.</span><span></span></div>
 </section>
-
-<!-- 11 Accuracy -->
-<section class="slide">
-  <div class="kicker">Validation &middot; held-out evaluation</div>
-  <h1>Accuracy on documents the system has never seen</h1>
-  <p class="lead">Three synthetic corpora: v1 was used to build the rules and prompts; v2 introduced five <i>new</i> document types
-    and phone photos and was used for error analysis; <b>v3 was generated before any result was seen and never used for development.</b></p>
-  <div class="grid2" style="grid-template-columns:1.1fr 1fr">
-    <div class="card" style="background:#fff">
-      <h3>v3 &middot; recall by layer ({{ fin.v3.C_full.docs }} pages, {{ fin.v3.C_full.gt_items }} PII items)</h3>
-      {% for key, label, col in [("A_deterministic","A &middot; rules + colour (regex/DLP baseline)","#9aa5b8"),("B_plus_llm","B &middot; + contextual LLM","#7c3aed"),("C_full","C &middot; + VLM","#1f3a8a"),("D_agentic","D &middot; + agentic re-identification check","#be185d")] %}
-      <div style="margin:12px 0 3px;font-size:14px">{{ label|safe }}</div>
-      <div><span class="bar" style="width:{{ (fin.v3[key].recall*420)|int }}px;background:{{ col }}"></span>
-        <b style="font-size:19px;margin-left:8px">{{ "%.1f"|format(fin.v3[key].recall*100) }}%</b></div>
-      {% endfor %}
-    </div>
-    <div>
-      <table class="t" style="font-size:13.5px">
-        <tr><th>Corpus</th><th>Pages</th><th>Recall</th><th>Precision</th><th>Clean pages</th></tr>
-        {% for v, label in [("v1","v1 &middot; development"),("v2","v2 &middot; held-out, analysed"),("v3","v3 &middot; never tuned on")] %}
-        <tr{% if v == "v3" %} class="hl"{% endif %}><td>{{ label|safe }}</td><td>{{ fin[v].D_agentic.docs }}</td>
-          <td><b>{{ "%.1f"|format(fin[v].D_agentic.recall*100) }}%</b></td><td>{{ "%.1f"|format(fin[v].D_agentic.precision*100) }}%</td>
-          <td>{{ "%.0f"|format(fin[v].D_agentic.clean_doc_rate*100) }}%</td></tr>
-        {% endfor %}
-      </table>
-      <div class="card" style="margin-top:12px">
-        <h3>Scoring</h3>
-        <ul><li>Pixel-level: an item is removed when &ge;50&nbsp;% of its area is covered; a box is correct when &ge;30&nbsp;% overlaps PII.</li>
-          <li>A page that fails to process counts as <b>fully leaked</b>, never skipped.</li>
-          <li>v3 was run three times in total, each with a configuration fixed on v1/v2: 96.7 / 94.8, 96.2 / 95.0, then the numbers shown. The live run recorded for the video: 97.0 / 95.2.</li>
-          <li>Strict policy; full pipeline as deployed on the B70.</li></ul>
-      </div>
-    </div>
-  </div>
-  <div class="src">Reproduce: <span class="mono">python eval/evaluate.py --workers 8 --data data/synthetic_v3</span></div>
-  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>11</span></div>
-</section>
-
-<!-- 12 Per category -->
-<section class="slide">
-  <div class="kicker">Validation &middot; held-out evaluation</div>
-  <h1>Where it works, where it still misses (v3)</h1>
-  <div class="grid2" style="grid-template-columns:1.15fr 1fr;margin-top:14px;align-items:start">
-    <div class="card" style="background:#fff;padding:14px 18px">
-      <h3>Recall by category: rules only vs. full system</h3>
-      <table style="width:100%;font-size:13px;border-collapse:collapse;margin-top:6px">
-      {% for c in cats %}
-        <tr><td style="width:170px;padding:3px 0">{{ c.name }} <span class="note">({{ c.n }})</span></td>
-          <td><span class="bar" style="height:9px;width:{{ (c.A*250)|int }}px;background:#9aa5b8;display:block;margin-bottom:2px"></span>
-              <span class="bar" style="height:9px;width:{{ (c.D*250)|int }}px;background:#1f3a8a;display:block"></span></td>
-          <td style="width:90px;text-align:right"><span class="note">{{ "%.0f"|format(c.A*100) }}%</span> &rarr; <b>{{ "%.0f"|format(c.D*100) }}%</b></td></tr>
-      {% endfor %}
-      </table>
-    </div>
-    <div>
-      <div class="card"><h3>From 84&nbsp;% to {{ "%.0f"|format(fin.v2.D_agentic.recall*100) }}&nbsp;% on v2 &mdash; with general fixes only</h3>
-        <ul><li>Dates with times, accession / specimen numbers, more form labels, court-judgment party lines.</li>
-          <li>Organisation phones and addresses (letterheads, hotlines) are <i>not</i> personal data.</li>
-          <li>Names propagated to repeated mentions even when OCR drops spaces.</li>
-          <li>The agentic check for what detectors cannot see.</li></ul></div>
-      <div class="card" style="margin-top:12px"><h3>An honest evaluation</h3>
-        <ul><li>The model sweep showed gpt-oss scoring 100&nbsp;% &mdash; because 34 of 36 pages had <i>failed</i> and were silently skipped.</li>
-          <li>We fixed the harness: failed pages now count as leaked, and throughput counts only successful pages.</li></ul></div>
-    </div>
-  </div>
-  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span>12</span></div>
-</section>
-
-<!-- 12b Robustness to scan quality -->
-{% if robust %}
-<section class="slide">
-  <div class="kicker">Validation &middot; real-world scan quality</div>
-  <h1>Real scans are worse &mdash; recall stays above {{ "%.0f"|format((robust_min * 100) | round(0, 'floor')) }}&nbsp;%</h1>
-  <p class="lead">The held-out v2 pages degraded the way hospital scans and faxes are: blur, low resolution, heavy compression,
-    skew and 1-bit fax. Same pixel-level scoring; the ground-truth boxes follow the transformation.</p>
-  <div class="grid2" style="grid-template-columns:1.35fr 1fr;align-items:start">
-    <div class="card" style="background:#fff">
-      <h3>Recall: rules only vs. full RedactAgent</h3>
-      {% for r in robust %}
-      <div style="display:grid;grid-template-columns:190px 1fr 58px;gap:8px;align-items:center;margin:5px 0;font-size:13px">
-        <div><b>{{ r.label }}</b>{% if r.level %} <span style="color:#5b6478">&middot; {{ r.level }}</span>{% endif %}</div>
-        <div style="position:relative;height:18px;background:#eef1f8;border-radius:4px">
-          <div style="position:absolute;left:0;top:0;height:8px;width:{{ r.A*100 }}%;background:#a5adc0;border-radius:3px"></div>
-          <div style="position:absolute;left:0;top:9px;height:9px;width:{{ r.D*100 }}%;background:{{ '#1f3a8a' if r.kind != 'clean' else '#be185d' }};border-radius:3px"></div>
-        </div>
-        <div style="text-align:right"><b>{{ "%.1f"|format(r.D*100) }}%</b></div>
-      </div>
-      {% endfor %}
-      <p class="note" style="margin-top:6px">Grey: rules only (regex / DLP baseline). Blue: full system with the agentic check.</p>
-    </div>
-    <div>
-      <div class="card"><h3>What it shows</h3><ul>
-        <li><b>Fax, compression and skew</b> barely matter: within the run-to-run variation (&plusmn;1 point).</li>
-        <li><b>Blur and low resolution</b> cost 3&ndash;5 points: characters merge, OCR misreads digits.</li>
-        <li>The language and vision layers recover what the rules lose on every degraded set.</li></ul></div>
-      <div class="card" style="margin-top:12px"><h3>In deployment</h3><p>The unread-ink check flags regions the OCR could not read, and those pages are
-        sent to full review. A scanner setting of &ge;&nbsp;150&nbsp;DPI is the one hard recommendation.</p></div>
-    </div>
-  </div>
-  <div class="src">30 pages &times; 10 degraded copies of v2 (v3 untouched), accuracy mode on 2&times; Arc Pro B70. Script: scripts/make_degraded.py; results: eval/robustness/.</div>
-  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span></span></div>
-</section>
-{% endif %}
