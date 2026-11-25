@@ -19,8 +19,8 @@ whyhosp:
   - ["Medical records are the most protected data, and new laws raise the stakes."]
   - ["Taiwan's hospitals discharge 3.35 million patients a year, and any chart may be requested later.",
      "Taiwan's hospitals discharge three point three five million patients a year, and any chart may be requested later."]
-  - ["And ASUS already sells medical-record AI to hospitals, so there is a way in.",
-     "And Asus already sells medical-record A I to hospitals, so there is a way in."]
+  - ["We found no Taiwanese company selling de-identification to hospitals, and ASUS already sells them medical-record AI: an open market, with a way in.",
+     "We found no Taiwanese company selling de-identification to hospitals, and Asus already sells them medical-record A I: an open market, with a way in."]
   - ["So let's follow one hospital document, live on the organisers' B70.",
      "So let's follow one hospital document, live on the organisers' B seventy."]
 
@@ -31,14 +31,13 @@ humans:
   - ["And a leak can now cost up to fifteen million NT dollars."]
 
 notool:
-  - ["We checked the main de-identification products. None of them fits."]
-  - ["The cloud services cannot run inside the organisation, and the health tools from Amazon and Microsoft have no Chinese."]
-  - ["Microsoft's general PII service reads Chinese text, but not scanned pages.",
-     "Microsoft's general P I I service reads Chinese text, but not scanned pages."]
-  - ["Private AI runs on premises, but its Traditional Chinese is still coming soon.",
-     "Private A I runs on premises, but its Traditional Chinese is still coming soon."]
-  - ["And none of them attacks its own output to check whether someone can still be identified."]
-  - ["We also found no Taiwanese company selling this to hospitals."]
+  - ["So what would a tool need? It must run inside the organisation, read Traditional Chinese and Taiwan IDs,"]
+  - ["handle scans with seals and signatures, and check whether anyone can still be identified."]
+  - ["We checked the main de-identification products against these four needs."]
+  - ["The cloud services fail the first. Microsoft's reads Chinese, but not scanned pages."]
+  - ["The tools that run on premises have no ready Traditional Chinese. Private AI's is still coming soon.",
+     "The tools that run on premises have no ready Traditional Chinese. Private A I's is still coming soon."]
+  - ["And none of them checks whether someone can still be identified."]
 
 idea:
   - ["RedactAgent works in three steps."]
@@ -57,7 +56,8 @@ env:   # terminal on the organiser's instance
   - ["Card zero runs the reasoning model, card one the vision model. Both stay loaded."]
 
 review:
-  - ["A scanned discharge summary. One click, and both cards work on it."]
+  - ["A scanned discharge summary, synthetic like all our test data."]
+  - ["One click, and both cards work on it."]
 
 review_found:
   - ["Ten seconds later: names, ID numbers, dates, the signature and the seal are found.",
@@ -82,16 +82,18 @@ batch:
   - ["For a backlog, batch mode keeps both cards busy. This part is sped up."]
 
 verify:   # terminal: live evaluation on v3
-  - ["Is it accurate? We test on the same machine,"]
-  - ["on documents made before any result was seen and never used for tuning."]
+  - ["Is it accurate? We test on the same machine, on thirty synthetic pages"]
+  - ["generated before any result was seen and never used for tuning."]
 
 verify_result:
-  - ["{live_recall} of all personal data found.",
-     "{live_recall_spoken} of all personal data found."]
+  - ["This live run finds {live_recall} of all personal data.",
+     "This live run finds {live_recall_spoken} of all personal data."]
+  - ["Our final evaluation run on the same pages gave {v3_recall}.",
+     "Our final evaluation run on the same pages gave {v3_recall_spoken}."]
 
 proof:
-  - ["On the hospital documents in that test, RedactAgent removes {hosp_recall} before anyone reviews it.",
-     "On the hospital documents in that test, Redact Agent removes {hosp_recall_spoken} before anyone reviews it."]
+  - ["In that final run, RedactAgent removes {hosp_recall} of the personal data on the hospital documents, before anyone reviews it.",
+     "In that final run, Redact Agent removes {hosp_recall_spoken} of the personal data on the hospital documents, before anyone reviews it."]
   - ["A single human reviewer finds 81 percent.",
      "A single human reviewer finds eighty-one percent."]
   - ["And it catches {qi_recall} of the combination clues, which rules miss completely.",
@@ -144,7 +146,7 @@ cost:
      "One host handles about {pages_hour_spoken} pages an hour: three million a year on a single shift."]
   - ["A thousand pages take {min_per_1000} minutes and {kwh_per_1000} kilowatt-hours, with no per-page fee.",
      "A thousand pages take {min_per_1000} minutes and {kwh_per_1000} kilowatt hours, with no per-page fee."]
-  - ["A cloud service would charge about thirty dollars, without Chinese, and the records would leave the hospital."]
+  - ["A cloud service would charge about thirty dollars, without Chinese, and the documents would leave the building."]
 
 ready:
   - ["It is ready for a hospital: nothing leaves the building,"]
@@ -179,7 +181,7 @@ expand:
   - ["The engine already has court-filing and public-release policies,"]
   - ["and on the unseen bank statements and court judgments it found {other_recall} of the personal data, with {other_precision} precision.",
      "and on the unseen bank statements and court judgments it found {other_recall_spoken} of the personal data, with {other_precision_spoken} precision."]
-  - ["Courts, insurers and agencies come next, each starting with a pilot on its own documents."]
+  - ["Courts, insurers and agencies come next."]
 
 next:
   - ["What we promised in Stage I runs on the B70: thirteen times faster than the Stage I laptop, with higher recall,",

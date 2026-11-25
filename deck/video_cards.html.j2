@@ -49,6 +49,7 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
 .mx td:first-child { font-weight: 600; color: #2d3650; }
 .step .n { color: #fff; }
 .y { color: var(--green); } .n { color: var(--red); } .p { color: #b0b8c9; font-size: 26px; }
+.mx tr.grp td { font-size: 20px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--acc); padding: 16px 10px 4px; border-top: none; }
 .mx tr.us td { background: #eef3ff; color: var(--brand); border-top: 3px solid var(--brand); }
 .bars { margin-top: 46px; }
 .br { display: flex; align-items: center; gap: 24px; margin-bottom: 20px; font-size: 30px; }
@@ -106,13 +107,20 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
 
 <section class="card" data-key="notool">
   {{ chap(1) }}
-  <h1 style="margin-top:70px">No existing product does all four</h1>
-  <table class="mx" style="margin-top:34px;font-size:29px">
-    <tr><th style="width:36%"></th><th>Runs on<br>premises</th><th>Traditional Chinese<br>+ Taiwan IDs</th><th>Scans, seals,<br>signatures</th><th>Attacks its<br>own output</th></tr>
-    <tr><td>Google Cloud Sensitive Data Protection</td><td class="n">✕</td><td class="p">partly</td><td class="y">✓</td><td class="p">partly</td></tr><tr><td>AWS Comprehend Medical</td><td class="n">✕</td><td class="n">✕</td><td class="p">partly</td><td class="n">✕</td></tr><tr><td>Azure Health de-identification</td><td class="n">✕</td><td class="n">✕</td><td class="n">✕</td><td class="n">✕</td></tr><tr><td>Azure AI Language PII</td><td class="p">by application</td><td class="y">✓</td><td class="n">✕</td><td class="n">✕</td></tr><tr><td>Private AI</td><td class="y">✓</td><td class="n">✕</td><td class="p">partly</td><td class="n">✕</td></tr><tr><td>John Snow Labs</td><td class="y">✓</td><td class="n">✕</td><td class="y">✓</td><td class="n">✕</td></tr><tr><td>Microsoft Presidio (open source)</td><td class="y">✓</td><td class="p">partly</td><td class="p">partly</td><td class="n">✕</td></tr>
+  <h1 style="margin-top:70px">No existing product meets all four needs</h1>
+  <table class="mx" style="margin-top:30px;font-size:29px">
+    <tr><th style="width:36%"></th><th>Runs inside the<br>organisation</th><th>Traditional Chinese<br>+ Taiwan IDs</th><th>Scans, seals,<br>signatures</th><th>Checks if someone<br>is still identifiable</th></tr>
+    <tr class="grp"><td colspan="5">Cloud services</td></tr>
+    <tr><td>Google Cloud Sensitive Data Protection</td><td class="n">✕</td><td class="p">partly</td><td class="y">✓</td><td class="p">partly</td></tr>
+    <tr><td>Microsoft Azure AI Language PII</td><td class="p">by application</td><td class="y">✓</td><td class="n">✕</td><td class="n">✕</td></tr>
+    <tr><td>Amazon &amp; Microsoft medical de-ID</td><td class="n">✕</td><td class="n">✕</td><td class="p">partly</td><td class="n">✕</td></tr>
+    <tr class="grp"><td colspan="5">Run on premises</td></tr>
+    <tr><td>Microsoft Presidio (open source)</td><td class="y">✓</td><td class="p">partly</td><td class="p">partly</td><td class="n">✕</td></tr>
+    <tr><td>Private AI</td><td class="y">✓</td><td class="n">✕</td><td class="p">partly</td><td class="n">✕</td></tr>
+    <tr><td>John Snow Labs</td><td class="y">✓</td><td class="n">✕</td><td class="y">✓</td><td class="n">✕</td></tr>
     <tr class="us"><td>RedactAgent</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
   </table>
-  <div class="src">Public vendor documentation, checked 2026-11-12 / 11-24 (sources in docs/MARKET_RESEARCH.md). We found no Taiwanese vendor selling de-identification to hospitals.</div>
+  <div class="src">Public vendor documentation, checked 2026-11-12 / 11-24 (sources in docs/MARKET_RESEARCH.md)</div>
 </section>
 
 <section class="card" data-key="idea">
@@ -141,20 +149,20 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
   <div class="row">
     <div class="box"><h3>Strictest law</h3><p>Medical records are special-category data; the amended data protection law and the NHI Data Act (Aug 2026) raise the stakes</p></div>
     <div class="box"><h3>Biggest volume</h3><p><b>3.35 million</b> discharges a year in 460 hospitals &mdash; each chart may be requested later</p></div>
-    <div class="box"><h3>A way in</h3><p>ASUS already runs medical-record AI inside Taiwanese hospitals</p></div>
+    <div class="box"><h3>Open, with a way in</h3><p>No Taiwanese vendor sells de-identification to hospitals; ASUS already runs medical-record AI inside them</p></div>
   </div>
   <div class="src">Sources: MOHW hospital statistics 2025; PDPA Art. 6 and 48; NHI Data Management Act; NOWnews 2025-12-04</div>
 </section>
 
 <section class="card" data-key="proof">
   {{ chap(4) }}
-  <h1 style="margin-top:90px">On unseen hospital documents, before human review</h1>
+  <h1 style="margin-top:90px">Final evaluation run: unseen hospital documents, before human review</h1>
   <div class="row" style="margin-top:80px">
     <div class="stat"><div class="v" style="color:var(--brand)">{{ hosp_recall }}</div><div class="l">of personal data removed<br>by RedactAgent</div></div>
     <div class="stat"><div class="v" style="color:#b4bccd">81%</div><div class="l">found by a single<br>human reviewer</div></div>
     <div class="stat"><div class="v" style="color:var(--pink)">{{ qi_recall }}</div><div class="l">of combination clues caught<br>(rules alone: 0%)</div></div>
   </div>
-  <div class="src">Held-out test set v3, generated before any result was seen, never used for tuning; pixel-level scoring. Human figure: Neamatullah et al. 2008.</div>
+  <div class="src">Synthetic held-out test set v3, generated before any result was seen, never used for tuning; pixel-level scoring. Human figure: Neamatullah et al. 2008.</div>
 </section>
 
 <section class="card" data-key="layers">
@@ -165,7 +173,7 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
     <div class="track"><div class="d" style="width:{{ l.r*100 }}%;{{ 'background:var(--pink);' if loop.last else '' }}"></div></div>
     <div class="v">{{ "%.1f"|format(l.r*100) }}%</div></div>
   {% endfor %}</div>
-  <div class="leg">Recall on the unseen test set v3 (396 personal-data items), each layer added on top of the previous ones.</div>
+  <div class="leg">Recall in the final evaluation run on the unseen synthetic test set (396 personal-data items), each layer added on top of the previous ones.</div>
 </section>
 
 <section class="card" data-key="robust">
@@ -233,12 +241,12 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
       <div class="row2"><span>Time</span><b>{{ min_per_1000 }} minutes</b></div>
       <div class="row2"><span>Energy</span><b>{{ kwh_per_1000 }} kWh</b></div>
       <div class="row2"><span>Per-page fee</span><b>none</b></div>
-      <div class="row2"><span>Data leaves the hospital</span><b style="color:var(--green)">never</b></div></div>
+      <div class="row2"><span>Documents leave the building</span><b style="color:var(--green)">never</b></div></div>
     <div style="background:var(--soft);border:2px solid var(--line)"><h3 style="color:var(--mut)">Cloud reference (AWS)</h3>
       <div class="row2"><span>Fee</span><b>&asymp; US$29.5</b></div>
       <div class="row2"><span>Traditional Chinese</span><b style="color:var(--red)">no</b></div>
       <div class="row2"><span>Seals and signatures</span><b style="color:var(--red)">no</b></div>
-      <div class="row2"><span>Data leaves the hospital</span><b style="color:var(--red)">yes</b></div></div>
+      <div class="row2"><span>Documents leave the building</span><b style="color:var(--red)">yes</b></div></div>
   </div>
   <div class="sub" style="font-size:30px;margin-top:34px">One host, one 8-hour shift: about <b style="color:var(--navy)">3 million pages a year</b> &mdash; Taiwan has 3.35 million discharges.</div>
   <div class="src">Measured on the organiser's instance (32 pages in flight, xpu-smi board power). AWS: Textract + Comprehend Medical list prices, Nov 2026.</div>
@@ -261,7 +269,6 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
   <div class="row">
     <div class="box"><h3>Burned into the pixels</h3><p>Black boxes drawn over a PDF often leave the text underneath &mdash; copy and paste reveals it. RedactAgent rewrites the page image: nothing is left to copy.</p></div>
     <div class="box"><h3>Tamper-evident log</h3><p>Every submission, review decision and export is chained with SHA-256 hashes. Any later edit breaks the chain.</p></div>
-    <div class="box ok"><h3>Released by a person</h3><p>Files leave only after a recorded human export.</p></div>
   </div>
 </section>
 
@@ -300,7 +307,7 @@ h1 { font-size: 68px; line-height: 1.12; margin: 40px 0 0; color: var(--navy); l
     <div class="step" style="background:#8ea2e8"><div class="n">THEN</div><h3 style="font-size:52px">Agencies</h3><p>information requests, HR files</p></div>
   </div>
   <div class="sub" style="margin-top:46px;font-size:30px">Already in the engine: court-filing and public-release policies. On unseen non-hospital pages (bank statements,
-    court judgments): <b style="color:var(--navy)">{{ other_recall }} recall, {{ other_precision }} precision</b> &mdash; each new market still starts with a pilot on its own documents.</div>
+    court judgments): <b style="color:var(--navy)">{{ other_recall }} recall, {{ other_precision }} precision</b>.</div>
 </section>
 
 <section class="card" data-key="next">

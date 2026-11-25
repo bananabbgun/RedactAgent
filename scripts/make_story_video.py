@@ -260,7 +260,7 @@ def main():
             "4 · PROOF  —  live evaluation on the B70, unseen test set",
             extra=[(7.5 + 8.0 + 4.8 + 0.3, "verify_result")])
 
-    for k in ("proof", "layers", "robust", "hardware", "model", "ocr", "loops", "cost", "ready", "audit", "triage", "business", "expand", "next"):
+    for k in ("proof", "layers", "robust", "hardware", "model", "ocr", "loops", "cost", "ready", "triage", "audit", "business", "expand", "next"):
         card(k)
     card("outro", hold=2.0)
 
