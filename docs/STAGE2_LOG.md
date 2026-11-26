@@ -329,3 +329,17 @@ Fax, compression and skew stay within run-to-run variation; blur and low resolut
 **Integration.** `redactagent/hotfolder.py` (inbox → review ticket with priority and reasons → release only after
 an `export` event in the audit log) and `docs/INTEGRATION.md` (REST API, policies, security).
 Market and regulation facts behind the business slides: `docs/MARKET_RESEARCH.md`.
+
+## 2026-11-28 — Fresh-clone deployment and the real-layout check
+
+**One-command deployment, verified from scratch.** On the instance, a new directory, `git clone` of the public repo
+(`67c5b95`) and `bash deploy/b70/up.sh`: both vLLM servers came up on their cards, the Python environment was
+created from `requirements.txt`, and the UI started with no manual step (`eval/results_b70/real_layouts/fresh_clone_up.log`).
+An end-to-end API test on that install processed a sample page in 12 s, exported the burned-in PDF, report and
+de-identified text, and the audit chain verified.
+
+**Real-layout check** (`data/real_layouts/`): four public government forms never seen in development, filled with
+synthetic people; 22 pages, 287 items; protocol fixed and committed before the run. Result of the one run on the
+fresh clone: recall 73.9 %, precision 66.3 % (Chinese 83.2 %, English 61.9 %, CMS-1500 35.0 %), against 96.7 / 96.0
+on v3. The gap is real: one-character-per-box fields, dates split into blanks and the red, watermarked CMS-1500
+are not handled well. Triage flagged 20 of 22 pages, holding 71 of 75 misses. Per the protocol, nothing was tuned.

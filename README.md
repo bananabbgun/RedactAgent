@@ -101,6 +101,14 @@ Recall / precision in %, pixel-level scoring, before human review; a page that f
   91.9–97.0 %, while rules alone find 54–60 %. Blur and low resolution cost the most
   ([`eval/robustness/`](eval/robustness/), `scripts/make_degraded.py`).
 
+- **Real government form layouts** – a harder check: four public forms never used in development (Taiwan's NHI
+  referral form and NHI card application, the US VA Form 10-5345 and CMS-1500), filled with synthetic people,
+  22 pages, 287 items, evaluated once on a fresh clone. Recall falls to **73.9 %** (precision 66.3 %): 83.2 % on the
+  Traditional Chinese forms, 61.9 % on the English ones, 35.0 % on CMS-1500. It misses characters written one per
+  printed box, dates split into year / month / day blanks, and most fields on the red, watermarked CMS-1500. The
+  review queue flagged 20 of the 22 pages, which held 71 of the 75 missed items
+  ([`data/real_layouts/`](data/real_layouts/), [`eval/results_b70/real_layouts/`](eval/results_b70/real_layouts/)).
+
 v3 has been evaluated three times in total, each time once with a configuration fixed on v1/v2 and never for
 tuning: 96.7 / 94.8 (final run 1), 96.2 / 95.0 (run 2), 96.7 / 96.0 (run 3, above). The live run recorded for the
 video gave 97.0 / 95.2. All runs are in [`eval/results_b70/`](eval/results_b70/) and
@@ -233,6 +241,7 @@ account was randomly generated. No real personal data was used.
 ## Notes and limitations
 
 - Policy legal bases are indicative and must be confirmed with counsel for each deployment.
-- All evaluation uses synthetic documents (held-out, phone photos, degraded scans); accuracy on real documents has not been measured.
+- All evaluation uses synthetic content (held-out, phone photos, degraded scans, real public form layouts); accuracy on real documents has not been measured.
+- Unfamiliar form layouts are clearly harder (73.9 % recall on four public government forms vs. 96.7 % on our own layouts); review stays essential there.
 - Human review stays mandatory: RedactAgent pre-marks, a person approves.
 - XPU graph mode could not be used on this software stack (graph capture ran out of resources); all numbers are eager mode.

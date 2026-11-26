@@ -1,0 +1,108 @@
+{
+ "forms": [
+  {
+   "id": "nhi_referral_zh",
+   "name": "NHI referral form (MOHW)",
+   "pages": 6,
+   "items": 93,
+   "caught": 74,
+   "tp": 60,
+   "pred": 111,
+   "clean": 0,
+   "recall": 0.7956989247311828,
+   "precision": 0.5405405405405406,
+   "clean_pages": 0.0
+  },
+  {
+   "id": "nhi_card_zh",
+   "name": "NHI card application (NHIA)",
+   "pages": 4,
+   "items": 68,
+   "caught": 60,
+   "tp": 53,
+   "pred": 68,
+   "clean": 0,
+   "recall": 0.8823529411764706,
+   "precision": 0.7794117647058824,
+   "clean_pages": 0.0
+  },
+  {
+   "id": "va_release_p1_en",
+   "name": "VA Form 10-5345, page 1",
+   "pages": 4,
+   "items": 38,
+   "caught": 30,
+   "tp": 31,
+   "pred": 35,
+   "clean": 1,
+   "recall": 0.7894736842105263,
+   "precision": 0.8857142857142857,
+   "clean_pages": 0.25
+  },
+  {
+   "id": "va_release_p2_en",
+   "name": "VA Form 10-5345, page 2",
+   "pages": 4,
+   "items": 28,
+   "caught": 27,
+   "tp": 25,
+   "pred": 33,
+   "clean": 3,
+   "recall": 0.9642857142857143,
+   "precision": 0.7575757575757576,
+   "clean_pages": 0.75
+  },
+  {
+   "id": "cms1500_en",
+   "name": "CMS-1500 claim form (SAMPLE watermark)",
+   "pages": 4,
+   "items": 60,
+   "caught": 21,
+   "tp": 20,
+   "pred": 38,
+   "clean": 0,
+   "recall": 0.35,
+   "precision": 0.5263157894736842,
+   "clean_pages": 0.0
+  }
+ ],
+ "triage": {
+  "pages": 22,
+  "flagged": 20,
+  "missed": 75,
+  "missed_flagged": 71
+ },
+ "lang_en": {
+  "pages": 12,
+  "items": 126,
+  "caught": 78,
+  "tp": 76,
+  "pred": 106,
+  "clean": 4,
+  "recall": 0.6190476190476191,
+  "precision": 0.7169811320754716,
+  "clean_pages": 0.3333333333333333
+ },
+ "all": {
+  "pages": 22,
+  "items": 287,
+  "caught": 212,
+  "tp": 189,
+  "pred": 285,
+  "clean": 4,
+  "recall": 0.7386759581881533,
+  "precision": 0.6631578947368421,
+  "clean_pages": 0.18181818181818182
+ },
+ "lang_zh": {
+  "pages": 10,
+  "items": 161,
+  "caught": 134,
+  "tp": 113,
+  "pred": 179,
+  "clean": 0,
+  "recall": 0.8322981366459627,
+  "precision": 0.6312849162011173,
+  "clean_pages": 0.0
+ }
+}

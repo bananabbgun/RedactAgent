@@ -27,3 +27,22 @@ the same command as v3); the result is reported as it comes out and is not used 
 ```bash
 python eval/evaluate.py --workers 8 --data data/real_layouts/corpus --out eval/results_b70/real_layouts
 ```
+
+## Result (2026-11-28, the one run)
+
+Run on a fresh clone deployed with `deploy/b70/up.sh` on the organiser's 2x Arc Pro B70 instance
+(`eval/results_b70/real_layouts/`, summary by `eval/real_layouts_summary.py`).
+
+| Form | Pages | Recall | Precision |
+|---|---|---|---|
+| NHI referral form | 6 | 79.6 % | 54.1 % |
+| NHI card application | 4 | 88.2 % | 77.9 % |
+| VA Form 10-5345, page 1 | 4 | 78.9 % | 88.6 % |
+| VA Form 10-5345, page 2 | 4 | 96.4 % | 75.8 % |
+| CMS-1500 (SAMPLE watermark) | 4 | 35.0 % | 52.6 % |
+| **All** | **22** | **73.9 %** | **66.3 %** |
+
+Rules only: 32.1 %. Misses: characters written one per printed box (ID numbers, postcodes), dates split into
+year / month / day blanks and ROC slash dates, and most fields on CMS-1500. False alarms: hospital switchboard
+numbers and e-mails, red form lines read as seals. Review triage (risk >= 70 or unread ink) flagged 20 of 22 pages,
+holding 71 of the 75 missed items. Nothing was changed after seeing this result.
