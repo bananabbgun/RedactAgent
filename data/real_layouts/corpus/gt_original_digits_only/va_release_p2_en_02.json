@@ -1,0 +1,76 @@
+{
+ "id": "va_release_p2_en_02",
+ "template": "va_release_p2_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1275,
+ "height": 1650,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Austin, Christina S",
+   "bbox": [
+    97,
+    108,
+    368,
+    135
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "10/20/1981",
+   "bbox": [
+    926,
+    111,
+    1085,
+    139
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Christina Austin",
+   "bbox": [
+    102,
+    844,
+    372,
+    885
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "11/07/2026",
+   "bbox": [
+    914,
+    855,
+    1082,
+    880
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "06/11/2026",
+   "bbox": [
+    361,
+    1517,
+    481,
+    1533
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "C. Clark",
+   "bbox": [
+    701,
+    1518,
+    797,
+    1531
+   ],
+   "role": "professional"
+  }
+ ]
+}

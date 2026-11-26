@@ -1,0 +1,109 @@
+{
+ "id": "va_release_p1_en_02",
+ "template": "va_release_p1_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1275,
+ "height": 1650,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Hays, Denise E",
+   "bbox": [
+    98,
+    492,
+    298,
+    527
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "04/05/1983",
+   "bbox": [
+    926,
+    492,
+    1088,
+    520
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "872 Regina Forest Suite 358",
+   "bbox": [
+    99,
+    565,
+    488,
+    597
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "East Timothyton, IL 98108",
+   "bbox": [
+    99,
+    599,
+    458,
+    635
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Katelyn Garner",
+   "bbox": [
+    140,
+    664,
+    323,
+    692
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "12/18/2025",
+   "bbox": [
+    461,
+    893,
+    607,
+    910
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "03/07/2026",
+   "bbox": [
+    628,
+    892,
+    775,
+    913
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Emily Chase",
+   "bbox": [
+    594,
+    1038,
+    740,
+    1069
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "12/12/2025",
+   "bbox": [
+    753,
+    1042,
+    900,
+    1058
+   ],
+   "role": null
+  }
+ ]
+}

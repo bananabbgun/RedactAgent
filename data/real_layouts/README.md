@@ -46,3 +46,9 @@ Rules only: 32.1 %. Misses: characters written one per printed box (ID numbers, 
 year / month / day blanks and ROC slash dates, and most fields on CMS-1500. False alarms: hospital switchboard
 numbers and e-mails, red form lines read as seals. Review triage (risk >= 70 or unread ink) flagged 20 of 22 pages,
 holding 71 of the 75 missed items. Nothing was changed after seeing this result.
+
+**Answer-key correction (2026-11-28, after the run).** Dates written into printed year / month / day blanks were
+labelled as the digits only; the other corpora label the whole date including 民國 and 年/月/日 (e.g. 民國49年9月21日).
+The key was corrected to that convention (`gt/`; the original is kept in `gt_original_digits_only/`), the images are
+byte-identical, and the stored output of the one run was re-scored, not re-run
+(`eval/results_b70/real_layouts_rescored/`): recall 73.9 % (unchanged), precision 66.3 % -> 70.9 %.

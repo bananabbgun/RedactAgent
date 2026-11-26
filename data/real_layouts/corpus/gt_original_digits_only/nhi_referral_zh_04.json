@@ -1,0 +1,175 @@
+{
+ "id": "nhi_referral_zh_04",
+ "template": "nhi_referral_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳文彬",
+   "bbox": [
+    182,
+    241,
+    248,
+    262
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "37 8 10",
+   "bbox": [
+    618,
+    240,
+    798,
+    258
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "J100951430",
+   "bbox": [
+    889,
+    238,
+    1008,
+    255
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳子翔",
+   "bbox": [
+    182,
+    314,
+    248,
+    334
+   ],
+   "role": "relative"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0949-785-598",
+   "bbox": [
+    329,
+    315,
+    451,
+    330
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "新竹市北區中正路二段135巷360號一樓",
+   "bbox": [
+    512,
+    310,
+    844,
+    331
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "是澎湖七美鄉唯一的獸醫",
+   "bbox": [
+    221,
+    444,
+    430,
+    463
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "115/10/07",
+   "bbox": [
+    249,
+    697,
+    336,
+    712
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115/11/17",
+   "bbox": [
+    714,
+    694,
+    801,
+    708
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳美珍",
+   "bbox": [
+    220,
+    919,
+    286,
+    941
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "陳美珍印",
+   "bbox": [
+    860,
+    882,
+    918,
+    940
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115 7 26",
+   "bbox": [
+    213,
+    979,
+    443,
+    997
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115 8 7",
+   "bbox": [
+    729,
+    966,
+    1030,
+    982
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "阮聰明",
+   "bbox": [
+    609,
+    1025,
+    666,
+    1043
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "115/10/26",
+   "bbox": [
+    234,
+    1107,
+    321,
+    1122
+   ],
+   "role": null
+  }
+ ]
+}

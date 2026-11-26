@@ -1,0 +1,120 @@
+{
+ "id": "va_release_p1_en_03",
+ "template": "va_release_p1_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1275,
+ "height": 1650,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Cardenas, Kyle P",
+   "bbox": [
+    101,
+    491,
+    330,
+    523
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "07/27/1961",
+   "bbox": [
+    929,
+    495,
+    1097,
+    522
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "0616 Mendoza Rapids Apt. 658",
+   "bbox": [
+    101,
+    563,
+    524,
+    596
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "East Shaunview, IL 56053",
+   "bbox": [
+    101,
+    597,
+    456,
+    624
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Jessica Miller",
+   "bbox": [
+    130,
+    658,
+    294,
+    684
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "06/12/2025",
+   "bbox": [
+    462,
+    893,
+    609,
+    909
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "07/03/2025",
+   "bbox": [
+    630,
+    893,
+    778,
+    913
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Jacqueline Robertson",
+   "bbox": [
+    581,
+    1039,
+    831,
+    1066
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "08/16/2025",
+   "bbox": [
+    844,
+    1044,
+    990,
+    1060
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "10/04/2025",
+   "bbox": [
+    670,
+    1193,
+    815,
+    1210
+   ],
+   "role": null
+  }
+ ]
+}

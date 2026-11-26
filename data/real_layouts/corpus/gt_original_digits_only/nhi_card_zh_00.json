@@ -1,0 +1,186 @@
+{
+ "id": "nhi_card_zh_00",
+ "template": "nhi_card_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "115 2 24",
+   "bbox": [
+    962,
+    117,
+    1118,
+    133
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林承恩",
+   "bbox": [
+    203,
+    181,
+    281,
+    205
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "54 6 18",
+   "bbox": [
+    611,
+    176,
+    770,
+    192
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "A 2 1 1 4 8 4 5 0 6",
+   "bbox": [
+    298,
+    236,
+    808,
+    262
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PHONE",
+   "text": "04-24873952",
+   "bbox": [
+    248,
+    566,
+    365,
+    582
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0921-766-779",
+   "bbox": [
+    516,
+    563,
+    640,
+    578
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "shu-fen51@hotmail.com",
+   "bbox": [
+    208,
+    611,
+    426,
+    631
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "4 3 5 3 7",
+   "bbox": [
+    203,
+    699,
+    318,
+    714
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺南市東區自由路三段96巷322號",
+   "bbox": [
+    362,
+    672,
+    658,
+    695
+   ],
+   "role": null
+  },
+  {
+   "cat": "FACE_PHOTO",
+   "text": "portrait",
+   "bbox": [
+    898,
+    297,
+    1126,
+    576
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "林承恩印",
+   "bbox": [
+    238,
+    734,
+    313,
+    809
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林承恩",
+   "bbox": [
+    266,
+    1219,
+    345,
+    1243
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "A211484506",
+   "bbox": [
+    266,
+    1278,
+    411,
+    1299
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0954-189-513",
+   "bbox": [
+    268,
+    1333,
+    392,
+    1349
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "林承恩",
+   "bbox": [
+    934,
+    1212,
+    995,
+    1231
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "A211484506",
+   "bbox": [
+    935,
+    1320,
+    1048,
+    1336
+   ],
+   "role": "subject"
+  }
+ ]
+}

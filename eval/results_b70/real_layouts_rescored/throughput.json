@@ -1,0 +1,8 @@
+{
+ "pages": 22,
+ "failed": 0,
+ "workers": 8,
+ "wall_seconds": 194.72120926296338,
+ "pages_per_minute": 6.778922568303239,
+ "hardware": "2x Intel Arc Pro B70 (final configuration)"
+}

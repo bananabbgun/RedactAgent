@@ -1,0 +1,175 @@
+{
+ "id": "cms1500_en_00",
+ "template": "cms1500_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1425,
+ "height": 1800,
+ "items": [
+  {
+   "cat": "HEALTH_INSURANCE_NO",
+   "text": "6F71QU6YX42",
+   "bbox": [
+    868,
+    303,
+    1011,
+    319
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "RICHARD, MICHAEL, Y",
+   "bbox": [
+    133,
+    350,
+    380,
+    365
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "05  25  1953",
+   "bbox": [
+    578,
+    353,
+    734,
+    366
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "RICHARD, MICHAEL",
+   "bbox": [
+    868,
+    350,
+    1076,
+    365
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "7699 TANNER MALL",
+   "bbox": [
+    133,
+    397,
+    341,
+    410
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "KATIEMOUTH",
+   "bbox": [
+    133,
+    450,
+    263,
+    462
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "65217",
+   "bbox": [
+    133,
+    502,
+    198,
+    515
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "538 705-7201",
+   "bbox": [
+    345,
+    502,
+    514,
+    515
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "01 20 26",
+   "bbox": [
+    925,
+    960,
+    1029,
+    973
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "01 23 26",
+   "bbox": [
+    1135,
+    960,
+    1239,
+    973
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "01 20 26",
+   "bbox": [
+    130,
+    1209,
+    234,
+    1222
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "01 21 26",
+   "bbox": [
+    130,
+    1259,
+    234,
+    1272
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "PT470651",
+   "bbox": [
+    462,
+    1503,
+    566,
+    1516
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Traci West MD",
+   "bbox": [
+    132,
+    1591,
+    366,
+    1628
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "01/24/2026",
+   "bbox": [
+    410,
+    1631,
+    510,
+    1645
+   ],
+   "role": null
+  }
+ ]
+}

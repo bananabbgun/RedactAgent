@@ -63,12 +63,17 @@ def union(p: Page, start: int, cat: str, role=None):
     p.items.append({"cat": cat, "text": " ".join(i["text"] for i in parts), "bbox": [x0, y0, x1, y1], "role": role})
 
 
-def ymd_blanks(p: Page, xs, y, d, f, cat, role=None, roc=True, fill=TYPED):
+def ymd_blanks(p: Page, xs, y, d, f, cat, role=None, roc=True, fill=TYPED, span=None):
+    """Numbers written into printed year / month / day blanks. `span` = (x0, x1) of the printed date incl. 民國 and
+    年/月/日, so the item covers the whole date as in the other corpora (e.g. 民國49年9月21日)."""
     start = len(p.items)
     yy, mm, dd = d
     for x, v in zip(xs, [yy - 1911 if roc else yy, mm, dd]):
         p.text(x, y, str(v), f, cat="TMP", fill=fill)
     union(p, start, cat, role)
+    if span:
+        b = p.items[-1]["bbox"]
+        b[0], b[2] = min(b[0], span[0]), max(b[2], span[1])
 
 
 def rdate(rng, y0, y1):
@@ -97,7 +102,7 @@ def nhi_referral(doc_id, rng, fk, k) -> Page:
     p.text(840, 100, to_hosp[:4], font(F_ZH, 26))
     p.text(186, 233, name, f, cat="PERSON_NAME", role="subject")
     check(p, 354 if sex == "M" else 438, 230)
-    ymd_blanks(p, [622, 703, 778], 233, rdate(rng, 1940, 2005), f, "DATE_OF_BIRTH", "subject")
+    ymd_blanks(p, [622, 703, 778], 233, rdate(rng, 1940, 2005), f, "DATE_OF_BIRTH", "subject", span=(512, 836))
     p.text(893, 233, tw_national_id(rng, sex), f, cat="GOV_ID", role="subject")
     p.text(186, 305, relative, f, cat="PERSON_NAME", role="relative")
     p.text(333, 307, tw_mobile(rng), fs, cat="PHONE")
@@ -126,9 +131,9 @@ def nhi_referral(doc_id, rng, fk, k) -> Page:
     p.text(603, 896, hosp_tel, font(F_ZH, 15)); p.text(603, 920, f"#{rng.randint(1000, 8999)}", font(F_ZH, 15))
     p.seal(860, 884, doctor + "印", size=58, rng=rng)
     od = rdate(rng, 2026, 2026)
-    ymd_blanks(p, [212, 318, 418], 970, od, f, "DATE")
+    ymd_blanks(p, [212, 318, 418], 970, od, f, "DATE", span=(212, 486))
     ap = rdate(rng, 2026, 2026)
-    ymd_blanks(p, [728, 868, 1018], 962, ap, fs, "DATE")
+    ymd_blanks(p, [728, 868, 1018], 962, ap, fs, "DATE", span=(728, 1110))
     p.text(226, 1020, to_hosp[:4], fs); p.text(455, 1020, "骨科", fs)
     p.text(608, 1020, doctor2, fs, cat="PERSON_NAME", role="professional")
     to_addr = ZH_HOSP[(k + 1) % 3][1]; p.text(950, 1020, to_addr[:9], font(F_ZH, 15)); p.text(950, 1040, to_addr[9:], font(F_ZH, 15))
@@ -140,7 +145,7 @@ def nhi_referral(doc_id, rng, fk, k) -> Page:
         p.text(225, 1415, to_hosp, fs); p.text(865, 1415, ZH_HOSP[(k + 1) % 3][2], fs)
         p.text(250, 1505, doctor2, f, cat="PERSON_NAME", role="professional")
         p.seal(650, 1474, doctor2 + "印", size=54, rng=rng)
-        ymd_blanks(p, [840, 935, 1020], 1500, rdate(rng, 2026, 2026), fs, "DATE")
+        ymd_blanks(p, [840, 935, 1020], 1500, rdate(rng, 2026, 2026), fs, "DATE", span=(840, 1080))
     return p
 
 
@@ -153,9 +158,9 @@ def nhi_card(doc_id, rng, fk, k) -> Page:
     f, fs = font(F_ZH, 26), font(F_ZH, 20)
     sex = rng.choice("MF")
     name, gid = zh_name(fk), tw_national_id(rng, sex)
-    ymd_blanks(p, [972, 1042, 1106], 116, rdate(rng, 2026, 2026), fs, "DATE")
+    ymd_blanks(p, [972, 1042, 1106], 116, rdate(rng, 2026, 2026), fs, "DATE", span=(972, 1152))
     p.text(212, 170, name, f, cat="PERSON_NAME", role="subject")
-    ymd_blanks(p, [620, 695, 757], 170, rdate(rng, 1945, 2008), fs, "DATE_OF_BIRTH", "subject")
+    ymd_blanks(p, [620, 695, 757], 170, rdate(rng, 1945, 2008), fs, "DATE_OF_BIRTH", "subject", span=(565, 812))
     start = len(p.items)
     for i, ch in enumerate(gid):                      # one character per printed box
         p.text(290 + 55 * i + 17, 230, ch, f, cat="TMP")

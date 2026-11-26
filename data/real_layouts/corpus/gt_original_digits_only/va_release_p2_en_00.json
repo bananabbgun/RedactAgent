@@ -1,0 +1,76 @@
+{
+ "id": "va_release_p2_en_00",
+ "template": "va_release_p2_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1275,
+ "height": 1650,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Chavez, Alexander Y",
+   "bbox": [
+    109,
+    103,
+    379,
+    137
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "08/22/1942",
+   "bbox": [
+    937,
+    116,
+    1104,
+    145
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Alexander Chavez",
+   "bbox": [
+    101,
+    837,
+    399,
+    881
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "02/11/2026",
+   "bbox": [
+    914,
+    860,
+    1081,
+    881
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "12/19/2026",
+   "bbox": [
+    351,
+    1513,
+    471,
+    1531
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "J. Miller",
+   "bbox": [
+    691,
+    1519,
+    799,
+    1533
+   ],
+   "role": "professional"
+  }
+ ]
+}

@@ -1,0 +1,4408 @@
+{
+ "A_deterministic": {
+  "missed": [
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "李凱翔"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "徐淑美"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "ADDRESS",
+    "text": "臺北市北投區文化路386號"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "為該校唯一的視障物理教師"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "DATE",
+    "text": "114/06/06"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "DATE",
+    "text": "114/10/15"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "王睿恩"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "DATE",
+    "text": "115 2 22"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "DATE",
+    "text": "115 2 28"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "蔡麗美"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "DATE",
+    "text": "115/05/22"
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "陳志明"
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "劉秋月"
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "ADDRESS",
+    "text": "高雄市左營區復興南路二段69號三樓"
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "DATE",
+    "text": "114/03/16"
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "DATE",
+    "text": "115/01/13"
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "葉睿恩"
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "DATE",
+    "text": "115 11 16"
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "DATE",
+    "text": "115 6 7"
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "李俊雄"
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "DATE",
+    "text": "115/12/16"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "陳文祥"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "李永昌"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "ADDRESS",
+    "text": "新北市新店區忠孝東路288號二樓"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "為馬祖東引唯一的中醫師"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115/08/14"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115/12/26"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "宋文彬"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115 3 17"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115 7 14"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "余淑芬"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115/06/17"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "余淑芬"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115 1 12"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "張明德"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "高美雲"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "ADDRESS",
+    "text": "新竹市東區中正路二段334號"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "DATE",
+    "text": "114/02/19"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "DATE",
+    "text": "114/03/02"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "朱哲維"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "DATE",
+    "text": "115 4 27"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "DATE",
+    "text": "115 4 10"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "李威廷"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "DATE",
+    "text": "115/07/27"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "陳文彬"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "陳子翔"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "ADDRESS",
+    "text": "新竹市北區中正路二段135巷360號一樓"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "QUASI_IDENTIFIER",
+    "text": "是澎湖七美鄉唯一的獸醫"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "DATE",
+    "text": "115/10/07"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "DATE",
+    "text": "115/11/17"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "陳美珍"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "DATE",
+    "text": "115 7 26"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "DATE",
+    "text": "115 8 7"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "阮聰明"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "DATE",
+    "text": "115/10/26"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "李寶珠"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "陳美蘭"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "ADDRESS",
+    "text": "臺中市北區自由路一段378號"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115/08/20"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115/02/02"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "鄭文祥"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115 4 8"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115 5 11"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "張家豪"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115/07/08"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "張家豪"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115 10 26"
+   },
+   {
+    "doc": "nhi_card_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "林承恩"
+   },
+   {
+    "doc": "nhi_card_zh_00",
+    "cat": "GOV_ID",
+    "text": "A 2 1 1 4 8 4 5 0 6"
+   },
+   {
+    "doc": "nhi_card_zh_00",
+    "cat": "PHONE",
+    "text": "04-24873952"
+   },
+   {
+    "doc": "nhi_card_zh_00",
+    "cat": "ADDRESS",
+    "text": "4 3 5 3 7"
+   },
+   {
+    "doc": "nhi_card_zh_00",
+    "cat": "ADDRESS",
+    "text": "臺南市東區自由路三段96巷322號"
+   },
+   {
+    "doc": "nhi_card_zh_00",
+    "cat": "FACE_PHOTO",
+    "text": "portrait"
+   },
+   {
+    "doc": "nhi_card_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "林承恩"
+   },
+   {
+    "doc": "nhi_card_zh_00",
+    "cat": "PERSON_NAME",
+    "text": "林承恩"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "陳志成"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "GOV_ID",
+    "text": "L 2 0 4 3 4 2 9 4 9"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "張志豪"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "PHONE",
+    "text": "07-21586266"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "ADDRESS",
+    "text": "9 1 1 1 5"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "ADDRESS",
+    "text": "高雄市苓雅區中山路102巷261號"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "FACE_PHOTO",
+    "text": "portrait"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "謝秀鳳"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "陳志成"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "陳志成"
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "鄭俊豪"
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "GOV_ID",
+    "text": "J 1 8 1 0 5 7 1 2 2"
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "PHONE",
+    "text": "07-23996839"
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "ADDRESS",
+    "text": "9 8 2 3 4"
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "ADDRESS",
+    "text": "臺中市南屯區中山路三段317號五樓"
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "FACE_PHOTO",
+    "text": "portrait"
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "鄭俊豪"
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "PERSON_NAME",
+    "text": "鄭俊豪"
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "楊冠宇"
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "GOV_ID",
+    "text": "A 2 8 1 2 8 9 4 9 5"
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "鄭子涵"
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "PHONE",
+    "text": "05-29157220"
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "ADDRESS",
+    "text": "6 3 6 1 2"
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "ADDRESS",
+    "text": "新北市板橋區建國路332號六樓"
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "FACE_PHOTO",
+    "text": "portrait"
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "范素貞"
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "楊冠宇"
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "楊冠宇"
+   },
+   {
+    "doc": "va_release_p1_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Miller, Zachary D"
+   },
+   {
+    "doc": "va_release_p1_en_00",
+    "cat": "ADDRESS",
+    "text": "026 Isaiah Knoll Apt. 060"
+   },
+   {
+    "doc": "va_release_p1_en_00",
+    "cat": "ADDRESS",
+    "text": "Sharontown, CT 21694"
+   },
+   {
+    "doc": "va_release_p1_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Victoria Hernandez"
+   },
+   {
+    "doc": "va_release_p1_en_00",
+    "cat": "DATE",
+    "text": "09/11/2024"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Johnson, Dylan J"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "ADDRESS",
+    "text": "1584 Terry Fall Apt. 024"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "ADDRESS",
+    "text": "Brookefort, IN 40177"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Brian Santana"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "DATE",
+    "text": "08/15/2025"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "DATE",
+    "text": "06/18/2025"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Patricia Steele"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "DATE",
+    "text": "06/23/2025"
+   },
+   {
+    "doc": "va_release_p1_en_02",
+    "cat": "PERSON_NAME",
+    "text": "Hays, Denise E"
+   },
+   {
+    "doc": "va_release_p1_en_02",
+    "cat": "ADDRESS",
+    "text": "872 Regina Forest Suite 358"
+   },
+   {
+    "doc": "va_release_p1_en_02",
+    "cat": "ADDRESS",
+    "text": "East Timothyton, IL 98108"
+   },
+   {
+    "doc": "va_release_p1_en_02",
+    "cat": "DATE",
+    "text": "12/18/2025"
+   },
+   {
+    "doc": "va_release_p1_en_02",
+    "cat": "DATE",
+    "text": "03/07/2026"
+   },
+   {
+    "doc": "va_release_p1_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Cardenas, Kyle P"
+   },
+   {
+    "doc": "va_release_p1_en_03",
+    "cat": "DATE_OF_BIRTH",
+    "text": "07/27/1961"
+   },
+   {
+    "doc": "va_release_p1_en_03",
+    "cat": "ADDRESS",
+    "text": "0616 Mendoza Rapids Apt. 658"
+   },
+   {
+    "doc": "va_release_p1_en_03",
+    "cat": "ADDRESS",
+    "text": "East Shaunview, IL 56053"
+   },
+   {
+    "doc": "va_release_p1_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Jessica Miller"
+   },
+   {
+    "doc": "va_release_p1_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Jacqueline Robertson"
+   },
+   {
+    "doc": "va_release_p2_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Chavez, Alexander Y"
+   },
+   {
+    "doc": "va_release_p2_en_00",
+    "cat": "SIGNATURE",
+    "text": "Alexander Chavez"
+   },
+   {
+    "doc": "va_release_p2_en_00",
+    "cat": "PERSON_NAME",
+    "text": "J. Miller"
+   },
+   {
+    "doc": "va_release_p2_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Jones, Laura S"
+   },
+   {
+    "doc": "va_release_p2_en_01",
+    "cat": "SIGNATURE",
+    "text": "Charles Lopez"
+   },
+   {
+    "doc": "va_release_p2_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Charles Lopez"
+   },
+   {
+    "doc": "va_release_p2_en_01",
+    "cat": "PERSON_NAME",
+    "text": "K. Horne"
+   },
+   {
+    "doc": "va_release_p2_en_02",
+    "cat": "PERSON_NAME",
+    "text": "Austin, Christina S"
+   },
+   {
+    "doc": "va_release_p2_en_02",
+    "cat": "SIGNATURE",
+    "text": "Christina Austin"
+   },
+   {
+    "doc": "va_release_p2_en_02",
+    "cat": "PERSON_NAME",
+    "text": "C. Clark"
+   },
+   {
+    "doc": "va_release_p2_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Myers, Walter D"
+   },
+   {
+    "doc": "va_release_p2_en_03",
+    "cat": "SIGNATURE",
+    "text": "Michelle Reid"
+   },
+   {
+    "doc": "va_release_p2_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Michelle Myers"
+   },
+   {
+    "doc": "va_release_p2_en_03",
+    "cat": "PERSON_NAME",
+    "text": "H. Wolfe"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "HEALTH_INSURANCE_NO",
+    "text": "6F71QU6YX42"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "PERSON_NAME",
+    "text": "RICHARD, MICHAEL, Y"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "DATE_OF_BIRTH",
+    "text": "05  25  1953"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "PERSON_NAME",
+    "text": "RICHARD, MICHAEL"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "ADDRESS",
+    "text": "7699 TANNER MALL"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "ADDRESS",
+    "text": "KATIEMOUTH"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "ADDRESS",
+    "text": "65217"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "PHONE",
+    "text": "538 705-7201"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "DATE",
+    "text": "01 20 26"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "DATE",
+    "text": "01 23 26"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "DATE",
+    "text": "01 20 26"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "DATE",
+    "text": "01 21 26"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "MEDICAL_RECORD_NO",
+    "text": "PT470651"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "SIGNATURE",
+    "text": "Traci West MD"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "HEALTH_INSURANCE_NO",
+    "text": "8R74V29CD75"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "PERSON_NAME",
+    "text": "DICKERSON, TROY, Q"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "DATE_OF_BIRTH",
+    "text": "12  13  1953"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "PERSON_NAME",
+    "text": "DICKERSON, TROY"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "ADDRESS",
+    "text": "75660 KEMP LOAF"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "ADDRESS",
+    "text": "NORTH MARK"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "ADDRESS",
+    "text": "76702"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "PHONE",
+    "text": "903 888-6382"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "DATE",
+    "text": "07 21 26"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "DATE",
+    "text": "07 24 26"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "MEDICAL_RECORD_NO",
+    "text": "PT440985"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SIGNATURE",
+    "text": "Robert Horn MD"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "HEALTH_INSURANCE_NO",
+    "text": "7XV0J32UC86"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "PERSON_NAME",
+    "text": "DECKER, MARIA, Q"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "DATE_OF_BIRTH",
+    "text": "12  24  1949"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "PERSON_NAME",
+    "text": "DECKER, MARIA"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "ADDRESS",
+    "text": "27086 ADKINS FLAT"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "ADDRESS",
+    "text": "TERESABERG"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "ADDRESS",
+    "text": "21252"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "PHONE",
+    "text": "548 423-3243"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "DATE",
+    "text": "03 16 26"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "DATE",
+    "text": "03 19 26"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "DATE",
+    "text": "03 16 26"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "DATE",
+    "text": "03 17 26"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "MEDICAL_RECORD_NO",
+    "text": "PT611124"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "SIGNATURE",
+    "text": "Travis George MD"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "HEALTH_INSURANCE_NO",
+    "text": "4NG1M22FW22"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "PERSON_NAME",
+    "text": "JACKSON, JAMIE, D"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "DATE_OF_BIRTH",
+    "text": "08  13  1941"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "PERSON_NAME",
+    "text": "JACKSON, JAMIE"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "ADDRESS",
+    "text": "228 DONALD MOUNT SUITE 732"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "ADDRESS",
+    "text": "LAKE ADAM"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "ADDRESS",
+    "text": "04326"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "PHONE",
+    "text": "690 864-4120"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "DATE",
+    "text": "03 24 26"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "DATE",
+    "text": "03 27 26"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "DATE",
+    "text": "03 24 26"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "DATE",
+    "text": "03 25 26"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "MEDICAL_RECORD_NO",
+    "text": "PT348170"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "SIGNATURE",
+    "text": "Todd Graves MD"
+   }
+  ],
+  "false_positives": [
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "PHONE",
+    "text": "(02)2799-1199",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "EMAIL",
+    "text": "referral@kangning-hosp.org.tw",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "PHONE",
+    "text": "(02)2963-5200",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "PHONE",
+    "text": "(02)2963-5299",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "EMAIL",
+    "text": "referral@renhe-hosp.org.tw",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "PHONE",
+    "text": "(02)2963-5200",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "PHONE",
+    "text": "(04)2358-3300",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PHONE",
+    "text": "(04)2358-3399",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "EMAIL",
+    "text": "referral@anxin-hosp.org.tw",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PHONE",
+    "text": "(04)2358-3300",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PHONE",
+    "text": "(02)2799-1100",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PHONE",
+    "text": "(02)2799-1100",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "PHONE",
+    "text": "(02)2799-1199",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "EMAIL",
+    "text": "referral@kangning-hosp.org.tw",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "PHONE",
+    "text": "(02)2799-1100",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "PHONE",
+    "text": "(02)2963-5200",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "PHONE",
+    "text": "(02)2963-5299",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "EMAIL",
+    "text": "referral@renhe-hosp.org.tw",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "PHONE",
+    "text": "(02)2963-5200",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "PHONE",
+    "text": "(04)2358-3300",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PHONE",
+    "text": "(04)2358-3399",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "EMAIL",
+    "text": "referral@anxin-hosp.org.tw",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PHONE",
+    "text": "(04)2358-3300",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PHONE",
+    "text": "(02)2799-1100",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PHONE",
+    "text": "(02)2799-1100",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_00",
+    "cat": "PHONE",
+    "text": "0921-766-779",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "PHONE",
+    "text": "0949-683-455",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "PHONE",
+    "text": "0966-390-629",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "PHONE",
+    "text": "0973-540-957",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   }
+  ]
+ },
+ "B_plus_llm": {
+  "missed": [
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "DATE",
+    "text": "114/06/06"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "DATE",
+    "text": "114/10/15"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "DATE",
+    "text": "115 2 22"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "DATE",
+    "text": "115 2 28"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "DATE",
+    "text": "115/05/22"
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "DATE",
+    "text": "115 11 16"
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "DATE",
+    "text": "115 6 7"
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "李俊雄"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115/08/14"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115/12/26"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115 3 17"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115 7 14"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115/06/17"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115 1 12"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "DATE",
+    "text": "114/02/19"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "DATE",
+    "text": "114/03/02"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "DATE",
+    "text": "115 4 27"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "DATE",
+    "text": "115 4 10"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "DATE",
+    "text": "115/07/27"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "DATE",
+    "text": "115/10/07"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "DATE",
+    "text": "115/11/17"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "DATE",
+    "text": "115 7 26"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "DATE",
+    "text": "115 8 7"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "阮聰明"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "DATE",
+    "text": "115/10/26"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115 4 8"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115 5 11"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "張家豪"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115 10 26"
+   },
+   {
+    "doc": "nhi_card_zh_00",
+    "cat": "GOV_ID",
+    "text": "A 2 1 1 4 8 4 5 0 6"
+   },
+   {
+    "doc": "nhi_card_zh_00",
+    "cat": "ADDRESS",
+    "text": "4 3 5 3 7"
+   },
+   {
+    "doc": "nhi_card_zh_00",
+    "cat": "FACE_PHOTO",
+    "text": "portrait"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "GOV_ID",
+    "text": "L 2 0 4 3 4 2 9 4 9"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "張志豪"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "ADDRESS",
+    "text": "9 1 1 1 5"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "FACE_PHOTO",
+    "text": "portrait"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "陳志成"
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "GOV_ID",
+    "text": "J 1 8 1 0 5 7 1 2 2"
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "ADDRESS",
+    "text": "9 8 2 3 4"
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "FACE_PHOTO",
+    "text": "portrait"
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "GOV_ID",
+    "text": "A 2 8 1 2 8 9 4 9 5"
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "ADDRESS",
+    "text": "6 3 6 1 2"
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "FACE_PHOTO",
+    "text": "portrait"
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "楊冠宇"
+   },
+   {
+    "doc": "va_release_p1_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Miller, Zachary D"
+   },
+   {
+    "doc": "va_release_p1_en_00",
+    "cat": "DATE",
+    "text": "09/11/2024"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Brian Santana"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "DATE",
+    "text": "08/15/2025"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "DATE",
+    "text": "06/18/2025"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Patricia Steele"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "DATE",
+    "text": "06/23/2025"
+   },
+   {
+    "doc": "va_release_p1_en_02",
+    "cat": "DATE",
+    "text": "12/18/2025"
+   },
+   {
+    "doc": "va_release_p1_en_02",
+    "cat": "DATE",
+    "text": "03/07/2026"
+   },
+   {
+    "doc": "va_release_p2_en_00",
+    "cat": "PERSON_NAME",
+    "text": "J. Miller"
+   },
+   {
+    "doc": "va_release_p2_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Charles Lopez"
+   },
+   {
+    "doc": "va_release_p2_en_02",
+    "cat": "SIGNATURE",
+    "text": "Christina Austin"
+   },
+   {
+    "doc": "va_release_p2_en_02",
+    "cat": "PERSON_NAME",
+    "text": "C. Clark"
+   },
+   {
+    "doc": "va_release_p2_en_03",
+    "cat": "PERSON_NAME",
+    "text": "Michelle Myers"
+   },
+   {
+    "doc": "va_release_p2_en_03",
+    "cat": "PERSON_NAME",
+    "text": "H. Wolfe"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "PERSON_NAME",
+    "text": "RICHARD, MICHAEL, Y"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "DATE_OF_BIRTH",
+    "text": "05  25  1953"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "PERSON_NAME",
+    "text": "RICHARD, MICHAEL"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "ADDRESS",
+    "text": "7699 TANNER MALL"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "ADDRESS",
+    "text": "KATIEMOUTH"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "ADDRESS",
+    "text": "65217"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "PHONE",
+    "text": "538 705-7201"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "DATE",
+    "text": "01 20 26"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "DATE",
+    "text": "01 23 26"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "DATE",
+    "text": "01 20 26"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "DATE",
+    "text": "01 21 26"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "MEDICAL_RECORD_NO",
+    "text": "PT470651"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "HEALTH_INSURANCE_NO",
+    "text": "8R74V29CD75"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "PERSON_NAME",
+    "text": "DICKERSON, TROY, Q"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "DATE_OF_BIRTH",
+    "text": "12  13  1953"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "PERSON_NAME",
+    "text": "DICKERSON, TROY"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "ADDRESS",
+    "text": "75660 KEMP LOAF"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "ADDRESS",
+    "text": "NORTH MARK"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "ADDRESS",
+    "text": "76702"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "DATE",
+    "text": "07 21 26"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "DATE",
+    "text": "07 24 26"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "MEDICAL_RECORD_NO",
+    "text": "PT440985"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "PERSON_NAME",
+    "text": "DECKER, MARIA, Q"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "DATE_OF_BIRTH",
+    "text": "12  24  1949"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "PERSON_NAME",
+    "text": "DECKER, MARIA"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "ADDRESS",
+    "text": "27086 ADKINS FLAT"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "ADDRESS",
+    "text": "TERESABERG"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "ADDRESS",
+    "text": "21252"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "DATE",
+    "text": "03 16 26"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "DATE",
+    "text": "03 19 26"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "DATE",
+    "text": "03 16 26"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "DATE",
+    "text": "03 17 26"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "HEALTH_INSURANCE_NO",
+    "text": "4NG1M22FW22"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "PERSON_NAME",
+    "text": "JACKSON, JAMIE, D"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "DATE_OF_BIRTH",
+    "text": "08  13  1941"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "PERSON_NAME",
+    "text": "JACKSON, JAMIE"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "ADDRESS",
+    "text": "228 DONALD MOUNT SUITE 732"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "ADDRESS",
+    "text": "LAKE ADAM"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "ADDRESS",
+    "text": "04326"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "PHONE",
+    "text": "690 864-4120"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "DATE",
+    "text": "03 24 26"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "DATE",
+    "text": "03 27 26"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "DATE",
+    "text": "03 24 26"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "DATE",
+    "text": "03 25 26"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "MEDICAL_RECORD_NO",
+    "text": "PT348170"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "SIGNATURE",
+    "text": "Todd Graves MD"
+   }
+  ],
+  "false_positives": [
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "PHONE",
+    "text": "(02)2799-1199",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "EMAIL",
+    "text": "referral@kangning-hosp.org.tw",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "PHONE",
+    "text": "(02)2963-5200",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "PHONE",
+    "text": "(02)2963-5299",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "EMAIL",
+    "text": "referral@renhe-hosp.org.tw",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "PHONE",
+    "text": "(02)2963-5200",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "PHONE",
+    "text": "(04)2358-3300",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "DATE",
+    "text": "114/03/16",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "DATE",
+    "text": "115/01/13",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "ADDRESS",
+    "text": "新北市板桥區文化路一段188号",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PHONE",
+    "text": "(04)2358-3399",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "EMAIL",
+    "text": "referral@anxin-hosp.org.tw",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PHONE",
+    "text": "(04)2358-3300",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PHONE",
+    "text": "(02)2799-1100",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PHONE",
+    "text": "(02)2799-1100",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "PHONE",
+    "text": "(02)2799-1199",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "EMAIL",
+    "text": "referral@kangning-hosp.org.tw",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "PHONE",
+    "text": "(02)2799-1100",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "PHONE",
+    "text": "(02)2963-5200",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "PHONE",
+    "text": "(02)2963-5299",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "EMAIL",
+    "text": "referral@renhe-hosp.org.tw",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "PHONE",
+    "text": "(02)2963-5200",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "PHONE",
+    "text": "(04)2358-3300",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PHONE",
+    "text": "(04)2358-3399",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "EMAIL",
+    "text": "referral@anxin-hosp.org.tw",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PHONE",
+    "text": "(04)2358-3300",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PHONE",
+    "text": "(02)2799-1100",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PHONE",
+    "text": "(02)2799-1100",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "ADDRESS",
+    "text": "臺中市西屯區台灣大道四段966号",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "ADDRESS",
+    "text": "北市内湖區成功路",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115/08/20",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115/02/02",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_00",
+    "cat": "PHONE",
+    "text": "0921-766-779",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "PHONE",
+    "text": "0949-683-455",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "代辨人謝秀鳳",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "PHONE",
+    "text": "07-21586266",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "PHONE",
+    "text": "0966-390-629",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "PHONE",
+    "text": "07-23996839",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "PHONE",
+    "text": "0973-540-957",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "PHONE",
+    "text": "05-29157220",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "va_release_p1_en_03",
+    "cat": "DATE",
+    "text": "MAY2026",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "va_release_p1_en_03",
+    "cat": "DATE",
+    "text": "10-5345",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "va_release_p2_en_00",
+    "cat": "DATE",
+    "text": "MAY2026",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "va_release_p2_en_01",
+    "cat": "PERSON_NAME",
+    "text": "K. Horne",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "FINANCIAL_ACCOUNT",
+    "text": "82-2143273",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   }
+  ]
+ },
+ "C_full": {
+  "missed": [
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "DATE",
+    "text": "114/06/06"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "DATE",
+    "text": "114/10/15"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "DATE",
+    "text": "115 2 22"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "DATE",
+    "text": "115 2 28"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "DATE",
+    "text": "115/05/22"
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "DATE",
+    "text": "115 11 16"
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "DATE",
+    "text": "115 6 7"
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "李俊雄"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115/08/14"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115/12/26"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115 3 17"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115 7 14"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115/06/17"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115 1 12"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "DATE",
+    "text": "114/02/19"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "DATE",
+    "text": "114/03/02"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "DATE",
+    "text": "115 4 27"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "DATE",
+    "text": "115 4 10"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "DATE",
+    "text": "115/07/27"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "DATE",
+    "text": "115/10/07"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "DATE",
+    "text": "115/11/17"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "DATE",
+    "text": "115 7 26"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "DATE",
+    "text": "115 8 7"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "PERSON_NAME",
+    "text": "阮聰明"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "DATE",
+    "text": "115/10/26"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115 4 8"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115 5 11"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PERSON_NAME",
+    "text": "張家豪"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115 10 26"
+   },
+   {
+    "doc": "nhi_card_zh_00",
+    "cat": "GOV_ID",
+    "text": "A 2 1 1 4 8 4 5 0 6"
+   },
+   {
+    "doc": "nhi_card_zh_00",
+    "cat": "ADDRESS",
+    "text": "4 3 5 3 7"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "GOV_ID",
+    "text": "L 2 0 4 3 4 2 9 4 9"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "張志豪"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "ADDRESS",
+    "text": "9 1 1 1 5"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "陳志成"
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "GOV_ID",
+    "text": "J 1 8 1 0 5 7 1 2 2"
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "ADDRESS",
+    "text": "9 8 2 3 4"
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "GOV_ID",
+    "text": "A 2 8 1 2 8 9 4 9 5"
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "ADDRESS",
+    "text": "6 3 6 1 2"
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "PERSON_NAME",
+    "text": "楊冠宇"
+   },
+   {
+    "doc": "va_release_p1_en_00",
+    "cat": "PERSON_NAME",
+    "text": "Miller, Zachary D"
+   },
+   {
+    "doc": "va_release_p1_en_00",
+    "cat": "DATE",
+    "text": "09/11/2024"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Brian Santana"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "DATE",
+    "text": "08/15/2025"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "DATE",
+    "text": "06/18/2025"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Patricia Steele"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "DATE",
+    "text": "06/23/2025"
+   },
+   {
+    "doc": "va_release_p1_en_02",
+    "cat": "DATE",
+    "text": "12/18/2025"
+   },
+   {
+    "doc": "va_release_p1_en_02",
+    "cat": "DATE",
+    "text": "03/07/2026"
+   },
+   {
+    "doc": "va_release_p2_en_00",
+    "cat": "PERSON_NAME",
+    "text": "J. Miller"
+   },
+   {
+    "doc": "va_release_p2_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Charles Lopez"
+   },
+   {
+    "doc": "va_release_p2_en_02",
+    "cat": "PERSON_NAME",
+    "text": "C. Clark"
+   },
+   {
+    "doc": "va_release_p2_en_03",
+    "cat": "PERSON_NAME",
+    "text": "H. Wolfe"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "PERSON_NAME",
+    "text": "RICHARD, MICHAEL, Y"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "DATE_OF_BIRTH",
+    "text": "05  25  1953"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "PERSON_NAME",
+    "text": "RICHARD, MICHAEL"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "ADDRESS",
+    "text": "7699 TANNER MALL"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "ADDRESS",
+    "text": "KATIEMOUTH"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "ADDRESS",
+    "text": "65217"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "PHONE",
+    "text": "538 705-7201"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "DATE",
+    "text": "01 20 26"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "DATE",
+    "text": "01 23 26"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "DATE",
+    "text": "01 20 26"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "DATE",
+    "text": "01 21 26"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "MEDICAL_RECORD_NO",
+    "text": "PT470651"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "HEALTH_INSURANCE_NO",
+    "text": "8R74V29CD75"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "PERSON_NAME",
+    "text": "DICKERSON, TROY, Q"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "DATE_OF_BIRTH",
+    "text": "12  13  1953"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "PERSON_NAME",
+    "text": "DICKERSON, TROY"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "ADDRESS",
+    "text": "75660 KEMP LOAF"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "ADDRESS",
+    "text": "NORTH MARK"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "ADDRESS",
+    "text": "76702"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "DATE",
+    "text": "07 21 26"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "DATE",
+    "text": "07 24 26"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "MEDICAL_RECORD_NO",
+    "text": "PT440985"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "PERSON_NAME",
+    "text": "DECKER, MARIA, Q"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "DATE_OF_BIRTH",
+    "text": "12  24  1949"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "PERSON_NAME",
+    "text": "DECKER, MARIA"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "ADDRESS",
+    "text": "27086 ADKINS FLAT"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "ADDRESS",
+    "text": "TERESABERG"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "ADDRESS",
+    "text": "21252"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "DATE",
+    "text": "03 16 26"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "DATE",
+    "text": "03 19 26"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "DATE",
+    "text": "03 16 26"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "DATE",
+    "text": "03 17 26"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "HEALTH_INSURANCE_NO",
+    "text": "4NG1M22FW22"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "PERSON_NAME",
+    "text": "JACKSON, JAMIE, D"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "DATE_OF_BIRTH",
+    "text": "08  13  1941"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "PERSON_NAME",
+    "text": "JACKSON, JAMIE"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "ADDRESS",
+    "text": "228 DONALD MOUNT SUITE 732"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "ADDRESS",
+    "text": "LAKE ADAM"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "ADDRESS",
+    "text": "04326"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "PHONE",
+    "text": "690 864-4120"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "DATE",
+    "text": "03 24 26"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "DATE",
+    "text": "03 27 26"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "DATE",
+    "text": "03 24 26"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "DATE",
+    "text": "03 25 26"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "MEDICAL_RECORD_NO",
+    "text": "PT348170"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "SIGNATURE",
+    "text": "Todd Graves MD"
+   }
+  ],
+  "false_positives": [
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "PHONE",
+    "text": "(02)2799-1199",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "EMAIL",
+    "text": "referral@kangning-hosp.org.tw",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "PHONE",
+    "text": "(02)2963-5200",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "PHONE",
+    "text": "(02)2963-5299",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "EMAIL",
+    "text": "referral@renhe-hosp.org.tw",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "PHONE",
+    "text": "(02)2963-5200",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "PHONE",
+    "text": "(04)2358-3300",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "DATE",
+    "text": "114/03/16",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "DATE",
+    "text": "115/01/13",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "ADDRESS",
+    "text": "新北市板桥區文化路一段188号",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PHONE",
+    "text": "(04)2358-3399",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "EMAIL",
+    "text": "referral@anxin-hosp.org.tw",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PHONE",
+    "text": "(04)2358-3300",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PHONE",
+    "text": "(02)2799-1100",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PHONE",
+    "text": "(02)2799-1100",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "PHONE",
+    "text": "(02)2799-1199",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "EMAIL",
+    "text": "referral@kangning-hosp.org.tw",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "PHONE",
+    "text": "(02)2799-1100",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "PHONE",
+    "text": "(02)2963-5200",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "PHONE",
+    "text": "(02)2963-5299",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "EMAIL",
+    "text": "referral@renhe-hosp.org.tw",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "PHONE",
+    "text": "(02)2963-5200",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "PHONE",
+    "text": "(04)2358-3300",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PHONE",
+    "text": "(04)2358-3399",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "EMAIL",
+    "text": "referral@anxin-hosp.org.tw",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PHONE",
+    "text": "(04)2358-3300",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PHONE",
+    "text": "(02)2799-1100",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PHONE",
+    "text": "(02)2799-1100",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "ADDRESS",
+    "text": "臺中市西屯區台灣大道四段966号",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "ADDRESS",
+    "text": "北市内湖區成功路",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115/08/20",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115/02/02",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_00",
+    "cat": "PHONE",
+    "text": "0921-766-779",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "PHONE",
+    "text": "0949-683-455",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "代辨人謝秀鳳",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "PHONE",
+    "text": "07-21586266",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "PHONE",
+    "text": "0966-390-629",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "PHONE",
+    "text": "07-23996839",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "PHONE",
+    "text": "0973-540-957",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "PHONE",
+    "text": "05-29157220",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "va_release_p1_en_03",
+    "cat": "DATE",
+    "text": "MAY2026",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "va_release_p1_en_03",
+    "cat": "DATE",
+    "text": "10-5345",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "va_release_p2_en_00",
+    "cat": "DATE",
+    "text": "MAY2026",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "va_release_p2_en_00",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "vlm"
+    ]
+   },
+   {
+    "doc": "va_release_p2_en_01",
+    "cat": "PERSON_NAME",
+    "text": "K. Horne",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "va_release_p2_en_01",
+    "cat": "SIGNATURE",
+    "text": "signature",
+    "sources": [
+     "vlm"
+    ]
+   },
+   {
+    "doc": "va_release_p2_en_02",
+    "cat": "SIGNATURE",
+    "text": "signature",
+    "sources": [
+     "vlm"
+    ]
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SIGNATURE",
+    "text": "signature",
+    "sources": [
+     "vlm"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "FINANCIAL_ACCOUNT",
+    "text": "82-2143273",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "SIGNATURE",
+    "text": "signature",
+    "sources": [
+     "vlm"
+    ]
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   }
+  ]
+ },
+ "D_agentic": {
+  "missed": [
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "DATE",
+    "text": "114/06/06"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "DATE",
+    "text": "114/10/15"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "DATE",
+    "text": "115 2 22"
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "DATE",
+    "text": "115 2 28"
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "DATE",
+    "text": "115 11 16"
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "DATE",
+    "text": "115 6 7"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115 3 17"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115 7 14"
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "115 1 12"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "DATE",
+    "text": "114/02/19"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "DATE",
+    "text": "114/03/02"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "DATE",
+    "text": "115 4 27"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "DATE",
+    "text": "115 4 10"
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "DATE",
+    "text": "115/07/27"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "DATE",
+    "text": "115 7 26"
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "DATE",
+    "text": "115 8 7"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115 4 8"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115 5 11"
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115 10 26"
+   },
+   {
+    "doc": "nhi_card_zh_00",
+    "cat": "GOV_ID",
+    "text": "A 2 1 1 4 8 4 5 0 6"
+   },
+   {
+    "doc": "nhi_card_zh_00",
+    "cat": "ADDRESS",
+    "text": "4 3 5 3 7"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "GOV_ID",
+    "text": "L 2 0 4 3 4 2 9 4 9"
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "ADDRESS",
+    "text": "9 1 1 1 5"
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "GOV_ID",
+    "text": "J 1 8 1 0 5 7 1 2 2"
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "ADDRESS",
+    "text": "9 8 2 3 4"
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "GOV_ID",
+    "text": "A 2 8 1 2 8 9 4 9 5"
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "ADDRESS",
+    "text": "6 3 6 1 2"
+   },
+   {
+    "doc": "va_release_p1_en_00",
+    "cat": "DATE",
+    "text": "09/11/2024"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Brian Santana"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "DATE",
+    "text": "08/15/2025"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "DATE",
+    "text": "06/18/2025"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Patricia Steele"
+   },
+   {
+    "doc": "va_release_p1_en_01",
+    "cat": "DATE",
+    "text": "06/23/2025"
+   },
+   {
+    "doc": "va_release_p1_en_02",
+    "cat": "DATE",
+    "text": "12/18/2025"
+   },
+   {
+    "doc": "va_release_p1_en_02",
+    "cat": "DATE",
+    "text": "03/07/2026"
+   },
+   {
+    "doc": "va_release_p2_en_01",
+    "cat": "PERSON_NAME",
+    "text": "Charles Lopez"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "PERSON_NAME",
+    "text": "RICHARD, MICHAEL, Y"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "DATE_OF_BIRTH",
+    "text": "05  25  1953"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "PERSON_NAME",
+    "text": "RICHARD, MICHAEL"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "ADDRESS",
+    "text": "KATIEMOUTH"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "ADDRESS",
+    "text": "65217"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "DATE",
+    "text": "01 20 26"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "DATE",
+    "text": "01 23 26"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "DATE",
+    "text": "01 20 26"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "DATE",
+    "text": "01 21 26"
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "MEDICAL_RECORD_NO",
+    "text": "PT470651"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "HEALTH_INSURANCE_NO",
+    "text": "8R74V29CD75"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "PERSON_NAME",
+    "text": "DICKERSON, TROY, Q"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "DATE_OF_BIRTH",
+    "text": "12  13  1953"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "PERSON_NAME",
+    "text": "DICKERSON, TROY"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "ADDRESS",
+    "text": "NORTH MARK"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "ADDRESS",
+    "text": "76702"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "DATE",
+    "text": "07 21 26"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "DATE",
+    "text": "07 24 26"
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "MEDICAL_RECORD_NO",
+    "text": "PT440985"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "PERSON_NAME",
+    "text": "DECKER, MARIA, Q"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "DATE_OF_BIRTH",
+    "text": "12  24  1949"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "PERSON_NAME",
+    "text": "DECKER, MARIA"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "ADDRESS",
+    "text": "TERESABERG"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "ADDRESS",
+    "text": "21252"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "DATE",
+    "text": "03 16 26"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "DATE",
+    "text": "03 19 26"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "DATE",
+    "text": "03 16 26"
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "DATE",
+    "text": "03 17 26"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "HEALTH_INSURANCE_NO",
+    "text": "4NG1M22FW22"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "PERSON_NAME",
+    "text": "JACKSON, JAMIE, D"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "DATE_OF_BIRTH",
+    "text": "08  13  1941"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "PERSON_NAME",
+    "text": "JACKSON, JAMIE"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "ADDRESS",
+    "text": "LAKE ADAM"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "ADDRESS",
+    "text": "04326"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "DATE",
+    "text": "03 24 26"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "DATE",
+    "text": "03 27 26"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "DATE",
+    "text": "03 24 26"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "DATE",
+    "text": "03 25 26"
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "SIGNATURE",
+    "text": "Todd Graves MD"
+   }
+  ],
+  "false_positives": [
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "PHONE",
+    "text": "(02)2799-1199",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "EMAIL",
+    "text": "referral@kangning-hosp.org.tw",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "PHONE",
+    "text": "(02)2963-5200",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "ADDRESS",
+    "text": "嘉北市内湖區成功路二段312号",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "ADDRESS",
+    "text": "地址·新北市板桥區文化路",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_00",
+    "cat": "DATE",
+    "text": "有效期限115/05/22",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "PHONE",
+    "text": "(02)2963-5299",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "EMAIL",
+    "text": "referral@renhe-hosp.org.tw",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "PHONE",
+    "text": "(02)2963-5200",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "PHONE",
+    "text": "(04)2358-3300",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "DATE",
+    "text": "114/03/16",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "DATE",
+    "text": "115/01/13",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "ADDRESS",
+    "text": "新北市板桥區文化路一段188号",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_01",
+    "cat": "ADDRESS",
+    "text": "道四段966號",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PHONE",
+    "text": "(04)2358-3399",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "EMAIL",
+    "text": "referral@anxin-hosp.org.tw",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PHONE",
+    "text": "(04)2358-3300",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PHONE",
+    "text": "(02)2799-1100",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "PHONE",
+    "text": "(02)2799-1100",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "ADDRESS",
+    "text": "嘉中市西屯區台灣大道四段966号",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "日期：115/08/14",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "日期 : 115/12/26",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_02",
+    "cat": "DATE",
+    "text": "有效期限115/06/17",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "PHONE",
+    "text": "(02)2799-1199",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "EMAIL",
+    "text": "referral@kangning-hosp.org.tw",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "PHONE",
+    "text": "(02)2799-1100",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_03",
+    "cat": "PHONE",
+    "text": "(02)2963-5200",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "PHONE",
+    "text": "(02)2963-5299",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "EMAIL",
+    "text": "referral@renhe-hosp.org.tw",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "PHONE",
+    "text": "(02)2963-5200",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "PHONE",
+    "text": "(04)2358-3300",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "ADDRESS",
+    "text": "新北市板橋區文化路一段188号",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "ADDRESS",
+    "text": "道四段966号",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "DATE",
+    "text": "日期：115/10/07",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "DATE",
+    "text": "日期：115/11/17",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_04",
+    "cat": "DATE",
+    "text": "有效期限115/10/26",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PHONE",
+    "text": "(04)2358-3399",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "EMAIL",
+    "text": "referral@anxin-hosp.org.tw",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PHONE",
+    "text": "(04)2358-3300",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PHONE",
+    "text": "(02)2799-1100",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "PHONE",
+    "text": "(02)2799-1100",
+    "sources": [
+     "rule"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "ADDRESS",
+    "text": "臺中市西屯區台灣大道四段966号",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "ADDRESS",
+    "text": "北市内湖區成功路",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115/08/20",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_referral_zh_05",
+    "cat": "DATE",
+    "text": "115/02/02",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_00",
+    "cat": "PHONE",
+    "text": "0921-766-779",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "PHONE",
+    "text": "0949-683-455",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "PERSON_NAME",
+    "text": "代辨人謝秀鳳",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_01",
+    "cat": "PHONE",
+    "text": "07-21586266",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "PHONE",
+    "text": "0966-390-629",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_02",
+    "cat": "PHONE",
+    "text": "07-23996839",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "PHONE",
+    "text": "0973-540-957",
+    "sources": [
+     "rule",
+     "llm"
+    ]
+   },
+   {
+    "doc": "nhi_card_zh_03",
+    "cat": "PHONE",
+    "text": "05-29157220",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "va_release_p1_en_00",
+    "cat": "ADDRESS",
+    "text": "LakeshoreOrthopedics,455HarborSt,Racine,W153403",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "va_release_p1_en_03",
+    "cat": "DATE",
+    "text": "MAY2026",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "va_release_p1_en_03",
+    "cat": "DATE",
+    "text": "10-5345",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "va_release_p1_en_03",
+    "cat": "ADDRESS",
+    "text": "BrightwaterFamilyPractice,2101ElmAve,Dayton,OH45402",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "va_release_p2_en_00",
+    "cat": "DATE",
+    "text": "MAY2026",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "va_release_p2_en_00",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "vlm"
+    ]
+   },
+   {
+    "doc": "va_release_p2_en_00",
+    "cat": "PERSON_NAME",
+    "text": "J.Miller, ROI Unit",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "va_release_p2_en_01",
+    "cat": "PERSON_NAME",
+    "text": "K. Horne",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "va_release_p2_en_01",
+    "cat": "SIGNATURE",
+    "text": "signature",
+    "sources": [
+     "vlm"
+    ]
+   },
+   {
+    "doc": "va_release_p2_en_02",
+    "cat": "SIGNATURE",
+    "text": "signature",
+    "sources": [
+     "vlm"
+    ]
+   },
+   {
+    "doc": "va_release_p2_en_02",
+    "cat": "PERSON_NAME",
+    "text": "c. Clark",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "va_release_p2_en_03",
+    "cat": "PERSON_NAME",
+    "text": "H.Wolfe,ROI Unit",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "cms1500_en_00",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SIGNATURE",
+    "text": "signature",
+    "sources": [
+     "vlm"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_01",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "FINANCIAL_ACCOUNT",
+    "text": "82-2143273",
+    "sources": [
+     "llm"
+    ]
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "SIGNATURE",
+    "text": "signature",
+    "sources": [
+     "vlm"
+    ]
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_02",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "SEAL_STAMP",
+    "text": "seal_stamp",
+    "sources": [
+     "cv"
+    ]
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "FINANCIAL_ACCOUNT",
+    "text": "13-9140551",
+    "sources": [
+     "agent"
+    ]
+   },
+   {
+    "doc": "cms1500_en_03",
+    "cat": "ADDRESS",
+    "text": "2101 ELM AVE,DAYTON,OH 45402",
+    "sources": [
+     "agent"
+    ]
+   }
+  ]
+ }
+}

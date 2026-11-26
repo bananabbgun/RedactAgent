@@ -1,0 +1,98 @@
+{
+ "id": "va_release_p2_en_03",
+ "template": "va_release_p2_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1275,
+ "height": 1650,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Myers, Walter D",
+   "bbox": [
+    98,
+    112,
+    312,
+    143
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "05/13/1974",
+   "bbox": [
+    926,
+    111,
+    1091,
+    138
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "04/21/2027",
+   "bbox": [
+    358,
+    714,
+    505,
+    735
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Michelle Reid",
+   "bbox": [
+    102,
+    918,
+    336,
+    959
+   ],
+   "role": "relative"
+  },
+  {
+   "cat": "DATE",
+   "text": "08/24/2026",
+   "bbox": [
+    915,
+    929,
+    1085,
+    949
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Michelle Myers",
+   "bbox": [
+    100,
+    995,
+    298,
+    1029
+   ],
+   "role": "relative"
+  },
+  {
+   "cat": "DATE",
+   "text": "11/13/2026",
+   "bbox": [
+    362,
+    1517,
+    482,
+    1534
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "H. Wolfe",
+   "bbox": [
+    702,
+    1518,
+    798,
+    1531
+   ],
+   "role": "professional"
+  }
+ ]
+}

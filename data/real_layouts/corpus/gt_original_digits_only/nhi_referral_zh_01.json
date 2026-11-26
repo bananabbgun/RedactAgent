@@ -1,0 +1,164 @@
+{
+ "id": "nhi_referral_zh_01",
+ "template": "nhi_referral_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳志明",
+   "bbox": [
+    180,
+    243,
+    246,
+    263
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "32 7 28",
+   "bbox": [
+    616,
+    239,
+    796,
+    258
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "L111179463",
+   "bbox": [
+    887,
+    237,
+    1007,
+    254
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "劉秋月",
+   "bbox": [
+    181,
+    315,
+    247,
+    334
+   ],
+   "role": "relative"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0971-420-170",
+   "bbox": [
+    328,
+    316,
+    450,
+    331
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "高雄市左營區復興南路二段69號三樓",
+   "bbox": [
+    511,
+    309,
+    818,
+    331
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "114/03/16",
+   "bbox": [
+    248,
+    698,
+    335,
+    713
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115/01/13",
+   "bbox": [
+    713,
+    693,
+    800,
+    708
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "葉睿恩",
+   "bbox": [
+    220,
+    921,
+    287,
+    941
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "葉睿恩印",
+   "bbox": [
+    860,
+    881,
+    919,
+    940
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115 11 16",
+   "bbox": [
+    213,
+    980,
+    443,
+    998
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115 6 7",
+   "bbox": [
+    729,
+    965,
+    1030,
+    982
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "李俊雄",
+   "bbox": [
+    609,
+    1025,
+    667,
+    1042
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "115/12/16",
+   "bbox": [
+    234,
+    1108,
+    321,
+    1123
+   ],
+   "role": null
+  }
+ ]
+}

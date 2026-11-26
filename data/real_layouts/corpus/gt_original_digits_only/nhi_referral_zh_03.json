@@ -1,0 +1,164 @@
+{
+ "id": "nhi_referral_zh_03",
+ "template": "nhi_referral_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "張明德",
+   "bbox": [
+    182,
+    241,
+    248,
+    262
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "62 6 21",
+   "bbox": [
+    618,
+    240,
+    798,
+    257
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "T164476354",
+   "bbox": [
+    889,
+    238,
+    1010,
+    255
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "高美雲",
+   "bbox": [
+    182,
+    313,
+    248,
+    333
+   ],
+   "role": "relative"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0939-859-393",
+   "bbox": [
+    329,
+    315,
+    451,
+    330
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "新竹市東區中正路二段334號",
+   "bbox": [
+    512,
+    311,
+    754,
+    330
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "114/02/19",
+   "bbox": [
+    249,
+    697,
+    336,
+    712
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "114/03/02",
+   "bbox": [
+    714,
+    694,
+    801,
+    708
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "朱哲維",
+   "bbox": [
+    220,
+    920,
+    286,
+    940
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "朱哲維印",
+   "bbox": [
+    860,
+    882,
+    918,
+    940
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115 4 27",
+   "bbox": [
+    213,
+    979,
+    443,
+    997
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115 4 10",
+   "bbox": [
+    729,
+    966,
+    1041,
+    982
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "李威廷",
+   "bbox": [
+    609,
+    1025,
+    666,
+    1042
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "115/07/27",
+   "bbox": [
+    234,
+    1107,
+    321,
+    1122
+   ],
+   "role": null
+  }
+ ]
+}

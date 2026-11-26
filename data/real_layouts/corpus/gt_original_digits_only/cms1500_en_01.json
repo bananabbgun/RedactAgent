@@ -1,0 +1,175 @@
+{
+ "id": "cms1500_en_01",
+ "template": "cms1500_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1425,
+ "height": 1800,
+ "items": [
+  {
+   "cat": "HEALTH_INSURANCE_NO",
+   "text": "8R74V29CD75",
+   "bbox": [
+    876,
+    305,
+    1019,
+    320
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "DICKERSON, TROY, Q",
+   "bbox": [
+    140,
+    342,
+    375,
+    360
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "12  13  1953",
+   "bbox": [
+    585,
+    351,
+    742,
+    366
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "DICKERSON, TROY",
+   "bbox": [
+    875,
+    352,
+    1071,
+    370
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "75660 KEMP LOAF",
+   "bbox": [
+    140,
+    389,
+    335,
+    405
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "NORTH MARK",
+   "bbox": [
+    138,
+    442,
+    269,
+    456
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "76702",
+   "bbox": [
+    138,
+    494,
+    204,
+    508
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "903 888-6382",
+   "bbox": [
+    350,
+    497,
+    520,
+    512
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "07 21 26",
+   "bbox": [
+    924,
+    963,
+    1028,
+    977
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "07 24 26",
+   "bbox": [
+    1134,
+    966,
+    1238,
+    980
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "07 21 26",
+   "bbox": [
+    126,
+    1201,
+    230,
+    1215
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "07 22 26",
+   "bbox": [
+    125,
+    1251,
+    229,
+    1265
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "PT440985",
+   "bbox": [
+    453,
+    1499,
+    558,
+    1514
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Robert Horn MD",
+   "bbox": [
+    122,
+    1583,
+    380,
+    1623
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "07/25/2026",
+   "bbox": [
+    400,
+    1627,
+    500,
+    1642
+   ],
+   "role": null
+  }
+ ]
+}

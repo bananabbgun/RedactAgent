@@ -1,0 +1,120 @@
+{
+ "id": "va_release_p1_en_01",
+ "template": "va_release_p1_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1275,
+ "height": 1650,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Johnson, Dylan J",
+   "bbox": [
+    84,
+    496,
+    318,
+    528
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "11/01/1951",
+   "bbox": [
+    924,
+    491,
+    1082,
+    519
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "1584 Terry Fall Apt. 024",
+   "bbox": [
+    97,
+    569,
+    434,
+    602
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "Brookefort, IN 40177",
+   "bbox": [
+    96,
+    601,
+    383,
+    633
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Brian Santana",
+   "bbox": [
+    139,
+    662,
+    315,
+    683
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "08/15/2025",
+   "bbox": [
+    463,
+    893,
+    608,
+    910
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "06/18/2025",
+   "bbox": [
+    629,
+    892,
+    775,
+    909
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Patricia Steele",
+   "bbox": [
+    594,
+    1038,
+    758,
+    1059
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "06/23/2025",
+   "bbox": [
+    772,
+    1041,
+    921,
+    1058
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "03/28/2026",
+   "bbox": [
+    675,
+    1192,
+    821,
+    1209
+   ],
+   "role": null
+  }
+ ]
+}

@@ -1,0 +1,175 @@
+{
+ "id": "cms1500_en_03",
+ "template": "cms1500_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1425,
+ "height": 1800,
+ "items": [
+  {
+   "cat": "HEALTH_INSURANCE_NO",
+   "text": "4NG1M22FW22",
+   "bbox": [
+    869,
+    303,
+    1012,
+    316
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "JACKSON, JAMIE, D",
+   "bbox": [
+    134,
+    349,
+    355,
+    364
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "08  13  1941",
+   "bbox": [
+    579,
+    353,
+    735,
+    366
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "JACKSON, JAMIE",
+   "bbox": [
+    869,
+    350,
+    1051,
+    366
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "228 DONALD MOUNT SUITE 732",
+   "bbox": [
+    134,
+    396,
+    472,
+    410
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "LAKE ADAM",
+   "bbox": [
+    134,
+    449,
+    252,
+    461
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "04326",
+   "bbox": [
+    134,
+    501,
+    199,
+    514
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "690 864-4120",
+   "bbox": [
+    346,
+    501,
+    515,
+    515
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "03 24 26",
+   "bbox": [
+    925,
+    960,
+    1029,
+    973
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "03 27 26",
+   "bbox": [
+    1135,
+    961,
+    1239,
+    974
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "03 24 26",
+   "bbox": [
+    130,
+    1208,
+    234,
+    1221
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "03 25 26",
+   "bbox": [
+    129,
+    1258,
+    233,
+    1271
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "PT348170",
+   "bbox": [
+    461,
+    1503,
+    565,
+    1516
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Todd Graves MD",
+   "bbox": [
+    131,
+    1588,
+    389,
+    1628
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "03/28/2026",
+   "bbox": [
+    409,
+    1631,
+    509,
+    1645
+   ],
+   "role": null
+  }
+ ]
+}

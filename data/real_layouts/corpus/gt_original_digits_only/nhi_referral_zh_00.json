@@ -1,0 +1,175 @@
+{
+ "id": "nhi_referral_zh_00",
+ "template": "nhi_referral_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "李凱翔",
+   "bbox": [
+    192,
+    234,
+    259,
+    255
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "80 11 28",
+   "bbox": [
+    628,
+    241,
+    808,
+    260
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "H294636772",
+   "bbox": [
+    899,
+    244,
+    1023,
+    261
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "徐淑美",
+   "bbox": [
+    192,
+    306,
+    258,
+    326
+   ],
+   "role": "relative"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0968-586-474",
+   "bbox": [
+    339,
+    311,
+    461,
+    326
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺北市北投區文化路386號",
+   "bbox": [
+    522,
+    311,
+    745,
+    331
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為該校唯一的視障物理教師",
+   "bbox": [
+    228,
+    439,
+    456,
+    458
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "114/06/06",
+   "bbox": [
+    252,
+    691,
+    339,
+    706
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "114/10/15",
+   "bbox": [
+    717,
+    696,
+    804,
+    711
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "王睿恩",
+   "bbox": [
+    219,
+    914,
+    286,
+    934
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "王睿恩印",
+   "bbox": [
+    859,
+    886,
+    918,
+    945
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115 2 22",
+   "bbox": [
+    211,
+    974,
+    441,
+    992
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115 2 28",
+   "bbox": [
+    727,
+    970,
+    1039,
+    987
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "蔡麗美",
+   "bbox": [
+    606,
+    1025,
+    663,
+    1042
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "115/05/22",
+   "bbox": [
+    230,
+    1101,
+    317,
+    1116
+   ],
+   "role": null
+  }
+ ]
+}

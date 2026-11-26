@@ -1,0 +1,109 @@
+{
+ "id": "va_release_p1_en_00",
+ "template": "va_release_p1_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1275,
+ "height": 1650,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Miller, Zachary D",
+   "bbox": [
+    101,
+    488,
+    341,
+    523
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "02/21/1974",
+   "bbox": [
+    929,
+    495,
+    1096,
+    523
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "026 Isaiah Knoll Apt. 060",
+   "bbox": [
+    101,
+    562,
+    447,
+    595
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "Sharontown, CT 21694",
+   "bbox": [
+    100,
+    599,
+    413,
+    628
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Victoria Hernandez",
+   "bbox": [
+    142,
+    657,
+    364,
+    679
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "09/11/2024",
+   "bbox": [
+    462,
+    892,
+    602,
+    916
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "03/14/2025",
+   "bbox": [
+    625,
+    893,
+    771,
+    911
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Erica Mckinney",
+   "bbox": [
+    592,
+    1039,
+    778,
+    1070
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "03/21/2025",
+   "bbox": [
+    792,
+    1044,
+    938,
+    1060
+   ],
+   "role": null
+  }
+ ]
+}
