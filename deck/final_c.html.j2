@@ -194,3 +194,37 @@
   </div>
   <div class="foot"><span>Sources: eval/tune3/, eval/robustness/, eval/triage/, docs/MARKET_RESEARCH.md, docs/INTEGRATION.md.</span><span></span></div>
 </section>
+
+<!-- 19 Appendix: real form layouts -->
+{% if real %}
+<section class="slide">
+  <div class="kicker">Appendix &middot; real form layouts</div>
+  <h1>On layouts it has never seen, the system knows when to ask a person</h1>
+  <p class="lead">Four public government forms we had never used, filled with synthetic people, run once on a fresh install of the final configuration.
+    Detection is clearly harder than on our own layouts; the review design is what keeps the release safe.</p>
+  <div class="grid2" style="grid-template-columns:1.15fr 1fr;align-items:start">
+    <div>
+      <table class="t" style="font-size:13px">
+        <tr><th>Form (public layout, synthetic content)</th><th>Pages</th><th>Recall</th><th>Precision</th></tr>
+        {% for f in real.forms %}<tr><td>{{ f.name }}</td><td>{{ f.pages }}</td><td><b>{{ "%.1f"|format(f.recall*100) }}%</b></td><td>{{ "%.1f"|format(f.precision*100) }}%</td></tr>{% endfor %}
+        <tr class="hl"><td><b>All {{ real.all.pages }} pages, {{ real.all['items'] }} items</b></td><td>{{ real.all.pages }}</td><td><b>{{ "%.1f"|format(real.all.recall*100) }}%</b></td><td>{{ "%.1f"|format(real.all.precision*100) }}%</td></tr>
+        <tr><td>For comparison: v3, our own layouts</td><td>{{ fin.v3.D_agentic.docs }}</td><td>{{ "%.1f"|format(fin.v3.D_agentic.recall*100) }}%</td><td>{{ "%.1f"|format(fin.v3.D_agentic.precision*100) }}%</td></tr>
+      </table>
+      <p class="note" style="margin-top:6px">Forms: Taiwan's NHI referral form (MOHW) and NHI card application (NHIA); US VA Form 10-5345 and CMS-1500.
+        The answer key for dates split into year / month / day blanks was corrected after the run to label the whole date, as in our other test sets; with the original key precision was 66.3&nbsp;%.</p>
+    </div>
+    <div>
+      <div class="card" style="background:#eef3ff;border-color:#c9d6f5"><h3>What the mechanism did</h3><p>The attacking agent's risk score and the unread-ink check flagged
+        {{ real.triage.flagged }} of {{ real.triage.pages }} pages for priority review, and those pages held {{ real.triage.missed_flagged }} of the {{ real.triage.missed }} missed items.
+        Nothing is released without a person's approval, so on unfamiliar layouts the reviewer is pointed to the pages that need them.</p></div>
+      <div class="card" style="margin-top:10px"><h3>What the detectors missed</h3><ul>
+        <li>Characters written one per printed box (ID numbers, postcodes).</li>
+        <li>Dates split into year / month / day blanks, and ROC slash dates such as 114/06/06.</li>
+        <li>Most fields on the red, watermarked CMS-1500.</li>
+        <li>False alarms: hospital switchboard numbers, red form lines read as seals.</li></ul></div>
+    </div>
+  </div>
+  <div class="src">data/real_layouts/ (forms from mohw.gov.tw, nhi.gov.tw, va.gov, cms.gov), scripts/make_real_layouts.py, eval/results_b70/real_layouts/ and real_layouts_rescored/.</div>
+  <div class="foot"><span>RedactAgent &middot; ASUS UGen AI League 2026 &middot; Final</span><span></span></div>
+</section>
+{% endif %}

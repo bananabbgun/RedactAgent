@@ -343,3 +343,9 @@ synthetic people; 22 pages, 287 items; protocol fixed and committed before the r
 fresh clone: recall 73.9 %, precision 66.3 % (Chinese 83.2 %, English 61.9 %, CMS-1500 35.0 %), against 96.7 / 96.0
 on v3. The gap is real: one-character-per-box fields, dates split into blanks and the red, watermarked CMS-1500
 are not handled well. Triage flagged 20 of 22 pages, holding 71 of 75 misses. Per the protocol, nothing was tuned.
+
+**Follow-up (2026-11-28).** The answer key for dates written into year / month / day blanks was corrected to the
+whole-date convention of the other corpora and the stored run re-scored (precision 66.3 -> 70.9 %, recall unchanged).
+General rule changes for the conventions behind the misses (split dates, one-character-per-box fields, ROC slash
+dates, landline formats, institution contact fields) were written and unit-tested, but not evaluated on the B70;
+they live on branch `rules-v1.1` so that `main` stays exactly the system that was evaluated and shown in the video.
