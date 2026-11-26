@@ -1,0 +1,76 @@
+{
+ "id": "va_release_p2_en_02",
+ "template": "va_release_p2_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1275,
+ "height": 1650,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Hays, Denise E",
+   "bbox": [
+    109,
+    101,
+    310,
+    137
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "04/05/1983",
+   "bbox": [
+    937,
+    116,
+    1100,
+    145
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Denise Hays",
+   "bbox": [
+    101,
+    835,
+    314,
+    893
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "12/18/2026",
+   "bbox": [
+    913,
+    860,
+    1082,
+    881
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "12/25/2026",
+   "bbox": [
+    350,
+    1513,
+    471,
+    1531
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "E. Campbell",
+   "bbox": [
+    690,
+    1519,
+    823,
+    1538
+   ],
+   "role": "professional"
+  }
+ ]
+}

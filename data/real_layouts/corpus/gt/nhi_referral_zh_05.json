@@ -1,0 +1,197 @@
+{
+ "id": "nhi_referral_zh_05",
+ "template": "nhi_referral_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "李寶珠",
+   "bbox": [
+    180,
+    241,
+    247,
+    262
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "94 1 5",
+   "bbox": [
+    616,
+    240,
+    785,
+    257
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "A269983047",
+   "bbox": [
+    886,
+    238,
+    1011,
+    256
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳美蘭",
+   "bbox": [
+    181,
+    313,
+    247,
+    335
+   ],
+   "role": "relative"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0989-116-701",
+   "bbox": [
+    328,
+    315,
+    450,
+    331
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "新營市自由134號7樓",
+   "bbox": [
+    511,
+    311,
+    688,
+    331
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115/12/28",
+   "bbox": [
+    248,
+    698,
+    336,
+    712
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "114/06/16",
+   "bbox": [
+    713,
+    693,
+    801,
+    708
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "鄭文祥",
+   "bbox": [
+    220,
+    921,
+    287,
+    942
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "鄭文祥印",
+   "bbox": [
+    860,
+    881,
+    919,
+    940
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115 1 23",
+   "bbox": [
+    213,
+    980,
+    443,
+    998
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115 6 4",
+   "bbox": [
+    729,
+    965,
+    1030,
+    982
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "張家豪",
+   "bbox": [
+    609,
+    1025,
+    666,
+    1042
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "115/04/23",
+   "bbox": [
+    234,
+    1108,
+    321,
+    1122
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "張家豪",
+   "bbox": [
+    256,
+    1513,
+    322,
+    1533
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "張家豪印",
+   "bbox": [
+    655,
+    1473,
+    710,
+    1528
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115 5 11",
+   "bbox": [
+    846,
+    1503,
+    1048,
+    1519
+   ],
+   "role": null
+  }
+ ]
+}

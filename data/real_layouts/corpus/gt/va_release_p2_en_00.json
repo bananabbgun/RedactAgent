@@ -1,0 +1,76 @@
+{
+ "id": "va_release_p2_en_00",
+ "template": "va_release_p2_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1275,
+ "height": 1650,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Miller, Zachary D",
+   "bbox": [
+    96,
+    110,
+    336,
+    145
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "02/21/1974",
+   "bbox": [
+    924,
+    109,
+    1091,
+    137
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Zachary Miller",
+   "bbox": [
+    102,
+    845,
+    348,
+    900
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "09/11/2026",
+   "bbox": [
+    915,
+    853,
+    1078,
+    881
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "02/05/2026",
+   "bbox": [
+    364,
+    1518,
+    484,
+    1535
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "A. Morgan",
+   "bbox": [
+    703,
+    1518,
+    812,
+    1535
+   ],
+   "role": "professional"
+  }
+ ]
+}

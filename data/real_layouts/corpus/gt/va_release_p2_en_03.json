@@ -1,0 +1,98 @@
+{
+ "id": "va_release_p2_en_03",
+ "template": "va_release_p2_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1275,
+ "height": 1650,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Cardenas, Kyle P",
+   "bbox": [
+    107,
+    105,
+    336,
+    139
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "07/27/1961",
+   "bbox": [
+    935,
+    115,
+    1103,
+    143
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "06/12/2027",
+   "bbox": [
+    359,
+    711,
+    507,
+    733
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Michael Johnson",
+   "bbox": [
+    101,
+    912,
+    375,
+    967
+   ],
+   "role": "relative"
+  },
+  {
+   "cat": "DATE",
+   "text": "07/03/2026",
+   "bbox": [
+    914,
+    933,
+    1083,
+    958
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Michael Cardenas",
+   "bbox": [
+    98,
+    989,
+    330,
+    1015
+   ],
+   "role": "relative"
+  },
+  {
+   "cat": "DATE",
+   "text": "12/13/2026",
+   "bbox": [
+    353,
+    1514,
+    473,
+    1531
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "R. Marshall",
+   "bbox": [
+    693,
+    1519,
+    825,
+    1533
+   ],
+   "role": "professional"
+  }
+ ]
+}

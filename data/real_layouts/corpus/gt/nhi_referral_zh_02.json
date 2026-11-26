@@ -1,0 +1,208 @@
+{
+ "id": "nhi_referral_zh_02",
+ "template": "nhi_referral_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳文祥",
+   "bbox": [
+    187,
+    238,
+    253,
+    258
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "54 11 11",
+   "bbox": [
+    623,
+    241,
+    803,
+    257
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "F224648402",
+   "bbox": [
+    894,
+    241,
+    1015,
+    259
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "李永昌",
+   "bbox": [
+    187,
+    309,
+    253,
+    329
+   ],
+   "role": "relative"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0945-794-988",
+   "bbox": [
+    334,
+    314,
+    456,
+    328
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "平鎮市華興121號4樓",
+   "bbox": [
+    517,
+    312,
+    694,
+    330
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為該校唯一的視障物理教師",
+   "bbox": [
+    225,
+    442,
+    453,
+    460
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "115/10/08",
+   "bbox": [
+    250,
+    694,
+    337,
+    709
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "114/05/18",
+   "bbox": [
+    715,
+    695,
+    802,
+    709
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "宋文彬",
+   "bbox": [
+    220,
+    916,
+    286,
+    936
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "宋文彬印",
+   "bbox": [
+    860,
+    884,
+    918,
+    942
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115 7 16",
+   "bbox": [
+    212,
+    977,
+    442,
+    994
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115 5 12",
+   "bbox": [
+    728,
+    969,
+    1040,
+    984
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "余淑芬",
+   "bbox": [
+    608,
+    1025,
+    665,
+    1042
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "115/10/16",
+   "bbox": [
+    232,
+    1104,
+    319,
+    1119
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "余淑芬",
+   "bbox": [
+    249,
+    1509,
+    315,
+    1530
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "余淑芬印",
+   "bbox": [
+    649,
+    1474,
+    703,
+    1528
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115 3 17",
+   "bbox": [
+    839,
+    1507,
+    1041,
+    1522
+   ],
+   "role": null
+  }
+ ]
+}

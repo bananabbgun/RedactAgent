@@ -1,0 +1,175 @@
+{
+ "id": "cms1500_en_01",
+ "template": "cms1500_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1425,
+ "height": 1800,
+ "items": [
+  {
+   "cat": "HEALTH_INSURANCE_NO",
+   "text": "5DX1GG1MV15",
+   "bbox": [
+    860,
+    299,
+    1003,
+    314
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "JONES, LAURA, S",
+   "bbox": [
+    126,
+    355,
+    321,
+    373
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "01  22  1950",
+   "bbox": [
+    571,
+    353,
+    727,
+    368
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "JONES, LAURA",
+   "bbox": [
+    861,
+    346,
+    1018,
+    363
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "21481 MORRIS CAMP",
+   "bbox": [
+    127,
+    402,
+    348,
+    418
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "GARRISONFURT",
+   "bbox": [
+    127,
+    456,
+    283,
+    470
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "90895",
+   "bbox": [
+    128,
+    509,
+    193,
+    523
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "439 900-7212",
+   "bbox": [
+    340,
+    505,
+    509,
+    520
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "06 07 26",
+   "bbox": [
+    926,
+    956,
+    1030,
+    970
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "06 10 26",
+   "bbox": [
+    1136,
+    953,
+    1240,
+    968
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "06 07 26",
+   "bbox": [
+    134,
+    1215,
+    238,
+    1230
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "06 08 26",
+   "bbox": [
+    135,
+    1265,
+    239,
+    1280
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "PT648125",
+   "bbox": [
+    470,
+    1505,
+    574,
+    1519
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Dylan Harris MD",
+   "bbox": [
+    141,
+    1595,
+    412,
+    1645
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "06/11/2026",
+   "bbox": [
+    419,
+    1634,
+    520,
+    1649
+   ],
+   "role": null
+  }
+ ]
+}

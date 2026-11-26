@@ -1,0 +1,120 @@
+{
+ "id": "va_release_p1_en_01",
+ "template": "va_release_p1_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1275,
+ "height": 1650,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Smith, Todd H",
+   "bbox": [
+    98,
+    491,
+    299,
+    518
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "08/01/1973",
+   "bbox": [
+    927,
+    492,
+    1088,
+    520
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "94619 Davis Shoal Apt. 954",
+   "bbox": [
+    90,
+    565,
+    474,
+    598
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "Laurafort, AL 70722",
+   "bbox": [
+    99,
+    600,
+    386,
+    631
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Charles Riley",
+   "bbox": [
+    140,
+    660,
+    296,
+    691
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "04/10/2025",
+   "bbox": [
+    462,
+    893,
+    606,
+    911
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "10/09/2025",
+   "bbox": [
+    626,
+    892,
+    769,
+    916
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Michael Johnson",
+   "bbox": [
+    594,
+    1038,
+    780,
+    1065
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "02/20/2025",
+   "bbox": [
+    793,
+    1042,
+    939,
+    1058
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "02/24/2026",
+   "bbox": [
+    674,
+    1192,
+    821,
+    1210
+   ],
+   "role": null
+  }
+ ]
+}

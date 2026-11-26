@@ -1,0 +1,109 @@
+{
+ "id": "va_release_p1_en_00",
+ "template": "va_release_p1_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1275,
+ "height": 1650,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Wilson, Victor I",
+   "bbox": [
+    103,
+    485,
+    310,
+    513
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "01/04/1973",
+   "bbox": [
+    931,
+    497,
+    1094,
+    525
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "0512 Hart Mountains Apt. 154",
+   "bbox": [
+    102,
+    559,
+    520,
+    595
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "South Jeffreyburgh, WI 00539",
+   "bbox": [
+    101,
+    594,
+    502,
+    631
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Tracy Allen",
+   "bbox": [
+    142,
+    657,
+    282,
+    686
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "05/17/2024",
+   "bbox": [
+    461,
+    891,
+    607,
+    913
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "06/01/2026",
+   "bbox": [
+    630,
+    893,
+    774,
+    910
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Becky Thompson",
+   "bbox": [
+    590,
+    1042,
+    787,
+    1070
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "02/24/2025",
+   "bbox": [
+    800,
+    1045,
+    948,
+    1063
+   ],
+   "role": null
+  }
+ ]
+}

@@ -1,0 +1,98 @@
+{
+ "id": "va_release_p2_en_01",
+ "template": "va_release_p2_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1275,
+ "height": 1650,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Johnson, Dylan J",
+   "bbox": [
+    96,
+    104,
+    329,
+    138
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "11/01/1951",
+   "bbox": [
+    936,
+    116,
+    1093,
+    145
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "08/15/2027",
+   "bbox": [
+    359,
+    711,
+    505,
+    732
+   ],
+   "role": null
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Tyler Cline",
+   "bbox": [
+    100,
+    911,
+    289,
+    967
+   ],
+   "role": "relative"
+  },
+  {
+   "cat": "DATE",
+   "text": "06/18/2026",
+   "bbox": [
+    913,
+    933,
+    1081,
+    955
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Tyler Cline",
+   "bbox": [
+    98,
+    987,
+    247,
+    1023
+   ],
+   "role": "relative"
+  },
+  {
+   "cat": "DATE",
+   "text": "09/22/2026",
+   "bbox": [
+    351,
+    1513,
+    471,
+    1531
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "M. Goodman",
+   "bbox": [
+    690,
+    1519,
+    811,
+    1533
+   ],
+   "role": "professional"
+  }
+ ]
+}

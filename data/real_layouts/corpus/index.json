@@ -1,0 +1,128 @@
+[
+ {
+  "id": "nhi_referral_zh_00",
+  "template": "nhi_referral_zh",
+  "lang": "zh",
+  "capture": "scan",
+  "n_pii": 15
+ },
+ {
+  "id": "nhi_referral_zh_01",
+  "template": "nhi_referral_zh",
+  "lang": "zh",
+  "capture": "scan",
+  "n_pii": 14
+ },
+ {
+  "id": "nhi_referral_zh_02",
+  "template": "nhi_referral_zh",
+  "lang": "zh",
+  "capture": "scan",
+  "n_pii": 18
+ },
+ {
+  "id": "nhi_referral_zh_03",
+  "template": "nhi_referral_zh",
+  "lang": "zh",
+  "capture": "scan",
+  "n_pii": 14
+ },
+ {
+  "id": "nhi_referral_zh_04",
+  "template": "nhi_referral_zh",
+  "lang": "zh",
+  "capture": "scan",
+  "n_pii": 15
+ },
+ {
+  "id": "nhi_referral_zh_05",
+  "template": "nhi_referral_zh",
+  "lang": "zh",
+  "capture": "scan",
+  "n_pii": 17
+ },
+ {
+  "id": "va_release_p1_en_00",
+  "template": "va_release_p1_en",
+  "lang": "en",
+  "capture": "scan",
+  "n_pii": 9
+ },
+ {
+  "id": "va_release_p1_en_01",
+  "template": "va_release_p1_en",
+  "lang": "en",
+  "capture": "scan",
+  "n_pii": 10
+ },
+ {
+  "id": "va_release_p1_en_02",
+  "template": "va_release_p1_en",
+  "lang": "en",
+  "capture": "scan",
+  "n_pii": 9
+ },
+ {
+  "id": "va_release_p1_en_03",
+  "template": "va_release_p1_en",
+  "lang": "en",
+  "capture": "scan",
+  "n_pii": 10
+ },
+ {
+  "id": "va_release_p2_en_00",
+  "template": "va_release_p2_en",
+  "lang": "en",
+  "capture": "scan",
+  "n_pii": 6
+ },
+ {
+  "id": "va_release_p2_en_01",
+  "template": "va_release_p2_en",
+  "lang": "en",
+  "capture": "scan",
+  "n_pii": 8
+ },
+ {
+  "id": "va_release_p2_en_02",
+  "template": "va_release_p2_en",
+  "lang": "en",
+  "capture": "scan",
+  "n_pii": 6
+ },
+ {
+  "id": "va_release_p2_en_03",
+  "template": "va_release_p2_en",
+  "lang": "en",
+  "capture": "scan",
+  "n_pii": 8
+ },
+ {
+  "id": "cms1500_en_00",
+  "template": "cms1500_en",
+  "lang": "en",
+  "capture": "scan",
+  "n_pii": 15
+ },
+ {
+  "id": "cms1500_en_01",
+  "template": "cms1500_en",
+  "lang": "en",
+  "capture": "scan",
+  "n_pii": 15
+ },
+ {
+  "id": "cms1500_en_02",
+  "template": "cms1500_en",
+  "lang": "en",
+  "capture": "scan",
+  "n_pii": 15
+ },
+ {
+  "id": "cms1500_en_03",
+  "template": "cms1500_en",
+  "lang": "en",
+  "capture": "scan",
+  "n_pii": 15
+ }
+]

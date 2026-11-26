@@ -1,0 +1,175 @@
+{
+ "id": "cms1500_en_00",
+ "template": "cms1500_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1425,
+ "height": 1800,
+ "items": [
+  {
+   "cat": "HEALTH_INSURANCE_NO",
+   "text": "1T14DN1WX33",
+   "bbox": [
+    871,
+    304,
+    1014,
+    317
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "CHAVEZ, ALEXANDER, Y",
+   "bbox": [
+    135,
+    347,
+    395,
+    364
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "12  10  1944",
+   "bbox": [
+    580,
+    352,
+    736,
+    366
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "CHAVEZ, ALEXANDER",
+   "bbox": [
+    870,
+    351,
+    1092,
+    367
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "51893 DONALD STATION SUITE 320",
+   "bbox": [
+    135,
+    394,
+    525,
+    409
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "MATTHEWBOROUGH",
+   "bbox": [
+    134,
+    447,
+    317,
+    460
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "98864",
+   "bbox": [
+    135,
+    499,
+    200,
+    513
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "347 257-6013",
+   "bbox": [
+    347,
+    500,
+    516,
+    514
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "12 07 26",
+   "bbox": [
+    925,
+    961,
+    1029,
+    974
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "12 10 26",
+   "bbox": [
+    1135,
+    962,
+    1239,
+    975
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "12 07 26",
+   "bbox": [
+    129,
+    1206,
+    233,
+    1220
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "12 08 26",
+   "bbox": [
+    128,
+    1256,
+    232,
+    1270
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "PT523927",
+   "bbox": [
+    459,
+    1502,
+    563,
+    1515
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Keith Camacho MD",
+   "bbox": [
+    129,
+    1588,
+    423,
+    1627
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "12/11/2026",
+   "bbox": [
+    407,
+    1630,
+    507,
+    1644
+   ],
+   "role": null
+  }
+ ]
+}

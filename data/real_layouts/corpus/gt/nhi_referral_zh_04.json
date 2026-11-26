@@ -1,0 +1,175 @@
+{
+ "id": "nhi_referral_zh_04",
+ "template": "nhi_referral_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳文彬",
+   "bbox": [
+    178,
+    243,
+    244,
+    265
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "37 8 10",
+   "bbox": [
+    614,
+    239,
+    794,
+    258
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "J100951430",
+   "bbox": [
+    885,
+    236,
+    1004,
+    254
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳子翔",
+   "bbox": [
+    179,
+    316,
+    245,
+    337
+   ],
+   "role": "relative"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0949-785-598",
+   "bbox": [
+    326,
+    316,
+    448,
+    332
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "蘆竹市民權162號6樓",
+   "bbox": [
+    509,
+    311,
+    686,
+    331
+   ],
+   "role": null
+  },
+  {
+   "cat": "QUASI_IDENTIFIER",
+   "text": "為馬祖東引唯一的中醫師",
+   "bbox": [
+    218,
+    445,
+    428,
+    465
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE",
+   "text": "115/06/02",
+   "bbox": [
+    248,
+    699,
+    335,
+    714
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115/05/23",
+   "bbox": [
+    713,
+    693,
+    800,
+    708
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳美珍",
+   "bbox": [
+    221,
+    921,
+    287,
+    943
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "陳美珍印",
+   "bbox": [
+    860,
+    880,
+    919,
+    939
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115 6 21",
+   "bbox": [
+    213,
+    980,
+    444,
+    999
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "115 11 15",
+   "bbox": [
+    729,
+    964,
+    1041,
+    982
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "阮聰明",
+   "bbox": [
+    610,
+    1024,
+    667,
+    1043
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "115/09/21",
+   "bbox": [
+    235,
+    1109,
+    322,
+    1124
+   ],
+   "role": null
+  }
+ ]
+}

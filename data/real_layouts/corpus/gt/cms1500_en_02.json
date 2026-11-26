@@ -1,0 +1,175 @@
+{
+ "id": "cms1500_en_02",
+ "template": "cms1500_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1425,
+ "height": 1800,
+ "items": [
+  {
+   "cat": "HEALTH_INSURANCE_NO",
+   "text": "2HM1M20RW68",
+   "bbox": [
+    860,
+    299,
+    1003,
+    314
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "AUSTIN, CHRISTINA, S",
+   "bbox": [
+    125,
+    354,
+    386,
+    373
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "01  19  1947",
+   "bbox": [
+    571,
+    353,
+    727,
+    368
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "AUSTIN, CHRISTINA",
+   "bbox": [
+    860,
+    345,
+    1083,
+    363
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "341 PAGE CAMP",
+   "bbox": [
+    126,
+    403,
+    295,
+    418
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "SHARPSIDE",
+   "bbox": [
+    127,
+    456,
+    244,
+    470
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "88255",
+   "bbox": [
+    128,
+    509,
+    193,
+    523
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "366 235-3540",
+   "bbox": [
+    340,
+    505,
+    509,
+    520
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "01 25 26",
+   "bbox": [
+    926,
+    956,
+    1030,
+    970
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "01 28 26",
+   "bbox": [
+    1136,
+    953,
+    1240,
+    967
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "01 25 26",
+   "bbox": [
+    134,
+    1215,
+    238,
+    1230
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "01 26 26",
+   "bbox": [
+    135,
+    1265,
+    239,
+    1280
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "PT506911",
+   "bbox": [
+    470,
+    1505,
+    574,
+    1519
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Amy Perez MD",
+   "bbox": [
+    141,
+    1595,
+    388,
+    1646
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "01/28/2026",
+   "bbox": [
+    420,
+    1634,
+    520,
+    1649
+   ],
+   "role": null
+  }
+ ]
+}

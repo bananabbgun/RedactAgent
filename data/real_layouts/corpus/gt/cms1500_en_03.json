@@ -1,0 +1,175 @@
+{
+ "id": "cms1500_en_03",
+ "template": "cms1500_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1425,
+ "height": 1800,
+ "items": [
+  {
+   "cat": "HEALTH_INSURANCE_NO",
+   "text": "9KQ1H06TM03",
+   "bbox": [
+    870,
+    303,
+    1013,
+    320
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "MYERS, WALTER, D",
+   "bbox": [
+    134,
+    348,
+    343,
+    364
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "10  19  1947",
+   "bbox": [
+    580,
+    353,
+    736,
+    366
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "MYERS, WALTER",
+   "bbox": [
+    869,
+    350,
+    1040,
+    366
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "674 SHERRY FORK",
+   "bbox": [
+    135,
+    395,
+    330,
+    409
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "RUIZBERG",
+   "bbox": [
+    134,
+    448,
+    238,
+    460
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "95801",
+   "bbox": [
+    134,
+    500,
+    199,
+    513
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "683 343-7975",
+   "bbox": [
+    346,
+    501,
+    515,
+    514
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "03 21 26",
+   "bbox": [
+    925,
+    961,
+    1029,
+    974
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "03 24 26",
+   "bbox": [
+    1135,
+    961,
+    1239,
+    975
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "03 21 26",
+   "bbox": [
+    129,
+    1207,
+    233,
+    1220
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "03 22 26",
+   "bbox": [
+    129,
+    1257,
+    233,
+    1270
+   ],
+   "role": null
+  },
+  {
+   "cat": "MEDICAL_RECORD_NO",
+   "text": "PT303491",
+   "bbox": [
+    460,
+    1502,
+    564,
+    1516
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Olivia Hogan MD",
+   "bbox": [
+    130,
+    1589,
+    400,
+    1637
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "03/25/2026",
+   "bbox": [
+    408,
+    1630,
+    508,
+    1644
+   ],
+   "role": null
+  }
+ ]
+}

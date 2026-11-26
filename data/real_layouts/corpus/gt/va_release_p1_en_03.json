@@ -1,0 +1,120 @@
+{
+ "id": "va_release_p1_en_03",
+ "template": "va_release_p1_en",
+ "lang": "en",
+ "capture": "scan",
+ "width": 1275,
+ "height": 1650,
+ "items": [
+  {
+   "cat": "PERSON_NAME",
+   "text": "Palmer, Tyler F",
+   "bbox": [
+    100,
+    492,
+    306,
+    523
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "01/17/1973",
+   "bbox": [
+    929,
+    495,
+    1093,
+    522
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "448 Cobb Meadows Suite 676",
+   "bbox": [
+    101,
+    563,
+    497,
+    592
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "East Kimberlyland, AR 99014",
+   "bbox": [
+    100,
+    597,
+    510,
+    632
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Desiree Parker",
+   "bbox": [
+    140,
+    658,
+    302,
+    678
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "03/17/2024",
+   "bbox": [
+    462,
+    893,
+    608,
+    913
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "10/27/2026",
+   "bbox": [
+    630,
+    893,
+    778,
+    913
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "Wesley Escobar",
+   "bbox": [
+    592,
+    1040,
+    771,
+    1069
+   ],
+   "role": "professional"
+  },
+  {
+   "cat": "DATE",
+   "text": "05/23/2025",
+   "bbox": [
+    783,
+    1043,
+    931,
+    1060
+   ],
+   "role": null
+  },
+  {
+   "cat": "DATE",
+   "text": "07/18/2026",
+   "bbox": [
+    671,
+    1193,
+    817,
+    1213
+   ],
+   "role": null
+  }
+ ]
+}
