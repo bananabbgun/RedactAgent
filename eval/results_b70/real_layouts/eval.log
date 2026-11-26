@@ -1,0 +1,31 @@
+[1/22] nhi_card_zh_00: 16 findings in 11.9s
+[2/22] nhi_referral_zh_03: 13 findings in 15.9s
+[3/22] nhi_card_zh_01: 18 findings in 20.9s
+[4/22] nhi_card_zh_03: 17 findings in 11.5s
+[5/22] nhi_referral_zh_02: 21 findings in 27.4s
+[6/22] nhi_referral_zh_00: 17 findings in 31.1s
+[7/22] va_release_p1_en_00: 9 findings in 11.7s
+[8/22] va_release_p1_en_01: 6 findings in 7.8s
+[9/22] va_release_p1_en_02: 8 findings in 9.4s
+loop-guard: cancelled a looping completion after 2016 chunks (temperature 0.0)
+[10/22] va_release_p2_en_02: 6 findings in 9.5s
+loop-guard: cancelled a looping completion after 2016 chunks (temperature 0.0)
+[11/22] nhi_card_zh_02: 17 findings in 46.3s
+[12/22] va_release_p2_en_00: 9 findings in 29.6s
+[13/22] va_release_p2_en_01: 9 findings in 28.1s
+[14/22] nhi_referral_zh_05: 22 findings in 70.1s
+[15/22] va_release_p2_en_03: 9 findings in 30.3s
+[16/22] nhi_referral_zh_04: 19 findings in 77.5s
+[17/22] nhi_referral_zh_01: 19 findings in 91.3s
+[18/22] cms1500_en_00: 8 findings in 34.5s
+[19/22] cms1500_en_01: 14 findings in 31.2s
+[20/22] va_release_p1_en_03: 12 findings in 62.5s
+loop-guard: cancelled a looping completion after 2016 chunks (temperature 0.0)
+[21/22] cms1500_en_03: 8 findings in 63.9s
+loop-guard: cancelled a looping completion after 2016 chunks (temperature 0.0)
+[22/22] cms1500_en_02: 10 findings in 131.2s
+22 pages in 194.7s with 8 workers -> 6.8 pages/min
+A_deterministic  recall 0.321  precision 0.574  clean 0.000
+B_plus_llm       recall 0.634  precision 0.689  clean 0.045
+C_full           recall 0.655  precision 0.690  clean 0.045
+D_agentic        recall 0.739  precision 0.663  clean 0.182

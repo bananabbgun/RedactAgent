@@ -1,0 +1,177 @@
+started ra-text on XPU 0: openai/gpt-oss-20b
+started ra-vision on XPU 1: Qwen/Qwen2.5-VL-7B-Instruct
+waiting for both model servers........... ready
+Using CPython 3.12.16
+Creating virtual environment at: .venv
+Activate with: source .venv/bin/activate
+Resolved 62 packages in 284ms
+Downloading faker (2.0MiB)
+Downloading opencv-python (75.6MiB)
+Downloading pygments (1.2MiB)
+Downloading pydantic-core (2.2MiB)
+Downloading numpy (15.0MiB)
+Downloading pypdfium2 (3.8MiB)
+Downloading onnxruntime (26.5MiB)
+Downloading fonttools (6.4MiB)
+ Downloaded pygments
+ Downloaded faker
+ Downloaded pydantic-core
+ Downloaded pypdfium2
+ Downloaded fonttools
+ Downloaded numpy
+ Downloaded onnxruntime
+ Downloaded opencv-python
+Prepared 21 packages in 1.24s
+Installed 62 packages in 114ms
+ + annotated-doc==0.0.7
+ + annotated-types==0.8.0
+ + anyio==4.16.0
+ + attrs==26.1.0
+ + certifi==2026.11.20
+ + cffi==2.1.1
+ + click==8.5.1
+ + cloudpickle==3.1.3
+ + contourpy==1.4.0
+ + cycler==0.12.1
+ + dlinfo==2.0.0
+ + espeakng-loader==0.2.4
+ + faker==40.63.0
+ + fastapi==0.165.0
+ + flatbuffers==25.12.19
+ + fonttools==4.69.1
+ + h11==0.16.0
+ + httpcore==1.0.9
+ + httptools==0.9.0
+ + httpx==0.29.0
+ + idna==3.20
+ + iniconfig==2.3.1
+ + jinja2==3.1.6
+ + joblib==1.6.0
+ + kiwisolver==1.5.1
+ + kokoro-onnx==0.6.1
+ + markupsafe==3.0.4
+ + matplotlib==3.11.2
+ + numpy==2.5.5
+ + onnxruntime==1.32.0
+ + opencv-python==5.1.0.95
+ + opentelemetry-api==1.45.2
+ + packaging==26.4
+ + phonemizer==3.6.0
+ + pillow==13.0.0
+ + pluggy==1.7.0
+ + protobuf==7.36.2
+ + pyclipper==1.4.0
+ + pycparser==3.12
+ + pydantic==2.14.4
+ + pydantic-core==2.50.5
+ + pygments==2.21.0
+ + pyparsing==3.3.3
+ + pypdfium2==5.15.2
+ + pytest==9.2.0
+ + python-dateutil==4.0.0
+ + python-dotenv==1.2.4
+ + python-multipart==0.0.34
+ + pyyaml==6.0.4
+ + rapidocr-onnxruntime==1.4.4
+ + shapely==2.2.0
+ + six==1.17.0
+ + soundfile==0.14.0
+ + starlette==1.10.0
+ + tqdm==4.70.1
+ + typing-extensions==4.16.0
+ + typing-inspection==0.4.5
+ + tzdata==2026.6
+ + uvicorn==0.54.0
+ + uvloop==0.23.0
+ + watchfiles==1.3.0
+ + websockets==17.4
+RedactAgent UI: http://127.0.0.1:8080  (batch mode: /batch)
+INFO:     Started server process [893839]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8080 (Press CTRL+C to quit)
+INFO:     127.0.0.1:48714 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:39228 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49856 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44004 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54756 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:37684 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42870 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33222 - "GET /api/samples HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33238 - "POST /api/jobs HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:33240 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:33254 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:33264 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:33276 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:33280 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:33284 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:33288 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33290 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:33304 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:33312 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:48964 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:48980 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:48988 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:48992 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49002 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49010 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49016 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49030 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49042 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49056 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49066 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52892 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52900 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52916 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52928 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52932 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52944 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52956 - "GET /api/jobs/ HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52966 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53852 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53868 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53876 - "GET /api/samples HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51038 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51042 - "POST /api/jobs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51056 - "GET /api/jobs/2bbca099d4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51060 - "GET /api/jobs/2bbca099d4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51066 - "GET /api/jobs/2bbca099d4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45108 - "GET /api/jobs/2bbca099d4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45116 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45122 - "GET /api/jobs/2bbca099d4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45124 - "GET /api/jobs/2bbca099d4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45140 - "GET /api/jobs/2bbca099d4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45148 - "GET /api/jobs/2bbca099d4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45162 - "GET /api/jobs/2bbca099d4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45176 - "GET /api/jobs/2bbca099d4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45188 - "GET /api/jobs/2bbca099d4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45200 - "GET /api/jobs/2bbca099d4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45206 - "GET /api/jobs/2bbca099d4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45218 - "POST /api/jobs/2bbca099d4/export HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45232 - "GET /api/audit?job=2bbca099d4 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45242 - "GET /api/jobs/2bbca099d4/download/redacted.pdf HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45244 - "GET /api/jobs/2bbca099d4/download/report.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45258 - "GET /api/jobs/2bbca099d4/download/deidentified.txt HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54534 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33236 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59424 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:33816 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52706 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35264 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:48872 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44576 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:35670 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44326 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53376 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:39774 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:44166 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55428 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:36026 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52244 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55510 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:42452 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:34894 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53226 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:45654 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:47844 - "GET /metrics HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51382 - "GET /metrics HTTP/1.1" 404 Not Found
