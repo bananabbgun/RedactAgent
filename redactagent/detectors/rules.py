@@ -50,8 +50,6 @@ class RuleHit:
     category: str
     confidence: float
     reason: str
-    bbox: list[int] | None = None  # set when the value spans several OCR fragments (see row_hits)
-    text: str | None = None
 
 
 MONTH = r"(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)"
@@ -61,9 +59,6 @@ DATE_PATTERNS = [
     r"(?<!\d)(?:19|20)\d{2}\s?[/\-.]\s?\d{1,2}\s?[/\-.]\s?\d{1,2}(?:\s*\d{1,2}:\d{2})?(?!\d)",
     r"(?<!\d)\d{1,2}\s?/\s?\d{1,2}\s?/\s?(?:19|20)\d{2}(?!\d)",
     MONTH + r"\.?\s*\d{1,2}\s*,?\s*(?:19|20)\d{2}",  # OCR often drops the spaces: "October19,2026"
-    # ROC (Minguo) dates with slashes, e.g. 114/06/06 or 54/6/18; also with a slash lost by OCR (114/0606)
-    r"(?<![\d/])(?:\d{2}|1[01]\d)\s?/\s?(?:0?[1-9]|1[0-2])\s?/\s?(?:0?[1-9]|[12]\d|3[01])(?![\d/])",
-    r"(?<![\d/])1[01]\d\s?/\s?(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])(?![\d/])",
 ]
 DOB_CONTEXT = re.compile(r"birth|DOB|出生|生日", re.I)
 
@@ -75,9 +70,7 @@ PATTERNS = [
     ("EMAIL", r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9\-]+(?:\.[A-Za-z0-9\-]+)+", 0.98, "e-mail address", None, None),
     ("PHONE", r"(?<!\d)09\d{2}\s?[-\s]?\s?\d{3}\s?[-\s]?\s?\d{3}(?!\d)", 0.95, "Taiwan mobile number", None, None),
     ("PHONE", r"\(0\d{1,2}\)\s?\d{3,4}\s?-\s?\d{4}", 0.9, "Taiwan landline number", None, None),
-    ("PHONE", r"(?<![\d\-/])0[2-8]\d?-\d{3,4}-?\d{4}(?![\d\-])", 0.88, "Taiwan landline number", None, None),
     ("PHONE", r"\+886[\s\-]?\d{1,2}[\s\-]?\d{3,4}[\s\-]?\d{3,4}", 0.95, "international phone number", None, None),
-    ("PHONE", r"(?<![\d\-])\(?[2-9]\d{2}\)?[\s.\-]{0,2}[2-9]\d{2}[\s.\-]\d{4}(?![\d\-])", 0.8, "North American phone number", None, None),
     ("FINANCIAL_ACCOUNT", r"(?<!\d)(?:\d{4}[\s\-]?){3}\d{4}(?!\d)", 0.97, "payment card number (Luhn-valid)", luhn_valid, None),
     ("FINANCIAL_ACCOUNT", r"\(\d{3}\)\s?\d{3,4}[\s\-]\d{3}[\s\-]\d{5,7}", 0.93, "bank code + account number", None, None),
     ("FINANCIAL_ACCOUNT", r"(?<![A-Za-z])[A-Z]{2}-\d{6,8}(?!\d)", 0.88, "insurance policy number", None,
@@ -139,10 +132,8 @@ def field_hits(text: str) -> list[tuple[int, int, str, str]]:
 
 
 # Lines that carry an organisation's own contact details (letterheads, hotlines, footers).
-ORG_LINE = re.compile(r"hotline|www\.|https?://|\.test\b|\.com\b|\.org\b|\.gov\b|accredited|Department of|"
+ORG_LINE = re.compile(r"hotline|www\.|https?://|\.test\b|\.com\b|accredited|Department of|"
                       r"Hospital|Clinic|Laborator|Bank|Pharmacy|Court|醫院|医院|診所|藥局|药局|銀行|法院|客服|專線", re.I)
-# Field labels that make a phone number or e-mail an institution's own contact (a facility's fax, a hospital line).
-ORG_LABEL = re.compile(r"院所|機構|机构|傳真|传真|專線|专线|Facility|Provider|Billing|Fax", re.I)
 
 
 def _overlaps(a: tuple[int, int], b: tuple[int, int]) -> bool:
@@ -162,11 +153,10 @@ def detect_line(line: OcrLine, prev_text: str = "") -> list[RuleHit]:
         hits.append(RuleHit(line.id, s, e, cat, conf, reason))
 
     org_line = bool(ORG_LINE.search(text))
-    org_field = bool(ORG_LABEL.search(prev_text))  # the field itself is an institution's contact (fax, facility)
     for cat, pat, conf, reason, validator, need in PATTERNS:
         if need is not None and not need.search(ctx):
             continue
-        if (cat == "PHONE" and (org_line or org_field)) or (cat == "EMAIL" and org_field):
+        if cat == "PHONE" and org_line:
             continue
         for m in re.finditer(pat, text):
             value = m.group(0)
@@ -191,144 +181,7 @@ def detect(lines: list[OcrLine]) -> list[RuleHit]:
     out: list[RuleHit] = []
     for ln in lines:
         out.extend(detect_line(ln, label_context(ln, lines)))
-    out.extend(row_hits(lines))
     return out
-
-
-# ---------------------------------------------------------------------------------------------------------------
-# Values split over several OCR fragments on one row: a date written into printed year / month / day blanks
-# ("115 年 2 月 28 日"), or characters written one per printed box (ID numbers, postcodes).
-# ---------------------------------------------------------------------------------------------------------------
-
-BOXED_LABELS = [
-    ("GOV_ID", re.compile(r"身[分份][證证]|統一編號|统一编号|National ID|ID\s*(?:No|number)|Passport|護照|护照|居留", re.I)),
-    ("ADDRESS", re.compile(r"郵.?區.?[號号]|邮.?区.?号|郵遞|邮递|ZIP|Postal|Post\s*code", re.I)),
-    ("PHONE", re.compile(r"電話|电话|手機|手机|Phone|Tel\b", re.I)),
-    ("FINANCIAL_ACCOUNT", re.compile(r"帳號|账号|Account", re.I)),
-    ("MEDICAL_RECORD_NO", re.compile(r"病[歷历][號号]|Chart|MRN", re.I)),
-]
-
-
-def _rows(lines: list[OcrLine]) -> list[list[OcrLine]]:
-    """Group fragments into rows by vertical centre: a fragment joins the row whose running mean centre is within
-    0.4 of a character height (rows do not grow into the lines above and below)."""
-    rows: list[tuple[list[OcrLine], list[float]]] = []
-    for ln in sorted(lines, key=lambda l: (l.bbox[1] + l.bbox[3]) / 2):
-        cy, h = (ln.bbox[1] + ln.bbox[3]) / 2, ln.bbox[3] - ln.bbox[1]
-        for row, cys in rows:
-            hs = sorted(o.bbox[3] - o.bbox[1] for o in row)
-            if abs(cy - sum(cys) / len(cys)) <= 0.4 * min(h, hs[len(hs) // 2]):
-                row.append(ln)
-                cys.append(cy)
-                break
-        else:
-            rows.append(([ln], [cy]))
-    return [sorted(r, key=lambda l: l.bbox[0]) for r, _ in rows]
-
-
-def _chains(row: list[OcrLine]) -> list[list[OcrLine]]:
-    """Consecutive fragments on a row that sit close together (gap up to ~2.5 character heights)."""
-    out, cur = [], [row[0]]
-    for a, b in zip(row, row[1:]):
-        h = max(8, min(a.bbox[3] - a.bbox[1], b.bbox[3] - b.bbox[1]))
-        if b.bbox[0] - a.bbox[2] <= 2.5 * h:
-            cur.append(b)
-        else:
-            out.append(cur)
-            cur = [b]
-    out.append(cur)
-    return [c for c in out if len(c) > 1]
-
-
-def _joined(chain: list[OcrLine]):
-    """Text of a chain joined with spaces, one box and one (fragment, char index) per character. Characters that
-    overlap the previous fragment (OCR sometimes reads the same digit twice where two detections overlap) are dropped."""
-    text, boxes, where, right = "", [], [], -10**9
-    for k, ln in enumerate(chain):
-        if text:
-            text += " "
-            boxes.append(None)
-            where.append(None)
-        for i, (ch, b) in enumerate(zip(ln.text, ln.char_boxes)):
-            if (b[0] + b[2]) / 2 < right:
-                continue
-            text += ch
-            boxes.append(b)
-            where.append((k, i))
-        right = max(right, ln.bbox[2])
-    return text, boxes, where
-
-
-def _per_fragment(chain, where, start: int, end: int) -> list[tuple[OcrLine, int, int]]:
-    spans: dict[int, list[int]] = {}
-    for w in where[start:end]:
-        if w is not None:
-            spans.setdefault(w[0], []).append(w[1])
-    return [(chain[k], min(ix), max(ix) + 1) for k, ix in sorted(spans.items())]
-
-
-def _union(boxes) -> list[int]:
-    bs = [b for b in boxes if b]
-    return [min(b[0] for b in bs) - 3, min(b[1] for b in bs) - 3, max(b[2] for b in bs) + 3, max(b[3] for b in bs) + 3]
-
-
-def row_hits(lines: list[OcrLine]) -> list[RuleHit]:
-    out: list[RuleHit] = []
-    for row in _rows(lines):
-        for chain in _chains(row):
-            text, boxes, where = _joined(chain)
-            ctx = label_context(chain[0], lines) + " " + text
-            is_dob = bool(DOB_CONTEXT.search(ctx))
-            for pat in DATE_PATTERNS:
-                for m in re.finditer(pat, text, re.I):
-                    frags = _per_fragment(chain, where, m.start(), m.end())
-                    if len(frags) < 2:
-                        continue  # a single fragment is already handled line by line
-                    cat = "DATE_OF_BIRTH" if is_dob else "DATE"
-                    reason = ("date of birth" if is_dob else "calendar date") + " written across form blanks"
-                    (l0, a0, b0), rest = frags[0], frags[1:]
-                    # one finding carries the box over the whole date; the other fragments get their own text spans
-                    out.append(RuleHit(l0.id, a0, b0, cat, 0.88, reason, bbox=_union(boxes[m.start():m.end()]), text=m.group(0)))
-                    out.extend(RuleHit(l.id, a, b, cat, 0.88, reason) for l, a, b in rest)
-        # characters written one per printed box: runs of single-character fragments on the row (unread boxes
-        # may sit between them, so the gap allowed is wider than within a chain)
-        run: list[OcrLine] = []
-        for ln in row + [None]:
-            single = ln is not None and re.fullmatch(r"[A-Za-z0-9]{1,2}", ln.text.strip()) is not None
-            if single and run:
-                h = max(10, run[-1].bbox[3] - run[-1].bbox[1])
-                if ln.bbox[0] - run[-1].bbox[2] > max(5 * h, 120):
-                    out.extend(_boxed(run, lines))
-                    run = []
-            if single:
-                run.append(ln)
-            else:
-                out.extend(_boxed(run, lines))
-                run = []
-    return out
-
-
-def _boxed(run: list[OcrLine], lines: list[OcrLine]) -> list[RuleHit]:
-    if len(run) < 2:
-        return []
-    label = label_context(run[0], lines)
-    cat = next((c for c, rx in BOXED_LABELS if rx.search(label)), None)
-    if not cat:
-        return []
-    rx = dict(BOXED_LABELS)[cat]
-    x0, y0 = min(l.bbox[0] for l in run), min(l.bbox[1] for l in run)
-    x1, y1 = max(l.bbox[2] for l in run), max(l.bbox[3] for l in run)
-    for o in lines:  # stretch over the printed boxes that the OCR did not read
-        if not rx.search(o.text):
-            continue
-        if o.bbox[3] <= y0 + 6 and o.bbox[3] > y0 - 60 and min(x1, o.bbox[2]) > max(x0, o.bbox[0]):
-            x0, x1 = min(x0, o.bbox[0]), max(x1, o.bbox[2])      # label above the boxes
-        elif abs((o.bbox[1] + o.bbox[3]) / 2 - (y0 + y1) / 2) < 20 and o.bbox[2] <= x0 and x0 - o.bbox[2] < 250:
-            x0 = min(x0, o.bbox[2] + 2)                            # label to the left
-    value = "".join(l.text.strip() for l in run)
-    reason = f"characters written one per box after '{label.strip()[:12]}'"
-    return [RuleHit(run[0].id, 0, len(run[0].text), cat, 0.85, reason, bbox=[x0 - 3, y0 - 3, x1 + 3, y1 + 3], text=value)] + \
-        [RuleHit(l.id, 0, len(l.text), cat, 0.85, reason) for l in run[1:]]
 
 
 def label_context(ln: OcrLine, lines: list[OcrLine]) -> str:

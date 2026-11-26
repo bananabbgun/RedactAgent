@@ -106,10 +106,6 @@ def merge_text_hits(page: int, lines: list[OcrLine], rhits: list[rule_det.RuleHi
     out: list[Finding] = []
     for h in rhits:
         ln = by_id[h.line_id]
-        if h.bbox is not None:  # value assembled from several OCR fragments on one row
-            out.append(Finding(next_id(), page, h.category, h.text or "", list(h.bbox), ["rule"], h.confidence, None,
-                               h.reason, h.line_id, (h.start, h.end)))
-            continue
         out.append(Finding(next_id(), page, h.category, ln.text[h.start:h.end], ln.span_bbox(h.start, h.end), ["rule"],
                            h.confidence, None, h.reason, h.line_id, (h.start, h.end)))
     for h in lhits:
