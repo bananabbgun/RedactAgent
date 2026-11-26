@@ -8,73 +8,73 @@
  "items": [
   {
    "cat": "PERSON_NAME",
-   "text": "Palmer, Tyler F",
+   "text": "Cardenas, Kyle P",
    "bbox": [
-    100,
-    492,
-    306,
+    101,
+    491,
+    330,
     523
    ],
    "role": "subject"
   },
   {
    "cat": "DATE_OF_BIRTH",
-   "text": "01/17/1973",
+   "text": "07/27/1961",
    "bbox": [
     929,
     495,
-    1093,
+    1097,
     522
    ],
    "role": "subject"
   },
   {
    "cat": "ADDRESS",
-   "text": "448 Cobb Meadows Suite 676",
+   "text": "0616 Mendoza Rapids Apt. 658",
    "bbox": [
     101,
     563,
-    497,
-    592
+    524,
+    596
    ],
    "role": null
   },
   {
    "cat": "ADDRESS",
-   "text": "East Kimberlyland, AR 99014",
+   "text": "East Shaunview, IL 56053",
    "bbox": [
-    100,
+    101,
     597,
-    510,
-    632
+    456,
+    624
    ],
    "role": null
   },
   {
    "cat": "PERSON_NAME",
-   "text": "Desiree Parker",
+   "text": "Jessica Miller",
    "bbox": [
-    140,
+    130,
     658,
-    302,
-    678
+    294,
+    684
    ],
    "role": "professional"
   },
   {
    "cat": "DATE",
-   "text": "03/17/2024",
+   "text": "06/12/2025",
    "bbox": [
     462,
     893,
-    608,
-    913
+    609,
+    909
    ],
    "role": null
   },
   {
    "cat": "DATE",
-   "text": "10/27/2026",
+   "text": "07/03/2025",
    "bbox": [
     630,
     893,
@@ -85,34 +85,34 @@
   },
   {
    "cat": "PERSON_NAME",
-   "text": "Wesley Escobar",
+   "text": "Jacqueline Robertson",
    "bbox": [
-    592,
-    1040,
-    771,
-    1069
+    581,
+    1039,
+    831,
+    1066
    ],
    "role": "professional"
   },
   {
    "cat": "DATE",
-   "text": "05/23/2025",
+   "text": "08/16/2025",
    "bbox": [
-    783,
-    1043,
-    931,
+    844,
+    1044,
+    990,
     1060
    ],
    "role": null
   },
   {
    "cat": "DATE",
-   "text": "07/18/2026",
+   "text": "10/04/2025",
    "bbox": [
-    671,
+    670,
     1193,
-    817,
-    1213
+    815,
+    1210
    ],
    "role": null
   }

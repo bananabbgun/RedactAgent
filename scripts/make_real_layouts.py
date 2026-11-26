@@ -1,6 +1,6 @@
 """Real-layout check: public government forms filled with synthetic people.
 
-The forms are real (published by Taiwan's Ministry of Health and Welfare, the US Department of Veterans Affairs and
+The forms are real (published by Taiwan's Ministry of Health and Welfare, Taiwan's National Health Insurance Administration, the US Department of Veterans Affairs and
 the US Centers for Medicare & Medicaid Services); every person, number, address and date written into them is
 randomly generated. Neither the forms nor these fill-ins were seen while RedactAgent was developed, so this corpus
 checks whether the engine generalises beyond the layouts of our own generators. Ground truth is recorded while
@@ -25,7 +25,7 @@ from faker import Faker
 from PIL import Image, ImageFilter
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from make_synthetic import F_HAND, F_ZH, Page, font, tw_mobile, tw_national_id  # noqa: E402
+from make_synthetic import F_HAND, F_ZH, Page, font, tw_mobile, tw_national_id, zh_address  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 TPL = ROOT / "data" / "real_layouts" / "templates"
@@ -101,7 +101,7 @@ def nhi_referral(doc_id, rng, fk, k) -> Page:
     p.text(893, 233, tw_national_id(rng, sex), f, cat="GOV_ID", role="subject")
     p.text(186, 305, relative, f, cat="PERSON_NAME", role="relative")
     p.text(333, 307, tw_mobile(rng), fs, cat="PHONE")
-    addr = f"{fk.city()}{fk.street_name()}{rng.randint(1, 300)}號{rng.randint(2, 15)}樓"
+    addr = zh_address(rng)
     p.text(516, 307, addr, fs, cat="ADDRESS")
     p.text(186, 405, "主訴：右膝疼痛三個月，上下樓梯困難，夜間加劇。", fs)
     if k % 2 == 0:
@@ -141,6 +141,50 @@ def nhi_referral(doc_id, rng, fk, k) -> Page:
         p.text(250, 1505, doctor2, f, cat="PERSON_NAME", role="professional")
         p.seal(650, 1474, doctor2 + "印", size=54, rng=rng)
         ymd_blanks(p, [840, 935, 1020], 1500, rdate(rng, 2026, 2026), fs, "DATE")
+    return p
+
+
+# ----------------------------------------------------------------------------------------------------------------
+# Taiwan NHI card application form (健保署, 請領健保卡申請表 113.11)
+# ----------------------------------------------------------------------------------------------------------------
+
+def nhi_card(doc_id, rng, fk, k) -> Page:
+    p = page_on("nhi_card_zh", doc_id, "zh")
+    f, fs = font(F_ZH, 26), font(F_ZH, 20)
+    sex = rng.choice("MF")
+    name, gid = zh_name(fk), tw_national_id(rng, sex)
+    ymd_blanks(p, [972, 1042, 1106], 116, rdate(rng, 2026, 2026), fs, "DATE")
+    p.text(212, 170, name, f, cat="PERSON_NAME", role="subject")
+    ymd_blanks(p, [620, 695, 757], 170, rdate(rng, 1945, 2008), fs, "DATE_OF_BIRTH", "subject")
+    start = len(p.items)
+    for i, ch in enumerate(gid):                      # one character per printed box
+        p.text(290 + 55 * i + 17, 230, ch, f, cat="TMP")
+    union(p, start, "GOV_ID", "subject")
+    check(p, 70, 343 if k % 2 == 0 else 375, 26)
+    if k % 2:
+        p.text(470, 410, "原姓名", fs)
+        p.text(560, 410, zh_name(fk), fs, cat="PERSON_NAME", role="subject")
+    p.text(252, 555, f"0{rng.randint(2, 8)}-{rng.randint(2000, 2999)}{rng.randint(1000, 9999)}", fs, cat="PHONE")
+    p.text(520, 555, tw_mobile(rng), fs, cat="PHONE")
+    p.text(212, 600, fk.free_email(), fs, cat="EMAIL")
+    start = len(p.items)
+    for i, ch in enumerate(f"{rng.randint(100, 999)}{rng.randint(0, 99):02d}"):
+        p.text(205 + 26 * i, 687, ch, fs, cat="TMP")
+    union(p, start, "ADDRESS")
+    p.text(365, 668, zh_address(rng), fs, cat="ADDRESS")
+    p.photo(906, 304, w=224, h=276, rng=rng)
+    if k % 2 == 0:   # the applicant signs with a personal seal
+        p.seal(240, 730, name + "印", size=74, rng=rng)
+    else:            # a relative applies on the applicant's behalf
+        agent = zh_name(fk)
+        p.text(212, 742, "代辦人", fs)
+        p.text(290, 742, agent, f, cat="PERSON_NAME", role="relative")
+        p.seal(420, 728, agent + "印", size=74, rng=rng)
+    p.text(262, 1208, name, f, cat="PERSON_NAME", role="subject")
+    p.text(262, 1266, gid, f, cat="GOV_ID", role="subject")
+    p.text(262, 1322, tw_mobile(rng), fs, cat="PHONE")
+    p.text(930, 1212, name, fs, cat="PERSON_NAME", role="subject")
+    p.text(930, 1318, gid, fs, cat="GOV_ID", role="subject")
     return p
 
 
@@ -261,7 +305,7 @@ def cms1500(doc_id, rng, fk, k) -> Page:
     return p
 
 
-TEMPLATES = [("nhi_referral_zh", nhi_referral, "zh", 6), ("va_release_p1_en", va_p1, "en", 4),
+TEMPLATES = [("nhi_referral_zh", nhi_referral, "zh", 6), ("nhi_card_zh", nhi_card, "zh", 4), ("va_release_p1_en", va_p1, "en", 4),
              ("va_release_p2_en", va_p2, "en", 4), ("cms1500_en", cms1500, "en", 4)]
 
 

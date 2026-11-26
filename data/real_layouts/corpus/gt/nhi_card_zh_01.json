@@ -1,0 +1,208 @@
+{
+ "id": "nhi_card_zh_01",
+ "template": "nhi_card_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "115 2 20",
+   "bbox": [
+    972,
+    124,
+    1128,
+    138
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳志成",
+   "bbox": [
+    212,
+    176,
+    290,
+    200
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "82 2 24",
+   "bbox": [
+    620,
+    178,
+    779,
+    192
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "L 2 0 4 3 4 2 9 4 9",
+   "bbox": [
+    307,
+    239,
+    816,
+    258
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "張志豪",
+   "bbox": [
+    560,
+    415,
+    620,
+    433
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PHONE",
+   "text": "07-21586266",
+   "bbox": [
+    252,
+    563,
+    369,
+    577
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0949-683-455",
+   "bbox": [
+    520,
+    563,
+    644,
+    577
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "pchen@gmail.com",
+   "bbox": [
+    212,
+    608,
+    377,
+    626
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "9 1 1 1 5",
+   "bbox": [
+    205,
+    695,
+    320,
+    709
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "高雄市苓雅區中山路102巷261號",
+   "bbox": [
+    365,
+    673,
+    651,
+    691
+   ],
+   "role": null
+  },
+  {
+   "cat": "FACE_PHOTO",
+   "text": "portrait",
+   "bbox": [
+    906,
+    304,
+    1130,
+    580
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "謝秀鳳",
+   "bbox": [
+    290,
+    748,
+    368,
+    773
+   ],
+   "role": "relative"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "謝秀鳳印",
+   "bbox": [
+    420,
+    728,
+    494,
+    802
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳志成",
+   "bbox": [
+    262,
+    1214,
+    340,
+    1238
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "L204342949",
+   "bbox": [
+    262,
+    1275,
+    402,
+    1294
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0946-258-561",
+   "bbox": [
+    262,
+    1330,
+    386,
+    1344
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "陳志成",
+   "bbox": [
+    930,
+    1217,
+    990,
+    1235
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "L204342949",
+   "bbox": [
+    930,
+    1326,
+    1040,
+    1340
+   ],
+   "role": "subject"
+  }
+ ]
+}

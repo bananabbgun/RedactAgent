@@ -8,67 +8,67 @@
  "items": [
   {
    "cat": "PERSON_NAME",
-   "text": "Miller, Zachary D",
+   "text": "Chavez, Alexander Y",
    "bbox": [
-    96,
-    110,
-    336,
-    145
-   ],
-   "role": "subject"
-  },
-  {
-   "cat": "DATE_OF_BIRTH",
-   "text": "02/21/1974",
-   "bbox": [
-    924,
     109,
-    1091,
+    103,
+    379,
     137
    ],
    "role": "subject"
   },
   {
-   "cat": "SIGNATURE",
-   "text": "Zachary Miller",
+   "cat": "DATE_OF_BIRTH",
+   "text": "08/22/1942",
    "bbox": [
-    102,
-    845,
-    348,
-    900
+    937,
+    116,
+    1104,
+    145
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "SIGNATURE",
+   "text": "Alexander Chavez",
+   "bbox": [
+    101,
+    837,
+    399,
+    881
    ],
    "role": "subject"
   },
   {
    "cat": "DATE",
-   "text": "09/11/2026",
+   "text": "02/11/2026",
    "bbox": [
-    915,
-    853,
-    1078,
+    914,
+    860,
+    1081,
     881
    ],
    "role": null
   },
   {
    "cat": "DATE",
-   "text": "02/05/2026",
+   "text": "12/19/2026",
    "bbox": [
-    364,
-    1518,
-    484,
-    1535
+    351,
+    1513,
+    471,
+    1531
    ],
    "role": null
   },
   {
    "cat": "PERSON_NAME",
-   "text": "A. Morgan",
+   "text": "J. Miller",
    "bbox": [
-    703,
-    1518,
-    812,
-    1535
+    691,
+    1519,
+    799,
+    1533
    ],
    "role": "professional"
   }

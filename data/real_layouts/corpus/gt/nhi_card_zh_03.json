@@ -1,0 +1,208 @@
+{
+ "id": "nhi_card_zh_03",
+ "template": "nhi_card_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "115 5 23",
+   "bbox": [
+    974,
+    125,
+    1130,
+    139
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "楊冠宇",
+   "bbox": [
+    214,
+    175,
+    292,
+    199
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "66 7 18",
+   "bbox": [
+    622,
+    178,
+    781,
+    192
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "A 2 8 1 2 8 9 4 9 5",
+   "bbox": [
+    307,
+    238,
+    817,
+    258
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "鄭子涵",
+   "bbox": [
+    561,
+    415,
+    621,
+    433
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PHONE",
+   "text": "05-29157220",
+   "bbox": [
+    253,
+    562,
+    370,
+    576
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0973-540-957",
+   "bbox": [
+    521,
+    563,
+    645,
+    577
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "hsiu-chen84@yahoo.com",
+   "bbox": [
+    213,
+    607,
+    439,
+    626
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "6 3 6 1 2",
+   "bbox": [
+    205,
+    694,
+    320,
+    708
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "新北市板橋區建國路332號六樓",
+   "bbox": [
+    365,
+    672,
+    638,
+    692
+   ],
+   "role": null
+  },
+  {
+   "cat": "FACE_PHOTO",
+   "text": "portrait",
+   "bbox": [
+    907,
+    305,
+    1131,
+    581
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "范素貞",
+   "bbox": [
+    290,
+    747,
+    368,
+    771
+   ],
+   "role": "relative"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "范素貞印",
+   "bbox": [
+    420,
+    728,
+    494,
+    802
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "楊冠宇",
+   "bbox": [
+    261,
+    1213,
+    339,
+    1237
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "A281289495",
+   "bbox": [
+    260,
+    1274,
+    404,
+    1293
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0931-560-369",
+   "bbox": [
+    261,
+    1329,
+    385,
+    1343
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "楊冠宇",
+   "bbox": [
+    929,
+    1218,
+    989,
+    1236
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "A281289495",
+   "bbox": [
+    928,
+    1327,
+    1041,
+    1341
+   ],
+   "role": "subject"
+  }
+ ]
+}

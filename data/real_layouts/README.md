@@ -8,12 +8,13 @@ the content is still synthetic.
 | Template | Form | Publisher | Pages | Language |
 |---|---|---|---|---|
 | `nhi_referral_zh` | 全民健康保險院(所)轉診單 (NHI referral form, 附表二修正) | Ministry of Health and Welfare, Taiwan ([source](https://mohw.gov.tw/dl-9392-0c42e35a-94e3-42e5-a892-5056bf700c3c.html)) | 6 | zh |
+| `nhi_card_zh` | 請領健保卡申請表 (NHI card application, 113.11) | National Health Insurance Administration, Taiwan ([source](https://www.nhi.gov.tw/ch/dl-67284-06928126dbb24356977da6fa1de1dae3-1.pdf)) | 4 | zh |
 | `va_release_p1_en`, `va_release_p2_en` | VA Form 10-5345, Request for and Authorization to Release Health Information | US Department of Veterans Affairs ([source](https://www.va.gov/forms/10-5345/)) | 4 + 4 | en |
 | `cms1500_en` | CMS-1500 Health Insurance Claim Form (the public copy carries a SAMPLE watermark, kept as published) | US Centers for Medicare & Medicaid Services ([source](https://www.cms.gov/Medicare/Billing/ElectronicBillingEDITrans/1500)) | 4 | en |
 
-18 pages, 219 personal-data items. Downloaded 2026-11-27; originals in `raw/`, 150 dpi renderings in `templates/`.
+22 pages, 287 personal-data items. Downloaded 2026-11-27; originals in `raw/`, 150 dpi renderings in `templates/`.
 
-- Taiwanese pages: typed fill-ins (as printed by a hospital system), personal seals, a quasi-identifier phrasing
+- Taiwanese pages: typed fill-ins (as printed by a hospital system), personal seals, an ID photo, a quasi-identifier phrasing
   that appears in no prompt and no other corpus. US pages: handwritten-style fill-ins (VA form), typed fill-ins
   (CMS-1500), ink signatures.
 - Organisation data (hospital addresses, switchboard numbers, facility codes, tax IDs, provider NPIs) is not

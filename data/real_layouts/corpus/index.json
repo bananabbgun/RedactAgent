@@ -42,6 +42,34 @@
   "n_pii": 17
  },
  {
+  "id": "nhi_card_zh_00",
+  "template": "nhi_card_zh",
+  "lang": "zh",
+  "capture": "scan",
+  "n_pii": 16
+ },
+ {
+  "id": "nhi_card_zh_01",
+  "template": "nhi_card_zh",
+  "lang": "zh",
+  "capture": "scan",
+  "n_pii": 18
+ },
+ {
+  "id": "nhi_card_zh_02",
+  "template": "nhi_card_zh",
+  "lang": "zh",
+  "capture": "scan",
+  "n_pii": 16
+ },
+ {
+  "id": "nhi_card_zh_03",
+  "template": "nhi_card_zh",
+  "lang": "zh",
+  "capture": "scan",
+  "n_pii": 18
+ },
+ {
   "id": "va_release_p1_en_00",
   "template": "va_release_p1_en",
   "lang": "en",

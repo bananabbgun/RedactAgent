@@ -1,0 +1,186 @@
+{
+ "id": "nhi_card_zh_02",
+ "template": "nhi_card_zh",
+ "lang": "zh",
+ "capture": "scan",
+ "width": 1240,
+ "height": 1754,
+ "items": [
+  {
+   "cat": "DATE",
+   "text": "115 1 22",
+   "bbox": [
+    974,
+    125,
+    1130,
+    139
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "鄭俊豪",
+   "bbox": [
+    214,
+    175,
+    292,
+    199
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "DATE_OF_BIRTH",
+   "text": "35 1 18",
+   "bbox": [
+    622,
+    178,
+    781,
+    192
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "J 1 8 1 0 5 7 1 2 2",
+   "bbox": [
+    309,
+    238,
+    818,
+    259
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PHONE",
+   "text": "07-23996839",
+   "bbox": [
+    253,
+    562,
+    370,
+    576
+   ],
+   "role": null
+  },
+  {
+   "cat": "PHONE",
+   "text": "0966-390-629",
+   "bbox": [
+    521,
+    563,
+    645,
+    577
+   ],
+   "role": null
+  },
+  {
+   "cat": "EMAIL",
+   "text": "shu-chuan27@gmail.com",
+   "bbox": [
+    213,
+    607,
+    439,
+    625
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "9 8 2 3 4",
+   "bbox": [
+    205,
+    694,
+    321,
+    708
+   ],
+   "role": null
+  },
+  {
+   "cat": "ADDRESS",
+   "text": "臺中市南屯區中山路三段317號五樓",
+   "bbox": [
+    366,
+    672,
+    679,
+    692
+   ],
+   "role": null
+  },
+  {
+   "cat": "FACE_PHOTO",
+   "text": "portrait",
+   "bbox": [
+    907,
+    305,
+    1132,
+    581
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "SEAL_STAMP",
+   "text": "鄭俊豪印",
+   "bbox": [
+    240,
+    729,
+    314,
+    803
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "鄭俊豪",
+   "bbox": [
+    261,
+    1213,
+    339,
+    1237
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "J181057122",
+   "bbox": [
+    261,
+    1274,
+    400,
+    1293
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "PHONE",
+   "text": "0987-815-278",
+   "bbox": [
+    261,
+    1329,
+    385,
+    1343
+   ],
+   "role": null
+  },
+  {
+   "cat": "PERSON_NAME",
+   "text": "鄭俊豪",
+   "bbox": [
+    929,
+    1218,
+    989,
+    1236
+   ],
+   "role": "subject"
+  },
+  {
+   "cat": "GOV_ID",
+   "text": "J181057122",
+   "bbox": [
+    929,
+    1327,
+    1038,
+    1341
+   ],
+   "role": "subject"
+  }
+ ]
+}
